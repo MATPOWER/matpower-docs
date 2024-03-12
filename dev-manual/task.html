@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4. Task Object &mdash; MATPOWER Documentation 8.0b1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=d50bc636"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Data Model Object" href="data-model.html" />
+    <link rel="prev" title="3. Architecture Overview" href="architecture.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">Home (matpower.org)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notation.html">2. Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">3. Architecture Overview</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. Task Object</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-a-task">4.1. Running a Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-model-and-converter-objects">4.2. Building Model and Converter Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iterative-execution">4.3. Iterative Execution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-methods">4.4. Other Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="data-model.html">5. Data Model Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-model-converter.html">6. Data Model Converter Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="net-model.html">7. Network Model Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math-model.html">8. Mathematical Model Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customizing.html">9. Customizing <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="acknowledgments.html">10. Acknowledgments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references.html">11. References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ref-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mptest/index.html"><span class="raw-html">MP-Test</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mips/index.html"><span class="raw-html">MIPS</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4. </span>Task Object</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/dev-manual/task.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="architecture.html" class="btn btn-neutral float-left" title="3. Architecture Overview" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="data-model.html" class="btn btn-neutral float-right" title="5. Data Model Object" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="task-object">
+<span id="sec-task"></span><h1><span class="section-number">4. </span>Task Object<a class="headerlink" href="#task-object" title="Link to this heading"></a></h1>
+<p>The task object is the one that builds and manages the model objects in order to solve the problem of interest. The <a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a> base class implements much of the functionality, with PF, CPF and OPF subclasses, namely <a class="reference internal" href="../ref-manual/classes/mp/task_pf.html#mp.task_pf" title="mp.task_pf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_pf</span></code></a>, <a class="reference internal" href="../ref-manual/classes/mp/task_cpf.html#mp.task_cpf" title="mp.task_cpf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_cpf</span></code></a>, and <a class="reference internal" href="../ref-manual/classes/mp/task_opf.html#mp.task_opf" title="mp.task_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_opf</span></code></a>, respectively, specifying the model classes to use and implementing other problem-specific functionality. The typical usage pattern is simply to construct the task object for the problem of interest, then call its <a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method, passing in a struct of input data, a <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct, and an optional cell array of <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extensions.</p>
+<section id="running-a-task">
+<h2><span class="section-number">4.1. </span>Running a Task<a class="headerlink" href="#running-a-task" title="Link to this heading"></a></h2>
+<p>Most of the action related to the task object occurs in the <a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method.
+In a typical case, as illustrated in <a class="reference internal" href="architecture.html#code-task-run-eg"><span class="std std-numref">Listing 3.1</span></a>, it simply builds the objects for the three model layers sequentially, solves the math model, and uses the results to update the network and data models. However, the actual <a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method also allows for each model layer to iterate with a modified instance of the model as shown in the flowchart in <a class="reference internal" href="#fig-task-run"><span class="std std-numref">Figure 4.1</span></a>. This can be used, for example, to iteratively update and re-solve a power flow in order to automatically satisfy the generator reactive power limits.</p>
+<figure class="align-center" id="id1">
+<span id="fig-task-run"></span><img alt="Flowchart of task run() method" src="../_images/task-run.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4.1 </span><span class="caption-text">Flowchart of task <a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="building-model-and-converter-objects">
+<h2><span class="section-number">4.2. </span>Building Model and Converter Objects<a class="headerlink" href="#building-model-and-converter-objects" title="Link to this heading"></a></h2>
+<p>Each of the build steps, marked with the stars in <a class="reference internal" href="#fig-task-run"><span class="std std-numref">Figure 4.1</span></a>, consists of the following sub-steps:</p>
+<ol class="arabic simple">
+<li><p>Determine the class for the corresponding container object. There is a default, defined by a task method, but it can be overridden by a task subclass, or modified by user options or extensions.</p></li>
+<li><p>Construct the container object.</p></li>
+<li><p>Determine the set of classes for the individual element objects. The container class defines the defaults, but they can also be modified by user options or extensions.</p></li>
+<li><p>Call the container object’s <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code> method to construct the element objects and complete the build process.</p></li>
+</ol>
+</section>
+<section id="iterative-execution">
+<h2><span class="section-number">4.3. </span>Iterative Execution<a class="headerlink" href="#iterative-execution" title="Link to this heading"></a></h2>
+<p>As mentioned above, the <a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method allows for an iterative solution at any of the three modeling layers. This is accomplished by overridding the <a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.next_dm" title="mp.task.next_dm"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">next_dm()</span></code></a>, <a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.next_nm" title="mp.task.next_nm"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">next_nm()</span></code></a>, or <a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.next_mm" title="mp.task.next_mm"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">next_mm()</span></code></a> methods, respectively, for the data, network or math models. By default, these methods return an empty matrix, indicating that iteration should terminate. On the other hand, if a modified model object is returned, it triggers a new iteration with the modified model.</p>
+<p>This feature is used by both PF and CPF to implement enforcement of certain constraints, such as generator reactive power limits.</p>
+</section>
+<section id="other-methods">
+<h2><span class="section-number">4.4. </span>Other Methods<a class="headerlink" href="#other-methods" title="Link to this heading"></a></h2>
+<p>A task also has a <a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.print_soln" title="mp.task.print_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">print_soln()</span></code></a> method for pretty printing the solution to the console and a <a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.save_soln" title="mp.task.save_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">save_soln()</span></code></a> method for saving the saved case to a file.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="architecture.html" class="btn btn-neutral float-left" title="3. Architecture Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="data-model.html" class="btn btn-neutral float-right" title="5. Data Model Object" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

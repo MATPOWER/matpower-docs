@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mp.net_model_dc &mdash; MATPOWER Documentation 8.0b1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=d50bc636"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>window.MathJax = {"loader": {"load": ["[tex]/upgreek"]}, "tex": {"packages": {"[+]": ["upgreek"]}, "macros": {"dg": "\\sp\\dagger", "trans": ["{#1}^{\\mathsf{T}}", 1], "conj": ["{#1}^{\\ast}", 1], "hc": ["{#1}^{\\dg}", 1], "hconj": ["{#1}^{+}", 1], "diag": ["\\left[^\\smallsetminus{#1}_\\smallsetminus\\right]", 1], "diagg": ["\\left[\\smash{#1}\\right]", 1], "cdiag": ["\\conj{\\diag{#1}}", 1], "der": ["\\frac{\\partial{#1}}{\\partial{#2}}", 2], "dersx": ["\\frac{\\partial^2{#1}}{\\partial{#2}^2}", 2], "dersxy": ["\\frac{\\partial^2{#1}}{\\partial{#2}\\partial{#3}}", 3], "cscal": ["\\mathrm{#1}", 1], "rvec": ["{\\boldsymbol{#1}}", 1], "cvec": ["\\mathbf{#1}", 1], "rmat": ["{\\boldsymbol{#1}}", 1], "cmat": ["\\mathbf{#1}", 1], "rvecG": ["{\\boldsymbol{#1}}", 1], "cvecG": ["\\boldsymbol{#1}", 1], "rmatG": ["\\boldsymbol{\\mathit{#1}}", 1], "cmatG": ["\\mathbf{#1}", 1], "param": ["\\underline{#1}", 1], "ov": ["{\\overline{#1}}", 1], "zeros": ["\\rvec{0}", 0], "ones": ["\\rvec{1}_{#1}", 1], "onest": ["\\trans{\\rvec{1}}_{#1}", 1], "Id": ["\\diag{\\ones{#1}}", 1], "R": "\\mathbb{R}}         % requires \\usepackage{amsfonts|bbold", "C": "\\mathbb{C}}         % requires \\usepackage{amsfonts", "av": "\\cvec{a}", "bv": "\\cvec{b}", "cv": "\\cvec{c}", "f": "\\cscal{f}", "F": "\\cvec{f}", "g": "\\rvec{g}", "G": "\\cvec{g}", "h": "\\rvec{h}", "HH": "\\cvec{h}", "x": "\\rvec{x}", "y": "\\rvec{y}", "z": "\\rvec{z}", "X": "\\cvec{x}", "Z": "\\cvec{z}", "A": "\\cmat{A}", "B": "\\cmat{B}", "alphav": "\\rvecG{\\alpha}", "lam": "\\rvecG{\\lambda}", "lamh": "\\hat{\\lam}", "muv": "\\rvecG{\\mu}", "muhv": "\\hat{\\muv}", "vv": "\\rvec{v}", "vvi": ["\\cscal{v}_{#1}", 1], "V": "\\cvec{v}", "Vh": "\\hat{\\V}", "Vc": "\\conj{\\V}", "Vhc": "\\conj{\\Vh}", "dV": "\\diag{\\V}", "dVh": "\\diag{\\Vh}", "dVc": "\\diag{\\Vc}", "dVhc": "\\diag{\\Vhc}", "inV": "\\cvec{\\Lambda}", "inVh": "\\hat{\\inV}", "inVc": "\\conj{\\inV}", "inVhc": "\\conj{\\inVh}", "dinV": "\\diagg{\\inV}", "dinVh": "\\diagg{\\inVh}", "dinVc": "\\diagg{\\inVc}", "dinVhc": "\\diagg{\\inVhc}", "va": ["\\theta", 0], "vai": ["\\va_{#1}", 1], "Va": ["\\rvec{\\va}", 0], "Vah": ["\\hat{\\Va}", 0], "vm": ["\\nu", 0], "vmi": ["\\nu_{#1}", 1], "Vm": ["\\rvecG{\\nu}", 0], "dVm": "\\diag{\\Vm}", "dVmi": "\\dVm^{-1}", "Vmh": "\\hat{\\Vm}", "dVmh": "\\diag{\\Vmh}", "dVmhi": "\\dVmh^{-1}", "vr": "u", "vri": ["u_{#1}", 1], "vi": "w", "vii": ["w_{#1}", 1], "Vr": "\\rvec{u}", "Vi": "\\rvec{w}", "dVr": "\\diag{\\Vr}", "dVi": "\\diag{\\Vi}", "Vrh": "\\hat{\\Vr}", "Vih": "\\hat{\\Vi}", "dVrh": "\\diag{\\Vrh}", "dVih": "\\diag{\\Vih}", "E": "\\cvec{e}", "Eh": "\\hat{\\E}", "Ec": "\\conj{\\E}", "Ehc": "\\conj{\\Eh}", "dE": "\\diag{\\E}", "dEh": "\\diag{\\Eh}", "dEc": "\\diag{\\Ec}", "dEhc": "\\diag{\\Ehc}", "zr": "{z_r}", "zi": "{z_i}", "Zr": "{\\rvec{z}_r}", "Zi": "{\\rvec{z}_i}", "dlam": "\\diagg{\\lam}", "dlamh": "\\diagg{\\lamh}", "dlamva": "\\diagg{\\lam_\\va}", "dlamvm": "\\diagg{\\lam_\\vm}", "dlamvr": "\\diagg{\\lam_\\vr}", "dlamvi": "\\diagg{\\lam_\\vi}", "dlamzr": "\\diagg{\\lam_\\zr}", "dlamzi": "\\diagg{\\lam_\\zi}", "dlamhva": "\\diagg{\\lamh_\\va}", "dlamhvm": "\\diagg{\\lamh_\\vm}", "dlamhvr": "\\diagg{\\lamh_\\vr}", "dlamhvi": "\\diagg{\\lamh_\\vi}", "dlamhzr": "\\diagg{\\lamh_\\zr}", "dlamhzi": "\\diagg{\\lamh_\\zi}", "dmu": "\\diag{\\muv}", "dmuh": "\\diag{\\muhv}", "kk": "\\rvec{k}", "J": "\\param{\\rmat{J}}", "Jt": "\\trans{\\J}", "Jk": ["\\J_{\\kk_#1}", 1], "Ah": "\\hat{\\A}", "Fh": "\\hat{\\F}", "Gh": "\\hat{\\G}", "gh": "\\hat{\\g}", "fmax": "\\param{\\rvec{f}}_\\mathrm{max}", "gP": "\\g^P", "gPk": ["\\g^{P,#1}", 1], "fhmax": "\\hat{\\param{\\rvec{f}}}_\\mathrm{max}", "ghP": "\\gh^P", "ghPk": ["\\gh^{P,#1}", 1], "GS": "\\G^S", "GI": "\\G^I", "GSk": ["\\G^{S,#1}", 1], "GIk": ["\\G^{I,#1}", 1], "GSsys": "\\GSk{\\mathrm{sys}}", "GIsys": "\\GIk{\\mathrm{sys}}", "gPsys": "\\gPk{\\mathrm{sys}}", "GhS": "\\Gh^S", "GhI": "\\Gh^I", "GhSk": ["\\Gh^{S,#1}", 1], "GhIk": ["\\Gh^{I,#1}", 1], "GhSsys": "\\GhSk{\\mathrm{sys}}", "GhIsys": "\\GhIk{\\mathrm{sys}}", "ghPsys": "\\ghPk{\\mathrm{sys}}", "Ilin": "\\cvec{i}^{lin}", "Ilink": "\\cvec{i}^{lin, k}", "Ilinc": "\\conj{\\Ilin}", "dIlin": "\\diag{\\Ilin}", "dIlinc": "\\diag{\\Ilinc}", "Ilinh": "\\hat{{\\cvec{i}}}^{lin}", "Ilinhk": "\\hat{\\cvec{i}}^{lin, k}", "Ilinhc": "\\conj{\\Ilinh}", "dIlinh": "\\diag{\\Ilinh}", "dIlinhc": "\\diag{\\Ilinhc}", "Slin": "\\cvec{s}^{lin}", "Slink": "\\cvec{s}^{lin, k}", "Slinc": "\\conj{\\Slin}", "dSlin": "\\diag{\\Slin}", "dSlinc": "\\diag{\\Slinc}", "Slinh": "\\hat{\\cvec{s}}^{lin}", "Slinhk": "\\hat{\\cvec{s}}^{lin, k}", "Slinhc": "\\conj{\\Slinh}", "dSlinh": "\\diag{\\Slinh}", "dSlinhc": "\\diag{\\Slinhc}", "Inln": "\\cvec{i}^{nln}", "Inlnk": "\\cvec{i}^{nln, k}", "Snln": "\\cvec{s}^{nln}", "Snlnk": "\\cvec{s}^{nln, k}", "Inlnh": "\\hat{\\cvec{i}}^{nln}", "Inlnhk": "\\hat{\\cvec{i}}^{nln, k}", "Snlnh": "\\hat{\\cvec{s}}^{nln}", "Snlnhk": "\\hat{\\cvec{s}}^{nln, k}", "Aa": "\\param{\\rmat{A}}", "BB": "\\param{\\rmat{B}}", "CC": "\\param{\\rmat{C}}", "DD": "\\param{\\rmat{D}}", "YY": "\\param{\\cmat{Y}}", "iv": "\\param{\\cvec{i}}", "pv": "\\param{\\rvec{p}}", "sv": "\\param{\\cvec{s}}", "KK": "\\param{\\rmat{K}}", "LL": "\\param{\\cmat{L}}", "MM": "\\param{\\cmat{M}}", "NN": "\\param{\\cmat{N}}", "BBh": "\\hat{\\BB}", "YYh": "\\hat{\\YY}", "ivh": "\\hat{\\iv}", "pvh": "\\hat{\\pv}", "svh": "\\hat{\\sv}", "CCh": "\\hat{\\CC}", "KKh": "\\hat{\\KK}", "LLh": "\\hat{\\LL}", "MMh": "\\hat{\\MM}", "NNh": "\\hat{\\NN}", "AT": "\\trans{\\Aa}", "CT": "\\trans{\\CC}", "DT": "\\trans{\\DD}", "Ap": "\\Aa'", "Cp": "\\CC\\:\\!'", "Dp": "\\DD'", "ApT": "\\trans{\\Ap}", "CpT": "\\trans{\\Cp}", "DpT": "\\trans{\\Dp}", "ChT": "\\trans{\\CCh}", "Lc": "\\conj{\\LL}", "LcT": "\\trans{\\Lc}", "Lhc": "\\conj{\\LLh}", "LhcT": "\\trans{\\Lhc}", "MT": "\\trans{\\MM}", "Mc": "\\conj{\\MM}", "McT": "\\trans{\\Mc}", "dMTlam": "\\diag{\\MT \\lam}", "MhT": "\\trans{\\MMh}", "Mhc": "\\conj{\\MMh}", "MhcT": "\\trans{\\Mhc}", "dMhTlam": "\\diag{\\MhT \\lamh}", "Nc": "\\conj{\\NN}", "NcT": "\\trans{\\Nc}", "Nhc": "\\conj{\\NNh}", "NhcT": "\\trans{\\Nhc}", "YT": "\\trans{\\YY}", "Yc": "\\conj{\\YY}", "YcT": "\\trans{\\Yc}", "dYTlam": "\\diag{\\YT \\lam}", "YhT": "\\trans{\\YYh}", "Yhc": "\\conj{\\YYh}", "YhcT": "\\trans{\\Yhc}", "dYhTlam": "\\diag{\\YhT \\lamh}", "I": "\\cvec{i}^S", "s": "\\cvec{s}^I", "Ih": "\\hat{\\cvec{i}}^S", "Sh": "\\hat{\\cvec{s}}^I", "AtX": "\\AT \\X", "CtV": "\\CT \\V", "dCtV": "\\diag{\\CtV}", "DtZ": "\\DT \\Z", "ApTx": "\\ApT \\x", "CpTv": "\\CpT \\vv", "DpTz": "\\DpT \\z"}}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="mp.nm_element" href="nm_element.html" />
+    <link rel="prev" title="mp.net_model_acp" href="net_model_acp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">Home (matpower.org)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions/index.html">2. Functions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">3. Classes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../index.html#task-classes">3.1. Task Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#data-model-classes">3.2. Data Model Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#data-model-converter-classes">3.3. Data Model Converter Classes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#network-model-classes">3.4. Network Model Classes</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html#id3">Containers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#id4">Elements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#mathematical-model-classes">3.5. Mathematical Model Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#miscellaneous-classes">3.6. Miscellaneous Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#matpower-extension-classes">3.7. <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extension Classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html"><span class="raw-html">MP-Test</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html"><span class="raw-html">MIPS</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+          <li class="breadcrumb-item"><a href="../index.html"><span class="section-number">3. </span>Classes</a></li>
+      <li class="breadcrumb-item active">mp.net_model_dc</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/ref-manual/classes/mp/net_model_dc.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="net_model_acp.html" class="btn btn-neutral float-left" title="mp.net_model_acp" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nm_element.html" class="btn btn-neutral float-right" title="mp.nm_element" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p id="module-matpower.+mp"><span class="raw-html"><div style="float: right"><a href="https://github.com/MATPOWER/matpower/blob/master/lib/+mp/net_model_dc.m" target=_blank><svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg></a></div></span></p>
+<section id="mp-net-model-dc">
+<h1>mp.net_model_dc<a class="headerlink" href="#mp-net-model-dc" title="Link to this heading"></a></h1>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="mp.net_model_dc">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">net_model_dc</span></span><a class="headerlink" href="#mp.net_model_dc" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>, <a class="reference internal" href="form_dc.html#mp.form_dc" title="mp.form_dc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code></a></p>
+<p><a class="reference internal" href="#mp.net_model_dc" title="mp.net_model_dc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model_dc</span></code></a> - Concrete class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> DC <strong>network model</strong> objects.</p>
+<p>This network model class and all of its network model element classes are
+specific to the DC formulation and therefore inherit from <a class="reference internal" href="form_dc.html#mp.form_dc" title="mp.form_dc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code></a>.</p>
+<dl class="simple">
+<dt>mp.net_model_dc Properties:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#mp.net_model_dc.va" title="mp.net_model_dc.va"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">va</span></code></a> - vector of voltage states (voltage angles <span class="math notranslate nohighlight">\(\Va\)</span>)</p></li>
+<li><p><a class="reference internal" href="#mp.net_model_dc.z" title="mp.net_model_dc.z"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">z</span></code></a> - vector of non-voltage states <span class="math notranslate nohighlight">\(\z\)</span></p></li>
+</ul>
+</dd>
+<dt>mp.net_model_dc Methods:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#mp.net_model_dc.net_model_dc" title="mp.net_model_dc.net_model_dc"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">net_model_dc()</span></code></a> - constructor, assign default network model element classes</p></li>
+<li><p><a class="reference internal" href="#mp.net_model_dc.def_set_types" title="mp.net_model_dc.def_set_types"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">def_set_types()</span></code></a> - add voltage and non-voltage variable set types for mp_idx_manager</p></li>
+<li><p><a class="reference internal" href="#mp.net_model_dc.build_params" title="mp.net_model_dc.build_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code></a> - build incidence matrices, parameters, add ports for each element</p></li>
+<li><p><a class="reference internal" href="#mp.net_model_dc.port_inj_soln" title="mp.net_model_dc.port_inj_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_soln()</span></code></a> - compute the network port injections at the solution</p></li>
+</ul>
+</dd>
+</dl>
+<p>See also <a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>, <a class="reference internal" href="form_dc.html#mp.form_dc" title="mp.form_dc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code></a>, <a class="reference internal" href="form.html#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a>, <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a>.</p>
+<div class="members docutils container">
+<dl>
+<dt>Constructor Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mp.net_model_dc.net_model_dc">
+<span class="sig-name descname"><span class="pre">net_model_dc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_dc.net_model_dc" title="Link to this definition"></a></dt>
+<dd><p>Constructor, assign default network model element classes.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span> <span class="p">=</span> <span class="n">net_model_dc</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This network model class and all of its network model element
+classes are specific to the DC formulation and therefore
+inherit from <a class="reference internal" href="form_dc.html#mp.form_dc" title="mp.form_dc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code></a>.</p>
+</dd></dl>
+
+</dd>
+<dt>Property Summary</dt><dd><dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.net_model_dc.va">
+<span class="sig-name descname"><span class="pre">va</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.net_model_dc.va" title="Link to this definition"></a></dt>
+<dd><p><em>(double)</em> vector of voltage states (voltage angles <span class="math notranslate nohighlight">\(\Va\)</span>)</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.net_model_dc.z">
+<span class="sig-name descname"><span class="pre">z</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.net_model_dc.z" title="Link to this definition"></a></dt>
+<dd><p><em>(double)</em> vector of non-voltage states <span class="math notranslate nohighlight">\(\z\)</span></p>
+</dd></dl>
+
+</dd>
+<dt>Method Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mp.net_model_dc.def_set_types">
+<span class="sig-name descname"><span class="pre">def_set_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_dc.def_set_types" title="Link to this definition"></a></dt>
+<dd><p>Add voltage and non-voltage variable set types for mp_idx_manager.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">def_set_types</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Add the following set types:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'va'</span></code> - VOLTAGE VARS (va)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'z'</span></code> - NON-VOLTAGE VARS (z)</p></li>
+</ul>
+</div></blockquote>
+<p>See also <a class="reference internal" href="net_model.html#mp.net_model.def_set_types" title="mp.net_model.def_set_types"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.net_model.def_set_types()</span></code></a>, <code class="docutils literal notranslate"><span class="pre">mp_idx_manager</span></code>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.net_model_dc.build_params">
+<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_dc.build_params" title="Link to this definition"></a></dt>
+<dd><p>Build incidence matrices and parameters, and add ports for each element.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">build_params</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+</ul>
+</dd>
+</dl>
+<p>Call the parent method to do most of the work, then build
+the aggregate network model parameters.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.net_model_dc.port_inj_soln">
+<span class="sig-name descname"><span class="pre">port_inj_soln</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_dc.port_inj_soln" title="Link to this definition"></a></dt>
+<dd><p>Compute the network port injections at the solution.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">port_inj_soln</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Takes the solved network state, computes the port power
+injections, and saves them in <code class="docutils literal notranslate"><span class="pre">nm.soln.gp</span></code>.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="net_model_acp.html" class="btn btn-neutral float-left" title="mp.net_model_acp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nm_element.html" class="btn btn-neutral float-right" title="mp.nm_element" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. Architecture Overview &mdash; MATPOWER Documentation 8.0b1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=d50bc636"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Task Object" href="task.html" />
+    <link rel="prev" title="2. Notation" href="notation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">Home (matpower.org)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notation.html">2. Notation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. Architecture Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#matpower-object-instances">3.1. <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Object Instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#matpower-class-hierarchies">3.2. <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Class Hierarchies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#two-matpower-frameworks">3.3. Two <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Frameworks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#matpower-customization">3.4. <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Customization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="task.html">4. Task Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-model.html">5. Data Model Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-model-converter.html">6. Data Model Converter Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="net-model.html">7. Network Model Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math-model.html">8. Mathematical Model Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customizing.html">9. Customizing <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="acknowledgments.html">10. Acknowledgments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references.html">11. References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ref-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mptest/index.html"><span class="raw-html">MP-Test</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mips/index.html"><span class="raw-html">MIPS</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>Architecture Overview</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/dev-manual/architecture.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="notation.html" class="btn btn-neutral float-left" title="2. Notation" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="task.html" class="btn btn-neutral float-right" title="4. Task Object" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="architecture-overview">
+<span id="sec-architecture"></span><h1><span class="section-number">3. </span>Architecture Overview<a class="headerlink" href="#architecture-overview" title="Link to this heading"></a></h1>
+<p>A new <em>object-oriented</em> <span class="raw-html"><em>M<span style="font-size:smaller">ATPOWER</span></em></span> <em>core architecture</em> (MP-Core), designed around the concept of a generic system <strong>element</strong>, <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> was introduced in <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> 8.0, along with two frameworks for employing this new MP-Core in <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span>. This chapter gives an overview of this architecture.</p>
+<p><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span>’s primary function is to solve steady-state electric power system simulation and optimization problems, such as power flow, continuation power flow and optimal power flow. At the top level of MP-Core is a <strong>task</strong> object that constructs the various layers of modeling for the desired problem type and formulation, solves the problem, and propogates the solution back through the modeling layers to the user.</p>
+<p>This architecture employs an explicit three-layer modeling structure designed to decouple from one another (1) the user-visible element parameters and quantities, (2) the network connections, states and flows, and (3) the mathematical problem being solved. The three layers are referred to, resepectively, as the <strong>data</strong>, <strong>network</strong>, and <strong>mathematical</strong> (or <strong>math</strong>) modeling layers as shown in <a class="reference internal" href="#fig-model-layers"><span class="std std-numref">Figure 3.1</span></a>.</p>
+<figure class="align-center" id="id5">
+<span id="fig-model-layers"></span><a class="reference internal image-reference" href="../_images/MATPOWER-model-layers.png"><img alt="MATPOWER Model Layers" src="../_images/MATPOWER-model-layers.png" style="width: 550px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figure 3.1 </span><span class="caption-text"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Model Layers</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The data model layer is further decoupled from any particular data format, such as the legacy <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case struct (<code class="docutils literal notranslate"><span class="pre">mpc</span></code>) and case file formats, by introducing a data conversion service (<strong>data model converter</strong>) to convert data between the data model and specific external data formats.</p>
+<p>Each modeling layer, plus the data conversion service, is organized around a collection of <strong>element</strong> objects, one for each <strong>element type</strong>, enclosed in a <strong>container</strong> object. An element type corresponds to a particular type of device (e.g. bus, generator, transmission line) or some other attribute or service (e.g. transmission interface, reserve requirement) in the system. This structure provides extraordinary flexibility by allowing the user to customize the environment by adding new, or modifying existing, element types independently from the rest.</p>
+<section id="matpower-object-instances">
+<h2><span class="section-number">3.1. </span><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Object Instances<a class="headerlink" href="#matpower-object-instances" title="Link to this heading"></a></h2>
+<p>In any given <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> run, a set of object instances are created and used to solve the problem. The structure of these object instances in the <em>object-oriented</em> <span class="raw-html"><em>M<span style="font-size:smaller">ATPOWER</span></em></span> <em>core architecture</em> (MP-Core) is show in <a class="reference internal" href="#fig-object-instances"><span class="std std-numref">Figure 3.2</span></a>. The classes for the various objects may be specific to (1) the type of problem being solved, (2) the problem formulation, (3) the data source, and for individual elements, (4) the type of element. The labels in the white circles in the figure are used by convention throughout the codebase in variable and class names for the corresponding type of object.</p>
+<figure class="align-center" id="id6">
+<span id="fig-object-instances"></span><img alt="MATPOWER Object Instances" src="../_images/MATPOWER-object-instances.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3.2 </span><span class="caption-text"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Object Instances</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>A single <strong>task</strong> object is created to manage the overall process. The task is specific to the type of problem being solved, e.g. power flow (PF), continuation power flow (CPF), or optimal power flow (OPF), and it has a <a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method that sets up and solves the correspnding problem. For example, the following runs an OPF for the 9-bus case.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mpopt</span> <span class="p">=</span> <span class="n">mpoption</span><span class="p">(</span><span class="s">&#39;verbose&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>     <span class="c">% set MATPOWER options</span>
+<span class="n">task</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">task_opf</span><span class="p">();</span>               <span class="c">% create task object for OPF</span>
+<span class="n">task</span><span class="p">.</span><span class="nb">run</span><span class="p">(</span><span class="s">&#39;case9&#39;</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">);</span>           <span class="c">% create and run task for &#39;case9&#39;</span>
+</pre></div>
+</div>
+<p>The steps shown in <a class="reference internal" href="#code-task-run-eg"><span class="std std-numref">Listing 3.1</span></a> are roughly equivalent to those performed when the task is run. It defines the classes used to construct each of the model objects, as well as the data model converter. In this example, the classes are defined explicitly, but in the actual code they are returned by calls to corresponding methods, allowing them to be overridden by subclasses.</p>
+<p>The task then creates the data model converter object that corresponds to the data source provided, followed by the three main model objects. The data model is created from the specified data source with the help of the data model converter, and is then used to create the network model. The math model is then created using both the data and network models. After solving itself, the math model is also used to update the states of the other two model objects.</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<span id="code-task-run-eg"></span><div class="code-block-caption"><span class="caption-number">Listing 3.1 </span><span class="caption-text">Basic steps performed by the task’s run() method <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id7" title="Link to this code"></a></div>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">% define classes used to construct model objects and data model converter</span>
+<span class="linenos"> 2</span><span class="n">dmc_class</span> <span class="p">=</span> <span class="p">@</span><span class="n">mp</span><span class="p">.</span><span class="n">dm_converter_mpc2</span><span class="p">;</span>  <span class="c">% data model convert class, MATPOWER case format v2</span>
+<span class="linenos"> 3</span><span class="n">dm_class</span> <span class="p">=</span> <span class="p">@</span><span class="n">mp</span><span class="p">.</span><span class="n">data_model_opf</span><span class="p">;</span>      <span class="c">% data model class for OPF</span>
+<span class="linenos"> 4</span><span class="n">nm_class</span> <span class="p">=</span> <span class="p">@</span><span class="n">mp</span><span class="p">.</span><span class="n">net_model_acp</span><span class="p">;</span>       <span class="c">% network model class for AC polar</span>
+<span class="linenos"> 5</span><span class="n">mm_class</span> <span class="p">=</span> <span class="p">@</span><span class="n">mp</span><span class="p">.</span><span class="n">math_model_opf_acps</span><span class="p">;</span> <span class="c">% math model class for AC polar power OPF</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="c">% create objects</span>
+<span class="linenos"> 8</span><span class="n">dmc</span> <span class="p">=</span> <span class="n">dmc_class</span><span class="p">().</span><span class="n">build</span><span class="p">();</span>              <span class="c">% create data model converter</span>
+<span class="linenos"> 9</span><span class="n">dm</span> <span class="p">=</span> <span class="n">dm_class</span><span class="p">().</span><span class="n">build</span><span class="p">(</span><span class="s">&#39;case9&#39;</span><span class="p">,</span> <span class="n">dmc</span><span class="p">);</span>    <span class="c">% create data model for &#39;case9&#39;</span>
+<span class="linenos">10</span><span class="n">nm</span> <span class="p">=</span> <span class="n">nm_class</span><span class="p">().</span><span class="n">build</span><span class="p">(</span><span class="n">dm</span><span class="p">);</span>              <span class="c">% create network model</span>
+<span class="linenos">11</span><span class="n">mm</span> <span class="p">=</span> <span class="n">mm_class</span><span class="p">().</span><span class="n">build</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">);</span>   <span class="c">% create math model</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="c">% find solution</span>
+<span class="linenos">14</span><span class="n">opt</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">solve_opts</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">);</span>     <span class="c">% get solver options</span>
+<span class="linenos">15</span><span class="n">mm</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">opt</span><span class="p">);</span>                          <span class="c">% solve math model</span>
+<span class="linenos">16</span><span class="n">nm</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">network_model_x_soln</span><span class="p">(</span><span class="n">nm</span><span class="p">);</span>       <span class="c">% update network model state with soln</span>
+<span class="linenos">17</span><span class="n">nm</span><span class="p">.</span><span class="n">port_inj_soln</span><span class="p">();</span>                     <span class="c">% use network model to compute flows</span>
+<span class="linenos">18</span><span class="n">dm</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">data_model_update</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">);</span>   <span class="c">% update data model with soln</span>
+</pre></div>
+</div>
+</div>
+<p>Each of the four main objects created by the task consists of a container object holding a set of corresponding element objects. That is, the data model contains a set of data model elements, the network model, a set of network model elements, etc., one for each element type. Each element type is associated with a <strong>name</strong>, that is a valid struct field name used to identify the corresponding element in each container object. The list of element classes for a given container is defined by the container class, but can be modified after the container’s construction and before calling its <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code> method.</p>
+<p>The build process of a given container object simply loops through its set of elements, building each one, possibly with access to the respective element of the other model layers. For example, when building the network model (<code class="docutils literal notranslate"><span class="pre">nm</span></code>), a network model element (<code class="docutils literal notranslate"><span class="pre">nme</span></code>) is constructed for each type of element, pulling its data from the corresponding data model element (<code class="docutils literal notranslate"><span class="pre">dme</span></code>). For example, the network model element for generators pulls its data from the data model element for generators.</p>
+<p>This process is described in more detail in Chapters <a class="reference internal" href="data-model.html#sec-data-model"><span class="std std-numref">5</span></a>–<a class="reference internal" href="math-model.html#sec-math-model"><span class="std std-numref">8</span></a>.</p>
+</section>
+<section id="matpower-class-hierarchies">
+<h2><span class="section-number">3.2. </span><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Class Hierarchies<a class="headerlink" href="#matpower-class-hierarchies" title="Link to this heading"></a></h2>
+<p>A summary of the class inheritance structure in MP-Core is represented in <a class="reference internal" href="#fig-class-hierarchy"><span class="std std-numref">Figure 3.3</span></a>, showing class name conventions, with abstract classes displayed with a single border and concrete classes with a double border. A significant portion of MP-Core functionality is implemented in abstract base classes, greatly reducing the effort involved in customization.</p>
+<figure class="align-center" id="id8">
+<span id="fig-class-hierarchy"></span><img alt="MATPOWER Class Hierarchies" src="../_images/MATPOWER-class-hierarchy.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3.3 </span><span class="caption-text"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Class Hierarchies</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Subclasses in these hierarchies are distinguished from one another by various attributes. For example, task classes are distinguished by the type of <em>task</em> or problem being solved (e.g. PF, CPF, OPF), data model converters by the <em>data format</em> (e.g. <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case v2, PSS/E RAW), data models by the <em>task</em>, network models by the <em>formulation</em> (e.g. DC, AC polar, AC cartesian), mathematical models by the <em>task</em> and <em>formulation</em>. That goes for both the container classes and their respective element classes, which are also distinguished by the corresponding <em>element type</em> (e.g. bus, generator, transmission line).</p>
+<p>The <a class="reference internal" href="../ref-manual/classes/mp/element_container.html#mp.element_container" title="mp.element_container"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.element_container</span></code></a> is a mixin class providing shared functionality for the four container types mentioned above, implementing a set of elements, which can be addressed by both index and name and supplying the properties <a class="reference internal" href="../ref-manual/classes/mp/element_container.html#mp.element_container.elements" title="mp.element_container.elements"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">elements</span></code></a> and <a class="reference internal" href="../ref-manual/classes/mp/element_container.html#mp.element_container.element_classes" title="mp.element_container.element_classes"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">element_classes</span></code></a>.</p>
+<p>Other mixin classes are also sometimes used when certain functionality and implementation is shared across classes in ways that do not match the primary inheritance paths.</p>
+</section>
+<section id="two-matpower-frameworks">
+<span id="sec-two-frameworks"></span><h2><span class="section-number">3.3. </span>Two <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Frameworks<a class="headerlink" href="#two-matpower-frameworks" title="Link to this heading"></a></h2>
+<p><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> currently provides two approaches to utilizing the object-oriented <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> core architecture.</p>
+<p>The first, which we call the <strong>legacy</strong> <span class="raw-html"><strong>M<span style="font-size:smaller">ATPOWER</span></strong></span> <strong>framework</strong>, wraps MP-Core objects inside the legacy user interface, with its inherent limitations, in order to provide backward compatibility for legacy user customization mechanisms. This allows MP-Core to be used internally to implement all of the legacy PF, CPF and OPF functionality and, even more importantly, to be validated by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span>’s extensive legacy test suite.</p>
+<p>The second approach, which we call the <strong>flexible</strong> <span class="raw-html"><strong>M<span style="font-size:smaller">ATPOWER</span></strong></span> <strong>framework</strong>, involves an object-oriented design with a new customization architecture, able to make the full scope of flexibility of MP-Core accessible to the end user. For example, this framework is required to take advantage of new modeling capabilities to add multiphase unbalanced and hybrid models. It provides its own version of the top-level user functions, namely <a class="reference internal" href="../ref-manual/functions/run_pf.html#run_pf" title="run_pf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_pf()</span></code></a>, <a class="reference internal" href="../ref-manual/functions/run_cpf.html#run_cpf" title="run_cpf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_cpf()</span></code></a>, and <a class="reference internal" href="../ref-manual/functions/run_opf.html#run_opf" title="run_opf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_opf()</span></code></a> <em>(note the underscores in the names)</em>.</p>
+<p>One of the primary differences between the two frameworks is that the legacy framework converts the <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case data to internal format, removing offline equipment and renumbering buses consecutively using the legacy <code class="xref mat mat-func docutils literal notranslate"><span class="pre">ext2int()</span></code> function, <em>before</em> creating the task object and running it. After solving, it converts the case back to the external format using <code class="xref mat mat-func docutils literal notranslate"><span class="pre">int2ext()</span></code> before returning the result. This conversion is required for the legacy user callback mechanisms, but is not necessary for MP-Core itself, so it is not included in the flexible framework.</p>
+</section>
+<section id="matpower-customization">
+<h2><span class="section-number">3.4. </span><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Customization<a class="headerlink" href="#matpower-customization" title="Link to this heading"></a></h2>
+<p>The primary motivation behind the design of MP-Core was to facilitate customization, both for the end user and for the developer who wants to add new capabilities to <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> itself. Given the object-oriented architecture, this is possible by simply subclassing existing classes to modify or override their behavior or adding completely new classes, which can often inherit significant functionality from existing abstract base classes.</p>
+<p>The flexible <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> framework includes a mechanism for defining and using <span class="raw-html"><strong>M<span style="font-size:smaller">ATPOWER</span></strong></span> <strong>extensions</strong> (see <a class="reference internal" href="customizing.html#sec-extensions"><span class="std std-numref">Chapter 9.3</span></a>). A <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extension is essentially a collection of modifications and additions to be made to the set default classes used to construct the task, model and model element objects.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Hence the name <em>MP-Element</em> used early on in the development cycle.</p>
+</aside>
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>This code should execute successfully from the command line without modification.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="notation.html" class="btn btn-neutral float-left" title="2. Notation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="task.html" class="btn btn-neutral float-right" title="4. Task Object" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

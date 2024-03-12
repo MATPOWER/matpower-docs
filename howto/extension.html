@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Create an Extension &mdash; MATPOWER Documentation 8.0b1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=d50bc636"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to Run a Three-Phase Power Flow" href="three-phase.html" />
+    <link rel="prev" title="A Test Gizmo Element Type" href="gizmo-element/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">Home (matpower.org)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mptest/index.html"><span class="raw-html">MP-Test</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mips/index.html"><span class="raw-html">MIPS</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to Create an Extension</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-extension">Using the Extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">How to Create an Extension</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/howto/extension.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="gizmo-element/index.html" class="btn btn-neutral float-left" title="A Test Gizmo Element Type" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="three-phase.html" class="btn btn-neutral float-right" title="How to Run a Three-Phase Power Flow" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-to-create-an-extension">
+<span id="howto-extension"></span><h1>How to Create an Extension<a class="headerlink" href="#how-to-create-an-extension" title="Link to this heading"></a></h1>
+<p>This guide demonstrates how to create a <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extension to package up your new functionality and make it accessible to a <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> end user.</p>
+<p>In general, new or modified functionality takes the form of additional classes that inherit from or override functionality in existing classes, or classes that are entirely new. The <a class="reference internal" href="../dev-manual/customizing.html#sec-customizing"><span class="std std-ref">Customizing MATPOWER</span></a> section in the <span class="raw-html"><a class="reference external" href="https://matpower.org/documentation/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> describes how <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> selects the classes to use for a given run and some mechanisms to make changes to the defaults. In particular, to change the element classes associated with a particular container (e.g. data model, network model, etc.) <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> uses <em>element class modifiers</em> which are summarized in the <a class="reference internal" href="../dev-manual/customizing.html#sec-element-classes"><span class="std std-ref">Element Classes</span></a> section and the <a class="reference internal" href="../dev-manual/customizing.html#tab-element-class-modifiers"><span class="std std-ref">Element Class Modifiers</span></a> table.</p>
+<p>In this guide, we will use the example of adding a new network element, namely the model of a DC line used by legacy <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> versions. The classes that implement this functionality are described in <a class="reference internal" href="element.html#howto-element"><span class="std std-ref">How to Create a New Element Type</span></a>. Here we show how to package these into a <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extension.</p>
+<p>This extension adds a new <code class="docutils literal notranslate"><span class="pre">legacy_dcline</span></code> element for power flow (PF), continuation power flow (CPF), and optimal power flow (OPF) problems. For PF and OPF, it includes both DC and AC formulations, and for the AC formulations both cartesian and polar voltage representations are implemented. <a class="reference internal" href="#code-xt-legacy-dcline"><span class="std std-numref">Listing 20</span></a> shows the code for this extension. As with all <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extensions, it inherits from <a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>. In this example, no changes are required for the task or container classes, so only the methods with names ending in <code class="docutils literal notranslate"><span class="pre">_element_classes</span></code> are overridden.</p>
+<p>For each model layer, it adds a single element class. For the data model element, that class depends on the task. For the network model element, it depends on the formulation, and for the math model element, it depends on both.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<span id="code-xt-legacy-dcline"></span><div class="code-block-caption"><span class="caption-number">Listing 20 </span><span class="caption-text"><a class="reference internal" href="../ref-manual/classes/mp/xt_legacy_dcline.html#mp.xt_legacy_dcline" title="mp.xt_legacy_dcline"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_legacy_dcline</span></code></a></span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">classdef</span> <span class="n">xt_legacy_dcline</span> <span class="o">&lt;</span> <span class="n">mp</span><span class="p">.</span><span class="n">extension</span>
+<span class="linenos"> 2</span>    <span class="k">methods</span>
+<span class="linenos"> 3</span>        <span class="k">function</span> <span class="n">dmc_elements</span> <span class="p">=</span> <span class="n">dmc_element_classes</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">dmc_class</span><span class="p">,</span> <span class="n">fmt</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
+<span class="linenos"> 4</span>            <span class="k">switch</span> <span class="n">fmt</span>
+<span class="linenos"> 5</span>                <span class="k">case</span> <span class="s">&#39;mpc2&#39;</span>
+<span class="linenos"> 6</span>                    <span class="n">dmc_elements</span> <span class="p">=</span> <span class="p">{</span> <span class="p">@</span><span class="n">mp</span><span class="p">.</span><span class="n">dmce_legacy_dcline_mpc2</span> <span class="p">};</span>
+<span class="linenos"> 7</span>                <span class="k">otherwise</span>
+<span class="linenos"> 8</span>                    <span class="n">dmc_elements</span> <span class="p">=</span> <span class="p">{};</span>
+<span class="linenos"> 9</span>            <span class="k">end</span>
+<span class="linenos">10</span>        <span class="k">end</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span>        <span class="k">function</span> <span class="n">dm_elements</span> <span class="p">=</span> <span class="n">dm_element_classes</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">dm_class</span><span class="p">,</span> <span class="n">task_tag</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
+<span class="linenos">13</span>            <span class="k">switch</span> <span class="n">task_tag</span>
+<span class="linenos">14</span>                <span class="k">case</span> <span class="p">{</span><span class="s">&#39;PF&#39;</span><span class="p">,</span> <span class="s">&#39;CPF&#39;</span><span class="p">}</span>
+<span class="linenos">15</span>                    <span class="n">dm_elements</span> <span class="p">=</span> <span class="p">{</span> <span class="p">@</span><span class="n">mp</span><span class="p">.</span><span class="n">dme_legacy_dcline</span> <span class="p">};</span>
+<span class="linenos">16</span>                <span class="k">case</span> <span class="s">&#39;OPF&#39;</span>
+<span class="linenos">17</span>                    <span class="n">dm_elements</span> <span class="p">=</span> <span class="p">{</span> <span class="p">@</span><span class="n">mp</span><span class="p">.</span><span class="n">dme_legacy_dcline_opf</span> <span class="p">};</span>
+<span class="linenos">18</span>                <span class="k">otherwise</span>
+<span class="linenos">19</span>                    <span class="n">dm_elements</span> <span class="p">=</span> <span class="p">{};</span>
+<span class="linenos">20</span>            <span class="k">end</span>
+<span class="linenos">21</span>        <span class="k">end</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span>        <span class="k">function</span> <span class="n">nm_elements</span> <span class="p">=</span> <span class="n">nm_element_classes</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">nm_class</span><span class="p">,</span> <span class="n">task_tag</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
+<span class="linenos">24</span>            <span class="k">switch</span> <span class="n">task_tag</span>
+<span class="linenos">25</span>                <span class="k">case</span> <span class="p">{</span><span class="s">&#39;PF&#39;</span><span class="p">,</span> <span class="s">&#39;CPF&#39;</span><span class="p">}</span>
+<span class="linenos">26</span>                    <span class="n">v_cartesian</span> <span class="p">=</span> <span class="n">mpopt</span><span class="p">.</span><span class="n">pf</span><span class="p">.</span><span class="n">v_cartesian</span><span class="p">;</span>
+<span class="linenos">27</span>                <span class="k">case</span> <span class="p">{</span><span class="s">&#39;OPF&#39;</span><span class="p">}</span>
+<span class="linenos">28</span>                    <span class="n">v_cartesian</span> <span class="p">=</span> <span class="n">mpopt</span><span class="p">.</span><span class="n">opf</span><span class="p">.</span><span class="n">v_cartesian</span><span class="p">;</span>
+<span class="linenos">29</span>            <span class="k">end</span>
+<span class="linenos">30</span>            <span class="k">switch</span> <span class="nb">upper</span><span class="p">(</span><span class="n">mpopt</span><span class="p">.</span><span class="n">model</span><span class="p">)</span>
+<span class="linenos">31</span>                <span class="k">case</span> <span class="s">&#39;AC&#39;</span>
+<span class="linenos">32</span>                    <span class="k">if</span> <span class="n">v_cartesian</span>
+<span class="linenos">33</span>                        <span class="n">nm_elements</span> <span class="p">=</span> <span class="p">{</span> <span class="p">@</span><span class="n">mp</span><span class="p">.</span><span class="n">nme_legacy_dcline_acc</span> <span class="p">};</span>
+<span class="linenos">34</span>                    <span class="k">else</span>
+<span class="linenos">35</span>                        <span class="n">nm_elements</span> <span class="p">=</span> <span class="p">{</span> <span class="p">@</span><span class="n">mp</span><span class="p">.</span><span class="n">nme_legacy_dcline_acp</span> <span class="p">};</span>
+<span class="linenos">36</span>                    <span class="k">end</span>
+<span class="linenos">37</span>                <span class="k">case</span> <span class="s">&#39;DC&#39;</span>
+<span class="linenos">38</span>                    <span class="n">nm_elements</span> <span class="p">=</span> <span class="p">{</span> <span class="p">@</span><span class="n">mp</span><span class="p">.</span><span class="n">nme_legacy_dcline_dc</span> <span class="p">};</span>
+<span class="linenos">39</span>                <span class="k">otherwise</span>
+<span class="linenos">40</span>                    <span class="n">nm_elements</span> <span class="p">=</span> <span class="p">{};</span>
+<span class="linenos">41</span>            <span class="k">end</span>
+<span class="linenos">42</span>        <span class="k">end</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span>        <span class="k">function</span> <span class="n">mm_elements</span> <span class="p">=</span> <span class="n">mm_element_classes</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">mm_class</span><span class="p">,</span> <span class="n">task_tag</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
+<span class="linenos">45</span>            <span class="k">switch</span> <span class="n">task_tag</span>
+<span class="linenos">46</span>                <span class="k">case</span> <span class="p">{</span><span class="s">&#39;PF&#39;</span><span class="p">,</span> <span class="s">&#39;CPF&#39;</span><span class="p">}</span>
+<span class="linenos">47</span>                    <span class="k">switch</span> <span class="nb">upper</span><span class="p">(</span><span class="n">mpopt</span><span class="p">.</span><span class="n">model</span><span class="p">)</span>
+<span class="linenos">48</span>                        <span class="k">case</span> <span class="s">&#39;AC&#39;</span>
+<span class="linenos">49</span>                            <span class="n">mm_elements</span> <span class="p">=</span> <span class="p">{</span> <span class="p">@</span><span class="n">mp</span><span class="p">.</span><span class="n">mme_legacy_dcline_pf_ac</span> <span class="p">};</span>
+<span class="linenos">50</span>                        <span class="k">case</span> <span class="s">&#39;DC&#39;</span>
+<span class="linenos">51</span>                            <span class="n">mm_elements</span> <span class="p">=</span> <span class="p">{</span> <span class="p">@</span><span class="n">mp</span><span class="p">.</span><span class="n">mme_legacy_dcline_pf_dc</span> <span class="p">};</span>
+<span class="linenos">52</span>                    <span class="k">end</span>
+<span class="linenos">53</span>                <span class="k">case</span> <span class="p">{</span><span class="s">&#39;OPF&#39;</span><span class="p">}</span>
+<span class="linenos">54</span>                    <span class="k">switch</span> <span class="nb">upper</span><span class="p">(</span><span class="n">mpopt</span><span class="p">.</span><span class="n">model</span><span class="p">)</span>
+<span class="linenos">55</span>                        <span class="k">case</span> <span class="s">&#39;AC&#39;</span>
+<span class="linenos">56</span>                            <span class="n">mm_elements</span> <span class="p">=</span> <span class="p">{</span> <span class="p">@</span><span class="n">mp</span><span class="p">.</span><span class="n">mme_legacy_dcline_opf_ac</span> <span class="p">};</span>
+<span class="linenos">57</span>                        <span class="k">case</span> <span class="s">&#39;DC&#39;</span>
+<span class="linenos">58</span>                            <span class="n">mm_elements</span> <span class="p">=</span> <span class="p">{</span> <span class="p">@</span><span class="n">mp</span><span class="p">.</span><span class="n">mme_legacy_dcline_opf_dc</span> <span class="p">};</span>
+<span class="linenos">59</span>                    <span class="k">end</span>
+<span class="linenos">60</span>                <span class="k">otherwise</span>
+<span class="linenos">61</span>                    <span class="n">dm_elements</span> <span class="p">=</span> <span class="p">{};</span>
+<span class="linenos">62</span>            <span class="k">end</span>
+<span class="linenos">63</span>        <span class="k">end</span>
+<span class="linenos">64</span>    <span class="k">end</span>     <span class="c">%% methods</span>
+<span class="linenos">65</span><span class="k">end</span>         <span class="c">%% classdef</span>
+</pre></div>
+</div>
+</div>
+<p>See <a class="reference external" href="https://github.com/MATPOWER/matpower/blob/master/lib/t/%2Bmp/xt_legacy_dcline.m"><code class="file docutils literal notranslate"><span class="pre">lib/t/+mp/xt_legacy_dcline.m</span></code></a> for the complete, documented <a class="reference internal" href="../ref-manual/classes/mp/dmce_legacy_dcline_mpc2.html#mp.dmce_legacy_dcline_mpc2" title="mp.dmce_legacy_dcline_mpc2"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_legacy_dcline_mpc2</span></code></a> source.</p>
+<section id="using-the-extension">
+<h2>Using the Extension<a class="headerlink" href="#using-the-extension" title="Link to this heading"></a></h2>
+<p>To make use of the extension, simply pass it, as an optional argument, immediately following <code class="docutils literal notranslate"><span class="pre">'mpx'</span></code> to <a class="reference internal" href="../ref-manual/functions/run_pf.html#run_pf" title="run_pf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_pf()</span></code></a>, <a class="reference internal" href="../ref-manual/functions/run_cpf.html#run_cpf" title="run_cpf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_cpf()</span></code></a>, or <a class="reference internal" href="../ref-manual/functions/run_opf.html#run_opf" title="run_opf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_opf()</span></code></a>, as follows.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">mpopt</span> <span class="p">=</span> <span class="n">mpoption</span><span class="p">(</span><span class="s">&#39;verbose&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="o">&gt;&gt;</span> <span class="n">run_opf</span><span class="p">(</span><span class="s">&#39;t_case9_dcline&#39;</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="s">&#39;mpx&#39;</span><span class="p">,</span> <span class="n">mp</span><span class="p">.</span><span class="n">xt_legacy_dcline</span><span class="p">)</span>
+
+<span class="n">OPF</span> <span class="n">succeeded</span> <span class="n">in</span> <span class="mf">0.27</span> <span class="n">seconds</span> <span class="p">(</span><span class="mf">0.23</span> <span class="n">setup</span> <span class="o">+</span> <span class="mf">0.04</span> <span class="n">solve</span><span class="p">)</span>
+<span class="n">Objective</span> <span class="n">Function</span> <span class="n">Value</span> <span class="p">=</span> <span class="mf">6518.89</span> $<span class="o">/</span><span class="n">hr</span>
+<span class="o">================================================================================</span>
+<span class="o">|</span>     <span class="n">System</span> <span class="n">Summary</span>                                                           <span class="o">|</span>
+<span class="o">================================================================================</span>
+  <span class="n">elements</span>                <span class="n">on</span>     <span class="n">off</span>    <span class="n">total</span>
+ <span class="o">---------------------</span> <span class="o">-------</span> <span class="o">-------</span> <span class="o">-------</span>
+  <span class="n">Buses</span>                     <span class="mi">9</span>       <span class="o">-</span>       <span class="mi">9</span>
+    <span class="n">Areas</span>                                   <span class="mi">1</span>
+    <span class="n">Zones</span>                                   <span class="mi">1</span>
+  <span class="n">Generators</span>                <span class="mi">3</span>       <span class="o">-</span>       <span class="mi">3</span>
+  <span class="n">Loads</span>                     <span class="mi">3</span>       <span class="o">-</span>       <span class="mi">3</span>
+  <span class="n">Branches</span>                  <span class="mi">9</span>       <span class="o">-</span>       <span class="mi">9</span>
+    <span class="n">Lines</span>                   <span class="mi">9</span>       <span class="o">-</span>       <span class="mi">9</span>
+    <span class="n">Transformers</span>            <span class="mi">0</span>       <span class="o">-</span>       <span class="mi">0</span>
+  <span class="n">DC</span> <span class="n">Lines</span>                  <span class="mi">3</span>       <span class="mi">1</span>       <span class="mi">4</span>
+
+  <span class="n">Total</span> <span class="n">generation</span>                     <span class="mf">319.4</span> <span class="n">MW</span>          <span class="mf">1.5</span> <span class="n">MVAr</span>
+  <span class="n">Total</span> <span class="nb">max</span> <span class="n">generation</span> <span class="n">capacity</span>        <span class="mf">820.0</span> <span class="n">MW</span>        <span class="mf">900.0</span> <span class="n">MVAr</span>
+  <span class="n">Total</span> <span class="nb">min</span> <span class="n">generation</span> <span class="n">capacity</span>        <span class="mf">110.0</span> <span class="n">MW</span>       <span class="o">-</span><span class="mf">900.0</span> <span class="n">MVAr</span>
+  <span class="n">Total</span> <span class="nb">load</span>                           <span class="mf">315.0</span> <span class="n">MW</span>        <span class="mf">115.0</span> <span class="n">MVAr</span>
+  <span class="n">Total</span> <span class="n">branch</span> <span class="n">losses</span>                    <span class="mf">3.00</span> <span class="n">MW</span>      <span class="o">-</span><span class="mf">124.10</span> <span class="n">MVAr</span>
+  <span class="n">Total</span> <span class="n">DC</span> <span class="nb">line</span> <span class="n">losses</span>                   <span class="mf">1.40</span> <span class="n">MW</span>       <span class="o">-</span><span class="mf">10.59</span> <span class="n">MVAr</span>
+
+                                           <span class="n">minimum</span>                        <span class="n">maximum</span>
+                               <span class="o">-----------------------------</span>  <span class="o">-----------------------------</span>
+  <span class="n">Bus</span> <span class="n">voltage</span> <span class="n">magnitude</span>              <span class="mf">1.066</span> <span class="n">p</span><span class="p">.</span><span class="n">u</span><span class="p">.</span> <span class="p">@</span> <span class="n">bus</span> <span class="mi">30</span>            <span class="mf">1.100</span> <span class="n">p</span><span class="p">.</span><span class="n">u</span><span class="p">.</span> <span class="p">@</span> <span class="n">bus</span> <span class="mi">1</span>
+  <span class="n">Bus</span> <span class="n">voltage</span> <span class="nb">angle</span>                   <span class="o">-</span><span class="mf">4.51</span> <span class="n">deg</span> <span class="p">@</span> <span class="n">bus</span> <span class="mi">5</span>               <span class="mf">4.11</span> <span class="n">deg</span> <span class="p">@</span> <span class="n">bus</span> <span class="mi">2</span>
+  <span class="n">Lambda</span> <span class="n">P</span> <span class="p">(</span><span class="n">LMP</span> <span class="n">active</span> <span class="nb">power</span><span class="p">)</span>       <span class="mf">14.99</span> $<span class="o">/</span><span class="n">MWh</span> <span class="p">@</span> <span class="n">bus</span> <span class="mi">6</span>            <span class="mf">24.48</span> $<span class="o">/</span><span class="n">MWh</span> <span class="p">@</span> <span class="n">bus</span> <span class="mi">9</span>
+  <span class="n">Lambda</span> <span class="n">Q</span> <span class="p">(</span><span class="n">LMP</span> <span class="n">reactive</span> <span class="nb">power</span><span class="p">)</span>   <span class="o">-</span><span class="mf">0.62</span> $<span class="o">/</span><span class="n">MVArh</span> <span class="p">@</span> <span class="n">bus</span> <span class="mi">30</span>          <span class="mf">0.43</span> $<span class="o">/</span><span class="n">MVArh</span> <span class="p">@</span> <span class="n">bus</span> <span class="mi">7</span>
+
+<span class="o">================================================================================</span>
+<span class="o">|</span>     <span class="n">Bus</span> <span class="n">Data</span>                                                                 <span class="o">|</span>
+<span class="o">================================================================================</span>
+                      <span class="n">Voltage</span>            <span class="n">Lambda</span> <span class="p">(</span><span class="n">LMP</span><span class="p">)</span>
+ <span class="n">Bus</span> <span class="n">ID</span>   <span class="n">Status</span>  <span class="n">Mag</span><span class="p">(</span><span class="n">pu</span><span class="p">)</span>  <span class="n">Ang</span><span class="p">(</span><span class="n">deg</span><span class="p">)</span>  <span class="n">P</span><span class="p">(</span>$<span class="o">/</span><span class="n">MWh</span><span class="p">)</span>  <span class="n">Q</span><span class="p">(</span>$<span class="o">/</span><span class="n">MVAr</span><span class="o">-</span><span class="n">hr</span><span class="p">)</span>
+<span class="o">--------</span>  <span class="o">------</span>  <span class="o">-------</span>  <span class="o">--------</span>  <span class="o">--------</span>  <span class="o">------------</span>
+      <span class="mi">1</span>      <span class="mi">1</span>     <span class="mf">1.100</span>     <span class="mf">0.000</span>    <span class="mf">15.954</span>         <span class="mf">0.000</span>
+      <span class="mi">2</span>      <span class="mi">1</span>     <span class="mf">1.100</span>     <span class="mf">4.107</span>    <span class="mf">24.035</span>         <span class="mf">0.000</span>
+     <span class="mi">30</span>      <span class="mi">1</span>     <span class="mf">1.066</span>     <span class="mf">2.277</span>    <span class="mf">15.047</span>        <span class="o">-</span><span class="mf">0.623</span>
+      <span class="mi">4</span>      <span class="mi">1</span>     <span class="mf">1.094</span>    <span class="o">-</span><span class="mf">2.470</span>    <span class="mf">15.967</span>         <span class="mf">0.298</span>
+      <span class="mi">5</span>      <span class="mi">1</span>     <span class="mf">1.078</span>    <span class="o">-</span><span class="mf">4.508</span>    <span class="mf">15.952</span>        <span class="o">-</span><span class="mf">0.000</span>
+      <span class="mi">6</span>      <span class="mi">1</span>     <span class="mf">1.085</span>    <span class="o">-</span><span class="mf">0.277</span>    <span class="mf">14.992</span>        <span class="o">-</span><span class="mf">0.600</span>
+      <span class="mi">7</span>      <span class="mi">1</span>     <span class="mf">1.081</span>    <span class="o">-</span><span class="mf">2.160</span>    <span class="mf">24.476</span>         <span class="mf">0.427</span>
+      <span class="mi">8</span>      <span class="mi">1</span>     <span class="mf">1.097</span>     <span class="mf">0.205</span>    <span class="mf">24.043</span>         <span class="mf">0.112</span>
+      <span class="mi">9</span>      <span class="mi">1</span>     <span class="mf">1.067</span>    <span class="o">-</span><span class="mf">4.470</span>    <span class="mf">24.476</span>        <span class="o">-</span><span class="mf">0.079</span>
+
+<span class="o">================================================================================</span>
+<span class="o">|</span>     <span class="n">Load</span> <span class="n">Data</span>                                                                <span class="o">|</span>
+<span class="o">================================================================================</span>
+                             <span class="n">Power</span> <span class="n">Consumption</span>
+<span class="n">Load</span> <span class="n">ID</span>    <span class="n">Bus</span> <span class="n">ID</span>   <span class="n">Status</span>   <span class="n">P</span> <span class="p">(</span><span class="n">MW</span><span class="p">)</span>   <span class="n">Q</span> <span class="p">(</span><span class="n">MVAr</span><span class="p">)</span>
+<span class="o">--------</span>  <span class="o">--------</span>  <span class="o">------</span>  <span class="o">--------</span>  <span class="o">--------</span>
+      <span class="mi">1</span>         <span class="mi">5</span>      <span class="mi">1</span>       <span class="mf">90.0</span>      <span class="mf">30.0</span>
+      <span class="mi">2</span>         <span class="mi">7</span>      <span class="mi">1</span>      <span class="mf">100.0</span>      <span class="mf">35.0</span>
+      <span class="mi">3</span>         <span class="mi">9</span>      <span class="mi">1</span>      <span class="mf">125.0</span>      <span class="mf">50.0</span>
+                            <span class="o">--------</span>  <span class="o">--------</span>
+                   <span class="n">Total</span><span class="p">:</span>     <span class="mf">315.0</span>     <span class="mf">115.0</span>
+
+<span class="o">================================================================================</span>
+<span class="o">|</span>     <span class="n">Branch</span> <span class="n">Data</span>                                                              <span class="o">|</span>
+<span class="o">================================================================================</span>
+ <span class="n">Branch</span>     <span class="n">From</span>       <span class="n">To</span>             <span class="n">From</span> <span class="n">Bus</span> <span class="n">Injection</span>   <span class="n">To</span> <span class="n">Bus</span> <span class="n">Injection</span>
+   <span class="n">ID</span>      <span class="n">Bus</span> <span class="n">ID</span>    <span class="n">Bus</span> <span class="n">ID</span>   <span class="n">Status</span>   <span class="n">P</span> <span class="p">(</span><span class="n">MW</span><span class="p">)</span>   <span class="n">Q</span> <span class="p">(</span><span class="n">MVAr</span><span class="p">)</span>   <span class="n">P</span> <span class="p">(</span><span class="n">MW</span><span class="p">)</span>   <span class="n">Q</span> <span class="p">(</span><span class="n">MVAr</span><span class="p">)</span>
+<span class="o">--------</span>  <span class="o">--------</span>  <span class="o">--------</span>  <span class="o">------</span>  <span class="o">--------</span>  <span class="o">--------</span>  <span class="o">--------</span>  <span class="o">--------</span>
+      <span class="mi">1</span>         <span class="mi">1</span>         <span class="mi">4</span>      <span class="mi">1</span>      <span class="mf">90.00</span>     <span class="mf">14.19</span>    <span class="o">-</span><span class="mf">90.00</span>    <span class="o">-</span><span class="mf">10.24</span>
+      <span class="mi">2</span>         <span class="mi">4</span>         <span class="mi">5</span>      <span class="mi">1</span>      <span class="mf">47.54</span>      <span class="mf">1.31</span>    <span class="o">-</span><span class="mf">47.20</span>    <span class="o">-</span><span class="mf">18.11</span>
+      <span class="mi">3</span>         <span class="mi">5</span>         <span class="mi">6</span>      <span class="mi">1</span>     <span class="o">-</span><span class="mf">48.85</span>    <span class="o">-</span><span class="mf">12.48</span>     <span class="mf">49.68</span>    <span class="o">-</span><span class="mf">25.81</span>
+      <span class="mi">4</span>        <span class="mi">30</span>         <span class="mi">6</span>      <span class="mi">1</span>      <span class="mf">88.02</span>    <span class="o">-</span><span class="mf">32.65</span>    <span class="o">-</span><span class="mf">88.02</span>     <span class="mf">37.19</span>
+      <span class="mi">5</span>         <span class="mi">6</span>         <span class="mi">7</span>      <span class="mi">1</span>      <span class="mf">38.35</span>    <span class="o">-</span><span class="mf">11.39</span>    <span class="o">-</span><span class="mf">38.20</span>    <span class="o">-</span><span class="mf">11.87</span>
+      <span class="mi">6</span>         <span class="mi">7</span>         <span class="mi">8</span>      <span class="mi">1</span>     <span class="o">-</span><span class="mf">69.64</span>    <span class="o">-</span><span class="mf">23.13</span>     <span class="mf">70.01</span>      <span class="mf">8.58</span>
+      <span class="mi">7</span>         <span class="mi">8</span>         <span class="mi">2</span>      <span class="mi">1</span>    <span class="o">-</span><span class="mf">131.39</span>     <span class="o">-</span><span class="mf">0.99</span>    <span class="mf">131.39</span>      <span class="mf">9.95</span>
+      <span class="mi">8</span>         <span class="mi">8</span>         <span class="mi">9</span>      <span class="mi">1</span>      <span class="mf">61.37</span>     <span class="o">-</span><span class="mf">7.59</span>    <span class="o">-</span><span class="mf">60.34</span>    <span class="o">-</span><span class="mf">23.03</span>
+      <span class="mi">9</span>         <span class="mi">9</span>         <span class="mi">4</span>      <span class="mi">1</span>     <span class="o">-</span><span class="mf">51.06</span>    <span class="o">-</span><span class="mf">36.97</span>     <span class="mf">51.36</span>     <span class="mf">18.92</span>
+
+<span class="o">================================================================================</span>
+<span class="o">|</span>     <span class="n">DC</span> <span class="n">Line</span> <span class="n">Data</span>                                                             <span class="o">|</span>
+<span class="o">================================================================================</span>
+ <span class="n">DC</span> <span class="n">Line</span>    <span class="n">From</span>       <span class="n">To</span>              <span class="n">Power</span> <span class="n">Flow</span> <span class="p">(</span><span class="n">MW</span><span class="p">)</span>      <span class="n">Loss</span>    <span class="n">Reactive</span> <span class="n">Inj</span> <span class="p">(</span><span class="n">MVAr</span><span class="p">)</span>
+   <span class="n">ID</span>      <span class="n">Bus</span> <span class="n">ID</span>    <span class="n">Bus</span> <span class="n">ID</span>   <span class="n">Status</span>    <span class="n">From</span>       <span class="n">To</span>       <span class="p">(</span><span class="n">MW</span><span class="p">)</span>      <span class="n">From</span>       <span class="n">To</span>
+<span class="o">--------</span>  <span class="o">--------</span>  <span class="o">--------</span>  <span class="o">------</span>  <span class="o">--------</span>  <span class="o">--------</span>  <span class="o">--------</span>  <span class="o">--------</span>  <span class="o">--------</span>
+      <span class="mi">1</span>        <span class="mi">30</span>         <span class="mi">4</span>      <span class="mi">1</span>      <span class="mf">10.00</span>      <span class="mf">8.90</span>      <span class="mf">1.10</span>    <span class="o">-</span><span class="mf">10.00</span>     <span class="mf">10.00</span>
+      <span class="mi">2</span>         <span class="mi">7</span>         <span class="mi">9</span>      <span class="mi">1</span>       <span class="mf">7.84</span>      <span class="mf">7.84</span>      <span class="mf">0.00</span>     <span class="o">-</span><span class="mf">0.00</span>     <span class="o">-</span><span class="mf">0.00</span>
+      <span class="mi">3</span>         <span class="mi">5</span>         <span class="mi">8</span>      <span class="mi">0</span>       <span class="mf">0.00</span>      <span class="mf">0.00</span>      <span class="mf">0.00</span>      <span class="mf">0.00</span>      <span class="mf">0.00</span>
+      <span class="mi">4</span>         <span class="mi">5</span>         <span class="mi">9</span>      <span class="mi">1</span>       <span class="mf">6.06</span>      <span class="mf">5.75</span>      <span class="mf">0.30</span>     <span class="o">-</span><span class="mf">0.59</span>    <span class="o">-</span><span class="mf">10.00</span>
+
+<span class="o">================================================================================</span>
+<span class="o">|</span>     <span class="n">Bus</span> <span class="n">Constraints</span>                                                          <span class="o">|</span>
+<span class="o">================================================================================</span>
+                     <span class="n">Voltage</span> <span class="n">Magnitude</span> <span class="n">Limits</span>
+ <span class="n">Bus</span> <span class="n">ID</span>     <span class="n">mu</span> <span class="n">LB</span>      <span class="n">LB</span>       <span class="n">vm</span>       <span class="n">UB</span>       <span class="n">mu</span> <span class="n">UB</span>
+<span class="o">--------</span>  <span class="o">---------</span>  <span class="o">-------</span>  <span class="o">-------</span>  <span class="o">-------</span>   <span class="o">--------</span>
+      <span class="mi">1</span>       <span class="o">-</span>       <span class="mf">0.900</span>    <span class="mf">1.100</span>    <span class="mf">1.100</span>    <span class="mf">566.231</span>
+      <span class="mi">2</span>       <span class="o">-</span>       <span class="mf">0.900</span>    <span class="mf">1.100</span>    <span class="mf">1.100</span>    <span class="mf">197.010</span>
+
+<span class="o">================================================================================</span>
+<span class="o">|</span>     <span class="n">Generator</span> <span class="n">Constraints</span>                                                    <span class="o">|</span>
+<span class="o">================================================================================</span>
+                                  <span class="n">Active</span> <span class="n">Power</span> <span class="n">Limits</span>
+ <span class="n">Gen</span> <span class="n">ID</span>    <span class="n">Bus</span> <span class="n">ID</span>     <span class="n">mu</span> <span class="n">LB</span>      <span class="n">LB</span>       <span class="n">pg</span>       <span class="n">UB</span>       <span class="n">mu</span> <span class="n">UB</span>
+<span class="o">--------</span>  <span class="o">--------</span>  <span class="o">---------</span>  <span class="o">-------</span>  <span class="o">-------</span>  <span class="o">-------</span>   <span class="o">--------</span>
+      <span class="mi">1</span>         <span class="mi">1</span>      <span class="mf">9.046</span>    <span class="mf">90.00</span>    <span class="mf">90.00</span>   <span class="mf">250.00</span>       <span class="o">-</span>
+      <span class="mi">2</span>        <span class="mi">30</span>       <span class="o">-</span>       <span class="mf">10.00</span>    <span class="mf">98.02</span>   <span class="mf">270.00</span>      <span class="mf">0.047</span>
+
+                                 <span class="n">Reactive</span> <span class="n">Power</span> <span class="n">Limits</span>
+ <span class="n">Gen</span> <span class="n">ID</span>    <span class="n">Bus</span> <span class="n">ID</span>     <span class="n">mu</span> <span class="n">LB</span>      <span class="n">LB</span>       <span class="n">qg</span>       <span class="n">UB</span>       <span class="n">mu</span> <span class="n">UB</span>
+<span class="o">--------</span>  <span class="o">--------</span>  <span class="o">---------</span>  <span class="o">-------</span>  <span class="o">-------</span>  <span class="o">-------</span>   <span class="o">--------</span>
+      <span class="mi">2</span>        <span class="mi">30</span>      <span class="mf">0.623</span>  <span class="o">-</span><span class="mf">300.00</span>   <span class="o">-</span><span class="mf">22.65</span>   <span class="mf">300.00</span>       <span class="o">-</span>
+
+<span class="o">================================================================================</span>
+<span class="o">|</span>     <span class="n">Branch</span> <span class="n">Constraints</span>            <span class="p">(</span><span class="n">S</span> <span class="n">in</span> <span class="n">MVA</span><span class="p">)</span>                                 <span class="o">|</span>
+<span class="o">================================================================================</span>
+ <span class="n">Branch</span>     <span class="n">From</span>        <span class="s">&quot;From&quot;</span> <span class="n">End</span>       <span class="n">Limit</span>       <span class="s">&quot;To&quot;</span> <span class="n">End</span>         <span class="n">To</span>
+   <span class="n">ID</span>      <span class="n">Bus</span> <span class="n">ID</span>    <span class="n">mu_sm_fr</span>   <span class="n">sm_fr</span>    <span class="n">sm_ub</span>    <span class="n">sm_to</span>    <span class="n">mu_sm_to</span>  <span class="n">Bus</span> <span class="n">ID</span>
+<span class="o">--------</span>  <span class="o">--------</span>  <span class="o">---------</span>  <span class="o">-------</span>  <span class="o">-------</span>  <span class="o">-------</span>  <span class="o">---------</span>  <span class="o">--------</span>
+      <span class="mi">5</span>         <span class="mi">6</span>      <span class="mf">2.762</span>    <span class="mf">40.00</span>    <span class="mf">40.00</span>    <span class="mf">40.00</span>      <span class="mf">7.375</span>         <span class="mi">7</span>
+
+<span class="o">================================================================================</span>
+<span class="o">|</span>     <span class="n">DC</span> <span class="n">Line</span> <span class="n">Constraints</span>                                                      <span class="o">|</span>
+<span class="o">================================================================================</span>
+ <span class="n">DC</span> <span class="n">Line</span>    <span class="n">From</span>       <span class="n">To</span>                   <span class="n">Active</span> <span class="n">Power</span> <span class="n">Flow</span> <span class="p">(</span><span class="n">MW</span><span class="p">)</span>
+   <span class="n">ID</span>      <span class="n">Bus</span> <span class="n">ID</span>    <span class="n">Bus</span> <span class="n">ID</span>     <span class="n">mu</span> <span class="n">LB</span>       <span class="n">LB</span>      <span class="n">p_fr</span>      <span class="n">UB</span>      <span class="n">mu</span> <span class="n">UB</span>
+<span class="o">--------</span>  <span class="o">--------</span>  <span class="o">--------</span>  <span class="o">---------</span>  <span class="o">-------</span>  <span class="o">-------</span>  <span class="o">-------</span>  <span class="o">---------</span>
+      <span class="mi">1</span>        <span class="mi">30</span>         <span class="mi">4</span>       <span class="o">-</span>        <span class="mf">1.00</span>    <span class="mf">10.00</span>    <span class="mf">10.00</span>      <span class="mf">0.760</span>
+</pre></div>
+</div>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="element.html#howto-element"><span class="std std-ref">How to Create a New Element Type</span></a></p></li>
+<li><p><a class="reference internal" href="../dev-manual/customizing.html#sec-customizing"><span class="std std-ref">Customizing </span></a> in the <span class="raw-html"><a class="reference external" href="https://matpower.org/documentation/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span></p></li>
+<li><p><a class="reference internal" href="../dev-manual/customizing.html#sec-extensions"><span class="std std-ref"> Extensions</span></a> in the <span class="raw-html"><a class="reference external" href="https://matpower.org/documentation/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span></p></li>
+<li><p><a class="reference internal" href="../ref-manual/classes/index.html#ref-xt-legacy-dcline-classes"><span class="std std-ref">Legacy DC Line Extension</span></a> (<a class="reference internal" href="../ref-manual/classes/mp/xt_legacy_dcline.html#mp.xt_legacy_dcline" title="mp.xt_legacy_dcline"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_legacy_dcline</span></code></a>)</p></li>
+<li><p><a class="reference internal" href="../ref-manual/classes/index.html#ref-xt-reserves-classes"><span class="std std-ref">OPF Fixed Zonal Reserves Extension</span></a> (<a class="reference internal" href="../ref-manual/classes/mp/xt_reserves.html#mp.xt_reserves" title="mp.xt_reserves"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_reserves</span></code></a>)</p></li>
+<li><p><a class="reference internal" href="../ref-manual/classes/index.html#ref-xt-3p-classes"><span class="std std-ref">Three-Phase Prototype Extension</span></a> (<a class="reference internal" href="../ref-manual/classes/mp/xt_3p.html#mp.xt_3p" title="mp.xt_3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_3p</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="gizmo-element/index.html" class="btn btn-neutral float-left" title="A Test Gizmo Element Type" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="three-phase.html" class="btn btn-neutral float-right" title="How to Run a Three-Phase Power Flow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

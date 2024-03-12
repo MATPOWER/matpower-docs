@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>9. Customizing MATPOWER &mdash; MATPOWER Documentation 8.0b1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=d50bc636"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="10. Acknowledgments" href="acknowledgments.html" />
+    <link rel="prev" title="8. Mathematical Model Object" href="math-model.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">Home (matpower.org)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notation.html">2. Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">3. Architecture Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="task.html">4. Task Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-model.html">5. Data Model Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-model-converter.html">6. Data Model Converter Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="net-model.html">7. Network Model Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math-model.html">8. Mathematical Model Object</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">9. Customizing <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#default-class-determination">9.1. Default Class Determination</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#task-class">9.1.1. Task Class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#model-and-data-converter-classes">9.1.2. Model and Data Converter Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#element-classes">9.1.3. Element Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#customization-via-matpower-options">9.2. Customization via <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#matpower-extensions">9.3. <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="acknowledgments.html">10. Acknowledgments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references.html">11. References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ref-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mptest/index.html"><span class="raw-html">MP-Test</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mips/index.html"><span class="raw-html">MIPS</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">9. </span>Customizing <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/dev-manual/customizing.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="math-model.html" class="btn btn-neutral float-left" title="8. Mathematical Model Object" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="acknowledgments.html" class="btn btn-neutral float-right" title="10. Acknowledgments" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="customizing-matpower">
+<span id="sec-customizing"></span><h1><span class="section-number">9. </span>Customizing <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span><a class="headerlink" href="#customizing-matpower" title="Link to this heading"></a></h1>
+<p>With the <em>object-oriented</em> <span class="raw-html"><em>M<span style="font-size:smaller">ATPOWER</span></em></span> <em>core architecture</em> and its explicit three layer modeling outlined in <a class="reference internal" href="architecture.html#sec-architecture"><span class="std std-numref">Section 3</span></a>, the flexibility and customizability of <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> has increased dramatically.</p>
+<p>New functionality can be added or existing functionality modified simply by adding new classes and/or subclassing existing ones. This approach can be used to add or modify elements, problem formulations, and tasks.</p>
+<section id="default-class-determination">
+<h2><span class="section-number">9.1. </span>Default Class Determination<a class="headerlink" href="#default-class-determination" title="Link to this heading"></a></h2>
+<p>In order to customize the behavior it is important to understand how <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> selects which classes to instantiate when running a particular task. There are default specifications for each of the various types of objects, as well as several ways to override those defaults. The default, described below, is illustrated in <a class="reference internal" href="#fig-class-selection"><span class="std std-numref">Figure 9.1</span></a>.</p>
+<figure class="align-center" id="id6">
+<span id="fig-class-selection"></span><img alt="Determination of Default Classes" src="../_images/class-selection.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9.1 </span><span class="caption-text">Determination of Default Classes</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="task-class">
+<h3><span class="section-number">9.1.1. </span>Task Class<a class="headerlink" href="#task-class" title="Link to this heading"></a></h3>
+<p>First of all, at the top level, the <strong>task class</strong> is specified directly by the user through the function used to invoke the run. In fact, <a class="reference internal" href="../ref-manual/functions/run_pf.html#run_pf" title="run_pf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_pf()</span></code></a>, <a class="reference internal" href="../ref-manual/functions/run_cpf.html#run_cpf" title="run_cpf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_cpf()</span></code></a>, and <a class="reference internal" href="../ref-manual/functions/run_opf.html#run_opf" title="run_opf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_opf()</span></code></a> are simple one-line wrappers around the <a class="reference internal" href="../ref-manual/functions/run_mp.html#run_mp" title="run_mp"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_mp()</span></code></a> function. The only difference between the three is the value of the <code class="docutils literal notranslate"><span class="pre">task_class</span></code> argument, a handle to the corresponding task constructor, passed into <a class="reference internal" href="../ref-manual/functions/run_mp.html#run_mp" title="run_mp"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_mp()</span></code></a>.</p>
+<p>This means that a new task class can be used simply by invoking <a class="reference internal" href="../ref-manual/functions/run_mp.html#run_mp" title="run_mp"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_mp()</span></code></a>, either directly or via a new wrapper, with the task constructor as the <code class="docutils literal notranslate"><span class="pre">task_class</span></code> argument.</p>
+</section>
+<section id="model-and-data-converter-classes">
+<h3><span class="section-number">9.1.2. </span>Model and Data Converter Classes<a class="headerlink" href="#model-and-data-converter-classes" title="Link to this heading"></a></h3>
+<p>The task class has methods that determine the classes used to create the data model converter and the three model objects. For each, there are two methods involved in determining the specific class to use, a <em>main</em> method and a <em>default</em> method. The <em>main</em> method calls the <em>default</em> method to get a handle to the constructor for the task’s default class, but then allows that value to be overridden by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extensions or <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options.</p>
+<span id="tab-task-methods"></span><table class="longtable docutils align-default" id="id7">
+<caption><span class="caption-number">Table 9.1 </span><span class="caption-text">Class Specification Methods of a Task</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.dm_converter_class" title="mp.task.dm_converter_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class()</span></code></a></p></td>
+<td><p>Returns the final class for the data model converter, after any overrides of the default.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.data_model_class" title="mp.task.data_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_class()</span></code></a></p></td>
+<td><p>Returns the final class for the data model, after any overrides of the default.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.network_model_class" title="mp.task.network_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_class()</span></code></a></p></td>
+<td><p>Returns the final class for the network model, after any overrides of the default.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.math_model_class" title="mp.task.math_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class()</span></code></a></p></td>
+<td><p>Returns the final class for the math model, after any overrides of the default.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.dm_converter_class_mpc2_default" title="mp.task.dm_converter_class_mpc2_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class_mpc2_default()</span></code></a></p></td>
+<td><p>Returns the <em>default</em> class for the data model converter for this task. Note that this is specific to the data format. Each data format would have it’s own “default” method.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.data_model_class_default" title="mp.task.data_model_class_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_class_default()</span></code></a></p></td>
+<td><p>Returns the <em>default</em> class for the data model for this task.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.network_model_class_default" title="mp.task.network_model_class_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_class_default()</span></code></a></p></td>
+<td><p>Returns the <em>default</em> class for the network model for this task.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.math_model_class_default" title="mp.task.math_model_class_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class_default()</span></code></a></p></td>
+<td><p>Returns the <em>default</em> class for the math model for this task.</p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="#tab-task-methods"><span class="std std-numref">Table 9.1</span></a> shows the methods that determine the classes for each of the 4 objects. Each method returns a handle to a class constructor. In general, the <em>main</em> methods (the first 4 in the table) are inherited from <a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a> and only the <em>default</em> methods (the last 4) would be overridden to customize a task with new model or data model converter classes.</p>
+</section>
+<section id="element-classes">
+<span id="sec-element-classes"></span><h3><span class="section-number">9.1.3. </span>Element Classes<a class="headerlink" href="#element-classes" title="Link to this heading"></a></h3>
+<p>Each of the element container objects, that is the data model converter and the 3 model objects, contains a set of <em>elements</em>. The classes used to construct these elements are determined by the container class. Each container class inherits from <a class="reference internal" href="../ref-manual/classes/mp/element_container.html#mp.element_container" title="mp.element_container"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.element_container</span></code></a>, and as such it has an <a class="reference internal" href="../ref-manual/classes/mp/element_container.html#mp.element_container.element_classes" title="mp.element_container.element_classes"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">element_classes</span></code></a> property, which is a cell array populated by the  constructor with handles to constructors for the elements. This means that a container subclass can, by overriding its constructor, modify the list of element classes provided by its parent.</p>
+<p>The elements are instantiated by a call to the container object’s <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code> method, so the resulting set can be customized at runtime by modifying the list in <a class="reference internal" href="../ref-manual/classes/mp/element_container.html#mp.element_container.element_classes" title="mp.element_container.element_classes"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">element_classes</span></code></a> after the container object is created and before its <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code> method is called.</p>
+<p>This is done using <strong>element class modifiers</strong>, specified either by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extensions or <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options. There are 3 types of element class modifiers, for adding, deleting or replacing an entry in an <a class="reference internal" href="../ref-manual/classes/mp/element_container.html#mp.element_container.element_classes" title="mp.element_container.element_classes"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">element_classes</span></code></a> property. The 3 types are described in <a class="reference internal" href="#tab-element-class-modifiers"><span class="std std-numref">Table 9.2</span></a>.</p>
+<span id="tab-element-class-modifiers"></span><table class="longtable docutils align-default" id="id8">
+<caption><span class="caption-number">Table 9.2 </span><span class="caption-text">Element Class Modifiers</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 33.0%" />
+<col style="width: 57.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Action</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>add</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&#64;new_class</span></code></p></td>
+<td><p>Appends <code class="docutils literal notranslate"><span class="pre">&#64;new_class</span></code> to the end of the list.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>delete</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'old_class'</span></code></p></td>
+<td><p>For each element <code class="docutils literal notranslate"><span class="pre">E</span></code> in the list, if <code class="code highlight ml matlab docutils literal highlight-matlab"><span class="nb">isa</span><span class="p">(</span><span class="n">E</span><span class="p">(),</span><span class="w"> </span><span class="s">&#39;old_class&#39;</span><span class="p">)</span></code> is true, element <code class="docutils literal notranslate"><span class="pre">E</span></code> is deleted from the list.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>replace</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{&#64;new_class,</span> <span class="pre">'old_class'}</span></code></p></td>
+<td><p>For each element <code class="docutils literal notranslate"><span class="pre">E</span></code> in the list, if <code class="code highlight ml matlab docutils literal highlight-matlab"><span class="nb">isa</span><span class="p">(</span><span class="n">E</span><span class="p">(),</span><span class="w"> </span><span class="s">&#39;old_class&#39;</span><span class="p">)</span></code> is true, element <code class="docutils literal notranslate"><span class="pre">E</span></code> is replaced with <code class="docutils literal notranslate"><span class="pre">&#64;new_class</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Typically, multiple element class modifiers can be provided in a cell array and they are processed sequentially to modify the existing list by the <a class="reference internal" href="../ref-manual/classes/mp/element_container.html#mp.element_container.modify_element_classes" title="mp.element_container.modify_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">modify_element_classes()</span></code></a> from <a class="reference internal" href="../ref-manual/classes/mp/element_container.html#mp.element_container" title="mp.element_container"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.element_container</span></code></a>.</p>
+</section>
+</section>
+<section id="customization-via-matpower-options">
+<h2><span class="section-number">9.2. </span>Customization via <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Options<a class="headerlink" href="#customization-via-matpower-options" title="Link to this heading"></a></h2>
+<p>In addition to the <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options previously available that affect the formulation of the problem (e.g. polar vs. cartesian voltage representation, or current vs. power balance), there are several experimental options that can be used to directly modify the classes coming from the default class selection process outlined above. These options, summarized in <a class="reference internal" href="#tab-custom-class-options"><span class="std std-numref">Table 9.3</span></a>, are specified by assigning them directly to an existing <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct <code class="docutils literal notranslate"><span class="pre">mpopt</span></code> as optional fields in <code class="docutils literal notranslate"><span class="pre">mpopt.exp</span></code>. They must be assigned directly, since <code class="xref mat mat-func docutils literal notranslate"><span class="pre">mpoption()</span></code> does not recognize them.</p>
+<span id="tab-custom-class-options"></span><table class="longtable docutils align-default" id="id9">
+<caption><span class="caption-number">Table 9.3 </span><span class="caption-text">Class Customization Options</span><a class="headerlink" href="#id9" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dm_converter_class</span></code></p></td>
+<td><p>function handle for data model converter constructor</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data_model_class</span></code></p></td>
+<td><p>function handle for data model constructor</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">network_model_class</span></code></p></td>
+<td><p>function handle for network model constructor</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">math_model_class</span></code></p></td>
+<td><p>function handle for math model constructor</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dmc_element_classes</span></code></p></td>
+<td><p>element class modifier(s) <a class="footnote-reference brackets" href="#id5" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> for data model converter elements</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dm_element_classes</span></code></p></td>
+<td><p>element class modifier(s) <a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> for data model elements</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nm_element_classes</span></code></p></td>
+<td><p>element class modifier(s) <a class="footnote-reference brackets" href="#id5" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> for network model elements</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mm_element_classes</span></code></p></td>
+<td><p>element class modifier(s) <a class="footnote-reference brackets" href="#id5" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> for math model elements</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">exclude_elements</span></code></p></td>
+<td><p>cell array of names of elements to exclude from all four container objects, i.e. char arrays that match the <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">name</span></code> property of the element(s) to be excluded</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="matpower-extensions">
+<span id="sec-extensions"></span><h2><span class="section-number">9.3. </span><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions<a class="headerlink" href="#matpower-extensions" title="Link to this heading"></a></h2>
+<p>The <em>flexible</em> <span class="raw-html"><em>M<span style="font-size:smaller">ATPOWER</span></em></span> <em>framework</em> summarized in <a class="reference internal" href="architecture.html#sec-two-frameworks"><span class="std std-numref">Section 3.3</span></a> introduces a <span class="raw-html"><strong>M<span style="font-size:smaller">ATPOWER</span></strong></span> <strong>extension</strong> API as a way to bundle a set of class additions and modifications together into a single named package.</p>
+<p>For example, the <a class="reference internal" href="../ref-manual/classes/mp/xt_reserves.html#mp.xt_reserves" title="mp.xt_reserves"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_reserves</span></code></a> class and those it references, adds co-optimization of fixed zonal reserves to the standard OPF problem, as previously implemented by <code class="xref mat mat-func docutils literal notranslate"><span class="pre">toggle_reserves()</span></code> and <code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_opf_w_res()</span></code> in <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> 7.1 and earlier using its legacy OPF callback functions. To invoke an OPF with the <a class="reference internal" href="../ref-manual/classes/mp/xt_reserves.html#mp.xt_reserves" title="mp.xt_reserves"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_reserves</span></code></a> extension, you simply pass the extension object as an optional argument into the <a class="reference internal" href="../ref-manual/functions/run_opf.html#run_opf" title="run_opf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_opf()</span></code></a> function.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">run_opf</span><span class="p">(</span><span class="n">mpc</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="s">&#39;mpx&#39;</span><span class="p">,</span> <span class="n">mp</span><span class="p">.</span><span class="n">xt_reserves</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>A <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extension is a subclass of <a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>, which implements a very simple interface consisting of nine methods. Five of them return a single class constructor handle, and the other four return a cell array of element class modifiers, described above in <a class="reference internal" href="#tab-element-class-modifiers"><span class="std std-numref">Table 9.2</span></a>.</p>
+<p>The methods are summarized in <a class="reference internal" href="#tab-ext-methods"><span class="std std-numref">Table 9.4</span></a></p>
+<span id="tab-ext-methods"></span><table class="longtable docutils align-default" id="id10">
+<caption><span class="caption-number">Table 9.4 </span><span class="caption-text"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extension Methods</span><a class="headerlink" href="#id10" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.task_class" title="mp.extension.task_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">task_class()</span></code></a></p></td>
+<td><p>Returns a handle to the constructor for the task object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.dm_converter_class" title="mp.extension.dm_converter_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class()</span></code></a></p></td>
+<td><p>Returns a handle to the constructor for the data model converter.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.data_model_class" title="mp.extension.data_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_class()</span></code></a></p></td>
+<td><p>Returns a handle to the constructor for the data model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.network_model_class" title="mp.extension.network_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_class()</span></code></a></p></td>
+<td><p>Returns a handle to the constructor for the network model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.math_model_class" title="mp.extension.math_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class()</span></code></a></p></td>
+<td><p>Returns a handle to the constructor for the math model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.dmc_element_classes" title="mp.extension.dmc_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dmc_element_classes()</span></code></a></p></td>
+<td><p>Returns a cell array of element class modifiers for data model converter elements.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.dm_element_classes" title="mp.extension.dm_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_element_classes()</span></code></a></p></td>
+<td><p>Returns a cell array of element class modifiers for data model elements.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.nm_element_classes" title="mp.extension.nm_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nm_element_classes()</span></code></a></p></td>
+<td><p>Returns a cell array of element class modifiers for network model elements.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.mm_element_classes" title="mp.extension.mm_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mm_element_classes()</span></code></a></p></td>
+<td><p>Returns a cell array of element class modifiers for math model elements.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Even something as complex as adding three-phase unbalanced buses, lines, loads and generators for multiple formulations of PF, CPF, and OPF problems can be implemented in terms of a single <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extension. Please see <a class="reference internal" href="../ref-manual/classes/mp/xt_3p.html#mp.xt_3p" title="mp.xt_3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_3p</span></code></a> for an example.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Either a single element class modifier or a cell array of element class modifiers.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="math-model.html" class="btn btn-neutral float-left" title="8. Mathematical Model Object" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="acknowledgments.html" class="btn btn-neutral float-right" title="10. Acknowledgments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

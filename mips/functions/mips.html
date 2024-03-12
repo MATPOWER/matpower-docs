@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mips &mdash; MATPOWER Documentation 8.0b1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d50bc636"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>window.MathJax = {"loader": {"load": ["[tex]/upgreek"]}, "tex": {"packages": {"[+]": ["upgreek"]}, "macros": {"dg": "\\sp\\dagger", "trans": ["{#1}^{\\mathsf{T}}", 1], "conj": ["{#1}^{\\ast}", 1], "hc": ["{#1}^{\\dg}", 1], "hconj": ["{#1}^{+}", 1], "diag": ["\\left[^\\smallsetminus{#1}_\\smallsetminus\\right]", 1], "diagg": ["\\left[\\smash{#1}\\right]", 1], "cdiag": ["\\conj{\\diag{#1}}", 1], "der": ["\\frac{\\partial{#1}}{\\partial{#2}}", 2], "dersx": ["\\frac{\\partial^2{#1}}{\\partial{#2}^2}", 2], "dersxy": ["\\frac{\\partial^2{#1}}{\\partial{#2}\\partial{#3}}", 3], "cscal": ["\\mathrm{#1}", 1], "rvec": ["{\\boldsymbol{#1}}", 1], "cvec": ["\\mathbf{#1}", 1], "rmat": ["{\\boldsymbol{#1}}", 1], "cmat": ["\\mathbf{#1}", 1], "rvecG": ["{\\boldsymbol{#1}}", 1], "cvecG": ["\\boldsymbol{#1}", 1], "rmatG": ["\\boldsymbol{\\mathit{#1}}", 1], "cmatG": ["\\mathbf{#1}", 1], "param": ["\\underline{#1}", 1], "ov": ["{\\overline{#1}}", 1], "zeros": ["\\rvec{0}", 0], "ones": ["\\rvec{1}_{#1}", 1], "onest": ["\\trans{\\rvec{1}}_{#1}", 1], "Id": ["\\diag{\\ones{#1}}", 1], "R": "\\mathbb{R}}         % requires \\usepackage{amsfonts|bbold", "C": "\\mathbb{C}}         % requires \\usepackage{amsfonts", "av": "\\cvec{a}", "bv": "\\cvec{b}", "cv": "\\cvec{c}", "f": "\\cscal{f}", "F": "\\cvec{f}", "g": "\\rvec{g}", "G": "\\cvec{g}", "h": "\\rvec{h}", "HH": "\\cvec{h}", "x": "\\rvec{x}", "y": "\\rvec{y}", "z": "\\rvec{z}", "X": "\\cvec{x}", "Z": "\\cvec{z}", "A": "\\cmat{A}", "B": "\\cmat{B}", "alphav": "\\rvecG{\\alpha}", "lam": "\\rvecG{\\lambda}", "lamh": "\\hat{\\lam}", "muv": "\\rvecG{\\mu}", "muhv": "\\hat{\\muv}", "vv": "\\rvec{v}", "vvi": ["\\cscal{v}_{#1}", 1], "V": "\\cvec{v}", "Vh": "\\hat{\\V}", "Vc": "\\conj{\\V}", "Vhc": "\\conj{\\Vh}", "dV": "\\diag{\\V}", "dVh": "\\diag{\\Vh}", "dVc": "\\diag{\\Vc}", "dVhc": "\\diag{\\Vhc}", "inV": "\\cvec{\\Lambda}", "inVh": "\\hat{\\inV}", "inVc": "\\conj{\\inV}", "inVhc": "\\conj{\\inVh}", "dinV": "\\diagg{\\inV}", "dinVh": "\\diagg{\\inVh}", "dinVc": "\\diagg{\\inVc}", "dinVhc": "\\diagg{\\inVhc}", "va": ["\\theta", 0], "vai": ["\\va_{#1}", 1], "Va": ["\\rvec{\\va}", 0], "Vah": ["\\hat{\\Va}", 0], "vm": ["\\nu", 0], "vmi": ["\\nu_{#1}", 1], "Vm": ["\\rvecG{\\nu}", 0], "dVm": "\\diag{\\Vm}", "dVmi": "\\dVm^{-1}", "Vmh": "\\hat{\\Vm}", "dVmh": "\\diag{\\Vmh}", "dVmhi": "\\dVmh^{-1}", "vr": "u", "vri": ["u_{#1}", 1], "vi": "w", "vii": ["w_{#1}", 1], "Vr": "\\rvec{u}", "Vi": "\\rvec{w}", "dVr": "\\diag{\\Vr}", "dVi": "\\diag{\\Vi}", "Vrh": "\\hat{\\Vr}", "Vih": "\\hat{\\Vi}", "dVrh": "\\diag{\\Vrh}", "dVih": "\\diag{\\Vih}", "E": "\\cvec{e}", "Eh": "\\hat{\\E}", "Ec": "\\conj{\\E}", "Ehc": "\\conj{\\Eh}", "dE": "\\diag{\\E}", "dEh": "\\diag{\\Eh}", "dEc": "\\diag{\\Ec}", "dEhc": "\\diag{\\Ehc}", "zr": "{z_r}", "zi": "{z_i}", "Zr": "{\\rvec{z}_r}", "Zi": "{\\rvec{z}_i}", "dlam": "\\diagg{\\lam}", "dlamh": "\\diagg{\\lamh}", "dlamva": "\\diagg{\\lam_\\va}", "dlamvm": "\\diagg{\\lam_\\vm}", "dlamvr": "\\diagg{\\lam_\\vr}", "dlamvi": "\\diagg{\\lam_\\vi}", "dlamzr": "\\diagg{\\lam_\\zr}", "dlamzi": "\\diagg{\\lam_\\zi}", "dlamhva": "\\diagg{\\lamh_\\va}", "dlamhvm": "\\diagg{\\lamh_\\vm}", "dlamhvr": "\\diagg{\\lamh_\\vr}", "dlamhvi": "\\diagg{\\lamh_\\vi}", "dlamhzr": "\\diagg{\\lamh_\\zr}", "dlamhzi": "\\diagg{\\lamh_\\zi}", "dmu": "\\diag{\\muv}", "dmuh": "\\diag{\\muhv}", "kk": "\\rvec{k}", "J": "\\param{\\rmat{J}}", "Jt": "\\trans{\\J}", "Jk": ["\\J_{\\kk_#1}", 1], "Ah": "\\hat{\\A}", "Fh": "\\hat{\\F}", "Gh": "\\hat{\\G}", "gh": "\\hat{\\g}", "fmax": "\\param{\\rvec{f}}_\\mathrm{max}", "gP": "\\g^P", "gPk": ["\\g^{P,#1}", 1], "fhmax": "\\hat{\\param{\\rvec{f}}}_\\mathrm{max}", "ghP": "\\gh^P", "ghPk": ["\\gh^{P,#1}", 1], "GS": "\\G^S", "GI": "\\G^I", "GSk": ["\\G^{S,#1}", 1], "GIk": ["\\G^{I,#1}", 1], "GSsys": "\\GSk{\\mathrm{sys}}", "GIsys": "\\GIk{\\mathrm{sys}}", "gPsys": "\\gPk{\\mathrm{sys}}", "GhS": "\\Gh^S", "GhI": "\\Gh^I", "GhSk": ["\\Gh^{S,#1}", 1], "GhIk": ["\\Gh^{I,#1}", 1], "GhSsys": "\\GhSk{\\mathrm{sys}}", "GhIsys": "\\GhIk{\\mathrm{sys}}", "ghPsys": "\\ghPk{\\mathrm{sys}}", "Ilin": "\\cvec{i}^{lin}", "Ilink": "\\cvec{i}^{lin, k}", "Ilinc": "\\conj{\\Ilin}", "dIlin": "\\diag{\\Ilin}", "dIlinc": "\\diag{\\Ilinc}", "Ilinh": "\\hat{{\\cvec{i}}}^{lin}", "Ilinhk": "\\hat{\\cvec{i}}^{lin, k}", "Ilinhc": "\\conj{\\Ilinh}", "dIlinh": "\\diag{\\Ilinh}", "dIlinhc": "\\diag{\\Ilinhc}", "Slin": "\\cvec{s}^{lin}", "Slink": "\\cvec{s}^{lin, k}", "Slinc": "\\conj{\\Slin}", "dSlin": "\\diag{\\Slin}", "dSlinc": "\\diag{\\Slinc}", "Slinh": "\\hat{\\cvec{s}}^{lin}", "Slinhk": "\\hat{\\cvec{s}}^{lin, k}", "Slinhc": "\\conj{\\Slinh}", "dSlinh": "\\diag{\\Slinh}", "dSlinhc": "\\diag{\\Slinhc}", "Inln": "\\cvec{i}^{nln}", "Inlnk": "\\cvec{i}^{nln, k}", "Snln": "\\cvec{s}^{nln}", "Snlnk": "\\cvec{s}^{nln, k}", "Inlnh": "\\hat{\\cvec{i}}^{nln}", "Inlnhk": "\\hat{\\cvec{i}}^{nln, k}", "Snlnh": "\\hat{\\cvec{s}}^{nln}", "Snlnhk": "\\hat{\\cvec{s}}^{nln, k}", "Aa": "\\param{\\rmat{A}}", "BB": "\\param{\\rmat{B}}", "CC": "\\param{\\rmat{C}}", "DD": "\\param{\\rmat{D}}", "YY": "\\param{\\cmat{Y}}", "iv": "\\param{\\cvec{i}}", "pv": "\\param{\\rvec{p}}", "sv": "\\param{\\cvec{s}}", "KK": "\\param{\\rmat{K}}", "LL": "\\param{\\cmat{L}}", "MM": "\\param{\\cmat{M}}", "NN": "\\param{\\cmat{N}}", "BBh": "\\hat{\\BB}", "YYh": "\\hat{\\YY}", "ivh": "\\hat{\\iv}", "pvh": "\\hat{\\pv}", "svh": "\\hat{\\sv}", "CCh": "\\hat{\\CC}", "KKh": "\\hat{\\KK}", "LLh": "\\hat{\\LL}", "MMh": "\\hat{\\MM}", "NNh": "\\hat{\\NN}", "AT": "\\trans{\\Aa}", "CT": "\\trans{\\CC}", "DT": "\\trans{\\DD}", "Ap": "\\Aa'", "Cp": "\\CC\\:\\!'", "Dp": "\\DD'", "ApT": "\\trans{\\Ap}", "CpT": "\\trans{\\Cp}", "DpT": "\\trans{\\Dp}", "ChT": "\\trans{\\CCh}", "Lc": "\\conj{\\LL}", "LcT": "\\trans{\\Lc}", "Lhc": "\\conj{\\LLh}", "LhcT": "\\trans{\\Lhc}", "MT": "\\trans{\\MM}", "Mc": "\\conj{\\MM}", "McT": "\\trans{\\Mc}", "dMTlam": "\\diag{\\MT \\lam}", "MhT": "\\trans{\\MMh}", "Mhc": "\\conj{\\MMh}", "MhcT": "\\trans{\\Mhc}", "dMhTlam": "\\diag{\\MhT \\lamh}", "Nc": "\\conj{\\NN}", "NcT": "\\trans{\\Nc}", "Nhc": "\\conj{\\NNh}", "NhcT": "\\trans{\\Nhc}", "YT": "\\trans{\\YY}", "Yc": "\\conj{\\YY}", "YcT": "\\trans{\\Yc}", "dYTlam": "\\diag{\\YT \\lam}", "YhT": "\\trans{\\YYh}", "Yhc": "\\conj{\\YYh}", "YhcT": "\\trans{\\Yhc}", "dYhTlam": "\\diag{\\YhT \\lamh}", "I": "\\cvec{i}^S", "s": "\\cvec{s}^I", "Ih": "\\hat{\\cvec{i}}^S", "Sh": "\\hat{\\cvec{s}}^I", "AtX": "\\AT \\X", "CtV": "\\CT \\V", "dCtV": "\\diag{\\CtV}", "DtZ": "\\DT \\Z", "ApTx": "\\ApT \\x", "CpTv": "\\CpT \\vv", "DpTz": "\\DpT \\z"}}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="mplinsolve" href="mplinsolve.html" />
+    <link rel="prev" title="Reference" href="../reference.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">Home (matpower.org)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ref-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">MIPS User’s Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#reference">Reference</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../reference.html">Reference</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../reference.html#main-mips-functions">Main MIPS Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference.html#other-function">Other Function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference.html#mips-examples">MIPS Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference.html#mips-tests">MIPS Tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference.html#private-functions">Private Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">MIPS User’s Manual</a></li>
+          <li class="breadcrumb-item"><a href="../reference.html">Reference</a></li>
+      <li class="breadcrumb-item active">mips</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/mips/functions/mips.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../reference.html" class="btn btn-neutral float-left" title="Reference" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mplinsolve.html" class="btn btn-neutral float-right" title="mplinsolve" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p><span class="raw-html"><div style="float: right"><a href="https://github.com/MATPOWER/mips/blob/master/lib/mips.m" target=_blank><svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg></a></div></span></p>
+<section id="mips">
+<h1>mips<a class="headerlink" href="#mips" title="Link to this heading"></a></h1>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="mips.mips">
+<span class="sig-name descname"><span class="pre">mips</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">f_fcn</span></em>, <em class="sig-param"><span class="pre">x0</span></em>, <em class="sig-param"><span class="pre">A</span></em>, <em class="sig-param"><span class="pre">l</span></em>, <em class="sig-param"><span class="pre">u</span></em>, <em class="sig-param"><span class="pre">xmin</span></em>, <em class="sig-param"><span class="pre">xmax</span></em>, <em class="sig-param"><span class="pre">gh_fcn</span></em>, <em class="sig-param"><span class="pre">hess_fcn</span></em>, <em class="sig-param"><span class="pre">opt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mips.mips" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mips.mips" title="mips.mips"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">mips()</span></code></a> - MATPOWER Interior Point Solver (<span class="raw-html"><a href="https://github.com/MATPOWER/mips">MIPS</a></span>).</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">exitflag</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">lambda</span><span class="p">]</span> <span class="p">=</span> <span class="p">...</span>
+    <span class="n">mips</span><span class="p">(</span><span class="n">f_fcn</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">gh_fcn</span><span class="p">,</span> <span class="n">hess_fcn</span><span class="p">,</span> <span class="n">opt</span><span class="p">);</span>
+
+<span class="n">x</span> <span class="p">=</span> <span class="n">mips</span><span class="p">(</span><span class="n">f_fcn</span><span class="p">,</span> <span class="n">x0</span><span class="p">)</span>
+<span class="n">x</span> <span class="p">=</span> <span class="n">mips</span><span class="p">(</span><span class="n">f_fcn</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+<span class="n">x</span> <span class="p">=</span> <span class="n">mips</span><span class="p">(</span><span class="n">f_fcn</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
+<span class="n">x</span> <span class="p">=</span> <span class="n">mips</span><span class="p">(</span><span class="n">f_fcn</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">xmin</span><span class="p">)</span>
+<span class="n">x</span> <span class="p">=</span> <span class="n">mips</span><span class="p">(</span><span class="n">f_fcn</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">)</span>
+<span class="n">x</span> <span class="p">=</span> <span class="n">mips</span><span class="p">(</span><span class="n">f_fcn</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">gh_fcn</span><span class="p">,</span> <span class="n">hess_fcn</span><span class="p">)</span>
+<span class="n">x</span> <span class="p">=</span> <span class="n">mips</span><span class="p">(</span><span class="n">f_fcn</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">gh_fcn</span><span class="p">,</span> <span class="n">hess_fcn</span><span class="p">,</span> <span class="n">opt</span><span class="p">)</span>
+<span class="n">x</span> <span class="p">=</span> <span class="n">mips</span><span class="p">(</span><span class="n">problem</span><span class="p">)</span>
+        <span class="n">where</span> <span class="n">problem</span> <span class="n">is</span> <span class="n">a</span> <span class="nb">struct</span> <span class="n">with</span> <span class="n">fields</span><span class="p">:</span>
+            <span class="n">f_fcn</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">gh_fcn</span><span class="p">,</span> <span class="n">hess_fcn</span><span class="p">,</span> <span class="n">opt</span>
+            <span class="nb">all</span> <span class="n">fields</span> <span class="n">except</span> <span class="n">f_fcn</span> <span class="nb">and</span> <span class="n">x0</span> <span class="n">are</span> <span class="n">optional</span>
+<span class="n">x</span> <span class="p">=</span> <span class="n">mips</span><span class="p">(...)</span>
+<span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="p">=</span> <span class="n">mips</span><span class="p">(...)</span>
+<span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">exitflag</span><span class="p">]</span> <span class="p">=</span> <span class="n">mips</span><span class="p">(...)</span>
+<span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">exitflag</span><span class="p">,</span> <span class="n">output</span><span class="p">]</span> <span class="p">=</span> <span class="n">mips</span><span class="p">(...)</span>
+<span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">exitflag</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">lambda</span><span class="p">]</span> <span class="p">=</span> <span class="n">mips</span><span class="p">(...)</span>
+</pre></div>
+</div>
+<p>Primal-dual interior point method for NLP (nonlinear programming).
+Minimize a function <span class="math notranslate nohighlight">\(f(\x)\)</span> beginning from a starting point
+<code class="docutils literal notranslate"><span class="pre">x0</span></code>, subject to optional linear and nonlinear constraints and
+variable bounds.</p>
+<div class="math notranslate nohighlight" id="equation-eq-mips-obj-fcn">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-mips-obj-fcn" title="Link to this equation"></a></span>\[\min_\x f(\x)\]</div>
+<p>subject to</p>
+<div class="math notranslate nohighlight" id="equation-mips-functions-mips-0">
+<span class="eqno">(2)<a class="headerlink" href="#equation-mips-functions-mips-0" title="Link to this equation"></a></span>\[\g(\x) = 0\]</div>
+<div class="math notranslate nohighlight" id="equation-mips-functions-mips-1">
+<span class="eqno">(3)<a class="headerlink" href="#equation-mips-functions-mips-1" title="Link to this equation"></a></span>\[\h(\x) \le 0\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-mips-lin-constraint">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-mips-lin-constraint" title="Link to this equation"></a></span>\[\param{\rvec{l}} \le \param{\cmat{A}} \x \le \param{\rvec{u}}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-mips-var-bounds">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-mips-var-bounds" title="Link to this equation"></a></span>\[\param{\x}_\mathrm{min} \le \x \le \param{\x}_\mathrm{max}\]</div>
+<p>where <a class="reference internal" href="#equation-eq-mips-obj-fcn">(1)</a>–<a class="reference internal" href="#equation-eq-mips-var-bounds">(5)</a> are,
+respectively, the objective function, nonlinear equality constraints,
+nonlinear inequality constraints, linear constraints, and variable bounds.</p>
+<dl class="field-list">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul>
+<li><p><em>(all optional except</em> <code class="docutils literal notranslate"><span class="pre">f_fcn</span></code> <em>and</em> <code class="docutils literal notranslate"><span class="pre">x0</span></code> <em>)</em></p></li>
+<li><p><strong>f_fcn</strong> (<em>function handle</em>) – handle to function that evaluates the
+objective function <span class="math notranslate nohighlight">\(f(\x)\)</span>, its gradients and Hessian for
+a given value of <span class="math notranslate nohighlight">\(x\)</span>. If there are nonlinear constraints,
+the Hessian information is provided by the <code class="docutils literal notranslate"><span class="pre">hess_fcn</span></code> function
+passed in the 9th argument and is not required here. Calling
+syntax for this function:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">d2f</span><span class="p">]</span> <span class="p">=</span> <span class="n">f_fcn</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>x0</strong> (<em>double</em>) – starting value of optimization vector <span class="math notranslate nohighlight">\(\x\)</span></p></li>
+<li><p><strong>A, l, u</strong> (<em>double</em>) – <em>(optional, respective defaults</em>
+<span class="math notranslate nohighlight">\([empty, -\infty, +\infty]\)</span> <em>)</em> matrix <span class="math notranslate nohighlight">\(\param{\cmat{A}}\)</span>
+and vectors <span class="math notranslate nohighlight">\(\param{\rvec{l}}\)</span> and <span class="math notranslate nohighlight">\(\param{\rvec{u}}\)</span>
+to define the linear constraints in <a class="reference internal" href="#equation-eq-mips-lin-constraint">(4)</a></p></li>
+<li><p><strong>xmin, xmax</strong> (<em>double</em>) – <em>(optional, respective defaults</em>
+<span class="math notranslate nohighlight">\([-\infty, +\infty]\)</span> <em>)</em>  lower and upper bounds,
+<span class="math notranslate nohighlight">\(\param{\x}_\mathrm{min}\)</span> and <span class="math notranslate nohighlight">\(\param{\x}_\mathrm{max}\)</span>,
+on the optimization variables <span class="math notranslate nohighlight">\(\x\)</span></p></li>
+<li><p><strong>gh_fcn</strong> (<em>function handle</em>) – <em>(optional)</em> handle to function that
+evaluates the nonlinear constraints <span class="math notranslate nohighlight">\(\g(\x)\)</span> and <span class="math notranslate nohighlight">\(\h(\x)\)</span>
+and their gradients for a given value of <span class="math notranslate nohighlight">\(x\)</span>. Calling syntax
+for this function is:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">h</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">dh</span><span class="p">,</span> <span class="n">dg</span><span class="p">]</span> <span class="p">=</span> <span class="n">gh_fcn</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where the columns of <code class="docutils literal notranslate"><span class="pre">dh</span></code> and <code class="docutils literal notranslate"><span class="pre">dg</span></code> are the gradients of the
+corresponding elements of <code class="docutils literal notranslate"><span class="pre">h</span></code> and <code class="docutils literal notranslate"><span class="pre">g</span></code>, i.e. <code class="docutils literal notranslate"><span class="pre">dh</span></code> and <code class="docutils literal notranslate"><span class="pre">dg</span></code>
+are transposes of the Jacobians of <code class="docutils literal notranslate"><span class="pre">h</span></code> and <code class="docutils literal notranslate"><span class="pre">g</span></code>, respectively.</p>
+</li>
+<li><p><strong>hess_fcn</strong> (<em>function handle</em>) – <em>(optional)</em> handle to function that
+computes the Hessian of the Lagrangian for given values of
+<span class="math notranslate nohighlight">\(\x\)</span>, <span class="math notranslate nohighlight">\(\lam\)</span> and <span class="math notranslate nohighlight">\(\muv\)</span>, where
+<span class="math notranslate nohighlight">\(\lam\)</span> and <span class="math notranslate nohighlight">\(\muv\)</span> are the multipliers on the equality
+and inequality constraints, <span class="math notranslate nohighlight">\(\g\)</span> and <span class="math notranslate nohighlight">\(\h\)</span>, respectively.
+The calling syntax for this function is:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">Lxx</span> <span class="p">=</span> <span class="n">hess_fcn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where <span class="math notranslate nohighlight">\(\lam\)</span> = <code class="docutils literal notranslate"><span class="pre">lam.eqnonlin</span></code> and <span class="math notranslate nohighlight">\(\muv\)</span> =
+<code class="docutils literal notranslate"><span class="pre">lam.ineqnonlin</span></code>.</p>
+</li>
+<li><p><strong>opt</strong> (<em>struct</em>) – <em>(optional)</em> options structure with the following fields,
+all of which are also optional <em>(default values shown in
+parentheses)</em></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">verbose</span></code> <em>(0)</em> - controls level of progress output displayed</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>0 = no progress output</p></li>
+<li><p>1 = some progress output</p></li>
+<li><p>2 = verbose progress output</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linsolver</span></code> <em>(</em> <code class="docutils literal notranslate"><span class="pre">''</span></code> <em>)</em> - linear system solver for solving
+update steps</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">''</span></code> = default solver (currently same as <code class="docutils literal notranslate"><span class="pre">'\'</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'\'</span></code> = built-in <code class="docutils literal notranslate"><span class="pre">\</span></code> operator</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'PARDISO'</span></code> = PARDISO solver <em>(if available)</em></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">feastol</span></code> <em>(1e-6)</em> - termination tolerance for feasibility
+condition</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gradtol</span></code> <em>(1e-6)</em> - termination tolerance for gradient
+condition</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">comptol</span></code> <em>(1e-6)</em> - termination tolerance for complementarity
+condition</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">costtol</span></code> <em>(1e-6)</em> - termination tolerance for cost condition</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_it</span></code> <em>(150)</em> - maximum number of iterations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">step_control</span></code> <em>(0)</em> - set to 1 to enable step-size control</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sc.red_it</span></code> <em>(20)</em> - maximum number of step-size reductions if
+step-control is on</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cost_mult</span></code> <em>(1)</em> - cost multiplier used to scale the objective
+function for improved conditioning. <em>Note: This value is
+also passed as the 3rd argument to the Hessian evaluation
+function so that it can appropriately scale the
+objective function term in the Hessian of the
+Lagrangian.</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xi</span></code> <em>(0.99995)</em> - constant <span class="math notranslate nohighlight">\(\xi\)</span> used in <span class="math notranslate nohighlight">\(alpha\)</span>
+updates <a class="footnote-reference brackets" href="#id8" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sigma</span></code> <em>(0.1)</em> - centering parameter <span class="math notranslate nohighlight">\(\sigma\)</span> <a class="footnote-reference brackets" href="#id8" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">z0</span></code> <em>(1)</em> - used to initialize slack variables <a class="footnote-reference brackets" href="#id8" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alpha_min</span></code> <em>(1e-8)</em> - returns <code class="docutils literal notranslate"><span class="pre">exitflag</span></code> = -1 if either alpha
+parameter, <span class="math notranslate nohighlight">\(\alpha_p\)</span> or <span class="math notranslate nohighlight">\(\alpha_d\)</span> becomes smaller
+than this value <a class="footnote-reference brackets" href="#id8" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rho_min</span></code> <em>(0.95)</em> - lower bound on <code class="docutils literal notranslate"><span class="pre">rho_t</span></code> <a class="footnote-reference brackets" href="#id8" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rho_max</span></code> <em>(1.05)</em> - upper bound on <code class="docutils literal notranslate"><span class="pre">rho_t</span></code> <a class="footnote-reference brackets" href="#id8" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_threshold</span></code> <em>(1e-5)</em> - KT multipliers smaller than this value
+for non-binding constraints are forced to zero</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_stepsize</span></code> <em>(1e10)</em> - returns <code class="docutils literal notranslate"><span class="pre">exitflag</span></code> = -1 if the
+2-norm of the reduced Newton step exceeds this value <a class="footnote-reference brackets" href="#id8" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+</ul>
+</li>
+<li><p><strong>problem</strong> (<em>struct</em>) – The inputs can alternatively be supplied in a single
+<code class="docutils literal notranslate"><span class="pre">problem</span></code> struct with fields corresponding to the input arguments
+described above, namely, <code class="docutils literal notranslate"><span class="pre">f_fcn</span></code>, <code class="docutils literal notranslate"><span class="pre">x0</span></code>, <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">l</span></code>, <code class="docutils literal notranslate"><span class="pre">u</span></code>,
+<code class="docutils literal notranslate"><span class="pre">xmin</span></code>, <code class="docutils literal notranslate"><span class="pre">xmax</span></code>, <code class="docutils literal notranslate"><span class="pre">gh_fcn</span></code>, <code class="docutils literal notranslate"><span class="pre">hess_fcn</span></code>, and <code class="docutils literal notranslate"><span class="pre">opt</span></code>, where
+all except <code class="docutils literal notranslate"><span class="pre">f_fcn</span></code> and <code class="docutils literal notranslate"><span class="pre">x0</span></code> are optional</p></li>
+</ul>
+</dd>
+</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id8" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>See the “Primal-Dual Interior Point Algorithm” chapter in the
+<span class="raw-html"><a href="https://matpower.org/docs/MIPS-manual-1.5.pdf">MIPS User's Manual</a></span> for details.</p>
+</aside>
+</aside>
+<dl class="field-list simple">
+<dt class="field-odd">Outputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>double</em>) – solution vector, <span class="math notranslate nohighlight">\(\x\)</span></p></li>
+<li><p><strong>f</strong> (<em>double</em>) – final objective function value, <span class="math notranslate nohighlight">\(f(\x)\)</span></p></li>
+<li><p><strong>exitflag</strong> (<em>integer</em>) – exit flag</p>
+<ul>
+<li><p>1 = first order optimality conditions satisfied</p></li>
+<li><p>0 = maximum number of iterations reached</p></li>
+<li><p>-1 = numerically failed</p></li>
+</ul>
+</li>
+<li><p><strong>output</strong> (<em>struct</em>) – output struct with fields:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">iterations</span></code> - number of iterations performed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hist</span></code> - struct array with trajectories of the following:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">feascond</span></code>, <code class="docutils literal notranslate"><span class="pre">gradcond</span></code>, <code class="docutils literal notranslate"><span class="pre">compcond</span></code>, <code class="docutils literal notranslate"><span class="pre">costcond</span></code>,
+<code class="docutils literal notranslate"><span class="pre">gamma</span></code>, <code class="docutils literal notranslate"><span class="pre">stepsize</span></code>, <code class="docutils literal notranslate"><span class="pre">obj</span></code>, <code class="docutils literal notranslate"><span class="pre">alphap</span></code>, <code class="docutils literal notranslate"><span class="pre">alphad</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">message</span></code> - exit message</p></li>
+</ul>
+</li>
+<li><p><strong>lambda</strong> (<em>struct</em>) – struct containing the Langrange and Kuhn-Tucker
+multipliers on the constraints, with fields:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">eqnonlin</span></code> - nonlinear equality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ineqnonlin</span></code> - nonlinear inequality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_l</span></code> - lower (left-hand) limit on linear constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_u</span></code> - upper (right-hand) limit on linear constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lower</span></code> - lower bound on optimization variables</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">upper</span></code> - upper bound on optimization variables</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+<p><strong>Note:</strong> The calling syntax is almost identical to that of <code class="xref mat mat-func docutils literal notranslate"><span class="pre">fmincon()</span></code>
+from MathWorks’ Optimization Toolbox. The main difference is that
+the linear constraints are specified with <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">l</span></code>, <code class="docutils literal notranslate"><span class="pre">u</span></code> instead of
+<code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, <code class="docutils literal notranslate"><span class="pre">Aeq</span></code>, <code class="docutils literal notranslate"><span class="pre">Beq</span></code>. The functions for evaluating the objective
+function, constraints and Hessian are identical.</p>
+<p><strong>Example:</strong> (problem from <a class="reference external" href="https://en.wikipedia.org/wiki/Nonlinear_programming">https://en.wikipedia.org/wiki/Nonlinear_programming</a>):</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[f, df, d2f] = f2</span><span class="p">(</span>x<span class="p">)</span>
+<span class="n">f</span> <span class="p">=</span> <span class="o">-</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="k">if</span> <span class="nb">nargout</span> <span class="o">&gt;</span> <span class="mi">1</span>           <span class="c">% gradient is required</span>
+    <span class="n">df</span> <span class="p">=</span> <span class="o">-</span><span class="p">[</span><span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">x</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">)];</span>
+    <span class="k">if</span> <span class="nb">nargout</span> <span class="o">&gt;</span> <span class="mi">2</span>       <span class="c">% Hessian is required</span>
+        <span class="n">d2f</span> <span class="p">=</span> <span class="o">-</span><span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span><span class="p">];</span>   <span class="c">% actually not used since</span>
+    <span class="k">end</span>                                 <span class="c">% &#39;hess_fcn&#39; is provided</span>
+<span class="k">end</span>
+
+<span class="k">function</span><span class="w"> </span><span class="nf">[h, g, dh, dg] = gh2</span><span class="p">(</span>x<span class="p">)</span>
+<span class="n">h</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="o">.^</span><span class="mi">2</span> <span class="o">+</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span> <span class="o">-</span><span class="mi">10</span><span class="p">];</span>
+<span class="n">dh</span> <span class="p">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">[</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="o">-</span><span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="n">x</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">x</span><span class="p">(</span><span class="mi">3</span><span class="p">)];</span>
+<span class="n">g</span> <span class="p">=</span> <span class="p">[];</span> <span class="n">dg</span> <span class="p">=</span> <span class="p">[];</span>
+
+<span class="k">function</span><span class="w"> </span>Lxx<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">hess2</span><span class="p">(</span>x, lam, cost_mult<span class="p">)</span>
+<span class="k">if</span> <span class="nb">nargin</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">,</span> <span class="n">cost_mult</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span> <span class="k">end</span>
+<span class="n">mu</span> <span class="p">=</span> <span class="n">lam</span><span class="p">.</span><span class="n">ineqnonlin</span><span class="p">;</span>
+<span class="n">Lxx</span> <span class="p">=</span> <span class="n">cost_mult</span> <span class="o">*</span> <span class="p">[</span><span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span><span class="p">;</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">...</span>
+        <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="p">[</span><span class="mi">1</span> <span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">mu</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">2</span><span class="o">*</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span> <span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">mu</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">2</span><span class="o">*</span><span class="p">[</span><span class="mi">1</span> <span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">mu</span><span class="p">];</span>
+
+<span class="n">problem</span> <span class="p">=</span> <span class="nb">struct</span><span class="p">(</span> <span class="p">...</span>
+    <span class="s">&#39;f_fcn&#39;</span><span class="p">,</span>    <span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="n">f2</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">...</span>
+    <span class="s">&#39;gh_fcn&#39;</span><span class="p">,</span>   <span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="n">gh2</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">...</span>
+    <span class="s">&#39;hess_fcn&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="n">x</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">cost_mult</span><span class="p">)</span><span class="n">hess2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">cost_mult</span><span class="p">),</span> <span class="p">...</span>
+    <span class="s">&#39;x0&#39;</span><span class="p">,</span>       <span class="p">[</span><span class="mi">1</span><span class="p">;</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">0</span><span class="p">],</span> <span class="p">...</span>
+    <span class="s">&#39;opt&#39;</span><span class="p">,</span>      <span class="nb">struct</span><span class="p">(</span><span class="s">&#39;verbose&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="p">...</span>
+<span class="p">);</span>
+<span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">exitflag</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">lambda</span><span class="p">]</span> <span class="p">=</span> <span class="n">mips</span><span class="p">(</span><span class="n">problem</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Ported by Ray Zimmerman from C code written by H. Wang for his
+PhD dissertation:</p>
+<blockquote>
+<div><p>H. Wang, <em>On the Computation and Application of Multi-period
+Security-Constrained Optimal Power Flow for Real-time
+Electricity Market Operations,</em> Ph.D. thesis, Electrical and
+Computer Engineering, Cornell University, May 2007.</p>
+</div></blockquote>
+<p>Please see also:</p>
+<blockquote>
+<div><p>H. Wang, C. E. Murillo-Sanchez, R. D. Zimmerman, R. J. Thomas,
+“On Computational Issues of Market-Based Optimal Power Flow”,
+<em>IEEE Transactions on Power Systems</em>, Vol. 22, No. 3, Aug. 2007,
+pp. 1185-1193. <a class="reference external" href="https://doi.org/10.1109/TPWRS.2007.901301">doi: 10.1109/TPWRS.2007.901301</a></p>
+</div></blockquote>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../reference.html" class="btn btn-neutral float-left" title="Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mplinsolve.html" class="btn btn-neutral float-right" title="mplinsolve" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

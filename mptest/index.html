@@ -56,7 +56,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ref-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="raw-html">MP-Test</span> User’s Manual</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MP-Test User’s Manual</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a><ul>
@@ -68,7 +68,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#acknowledgments">Acknowledgments</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../mips/index.html"><span class="raw-html">MIPS</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
 </ul>
@@ -100,7 +100,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="raw-html">MP-Test</span> User’s Manual</li>
+      <li class="breadcrumb-item active">MP-Test User’s Manual</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/mptest/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -113,8 +113,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="mptest-user-s-manual">
-<h1><span class="raw-html">MP-Test</span> User’s Manual<a class="headerlink" href="#mptest-user-s-manual" title="Link to this heading"></a></h1>
+  <section id="mp-test-user-s-manual">
+<h1>MP-Test User’s Manual<a class="headerlink" href="#mp-test-user-s-manual" title="Link to this heading"></a></h1>
 <p><span class="raw-html"><a href="https://github.com/MATPOWER/mptest">MP-Test</a></span> is a set of functions for implementing unit testing in <span class="raw-html"><a href="https://www.mathworks.com">M<span style="font-size:smaller">ATLAB</span></a></span> or
 <span class="raw-html"><a href="https://www.octave.org">GNU Octave</a></span>. It was initially developed for <span class="raw-html"><a href="https://matpower.org">M<span style="font-size:smaller">ATPOWER</span></a></span>, and is used by
 <span class="raw-html"><a href="https://matpower.org">M<span style="font-size:smaller">ATPOWER</span></a></span>, <span class="raw-html"><b>M</b><span style="font-size:smaller">ATPOWER</span> <b>I</b>nterior <b>P</b>oint <b>S</b>olver</span> (<span class="raw-html"><a href="https://github.com/MATPOWER/mips">MIPS</a></span>), <span class="raw-html"><a href="https://github.com/MATPOWER/mp-opt-model">MP-Opt-Model</a></span>, and <span class="raw-html"><b>M</b><span style="font-size:smaller">ATPOWER</span> <b>O</b>ptimal <b>S</b>cheduling <b>T</b>ool</span> (<span class="raw-html"><a href="https://github.com/MATPOWER/most">MOST</a></span>),
@@ -128,10 +128,10 @@ can skip directly to step 3 to verify.</em></p>
 <p>Installation and use of <span class="raw-html"><a href="https://github.com/MATPOWER/mptest">MP-Test</a></span> requires familiarity with the basic operation
 of MATLAB or Octave, including setting up your MATLAB/Octave path.</p>
 <ol class="arabic">
-<li><p>Clone the repository or download and extract the zip file of the <span class="raw-html">MP-Test</span>
+<li><p>Clone the repository or download and extract the zip file of the MP-Test
 distribution from the <span class="raw-html"><a href="https://github.com/MATPOWER/mptest">MP-Test</a></span> <a class="reference external" href="https://github.com/MATPOWER/mptest">project page</a> to the location of your
 choice. The files in the resulting <code class="docutils literal notranslate"><span class="pre">mptest</span></code> or <code class="docutils literal notranslate"><span class="pre">mptestXXX</span></code> directory,
-where <code class="docutils literal notranslate"><span class="pre">XXX</span></code> depends on the version of <span class="raw-html">MP-Test</span>, should not need to be
+where <code class="docutils literal notranslate"><span class="pre">XXX</span></code> depends on the version of MP-Test, should not need to be
 modified, so it is recommended that they be kept separate from your
 own code. We will use <code class="samp docutils literal notranslate"><em><span class="pre">&lt;MPTEST&gt;</span></em></code> to denote the path to this
 directory.</p></li>
@@ -142,7 +142,7 @@ directory.</p></li>
 </ul>
 </li>
 <li><p>At the <span class="raw-html">M<span style="font-size:smaller">ATLAB</span></span>/Octave prompt, type <code class="docutils literal notranslate"><span class="pre">test_mptest</span></code> to run the test suite
-and verify that <span class="raw-html">MP-Test</span> is properly installed and functioning. The result
+and verify that MP-Test is properly installed and functioning. The result
 should resemble the following:</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">test_mptest</span>
 <span class="n">t_test_fcns</span><span class="p">.......</span><span class="n">ok</span>
@@ -209,7 +209,7 @@ Elapsed time 0.09 seconds.
 </section>
 <section id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h2>
-<p>The primary sources of documentation for <span class="raw-html">MP-Test</span> are this User’s Manual, especially the <a class="reference internal" href="reference.html#sec-mptest-reference"><span class="std std-ref">Reference</span></a> section, and the built-in <code class="docutils literal notranslate"><span class="pre">help</span></code> command. As with the built-in functions and toolbox routines in <span class="raw-html"><a href="https://www.mathworks.com">M<span style="font-size:smaller">ATLAB</span></a></span> and <span class="raw-html"><a href="https://www.octave.org">GNU Octave</a></span>, you can type <code class="docutils literal notranslate"><span class="pre">help</span></code> followed by the name of a command or M-file to get help on that particular function.</p>
+<p>The primary sources of documentation for MP-Test are this User’s Manual, especially the <a class="reference internal" href="reference.html#sec-mptest-reference"><span class="std std-ref">Reference</span></a> section, and the built-in <code class="docutils literal notranslate"><span class="pre">help</span></code> command. As with the built-in functions and toolbox routines in <span class="raw-html"><a href="https://www.mathworks.com">M<span style="font-size:smaller">ATLAB</span></a></span> and <span class="raw-html"><a href="https://www.octave.org">GNU Octave</a></span>, you can type <code class="docutils literal notranslate"><span class="pre">help</span></code> followed by the name of a command or M-file to get help on that particular function.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a><ul>
@@ -229,7 +229,7 @@ Elapsed time 0.09 seconds.
 <li class="toctree-l3"><a class="reference internal" href="functions/mptestver.html">mptestver</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="reference.html#tests-of-mptest">Tests of <span class="raw-html">MP-Test</span></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#tests-of-mp-test">Tests of MP-Test</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="functions/test_mptest.html">test_mptest</a></li>
 <li class="toctree-l3"><a class="reference internal" href="functions/t_have_feature.html">t_have_feature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="functions/t_test_fcns.html">t_test_fcns</a></li>
@@ -251,7 +251,7 @@ Elapsed time 0.09 seconds.
 </section>
 <section id="license">
 <h2>License<a class="headerlink" href="#license" title="Link to this heading"></a></h2>
-<p><span class="raw-html">MP-Test</span> is distributed under the <a class="reference external" href="https://github.com/MATPOWER/mptest/blob/master/LICENSE">3-clause BSD license</a>.</p>
+<p>MP-Test is distributed under the <a class="reference external" href="https://github.com/MATPOWER/mptest/blob/master/LICENSE">3-clause BSD license</a>.</p>
 </section>
 <section id="acknowledgments">
 <h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading"></a></h2>

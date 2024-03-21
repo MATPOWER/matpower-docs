@@ -60,7 +60,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul class="current">
@@ -166,12 +166,12 @@
 <section id="updating-the-reference-manual">
 <h2>Updating the Reference Manual<a class="headerlink" href="#updating-the-reference-manual" title="Link to this heading"></a></h2>
 <p>The source files for the <span class="raw-html"><a class="reference external" href="https://matpower.org/documentation/ref-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Reference Manual</em></a></span> require the creation of <code class="docutils literal notranslate"><span class="pre">.rst</span></code> stub files for many classes and functions. To avoid having Sphinx parse and analyze functions and classes that are not included in the manual, we symlink only those explicitly included into a source subdirectory.</p>
-<p>The <a class="reference internal" href="builddocs/generate_matpower_autodoc.html#generate_matpower_autodoc" title="generate_matpower_autodoc"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">generate_matpower_autodoc()</span></code></a> function is used to automatically generate these stub files and symlinks from explicit, hard-coded lists of classes and functions.</p>
+<p>The <code class="xref mat mat-func docutils literal notranslate"><span class="pre">generate_matpower_autodoc()</span></code> function is used to automatically generate these stub files and symlinks from explicit, hard-coded lists of classes and functions.</p>
 <p>The following steps should be followed when a new class or function are added to <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span>.</p>
 <ol class="arabic simple">
 <li><p>Add the name of the function or class to the appropriate cell array in <a class="reference external" href="https://github.com/MATPOWER/matpower/blob/master/lib/t/generate_matpower_autodoc.m"><code class="file docutils literal notranslate"><span class="pre">lib/t/generate_matpower_autodoc.m</span></code></a>.</p></li>
 </ol>
-<p>2. Re-run <a class="reference internal" href="builddocs/generate_matpower_autodoc.html#generate_matpower_autodoc" title="generate_matpower_autodoc"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">generate_matpower_autodoc()</span></code></a> from the MATLAB prompt.</p>
+<p>2. Re-run <code class="xref mat mat-func docutils literal notranslate"><span class="pre">generate_matpower_autodoc()</span></code> from the MATLAB prompt.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">generate_matpower_autodoc</span><span class="p">(</span><span class="o">&lt;</span><span class="nb">path</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">MATPOWER</span><span class="o">&gt;</span><span class="p">)</span>
 </pre></div>
 </div>

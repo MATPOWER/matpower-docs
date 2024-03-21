@@ -82,7 +82,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -131,55 +131,55 @@
 <section id="mp-node-type">
 <h1>mp.NODE_TYPE<a class="headerlink" href="#mp-node-type" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="mp.NODE_TYPE">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">NODE_TYPE</span></span><a class="headerlink" href="#mp.NODE_TYPE" title="Link to this definition"></a></dt>
-<dd><p><a class="reference internal" href="#mp.NODE_TYPE" title="mp.NODE_TYPE"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.NODE_TYPE</span></code></a> - Defines enumerated type for node types.</p>
+<dt class="sig sig-object mat" id="matpower.mp.NODE_TYPE">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">NODE_TYPE</span></span><a class="headerlink" href="#matpower.mp.NODE_TYPE" title="Link to this definition"></a></dt>
+<dd><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.NODE_TYPE</span></code> - Defines enumerated type for node types.</p>
 <dl class="simple">
 <dt>mp.NODE_TYPE Properties:</dt><dd><ul class="simple">
-<li><p><a class="reference internal" href="#mp.NODE_TYPE.PQ" title="mp.NODE_TYPE.PQ"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">PQ</span></code></a> - PQ node (= 1)</p></li>
-<li><p><a class="reference internal" href="#mp.NODE_TYPE.PV" title="mp.NODE_TYPE.PV"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">PV</span></code></a> - PV node (= 2)</p></li>
-<li><p><a class="reference internal" href="#mp.NODE_TYPE.REF" title="mp.NODE_TYPE.REF"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">REF</span></code></a> - reference node (= 3)</p></li>
-<li><p><a class="reference internal" href="#mp.NODE_TYPE.NONE" title="mp.NODE_TYPE.NONE"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">NONE</span></code></a> - isolated node (= 4)</p></li>
+<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">PQ</span></code> - PQ node (= 1)</p></li>
+<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">PV</span></code> - PV node (= 2)</p></li>
+<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">REF</span></code> - reference node (= 3)</p></li>
+<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">NONE</span></code> - isolated node (= 4)</p></li>
 </ul>
 </dd>
 <dt>mp.NODE_TYPE Methods:</dt><dd><ul class="simple">
-<li><p><a class="reference internal" href="#mp.NODE_TYPE.is_valid" title="mp.NODE_TYPE.is_valid"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">is_valid()</span></code></a> - returns true if the value is a valid node type</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">is_valid()</span></code> - returns true if the value is a valid node type</p></li>
 </ul>
 </dd>
 </dl>
 <p>All properties are <code class="docutils literal notranslate"><span class="pre">Constant</span></code> properties and the class is a <code class="docutils literal notranslate"><span class="pre">Sealed</span></code>
 class. So the properties function as global constants which do not create
-an instance of the class, e.g. <a class="reference internal" href="#mp.NODE_TYPE.REF" title="mp.NODE_TYPE.REF"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.REF</span></code></a>.</p>
+an instance of the class, e.g. <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.REF</span></code>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Property Summary</dt><dd><dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.NODE_TYPE.PQ">
-<span class="sig-name descname"><span class="pre">PQ</span></span><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#mp.NODE_TYPE.PQ" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.NODE_TYPE.PQ">
+<span class="sig-name descname"><span class="pre">PQ</span></span><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#matpower.mp.NODE_TYPE.PQ" title="Link to this definition"></a></dt>
 <dd><p>PQ node</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.NODE_TYPE.PV">
-<span class="sig-name descname"><span class="pre">PV</span></span><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#mp.NODE_TYPE.PV" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.NODE_TYPE.PV">
+<span class="sig-name descname"><span class="pre">PV</span></span><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#matpower.mp.NODE_TYPE.PV" title="Link to this definition"></a></dt>
 <dd><p>PV node</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.NODE_TYPE.REF">
-<span class="sig-name descname"><span class="pre">REF</span></span><em class="property"> <span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#mp.NODE_TYPE.REF" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.NODE_TYPE.REF">
+<span class="sig-name descname"><span class="pre">REF</span></span><em class="property"> <span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#matpower.mp.NODE_TYPE.REF" title="Link to this definition"></a></dt>
 <dd><p>reference node</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.NODE_TYPE.NONE">
-<span class="sig-name descname"><span class="pre">NONE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">4</span></em><a class="headerlink" href="#mp.NODE_TYPE.NONE" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.NODE_TYPE.NONE">
+<span class="sig-name descname"><span class="pre">NONE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">4</span></em><a class="headerlink" href="#matpower.mp.NODE_TYPE.NONE" title="Link to this definition"></a></dt>
 <dd><p>isolated node</p>
 </dd></dl>
 
 </dd>
 <dt>Method Summary</dt><dd><dl class="mat staticmethod">
-<dt class="sig sig-object mat" id="mp.NODE_TYPE.is_valid">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">is_valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.NODE_TYPE.is_valid" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.NODE_TYPE.is_valid">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">is_valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.NODE_TYPE.is_valid" title="Link to this definition"></a></dt>
 <dd><p>Returns true if the value is a valid node type.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">TorF</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">NODE_TYPE</span><span class="p">.</span><span class="n">is_valid</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
 </pre></div>

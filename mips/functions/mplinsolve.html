@@ -74,7 +74,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -123,9 +123,9 @@
 <section id="mplinsolve">
 <h1>mplinsolve<a class="headerlink" href="#mplinsolve" title="Link to this heading"></a></h1>
 <dl class="mat function">
-<dt class="sig sig-object mat">
-<span class="sig-name descname"><span class="pre">mplinsolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">A</span></em>, <em class="sig-param"><span class="pre">b</span></em>, <em class="sig-param"><span class="pre">solver</span></em>, <em class="sig-param"><span class="pre">opt</span></em><span class="sig-paren">)</span></dt>
-<dd><p><code class="xref mat mat-func docutils literal notranslate"><span class="pre">mplinsolve()</span></code> - Solve A * x = b using specified solver.</p>
+<dt class="sig sig-object mat" id="mips.mplinsolve">
+<span class="sig-name descname"><span class="pre">mplinsolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">A</span></em>, <em class="sig-param"><span class="pre">b</span></em>, <em class="sig-param"><span class="pre">solver</span></em>, <em class="sig-param"><span class="pre">opt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mips.mplinsolve" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mips.mplinsolve" title="mips.mplinsolve"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">mplinsolve()</span></code></a> - Solve A * x = b using specified solver.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="n">mplinsolve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 <span class="n">x</span> <span class="p">=</span> <span class="n">mplinsolve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">solver</span><span class="p">)</span>
 <span class="n">x</span> <span class="p">=</span> <span class="n">mplinsolve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">solver</span><span class="p">,</span> <span class="n">opt</span><span class="p">)</span>
@@ -142,7 +142,7 @@ using the selected solver.</p>
 <dd class="field-odd"><ul>
 <li><p><strong>A</strong> (<em>double</em>) – sparse matrix</p></li>
 <li><p><strong>factors</strong> (<em>struct</em>) – contains (e.g. LU) factors of <code class="docutils literal notranslate"><span class="pre">A</span></code> from previous
-call to <code class="xref mat mat-func docutils literal notranslate"><span class="pre">mplinsolve()</span></code>, with a <code class="docutils literal notranslate"><span class="pre">type</span></code> field to identify which of the
+call to <a class="reference internal" href="#mips.mplinsolve" title="mips.mplinsolve"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">mplinsolve()</span></code></a>, with a <code class="docutils literal notranslate"><span class="pre">type</span></code> field to identify which of the
 following sets of additional fields are included:</p>
 <table class="docutils align-default">
 <thead>

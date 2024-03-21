@@ -76,7 +76,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -125,9 +125,9 @@
 <section id="have-feature">
 <h1>have_feature<a class="headerlink" href="#have-feature" title="Link to this heading"></a></h1>
 <dl class="mat function">
-<dt class="sig sig-object mat" id="have_feature">
-<span class="sig-name descname"><span class="pre">have_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">tag</span></em>, <em class="sig-param"><span class="pre">rtype</span></em><span class="sig-paren">)</span><a class="headerlink" href="#have_feature" title="Link to this definition"></a></dt>
-<dd><p><a class="reference internal" href="#have_feature" title="have_feature"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">have_feature()</span></code></a>  Test for optional functionality / version info.</p>
+<dt class="sig sig-object mat" id="mptest.have_feature">
+<span class="sig-name descname"><span class="pre">have_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">tag</span></em>, <em class="sig-param"><span class="pre">rtype</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mptest.have_feature" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mptest.have_feature" title="mptest.have_feature"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">have_feature()</span></code></a>  Test for optional functionality / version info.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">TorF</span> <span class="p">=</span> <span class="n">have_feature</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
 <span class="n">TorF</span> <span class="p">=</span> <span class="n">have_feature</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">toggle</span><span class="p">)</span>
 <span class="n">ver_str</span> <span class="p">=</span> <span class="n">have_feature</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="s">&#39;vstr&#39;</span><span class="p">)</span>
@@ -231,7 +231,7 @@ false otherwise</p></li>
 </dd>
 </dl>
 <p>The optional functionality specified by <code class="docutils literal notranslate"><span class="pre">tag</span></code> can be toggled <strong>off</strong>
-or <strong>on</strong> by calling <a class="reference internal" href="#have_feature" title="have_feature"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">have_feature()</span></code></a> with a numeric second argument
+or <strong>on</strong> by calling <a class="reference internal" href="#mptest.have_feature" title="mptest.have_feature"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">have_feature()</span></code></a> with a numeric second argument
 <code class="docutils literal notranslate"><span class="pre">toggle</span></code> with one of the following values:</p>
 <blockquote>
 <div><ul class="simple">
@@ -241,7 +241,7 @@ or <strong>on</strong> by calling <a class="reference internal" href="#have_feat
 </ul>
 </div></blockquote>
 <p>Specifying the appropriate string value for the second argument allows
-<a class="reference internal" href="#have_feature" title="have_feature"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">have_feature()</span></code></a> to return specific information about the functionality,
+<a class="reference internal" href="#mptest.have_feature" title="mptest.have_feature"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">have_feature()</span></code></a> to return specific information about the functionality,
 if it is available. This includes the version number as a string or
 numeric value, the release date, or a struct with all of the above.
 For functionality that is not available, all calls with a string-valued
@@ -252,7 +252,7 @@ argument is <code class="docutils literal notranslate"><span class="pre">'all'</
 <code class="docutils literal notranslate"><span class="pre">'clear_cache'</span></code> no return value is defined.</p>
 <p>For each valid value of <code class="docutils literal notranslate"><span class="pre">tag</span></code>, there is a corresponding feature detection
 function named <code class="samp docutils literal notranslate"><span class="pre">have_feature_</span><em><span class="pre">&lt;tag&gt;</span></em></code>, where <code class="samp docutils literal notranslate"><em><span class="pre">&lt;tag&gt;</span></em></code> is the
-<code class="docutils literal notranslate"><span class="pre">tag</span></code> value for the feature in question. This makes <a class="reference internal" href="#have_feature" title="have_feature"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">have_feature()</span></code></a> modular
+<code class="docutils literal notranslate"><span class="pre">tag</span></code> value for the feature in question. This makes <a class="reference internal" href="#mptest.have_feature" title="mptest.have_feature"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">have_feature()</span></code></a> modular
 and extensible. Each feature detection function takes no input values, but
 returns three outputs:</p>
 <blockquote>
@@ -262,7 +262,7 @@ returns three outputs:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">rdate</span></code> – release date as a string (e.g. <code class="docutils literal notranslate"><span class="pre">'29-Feb-2024'</span></code>)</p></li>
 </ul>
 </div></blockquote>
-<p><code class="docutils literal notranslate"><span class="pre">tag</span></code> values for <a class="reference internal" href="#have_feature" title="have_feature"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">have_feature()</span></code></a> detection functions included in MP-Test:</p>
+<p><code class="docutils literal notranslate"><span class="pre">tag</span></code> values for <a class="reference internal" href="#mptest.have_feature" title="mptest.have_feature"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">have_feature()</span></code></a> detection functions included in MP-Test:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">'matlab'</span></code> – code is running under MATLAB, as opposed to Octave</p></li>
@@ -277,7 +277,7 @@ returns three outputs:</p>
 <span class="k">end</span>
 </pre></div>
 </div>
-<p>See also <a class="reference internal" href="have_feature_matlab.html#have_feature_matlab" title="have_feature_matlab"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">have_feature_matlab()</span></code></a>, <a class="reference internal" href="have_feature_octave.html#have_feature_octave" title="have_feature_octave"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">have_feature_octave()</span></code></a>.</p>
+<p>See also <a class="reference internal" href="have_feature_matlab.html#mptest.have_feature_matlab" title="mptest.have_feature_matlab"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">have_feature_matlab()</span></code></a>, <a class="reference internal" href="have_feature_octave.html#mptest.have_feature_octave" title="mptest.have_feature_octave"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">have_feature_octave()</span></code></a>.</p>
 </dd></dl>
 
 </section>

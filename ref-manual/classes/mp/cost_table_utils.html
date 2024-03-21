@@ -82,7 +82,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -131,59 +131,59 @@
 <section id="mp-cost-table-utils">
 <h1>mp.cost_table_utils<a class="headerlink" href="#mp-cost-table-utils" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="mp.cost_table_utils">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">cost_table_utils</span></span><a class="headerlink" href="#mp.cost_table_utils" title="Link to this definition"></a></dt>
-<dd><p><a class="reference internal" href="#mp.cost_table_utils" title="mp.cost_table_utils"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table_utils</span></code></a> - Static methods for <a class="reference internal" href="cost_table.html#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a>.</p>
+<dt class="sig sig-object mat" id="matpower.mp.cost_table_utils">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">cost_table_utils</span></span><a class="headerlink" href="#matpower.mp.cost_table_utils" title="Link to this definition"></a></dt>
+<dd><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table_utils</span></code> - Static methods for <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code>.</p>
 <p>Contains the implementation of some methods that would ideally belong
-in <a class="reference internal" href="cost_table.html#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a>.</p>
-<p>Within classes that inherit from <a class="reference internal" href="../mp_table_subclass.html#mp_table_subclass" title="mp_table_subclass"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code></a>, such as <a class="reference internal" href="cost_table.html#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a>,
+in <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code>.</p>
+<p>Within classes that inherit from <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code>, such as <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code>,
 any subscripting to access the elements of the table must be done through
 explicit calls to the table’s <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">subsref()</span></code> and <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">subsasgn()</span></code> methods.
 That is, the normal table subscripting syntax will not work, so working
 with the table becomes extremely cumbersome.</p>
 <p>This purpose of this class is to provide the implementation for
-<a class="reference internal" href="cost_table.html#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a> methods that <strong>do</strong> allow access to that table via normal
+<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code> methods that <strong>do</strong> allow access to that table via normal
 table subscripting syntax.</p>
 <dl class="simple">
 <dt>mp.cost_table_util Methods:</dt><dd><ul class="simple">
-<li><p><a class="reference internal" href="#mp.cost_table_utils.poly_params" title="mp.cost_table_utils.poly_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">poly_params()</span></code></a> - create struct of polynomial parameters from <a class="reference internal" href="cost_table.html#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a></p></li>
-<li><p><a class="reference internal" href="#mp.cost_table_utils.pwl_params" title="mp.cost_table_utils.pwl_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pwl_params()</span></code></a> - create struct of piecewise linear parameters from <a class="reference internal" href="cost_table.html#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a></p></li>
-<li><p><a class="reference internal" href="#mp.cost_table_utils.max_pwl_cost" title="mp.cost_table_utils.max_pwl_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">max_pwl_cost()</span></code></a> - get maximum cost component used to specify pwl costs</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">poly_params()</span></code> - create struct of polynomial parameters from <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pwl_params()</span></code> - create struct of piecewise linear parameters from <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">max_pwl_cost()</span></code> - get maximum cost component used to specify pwl costs</p></li>
 </ul>
 </dd>
 </dl>
-<p>See also <a class="reference internal" href="cost_table.html#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a>.</p>
+<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat staticmethod">
-<dt class="sig sig-object mat" id="mp.cost_table_utils.poly_params">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">poly_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cost</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">pu_base</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.cost_table_utils.poly_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.cost_table_utils.poly_params">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">poly_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cost</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">pu_base</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.cost_table_utils.poly_params" title="Link to this definition"></a></dt>
 <dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">cost_table_utils</span><span class="p">.</span><span class="n">poly_params</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pu_base</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Implementation for <a class="reference internal" href="cost_table.html#mp.cost_table.poly_params" title="mp.cost_table.poly_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table.poly_params()</span></code></a>. See
-<a class="reference internal" href="cost_table.html#mp.cost_table.poly_params" title="mp.cost_table.poly_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table.poly_params()</span></code></a> for details.</p>
+<p>Implementation for <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table.poly_params()</span></code>. See
+<code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table.poly_params()</span></code> for details.</p>
 </dd></dl>
 
 <dl class="mat staticmethod">
-<dt class="sig sig-object mat" id="mp.cost_table_utils.pwl_params">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">pwl_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cost</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">pu_base</span></em>, <em class="sig-param"><span class="pre">ng</span></em>, <em class="sig-param"><span class="pre">dc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.cost_table_utils.pwl_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.cost_table_utils.pwl_params">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">pwl_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cost</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">pu_base</span></em>, <em class="sig-param"><span class="pre">ng</span></em>, <em class="sig-param"><span class="pre">dc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.cost_table_utils.pwl_params" title="Link to this definition"></a></dt>
 <dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">cost_table_utils</span><span class="p">.</span><span class="n">pwl_params</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pu_base</span><span class="p">)</span>
 <span class="n">p</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">cost_table_utils</span><span class="p">.</span><span class="n">pwl_params</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pu_base</span><span class="p">,</span> <span class="n">ng</span><span class="p">,</span> <span class="n">dc</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Implementation for <a class="reference internal" href="cost_table.html#mp.cost_table.pwl_params" title="mp.cost_table.pwl_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table.pwl_params()</span></code></a>. See
-<a class="reference internal" href="cost_table.html#mp.cost_table.pwl_params" title="mp.cost_table.pwl_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table.pwl_params()</span></code></a> for details.</p>
+<p>Implementation for <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table.pwl_params()</span></code>. See
+<code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table.pwl_params()</span></code> for details.</p>
 </dd></dl>
 
 <dl class="mat staticmethod">
-<dt class="sig sig-object mat" id="mp.cost_table_utils.max_pwl_cost">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">max_pwl_cost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cost</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.cost_table_utils.max_pwl_cost" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.cost_table_utils.max_pwl_cost">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">max_pwl_cost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cost</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.cost_table_utils.max_pwl_cost" title="Link to this definition"></a></dt>
 <dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">maxc</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">cost_table_utils</span><span class="p">.</span><span class="n">max_pwl_cost</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Implementation for <a class="reference internal" href="cost_table.html#mp.cost_table.max_pwl_cost" title="mp.cost_table.max_pwl_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table.max_pwl_cost()</span></code></a>. See
-<a class="reference internal" href="cost_table.html#mp.cost_table.max_pwl_cost" title="mp.cost_table.max_pwl_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table.max_pwl_cost()</span></code></a> for details.</p>
+<p>Implementation for <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table.max_pwl_cost()</span></code>. See
+<code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table.max_pwl_cost()</span></code> for details.</p>
 </dd></dl>
 
 </dd>

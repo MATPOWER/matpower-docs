@@ -79,7 +79,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -128,34 +128,34 @@
 <section id="mp-nme-bus3p">
 <h1>mp.nme_bus3p<a class="headerlink" href="#mp-nme-bus3p" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="mp.nme_bus3p">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">nme_bus3p</span></span><a class="headerlink" href="#mp.nme_bus3p" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a></p>
-<p><a class="reference internal" href="#mp.nme_bus3p" title="mp.nme_bus3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_bus3p</span></code></a> - Network model element abstract base class for 3-phase bus.</p>
+<dt class="sig sig-object mat" id="matpower.mp.nme_bus3p">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">nme_bus3p</span></span><a class="headerlink" href="#matpower.mp.nme_bus3p" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></p>
+<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_bus3p</span></code> - Network model element abstract base class for 3-phase bus.</p>
 <p>Implements the network model element for 3-phase bus elements, with 3 nodes
 per 3-phase bus.</p>
-<p>Implements <a class="reference internal" href="#mp.nme_bus3p.node_types" title="mp.nme_bus3p.node_types"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">node_types()</span></code></a> method.</p>
+<p>Implements <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">node_types()</span></code> method.</p>
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nme_bus3p.name">
-<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.nme_bus3p.name" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nme_bus3p.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nme_bus3p.name" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nme_bus3p.nn">
-<span class="sig-name descname"><span class="pre">nn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.nme_bus3p.nn" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nme_bus3p.nn">
+<span class="sig-name descname"><span class="pre">nn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nme_bus3p.nn" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nme_bus3p.node_types">
-<span class="sig-name descname"><span class="pre">node_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nme_bus3p.node_types" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nme_bus3p.node_types">
+<span class="sig-name descname"><span class="pre">node_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nme_bus3p.node_types" title="Link to this definition"></a></dt>
 <dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">ntv</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">node_types</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
 <span class="p">[</span><span class="n">ref</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">pq</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">node_types</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Called by the <a class="reference internal" href="net_model.html#mp.net_model.node_types" title="mp.net_model.node_types"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">node_types()</span></code></a>
-method of <a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>.</p>
+<p>Called by the <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">node_types()</span></code>
+method of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>.</p>
 </dd></dl>
 
 </dd>

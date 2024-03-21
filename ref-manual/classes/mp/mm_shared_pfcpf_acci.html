@@ -78,7 +78,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -127,28 +127,28 @@
 <section id="mp-mm-shared-pfcpf-acci">
 <h1>mp.mm_shared_pfcpf_acci<a class="headerlink" href="#mp-mm-shared-pfcpf-acci" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="mp.mm_shared_pfcpf_acci">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">mm_shared_pfcpf_acci</span></span><a class="headerlink" href="#mp.mm_shared_pfcpf_acci" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="mm_shared_pfcpf_acc.html#mp.mm_shared_pfcpf_acc" title="mp.mm_shared_pfcpf_acc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mm_shared_pfcpf_acc</span></code></a>, <a class="reference internal" href="mm_shared_pfcpf_ac_i.html#mp.mm_shared_pfcpf_ac_i" title="mp.mm_shared_pfcpf_ac_i"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mm_shared_pfcpf_ac_i</span></code></a></p>
-<p><a class="reference internal" href="#mp.mm_shared_pfcpf_acci" title="mp.mm_shared_pfcpf_acci"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mm_shared_pfcpf_acci</span></code></a> - Mixin class for AC-cartesian-current PF/CPF <strong>math model</strong> objects.</p>
+<dt class="sig sig-object mat" id="matpower.mp.mm_shared_pfcpf_acci">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">mm_shared_pfcpf_acci</span></span><a class="headerlink" href="#matpower.mp.mm_shared_pfcpf_acci" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mm_shared_pfcpf_acc</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mm_shared_pfcpf_ac_i</span></code></p>
+<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mm_shared_pfcpf_acci</span></code> - Mixin class for AC-cartesian-current PF/CPF <strong>math model</strong> objects.</p>
 <p>An abstract mixin class inherited by AC power flow (PF) and continuation
 power flow (CPF) <strong>math model</strong> objects that use a cartesian voltage
 and current balance formuation.</p>
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp.mm_shared_pfcpf_acci.build_aux_data">
-<span class="sig-name descname"><span class="pre">build_aux_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mm_shared_pfcpf_acci.build_aux_data" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.mm_shared_pfcpf_acci.build_aux_data">
+<span class="sig-name descname"><span class="pre">build_aux_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mm_shared_pfcpf_acci.build_aux_data" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.mm_shared_pfcpf_acci.add_system_vars_pf">
-<span class="sig-name descname"><span class="pre">add_system_vars_pf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mm_shared_pfcpf_acci.add_system_vars_pf" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.mm_shared_pfcpf_acci.add_system_vars_pf">
+<span class="sig-name descname"><span class="pre">add_system_vars_pf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mm_shared_pfcpf_acci.add_system_vars_pf" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.mm_shared_pfcpf_acci.node_balance_equations">
-<span class="sig-name descname"><span class="pre">node_balance_equations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mm_shared_pfcpf_acci.node_balance_equations" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.mm_shared_pfcpf_acci.node_balance_equations">
+<span class="sig-name descname"><span class="pre">node_balance_equations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mm_shared_pfcpf_acci.node_balance_equations" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd>

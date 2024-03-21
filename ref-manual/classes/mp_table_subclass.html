@@ -82,7 +82,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -131,44 +131,44 @@
 <section id="mp-table-subclass">
 <h1>mp_table_subclass<a class="headerlink" href="#mp-table-subclass" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="mp_table_subclass">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">mp_table_subclass</span></span><a class="headerlink" href="#mp_table_subclass" title="Link to this definition"></a></dt>
-<dd><p><a class="reference internal" href="#mp_table_subclass" title="mp_table_subclass"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code></a> - Class that acts like a table but isn’t one.</p>
+<dt class="sig sig-object mat" id="matpower.mp_table_subclass">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">mp_table_subclass</span></span><a class="headerlink" href="#matpower.mp_table_subclass" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#matpower.mp_table_subclass" title="matpower.mp_table_subclass"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code></a> - Class that acts like a table but isn’t one.</p>
 <p>Addresses two issues with inheriting from <strong>table</strong> classes (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">table</span></code>)
-or <a class="reference internal" href="mp_table.html#mp_table" title="mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>).</p>
+or <a class="reference internal" href="mp_table.html#matpower.mp_table" title="matpower.mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>).</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>In MATLAB, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">table</span></code> is a sealed class, so you cannot inherit
-from it. You can, however, use a subclass of <a class="reference internal" href="mp_table.html#mp_table" title="mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>, but that can
+from it. You can, however, use a subclass of <a class="reference internal" href="mp_table.html#matpower.mp_table" title="matpower.mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>, but that can
 result in the next issue under Octave.</p></li>
-<li><p>While nesting of tables works just fine in general, when using <a class="reference internal" href="mp_table.html#mp_table" title="mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>
+<li><p>While nesting of tables works just fine in general, when using <a class="reference internal" href="mp_table.html#matpower.mp_table" title="matpower.mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>
 in Octave (at least up through 8.4.0), you cannot nest a subclass of
-<a class="reference internal" href="mp_table.html#mp_table" title="mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a> inside another <a class="reference internal" href="mp_table.html#mp_table" title="mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a> object because of this bug:
+<a class="reference internal" href="mp_table.html#matpower.mp_table" title="matpower.mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a> inside another <a class="reference internal" href="mp_table.html#matpower.mp_table" title="matpower.mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a> object because of this bug:
 <a class="reference external" href="https://savannah.gnu.org/bugs/index.php?65037">https://savannah.gnu.org/bugs/index.php?65037</a>.</p></li>
 </ol>
 </div></blockquote>
 <p>To work around these issues, your “table subclass” can inherit from <strong>this</strong>
-class. An object of this class <strong>isn’t</strong> a <code class="xref mat mat-class docutils literal notranslate"><span class="pre">table</span></code> or <a class="reference internal" href="mp_table.html#mp_table" title="mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a> object,
+class. An object of this class <strong>isn’t</strong> a <code class="xref mat mat-class docutils literal notranslate"><span class="pre">table</span></code> or <a class="reference internal" href="mp_table.html#matpower.mp_table" title="matpower.mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a> object,
 but rather it <strong>contains</strong> one and attempts to act like one. That is, it
-delegates method calls (currently only those available in <a class="reference internal" href="mp_table.html#mp_table" title="mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>, listed
+delegates method calls (currently only those available in <a class="reference internal" href="mp_table.html#matpower.mp_table" title="matpower.mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>, listed
 below) to the contained table object.</p>
-<p>The class of the contained table object is either <code class="xref mat mat-class docutils literal notranslate"><span class="pre">table</span></code> or <a class="reference internal" href="mp_table.html#mp_table" title="mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>
-and is determined by <a class="reference internal" href="../functions/mp_table_class.html#mp_table_class" title="mp_table_class"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">mp_table_class()</span></code></a>.</p>
+<p>The class of the contained table object is either <code class="xref mat mat-class docutils literal notranslate"><span class="pre">table</span></code> or <a class="reference internal" href="mp_table.html#matpower.mp_table" title="matpower.mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>
+and is determined by <a class="reference internal" href="../functions/mp_table_class.html#matpower.mp_table_class" title="matpower.mp_table_class"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">mp_table_class()</span></code></a>.</p>
 <div class="admonition-limitations admonition">
 <p class="admonition-title">Limitations</p>
 <ol class="arabic simple">
 <li><p>The Octave bug mentioned above also affects tables that inherit from
-<a class="reference internal" href="#mp_table_subclass" title="mp_table_subclass"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code></a>. That is, such tables can be nested inside tables
-of type <code class="xref mat mat-class docutils literal notranslate"><span class="pre">table</span></code> or <a class="reference internal" href="mp_table.html#mp_table" title="mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>, but not inside tables that are
-or inherit from <a class="reference internal" href="#mp_table_subclass" title="mp_table_subclass"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code></a>.</p></li>
-<li><p>In MATLAB, when nesting an <a class="reference internal" href="#mp_table_subclass" title="mp_table_subclass"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code></a> object within another
-<a class="reference internal" href="#mp_table_subclass" title="mp_table_subclass"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code></a> object, one cannot use multi-level indexing directly.
+<a class="reference internal" href="#matpower.mp_table_subclass" title="matpower.mp_table_subclass"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code></a>. That is, such tables can be nested inside tables
+of type <code class="xref mat mat-class docutils literal notranslate"><span class="pre">table</span></code> or <a class="reference internal" href="mp_table.html#matpower.mp_table" title="matpower.mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>, but not inside tables that are
+or inherit from <a class="reference internal" href="#matpower.mp_table_subclass" title="matpower.mp_table_subclass"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code></a>.</p></li>
+<li><p>In MATLAB, when nesting an <a class="reference internal" href="#matpower.mp_table_subclass" title="matpower.mp_table_subclass"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code></a> object within another
+<a class="reference internal" href="#matpower.mp_table_subclass" title="matpower.mp_table_subclass"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code></a> object, one cannot use multi-level indexing directly.
 E.g. If <code class="docutils literal notranslate"><span class="pre">T2</span></code> is a variable in <code class="docutils literal notranslate"><span class="pre">T1</span></code> and <code class="docutils literal notranslate"><span class="pre">x</span></code> is a variable in
 <code class="docutils literal notranslate"><span class="pre">T2</span></code>, attempting <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">T1.T2.x</span></code> will result in an error. The
 indexing must be done in multiple steps <code class="docutils literal notranslate"><span class="pre">T2</span> <span class="pre">=</span> <span class="pre">T1.T2;</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">T2.x</span></code>.
 Note: This only applies to MATLAB, where the contained table is a
 <code class="xref mat mat-class docutils literal notranslate"><span class="pre">table</span></code>. It works just fine in Octave, where the contained
-table is an <a class="reference internal" href="mp_table.html#mp_table" title="mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>.</p></li>
+table is an <a class="reference internal" href="mp_table.html#matpower.mp_table" title="matpower.mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>.</p></li>
 </ol>
 </div>
 <div class="admonition important">
@@ -185,9 +185,9 @@ or subclasses, as with mp_table.</p>
 </dd>
 <dt>mp.cost_table Methods:</dt><dd><ul class="simple">
 <li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp_table_subclass()</span></code> - construct object</p></li>
-<li><p><a class="reference internal" href="#mp_table_subclass.get_table" title="mp_table_subclass.get_table"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_table()</span></code></a> - return the table stored in <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">tab</span></code></p></li>
-<li><p><a class="reference internal" href="#mp_table_subclass.set_table" title="mp_table_subclass.set_table"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_table()</span></code></a> - assign a table to <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">tab</span></code></p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">istable()</span></code> - true for <a class="reference internal" href="mp_table.html#mp_table" title="mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a> objects</p></li>
+<li><p><a class="reference internal" href="#matpower.mp_table_subclass.get_table" title="matpower.mp_table_subclass.get_table"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_table()</span></code></a> - return the table stored in <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">tab</span></code></p></li>
+<li><p><a class="reference internal" href="#matpower.mp_table_subclass.set_table" title="matpower.mp_table_subclass.set_table"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_table()</span></code></a> - assign a table to <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">tab</span></code></p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">istable()</span></code> - true for <a class="reference internal" href="mp_table.html#matpower.mp_table" title="matpower.mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a> objects</p></li>
 <li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">size()</span></code> - dimensions of table</p></li>
 <li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">isempty()</span></code> - true if table has no columns or no rows</p></li>
 <li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">end()</span></code> - used to index last row or variable/column</p></li>
@@ -199,20 +199,20 @@ or subclasses, as with mp_table.</p>
 </ul>
 </dd>
 </dl>
-<p>See also <a class="reference internal" href="mp_table.html#mp_table" title="mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>, <a class="reference internal" href="../functions/mp_table_class.html#mp_table_class" title="mp_table_class"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">mp_table_class()</span></code></a>.</p>
+<p>See also <a class="reference internal" href="mp_table.html#matpower.mp_table" title="matpower.mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>, <a class="reference internal" href="../functions/mp_table_class.html#matpower.mp_table_class" title="matpower.mp_table_class"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">mp_table_class()</span></code></a>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp_table_subclass.get_table">
-<span class="sig-name descname"><span class="pre">get_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp_table_subclass.get_table" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp_table_subclass.get_table">
+<span class="sig-name descname"><span class="pre">get_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp_table_subclass.get_table" title="Link to this definition"></a></dt>
 <dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="p">=</span> <span class="n">get_table</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp_table_subclass.set_table">
-<span class="sig-name descname"><span class="pre">set_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">T</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_table_subclass.set_table" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp_table_subclass.set_table">
+<span class="sig-name descname"><span class="pre">set_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">T</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp_table_subclass.set_table" title="Link to this definition"></a></dt>
 <dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">set_table</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
 </pre></div>
 </div>

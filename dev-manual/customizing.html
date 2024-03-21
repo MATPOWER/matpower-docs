@@ -82,7 +82,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -141,8 +141,8 @@
 </figure>
 <section id="task-class">
 <h3><span class="section-number">9.1.1. </span>Task Class<a class="headerlink" href="#task-class" title="Link to this heading"></a></h3>
-<p>First of all, at the top level, the <strong>task class</strong> is specified directly by the user through the function used to invoke the run. In fact, <a class="reference internal" href="../ref-manual/functions/run_pf.html#run_pf" title="run_pf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_pf()</span></code></a>, <a class="reference internal" href="../ref-manual/functions/run_cpf.html#run_cpf" title="run_cpf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_cpf()</span></code></a>, and <a class="reference internal" href="../ref-manual/functions/run_opf.html#run_opf" title="run_opf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_opf()</span></code></a> are simple one-line wrappers around the <a class="reference internal" href="../ref-manual/functions/run_mp.html#run_mp" title="run_mp"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_mp()</span></code></a> function. The only difference between the three is the value of the <code class="docutils literal notranslate"><span class="pre">task_class</span></code> argument, a handle to the corresponding task constructor, passed into <a class="reference internal" href="../ref-manual/functions/run_mp.html#run_mp" title="run_mp"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_mp()</span></code></a>.</p>
-<p>This means that a new task class can be used simply by invoking <a class="reference internal" href="../ref-manual/functions/run_mp.html#run_mp" title="run_mp"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_mp()</span></code></a>, either directly or via a new wrapper, with the task constructor as the <code class="docutils literal notranslate"><span class="pre">task_class</span></code> argument.</p>
+<p>First of all, at the top level, the <strong>task class</strong> is specified directly by the user through the function used to invoke the run. In fact, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_pf()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_cpf()</span></code>, and <code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_opf()</span></code> are simple one-line wrappers around the <code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_mp()</span></code> function. The only difference between the three is the value of the <code class="docutils literal notranslate"><span class="pre">task_class</span></code> argument, a handle to the corresponding task constructor, passed into <code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_mp()</span></code>.</p>
+<p>This means that a new task class can be used simply by invoking <code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_mp()</span></code>, either directly or via a new wrapper, with the task constructor as the <code class="docutils literal notranslate"><span class="pre">task_class</span></code> argument.</p>
 </section>
 <section id="model-and-data-converter-classes">
 <h3><span class="section-number">9.1.2. </span>Model and Data Converter Classes<a class="headerlink" href="#model-and-data-converter-classes" title="Link to this heading"></a></h3>
@@ -159,39 +159,39 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.dm_converter_class" title="mp.task.dm_converter_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class()</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class()</span></code></p></td>
 <td><p>Returns the final class for the data model converter, after any overrides of the default.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.data_model_class" title="mp.task.data_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_class()</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_class()</span></code></p></td>
 <td><p>Returns the final class for the data model, after any overrides of the default.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.network_model_class" title="mp.task.network_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_class()</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_class()</span></code></p></td>
 <td><p>Returns the final class for the network model, after any overrides of the default.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.math_model_class" title="mp.task.math_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class()</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class()</span></code></p></td>
 <td><p>Returns the final class for the math model, after any overrides of the default.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.dm_converter_class_mpc2_default" title="mp.task.dm_converter_class_mpc2_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class_mpc2_default()</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class_mpc2_default()</span></code></p></td>
 <td><p>Returns the <em>default</em> class for the data model converter for this task. Note that this is specific to the data format. Each data format would have it’s own “default” method.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.data_model_class_default" title="mp.task.data_model_class_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_class_default()</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_class_default()</span></code></p></td>
 <td><p>Returns the <em>default</em> class for the data model for this task.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.network_model_class_default" title="mp.task.network_model_class_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_class_default()</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_class_default()</span></code></p></td>
 <td><p>Returns the <em>default</em> class for the network model for this task.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task.math_model_class_default" title="mp.task.math_model_class_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class_default()</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class_default()</span></code></p></td>
 <td><p>Returns the <em>default</em> class for the math model for this task.</p></td>
 </tr>
 </tbody>
 </table>
-<p><a class="reference internal" href="#tab-task-methods"><span class="std std-numref">Table 9.1</span></a> shows the methods that determine the classes for each of the 4 objects. Each method returns a handle to a class constructor. In general, the <em>main</em> methods (the first 4 in the table) are inherited from <a class="reference internal" href="../ref-manual/classes/mp/task.html#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a> and only the <em>default</em> methods (the last 4) would be overridden to customize a task with new model or data model converter classes.</p>
+<p><a class="reference internal" href="#tab-task-methods"><span class="std std-numref">Table 9.1</span></a> shows the methods that determine the classes for each of the 4 objects. Each method returns a handle to a class constructor. In general, the <em>main</em> methods (the first 4 in the table) are inherited from <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code> and only the <em>default</em> methods (the last 4) would be overridden to customize a task with new model or data model converter classes.</p>
 </section>
 <section id="element-classes">
 <span id="sec-element-classes"></span><h3><span class="section-number">9.1.3. </span>Element Classes<a class="headerlink" href="#element-classes" title="Link to this heading"></a></h3>
-<p>Each of the element container objects, that is the data model converter and the 3 model objects, contains a set of <em>elements</em>. The classes used to construct these elements are determined by the container class. Each container class inherits from <a class="reference internal" href="../ref-manual/classes/mp/element_container.html#mp.element_container" title="mp.element_container"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.element_container</span></code></a>, and as such it has an <a class="reference internal" href="../ref-manual/classes/mp/element_container.html#mp.element_container.element_classes" title="mp.element_container.element_classes"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">element_classes</span></code></a> property, which is a cell array populated by the  constructor with handles to constructors for the elements. This means that a container subclass can, by overriding its constructor, modify the list of element classes provided by its parent.</p>
-<p>The elements are instantiated by a call to the container object’s <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code> method, so the resulting set can be customized at runtime by modifying the list in <a class="reference internal" href="../ref-manual/classes/mp/element_container.html#mp.element_container.element_classes" title="mp.element_container.element_classes"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">element_classes</span></code></a> after the container object is created and before its <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code> method is called.</p>
-<p>This is done using <strong>element class modifiers</strong>, specified either by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extensions or <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options. There are 3 types of element class modifiers, for adding, deleting or replacing an entry in an <a class="reference internal" href="../ref-manual/classes/mp/element_container.html#mp.element_container.element_classes" title="mp.element_container.element_classes"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">element_classes</span></code></a> property. The 3 types are described in <a class="reference internal" href="#tab-element-class-modifiers"><span class="std std-numref">Table 9.2</span></a>.</p>
+<p>Each of the element container objects, that is the data model converter and the 3 model objects, contains a set of <em>elements</em>. The classes used to construct these elements are determined by the container class. Each container class inherits from <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.element_container</span></code>, and as such it has an <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">element_classes</span></code> property, which is a cell array populated by the  constructor with handles to constructors for the elements. This means that a container subclass can, by overriding its constructor, modify the list of element classes provided by its parent.</p>
+<p>The elements are instantiated by a call to the container object’s <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code> method, so the resulting set can be customized at runtime by modifying the list in <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">element_classes</span></code> after the container object is created and before its <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code> method is called.</p>
+<p>This is done using <strong>element class modifiers</strong>, specified either by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extensions or <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options. There are 3 types of element class modifiers, for adding, deleting or replacing an entry in an <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">element_classes</span></code> property. The 3 types are described in <a class="reference internal" href="#tab-element-class-modifiers"><span class="std std-numref">Table 9.2</span></a>.</p>
 <span id="tab-element-class-modifiers"></span><table class="longtable docutils align-default" id="id8">
 <caption><span class="caption-number">Table 9.2 </span><span class="caption-text">Element Class Modifiers</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
 <colgroup>
@@ -220,7 +220,7 @@
 </tr>
 </tbody>
 </table>
-<p>Typically, multiple element class modifiers can be provided in a cell array and they are processed sequentially to modify the existing list by the <a class="reference internal" href="../ref-manual/classes/mp/element_container.html#mp.element_container.modify_element_classes" title="mp.element_container.modify_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">modify_element_classes()</span></code></a> from <a class="reference internal" href="../ref-manual/classes/mp/element_container.html#mp.element_container" title="mp.element_container"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.element_container</span></code></a>.</p>
+<p>Typically, multiple element class modifiers can be provided in a cell array and they are processed sequentially to modify the existing list by the <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">modify_element_classes()</span></code> from <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.element_container</span></code>.</p>
 </section>
 </section>
 <section id="customization-via-matpower-options">
@@ -271,11 +271,11 @@
 <section id="matpower-extensions">
 <span id="sec-extensions"></span><h2><span class="section-number">9.3. </span><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions<a class="headerlink" href="#matpower-extensions" title="Link to this heading"></a></h2>
 <p>The <em>flexible</em> <span class="raw-html"><em>M<span style="font-size:smaller">ATPOWER</span></em></span> <em>framework</em> summarized in <a class="reference internal" href="architecture.html#sec-two-frameworks"><span class="std std-numref">Section 3.3</span></a> introduces a <span class="raw-html"><strong>M<span style="font-size:smaller">ATPOWER</span></strong></span> <strong>extension</strong> API as a way to bundle a set of class additions and modifications together into a single named package.</p>
-<p>For example, the <a class="reference internal" href="../ref-manual/classes/mp/xt_reserves.html#mp.xt_reserves" title="mp.xt_reserves"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_reserves</span></code></a> class and those it references, adds co-optimization of fixed zonal reserves to the standard OPF problem, as previously implemented by <code class="xref mat mat-func docutils literal notranslate"><span class="pre">toggle_reserves()</span></code> and <code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_opf_w_res()</span></code> in <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> 7.1 and earlier using its legacy OPF callback functions. To invoke an OPF with the <a class="reference internal" href="../ref-manual/classes/mp/xt_reserves.html#mp.xt_reserves" title="mp.xt_reserves"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_reserves</span></code></a> extension, you simply pass the extension object as an optional argument into the <a class="reference internal" href="../ref-manual/functions/run_opf.html#run_opf" title="run_opf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_opf()</span></code></a> function.</p>
+<p>For example, the <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_reserves</span></code> class and those it references, adds co-optimization of fixed zonal reserves to the standard OPF problem, as previously implemented by <code class="xref mat mat-func docutils literal notranslate"><span class="pre">toggle_reserves()</span></code> and <code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_opf_w_res()</span></code> in <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> 7.1 and earlier using its legacy OPF callback functions. To invoke an OPF with the <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_reserves</span></code> extension, you simply pass the extension object as an optional argument into the <code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_opf()</span></code> function.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">run_opf</span><span class="p">(</span><span class="n">mpc</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="s">&#39;mpx&#39;</span><span class="p">,</span> <span class="n">mp</span><span class="p">.</span><span class="n">xt_reserves</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>A <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extension is a subclass of <a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>, which implements a very simple interface consisting of nine methods. Five of them return a single class constructor handle, and the other four return a cell array of element class modifiers, described above in <a class="reference internal" href="#tab-element-class-modifiers"><span class="std std-numref">Table 9.2</span></a>.</p>
+<p>A <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extension is a subclass of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>, which implements a very simple interface consisting of nine methods. Five of them return a single class constructor handle, and the other four return a cell array of element class modifiers, described above in <a class="reference internal" href="#tab-element-class-modifiers"><span class="std std-numref">Table 9.2</span></a>.</p>
 <p>The methods are summarized in <a class="reference internal" href="#tab-ext-methods"><span class="std std-numref">Table 9.4</span></a></p>
 <span id="tab-ext-methods"></span><table class="longtable docutils align-default" id="id10">
 <caption><span class="caption-number">Table 9.4 </span><span class="caption-text"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extension Methods</span><a class="headerlink" href="#id10" title="Link to this table"></a></caption>
@@ -289,36 +289,36 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.task_class" title="mp.extension.task_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">task_class()</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">task_class()</span></code></p></td>
 <td><p>Returns a handle to the constructor for the task object.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.dm_converter_class" title="mp.extension.dm_converter_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class()</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class()</span></code></p></td>
 <td><p>Returns a handle to the constructor for the data model converter.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.data_model_class" title="mp.extension.data_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_class()</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_class()</span></code></p></td>
 <td><p>Returns a handle to the constructor for the data model.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.network_model_class" title="mp.extension.network_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_class()</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_class()</span></code></p></td>
 <td><p>Returns a handle to the constructor for the network model.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.math_model_class" title="mp.extension.math_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class()</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class()</span></code></p></td>
 <td><p>Returns a handle to the constructor for the math model.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.dmc_element_classes" title="mp.extension.dmc_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dmc_element_classes()</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dmc_element_classes()</span></code></p></td>
 <td><p>Returns a cell array of element class modifiers for data model converter elements.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.dm_element_classes" title="mp.extension.dm_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_element_classes()</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_element_classes()</span></code></p></td>
 <td><p>Returns a cell array of element class modifiers for data model elements.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.nm_element_classes" title="mp.extension.nm_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nm_element_classes()</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nm_element_classes()</span></code></p></td>
 <td><p>Returns a cell array of element class modifiers for network model elements.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../ref-manual/classes/mp/extension.html#mp.extension.mm_element_classes" title="mp.extension.mm_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mm_element_classes()</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mm_element_classes()</span></code></p></td>
 <td><p>Returns a cell array of element class modifiers for math model elements.</p></td>
 </tr>
 </tbody>
 </table>
-<p>Even something as complex as adding three-phase unbalanced buses, lines, loads and generators for multiple formulations of PF, CPF, and OPF problems can be implemented in terms of a single <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extension. Please see <a class="reference internal" href="../ref-manual/classes/mp/xt_3p.html#mp.xt_3p" title="mp.xt_3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_3p</span></code></a> for an example.</p>
+<p>Even something as complex as adding three-phase unbalanced buses, lines, loads and generators for multiple formulations of PF, CPF, and OPF problems can be implemented in terms of a single <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extension. Please see <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_3p</span></code> for an example.</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id5" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>

@@ -79,7 +79,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -128,10 +128,10 @@
 <section id="mp-xt-3p">
 <h1>mp.xt_3p<a class="headerlink" href="#mp-xt-3p" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="mp.xt_3p">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">xt_3p</span></span><a class="headerlink" href="#mp.xt_3p" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a></p>
-<p><a class="reference internal" href="#mp.xt_3p" title="mp.xt_3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_3p</span></code></a> - <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extension to add unbalanced three-phase elements.</p>
+<dt class="sig sig-object mat" id="matpower.mp.xt_3p">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">xt_3p</span></span><a class="headerlink" href="#matpower.mp.xt_3p" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></p>
+<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_3p</span></code> - <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extension to add unbalanced three-phase elements.</p>
 <p>For AC power flow, continuation power flow, and optimial power flow problems,
 adds six new element types:</p>
 <blockquote>
@@ -155,10 +155,10 @@ voltages.</p>
 and the formulation.</p>
 <dl class="simple">
 <dt>mp.xt_3p Methods:</dt><dd><ul class="simple">
-<li><p><a class="reference internal" href="#mp.xt_3p.dmc_element_classes" title="mp.xt_3p.dmc_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dmc_element_classes()</span></code></a> - add six classes to data model converter elements</p></li>
-<li><p><a class="reference internal" href="#mp.xt_3p.dm_element_classes" title="mp.xt_3p.dm_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_element_classes()</span></code></a> - add six classes to  data model elements</p></li>
-<li><p><a class="reference internal" href="#mp.xt_3p.nm_element_classes" title="mp.xt_3p.nm_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nm_element_classes()</span></code></a> - add six classes to network model elements</p></li>
-<li><p><a class="reference internal" href="#mp.xt_3p.mm_element_classes" title="mp.xt_3p.mm_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mm_element_classes()</span></code></a> - add six classes to mathematical model elements</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dmc_element_classes()</span></code> - add six classes to data model converter elements</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_element_classes()</span></code> - add six classes to  data model elements</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nm_element_classes()</span></code> - add six classes to network model elements</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mm_element_classes()</span></code> - add six classes to mathematical model elements</p></li>
 </ul>
 </dd>
 </dl>
@@ -166,107 +166,107 @@ and the formulation.</p>
 <span class="raw-html"><a class="reference external" href="https://matpower.org/documentation/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more information, and specifically the
 <a class="reference internal" href="../../../dev-manual/customizing.html#sec-element-classes"><span class="std std-ref">Element Classes</span></a> section and the <a class="reference internal" href="../../../dev-manual/customizing.html#tab-element-class-modifiers"><span class="std std-ref">Element Class Modifiers</span></a>
 table for details on <em>element class modifiers</em>.</p>
-<p>See also <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>.</p>
+<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp.xt_3p.dmc_element_classes">
-<span class="sig-name descname"><span class="pre">dmc_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dmc_class</span></em>, <em class="sig-param"><span class="pre">fmt</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.xt_3p.dmc_element_classes" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.xt_3p.dmc_element_classes">
+<span class="sig-name descname"><span class="pre">dmc_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dmc_class</span></em>, <em class="sig-param"><span class="pre">fmt</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.xt_3p.dmc_element_classes" title="Link to this definition"></a></dt>
 <dd><p>Add six classes to data model converter elements.</p>
 <p>For <code class="docutils literal notranslate"><span class="pre">'mpc2</span></code> data formats, adds the classes:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference internal" href="dmce_bus3p_mpc2.html#mp.dmce_bus3p_mpc2" title="mp.dmce_bus3p_mpc2"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_bus3p_mpc2</span></code></a></p></li>
-<li><p><a class="reference internal" href="dmce_gen3p_mpc2.html#mp.dmce_gen3p_mpc2" title="mp.dmce_gen3p_mpc2"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_gen3p_mpc2</span></code></a></p></li>
-<li><p><a class="reference internal" href="dmce_load3p_mpc2.html#mp.dmce_load3p_mpc2" title="mp.dmce_load3p_mpc2"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_load3p_mpc2</span></code></a></p></li>
-<li><p><a class="reference internal" href="dmce_line3p_mpc2.html#mp.dmce_line3p_mpc2" title="mp.dmce_line3p_mpc2"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_line3p_mpc2</span></code></a></p></li>
-<li><p><a class="reference internal" href="dmce_xfmr3p_mpc2.html#mp.dmce_xfmr3p_mpc2" title="mp.dmce_xfmr3p_mpc2"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_xfmr3p_mpc2</span></code></a></p></li>
-<li><p><a class="reference internal" href="dmce_buslink_mpc2.html#mp.dmce_buslink_mpc2" title="mp.dmce_buslink_mpc2"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_buslink_mpc2</span></code></a></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_bus3p_mpc2</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_gen3p_mpc2</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_load3p_mpc2</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_line3p_mpc2</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_xfmr3p_mpc2</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_buslink_mpc2</span></code></p></li>
 </ul>
 </div></blockquote>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.xt_3p.dm_element_classes">
-<span class="sig-name descname"><span class="pre">dm_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.xt_3p.dm_element_classes" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.xt_3p.dm_element_classes">
+<span class="sig-name descname"><span class="pre">dm_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.xt_3p.dm_element_classes" title="Link to this definition"></a></dt>
 <dd><p>Add six classes to data model elements.</p>
 <p>For <code class="docutils literal notranslate"><span class="pre">'PF'</span></code> and <code class="docutils literal notranslate"><span class="pre">'CPF'</span></code> tasks, adds the classes:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference internal" href="dme_bus3p.html#mp.dme_bus3p" title="mp.dme_bus3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_bus3p</span></code></a></p></li>
-<li><p><a class="reference internal" href="dme_gen3p.html#mp.dme_gen3p" title="mp.dme_gen3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_gen3p</span></code></a></p></li>
-<li><p><a class="reference internal" href="dme_load3p.html#mp.dme_load3p" title="mp.dme_load3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_load3p</span></code></a></p></li>
-<li><p><a class="reference internal" href="dme_line3p.html#mp.dme_line3p" title="mp.dme_line3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_line3p</span></code></a></p></li>
-<li><p><a class="reference internal" href="dme_xfmr3p.html#mp.dme_xfmr3p" title="mp.dme_xfmr3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_xfmr3p</span></code></a></p></li>
-<li><p><a class="reference internal" href="dme_buslink.html#mp.dme_buslink" title="mp.dme_buslink"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_buslink</span></code></a></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_bus3p</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_gen3p</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_load3p</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_line3p</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_xfmr3p</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_buslink</span></code></p></li>
 </ul>
 </div></blockquote>
 <p>For <code class="docutils literal notranslate"><span class="pre">'OPF'</span></code> tasks, adds the classes:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference internal" href="dme_bus3p_opf.html#mp.dme_bus3p_opf" title="mp.dme_bus3p_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_bus3p_opf</span></code></a></p></li>
-<li><p><a class="reference internal" href="dme_gen3p_opf.html#mp.dme_gen3p_opf" title="mp.dme_gen3p_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_gen3p_opf</span></code></a></p></li>
-<li><p><a class="reference internal" href="dme_load3p_opf.html#mp.dme_load3p_opf" title="mp.dme_load3p_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_load3p_opf</span></code></a></p></li>
-<li><p><a class="reference internal" href="dme_line3p_opf.html#mp.dme_line3p_opf" title="mp.dme_line3p_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_line3p_opf</span></code></a></p></li>
-<li><p><a class="reference internal" href="dme_xfmr3p_opf.html#mp.dme_xfmr3p_opf" title="mp.dme_xfmr3p_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_xfmr3p_opf</span></code></a></p></li>
-<li><p><a class="reference internal" href="dme_buslink_opf.html#mp.dme_buslink_opf" title="mp.dme_buslink_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_buslink_opf</span></code></a></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_bus3p_opf</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_gen3p_opf</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_load3p_opf</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_line3p_opf</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_xfmr3p_opf</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_buslink_opf</span></code></p></li>
 </ul>
 </div></blockquote>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.xt_3p.nm_element_classes">
-<span class="sig-name descname"><span class="pre">nm_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.xt_3p.nm_element_classes" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.xt_3p.nm_element_classes">
+<span class="sig-name descname"><span class="pre">nm_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.xt_3p.nm_element_classes" title="Link to this definition"></a></dt>
 <dd><p>Add six classes to network model elements.</p>
 <p>For <em>cartesian</em> voltage formulations, adds the classes:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference internal" href="nme_bus3p_acc.html#mp.nme_bus3p_acc" title="mp.nme_bus3p_acc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_bus3p_acc</span></code></a></p></li>
-<li><p><a class="reference internal" href="nme_gen3p_acc.html#mp.nme_gen3p_acc" title="mp.nme_gen3p_acc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_gen3p_acc</span></code></a></p></li>
-<li><p><a class="reference internal" href="nme_load3p.html#mp.nme_load3p" title="mp.nme_load3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_load3p</span></code></a></p></li>
-<li><p><a class="reference internal" href="nme_line3p.html#mp.nme_line3p" title="mp.nme_line3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_line3p</span></code></a></p></li>
-<li><p><a class="reference internal" href="nme_xfmr3p.html#mp.nme_xfmr3p" title="mp.nme_xfmr3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_xfmr3p</span></code></a></p></li>
-<li><p><a class="reference internal" href="nme_buslink_acc.html#mp.nme_buslink_acc" title="mp.nme_buslink_acc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_buslink_acc</span></code></a></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_bus3p_acc</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_gen3p_acc</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_load3p</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_line3p</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_xfmr3p</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_buslink_acc</span></code></p></li>
 </ul>
 </div></blockquote>
 <p>For <em>polar</em> voltage formulations, adds the classes:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference internal" href="nme_bus3p_acp.html#mp.nme_bus3p_acp" title="mp.nme_bus3p_acp"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_bus3p_acp</span></code></a></p></li>
-<li><p><a class="reference internal" href="nme_gen3p_acp.html#mp.nme_gen3p_acp" title="mp.nme_gen3p_acp"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_gen3p_acp</span></code></a></p></li>
-<li><p><a class="reference internal" href="nme_load3p.html#mp.nme_load3p" title="mp.nme_load3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_load3p</span></code></a></p></li>
-<li><p><a class="reference internal" href="nme_line3p.html#mp.nme_line3p" title="mp.nme_line3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_line3p</span></code></a></p></li>
-<li><p><a class="reference internal" href="nme_xfmr3p.html#mp.nme_xfmr3p" title="mp.nme_xfmr3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_xfmr3p</span></code></a></p></li>
-<li><p><a class="reference internal" href="nme_buslink_acp.html#mp.nme_buslink_acp" title="mp.nme_buslink_acp"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_buslink_acp</span></code></a></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_bus3p_acp</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_gen3p_acp</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_load3p</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_line3p</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_xfmr3p</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_buslink_acp</span></code></p></li>
 </ul>
 </div></blockquote>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.xt_3p.mm_element_classes">
-<span class="sig-name descname"><span class="pre">mm_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.xt_3p.mm_element_classes" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.xt_3p.mm_element_classes">
+<span class="sig-name descname"><span class="pre">mm_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.xt_3p.mm_element_classes" title="Link to this definition"></a></dt>
 <dd><p>Add five classes to mathematical model elements.</p>
 <p>For <code class="docutils literal notranslate"><span class="pre">'PF'</span></code> and <code class="docutils literal notranslate"><span class="pre">'CPF'</span></code> tasks, adds the classes:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference internal" href="mme_bus3p.html#mp.mme_bus3p" title="mp.mme_bus3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_bus3p</span></code></a></p></li>
-<li><p><a class="reference internal" href="mme_gen3p.html#mp.mme_gen3p" title="mp.mme_gen3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_gen3p</span></code></a></p></li>
-<li><p><a class="reference internal" href="mme_line3p.html#mp.mme_line3p" title="mp.mme_line3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_line3p</span></code></a></p></li>
-<li><p><a class="reference internal" href="mme_xfmr3p.html#mp.mme_xfmr3p" title="mp.mme_xfmr3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_xfmr3p</span></code></a></p></li>
-<li><p><a class="reference internal" href="mme_buslink_pf_acc.html#mp.mme_buslink_pf_acc" title="mp.mme_buslink_pf_acc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_buslink_pf_acc</span></code></a> <em>(cartesian)</em> or
-<a class="reference internal" href="mme_buslink_pf_acp.html#mp.mme_buslink_pf_acp" title="mp.mme_buslink_pf_acp"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_buslink_pf_acp</span></code></a> <em>(polar)</em></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_bus3p</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_gen3p</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_line3p</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_xfmr3p</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_buslink_pf_acc</span></code> <em>(cartesian)</em> or
+<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_buslink_pf_acp</span></code> <em>(polar)</em></p></li>
 </ul>
 </div></blockquote>
 <p>For <code class="docutils literal notranslate"><span class="pre">'OPF'</span></code> tasks, adds the classes:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference internal" href="mme_bus3p_opf_acc.html#mp.mme_bus3p_opf_acc" title="mp.mme_bus3p_opf_acc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_bus3p_opf_acc</span></code></a> <em>(cartesian)</em> or
-<a class="reference internal" href="mme_bus3p_opf_acp.html#mp.mme_bus3p_opf_acp" title="mp.mme_bus3p_opf_acp"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_bus3p_opf_acp</span></code></a> <em>(polar)</em></p></li>
-<li><p><a class="reference internal" href="mme_gen3p_opf.html#mp.mme_gen3p_opf" title="mp.mme_gen3p_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_gen3p_opf</span></code></a></p></li>
-<li><p><a class="reference internal" href="mme_line3p_opf.html#mp.mme_line3p_opf" title="mp.mme_line3p_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_line3p_opf</span></code></a></p></li>
-<li><p><a class="reference internal" href="mme_xfmr3p_opf.html#mp.mme_xfmr3p_opf" title="mp.mme_xfmr3p_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_xfmr3p_opf</span></code></a></p></li>
-<li><p><a class="reference internal" href="mme_buslink_opf_acc.html#mp.mme_buslink_opf_acc" title="mp.mme_buslink_opf_acc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_buslink_opf_acc</span></code></a> <em>(cartesian)</em> or
-<a class="reference internal" href="mme_buslink_opf_acp.html#mp.mme_buslink_opf_acp" title="mp.mme_buslink_opf_acp"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_buslink_opf_acp</span></code></a> <em>(polar)</em></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_bus3p_opf_acc</span></code> <em>(cartesian)</em> or
+<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_bus3p_opf_acp</span></code> <em>(polar)</em></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_gen3p_opf</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_line3p_opf</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_xfmr3p_opf</span></code></p></li>
+<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_buslink_opf_acc</span></code> <em>(cartesian)</em> or
+<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_buslink_opf_acp</span></code> <em>(polar)</em></p></li>
 </ul>
 </div></blockquote>
 </dd></dl>

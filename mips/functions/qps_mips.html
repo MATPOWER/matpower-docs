@@ -74,7 +74,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -123,9 +123,9 @@
 <section id="qps-mips">
 <h1>qps_mips<a class="headerlink" href="#qps-mips" title="Link to this heading"></a></h1>
 <dl class="mat function">
-<dt class="sig sig-object mat" id="qps_mips">
-<span class="sig-name descname"><span class="pre">qps_mips</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">H</span></em>, <em class="sig-param"><span class="pre">c</span></em>, <em class="sig-param"><span class="pre">A</span></em>, <em class="sig-param"><span class="pre">l</span></em>, <em class="sig-param"><span class="pre">u</span></em>, <em class="sig-param"><span class="pre">xmin</span></em>, <em class="sig-param"><span class="pre">xmax</span></em>, <em class="sig-param"><span class="pre">x0</span></em>, <em class="sig-param"><span class="pre">opt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qps_mips" title="Link to this definition"></a></dt>
-<dd><p><a class="reference internal" href="#qps_mips" title="qps_mips"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">qps_mips()</span></code></a> - Quadratic Program Solver based on <span class="raw-html"><a href="https://github.com/MATPOWER/mips">MIPS</a></span>.</p>
+<dt class="sig sig-object mat" id="mips.qps_mips">
+<span class="sig-name descname"><span class="pre">qps_mips</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">H</span></em>, <em class="sig-param"><span class="pre">c</span></em>, <em class="sig-param"><span class="pre">A</span></em>, <em class="sig-param"><span class="pre">l</span></em>, <em class="sig-param"><span class="pre">u</span></em>, <em class="sig-param"><span class="pre">xmin</span></em>, <em class="sig-param"><span class="pre">xmax</span></em>, <em class="sig-param"><span class="pre">x0</span></em>, <em class="sig-param"><span class="pre">opt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mips.qps_mips" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mips.qps_mips" title="mips.qps_mips"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">qps_mips()</span></code></a> - Quadratic Program Solver based on <span class="raw-html"><a href="https://github.com/MATPOWER/mips">MIPS</a></span>.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">exitflag</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">lambda</span><span class="p">]</span> <span class="p">=</span> <span class="p">...</span>
     <span class="n">qps_mips</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">opt</span><span class="p">)</span>
 

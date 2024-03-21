@@ -71,7 +71,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -120,19 +120,19 @@
 <section id="mp-table-class">
 <h1>mp_table_class<a class="headerlink" href="#mp-table-class" title="Link to this heading"></a></h1>
 <dl class="mat function">
-<dt class="sig sig-object mat" id="mp_table_class">
-<span class="sig-name descname"><span class="pre">mp_table_class</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp_table_class" title="Link to this definition"></a></dt>
-<dd><p><a class="reference internal" href="#mp_table_class" title="mp_table_class"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">mp_table_class()</span></code></a> - Returns handle to constructor for <code class="xref mat mat-class docutils literal notranslate"><span class="pre">table</span></code> or <a class="reference internal" href="../classes/mp_table.html#mp_table" title="mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>.</p>
+<dt class="sig sig-object mat" id="matpower.mp_table_class">
+<span class="sig-name descname"><span class="pre">mp_table_class</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp_table_class" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#matpower.mp_table_class" title="matpower.mp_table_class"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">mp_table_class()</span></code></a> - Returns handle to constructor for <code class="xref mat mat-class docutils literal notranslate"><span class="pre">table</span></code> or <a class="reference internal" href="../classes/mp_table.html#matpower.mp_table" title="matpower.mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>.</p>
 <p>Returns a handle to <code class="xref mat mat-class docutils literal notranslate"><span class="pre">table</span></code> constructor, if it is available,
-otherwise to <a class="reference internal" href="../classes/mp_table.html#mp_table" title="mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a> constructor. Useful for table-based code that is
-compatible with both MATLAB (using native tables) and Octave (using <a class="reference internal" href="../classes/mp_table.html#mp_table" title="mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>
+otherwise to <a class="reference internal" href="../classes/mp_table.html#matpower.mp_table" title="matpower.mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a> constructor. Useful for table-based code that is
+compatible with both MATLAB (using native tables) and Octave (using <a class="reference internal" href="../classes/mp_table.html#matpower.mp_table" title="matpower.mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>
 or the <code class="xref mat mat-class docutils literal notranslate"><span class="pre">table</span></code> implementation from Tablicious, if available).</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Works in MATLAB or Octave, which does not (yet) natively support table().</span>
 <span class="n">table_class</span> <span class="p">=</span> <span class="n">mp_table_class</span><span class="p">();</span>
 <span class="n">T</span> <span class="p">=</span> <span class="n">table_class</span><span class="p">(</span><span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">,</span> <span class="p">...);</span>
 </pre></div>
 </div>
-<p>See also <code class="docutils literal notranslate"><span class="pre">table</span></code>, <a class="reference internal" href="../classes/mp_table.html#mp_table" title="mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>.</p>
+<p>See also <code class="docutils literal notranslate"><span class="pre">table</span></code>, <a class="reference internal" href="../classes/mp_table.html#matpower.mp_table" title="matpower.mp_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table</span></code></a>.</p>
 </dd></dl>
 
 </section>

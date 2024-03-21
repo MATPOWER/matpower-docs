@@ -78,7 +78,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -127,10 +127,10 @@
 <section id="mp-mme-bus-opf-acc">
 <h1>mp.mme_bus_opf_acc<a class="headerlink" href="#mp-mme-bus-opf-acc" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="mp.mme_bus_opf_acc">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">mme_bus_opf_acc</span></span><a class="headerlink" href="#mp.mme_bus_opf_acc" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="mme_bus_opf_ac.html#mp.mme_bus_opf_ac" title="mp.mme_bus_opf_ac"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_bus_opf_ac</span></code></a></p>
-<p><a class="reference internal" href="#mp.mme_bus_opf_acc" title="mp.mme_bus_opf_acc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_bus_opf_acc</span></code></a> - Math model element for bus for AC cartesian voltage OPF.</p>
+<dt class="sig sig-object mat" id="matpower.mp.mme_bus_opf_acc">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">mme_bus_opf_acc</span></span><a class="headerlink" href="#matpower.mp.mme_bus_opf_acc" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_bus_opf_ac</span></code></p>
+<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_bus_opf_acc</span></code> - Math model element for bus for AC cartesian voltage OPF.</p>
 <p>Math model element class for bus elements for AC cartesian voltage OPF
 problems.</p>
 <p>Implements methods for adding constraints for reference voltage angle,
@@ -141,18 +141,18 @@ model solution.</p>
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp.mme_bus_opf_acc.add_constraints">
-<span class="sig-name descname"><span class="pre">add_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mme_bus_opf_acc.add_constraints" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.mme_bus_opf_acc.add_constraints">
+<span class="sig-name descname"><span class="pre">add_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mme_bus_opf_acc.add_constraints" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.mme_bus_opf_acc.interior_x0">
-<span class="sig-name descname"><span class="pre">interior_x0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">x0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mme_bus_opf_acc.interior_x0" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.mme_bus_opf_acc.interior_x0">
+<span class="sig-name descname"><span class="pre">interior_x0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">x0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mme_bus_opf_acc.interior_x0" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.mme_bus_opf_acc.data_model_update_on">
-<span class="sig-name descname"><span class="pre">data_model_update_on</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mme_bus_opf_acc.data_model_update_on" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.mme_bus_opf_acc.data_model_update_on">
+<span class="sig-name descname"><span class="pre">data_model_update_on</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mme_bus_opf_acc.data_model_update_on" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd>

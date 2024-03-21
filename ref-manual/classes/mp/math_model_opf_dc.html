@@ -78,7 +78,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -127,46 +127,46 @@
 <section id="mp-math-model-opf-dc">
 <h1>mp.math_model_opf_dc<a class="headerlink" href="#mp-math-model-opf-dc" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="mp.math_model_opf_dc">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">math_model_opf_dc</span></span><a class="headerlink" href="#mp.math_model_opf_dc" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="math_model_opf.html#mp.math_model_opf" title="mp.math_model_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model_opf</span></code></a></p>
-<p><a class="reference internal" href="#mp.math_model_opf_dc" title="mp.math_model_opf_dc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model_opf_dc</span></code></a> - Optimal Power flow (OPF) <strong>math model</strong> for DC formulation.</p>
+<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_dc">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">math_model_opf_dc</span></span><a class="headerlink" href="#matpower.mp.math_model_opf_dc" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model_opf</span></code></p>
+<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model_opf_dc</span></code> - Optimal Power flow (OPF) <strong>math model</strong> for DC formulation.</p>
 <p>Provides formulation-specific and OPF-specific subclasses for elements.</p>
 <p>Provides implementation of nodal balance constraint method and setup
 of solver options.</p>
-<p>Implements <a class="reference internal" href="#mp.math_model_opf_dc.convert_x_m2n" title="mp.math_model_opf_dc.convert_x_m2n"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">convert_x_m2n()</span></code></a> to convert from math model state to network
+<p>Implements <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">convert_x_m2n()</span></code> to convert from math model state to network
 model state.</p>
 <div class="members docutils container">
 <dl>
 <dt>Constructor Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp.math_model_opf_dc.math_model_opf_dc">
-<span class="sig-name descname"><span class="pre">math_model_opf_dc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.math_model_opf_dc.math_model_opf_dc" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_dc.math_model_opf_dc">
+<span class="sig-name descname"><span class="pre">math_model_opf_dc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.math_model_opf_dc.math_model_opf_dc" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp.math_model_opf_dc.form_tag">
-<span class="sig-name descname"><span class="pre">form_tag</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.math_model_opf_dc.form_tag" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_dc.form_tag">
+<span class="sig-name descname"><span class="pre">form_tag</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.math_model_opf_dc.form_tag" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.math_model_opf_dc.form_name">
-<span class="sig-name descname"><span class="pre">form_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.math_model_opf_dc.form_name" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_dc.form_name">
+<span class="sig-name descname"><span class="pre">form_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.math_model_opf_dc.form_name" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.math_model_opf_dc.convert_x_m2n">
-<span class="sig-name descname"><span class="pre">convert_x_m2n</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mmx</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.math_model_opf_dc.convert_x_m2n" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_dc.convert_x_m2n">
+<span class="sig-name descname"><span class="pre">convert_x_m2n</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mmx</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.math_model_opf_dc.convert_x_m2n" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.math_model_opf_dc.add_node_balance_constraints">
-<span class="sig-name descname"><span class="pre">add_node_balance_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.math_model_opf_dc.add_node_balance_constraints" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_dc.add_node_balance_constraints">
+<span class="sig-name descname"><span class="pre">add_node_balance_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.math_model_opf_dc.add_node_balance_constraints" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.math_model_opf_dc.solve_opts">
-<span class="sig-name descname"><span class="pre">solve_opts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.math_model_opf_dc.solve_opts" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_dc.solve_opts">
+<span class="sig-name descname"><span class="pre">solve_opts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.math_model_opf_dc.solve_opts" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd>

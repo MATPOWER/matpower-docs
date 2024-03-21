@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reference &mdash; MATPOWER Documentation 8.0b1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=d50bc636"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="loadmd" href="functions/loadmd.html" />
+    <link rel="prev" title="MOST User’s Manual" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">Home (matpower.org)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mips/index.html">MIPS User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">MOST User’s Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#reference">Reference</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#main-most-functions">Main MOST Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other-functions">Other Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#most-examples">MOST Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#most-tests">MOST Tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#private-functions">Private Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">MOST User’s Manual</a></li>
+      <li class="breadcrumb-item active">Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/most/reference.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="index.html" class="btn btn-neutral float-left" title="MOST User’s Manual" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="functions/loadmd.html" class="btn btn-neutral float-right" title="loadmd" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="reference">
+<span id="sec-most-reference"></span><h1>Reference<a class="headerlink" href="#reference" title="Link to this heading"></a></h1>
+<section id="main-most-functions">
+<h2>Main MOST Functions<a class="headerlink" href="#main-most-functions" title="Link to this heading"></a></h2>
+<p>Functions to load data for MOST, run the <span class="raw-html"><b>M</b><span style="font-size:smaller">ATPOWER</span> <b>O</b>ptimal <b>S</b>cheduling <b>T</b>ool</span>, and print out some summary results.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="functions/loadmd.html">loadmd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/most.html">most</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/most_summary.html">most_summary</a></li>
+</ul>
+</div>
+<p>Functions for plotting results.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="functions/plot_gen.html">plot_gen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/plot_storage.html">plot_storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/plot_uc.html">plot_uc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/plot_uc_data.html">plot_uc_data</a></li>
+</ul>
+</div>
+</section>
+<section id="other-functions">
+<h2>Other Functions<a class="headerlink" href="#other-functions" title="Link to this heading"></a></h2>
+<p>Additional functions for use with MOST.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="functions/mostver.html">mostver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/addgen2mpc.html">addgen2mpc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/addstorage.html">addstorage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/addwind.html">addwind</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/apply_profile.html">apply_profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/filter_ramp_transitions.html">filter_ramp_transitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/getprofiles.html">getprofiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/idx_profile.html">idx_profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/loadstoragedata.html">loadstoragedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/loadxgendata.html">loadxgendata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/md_init.html">md_init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/uniformwindprofile.html">uniformwindprofile</a></li>
+</ul>
+</div>
+</section>
+<section id="most-examples">
+<h2>MOST Examples<a class="headerlink" href="#most-examples" title="Link to this heading"></a></h2>
+<p>These are examples of using MOST to solve various classes of problems.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="functions/most_ex1_ed.html">most_ex1_ed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/most_ex2_dcopf.html">most_ex2_dcopf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/most_ex3_dcopf_w_uc.html">most_ex3_dcopf_w_uc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/most_ex4_dcopf_ss.html">most_ex4_dcopf_ss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/most_ex5_mpopf.html">most_ex5_mpopf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/most_ex6_uc.html">most_ex6_uc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/most_ex7_suc.html">most_ex7_suc</a></li>
+</ul>
+</div>
+<p>Data for MOST examples.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="functions/ex_case3a.html">ex_case3a</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/ex_case3b.html">ex_case3b</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/ex_contab.html">ex_contab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/ex_load_profile.html">ex_load_profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/ex_storage.html">ex_storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/ex_transmat.html">ex_transmat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/ex_wind.html">ex_wind</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/ex_wind_profile.html">ex_wind_profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/ex_wind_profile_d.html">ex_wind_profile_d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/ex_wind_uc.html">ex_wind_uc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/ex_xgd.html">ex_xgd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/ex_xgd_ramp.html">ex_xgd_ramp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/ex_xgd_res.html">ex_xgd_res</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/ex_xgd_uc.html">ex_xgd_uc</a></li>
+</ul>
+</div>
+</section>
+<section id="most-tests">
+<h2>MOST Tests<a class="headerlink" href="#most-tests" title="Link to this heading"></a></h2>
+<p>These functions test that MOST is installed and functioning as expected.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="functions/test_most.html">test_most</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_most_3b_1_1_0.html">t_most_3b_1_1_0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_most_3b_1_1_2.html">t_most_3b_1_1_2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_most_3b_3_1_0.html">t_most_3b_3_1_0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_most_3b_3_1_2.html">t_most_3b_3_1_2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_most_30b_1_1_0.html">t_most_30b_1_1_0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_most_30b_1_1_17.html">t_most_30b_1_1_17</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_most_30b_3_1_0.html">t_most_30b_3_1_0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_most_30b_3_1_17.html">t_most_30b_3_1_17</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_most_fixed_res.html">t_most_fixed_res</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_most_30b_1_1_0_uc.html">t_most_30b_1_1_0_uc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_most_sp.html">t_most_sp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_most_spuc.html">t_most_spuc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_most_mpopf.html">t_most_mpopf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_most_uc.html">t_most_uc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_most_suc.html">t_most_suc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_most_tlmp.html">t_most_tlmp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_most_w_ds.html">t_most_w_ds</a></li>
+</ul>
+</div>
+<p>Data for MOST tests.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="functions/c118swf.html">c118swf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_case30_most.html">t_case30_most</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_case3_most.html">t_case3_most</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_case_tlmp.html">t_case_tlmp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/t_case_tlmp_storage.html">t_case_tlmp_storage</a></li>
+</ul>
+</div>
+</section>
+<section id="private-functions">
+<h2>Private Functions<a class="headerlink" href="#private-functions" title="Link to this heading"></a></h2>
+<p>The following are private functions that are used to implement functionality used by other functions.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="functions/loadgenericdata.html">loadgenericdata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions/mpoption_info_most.html">mpoption_info_most</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="MOST User’s Manual" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="functions/loadmd.html" class="btn btn-neutral float-right" title="loadmd" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

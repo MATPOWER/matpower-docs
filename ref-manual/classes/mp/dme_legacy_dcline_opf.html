@@ -79,7 +79,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -128,11 +128,11 @@
 <section id="mp-dme-legacy-dcline-opf">
 <h1>mp.dme_legacy_dcline_opf<a class="headerlink" href="#mp-dme-legacy-dcline-opf" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="mp.dme_legacy_dcline_opf">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">dme_legacy_dcline_opf</span></span><a class="headerlink" href="#mp.dme_legacy_dcline_opf" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="dme_legacy_dcline.html#mp.dme_legacy_dcline" title="mp.dme_legacy_dcline"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_legacy_dcline</span></code></a>, <a class="reference internal" href="dme_shared_opf.html#mp.dme_shared_opf" title="mp.dme_shared_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_shared_opf</span></code></a></p>
-<p><a class="reference internal" href="#mp.dme_legacy_dcline_opf" title="mp.dme_legacy_dcline_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_legacy_dcline_opf</span></code></a> - Data model element for legacy DC line for OPF.</p>
-<p>To parent class <a class="reference internal" href="dme_legacy_dcline.html#mp.dme_legacy_dcline" title="mp.dme_legacy_dcline"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_legacy_dcline</span></code></a>, adds costs, shadow prices
+<dt class="sig sig-object mat" id="matpower.mp.dme_legacy_dcline_opf">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">dme_legacy_dcline_opf</span></span><a class="headerlink" href="#matpower.mp.dme_legacy_dcline_opf" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_legacy_dcline</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_shared_opf</span></code></p>
+<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_legacy_dcline_opf</span></code> - Data model element for legacy DC line for OPF.</p>
+<p>To parent class <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_legacy_dcline</span></code>, adds costs, shadow prices
 on active and reactive flow limits, and pretty-printing for <strong>lim</strong>
 sections.</p>
 <p>Adds the following columns in the main data table, found in the
@@ -192,53 +192,53 @@ injection at “to” bus <em>(u/degree)</em> <a class="footnote-reference brac
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_legacy_dcline_opf.main_table_var_names">
-<span class="sig-name descname"><span class="pre">main_table_var_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_legacy_dcline_opf.main_table_var_names" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_legacy_dcline_opf.main_table_var_names">
+<span class="sig-name descname"><span class="pre">main_table_var_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_legacy_dcline_opf.main_table_var_names" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_legacy_dcline_opf.export_vars">
-<span class="sig-name descname"><span class="pre">export_vars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_legacy_dcline_opf.export_vars" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_legacy_dcline_opf.export_vars">
+<span class="sig-name descname"><span class="pre">export_vars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_legacy_dcline_opf.export_vars" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_legacy_dcline_opf.export_vars_offline_val">
-<span class="sig-name descname"><span class="pre">export_vars_offline_val</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_legacy_dcline_opf.export_vars_offline_val" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_legacy_dcline_opf.export_vars_offline_val">
+<span class="sig-name descname"><span class="pre">export_vars_offline_val</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_legacy_dcline_opf.export_vars_offline_val" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_legacy_dcline_opf.have_cost">
-<span class="sig-name descname"><span class="pre">have_cost</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_legacy_dcline_opf.have_cost" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_legacy_dcline_opf.have_cost">
+<span class="sig-name descname"><span class="pre">have_cost</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_legacy_dcline_opf.have_cost" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_legacy_dcline_opf.build_cost_params">
-<span class="sig-name descname"><span class="pre">build_cost_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_legacy_dcline_opf.build_cost_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_legacy_dcline_opf.build_cost_params">
+<span class="sig-name descname"><span class="pre">build_cost_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_legacy_dcline_opf.build_cost_params" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_legacy_dcline_opf.pretty_print">
-<span class="sig-name descname"><span class="pre">pretty_print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_legacy_dcline_opf.pretty_print" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_legacy_dcline_opf.pretty_print">
+<span class="sig-name descname"><span class="pre">pretty_print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_legacy_dcline_opf.pretty_print" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_legacy_dcline_opf.pp_have_section_lim">
-<span class="sig-name descname"><span class="pre">pp_have_section_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_legacy_dcline_opf.pp_have_section_lim" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_legacy_dcline_opf.pp_have_section_lim">
+<span class="sig-name descname"><span class="pre">pp_have_section_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_legacy_dcline_opf.pp_have_section_lim" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_legacy_dcline_opf.pp_binding_rows_lim">
-<span class="sig-name descname"><span class="pre">pp_binding_rows_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_legacy_dcline_opf.pp_binding_rows_lim" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_legacy_dcline_opf.pp_binding_rows_lim">
+<span class="sig-name descname"><span class="pre">pp_binding_rows_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_legacy_dcline_opf.pp_binding_rows_lim" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_legacy_dcline_opf.pp_get_headers_lim">
-<span class="sig-name descname"><span class="pre">pp_get_headers_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_legacy_dcline_opf.pp_get_headers_lim" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_legacy_dcline_opf.pp_get_headers_lim">
+<span class="sig-name descname"><span class="pre">pp_get_headers_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_legacy_dcline_opf.pp_get_headers_lim" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_legacy_dcline_opf.pp_data_row_lim">
-<span class="sig-name descname"><span class="pre">pp_data_row_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">k</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_legacy_dcline_opf.pp_data_row_lim" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_legacy_dcline_opf.pp_data_row_lim">
+<span class="sig-name descname"><span class="pre">pp_data_row_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">k</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_legacy_dcline_opf.pp_data_row_lim" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd>

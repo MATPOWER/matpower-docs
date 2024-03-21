@@ -78,7 +78,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -127,95 +127,95 @@
 <section id="mp-dme-shared-opf">
 <h1>mp.dme_shared_opf<a class="headerlink" href="#mp-dme-shared-opf" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="mp.dme_shared_opf">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">dme_shared_opf</span></span><a class="headerlink" href="#mp.dme_shared_opf" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_shared_opf">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">dme_shared_opf</span></span><a class="headerlink" href="#matpower.mp.dme_shared_opf" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
-<p><a class="reference internal" href="#mp.dme_shared_opf" title="mp.dme_shared_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_shared_opf</span></code></a> - Mixin class for OPF <strong>data model element</strong> objects.</p>
-<p>For all elements of <a class="reference internal" href="data_model_opf.html#mp.data_model_opf" title="mp.data_model_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model_opf</span></code></a>, adds shared functionality for
+<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_shared_opf</span></code> - Mixin class for OPF <strong>data model element</strong> objects.</p>
+<p>For all elements of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model_opf</span></code>, adds shared functionality for
 pretty-printing of <strong>lim</strong> sections.</p>
 <div class="members docutils container">
 <dl>
 <dt>Property Summary</dt><dd><dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.dme_shared_opf.ctol">
-<span class="sig-name descname"><span class="pre">ctol</span></span><a class="headerlink" href="#mp.dme_shared_opf.ctol" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_shared_opf.ctol">
+<span class="sig-name descname"><span class="pre">ctol</span></span><a class="headerlink" href="#matpower.mp.dme_shared_opf.ctol" title="Link to this definition"></a></dt>
 <dd><p>constraint violation tolerance</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.dme_shared_opf.ptol">
-<span class="sig-name descname"><span class="pre">ptol</span></span><a class="headerlink" href="#mp.dme_shared_opf.ptol" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_shared_opf.ptol">
+<span class="sig-name descname"><span class="pre">ptol</span></span><a class="headerlink" href="#matpower.mp.dme_shared_opf.ptol" title="Link to this definition"></a></dt>
 <dd><p>shadow price tolerance</p>
 </dd></dl>
 
 </dd>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_shared_opf.pp_set_tols_lim">
-<span class="sig-name descname"><span class="pre">pp_set_tols_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_shared_opf.pp_set_tols_lim" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_shared_opf.pp_set_tols_lim">
+<span class="sig-name descname"><span class="pre">pp_set_tols_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_shared_opf.pp_set_tols_lim" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_shared_opf.pp_have_section_other">
-<span class="sig-name descname"><span class="pre">pp_have_section_other</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_shared_opf.pp_have_section_other" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_shared_opf.pp_have_section_other">
+<span class="sig-name descname"><span class="pre">pp_have_section_other</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_shared_opf.pp_have_section_other" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_shared_opf.pp_rows_other">
-<span class="sig-name descname"><span class="pre">pp_rows_other</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_shared_opf.pp_rows_other" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_shared_opf.pp_rows_other">
+<span class="sig-name descname"><span class="pre">pp_rows_other</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_shared_opf.pp_rows_other" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_shared_opf.pp_get_headers_other">
-<span class="sig-name descname"><span class="pre">pp_get_headers_other</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_shared_opf.pp_get_headers_other" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_shared_opf.pp_get_headers_other">
+<span class="sig-name descname"><span class="pre">pp_get_headers_other</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_shared_opf.pp_get_headers_other" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_shared_opf.pp_get_footers_other">
-<span class="sig-name descname"><span class="pre">pp_get_footers_other</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_shared_opf.pp_get_footers_other" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_shared_opf.pp_get_footers_other">
+<span class="sig-name descname"><span class="pre">pp_get_footers_other</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_shared_opf.pp_get_footers_other" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_shared_opf.pp_data_other">
-<span class="sig-name descname"><span class="pre">pp_data_other</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">rows</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_shared_opf.pp_data_other" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_shared_opf.pp_data_other">
+<span class="sig-name descname"><span class="pre">pp_data_other</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">rows</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_shared_opf.pp_data_other" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_shared_opf.pp_have_section_lim">
-<span class="sig-name descname"><span class="pre">pp_have_section_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_shared_opf.pp_have_section_lim" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_shared_opf.pp_have_section_lim">
+<span class="sig-name descname"><span class="pre">pp_have_section_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_shared_opf.pp_have_section_lim" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_shared_opf.pp_rows_lim">
-<span class="sig-name descname"><span class="pre">pp_rows_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_shared_opf.pp_rows_lim" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_shared_opf.pp_rows_lim">
+<span class="sig-name descname"><span class="pre">pp_rows_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_shared_opf.pp_rows_lim" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_shared_opf.pp_binding_rows_lim">
-<span class="sig-name descname"><span class="pre">pp_binding_rows_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_shared_opf.pp_binding_rows_lim" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_shared_opf.pp_binding_rows_lim">
+<span class="sig-name descname"><span class="pre">pp_binding_rows_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_shared_opf.pp_binding_rows_lim" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_shared_opf.pp_get_title_lim">
-<span class="sig-name descname"><span class="pre">pp_get_title_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_shared_opf.pp_get_title_lim" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_shared_opf.pp_get_title_lim">
+<span class="sig-name descname"><span class="pre">pp_get_title_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_shared_opf.pp_get_title_lim" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_shared_opf.pp_get_headers_lim">
-<span class="sig-name descname"><span class="pre">pp_get_headers_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_shared_opf.pp_get_headers_lim" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_shared_opf.pp_get_headers_lim">
+<span class="sig-name descname"><span class="pre">pp_get_headers_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_shared_opf.pp_get_headers_lim" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_shared_opf.pp_get_footers_lim">
-<span class="sig-name descname"><span class="pre">pp_get_footers_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_shared_opf.pp_get_footers_lim" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_shared_opf.pp_get_footers_lim">
+<span class="sig-name descname"><span class="pre">pp_get_footers_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_shared_opf.pp_get_footers_lim" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_shared_opf.pp_data_lim">
-<span class="sig-name descname"><span class="pre">pp_data_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">rows</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_shared_opf.pp_data_lim" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_shared_opf.pp_data_lim">
+<span class="sig-name descname"><span class="pre">pp_data_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">rows</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_shared_opf.pp_data_lim" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_shared_opf.pp_data_row_lim">
-<span class="sig-name descname"><span class="pre">pp_data_row_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">k</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_shared_opf.pp_data_row_lim" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_shared_opf.pp_data_row_lim">
+<span class="sig-name descname"><span class="pre">pp_data_row_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">k</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_shared_opf.pp_data_row_lim" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd>

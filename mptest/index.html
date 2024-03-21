@@ -70,7 +70,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -119,7 +119,7 @@
 <span class="raw-html"><a href="https://www.octave.org">GNU Octave</a></span>. It was initially developed for <span class="raw-html"><a href="https://matpower.org">M<span style="font-size:smaller">ATPOWER</span></a></span>, and is used by
 <span class="raw-html"><a href="https://matpower.org">M<span style="font-size:smaller">ATPOWER</span></a></span>, <span class="raw-html"><b>M</b><span style="font-size:smaller">ATPOWER</span> <b>I</b>nterior <b>P</b>oint <b>S</b>olver</span> (<span class="raw-html"><a href="https://github.com/MATPOWER/mips">MIPS</a></span>), <span class="raw-html"><a href="https://github.com/MATPOWER/mp-opt-model">MP-Opt-Model</a></span>, and <span class="raw-html"><b>M</b><span style="font-size:smaller">ATPOWER</span> <b>O</b>ptimal <b>S</b>cheduling <b>T</b>ool</span> (<span class="raw-html"><a href="https://github.com/MATPOWER/most">MOST</a></span>),
 among many other packages. It also includes a function
-<a class="reference internal" href="functions/have_feature.html#have_feature" title="have_feature"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">have_feature()</span></code></a> for detecting support for optional functionality.</p>
+<code class="xref mat mat-func docutils literal notranslate"><span class="pre">have_feature()</span></code> for detecting support for optional functionality.</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
 <p><strong>Note to</strong> <span class="raw-html"><strong>M<span style="font-size:smaller">ATPOWER</span></strong></span> <strong>users:</strong> <em>MP-Test is included when you install</em>
@@ -156,8 +156,8 @@ should resemble the following:</p>
 </section>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
-<p>Write test functions of the following form, where <a class="reference internal" href="functions/t_ok.html#t_ok" title="t_ok"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_ok()</span></code></a>,
-<a class="reference internal" href="functions/t_is.html#t_is" title="t_is"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_is()</span></code></a>, <a class="reference internal" href="functions/t_str_match.html#t_str_match" title="t_str_match"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_str_match()</span></code></a>, and <a class="reference internal" href="functions/t_file_match.html#t_file_match" title="t_file_match"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_file_match()</span></code></a> are used to
+<p>Write test functions of the following form, where <code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_ok()</span></code>,
+<code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_is()</span></code>, <code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_str_match()</span></code>, and <code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_file_match()</span></code> are used to
 test for specific conditions or matches.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">mptest_ex1</span><span class="p">(</span>quiet<span class="p">)</span>
 <span class="k">if</span> <span class="nb">nargin</span> <span class="o">&lt;</span> <span class="mi">1</span>

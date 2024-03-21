@@ -79,7 +79,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -128,10 +128,10 @@
 <section id="mp-dme-line3p">
 <h1>mp.dme_line3p<a class="headerlink" href="#mp-dme-line3p" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="mp.dme_line3p">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">dme_line3p</span></span><a class="headerlink" href="#mp.dme_line3p" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="dm_element.html#mp.dm_element" title="mp.dm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_element</span></code></a></p>
-<p><a class="reference internal" href="#mp.dme_line3p" title="mp.dme_line3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_line3p</span></code></a> - Data model element for 3-phase line.</p>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">dme_line3p</span></span><a class="headerlink" href="#matpower.mp.dme_line3p" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_element</span></code></p>
+<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_line3p</span></code> - Data model element for 3-phase line.</p>
 <p>Implements the data element model for 3-phase distribution line elements.</p>
 <p>Adds the following columns in the main data table, found in the
 <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">tab</span></code> property:</p>
@@ -248,149 +248,149 @@ shunt susceptance matrix</p></td>
 <div class="members docutils container">
 <dl>
 <dt>Property Summary</dt><dd><dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.dme_line3p.fbus">
-<span class="sig-name descname"><span class="pre">fbus</span></span><a class="headerlink" href="#mp.dme_line3p.fbus" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.fbus">
+<span class="sig-name descname"><span class="pre">fbus</span></span><a class="headerlink" href="#matpower.mp.dme_line3p.fbus" title="Link to this definition"></a></dt>
 <dd><p>bus index vector for “from” bus (all lines)</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.dme_line3p.tbus">
-<span class="sig-name descname"><span class="pre">tbus</span></span><a class="headerlink" href="#mp.dme_line3p.tbus" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.tbus">
+<span class="sig-name descname"><span class="pre">tbus</span></span><a class="headerlink" href="#matpower.mp.dme_line3p.tbus" title="Link to this definition"></a></dt>
 <dd><p>bus index vector for “to” bus (all lines)</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.dme_line3p.freq">
-<span class="sig-name descname"><span class="pre">freq</span></span><a class="headerlink" href="#mp.dme_line3p.freq" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.freq">
+<span class="sig-name descname"><span class="pre">freq</span></span><a class="headerlink" href="#matpower.mp.dme_line3p.freq" title="Link to this definition"></a></dt>
 <dd><p>system frequency, in Hz</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.dme_line3p.lc">
-<span class="sig-name descname"><span class="pre">lc</span></span><a class="headerlink" href="#mp.dme_line3p.lc" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.lc">
+<span class="sig-name descname"><span class="pre">lc</span></span><a class="headerlink" href="#matpower.mp.dme_line3p.lc" title="Link to this definition"></a></dt>
 <dd><p>index into <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">lc_tab</span></code> for lines that are on</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.dme_line3p.len">
-<span class="sig-name descname"><span class="pre">len</span></span><a class="headerlink" href="#mp.dme_line3p.len" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.len">
+<span class="sig-name descname"><span class="pre">len</span></span><a class="headerlink" href="#matpower.mp.dme_line3p.len" title="Link to this definition"></a></dt>
 <dd><p>length for lines that are on</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.dme_line3p.lc_tab">
-<span class="sig-name descname"><span class="pre">lc_tab</span></span><a class="headerlink" href="#mp.dme_line3p.lc_tab" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.lc_tab">
+<span class="sig-name descname"><span class="pre">lc_tab</span></span><a class="headerlink" href="#matpower.mp.dme_line3p.lc_tab" title="Link to this definition"></a></dt>
 <dd><p>line construction table</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.dme_line3p.ys">
-<span class="sig-name descname"><span class="pre">ys</span></span><a class="headerlink" href="#mp.dme_line3p.ys" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.ys">
+<span class="sig-name descname"><span class="pre">ys</span></span><a class="headerlink" href="#matpower.mp.dme_line3p.ys" title="Link to this definition"></a></dt>
 <dd><p>cell array of 3x3 series admittance matrices for lc rows</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.dme_line3p.yc">
-<span class="sig-name descname"><span class="pre">yc</span></span><a class="headerlink" href="#mp.dme_line3p.yc" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.yc">
+<span class="sig-name descname"><span class="pre">yc</span></span><a class="headerlink" href="#matpower.mp.dme_line3p.yc" title="Link to this definition"></a></dt>
 <dd><p>cell array of 3x3 shunt admittance matrices for lc rows</p>
 </dd></dl>
 
 </dd>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.name">
-<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.name" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.name" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.label">
-<span class="sig-name descname"><span class="pre">label</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.label" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.label">
+<span class="sig-name descname"><span class="pre">label</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.label" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.labels">
-<span class="sig-name descname"><span class="pre">labels</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.labels" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.labels">
+<span class="sig-name descname"><span class="pre">labels</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.labels" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.cxn_type">
-<span class="sig-name descname"><span class="pre">cxn_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.cxn_type" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.cxn_type">
+<span class="sig-name descname"><span class="pre">cxn_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.cxn_type" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.cxn_idx_prop">
-<span class="sig-name descname"><span class="pre">cxn_idx_prop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.cxn_idx_prop" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.cxn_idx_prop">
+<span class="sig-name descname"><span class="pre">cxn_idx_prop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.cxn_idx_prop" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.main_table_var_names">
-<span class="sig-name descname"><span class="pre">main_table_var_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.main_table_var_names" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.main_table_var_names">
+<span class="sig-name descname"><span class="pre">main_table_var_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.main_table_var_names" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.lc_table_var_names">
-<span class="sig-name descname"><span class="pre">lc_table_var_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.lc_table_var_names" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.lc_table_var_names">
+<span class="sig-name descname"><span class="pre">lc_table_var_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.lc_table_var_names" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.create_line_construction_table">
-<span class="sig-name descname"><span class="pre">create_line_construction_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">id</span></em>, <em class="sig-param"><span class="pre">r</span></em>, <em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">c</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.create_line_construction_table" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.create_line_construction_table">
+<span class="sig-name descname"><span class="pre">create_line_construction_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">id</span></em>, <em class="sig-param"><span class="pre">r</span></em>, <em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">c</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.create_line_construction_table" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.initialize">
-<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.initialize" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.initialize" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.update_status">
-<span class="sig-name descname"><span class="pre">update_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.update_status" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.update_status">
+<span class="sig-name descname"><span class="pre">update_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.update_status" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.build_params">
-<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.build_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.build_params">
+<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.build_params" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.vec2symmat">
-<span class="sig-name descname"><span class="pre">vec2symmat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.vec2symmat" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.vec2symmat">
+<span class="sig-name descname"><span class="pre">vec2symmat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.vec2symmat" title="Link to this definition"></a></dt>
 <dd><p>Make a symmetric matrix from a vector of 6 values.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.symmat2vec">
-<span class="sig-name descname"><span class="pre">symmat2vec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">M</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.symmat2vec" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.symmat2vec">
+<span class="sig-name descname"><span class="pre">symmat2vec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">M</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.symmat2vec" title="Link to this definition"></a></dt>
 <dd><p>Extract a vector of 6 values from a matrix assumed to be symmetric.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.pretty_print">
-<span class="sig-name descname"><span class="pre">pretty_print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.pretty_print" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.pretty_print">
+<span class="sig-name descname"><span class="pre">pretty_print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.pretty_print" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.pp_have_section_sum">
-<span class="sig-name descname"><span class="pre">pp_have_section_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.pp_have_section_sum" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.pp_have_section_sum">
+<span class="sig-name descname"><span class="pre">pp_have_section_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.pp_have_section_sum" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.pp_data_sum">
-<span class="sig-name descname"><span class="pre">pp_data_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">rows</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.pp_data_sum" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.pp_data_sum">
+<span class="sig-name descname"><span class="pre">pp_data_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">rows</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.pp_data_sum" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.pp_have_section_det">
-<span class="sig-name descname"><span class="pre">pp_have_section_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.pp_have_section_det" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.pp_have_section_det">
+<span class="sig-name descname"><span class="pre">pp_have_section_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.pp_have_section_det" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.pp_get_headers_det">
-<span class="sig-name descname"><span class="pre">pp_get_headers_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.pp_get_headers_det" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.pp_get_headers_det">
+<span class="sig-name descname"><span class="pre">pp_get_headers_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.pp_get_headers_det" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.dme_line3p.pp_data_row_det">
-<span class="sig-name descname"><span class="pre">pp_data_row_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">k</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_line3p.pp_data_row_det" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.dme_line3p.pp_data_row_det">
+<span class="sig-name descname"><span class="pre">pp_data_row_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">k</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_line3p.pp_data_row_det" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd>

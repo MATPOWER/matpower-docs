@@ -78,7 +78,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -127,40 +127,40 @@
 <section id="mp-mm-element">
 <h1>mp.mm_element<a class="headerlink" href="#mp-mm-element" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="mp.mm_element">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">mm_element</span></span><a class="headerlink" href="#mp.mm_element" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.mm_element">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">mm_element</span></span><a class="headerlink" href="#matpower.mp.mm_element" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
-<p><a class="reference internal" href="#mp.mm_element" title="mp.mm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mm_element</span></code></a> - Abstract base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> <strong>mathematical model element</strong> objects.</p>
+<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mm_element</span></code> - Abstract base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> <strong>mathematical model element</strong> objects.</p>
 <p>A math model element object typically does not contain any data, but only
 the methods that are used to build the math model and update the
 corresponding data model element once the math model has been solved.</p>
-<p>All math model element classes inherit from <a class="reference internal" href="#mp.mm_element" title="mp.mm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mm_element</span></code></a>. Each element
+<p>All math model element classes inherit from <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mm_element</span></code>. Each element
 type typically implements its own subclasses, which are further subclassed
 where necessary per task and formulation, as with the container class.</p>
 <p>By convention, math model element variables are named <code class="docutils literal notranslate"><span class="pre">mme</span></code> and math model
 element class names begin with <code class="docutils literal notranslate"><span class="pre">mp.mme</span></code>.</p>
 <dl class="simple">
 <dt>mp.mm_element Methods:</dt><dd><ul class="simple">
-<li><p><a class="reference internal" href="#mp.mm_element.name" title="mp.mm_element.name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">name()</span></code></a> - get name of element type, e.g. <code class="docutils literal notranslate"><span class="pre">'bus'</span></code>, <code class="docutils literal notranslate"><span class="pre">'gen'</span></code></p></li>
-<li><p><a class="reference internal" href="#mp.mm_element.data_model_element" title="mp.mm_element.data_model_element"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_element()</span></code></a> - get corresponding data model element</p></li>
-<li><p><a class="reference internal" href="#mp.mm_element.network_model_element" title="mp.mm_element.network_model_element"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_element()</span></code></a> - get corresponding network model element</p></li>
-<li><p><a class="reference internal" href="#mp.mm_element.add_vars" title="mp.mm_element.add_vars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_vars()</span></code></a> - add math model variables for this element</p></li>
-<li><p><a class="reference internal" href="#mp.mm_element.add_constraints" title="mp.mm_element.add_constraints"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_constraints()</span></code></a> - add math model constraints for this element</p></li>
-<li><p><a class="reference internal" href="#mp.mm_element.add_costs" title="mp.mm_element.add_costs"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_costs()</span></code></a> - add math model costs for this element</p></li>
-<li><p><a class="reference internal" href="#mp.mm_element.data_model_update" title="mp.mm_element.data_model_update"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update()</span></code></a> - update the corresponding data model element</p></li>
-<li><p><a class="reference internal" href="#mp.mm_element.data_model_update_off" title="mp.mm_element.data_model_update_off"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update_off()</span></code></a> - update offline elements in corresponding data model element</p></li>
-<li><p><a class="reference internal" href="#mp.mm_element.data_model_update_on" title="mp.mm_element.data_model_update_on"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update_on()</span></code></a> - update online elements in corresponding data model element</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">name()</span></code> - get name of element type, e.g. <code class="docutils literal notranslate"><span class="pre">'bus'</span></code>, <code class="docutils literal notranslate"><span class="pre">'gen'</span></code></p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_element()</span></code> - get corresponding data model element</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_element()</span></code> - get corresponding network model element</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_vars()</span></code> - add math model variables for this element</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_constraints()</span></code> - add math model constraints for this element</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_costs()</span></code> - add math model costs for this element</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update()</span></code> - update the corresponding data model element</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update_off()</span></code> - update offline elements in corresponding data model element</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update_on()</span></code> - update online elements in corresponding data model element</p></li>
 </ul>
 </dd>
 </dl>
 <p>See the <a class="reference internal" href="../../../dev-manual/math-model.html#sec-mm-element"><span class="std std-ref">Mathematical Model Elements</span></a> section in the <span class="raw-html"><a class="reference external" href="https://matpower.org/documentation/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more
 information.</p>
-<p>See also <a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>.</p>
+<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp.mm_element.name">
-<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.mm_element.name" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.mm_element.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mm_element.name" title="Link to this definition"></a></dt>
 <dd><p>Get name of element type, e.g. <code class="docutils literal notranslate"><span class="pre">'bus'</span></code>, <code class="docutils literal notranslate"><span class="pre">'gen'</span></code>.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="p">=</span> <span class="n">mme</span><span class="p">.</span><span class="n">name</span><span class="p">()</span>
 </pre></div>
@@ -175,8 +175,8 @@ struct field name</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.mm_element.data_model_element">
-<span class="sig-name descname"><span class="pre">data_model_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mm_element.data_model_element" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.mm_element.data_model_element">
+<span class="sig-name descname"><span class="pre">data_model_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mm_element.data_model_element" title="Link to this definition"></a></dt>
 <dd><p>Get corresponding data model element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dme</span> <span class="p">=</span> <span class="n">mme</span><span class="p">.</span><span class="n">data_model_element</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
@@ -184,19 +184,19 @@ struct field name</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 <li><p><strong>name</strong> (<em>char array</em>) – name of element type</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>dme</strong> (<a class="reference internal" href="dm_element.html#mp.dm_element" title="mp.dm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_element</span></code></a>) – data model element object</p>
+<dd class="field-even"><p><strong>dme</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_element</span></code>) – data model element object</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.mm_element.network_model_element">
-<span class="sig-name descname"><span class="pre">network_model_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mm_element.network_model_element" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.mm_element.network_model_element">
+<span class="sig-name descname"><span class="pre">network_model_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mm_element.network_model_element" title="Link to this definition"></a></dt>
 <dd><p>Get corresponding network model element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nme</span> <span class="p">=</span> <span class="n">mme</span><span class="p">.</span><span class="n">network_model_element</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
@@ -204,19 +204,19 @@ struct field name</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
 <li><p><strong>name</strong> (<em>char array</em>) – name of element type</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>nme</strong> (<a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a>) – network model element object</p>
+<dd class="field-even"><p><strong>nme</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code>) – network model element object</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.mm_element.add_vars">
-<span class="sig-name descname"><span class="pre">add_vars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mm_element.add_vars" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.mm_element.add_vars">
+<span class="sig-name descname"><span class="pre">add_vars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mm_element.add_vars" title="Link to this definition"></a></dt>
 <dd><p>Add math model variables for this element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mme</span><span class="p">.</span><span class="n">add_vars</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -224,9 +224,9 @@ struct field name</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – mathmatical model object</p></li>
-<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – mathmatical model object</p></li>
+<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
 </ul>
 </dd>
@@ -235,8 +235,8 @@ struct field name</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.mm_element.add_constraints">
-<span class="sig-name descname"><span class="pre">add_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mm_element.add_constraints" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.mm_element.add_constraints">
+<span class="sig-name descname"><span class="pre">add_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mm_element.add_constraints" title="Link to this definition"></a></dt>
 <dd><p>Add math model constraints for this element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mme</span><span class="p">.</span><span class="n">add_constraints</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">mm</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -244,9 +244,9 @@ struct field name</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – mathmatical model object</p></li>
-<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – mathmatical model object</p></li>
+<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
 </ul>
 </dd>
@@ -255,8 +255,8 @@ struct field name</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.mm_element.add_costs">
-<span class="sig-name descname"><span class="pre">add_costs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mm_element.add_costs" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.mm_element.add_costs">
+<span class="sig-name descname"><span class="pre">add_costs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mm_element.add_costs" title="Link to this definition"></a></dt>
 <dd><p>Add math model costs for this element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mme</span><span class="p">.</span><span class="n">add_costs</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">mm</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -264,9 +264,9 @@ struct field name</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – mathmatical model object</p></li>
-<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – mathmatical model object</p></li>
+<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
 </ul>
 </dd>
@@ -275,8 +275,8 @@ struct field name</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.mm_element.data_model_update">
-<span class="sig-name descname"><span class="pre">data_model_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mm_element.data_model_update" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.mm_element.data_model_update">
+<span class="sig-name descname"><span class="pre">data_model_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mm_element.data_model_update" title="Link to this definition"></a></dt>
 <dd><p>Update the corresponding data model element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mme</span><span class="p">.</span><span class="n">data_model_update</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -284,22 +284,22 @@ struct field name</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – mathmatical model object</p></li>
-<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – mathmatical model object</p></li>
+<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
 </ul>
 </dd>
 </dl>
-<p>Call <a class="reference internal" href="#mp.mm_element.data_model_update_off" title="mp.mm_element.data_model_update_off"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update_off()</span></code></a> then <a class="reference internal" href="#mp.mm_element.data_model_update_on" title="mp.mm_element.data_model_update_on"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update_on()</span></code></a>
+<p>Call <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update_off()</span></code> then <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update_on()</span></code>
 to update the data model for this element based on the
 math model solution.</p>
-<p>See also <a class="reference internal" href="#mp.mm_element.data_model_update_off" title="mp.mm_element.data_model_update_off"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update_off()</span></code></a>, <a class="reference internal" href="#mp.mm_element.data_model_update_on" title="mp.mm_element.data_model_update_on"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update_on()</span></code></a>.</p>
+<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update_off()</span></code>, <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update_on()</span></code>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.mm_element.data_model_update_off">
-<span class="sig-name descname"><span class="pre">data_model_update_off</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mm_element.data_model_update_off" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.mm_element.data_model_update_off">
+<span class="sig-name descname"><span class="pre">data_model_update_off</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mm_element.data_model_update_off" title="Link to this definition"></a></dt>
 <dd><p>Update offline elements in the corresponding data model element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mme</span><span class="p">.</span><span class="n">data_model_update_off</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -307,21 +307,21 @@ math model solution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – mathmatical model object</p></li>
-<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – mathmatical model object</p></li>
+<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
 </ul>
 </dd>
 </dl>
 <p>Set export variables for offline elements based on specs
-returned by <a class="reference internal" href="dm_element.html#mp.dm_element.export_vars_offline_val" title="mp.dm_element.export_vars_offline_val"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.dm_element.export_vars_offline_val()</span></code></a>.</p>
-<p>See also <a class="reference internal" href="#mp.mm_element.data_model_update" title="mp.mm_element.data_model_update"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update()</span></code></a>, <a class="reference internal" href="#mp.mm_element.data_model_update_on" title="mp.mm_element.data_model_update_on"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update_on()</span></code></a>.</p>
+returned by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.dm_element.export_vars_offline_val()</span></code>.</p>
+<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update()</span></code>, <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update_on()</span></code>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.mm_element.data_model_update_on">
-<span class="sig-name descname"><span class="pre">data_model_update_on</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mm_element.data_model_update_on" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.mm_element.data_model_update_on">
+<span class="sig-name descname"><span class="pre">data_model_update_on</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mm_element.data_model_update_on" title="Link to this definition"></a></dt>
 <dd><p>Update online elements in the corresponding data model element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mme</span><span class="p">.</span><span class="n">data_model_update_on</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -329,9 +329,9 @@ returned by <a class="reference internal" href="dm_element.html#mp.dm_element.ex
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – mathmatical model object</p></li>
-<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – mathmatical model object</p></li>
+<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
 </ul>
 </dd>
@@ -340,7 +340,7 @@ returned by <a class="reference internal" href="dm_element.html#mp.dm_element.ex
 element and update the corresponding data model element
 for online elements accordingly.</p>
 <p>Implementation provided by a subclass.</p>
-<p>See also <a class="reference internal" href="#mp.mm_element.data_model_update" title="mp.mm_element.data_model_update"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update()</span></code></a>, <a class="reference internal" href="#mp.mm_element.data_model_update_off" title="mp.mm_element.data_model_update_off"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update_off()</span></code></a>.</p>
+<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update()</span></code>, <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_update_off()</span></code>.</p>
 </dd></dl>
 
 </dd>

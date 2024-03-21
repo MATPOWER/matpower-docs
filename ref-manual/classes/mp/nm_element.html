@@ -77,7 +77,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -126,14 +126,14 @@
 <section id="mp-nm-element">
 <h1>mp.nm_element<a class="headerlink" href="#mp-nm-element" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="mp.nm_element">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">nm_element</span></span><a class="headerlink" href="#mp.nm_element" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">nm_element</span></span><a class="headerlink" href="#matpower.mp.nm_element" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
-<p><a class="reference internal" href="#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a> - Abstract base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> <strong>network model element</strong> objects.</p>
+<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code> - Abstract base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> <strong>network model element</strong> objects.</p>
 <p>A network model element object encapsulates all of the network model
 parameters for a particular element type. All network model element classes
-inherit from <a class="reference internal" href="#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a> and also, like the container, from a
-formulation-specific subclass of <a class="reference internal" href="form.html#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a>. Each element type typically
+inherit from <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code> and also, like the container, from a
+formulation-specific subclass of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code>. Each element type typically
 implements its own subclasses, which are further subclassed per formulation.
 A given network model element object contains the aggregate network model
 parameters for all online instances of that element type, stored in the set
@@ -142,59 +142,59 @@ of matrices and vectors that correspond to the formulation.</p>
 model element class names begin with <code class="docutils literal notranslate"><span class="pre">mp.nme</span></code>.</p>
 <dl class="simple">
 <dt>mp.mm_element Properties:</dt><dd><ul class="simple">
-<li><p><a class="reference internal" href="#mp.nm_element.nk" title="mp.nm_element.nk"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">nk</span></code></a> - number of elements of this type</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.C" title="mp.nm_element.C"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">C</span></code></a> - stacked sparse element-node incidence matrices</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.D" title="mp.nm_element.D"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">D</span></code></a> - stacked sparse incidence matrices for <em>z</em>-variables</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.soln" title="mp.nm_element.soln"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">soln</span></code></a> - struct for storing solved states, quantities</p></li>
+<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">nk</span></code> - number of elements of this type</p></li>
+<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">C</span></code> - stacked sparse element-node incidence matrices</p></li>
+<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">D</span></code> - stacked sparse incidence matrices for <em>z</em>-variables</p></li>
+<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">soln</span></code> - struct for storing solved states, quantities</p></li>
 </ul>
 </dd>
 <dt>mp.mm_element Methods:</dt><dd><ul class="simple">
-<li><p><a class="reference internal" href="#mp.nm_element.name" title="mp.nm_element.name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">name()</span></code></a> - get name of element type, e.g. <code class="docutils literal notranslate"><span class="pre">'bus'</span></code>, <code class="docutils literal notranslate"><span class="pre">'gen'</span></code></p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.np" title="mp.nm_element.np"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">np()</span></code></a> - number of ports per element of this type</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.nn" title="mp.nm_element.nn"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nn()</span></code></a> - number of nodes per element, created by this element type</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.nz" title="mp.nm_element.nz"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nz()</span></code></a> - number of non-voltage state variables per element of this type</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.data_model_element" title="mp.nm_element.data_model_element"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_element()</span></code></a> - get the corresponding data model element</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.math_model_element" title="mp.nm_element.math_model_element"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_element()</span></code></a> - get the corresponding math model element</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.count" title="mp.nm_element.count"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">count()</span></code></a> - get number of online elements in <code class="docutils literal notranslate"><span class="pre">dm</span></code>, set <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">nk</span></code></p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.add_nodes" title="mp.nm_element.add_nodes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_nodes()</span></code></a> - add nodes to network model</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.add_states" title="mp.nm_element.add_states"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_states()</span></code></a> - add non-voltage states to network model</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.add_vvars" title="mp.nm_element.add_vvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_vvars()</span></code></a> - add real-valued voltage variables to network object</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.add_zvars" title="mp.nm_element.add_zvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_zvars()</span></code></a> - add real-valued non-voltage state variables to network object</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.build_params" title="mp.nm_element.build_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code></a> - build model parameters from data model</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.get_nv_" title="mp.nm_element.get_nv_"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_nv_()</span></code></a> - get number of <em>(possibly complex)</em> voltage variables</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.x2vz" title="mp.nm_element.x2vz"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">x2vz()</span></code></a> - get port voltages and non-voltage states from combined state vector</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.node_indices" title="mp.nm_element.node_indices"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">node_indices()</span></code></a> - construct node indices from data model element connection info</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.incidence_matrix" title="mp.nm_element.incidence_matrix"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">incidence_matrix()</span></code></a> - construct stacked incidence matrix from set of index vectors</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.node_types" title="mp.nm_element.node_types"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">node_types()</span></code></a> - get node type information</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.set_node_type_ref" title="mp.nm_element.set_node_type_ref"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_node_type_ref()</span></code></a> - make the specified node a reference node</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.set_node_type_pv" title="mp.nm_element.set_node_type_pv"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_node_type_pv()</span></code></a> - make the specified node a PV node</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.set_node_type_pq" title="mp.nm_element.set_node_type_pq"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_node_type_pq()</span></code></a> - make the specified node a PQ node</p></li>
-<li><p><a class="reference internal" href="#mp.nm_element.display" title="mp.nm_element.display"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">display()</span></code></a> - display the network model element object</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">name()</span></code> - get name of element type, e.g. <code class="docutils literal notranslate"><span class="pre">'bus'</span></code>, <code class="docutils literal notranslate"><span class="pre">'gen'</span></code></p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">np()</span></code> - number of ports per element of this type</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nn()</span></code> - number of nodes per element, created by this element type</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nz()</span></code> - number of non-voltage state variables per element of this type</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_element()</span></code> - get the corresponding data model element</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_element()</span></code> - get the corresponding math model element</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">count()</span></code> - get number of online elements in <code class="docutils literal notranslate"><span class="pre">dm</span></code>, set <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">nk</span></code></p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_nodes()</span></code> - add nodes to network model</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_states()</span></code> - add non-voltage states to network model</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_vvars()</span></code> - add real-valued voltage variables to network object</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_zvars()</span></code> - add real-valued non-voltage state variables to network object</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code> - build model parameters from data model</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_nv_()</span></code> - get number of <em>(possibly complex)</em> voltage variables</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">x2vz()</span></code> - get port voltages and non-voltage states from combined state vector</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">node_indices()</span></code> - construct node indices from data model element connection info</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">incidence_matrix()</span></code> - construct stacked incidence matrix from set of index vectors</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">node_types()</span></code> - get node type information</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_node_type_ref()</span></code> - make the specified node a reference node</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_node_type_pv()</span></code> - make the specified node a PV node</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_node_type_pq()</span></code> - make the specified node a PQ node</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">display()</span></code> - display the network model element object</p></li>
 </ul>
 </dd>
 </dl>
 <p>See the <a class="reference internal" href="../../../dev-manual/net-model.html#sec-nm-element"><span class="std std-ref">Network Model Elements</span></a> section in the <span class="raw-html"><a class="reference external" href="https://matpower.org/documentation/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more
 information.</p>
-<p>See also <a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>.</p>
+<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Property Summary</dt><dd><dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.nm_element.nk">
-<span class="sig-name descname"><span class="pre">nk</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#mp.nm_element.nk" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.nk">
+<span class="sig-name descname"><span class="pre">nk</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#matpower.mp.nm_element.nk" title="Link to this definition"></a></dt>
 <dd><p><em>(integer)</em> number of elements of this type</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.nm_element.C">
-<span class="sig-name descname"><span class="pre">C</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.nm_element.C" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.C">
+<span class="sig-name descname"><span class="pre">C</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#matpower.mp.nm_element.C" title="Link to this definition"></a></dt>
 <dd><p><em>(sparse integer matrix)</em> stacked element-node incidence matrices,
 where <code class="docutils literal notranslate"><span class="pre">C(i,kk)</span></code> is 1 if port <em>j</em> of element <em>k</em> is connected to
 node <em>i</em>, and <code class="docutils literal notranslate"><span class="pre">kk</span> <span class="pre">=</span> <span class="pre">k</span> <span class="pre">+</span> <span class="pre">(j-1)*np</span></code></p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.nm_element.D">
-<span class="sig-name descname"><span class="pre">D</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.nm_element.D" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.D">
+<span class="sig-name descname"><span class="pre">D</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#matpower.mp.nm_element.D" title="Link to this definition"></a></dt>
 <dd><p><em>(sparse integer matrix)</em> stacked incidence matrices for
 <em>z</em>-variables (non-voltage state variables), where <code class="docutils literal notranslate"><span class="pre">D(i,kk)</span></code> is 1
 if <em>z</em>-variable <em>j</em> of element <em>k</em> is the <em>i</em>-th system <em>z</em>-variable
@@ -202,15 +202,15 @@ and <code class="docutils literal notranslate"><span class="pre">kk</span> <span
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.nm_element.soln">
-<span class="sig-name descname"><span class="pre">soln</span></span><a class="headerlink" href="#mp.nm_element.soln" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.soln">
+<span class="sig-name descname"><span class="pre">soln</span></span><a class="headerlink" href="#matpower.mp.nm_element.soln" title="Link to this definition"></a></dt>
 <dd><p><em>(struct)</em> for storing solved states, quantities</p>
 </dd></dl>
 
 </dd>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.name">
-<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.name" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.name" title="Link to this definition"></a></dt>
 <dd><p>Get name of element type, e.g. <code class="docutils literal notranslate"><span class="pre">'bus'</span></code>, <code class="docutils literal notranslate"><span class="pre">'gen'</span></code>.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">name</span><span class="p">()</span>
 </pre></div>
@@ -225,8 +225,8 @@ struct field name</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.np">
-<span class="sig-name descname"><span class="pre">np</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.np" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.np">
+<span class="sig-name descname"><span class="pre">np</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.np" title="Link to this definition"></a></dt>
 <dd><p>Number of ports per element of this type.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">np</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">np</span><span class="p">()</span>
 </pre></div>
@@ -239,8 +239,8 @@ struct field name</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.nn">
-<span class="sig-name descname"><span class="pre">nn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.nn" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.nn">
+<span class="sig-name descname"><span class="pre">nn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.nn" title="Link to this definition"></a></dt>
 <dd><p>Number of nodes per element, created by this element type.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nn</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">nn</span><span class="p">()</span>
 </pre></div>
@@ -253,8 +253,8 @@ struct field name</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.nz">
-<span class="sig-name descname"><span class="pre">nz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.nz" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.nz">
+<span class="sig-name descname"><span class="pre">nz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.nz" title="Link to this definition"></a></dt>
 <dd><p>Number of non-voltage state variables per element of this type.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nz</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">nz</span><span class="p">()</span>
 </pre></div>
@@ -268,8 +268,8 @@ element of this type</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.data_model_element">
-<span class="sig-name descname"><span class="pre">data_model_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.data_model_element" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.data_model_element">
+<span class="sig-name descname"><span class="pre">data_model_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.data_model_element" title="Link to this definition"></a></dt>
 <dd><p>Get the corresponding data model element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dme</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">data_model_element</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
@@ -277,19 +277,19 @@ element of this type</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 <li><p><strong>name</strong> (<em>char array</em>) – name of element type</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>dme</strong> (<a class="reference internal" href="dm_element.html#mp.dm_element" title="mp.dm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_element</span></code></a>) – data model element object</p>
+<dd class="field-even"><p><strong>dme</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_element</span></code>) – data model element object</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.math_model_element">
-<span class="sig-name descname"><span class="pre">math_model_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.math_model_element" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.math_model_element">
+<span class="sig-name descname"><span class="pre">math_model_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.math_model_element" title="Link to this definition"></a></dt>
 <dd><p>Get the corresponding math model element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mme</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">math_model_element</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
@@ -297,26 +297,26 @@ element of this type</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – math model object</p></li>
+<li><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – math model object</p></li>
 <li><p><strong>name</strong> (<em>char array</em>) – name of element type</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>mme</strong> (<a class="reference internal" href="mm_element.html#mp.mm_element" title="mp.mm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mm_element</span></code></a>) – math model element object</p>
+<dd class="field-even"><p><strong>mme</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mm_element</span></code>) – math model element object</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.count" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.count" title="Link to this definition"></a></dt>
 <dd><p>Get number of online elements of this type in <code class="docutils literal notranslate"><span class="pre">dm</span></code>, set <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">nk</span></code>.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nk</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">dm</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Input<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p>
+<dd class="field-odd"><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>nk</strong> (<em>integer</em>) – number of online elements of this type</p>
@@ -325,8 +325,8 @@ element of this type</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.add_nodes">
-<span class="sig-name descname"><span class="pre">add_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.add_nodes" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.add_nodes">
+<span class="sig-name descname"><span class="pre">add_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.add_nodes" title="Link to this definition"></a></dt>
 <dd><p>Add nodes to network model for this element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nme</span><span class="p">.</span><span class="n">add_nodes</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
 </pre></div>
@@ -334,19 +334,19 @@ element of this type</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 </ul>
 </dd>
 </dl>
 <p>Add nodes to the network model object, based on value <em>nn</em>
-returned by <a class="reference internal" href="#mp.nm_element.nn" title="mp.nm_element.nn"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nn()</span></code></a>. Calls the network model’s
-<a class="reference internal" href="net_model.html#mp.net_model.add_node" title="mp.net_model.add_node"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_node()</span></code></a> <em>nn</em> times.</p>
+returned by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nn()</span></code>. Calls the network model’s
+<code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_node()</span></code> <em>nn</em> times.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.add_states">
-<span class="sig-name descname"><span class="pre">add_states</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.add_states" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.add_states">
+<span class="sig-name descname"><span class="pre">add_states</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.add_states" title="Link to this definition"></a></dt>
 <dd><p>Add non-voltage states to network model for this element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nme</span><span class="p">.</span><span class="n">add_states</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
 </pre></div>
@@ -354,19 +354,19 @@ returned by <a class="reference internal" href="#mp.nm_element.nn" title="mp.nm_
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 </ul>
 </dd>
 </dl>
 <p>Add non-voltage states to the network model object, based on
-value <em>nz</em> returned by <a class="reference internal" href="#mp.nm_element.nz" title="mp.nm_element.nz"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nz()</span></code></a>. Calls the network model’s
-<a class="reference internal" href="net_model.html#mp.net_model.add_state" title="mp.net_model.add_state"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_state()</span></code></a> <em>nz</em> times.</p>
+value <em>nz</em> returned by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nz()</span></code>. Calls the network model’s
+<code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_state()</span></code> <em>nz</em> times.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.add_vvars">
-<span class="sig-name descname"><span class="pre">add_vvars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.add_vvars" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.add_vvars">
+<span class="sig-name descname"><span class="pre">add_vvars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.add_vvars" title="Link to this definition"></a></dt>
 <dd><p>Add real-valued voltage variables to network object.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nme</span><span class="p">.</span><span class="n">add_vvars</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
 </pre></div>
@@ -374,26 +374,26 @@ value <em>nz</em> returned by <a class="reference internal" href="#mp.nm_element
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 </ul>
 </dd>
 </dl>
 <p>Add real-valued voltage variables (<em>v</em>-variables) to the network
 model object, for each port. Implementation depends on the
-specific formulation (i.e. subclass of <a class="reference internal" href="form.html#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a>).</p>
+specific formulation (i.e. subclass of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code>).</p>
 <p>For example, consider an element with <em>np</em> ports and an AC
 formulation with polar voltage representation. The actual port
 voltages are complex, but this method would call the network
-model’s <a class="reference internal" href="net_model.html#mp.net_model.add_var" title="mp.net_model.add_var"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_var()</span></code></a> twice for each
+model’s <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_var()</span></code> twice for each
 port, once for the voltage angle variables and once for the
 voltage magnitude variables.</p>
 <p>Implemented by a formulation-specific subclass.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.add_zvars">
-<span class="sig-name descname"><span class="pre">add_zvars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.add_zvars" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.add_zvars">
+<span class="sig-name descname"><span class="pre">add_zvars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.add_zvars" title="Link to this definition"></a></dt>
 <dd><p>Add real-valued non-voltage state variables to network object.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nme</span><span class="p">.</span><span class="n">add_zvars</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
 </pre></div>
@@ -401,26 +401,26 @@ voltage magnitude variables.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 <li><p><strong>idx</strong> (<em>cell array</em>) – indices for named and indexed variables</p></li>
 </ul>
 </dd>
 </dl>
 <p>Add real-valued non-voltage state variables (<em>z</em>-variables) to
 the network model object. Implementation depends on the specific
-formulation (i.e. subclass of <a class="reference internal" href="form.html#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a>).</p>
+formulation (i.e. subclass of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code>).</p>
 <p>For example, consider an element with <em>nz</em> z-variables and a
 formulation in which these are complex. This method would call
-the network model’s <a class="reference internal" href="net_model.html#mp.net_model.add_var" title="mp.net_model.add_var"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_var()</span></code></a>
+the network model’s <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_var()</span></code>
 twice for each complex <em>z</em>-variable, once for the variables
 representing the real part and once for the imaginary part.</p>
 <p>Implemented by a formulation-specific subclass.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.build_params">
-<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.build_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.build_params">
+<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.build_params" title="Link to this definition"></a></dt>
 <dd><p>Build model parameters from data model.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nme</span><span class="p">.</span><span class="n">build_params</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
 </pre></div>
@@ -428,8 +428,8 @@ representing the real part and once for the imaginary part.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 </ul>
 </dd>
 </dl>
@@ -438,12 +438,12 @@ handled in this base class. Building of the formulation-specific
 model parameters must be implemented by a formulation-specific
 subclass. The subclass should call its parent in order to
 construct the incidence matrices.</p>
-<p>See also <a class="reference internal" href="#mp.nm_element.incidence_matrix" title="mp.nm_element.incidence_matrix"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">incidence_matrix()</span></code></a>, <a class="reference internal" href="#mp.nm_element.node_indices" title="mp.nm_element.node_indices"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">node_indices()</span></code></a>.</p>
+<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">incidence_matrix()</span></code>, <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">node_indices()</span></code>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.get_nv_">
-<span class="sig-name descname"><span class="pre">get_nv_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">sysx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.get_nv_" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.get_nv_">
+<span class="sig-name descname"><span class="pre">get_nv_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">sysx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.get_nv_" title="Link to this definition"></a></dt>
 <dd><p>Get number of <em>(possibly complex)</em> voltage variables.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nv_</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">get_nv_</span><span class="p">(</span><span class="n">sysx</span><span class="p">)</span>
 </pre></div>
@@ -465,8 +465,8 @@ in the state variable <code class="docutils literal notranslate"><span class="pr
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.x2vz">
-<span class="sig-name descname"><span class="pre">x2vz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">sysx</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.x2vz" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.x2vz">
+<span class="sig-name descname"><span class="pre">x2vz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">sysx</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.x2vz" title="Link to this definition"></a></dt>
 <dd><p>Get port voltages and non-voltage states from combined state vector.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">v_</span><span class="p">,</span> <span class="n">z_</span><span class="p">,</span> <span class="n">vi_</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">x2vz</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">sysx</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
 </pre></div>
@@ -503,8 +503,8 @@ column of the input <code class="docutils literal notranslate"><span class="pre"
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.node_indices">
-<span class="sig-name descname"><span class="pre">node_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">cxn_type</span></em>, <em class="sig-param"><span class="pre">cxn_idx_prop</span></em>, <em class="sig-param"><span class="pre">cxn_type_prop</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.node_indices" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.node_indices">
+<span class="sig-name descname"><span class="pre">node_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">cxn_type</span></em>, <em class="sig-param"><span class="pre">cxn_idx_prop</span></em>, <em class="sig-param"><span class="pre">cxn_type_prop</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.node_indices" title="Link to this definition"></a></dt>
 <dd><p>Construct node indices from data model element connection info.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nidxs</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">node_indices</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
 <span class="n">nidxs</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">node_indices</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">cxn_type</span><span class="p">,</span> <span class="n">cxn_idx_prop</span><span class="p">)</span>
@@ -514,20 +514,20 @@ column of the input <code class="docutils literal notranslate"><span class="pre"
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 <li><p><strong>cxn_type</strong> (<em>char array or cell array of char arrays</em>) – name(s) of
 type(s) of junction elements, i.e. node-creating elements
 (e.g. <code class="docutils literal notranslate"><span class="pre">'bus'</span></code>), to which this element connects; see
-<a class="reference internal" href="dm_element.html#mp.dm_element.cxn_type" title="mp.dm_element.cxn_type"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.dm_element.cxn_type()</span></code></a> for more info</p></li>
+<code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.dm_element.cxn_type()</span></code> for more info</p></li>
 <li><p><strong>cxn_idx_prop</strong> (<em>char array or cell array of char arrays</em>) – name(s)
 of property(ies) containing indices of junction elements
 that define connections (e.g. <code class="docutils literal notranslate"><span class="pre">{'fbus',</span> <span class="pre">'tbus'}</span></code>); see
-<a class="reference internal" href="dm_element.html#mp.dm_element.cxn_idx_prop" title="mp.dm_element.cxn_idx_prop"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.dm_element.cxn_idx_prop()</span></code></a> for more info</p></li>
+<code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.dm_element.cxn_idx_prop()</span></code> for more info</p></li>
 <li><p><strong>cxn_type_prop</strong> (<em>char array or cell array of char arrays</em>) – name(s) of properties containing type of junction elements
 for each connection, defaults to <code class="docutils literal notranslate"><span class="pre">''</span></code> if <code class="docutils literal notranslate"><span class="pre">cxn_type</span></code> and
 <code class="docutils literal notranslate"><span class="pre">cxn_type_prop</span></code> are provided, but not <code class="docutils literal notranslate"><span class="pre">cxn_type_prop</span></code>;
-see <a class="reference internal" href="dm_element.html#mp.dm_element.cxn_type_prop" title="mp.dm_element.cxn_type_prop"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.dm_element.cxn_type_prop()</span></code></a> for more info</p></li>
+see <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.dm_element.cxn_type_prop()</span></code> for more info</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
@@ -543,13 +543,13 @@ matrices that form <code class="xref mat mat-attr docutils literal notranslate">
 <p>By default, the connection information is obtained from the
 corresponding data model element, as described in the
 <a class="reference internal" href="../../../dev-manual/data-model.html#sec-dm-element-cxn"><span class="std std-ref">Connections</span></a> section in the <span class="raw-html"><a class="reference external" href="https://matpower.org/documentation/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span>.</p>
-<p>See also <a class="reference internal" href="#mp.nm_element.incidence_matrix" title="mp.nm_element.incidence_matrix"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">incidence_matrix()</span></code></a>, <a class="reference internal" href="dm_element.html#mp.dm_element.cxn_type" title="mp.dm_element.cxn_type"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.dm_element.cxn_type()</span></code></a>,
-<a class="reference internal" href="dm_element.html#mp.dm_element.cxn_idx_prop" title="mp.dm_element.cxn_idx_prop"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.dm_element.cxn_idx_prop()</span></code></a>, <a class="reference internal" href="dm_element.html#mp.dm_element.cxn_type_prop" title="mp.dm_element.cxn_type_prop"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.dm_element.cxn_type_prop()</span></code></a>.</p>
+<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">incidence_matrix()</span></code>, <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.dm_element.cxn_type()</span></code>,
+<code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.dm_element.cxn_idx_prop()</span></code>, <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.dm_element.cxn_type_prop()</span></code>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.incidence_matrix">
-<span class="sig-name descname"><span class="pre">incidence_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">m</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.incidence_matrix" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.incidence_matrix">
+<span class="sig-name descname"><span class="pre">incidence_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">m</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.incidence_matrix" title="Link to this definition"></a></dt>
 <dd><p>Construct stacked incidence matrix from set of index vectors.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">CD</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">incidence_matrix</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">idx1</span><span class="p">,</span> <span class="n">idx2</span><span class="p">,</span> <span class="p">...)</span>
 </pre></div>
@@ -579,8 +579,8 @@ a single matrix return value.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.node_types">
-<span class="sig-name descname"><span class="pre">node_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.node_types" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.node_types">
+<span class="sig-name descname"><span class="pre">node_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.node_types" title="Link to this definition"></a></dt>
 <dd><p>Get node type information.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">ntv</span>           <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">node_types</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
 <span class="p">[</span><span class="n">ref</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">pq</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">node_types</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
@@ -590,8 +590,8 @@ a single matrix return value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 <li><p><strong>idx</strong> (<em>integer</em>) – index <em>(not used in base method)</em></p></li>
 </ul>
 </dd>
@@ -599,9 +599,9 @@ a single matrix return value.</p>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ntv</strong> (<em>integer</em>) – node type vector, valid element values are:</p>
 <ul>
-<li><p><a class="reference internal" href="NODE_TYPE.html#mp.NODE_TYPE.REF" title="mp.NODE_TYPE.REF"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.REF</span></code></a></p></li>
-<li><p><a class="reference internal" href="NODE_TYPE.html#mp.NODE_TYPE.PV" title="mp.NODE_TYPE.PV"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PV</span></code></a></p></li>
-<li><p><a class="reference internal" href="NODE_TYPE.html#mp.NODE_TYPE.PQ" title="mp.NODE_TYPE.PQ"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PQ</span></code></a></p></li>
+<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.REF</span></code></p></li>
+<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PV</span></code></p></li>
+<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PQ</span></code></p></li>
 </ul>
 </li>
 <li><p><strong>ref</strong> (<em>integer</em>) – vector of indices of reference nodes</p></li>
@@ -610,12 +610,12 @@ a single matrix return value.</p>
 </ul>
 </dd>
 </dl>
-<p>See also <a class="reference internal" href="NODE_TYPE.html#mp.NODE_TYPE" title="mp.NODE_TYPE"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.NODE_TYPE</span></code></a>.</p>
+<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.NODE_TYPE</span></code>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.set_node_type_ref">
-<span class="sig-name descname"><span class="pre">set_node_type_ref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.set_node_type_ref" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.set_node_type_ref">
+<span class="sig-name descname"><span class="pre">set_node_type_ref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.set_node_type_ref" title="Link to this definition"></a></dt>
 <dd><p>Make the specified node a reference node.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nme</span><span class="p">.</span><span class="n">set_node_type_ref</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
 </pre></div>
@@ -623,19 +623,19 @@ a single matrix return value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 <li><p><strong>idx</strong> (<em>integer</em>) – index of node to modify, this is the internal
 network model element index</p></li>
 </ul>
 </dd>
 </dl>
-<p>Set the specified node to type <a class="reference internal" href="NODE_TYPE.html#mp.NODE_TYPE.REF" title="mp.NODE_TYPE.REF"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.REF</span></code></a>.</p>
+<p>Set the specified node to type <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.REF</span></code>.</p>
 <p>Implementation provided by node-creating subclass.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.set_node_type_pv">
-<span class="sig-name descname"><span class="pre">set_node_type_pv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.set_node_type_pv" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.set_node_type_pv">
+<span class="sig-name descname"><span class="pre">set_node_type_pv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.set_node_type_pv" title="Link to this definition"></a></dt>
 <dd><p>Make the specified node a PV node.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nme</span><span class="p">.</span><span class="n">set_node_type_pv</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
 </pre></div>
@@ -643,19 +643,19 @@ network model element index</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 <li><p><strong>idx</strong> (<em>integer</em>) – index of node to modify, this is the internal
 network model element index</p></li>
 </ul>
 </dd>
 </dl>
-<p>Set the specified node to type <a class="reference internal" href="NODE_TYPE.html#mp.NODE_TYPE.PV" title="mp.NODE_TYPE.PV"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PV</span></code></a>.</p>
+<p>Set the specified node to type <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PV</span></code>.</p>
 <p>Implementation provided by node-creating subclass.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.set_node_type_pq">
-<span class="sig-name descname"><span class="pre">set_node_type_pq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.set_node_type_pq" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.set_node_type_pq">
+<span class="sig-name descname"><span class="pre">set_node_type_pq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.set_node_type_pq" title="Link to this definition"></a></dt>
 <dd><p>Make the specified node a PQ node.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nme</span><span class="p">.</span><span class="n">set_node_type_pq</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
 </pre></div>
@@ -663,19 +663,19 @@ network model element index</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 <li><p><strong>idx</strong> (<em>integer</em>) – index of node to modify, this is the internal
 network model element index</p></li>
 </ul>
 </dd>
 </dl>
-<p>Set the specified node to type <a class="reference internal" href="NODE_TYPE.html#mp.NODE_TYPE.PQ" title="mp.NODE_TYPE.PQ"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PQ</span></code></a>.</p>
+<p>Set the specified node to type <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PQ</span></code>.</p>
 <p>Implementation provided by node-creating subclass.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nm_element.display">
-<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.nm_element.display" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nm_element.display">
+<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nm_element.display" title="Link to this definition"></a></dt>
 <dd><p>Display the network model element object.</p>
 <p>This method is called automatically when omitting a semicolon
 on a line that retuns an object of this class.</p>

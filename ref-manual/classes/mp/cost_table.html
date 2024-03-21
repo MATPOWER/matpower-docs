@@ -84,7 +84,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -133,10 +133,10 @@
 <section id="mp-cost-table">
 <h1>mp.cost_table<a class="headerlink" href="#mp-cost-table" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="mp.cost_table">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">cost_table</span></span><a class="headerlink" href="#mp.cost_table" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="../mp_table_subclass.html#mp_table_subclass" title="mp_table_subclass"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code></a></p>
-<p><a class="reference internal" href="#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a> - Table for (polynomial and piecewise linear) cost parameters.</p>
+<dt class="sig sig-object mat" id="matpower.mp.cost_table">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">cost_table</span></span><a class="headerlink" href="#matpower.mp.cost_table" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code></p>
+<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code> - Table for (polynomial and piecewise linear) cost parameters.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="p">=</span> <span class="n">cost_table</span><span class="p">(</span><span class="n">poly_n</span><span class="p">,</span> <span class="n">poly_coef</span><span class="p">,</span> <span class="n">pwl_n</span><span class="p">,</span> <span class="n">pwl_qty</span><span class="p">,</span> <span class="n">pwl_cost</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -151,18 +151,18 @@ mp.cost_table methods.</p>
 this class (references built-in <code class="xref mat mat-func docutils literal notranslate"><span class="pre">subsref()</span></code> and <code class="xref mat mat-func docutils literal notranslate"><span class="pre">subsasgn()</span></code>
 rather than the versions overridden by the table class). For this reason,
 some method implementations are delegated to static methods in
-<a class="reference internal" href="cost_table_utils.html#mp.cost_table_utils" title="mp.cost_table_utils"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table_utils</span></code></a> where that syntax is available, making the code more
+<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table_utils</span></code> where that syntax is available, making the code more
 readable.</p>
 <dl class="simple">
 <dt>mp.cost_table Methods:</dt><dd><ul class="simple">
-<li><p><a class="reference internal" href="#mp.cost_table.cost_table" title="mp.cost_table.cost_table"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">cost_table()</span></code></a> - construct object</p></li>
-<li><p><a class="reference internal" href="#mp.cost_table.poly_params" title="mp.cost_table.poly_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">poly_params()</span></code></a> - create struct of polynomial parameters from <a class="reference internal" href="#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a></p></li>
-<li><p><a class="reference internal" href="#mp.cost_table.pwl_params" title="mp.cost_table.pwl_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pwl_params()</span></code></a> - create struct of piecewise linear parameters from <a class="reference internal" href="#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a></p></li>
-<li><p><a class="reference internal" href="#mp.cost_table.max_pwl_cost" title="mp.cost_table.max_pwl_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">max_pwl_cost()</span></code></a> - get maximum cost component used to specify pwl costs</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">cost_table()</span></code> - construct object</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">poly_params()</span></code> - create struct of polynomial parameters from <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pwl_params()</span></code> - create struct of piecewise linear parameters from <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">max_pwl_cost()</span></code> - get maximum cost component used to specify pwl costs</p></li>
 </ul>
 </dd>
 </dl>
-<p>An <a class="reference internal" href="#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a> has the following columns:</p>
+<p>An <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code> has the following columns:</p>
 <blockquote>
 <div><table class="docutils align-default">
 <thead>
@@ -208,12 +208,12 @@ where <span class="math notranslate nohighlight">\(f_j\)</span> is found in colu
 </tbody>
 </table>
 </div></blockquote>
-<p>See also <a class="reference internal" href="cost_table_utils.html#mp.cost_table_utils" title="mp.cost_table_utils"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table_utils</span></code></a>, <a class="reference internal" href="../mp_table_subclass.html#mp_table_subclass" title="mp_table_subclass"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code></a>.</p>
+<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table_utils</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Constructor Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp.cost_table.cost_table">
-<span class="sig-name descname"><span class="pre">cost_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.cost_table.cost_table" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.cost_table.cost_table">
+<span class="sig-name descname"><span class="pre">cost_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.cost_table.cost_table" title="Link to this definition"></a></dt>
 <dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="p">=</span> <span class="n">cost_table</span><span class="p">()</span>
 <span class="n">T</span> <span class="p">=</span> <span class="n">cost_table</span><span class="p">(</span><span class="n">poly_n</span><span class="p">,</span> <span class="n">poly_coef</span><span class="p">,</span> <span class="n">pwl_n</span><span class="p">,</span> <span class="n">pwl_qty</span><span class="p">,</span> <span class="n">pwl_cost</span><span class="p">)</span>
 </pre></div>
@@ -231,22 +231,22 @@ the class documentation above.</em></p>
 </ul>
 </dd>
 <dt class="field-even">Outputs<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>T</strong> (<a class="reference internal" href="#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a>) – the cost table object</p>
+<dd class="field-even"><p><strong>T</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code>) – the cost table object</p>
 </dd>
 </dl>
 </dd></dl>
 
 </dd>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp.cost_table.poly_params">
-<span class="sig-name descname"><span class="pre">poly_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">pu_base</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.cost_table.poly_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.cost_table.poly_params">
+<span class="sig-name descname"><span class="pre">poly_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">pu_base</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.cost_table.poly_params" title="Link to this definition"></a></dt>
 <dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="p">=</span> <span class="n">poly_params</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pu_base</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>obj</strong> (<a class="reference internal" href="#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a>) – the cost table</p></li>
+<li><p><strong>obj</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code>) – the cost table</p></li>
 <li><p><strong>idx</strong> – (integer) : index vector of rows of interest, empty
 for all rows</p></li>
 <li><p><strong>pu_base</strong> (<em>double</em>) – base used to scale quantities to per unit</p></li>
@@ -267,12 +267,12 @@ order quadratic or less</p></li>
 </ul>
 </dd>
 </dl>
-<p>Implementation in <a class="reference internal" href="cost_table_utils.html#mp.cost_table_utils.poly_params" title="mp.cost_table_utils.poly_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table_utils.poly_params()</span></code></a>.</p>
+<p>Implementation in <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table_utils.poly_params()</span></code>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.cost_table.pwl_params">
-<span class="sig-name descname"><span class="pre">pwl_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">pu_base</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.cost_table.pwl_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.cost_table.pwl_params">
+<span class="sig-name descname"><span class="pre">pwl_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">pu_base</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.cost_table.pwl_params" title="Link to this definition"></a></dt>
 <dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="p">=</span> <span class="n">pwl_params</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pu_base</span><span class="p">)</span>
 <span class="n">p</span> <span class="p">=</span> <span class="n">pwl_params</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pu_base</span><span class="p">,</span> <span class="n">ng</span><span class="p">,</span> <span class="n">dc</span><span class="p">)</span>
 </pre></div>
@@ -280,7 +280,7 @@ order quadratic or less</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>obj</strong> (<a class="reference internal" href="#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a>) – the cost table</p></li>
+<li><p><strong>obj</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code>) – the cost table</p></li>
 <li><p><strong>idx</strong> – (integer) : index vector of rows of interest, empty
 for all rows</p></li>
 <li><p><strong>pu_base</strong> (<em>double</em>) – base used to scale quantities to per unit</p></li>
@@ -299,30 +299,30 @@ otherwise AC formulation (2*ng variables), default is 1</p></li>
 </ul>
 </dd>
 </dl>
-<p>Implementation in <a class="reference internal" href="cost_table_utils.html#mp.cost_table_utils.pwl_params" title="mp.cost_table_utils.pwl_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table_utils.pwl_params()</span></code></a>.</p>
+<p>Implementation in <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table_utils.pwl_params()</span></code>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.cost_table.max_pwl_cost">
-<span class="sig-name descname"><span class="pre">max_pwl_cost</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.cost_table.max_pwl_cost" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.cost_table.max_pwl_cost">
+<span class="sig-name descname"><span class="pre">max_pwl_cost</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.cost_table.max_pwl_cost" title="Link to this definition"></a></dt>
 <dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">maxc</span> <span class="p">=</span> <span class="n">max_pwl_cost</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Input<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>obj</strong> (<a class="reference internal" href="#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a>) – the cost table</p>
+<dd class="field-odd"><p><strong>obj</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code>) – the cost table</p>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>maxc</strong> (<em>double</em>) – maximum cost component of all breakpoints
 used to specify piecewise linear costs</p>
 </dd>
 </dl>
-<p>Implementation in <a class="reference internal" href="cost_table_utils.html#mp.cost_table_utils.max_pwl_cost" title="mp.cost_table_utils.max_pwl_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table_utils.max_pwl_cost()</span></code></a>.</p>
+<p>Implementation in <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table_utils.max_pwl_cost()</span></code>.</p>
 </dd></dl>
 
 <dl class="mat staticmethod">
-<dt class="sig sig-object mat" id="mp.cost_table.poly_cost_fcn">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">poly_cost_fcn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">xx</span></em>, <em class="sig-param"><span class="pre">x_scale</span></em>, <em class="sig-param"><span class="pre">ccm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.cost_table.poly_cost_fcn" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.cost_table.poly_cost_fcn">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">poly_cost_fcn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">xx</span></em>, <em class="sig-param"><span class="pre">x_scale</span></em>, <em class="sig-param"><span class="pre">ccm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.cost_table.poly_cost_fcn" title="Link to this definition"></a></dt>
 <dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">cost_table</span><span class="p">.</span><span class="n">poly_cost_fcn</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">x_scale</span><span class="p">,</span> <span class="n">ccm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
 <span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">df</span><span class="p">]</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">cost_table</span><span class="p">.</span><span class="n">poly_cost_fcn</span><span class="p">(...)</span>
 <span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">d2f</span><span class="p">]</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">cost_table</span><span class="p">.</span><span class="n">poly_cost_fcn</span><span class="p">(...)</span>
@@ -356,8 +356,8 @@ the coefficient of the <em>(j-1)</em> order term for cost <em>i</em></p></li>
 </dd></dl>
 
 <dl class="mat staticmethod">
-<dt class="sig sig-object mat" id="mp.cost_table.eval_poly_fcn">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">eval_poly_fcn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">c</span></em>, <em class="sig-param"><span class="pre">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.cost_table.eval_poly_fcn" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.cost_table.eval_poly_fcn">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">eval_poly_fcn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">c</span></em>, <em class="sig-param"><span class="pre">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.cost_table.eval_poly_fcn" title="Link to this definition"></a></dt>
 <dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">cost_table</span><span class="p">.</span><span class="n">eval_poly_fcn</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -381,8 +381,8 @@ element of <em>f</em></p></li>
 </dd></dl>
 
 <dl class="mat staticmethod">
-<dt class="sig sig-object mat" id="mp.cost_table.diff_poly_fcn">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">diff_poly_fcn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">c</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.cost_table.diff_poly_fcn" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.cost_table.diff_poly_fcn">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">diff_poly_fcn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">c</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.cost_table.diff_poly_fcn" title="Link to this definition"></a></dt>
 <dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">cost_table</span><span class="p">.</span><span class="n">diff_poly_fcn</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>

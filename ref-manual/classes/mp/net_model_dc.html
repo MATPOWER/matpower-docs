@@ -79,7 +79,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -128,58 +128,58 @@
 <section id="mp-net-model-dc">
 <h1>mp.net_model_dc<a class="headerlink" href="#mp-net-model-dc" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="mp.net_model_dc">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">net_model_dc</span></span><a class="headerlink" href="#mp.net_model_dc" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>, <a class="reference internal" href="form_dc.html#mp.form_dc" title="mp.form_dc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code></a></p>
-<p><a class="reference internal" href="#mp.net_model_dc" title="mp.net_model_dc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model_dc</span></code></a> - Concrete class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> DC <strong>network model</strong> objects.</p>
+<dt class="sig sig-object mat" id="matpower.mp.net_model_dc">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">net_model_dc</span></span><a class="headerlink" href="#matpower.mp.net_model_dc" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code></p>
+<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model_dc</span></code> - Concrete class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> DC <strong>network model</strong> objects.</p>
 <p>This network model class and all of its network model element classes are
-specific to the DC formulation and therefore inherit from <a class="reference internal" href="form_dc.html#mp.form_dc" title="mp.form_dc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code></a>.</p>
+specific to the DC formulation and therefore inherit from <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code>.</p>
 <dl class="simple">
 <dt>mp.net_model_dc Properties:</dt><dd><ul class="simple">
-<li><p><a class="reference internal" href="#mp.net_model_dc.va" title="mp.net_model_dc.va"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">va</span></code></a> - vector of voltage states (voltage angles <span class="math notranslate nohighlight">\(\Va\)</span>)</p></li>
-<li><p><a class="reference internal" href="#mp.net_model_dc.z" title="mp.net_model_dc.z"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">z</span></code></a> - vector of non-voltage states <span class="math notranslate nohighlight">\(\z\)</span></p></li>
+<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">va</span></code> - vector of voltage states (voltage angles <span class="math notranslate nohighlight">\(\Va\)</span>)</p></li>
+<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">z</span></code> - vector of non-voltage states <span class="math notranslate nohighlight">\(\z\)</span></p></li>
 </ul>
 </dd>
 <dt>mp.net_model_dc Methods:</dt><dd><ul class="simple">
-<li><p><a class="reference internal" href="#mp.net_model_dc.net_model_dc" title="mp.net_model_dc.net_model_dc"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">net_model_dc()</span></code></a> - constructor, assign default network model element classes</p></li>
-<li><p><a class="reference internal" href="#mp.net_model_dc.def_set_types" title="mp.net_model_dc.def_set_types"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">def_set_types()</span></code></a> - add voltage and non-voltage variable set types for mp_idx_manager</p></li>
-<li><p><a class="reference internal" href="#mp.net_model_dc.build_params" title="mp.net_model_dc.build_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code></a> - build incidence matrices, parameters, add ports for each element</p></li>
-<li><p><a class="reference internal" href="#mp.net_model_dc.port_inj_soln" title="mp.net_model_dc.port_inj_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_soln()</span></code></a> - compute the network port injections at the solution</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">net_model_dc()</span></code> - constructor, assign default network model element classes</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">def_set_types()</span></code> - add voltage and non-voltage variable set types for mp_idx_manager</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code> - build incidence matrices, parameters, add ports for each element</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_soln()</span></code> - compute the network port injections at the solution</p></li>
 </ul>
 </dd>
 </dl>
-<p>See also <a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>, <a class="reference internal" href="form_dc.html#mp.form_dc" title="mp.form_dc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code></a>, <a class="reference internal" href="form.html#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a>, <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a>.</p>
+<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Constructor Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp.net_model_dc.net_model_dc">
-<span class="sig-name descname"><span class="pre">net_model_dc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_dc.net_model_dc" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.net_model_dc.net_model_dc">
+<span class="sig-name descname"><span class="pre">net_model_dc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model_dc.net_model_dc" title="Link to this definition"></a></dt>
 <dd><p>Constructor, assign default network model element classes.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span> <span class="p">=</span> <span class="n">net_model_dc</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>This network model class and all of its network model element
 classes are specific to the DC formulation and therefore
-inherit from <a class="reference internal" href="form_dc.html#mp.form_dc" title="mp.form_dc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code></a>.</p>
+inherit from <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code>.</p>
 </dd></dl>
 
 </dd>
 <dt>Property Summary</dt><dd><dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.net_model_dc.va">
-<span class="sig-name descname"><span class="pre">va</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.net_model_dc.va" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.net_model_dc.va">
+<span class="sig-name descname"><span class="pre">va</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#matpower.mp.net_model_dc.va" title="Link to this definition"></a></dt>
 <dd><p><em>(double)</em> vector of voltage states (voltage angles <span class="math notranslate nohighlight">\(\Va\)</span>)</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="mp.net_model_dc.z">
-<span class="sig-name descname"><span class="pre">z</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.net_model_dc.z" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.net_model_dc.z">
+<span class="sig-name descname"><span class="pre">z</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#matpower.mp.net_model_dc.z" title="Link to this definition"></a></dt>
 <dd><p><em>(double)</em> vector of non-voltage states <span class="math notranslate nohighlight">\(\z\)</span></p>
 </dd></dl>
 
 </dd>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp.net_model_dc.def_set_types">
-<span class="sig-name descname"><span class="pre">def_set_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_dc.def_set_types" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.net_model_dc.def_set_types">
+<span class="sig-name descname"><span class="pre">def_set_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model_dc.def_set_types" title="Link to this definition"></a></dt>
 <dd><p>Add voltage and non-voltage variable set types for mp_idx_manager.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">def_set_types</span><span class="p">()</span>
 </pre></div>
@@ -191,12 +191,12 @@ inherit from <a class="reference internal" href="form_dc.html#mp.form_dc" title=
 <li><p><code class="docutils literal notranslate"><span class="pre">'z'</span></code> - NON-VOLTAGE VARS (z)</p></li>
 </ul>
 </div></blockquote>
-<p>See also <a class="reference internal" href="net_model.html#mp.net_model.def_set_types" title="mp.net_model.def_set_types"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.net_model.def_set_types()</span></code></a>, <code class="docutils literal notranslate"><span class="pre">mp_idx_manager</span></code>.</p>
+<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.net_model.def_set_types()</span></code>, <code class="docutils literal notranslate"><span class="pre">mp_idx_manager</span></code>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.net_model_dc.build_params">
-<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_dc.build_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.net_model_dc.build_params">
+<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model_dc.build_params" title="Link to this definition"></a></dt>
 <dd><p>Build incidence matrices and parameters, and add ports for each element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">build_params</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
 </pre></div>
@@ -204,18 +204,18 @@ inherit from <a class="reference internal" href="form_dc.html#mp.form_dc" title=
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
-<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
+<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
 </ul>
 </dd>
 </dl>
-<p>Call the parent method to do most of the work, then build
+<p>Call the parent method to do <code class="xref mat mat-func docutils literal notranslate"><span class="pre">most()</span></code> of the work, then build
 the aggregate network model parameters.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.net_model_dc.port_inj_soln">
-<span class="sig-name descname"><span class="pre">port_inj_soln</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_dc.port_inj_soln" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.net_model_dc.port_inj_soln">
+<span class="sig-name descname"><span class="pre">port_inj_soln</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model_dc.port_inj_soln" title="Link to this definition"></a></dt>
 <dd><p>Compute the network port injections at the solution.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">port_inj_soln</span><span class="p">()</span>
 </pre></div>

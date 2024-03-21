@@ -78,7 +78,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -127,32 +127,32 @@
 <section id="mp-math-model-opf-acci">
 <h1>mp.math_model_opf_acci<a class="headerlink" href="#mp-math-model-opf-acci" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="mp.math_model_opf_acci">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">math_model_opf_acci</span></span><a class="headerlink" href="#mp.math_model_opf_acci" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="math_model_opf_acc.html#mp.math_model_opf_acc" title="mp.math_model_opf_acc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model_opf_acc</span></code></a></p>
-<p><a class="reference internal" href="#mp.math_model_opf_acci" title="mp.math_model_opf_acci"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model_opf_acci</span></code></a> - OPF <strong>math model</strong> for AC-cartesian-current formulation.</p>
+<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_acci">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">math_model_opf_acci</span></span><a class="headerlink" href="#matpower.mp.math_model_opf_acci" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model_opf_acc</span></code></p>
+<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model_opf_acci</span></code> - OPF <strong>math model</strong> for AC-cartesian-current formulation.</p>
 <p>Implements formulation-specific and OPF-specific node balance constraint
 and node balance price methods.</p>
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp.math_model_opf_acci.form_tag">
-<span class="sig-name descname"><span class="pre">form_tag</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.math_model_opf_acci.form_tag" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_acci.form_tag">
+<span class="sig-name descname"><span class="pre">form_tag</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.math_model_opf_acci.form_tag" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.math_model_opf_acci.form_name">
-<span class="sig-name descname"><span class="pre">form_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.math_model_opf_acci.form_name" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_acci.form_name">
+<span class="sig-name descname"><span class="pre">form_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.math_model_opf_acci.form_name" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.math_model_opf_acci.add_node_balance_constraints">
-<span class="sig-name descname"><span class="pre">add_node_balance_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.math_model_opf_acci.add_node_balance_constraints" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_acci.add_node_balance_constraints">
+<span class="sig-name descname"><span class="pre">add_node_balance_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.math_model_opf_acci.add_node_balance_constraints" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.math_model_opf_acci.node_power_balance_prices">
-<span class="sig-name descname"><span class="pre">node_power_balance_prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.math_model_opf_acci.node_power_balance_prices" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_acci.node_power_balance_prices">
+<span class="sig-name descname"><span class="pre">node_power_balance_prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.math_model_opf_acci.node_power_balance_prices" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd>

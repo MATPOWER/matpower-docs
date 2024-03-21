@@ -81,7 +81,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html"><span class="raw-html">MOST</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
@@ -130,10 +130,10 @@
 <section id="mp-nme-buslink">
 <h1>mp.nme_buslink<a class="headerlink" href="#mp-nme-buslink" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="mp.nme_buslink">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">nme_buslink</span></span><a class="headerlink" href="#mp.nme_buslink" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a></p>
-<p><a class="reference internal" href="#mp.nme_buslink" title="mp.nme_buslink"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_buslink</span></code></a> - Network model element abstract base class for 1-to-3-phase buslink.</p>
+<dt class="sig sig-object mat" id="matpower.mp.nme_buslink">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">nme_buslink</span></span><a class="headerlink" href="#matpower.mp.nme_buslink" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></p>
+<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_buslink</span></code> - Network model element abstract base class for 1-to-3-phase buslink.</p>
 <p>Implements the network model element for 1-to-3-phase buslink elements,
 with 4 ports and 3 non-voltage states per buslink.</p>
 <p>Adds non-voltage state variables <code class="docutils literal notranslate"><span class="pre">Plink</span></code> and <code class="docutils literal notranslate"><span class="pre">Qlink</span></code> to the network
@@ -141,33 +141,33 @@ model, builds the parameter <span class="math notranslate nohighlight">\(\NN\)</
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nme_buslink.name">
-<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.nme_buslink.name" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nme_buslink.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nme_buslink.name" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nme_buslink.np">
-<span class="sig-name descname"><span class="pre">np</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.nme_buslink.np" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nme_buslink.np">
+<span class="sig-name descname"><span class="pre">np</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nme_buslink.np" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nme_buslink.nz">
-<span class="sig-name descname"><span class="pre">nz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.nme_buslink.nz" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nme_buslink.nz">
+<span class="sig-name descname"><span class="pre">nz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nme_buslink.nz" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nme_buslink.add_zvars">
-<span class="sig-name descname"><span class="pre">add_zvars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nme_buslink.add_zvars" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nme_buslink.add_zvars">
+<span class="sig-name descname"><span class="pre">add_zvars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nme_buslink.add_zvars" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nme_buslink.build_params">
-<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nme_buslink.build_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nme_buslink.build_params">
+<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nme_buslink.build_params" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="mp.nme_buslink.voltage_constraints">
-<span class="sig-name descname"><span class="pre">voltage_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.nme_buslink.voltage_constraints" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="matpower.mp.nme_buslink.voltage_constraints">
+<span class="sig-name descname"><span class="pre">voltage_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nme_buslink.voltage_constraints" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd>

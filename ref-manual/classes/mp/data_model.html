@@ -127,10 +127,10 @@
 <section id="mp-data-model">
 <h1>mp.data_model<a class="headerlink" href="#mp-data-model" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="matpower.mp.data_model">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">data_model</span></span><a class="headerlink" href="#matpower.mp.data_model" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.element_container</span></code></p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code> - Base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> <strong>data model</strong> objects.</p>
+<dt class="sig sig-object mat" id="mp.data_model">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">data_model</span></span><a class="headerlink" href="#mp.data_model" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="element_container.html#mp.element_container" title="mp.element_container"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.element_container</span></code></a></p>
+<p><a class="reference internal" href="#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a> - Base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> <strong>data model</strong> objects.</p>
 <p>The data model object encapsulates the input data provided by the user
 for the problem of interest and the output data presented back to the user
 upon completion. It corresponds roughly to the <code class="docutils literal notranslate"><span class="pre">mpc</span></code> (<span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case)
@@ -138,50 +138,50 @@ and <code class="docutils literal notranslate"><span class="pre">results</span><
 but encapsulated in an object with additional functionality. It includes
 tables of data for each type of element in the system.</p>
 <p>A data model object is primarily a container for data model element
-(<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_element</span></code>) objects. Concrete data model classes may be specific to
+(<a class="reference internal" href="dm_element.html#mp.dm_element" title="mp.dm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_element</span></code></a>) objects. Concrete data model classes may be specific to
 the task.</p>
 <p>By convention, data model variables are named <code class="docutils literal notranslate"><span class="pre">dm</span></code> and data model class
 names begin with <code class="docutils literal notranslate"><span class="pre">mp.data_model</span></code>.</p>
 <dl class="simple">
 <dt>mp.data_model Properties:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">base_mva</span></code> - system per unit MVA base</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">base_kva</span></code> - system per unit kVA base</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">source</span></code> - source of data, e.g. <code class="docutils literal notranslate"><span class="pre">mpc</span></code> (<span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case struct)</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">userdata</span></code> - arbitrary user data</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.base_mva" title="mp.data_model.base_mva"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">base_mva</span></code></a> - system per unit MVA base</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.base_kva" title="mp.data_model.base_kva"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">base_kva</span></code></a> - system per unit kVA base</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.source" title="mp.data_model.source"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">source</span></code></a> - source of data, e.g. <code class="docutils literal notranslate"><span class="pre">mpc</span></code> (<span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case struct)</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.userdata" title="mp.data_model.userdata"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">userdata</span></code></a> - arbitrary user data</p></li>
 </ul>
 </dd>
 <dt>mp.data_model Methods:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model()</span></code> - constructor, assign  default data model element classes</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">copy()</span></code> - make duplicate of object</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code> - create, add, and build element objects</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">count()</span></code> - count instances of each element and remove if count is zero</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">initialize()</span></code> - initialize (online/offline) status of each element</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">update_status()</span></code> - update (online/offline) status based on connectivity, etc</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code> - extract/convert/calculate parameters for online elements</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">online()</span></code> - get number of online elements of named type</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">display()</span></code> - display the data model object</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code> - pretty print data model to console or file</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_flags()</span></code> - from options, build flags to control pretty printed output</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_section_label()</span></code> - construct section header lines for output</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_section_list()</span></code> - return list of section tags</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_have_section()</span></code> - return true if section exists for object</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_section()</span></code> - pretty print the given section</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_get_headers()</span></code> - construct pretty printed lines for section headers</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_get_headers_cnt()</span></code> - construct pretty printed lines for <strong>cnt</strong> section headers</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_get_headers_ext()</span></code> - construct pretty printed lines for <strong>ext</strong> section headers</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_data()</span></code> - pretty print the data for the given section</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_bus_v_lims_via_vg()</span></code> - set gen bus voltage limits based on gen voltage setpoints</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.data_model" title="mp.data_model.data_model"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model()</span></code></a> - constructor, assign  default data model element classes</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.copy" title="mp.data_model.copy"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">copy()</span></code></a> - make duplicate of object</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.build" title="mp.data_model.build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code></a> - create, add, and build element objects</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.count" title="mp.data_model.count"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">count()</span></code></a> - count instances of each element and remove if count is zero</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.initialize" title="mp.data_model.initialize"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">initialize()</span></code></a> - initialize (online/offline) status of each element</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.update_status" title="mp.data_model.update_status"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">update_status()</span></code></a> - update (online/offline) status based on connectivity, etc</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.build_params" title="mp.data_model.build_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code></a> - extract/convert/calculate parameters for online elements</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.online" title="mp.data_model.online"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">online()</span></code></a> - get number of online elements of named type</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.display" title="mp.data_model.display"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">display()</span></code></a> - display the data model object</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.pretty_print" title="mp.data_model.pretty_print"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code></a> - pretty print data model to console or file</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.pp_flags" title="mp.data_model.pp_flags"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_flags()</span></code></a> - from options, build flags to control pretty printed output</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.pp_section_label" title="mp.data_model.pp_section_label"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_section_label()</span></code></a> - construct section header lines for output</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.pp_section_list" title="mp.data_model.pp_section_list"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_section_list()</span></code></a> - return list of section tags</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.pp_have_section" title="mp.data_model.pp_have_section"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_have_section()</span></code></a> - return true if section exists for object</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.pp_section" title="mp.data_model.pp_section"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_section()</span></code></a> - pretty print the given section</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.pp_get_headers" title="mp.data_model.pp_get_headers"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_get_headers()</span></code></a> - construct pretty printed lines for section headers</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.pp_get_headers_cnt" title="mp.data_model.pp_get_headers_cnt"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_get_headers_cnt()</span></code></a> - construct pretty printed lines for <strong>cnt</strong> section headers</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.pp_get_headers_ext" title="mp.data_model.pp_get_headers_ext"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_get_headers_ext()</span></code></a> - construct pretty printed lines for <strong>ext</strong> section headers</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.pp_data" title="mp.data_model.pp_data"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_data()</span></code></a> - pretty print the data for the given section</p></li>
+<li><p><a class="reference internal" href="#mp.data_model.set_bus_v_lims_via_vg" title="mp.data_model.set_bus_v_lims_via_vg"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_bus_v_lims_via_vg()</span></code></a> - set gen bus voltage limits based on gen voltage setpoints</p></li>
 </ul>
 </dd>
 </dl>
 <p>See the <a class="reference internal" href="../../../dev-manual/data-model.html#sec-data-model"><span class="std std-ref">Data Model Object</span></a> section in the <span class="raw-html"><a class="reference external" href="https://matpower.org/documentation/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more
 information.</p>
-<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code>.</p>
+<p>See also <a class="reference internal" href="task.html#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a>, <a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>, <a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>, <a class="reference internal" href="dm_converter.html#mp.dm_converter" title="mp.dm_converter"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code></a>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Constructor Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.data_model">
-<span class="sig-name descname"><span class="pre">data_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.data_model" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.data_model">
+<span class="sig-name descname"><span class="pre">data_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.data_model" title="Link to this definition"></a></dt>
 <dd><p>Constructor, assign default data model element classes.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">data_model</span><span class="p">()</span>
 </pre></div>
@@ -190,47 +190,47 @@ information.</p>
 
 </dd>
 <dt>Property Summary</dt><dd><dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.base_mva">
-<span class="sig-name descname"><span class="pre">base_mva</span></span><a class="headerlink" href="#matpower.mp.data_model.base_mva" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.base_mva">
+<span class="sig-name descname"><span class="pre">base_mva</span></span><a class="headerlink" href="#mp.data_model.base_mva" title="Link to this definition"></a></dt>
 <dd><p><em>(double)</em> system per unit MVA base, for balanced single-phase
 systems/sections, must be provided if system includes any
 <code class="docutils literal notranslate"><span class="pre">'bus'</span></code> elements</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.base_kva">
-<span class="sig-name descname"><span class="pre">base_kva</span></span><a class="headerlink" href="#matpower.mp.data_model.base_kva" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.base_kva">
+<span class="sig-name descname"><span class="pre">base_kva</span></span><a class="headerlink" href="#mp.data_model.base_kva" title="Link to this definition"></a></dt>
 <dd><p><em>(double)</em> system per unit kVA base, for unbalanced 3-phase
 systems/sections, must be provided if system includes any
 <code class="docutils literal notranslate"><span class="pre">'bus3p'</span></code> elements</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.source">
-<span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#matpower.mp.data_model.source" title="Link to this definition"></a></dt>
-<dd><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">source</span></code> of data, e.g. <code class="docutils literal notranslate"><span class="pre">mpc</span></code> (<span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case struct)</p>
+<dt class="sig sig-object mat" id="mp.data_model.source">
+<span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#mp.data_model.source" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mp.data_model.source" title="mp.data_model.source"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">source</span></code></a> of data, e.g. <code class="docutils literal notranslate"><span class="pre">mpc</span></code> (<span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case struct)</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.userdata">
-<span class="sig-name descname"><span class="pre">userdata</span></span><em class="property"> <span class="pre">=</span> <span class="pre">struct()</span></em><a class="headerlink" href="#matpower.mp.data_model.userdata" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.userdata">
+<span class="sig-name descname"><span class="pre">userdata</span></span><em class="property"> <span class="pre">=</span> <span class="pre">struct()</span></em><a class="headerlink" href="#mp.data_model.userdata" title="Link to this definition"></a></dt>
 <dd><p><em>(struct)</em> arbitrary user data</p>
 </dd></dl>
 
 </dd>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.copy" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.copy" title="Link to this definition"></a></dt>
 <dd><p>Create a duplicate of the data model object, calling the
-<code class="xref mat mat-meth docutils literal notranslate"><span class="pre">copy()</span></code> method on each element.</p>
+<a class="reference internal" href="dm_element.html#mp.dm_element.copy" title="mp.dm_element.copy"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">copy()</span></code></a> method on each element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">new_dm</span> <span class="p">=</span> <span class="n">dm</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.build">
-<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">dmc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.build" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">dmc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.build" title="Link to this definition"></a></dt>
 <dd><p>Create and add data model element objects.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="p">.</span><span class="n">build</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">dmc</span><span class="p">)</span>
 </pre></div>
@@ -239,16 +239,16 @@ systems/sections, must be provided if system includes any
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>d</strong> – data source, type depends on the implementing subclass
-(e.g. <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case struct for <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter_mpc2</span></code>)</p></li>
-<li><p><strong>dmc</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code>) – data model converter</p></li>
+(e.g. <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case struct for <a class="reference internal" href="dm_converter_mpc2.html#mp.dm_converter_mpc2" title="mp.dm_converter_mpc2"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter_mpc2</span></code></a>)</p></li>
+<li><p><strong>dmc</strong> (<a class="reference internal" href="dm_converter.html#mp.dm_converter" title="mp.dm_converter"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code></a>) – data model converter</p></li>
 </ul>
 </dd>
 </dl>
 <p>Create the data model element objects by instantiating each
-class in the <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">element_classes</span></code>
+class in the <a class="reference internal" href="element_container.html#mp.element_container.element_classes" title="mp.element_container.element_classes"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">element_classes</span></code></a>
 property and adding the resulting object to the
-<code class="xref mat mat-attr docutils literal notranslate"><span class="pre">elements</span></code> property.
-Then proceed through the following additional <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code> stages for
+<a class="reference internal" href="element_container.html#mp.element_container.elements" title="mp.element_container.elements"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">elements</span></code></a> property.
+Then proceed through the following additional <a class="reference internal" href="#mp.data_model.build" title="mp.data_model.build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code></a> stages for
 each element.</p>
 <blockquote>
 <div><ul class="simple">
@@ -264,73 +264,73 @@ each element.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.count" title="Link to this definition"></a></dt>
-<dd><p>Count instances of each element and remove if <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">count()</span></code> is zero.</p>
+<dt class="sig sig-object mat" id="mp.data_model.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.count" title="Link to this definition"></a></dt>
+<dd><p>Count instances of each element and remove if <a class="reference internal" href="#mp.data_model.count" title="mp.data_model.count"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">count()</span></code></a> is zero.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="p">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Call each element’s <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">count()</span></code> method
+<p>Call each element’s <a class="reference internal" href="dm_element.html#mp.dm_element.count" title="mp.dm_element.count"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">count()</span></code></a> method
 to determine the number of instances of that element in the data,
 and remove the element type from
-<code class="xref mat mat-attr docutils literal notranslate"><span class="pre">elements</span></code> if the count
+<a class="reference internal" href="element_container.html#mp.element_container.elements" title="mp.element_container.elements"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">elements</span></code></a> if the count
 is 0.</p>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code> to perform its <strong>count</strong> stage. See the
+<p>Called by <a class="reference internal" href="#mp.data_model.build" title="mp.data_model.build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code></a> to perform its <strong>count</strong> stage. See the
 <a class="reference internal" href="../../../dev-manual/data-model.html#sec-building-data-model"><span class="std std-ref">Building a Data Model</span></a> section in the
 <span class="raw-html"><a class="reference external" href="https://matpower.org/documentation/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more information.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.initialize">
-<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.initialize" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.initialize" title="Link to this definition"></a></dt>
 <dd><p>Initialize (online/offline) status of each element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="p">.</span><span class="n">initialize</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Call each element’s <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">initialize()</span></code>
-method to <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">initialize()</span></code> statuses and create ID to row index
+<p>Call each element’s <a class="reference internal" href="dm_element.html#mp.dm_element.initialize" title="mp.dm_element.initialize"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">initialize()</span></code></a>
+method to <a class="reference internal" href="#mp.data_model.initialize" title="mp.data_model.initialize"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">initialize()</span></code></a> statuses and create ID to row index
 mappings.</p>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code> to perform its <strong>initialize</strong> stage. See the
+<p>Called by <a class="reference internal" href="#mp.data_model.build" title="mp.data_model.build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code></a> to perform its <strong>initialize</strong> stage. See the
 <a class="reference internal" href="../../../dev-manual/data-model.html#sec-building-data-model"><span class="std std-ref">Building a Data Model</span></a> section in the
 <span class="raw-html"><a class="reference external" href="https://matpower.org/documentation/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more information.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.update_status">
-<span class="sig-name descname"><span class="pre">update_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.update_status" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.update_status">
+<span class="sig-name descname"><span class="pre">update_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.update_status" title="Link to this definition"></a></dt>
 <dd><p>Update (online/offline) status based on connectivity, etc.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="p">.</span><span class="n">update_status</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Call each element’s <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">update_status()</span></code>
+<p>Call each element’s <a class="reference internal" href="dm_element.html#mp.dm_element.update_status" title="mp.dm_element.update_status"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">update_status()</span></code></a>
 method to update statuses based on connectivity or other criteria
 and define element properties containing number and row indices
 of online elements, indices of offline elements, and mapping of
 row indices to indices in online and offline element lists.</p>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code> to perform its <strong>update status</strong> stage. See the
+<p>Called by <a class="reference internal" href="#mp.data_model.build" title="mp.data_model.build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code></a> to perform its <strong>update status</strong> stage. See the
 <a class="reference internal" href="../../../dev-manual/data-model.html#sec-building-data-model"><span class="std std-ref">Building a Data Model</span></a> section in the
 <span class="raw-html"><a class="reference external" href="https://matpower.org/documentation/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more information.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.build_params">
-<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.build_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.build_params">
+<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.build_params" title="Link to this definition"></a></dt>
 <dd><p>Extract/convert/calculate parameters for online elements.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="p">.</span><span class="n">build_params</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Call each element’s <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code>
+<p>Call each element’s <a class="reference internal" href="dm_element.html#mp.dm_element.build_params" title="mp.dm_element.build_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code></a>
 method to build parameters as necessary for online elements from
 the original data tables (e.g. p.u. conversion, initial
 state, etc.) and store them in element-specific properties.</p>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code> to perform its <strong>build parameters</strong> stage. See
+<p>Called by <a class="reference internal" href="#mp.data_model.build" title="mp.data_model.build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code></a> to perform its <strong>build parameters</strong> stage. See
 the <a class="reference internal" href="../../../dev-manual/data-model.html#sec-building-data-model"><span class="std std-ref">Building a Data Model</span></a> section in the
 <span class="raw-html"><a class="reference external" href="https://matpower.org/documentation/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> more information.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.online">
-<span class="sig-name descname"><span class="pre">online</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.online" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.online">
+<span class="sig-name descname"><span class="pre">online</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.online" title="Link to this definition"></a></dt>
 <dd><p>Get number of online elements of named type.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="p">=</span> <span class="n">dm</span><span class="p">.</span><span class="n">online</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
@@ -339,7 +339,7 @@ the <a class="reference internal" href="../../../dev-manual/data-model.html#sec-
 <dt class="field-odd">Input<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> (<em>char array</em>) – name of element type (e.g. <code class="docutils literal notranslate"><span class="pre">'bus'</span></code>,
 <code class="docutils literal notranslate"><span class="pre">'gen'</span></code>) as returned by the element’s
-<code class="xref mat mat-meth docutils literal notranslate"><span class="pre">name()</span></code> method</p>
+<a class="reference internal" href="dm_element.html#mp.dm_element.name" title="mp.dm_element.name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">name()</span></code></a> method</p>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>n</strong> (<em>integer</em>) – number of online elements</p>
@@ -348,8 +348,8 @@ the <a class="reference internal" href="../../../dev-manual/data-model.html#sec-
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.display">
-<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.display" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.display">
+<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.display" title="Link to this definition"></a></dt>
 <dd><p>Display the data model object.</p>
 <p>This method is called automatically when omitting a semicolon
 on a line that retuns an object of this class.</p>
@@ -357,8 +357,8 @@ on a line that retuns an object of this class.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.pretty_print">
-<span class="sig-name descname"><span class="pre">pretty_print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.pretty_print" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.pretty_print">
+<span class="sig-name descname"><span class="pre">pretty_print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.pretty_print" title="Link to this definition"></a></dt>
 <dd><p>Pretty print data model to console or file.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="p">.</span><span class="n">pretty_print</span><span class="p">(</span><span class="n">mpopt</span><span class="p">)</span>
 <span class="n">dm</span><span class="p">.</span><span class="n">pretty_print</span><span class="p">(</span><span class="n">mpopt</span><span class="p">,</span> <span class="n">fd</span><span class="p">)</span>
@@ -376,7 +376,7 @@ error)</p></li>
 </dd>
 <dt class="field-even">Outputs<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – the data model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – the data model object</p></li>
 <li><p><strong>out</strong> (<em>struct</em>) – struct of output control flags</p></li>
 </ul>
 </dd>
@@ -400,8 +400,8 @@ for buses, dispatch, limits for generators, etc.</p></li>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.pp_flags">
-<span class="sig-name descname"><span class="pre">pp_flags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.pp_flags" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.pp_flags">
+<span class="sig-name descname"><span class="pre">pp_flags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.pp_flags" title="Link to this definition"></a></dt>
 <dd><p>From options, build flags to control pretty printed output.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">out</span><span class="p">,</span> <span class="n">add</span><span class="p">]</span> <span class="p">=</span> <span class="n">dm</span><span class="p">.</span><span class="n">pp_flags</span><span class="p">(</span><span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -447,12 +447,12 @@ type.</p>
 </ul>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.data_model.pretty_print" title="mp.data_model.pretty_print"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.pp_section_label">
-<span class="sig-name descname"><span class="pre">pp_section_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">label</span></em>, <em class="sig-param"><span class="pre">blank_line</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.pp_section_label" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.pp_section_label">
+<span class="sig-name descname"><span class="pre">pp_section_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">label</span></em>, <em class="sig-param"><span class="pre">blank_line</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.pp_section_label" title="Link to this definition"></a></dt>
 <dd><p>Construct pretty printed lines for section label.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="p">=</span> <span class="n">dm</span><span class="p">.</span><span class="n">pp_section_label</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">blank_line</span><span class="p">)</span>
 </pre></div>
@@ -469,19 +469,19 @@ label if true</p></li>
 <dd class="field-even"><p><strong>h</strong> (<em>cell array of char arrays</em>) – individual lines of section label</p>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.data_model.pretty_print" title="mp.data_model.pretty_print"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.pp_section_list">
-<span class="sig-name descname"><span class="pre">pp_section_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">out</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.pp_section_list" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.pp_section_list">
+<span class="sig-name descname"><span class="pre">pp_section_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">out</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.pp_section_list" title="Link to this definition"></a></dt>
 <dd><p>Return list of section tags.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">sections</span> <span class="p">=</span> <span class="n">dm</span><span class="p">.</span><span class="n">pp_section_list</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Input<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>out</strong> (<em>struct</em>) – struct of output control flags (see <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_flags()</span></code>
+<dd class="field-odd"><p><strong>out</strong> (<em>struct</em>) – struct of output control flags (see <a class="reference internal" href="#mp.data_model.pp_flags" title="mp.data_model.pp_flags"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_flags()</span></code></a>
 for details)</p>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
@@ -489,12 +489,12 @@ for details)</p>
 <span class="pre">'ext',</span> <span class="pre">'det'}</span></code></p>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.data_model.pretty_print" title="mp.data_model.pretty_print"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.pp_have_section">
-<span class="sig-name descname"><span class="pre">pp_have_section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.pp_have_section" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.pp_have_section">
+<span class="sig-name descname"><span class="pre">pp_have_section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.pp_have_section" title="Link to this definition"></a></dt>
 <dd><p>Return true if section exists for object with given options.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">TorF</span> <span class="p">=</span> <span class="n">dm</span><span class="p">.</span><span class="n">pp_have_section</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -511,12 +511,12 @@ for details)</p>
 <dd class="field-even"><p><strong>TorF</strong> (<em>boolean</em>) – true if section exists</p>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.data_model.pretty_print" title="mp.data_model.pretty_print"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.pp_section">
-<span class="sig-name descname"><span class="pre">pp_section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_s</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.pp_section" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.pp_section">
+<span class="sig-name descname"><span class="pre">pp_section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_s</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.pp_section" title="Link to this definition"></a></dt>
 <dd><p>Pretty print the given section.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="p">.</span><span class="n">pp_section</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">out_s</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="n">fd</span><span class="p">)</span>
 </pre></div>
@@ -535,12 +535,12 @@ error)</p></li>
 </ul>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.data_model.pretty_print" title="mp.data_model.pretty_print"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.pp_get_headers">
-<span class="sig-name descname"><span class="pre">pp_get_headers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_s</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.pp_get_headers" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.pp_get_headers">
+<span class="sig-name descname"><span class="pre">pp_get_headers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_s</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.pp_get_headers" title="Link to this definition"></a></dt>
 <dd><p>Construct pretty printed lines for section headers.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="p">=</span> <span class="n">dm</span><span class="p">.</span><span class="n">pp_get_headers</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">out_s</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -560,12 +560,12 @@ error)</p></li>
 headers</p>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.data_model.pretty_print" title="mp.data_model.pretty_print"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.pp_get_headers_cnt">
-<span class="sig-name descname"><span class="pre">pp_get_headers_cnt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">out_s</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.pp_get_headers_cnt" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.pp_get_headers_cnt">
+<span class="sig-name descname"><span class="pre">pp_get_headers_cnt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">out_s</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.pp_get_headers_cnt" title="Link to this definition"></a></dt>
 <dd><p>Construct pretty printed lines for <strong>cnt</strong> section headers.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="p">=</span> <span class="n">dm</span><span class="p">.</span><span class="n">pp_get_headers_cnt</span><span class="p">(</span><span class="n">out_s</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -583,12 +583,12 @@ headers</p>
 section headers</p>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code>, <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_get_headers()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.data_model.pretty_print" title="mp.data_model.pretty_print"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code></a>, <a class="reference internal" href="#mp.data_model.pp_get_headers" title="mp.data_model.pp_get_headers"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_get_headers()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.pp_get_headers_ext">
-<span class="sig-name descname"><span class="pre">pp_get_headers_ext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">out_s</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.pp_get_headers_ext" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.pp_get_headers_ext">
+<span class="sig-name descname"><span class="pre">pp_get_headers_ext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">out_s</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.pp_get_headers_ext" title="Link to this definition"></a></dt>
 <dd><p>Construct pretty printed lines for <strong>ext</strong> section headers.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="p">=</span> <span class="n">dm</span><span class="p">.</span><span class="n">pp_get_headers_cnt</span><span class="p">(</span><span class="n">out_s</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -606,12 +606,12 @@ section headers</p>
 section headers</p>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code>, <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_get_headers()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.data_model.pretty_print" title="mp.data_model.pretty_print"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code></a>, <a class="reference internal" href="#mp.data_model.pp_get_headers" title="mp.data_model.pp_get_headers"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_get_headers()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.pp_get_headers_other">
-<span class="sig-name descname"><span class="pre">pp_get_headers_other</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_s</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.pp_get_headers_other" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.pp_get_headers_other">
+<span class="sig-name descname"><span class="pre">pp_get_headers_other</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_s</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.pp_get_headers_other" title="Link to this definition"></a></dt>
 <dd><p>Construct pretty printed lines for other section headers.</p>
 <p>Returns nothing in base class, but subclasses can implement
 other section types (e.g. <code class="docutils literal notranslate"><span class="pre">'lim'</span></code> for OPF).</p>
@@ -633,12 +633,12 @@ other section types (e.g. <code class="docutils literal notranslate"><span class
 section headers</p>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code>, <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_get_headers()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.data_model.pretty_print" title="mp.data_model.pretty_print"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code></a>, <a class="reference internal" href="#mp.data_model.pp_get_headers" title="mp.data_model.pp_get_headers"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_get_headers()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.pp_data">
-<span class="sig-name descname"><span class="pre">pp_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_s</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.pp_data" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.pp_data">
+<span class="sig-name descname"><span class="pre">pp_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_s</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.pp_data" title="Link to this definition"></a></dt>
 <dd><p>Pretty print the data for the given section.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="p">.</span><span class="n">pp_data</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">out_s</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="n">fd</span><span class="p">)</span>
 </pre></div>
@@ -657,12 +657,12 @@ error)</p></li>
 </ul>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code>, <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_section()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.data_model.pretty_print" title="mp.data_model.pretty_print"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pretty_print()</span></code></a>, <a class="reference internal" href="#mp.data_model.pp_section" title="mp.data_model.pp_section"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pp_section()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.data_model.set_bus_v_lims_via_vg">
-<span class="sig-name descname"><span class="pre">set_bus_v_lims_via_vg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">use_vg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.data_model.set_bus_v_lims_via_vg" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.data_model.set_bus_v_lims_via_vg">
+<span class="sig-name descname"><span class="pre">set_bus_v_lims_via_vg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">use_vg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.data_model.set_bus_v_lims_via_vg" title="Link to this definition"></a></dt>
 <dd><p>Set gen bus voltage limits based on gen voltage setpoints.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="p">.</span><span class="n">set_bus_v_lims_via_vg</span><span class="p">(</span><span class="n">use_vg</span><span class="p">)</span>
 </pre></div>

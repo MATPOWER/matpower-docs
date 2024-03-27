@@ -126,47 +126,47 @@
 <section id="mp-task-cpf">
 <h1>mp.task_cpf<a class="headerlink" href="#mp-task-cpf" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="matpower.mp.task_cpf">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">task_cpf</span></span><a class="headerlink" href="#matpower.mp.task_cpf" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_pf</span></code></p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_cpf</span></code> - <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> task for continuation power flow (CPF).</p>
+<dt class="sig sig-object mat" id="mp.task_cpf">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">task_cpf</span></span><a class="headerlink" href="#mp.task_cpf" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="task_pf.html#mp.task_pf" title="mp.task_pf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_pf</span></code></a></p>
+<p><a class="reference internal" href="#mp.task_cpf" title="mp.task_cpf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_cpf</span></code></a> - <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> task for continuation power flow (CPF).</p>
 <p>Provides task implementation for the continuation power flow problem.</p>
 <p>This includes the iterative solving of the mathematical model (using
 warm restarts) after updating the problem data, e.g. when enforcing
 certain limits.</p>
 <dl class="simple">
 <dt>mp.task_cpf Properties:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">warmstart</span></code> - warm start data</p></li>
+<li><p><a class="reference internal" href="#mp.task_cpf.warmstart" title="mp.task_cpf.warmstart"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">warmstart</span></code></a> - warm start data</p></li>
 </ul>
 </dd>
 <dt>mp.task_cpf Methods:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">task_cpf()</span></code> - constructor, inherits from <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_pf</span></code> constructor</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code> - call superclass <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code> for base and target inputs</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">next_mm()</span></code> - handle warm start of continuation iterations</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class()</span></code> - select data model converter class</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_class_default()</span></code> - select default data model constructor</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build()</span></code> - build base and target data models</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build()</span></code> - build base and target network models</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_x_soln()</span></code> - update network model solution</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_update()</span></code> - evaluate port injection solution</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class_default()</span></code> - select default math model constructor</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_opt()</span></code> - add warmstart parameters to math model solve options</p></li>
+<li><p><a class="reference internal" href="#mp.task_cpf.task_cpf" title="mp.task_cpf.task_cpf"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">task_cpf()</span></code></a> - constructor, inherits from <a class="reference internal" href="task_pf.html#mp.task_pf" title="mp.task_pf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_pf</span></code></a> constructor</p></li>
+<li><p><a class="reference internal" href="#mp.task_cpf.run_pre" title="mp.task_cpf.run_pre"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code></a> - call superclass <a class="reference internal" href="task_pf.html#mp.task_pf.run_pre" title="mp.task_pf.run_pre"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code></a> for base and target inputs</p></li>
+<li><p><a class="reference internal" href="#mp.task_cpf.next_mm" title="mp.task_cpf.next_mm"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">next_mm()</span></code></a> - handle warm start of continuation iterations</p></li>
+<li><p><a class="reference internal" href="#mp.task_cpf.dm_converter_class" title="mp.task_cpf.dm_converter_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class()</span></code></a> - select data model converter class</p></li>
+<li><p><a class="reference internal" href="#mp.task_cpf.data_model_class_default" title="mp.task_cpf.data_model_class_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_class_default()</span></code></a> - select default data model constructor</p></li>
+<li><p><a class="reference internal" href="#mp.task_cpf.data_model_build" title="mp.task_cpf.data_model_build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build()</span></code></a> - build base and target data models</p></li>
+<li><p><a class="reference internal" href="#mp.task_cpf.network_model_build" title="mp.task_cpf.network_model_build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build()</span></code></a> - build base and target network models</p></li>
+<li><p><a class="reference internal" href="#mp.task_cpf.network_model_x_soln" title="mp.task_cpf.network_model_x_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_x_soln()</span></code></a> - update network model solution</p></li>
+<li><p><a class="reference internal" href="#mp.task_cpf.network_model_update" title="mp.task_cpf.network_model_update"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_update()</span></code></a> - evaluate port injection solution</p></li>
+<li><p><a class="reference internal" href="#mp.task_cpf.math_model_class_default" title="mp.task_cpf.math_model_class_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class_default()</span></code></a> - select default math model constructor</p></li>
+<li><p><a class="reference internal" href="#mp.task_cpf.math_model_opt" title="mp.task_cpf.math_model_opt"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_opt()</span></code></a> - add warmstart parameters to math model solve options</p></li>
 </ul>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_pf</span></code>.</p>
+<p>See also <a class="reference internal" href="task.html#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a>, <a class="reference internal" href="task_pf.html#mp.task_pf" title="mp.task_pf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_pf</span></code></a>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Constructor Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_cpf.task_cpf">
-<span class="sig-name descname"><span class="pre">task_cpf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_cpf.task_cpf" title="Link to this definition"></a></dt>
-<dd><p>Constructor, inherits from <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_pf</span></code> constructor.</p>
+<dt class="sig sig-object mat" id="mp.task_cpf.task_cpf">
+<span class="sig-name descname"><span class="pre">task_cpf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_cpf.task_cpf" title="Link to this definition"></a></dt>
+<dd><p>Constructor, inherits from <a class="reference internal" href="task_pf.html#mp.task_pf" title="mp.task_pf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_pf</span></code></a> constructor.</p>
 </dd></dl>
 
 </dd>
 <dt>Property Summary</dt><dd><dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task_cpf.warmstart">
-<span class="sig-name descname"><span class="pre">warmstart</span></span><a class="headerlink" href="#matpower.mp.task_cpf.warmstart" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_cpf.warmstart">
+<span class="sig-name descname"><span class="pre">warmstart</span></span><a class="headerlink" href="#mp.task_cpf.warmstart" title="Link to this definition"></a></dt>
 <dd><p><em>(struct)</em> warm start data, with fields:</p>
 <ul class="simple">
 <li><p>clam - corrector parameter lambda</p></li>
@@ -178,72 +178,72 @@ certain limits.</p>
 
 </dd>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_cpf.run_pre">
-<span class="sig-name descname"><span class="pre">run_pre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_cpf.run_pre" title="Link to this definition"></a></dt>
-<dd><p>Call superclass <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code> for
+<dt class="sig sig-object mat" id="mp.task_cpf.run_pre">
+<span class="sig-name descname"><span class="pre">run_pre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_cpf.run_pre" title="Link to this definition"></a></dt>
+<dd><p>Call superclass <a class="reference internal" href="task_pf.html#mp.task_pf.run_pre" title="mp.task_pf.run_pre"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code></a> for
 base and target inputs.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_cpf.next_mm">
-<span class="sig-name descname"><span class="pre">next_mm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_cpf.next_mm" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_cpf.next_mm">
+<span class="sig-name descname"><span class="pre">next_mm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_cpf.next_mm" title="Link to this definition"></a></dt>
 <dd><p>Handle warm start of continuation iterations, after problem
 data update.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_cpf.dm_converter_class">
-<span class="sig-name descname"><span class="pre">dm_converter_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_cpf.dm_converter_class" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_cpf.dm_converter_class">
+<span class="sig-name descname"><span class="pre">dm_converter_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_cpf.dm_converter_class" title="Link to this definition"></a></dt>
 <dd><p>Implement selector for data model converter class based on
 superclass constructor.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_cpf.data_model_class_default">
-<span class="sig-name descname"><span class="pre">data_model_class_default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_cpf.data_model_class_default" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_cpf.data_model_class_default">
+<span class="sig-name descname"><span class="pre">data_model_class_default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_cpf.data_model_class_default" title="Link to this definition"></a></dt>
 <dd><p>Implement selector for default data model constructor.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_cpf.data_model_build">
-<span class="sig-name descname"><span class="pre">data_model_build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">dmc</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_cpf.data_model_build" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_cpf.data_model_build">
+<span class="sig-name descname"><span class="pre">data_model_build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">dmc</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_cpf.data_model_build" title="Link to this definition"></a></dt>
 <dd><p>Call superclass <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build()</span></code>
 for base and target models.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_cpf.network_model_build">
-<span class="sig-name descname"><span class="pre">network_model_build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_cpf.network_model_build" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_cpf.network_model_build">
+<span class="sig-name descname"><span class="pre">network_model_build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_cpf.network_model_build" title="Link to this definition"></a></dt>
 <dd><p>Call superclass <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build()</span></code>
 for base and target models.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_cpf.network_model_x_soln">
-<span class="sig-name descname"><span class="pre">network_model_x_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_cpf.network_model_x_soln" title="Link to this definition"></a></dt>
-<dd><p>Call superclass <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_x_soln()</span></code>
+<dt class="sig sig-object mat" id="mp.task_cpf.network_model_x_soln">
+<span class="sig-name descname"><span class="pre">network_model_x_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_cpf.network_model_x_soln" title="Link to this definition"></a></dt>
+<dd><p>Call superclass <a class="reference internal" href="task_pf.html#mp.task_pf.network_model_x_soln" title="mp.task_pf.network_model_x_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_x_soln()</span></code></a>
 then update solution in target network model.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_cpf.network_model_update">
-<span class="sig-name descname"><span class="pre">network_model_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_cpf.network_model_update" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_cpf.network_model_update">
+<span class="sig-name descname"><span class="pre">network_model_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_cpf.network_model_update" title="Link to this definition"></a></dt>
 <dd><p>Call superclass <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_update()</span></code>
 then update port injection solution by interpolating with
 parameter lambda.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_cpf.math_model_class_default">
-<span class="sig-name descname"><span class="pre">math_model_class_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_cpf.math_model_class_default" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_cpf.math_model_class_default">
+<span class="sig-name descname"><span class="pre">math_model_class_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_cpf.math_model_class_default" title="Link to this definition"></a></dt>
 <dd><p>Implement selector for default mathematical model constructor
 depending on <code class="docutils literal notranslate"><span class="pre">mpopt.pf.v_cartesian</span></code> and
 <code class="docutils literal notranslate"><span class="pre">mpopt.pf.current_balance</span></code>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_cpf.math_model_opt">
-<span class="sig-name descname"><span class="pre">math_model_opt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_cpf.math_model_opt" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_cpf.math_model_opt">
+<span class="sig-name descname"><span class="pre">math_model_opt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_cpf.math_model_opt" title="Link to this definition"></a></dt>
 <dd><p>Call superclass <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_opt()</span></code>
 then add warmstart parameters, if available.</p>
 </dd></dl>

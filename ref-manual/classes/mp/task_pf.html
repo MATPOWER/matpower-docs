@@ -126,138 +126,138 @@
 <section id="mp-task-pf">
 <h1>mp.task_pf<a class="headerlink" href="#mp-task-pf" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="matpower.mp.task_pf">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">task_pf</span></span><a class="headerlink" href="#matpower.mp.task_pf" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_pf</span></code> - <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> task for power flow (PF).</p>
+<dt class="sig sig-object mat" id="mp.task_pf">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">task_pf</span></span><a class="headerlink" href="#mp.task_pf" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="task.html#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a></p>
+<p><a class="reference internal" href="#mp.task_pf" title="mp.task_pf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_pf</span></code></a> - <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> task for power flow (PF).</p>
 <p>Provides task implementation for the power flow problem.</p>
 <p>This includes the handling of iterative runs to enforce generator
 reactive power limits, if requested.</p>
 <dl class="simple">
 <dt>mp.task_pf Properties:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">tag</span></code> - task tag ‘PF’</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">name</span></code> - task name ‘Power Flow’</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">dc</span></code> - <code class="docutils literal notranslate"><span class="pre">true</span></code> if using DC network model</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">iterations</span></code> - total number of power flow iterations</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">ref</span></code> - current ref node indices</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">ref0</span></code> - initial ref node indices</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">va_ref0</span></code> - initial ref node voltage angles</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">fixed_q_idx</span></code> - indices of fixed Q gens</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">fixed_q_qty</span></code> - Q output of fixed Q gens</p></li>
+<li><p><a class="reference internal" href="#mp.task_pf.tag" title="mp.task_pf.tag"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">tag</span></code></a> - task tag ‘PF’</p></li>
+<li><p><a class="reference internal" href="#mp.task_pf.name" title="mp.task_pf.name"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">name</span></code></a> - task name ‘Power Flow’</p></li>
+<li><p><a class="reference internal" href="#mp.task_pf.dc" title="mp.task_pf.dc"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">dc</span></code></a> - <code class="docutils literal notranslate"><span class="pre">true</span></code> if using DC network model</p></li>
+<li><p><a class="reference internal" href="#mp.task_pf.iterations" title="mp.task_pf.iterations"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">iterations</span></code></a> - total number of power flow iterations</p></li>
+<li><p><a class="reference internal" href="#mp.task_pf.ref" title="mp.task_pf.ref"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">ref</span></code></a> - current ref node indices</p></li>
+<li><p><a class="reference internal" href="#mp.task_pf.ref0" title="mp.task_pf.ref0"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">ref0</span></code></a> - initial ref node indices</p></li>
+<li><p><a class="reference internal" href="#mp.task_pf.va_ref0" title="mp.task_pf.va_ref0"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">va_ref0</span></code></a> - initial ref node voltage angles</p></li>
+<li><p><a class="reference internal" href="#mp.task_pf.fixed_q_idx" title="mp.task_pf.fixed_q_idx"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">fixed_q_idx</span></code></a> - indices of fixed Q gens</p></li>
+<li><p><a class="reference internal" href="#mp.task_pf.fixed_q_qty" title="mp.task_pf.fixed_q_qty"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">fixed_q_qty</span></code></a> - Q output of fixed Q gens</p></li>
 </ul>
 </dd>
 <dt>mp.task_pf Methods:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code> - set <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">dc</span></code> property</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">next_dm()</span></code> - optionally iterate to enforce generator reactive limits</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">enforce_q_lims()</span></code> - implementation of generator reactive limits</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_class_default()</span></code> - select default network model constructor</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build_post()</span></code> - initialize properties for reactive limits</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_x_soln()</span></code> - correct the voltage angles if necessary</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class_default()</span></code> - select default math model constructor</p></li>
+<li><p><a class="reference internal" href="#mp.task_pf.run_pre" title="mp.task_pf.run_pre"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code></a> - set <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">dc</span></code> property</p></li>
+<li><p><a class="reference internal" href="#mp.task_pf.next_dm" title="mp.task_pf.next_dm"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">next_dm()</span></code></a> - optionally iterate to enforce generator reactive limits</p></li>
+<li><p><a class="reference internal" href="#mp.task_pf.enforce_q_lims" title="mp.task_pf.enforce_q_lims"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">enforce_q_lims()</span></code></a> - implementation of generator reactive limits</p></li>
+<li><p><a class="reference internal" href="#mp.task_pf.network_model_class_default" title="mp.task_pf.network_model_class_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_class_default()</span></code></a> - select default network model constructor</p></li>
+<li><p><a class="reference internal" href="#mp.task_pf.network_model_build_post" title="mp.task_pf.network_model_build_post"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build_post()</span></code></a> - initialize properties for reactive limits</p></li>
+<li><p><a class="reference internal" href="#mp.task_pf.network_model_x_soln" title="mp.task_pf.network_model_x_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_x_soln()</span></code></a> - correct the voltage angles if necessary</p></li>
+<li><p><a class="reference internal" href="#mp.task_pf.math_model_class_default" title="mp.task_pf.math_model_class_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class_default()</span></code></a> - select default math model constructor</p></li>
 </ul>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code>.</p>
+<p>See also <a class="reference internal" href="task.html#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Property Summary</dt><dd><dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task_pf.tag">
-<span class="sig-name descname"><span class="pre">tag</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'PF'</span></em><a class="headerlink" href="#matpower.mp.task_pf.tag" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_pf.tag">
+<span class="sig-name descname"><span class="pre">tag</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'PF'</span></em><a class="headerlink" href="#mp.task_pf.tag" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task_pf.name">
-<span class="sig-name descname"><span class="pre">name</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'Power</span> <span class="pre">Flow'</span></em><a class="headerlink" href="#matpower.mp.task_pf.name" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_pf.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'Power</span> <span class="pre">Flow'</span></em><a class="headerlink" href="#mp.task_pf.name" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task_pf.dc">
-<span class="sig-name descname"><span class="pre">dc</span></span><a class="headerlink" href="#matpower.mp.task_pf.dc" title="Link to this definition"></a></dt>
-<dd><p><code class="docutils literal notranslate"><span class="pre">true</span></code> if using DC network model (from <code class="docutils literal notranslate"><span class="pre">mpopt.model</span></code>, cached in <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code>)</p>
+<dt class="sig sig-object mat" id="mp.task_pf.dc">
+<span class="sig-name descname"><span class="pre">dc</span></span><a class="headerlink" href="#mp.task_pf.dc" title="Link to this definition"></a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">true</span></code> if using DC network model (from <code class="docutils literal notranslate"><span class="pre">mpopt.model</span></code>, cached in <a class="reference internal" href="#mp.task_pf.run_pre" title="mp.task_pf.run_pre"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code></a>)</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task_pf.iterations">
-<span class="sig-name descname"><span class="pre">iterations</span></span><a class="headerlink" href="#matpower.mp.task_pf.iterations" title="Link to this definition"></a></dt>
-<dd><p><em>(integer)</em> total number of power flow <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">iterations</span></code></p>
+<dt class="sig sig-object mat" id="mp.task_pf.iterations">
+<span class="sig-name descname"><span class="pre">iterations</span></span><a class="headerlink" href="#mp.task_pf.iterations" title="Link to this definition"></a></dt>
+<dd><p><em>(integer)</em> total number of power flow <a class="reference internal" href="#mp.task_pf.iterations" title="mp.task_pf.iterations"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">iterations</span></code></a></p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task_pf.ref">
-<span class="sig-name descname"><span class="pre">ref</span></span><a class="headerlink" href="#matpower.mp.task_pf.ref" title="Link to this definition"></a></dt>
-<dd><p><em>(integer)</em> current <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">ref</span></code> node indices</p>
+<dt class="sig sig-object mat" id="mp.task_pf.ref">
+<span class="sig-name descname"><span class="pre">ref</span></span><a class="headerlink" href="#mp.task_pf.ref" title="Link to this definition"></a></dt>
+<dd><p><em>(integer)</em> current <a class="reference internal" href="#mp.task_pf.ref" title="mp.task_pf.ref"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">ref</span></code></a> node indices</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task_pf.ref0">
-<span class="sig-name descname"><span class="pre">ref0</span></span><a class="headerlink" href="#matpower.mp.task_pf.ref0" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_pf.ref0">
+<span class="sig-name descname"><span class="pre">ref0</span></span><a class="headerlink" href="#mp.task_pf.ref0" title="Link to this definition"></a></dt>
 <dd><p><em>(integer)</em> initial ref node indices</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task_pf.va_ref0">
-<span class="sig-name descname"><span class="pre">va_ref0</span></span><a class="headerlink" href="#matpower.mp.task_pf.va_ref0" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_pf.va_ref0">
+<span class="sig-name descname"><span class="pre">va_ref0</span></span><a class="headerlink" href="#mp.task_pf.va_ref0" title="Link to this definition"></a></dt>
 <dd><p><em>(double)</em> initial ref node voltage angles</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task_pf.fixed_q_idx">
-<span class="sig-name descname"><span class="pre">fixed_q_idx</span></span><a class="headerlink" href="#matpower.mp.task_pf.fixed_q_idx" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_pf.fixed_q_idx">
+<span class="sig-name descname"><span class="pre">fixed_q_idx</span></span><a class="headerlink" href="#mp.task_pf.fixed_q_idx" title="Link to this definition"></a></dt>
 <dd><p><em>(integer)</em> indices of fixed Q gens</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task_pf.fixed_q_qty">
-<span class="sig-name descname"><span class="pre">fixed_q_qty</span></span><a class="headerlink" href="#matpower.mp.task_pf.fixed_q_qty" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_pf.fixed_q_qty">
+<span class="sig-name descname"><span class="pre">fixed_q_qty</span></span><a class="headerlink" href="#mp.task_pf.fixed_q_qty" title="Link to this definition"></a></dt>
 <dd><p><em>(double)</em> Q output of fixed Q gens</p>
 </dd></dl>
 
 </dd>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_pf.run_pre">
-<span class="sig-name descname"><span class="pre">run_pre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_pf.run_pre" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_pf.run_pre">
+<span class="sig-name descname"><span class="pre">run_pre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_pf.run_pre" title="Link to this definition"></a></dt>
 <dd><p>Set <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">dc</span></code> property after calling superclass
-<code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code>.</p>
+<a class="reference internal" href="task.html#mp.task.run_pre" title="mp.task.run_pre"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_pf.next_dm">
-<span class="sig-name descname"><span class="pre">next_dm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_pf.next_dm" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_pf.next_dm">
+<span class="sig-name descname"><span class="pre">next_dm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_pf.next_dm" title="Link to this definition"></a></dt>
 <dd><p>Implement optional iterations to enforce generator reactive
 limits.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_pf.enforce_q_lims">
-<span class="sig-name descname"><span class="pre">enforce_q_lims</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_pf.enforce_q_lims" title="Link to this definition"></a></dt>
-<dd><p>Used by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">next_dm()</span></code> to implement enforcement of generator
+<dt class="sig sig-object mat" id="mp.task_pf.enforce_q_lims">
+<span class="sig-name descname"><span class="pre">enforce_q_lims</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_pf.enforce_q_lims" title="Link to this definition"></a></dt>
+<dd><p>Used by <a class="reference internal" href="#mp.task_pf.next_dm" title="mp.task_pf.next_dm"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">next_dm()</span></code></a> to implement enforcement of generator
 reactive limits.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_pf.network_model_class_default">
-<span class="sig-name descname"><span class="pre">network_model_class_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_pf.network_model_class_default" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_pf.network_model_class_default">
+<span class="sig-name descname"><span class="pre">network_model_class_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_pf.network_model_class_default" title="Link to this definition"></a></dt>
 <dd><p>Implement selector for default network model constructor
 depending on <code class="docutils literal notranslate"><span class="pre">mpopt.model</span></code> and <code class="docutils literal notranslate"><span class="pre">mpopt.pf.v_cartesian</span></code>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_pf.network_model_build_post">
-<span class="sig-name descname"><span class="pre">network_model_build_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_pf.network_model_build_post" title="Link to this definition"></a></dt>
-<dd><p>Initialize <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_pf</span></code> properties, if non-empty AC case with
+<dt class="sig sig-object mat" id="mp.task_pf.network_model_build_post">
+<span class="sig-name descname"><span class="pre">network_model_build_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_pf.network_model_build_post" title="Link to this definition"></a></dt>
+<dd><p>Initialize <a class="reference internal" href="#mp.task_pf" title="mp.task_pf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_pf</span></code></a> properties, if non-empty AC case with
 generator reactive limits enforced.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_pf.network_model_x_soln">
-<span class="sig-name descname"><span class="pre">network_model_x_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_pf.network_model_x_soln" title="Link to this definition"></a></dt>
-<dd><p>Call superclass <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_x_soln()</span></code>
+<dt class="sig sig-object mat" id="mp.task_pf.network_model_x_soln">
+<span class="sig-name descname"><span class="pre">network_model_x_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_pf.network_model_x_soln" title="Link to this definition"></a></dt>
+<dd><p>Call superclass <a class="reference internal" href="task.html#mp.task.network_model_x_soln" title="mp.task.network_model_x_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_x_soln()</span></code></a>
 then correct the voltage angle if the ref node has been changed.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_pf.math_model_class_default">
-<span class="sig-name descname"><span class="pre">math_model_class_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_pf.math_model_class_default" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_pf.math_model_class_default">
+<span class="sig-name descname"><span class="pre">math_model_class_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_pf.math_model_class_default" title="Link to this definition"></a></dt>
 <dd><p>Implement selector for default mathematical model constructor
 depending on <code class="docutils literal notranslate"><span class="pre">mpopt.model</span></code>, <code class="docutils literal notranslate"><span class="pre">mpopt.pf.v_cartesian</span></code>, and
 <code class="docutils literal notranslate"><span class="pre">mpopt.pf.current_balance</span></code>.</p>

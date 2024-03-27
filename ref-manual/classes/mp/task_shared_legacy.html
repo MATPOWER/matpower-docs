@@ -126,25 +126,25 @@
 <section id="mp-task-shared-legacy">
 <h1>mp.task_shared_legacy<a class="headerlink" href="#mp-task-shared-legacy" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="matpower.mp.task_shared_legacy">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">task_shared_legacy</span></span><a class="headerlink" href="#matpower.mp.task_shared_legacy" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_shared_legacy">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">task_shared_legacy</span></span><a class="headerlink" href="#mp.task_shared_legacy" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_shared_legacy</span></code> - Shared legacy task functionality.</p>
+<p><a class="reference internal" href="#mp.task_shared_legacy" title="mp.task_shared_legacy"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_shared_legacy</span></code></a> - Shared legacy task functionality.</p>
 <p>Provides legacy task functionality shared across different tasks
 (e.g. PF, CPF, OPF), specifically, the pre-processing of input data
 for the experimental system-wide ZIP load data.</p>
 <dl class="simple">
 <dt>mp.task_pf Methods:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre_legacy()</span></code> - handle experimental system-wide ZIP load inputs</p></li>
+<li><p><a class="reference internal" href="#mp.task_shared_legacy.run_pre_legacy" title="mp.task_shared_legacy.run_pre_legacy"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre_legacy()</span></code></a> - handle experimental system-wide ZIP load inputs</p></li>
 </ul>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code>.</p>
+<p>See also <a class="reference internal" href="task.html#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_shared_legacy.run_pre_legacy">
-<span class="sig-name descname"><span class="pre">run_pre_legacy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_shared_legacy.run_pre_legacy" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_shared_legacy.run_pre_legacy">
+<span class="sig-name descname"><span class="pre">run_pre_legacy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_shared_legacy.run_pre_legacy" title="Link to this definition"></a></dt>
 <dd><p>Handle experimental system-wide ZIP load inputs.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">d</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">]</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">run_pre_legacy</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -167,8 +167,8 @@ for the experimental system-wide ZIP load data.</p>
 <p>Moves the legacy experimental system-wide ZIP load data from
 <code class="docutils literal notranslate"><span class="pre">mpopt.exp.sys_wide_zip_loads</span></code> to <code class="docutils literal notranslate"><span class="pre">d.sys_wide_zip_loads</span></code>
 to make it available to the data model converter
-(<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_load_mpc2</span></code>).</p>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code>.</p>
+(<a class="reference internal" href="dmce_load_mpc2.html#mp.dmce_load_mpc2" title="mp.dmce_load_mpc2"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_load_mpc2</span></code></a>).</p>
+<p>Called by <a class="reference internal" href="task.html#mp.task.run_pre" title="mp.task.run_pre"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code></a>.</p>
 </dd></dl>
 
 </dd>

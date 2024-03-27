@@ -123,9 +123,9 @@
 <section id="loadmd">
 <h1>loadmd<a class="headerlink" href="#loadmd" title="Link to this heading"></a></h1>
 <dl class="mat function">
-<dt class="sig sig-object mat" id="most.loadmd">
-<span class="sig-name descname"><span class="pre">loadmd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpci</span></em>, <em class="sig-param"><span class="pre">transmati</span></em>, <em class="sig-param"><span class="pre">xgdi</span></em>, <em class="sig-param"><span class="pre">storagei</span></em>, <em class="sig-param"><span class="pre">contabi</span></em>, <em class="sig-param"><span class="pre">profilesi</span></em>, <em class="sig-param"><span class="pre">trajdatai</span></em><span class="sig-paren">)</span><a class="headerlink" href="#most.loadmd" title="Link to this definition"></a></dt>
-<dd><p><a class="reference internal" href="#most.loadmd" title="most.loadmd"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">loadmd()</span></code></a> - Loads all required data and constructs MD for MOST.</p>
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">loadmd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpci</span></em>, <em class="sig-param"><span class="pre">transmati</span></em>, <em class="sig-param"><span class="pre">xgdi</span></em>, <em class="sig-param"><span class="pre">storagei</span></em>, <em class="sig-param"><span class="pre">contabi</span></em>, <em class="sig-param"><span class="pre">profilesi</span></em>, <em class="sig-param"><span class="pre">trajdatai</span></em><span class="sig-paren">)</span></dt>
+<dd><p><code class="xref mat mat-func docutils literal notranslate"><span class="pre">loadmd()</span></code> - Loads all required data and constructs MD for MOST.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">md</span> <span class="p">=</span> <span class="n">loadmd</span><span class="p">(</span><span class="n">mpc</span><span class="p">)</span>
 <span class="n">md</span> <span class="p">=</span> <span class="n">loadmd</span><span class="p">(</span><span class="n">mpc</span><span class="p">,</span> <span class="n">transmat</span><span class="p">)</span>
 <span class="n">md</span> <span class="p">=</span> <span class="n">loadmd</span><span class="p">(</span><span class="n">mpc</span><span class="p">,</span> <span class="n">transmat</span><span class="p">,</span> <span class="n">xgd</span><span class="p">)</span>
@@ -157,13 +157,13 @@ to period 1. Default value is the integer 1 (see <code class="docutils literal n
 be specified simply as an integer <code class="docutils literal notranslate"><span class="pre">nt</span></code> (<span class="math notranslate nohighlight">\(n_t\)</span>, number of
 periods), which gets expanded internally to a cell array of 1’s.
 Default value is 1.</p></li>
-<li><p><strong>xgd</strong> (<em>struct</em>) – <em>(optional)</em> xGenData struct, see <a class="reference internal" href="loadxgendata.html#most.loadxgendata" title="most.loadxgendata"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">loadxgendata()</span></code></a> for details.</p></li>
-<li><p><strong>sd</strong> (<em>struct</em>) – <em>(optional)</em> StorageData struct, see <a class="reference internal" href="loadstoragedata.html#most.loadstoragedata" title="most.loadstoragedata"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">loadstoragedata()</span></code></a> for
+<li><p><strong>xgd</strong> (<em>struct</em>) – <em>(optional)</em> xGenData struct, see <code class="xref mat mat-func docutils literal notranslate"><span class="pre">loadxgendata()</span></code> for details.</p></li>
+<li><p><strong>sd</strong> (<em>struct</em>) – <em>(optional)</em> StorageData struct, see <code class="xref mat mat-func docutils literal notranslate"><span class="pre">loadstoragedata()</span></code> for
 details.</p></li>
 <li><p><strong>contab</strong> (<em>double</em>) – <em>(optional)</em> contingency table with master set of
 contingencies used for security throughout entire horizon</p></li>
 <li><p><strong>profiles</strong> (<em>struct array</em>) – <em>(optional)</em> a struct array of Profiles
-(see <a class="reference internal" href="idx_profile.html#most.idx_profile" title="most.idx_profile"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">idx_profile()</span></code></a> and <a class="reference internal" href="apply_profile.html#most.apply_profile" title="most.apply_profile"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">apply_profile()</span></code></a> for details), specifying changes
+(see <a class="reference internal" href="idx_profile.html#idx_profile" title="idx_profile"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">idx_profile()</span></code></a> and <a class="reference internal" href="apply_profile.html#apply_profile" title="apply_profile"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">apply_profile()</span></code></a> for details), specifying changes
 in the system and operational conditions, xGenData, StorageData
 and/or contingencies across time periods and scenarios. Alternatively,
 for backward compatibility with the older centroids format,

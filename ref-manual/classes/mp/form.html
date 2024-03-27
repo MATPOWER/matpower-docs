@@ -126,14 +126,14 @@
 <section id="mp-form">
 <h1>mp.form<a class="headerlink" href="#mp-form" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="matpower.mp.form">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">form</span></span><a class="headerlink" href="#matpower.mp.form" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">form</span></span><a class="headerlink" href="#mp.form" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code> - Abstract base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> <strong>formulation</strong>.</p>
+<p><a class="reference internal" href="#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a> - Abstract base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> <strong>formulation</strong>.</p>
 <p>Used as a mix-in class for all <strong>network model element</strong> classes.
 That is, each concrete network model element class must inherit, at least
-indirectly, from both <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code> and <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code>.</p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code> provides properties and methods that are specific to the network
+indirectly, from both <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a> and <a class="reference internal" href="#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a>.</p>
+<p><a class="reference internal" href="#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a> provides properties and methods that are specific to the network
 model formulation (e.g. DC version, AC polar power version, etc.).</p>
 <p>For more details, see the <a class="reference internal" href="../../../dev-manual/net-model.html#sec-net-model-formulations"><span class="std std-ref">Network Model Formulations</span></a> section in the
 <span class="raw-html"><a class="reference external" href="https://matpower.org/documentation/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> and the derivations in <span class="raw-html"><a href="https://matpower.org/docs/TN5-MP-Element.pdf"><em>M<span style="font-size:smaller">ATPOWER</span> Technical Note 5</em></a></span>.</p>
@@ -141,22 +141,22 @@ model formulation (e.g. DC version, AC polar power version, etc.).</p>
 <dt>mp.form Properties:</dt><dd><p><em>subclasses provide properties for model parameters</em></p>
 </dd>
 <dt>mp.form Methods:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">form_name()</span></code> - get char array w/name of formulation</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">form_tag()</span></code> - get char array w/short label of formulation</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">model_params()</span></code> - get cell array of names of model parameters</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">model_vvars()</span></code> - get cell array of names of voltage state variables</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">model_zvars()</span></code> - get cell array of names of non-voltage state variables</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_params()</span></code> - get network model element parameters</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">find_form_class()</span></code> - get name of network element object’s formulation subclass</p></li>
+<li><p><a class="reference internal" href="#mp.form.form_name" title="mp.form.form_name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">form_name()</span></code></a> - get char array w/name of formulation</p></li>
+<li><p><a class="reference internal" href="#mp.form.form_tag" title="mp.form.form_tag"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">form_tag()</span></code></a> - get char array w/short label of formulation</p></li>
+<li><p><a class="reference internal" href="#mp.form.model_params" title="mp.form.model_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">model_params()</span></code></a> - get cell array of names of model parameters</p></li>
+<li><p><a class="reference internal" href="#mp.form.model_vvars" title="mp.form.model_vvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">model_vvars()</span></code></a> - get cell array of names of voltage state variables</p></li>
+<li><p><a class="reference internal" href="#mp.form.model_zvars" title="mp.form.model_zvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">model_zvars()</span></code></a> - get cell array of names of non-voltage state variables</p></li>
+<li><p><a class="reference internal" href="#mp.form.get_params" title="mp.form.get_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_params()</span></code></a> - get network model element parameters</p></li>
+<li><p><a class="reference internal" href="#mp.form.find_form_class" title="mp.form.find_form_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">find_form_class()</span></code></a> - get name of network element object’s formulation subclass</p></li>
 </ul>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code>.</p>
+<p>See also <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.form.form_name">
-<span class="sig-name descname"><span class="pre">form_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.form.form_name" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form.form_name">
+<span class="sig-name descname"><span class="pre">form_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.form.form_name" title="Link to this definition"></a></dt>
 <dd><p>Get user-readable name of formulation, e.g. <code class="docutils literal notranslate"><span class="pre">'DC'</span></code>, <code class="docutils literal notranslate"><span class="pre">'AC-cartesian'</span></code>, <code class="docutils literal notranslate"><span class="pre">'AC-polar'</span></code>.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">name</span>  <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">form_name</span><span class="p">()</span>
 </pre></div>
@@ -171,8 +171,8 @@ by a subclass.</em></p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.form.form_tag">
-<span class="sig-name descname"><span class="pre">form_tag</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.form.form_tag" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form.form_tag">
+<span class="sig-name descname"><span class="pre">form_tag</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.form.form_tag" title="Link to this definition"></a></dt>
 <dd><p>Get short label of formulation, e.g. <code class="docutils literal notranslate"><span class="pre">'dc'</span></code>, <code class="docutils literal notranslate"><span class="pre">'acc'</span></code>, <code class="docutils literal notranslate"><span class="pre">'acp'</span></code>.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">tag</span>  <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">form_tag</span><span class="p">()</span>
 </pre></div>
@@ -187,8 +187,8 @@ by a subclass.</em></p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.form.model_params">
-<span class="sig-name descname"><span class="pre">model_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.form.model_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form.model_params">
+<span class="sig-name descname"><span class="pre">model_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.form.model_params" title="Link to this definition"></a></dt>
 <dd><p>Get cell array of names of model parameters.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">params</span>  <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">model_params</span><span class="p">()</span>
 </pre></div>
@@ -204,8 +204,8 @@ by a subclass.</em></p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.form.model_vvars">
-<span class="sig-name descname"><span class="pre">model_vvars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.form.model_vvars" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form.model_vvars">
+<span class="sig-name descname"><span class="pre">model_vvars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.form.model_vvars" title="Link to this definition"></a></dt>
 <dd><p>Get cell array of names of voltage state variables.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">vtypes</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">model_vvars</span><span class="p">()</span>
 </pre></div>
@@ -216,7 +216,7 @@ by a subclass.</em></p>
 properties for voltage state variables</p>
 </dd>
 </dl>
-<p>The network model object, which inherits from mp_idx_manager,
+<p>The network model object, which inherits from <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a>,
 uses these values as set types for tracking its voltage
 state variables.</p>
 <p><em>Note: This is an abstract method that must be implemented
@@ -224,8 +224,8 @@ by a subclass.</em></p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.form.model_zvars">
-<span class="sig-name descname"><span class="pre">model_zvars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.form.model_zvars" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form.model_zvars">
+<span class="sig-name descname"><span class="pre">model_zvars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.form.model_zvars" title="Link to this definition"></a></dt>
 <dd><p>Get cell array of names of non-voltage state variables.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">vtypes</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">model_zvars</span><span class="p">()</span>
 </pre></div>
@@ -236,7 +236,7 @@ by a subclass.</em></p>
 properties for voltage state variables</p>
 </dd>
 </dl>
-<p>The network model object, which inherits from mp_idx_manager,
+<p>The network model object, which inherits from <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a>,
 uses these values as set types for tracking its non-voltage
 state variables.</p>
 <p><em>Note: This is an abstract method that must be implemented
@@ -244,8 +244,8 @@ by a subclass.</em></p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.form.get_params">
-<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">names</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.form.get_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form.get_params">
+<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">names</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form.get_params" title="Link to this definition"></a></dt>
 <dd><p>Get network model element parameters.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="p">...,</span> <span class="n">pN</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
 <span class="n">pA</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">nameA</span><span class="p">)</span>
@@ -274,8 +274,8 @@ returns a sparse zero matrix or vector of the appropriate size.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.form.find_form_class">
-<span class="sig-name descname"><span class="pre">find_form_class</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.form.find_form_class" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form.find_form_class">
+<span class="sig-name descname"><span class="pre">find_form_class</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.form.find_form_class" title="Link to this definition"></a></dt>
 <dd><p>Get name of network element object’s formulation subclass.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">form_class</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">find_form_class</span><span class="p">()</span>
 </pre></div>
@@ -286,8 +286,8 @@ returns a sparse zero matrix or vector of the appropriate size.</p>
 </dd>
 </dl>
 <p>Selects from this netork model elements parent classes, the
-<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code> subclass, that is not a subclass of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code>, with
-the longest inheritance path back to <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code>.</p>
+<a class="reference internal" href="#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a> subclass, that is not a subclass of <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a>, with
+the longest inheritance path back to <a class="reference internal" href="#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a>.</p>
 </dd></dl>
 
 </dd>

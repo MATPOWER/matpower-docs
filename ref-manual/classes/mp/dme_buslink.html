@@ -128,10 +128,10 @@
 <section id="mp-dme-buslink">
 <h1>mp.dme_buslink<a class="headerlink" href="#mp-dme-buslink" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">dme_buslink</span></span><a class="headerlink" href="#matpower.mp.dme_buslink" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_element</span></code></p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_buslink</span></code> - Data model element for 1-to-3-phase buslink.</p>
+<dt class="sig sig-object mat" id="mp.dme_buslink">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">dme_buslink</span></span><a class="headerlink" href="#mp.dme_buslink" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="dm_element.html#mp.dm_element" title="mp.dm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_element</span></code></a></p>
+<p><a class="reference internal" href="#mp.dme_buslink" title="mp.dme_buslink"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_buslink</span></code></a> - Data model element for 1-to-3-phase buslink.</p>
 <p>Implements the data element model for 1-to-3-phase buslink elements.</p>
 <p>Adds the following columns in the main data table, found in the
 <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">tab</span></code> property:</p>
@@ -158,112 +158,112 @@
 <div class="members docutils container">
 <dl>
 <dt>Property Summary</dt><dd><dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.bus">
-<span class="sig-name descname"><span class="pre">bus</span></span><a class="headerlink" href="#matpower.mp.dme_buslink.bus" title="Link to this definition"></a></dt>
-<dd><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">bus</span></code> index vector (all buslinks)</p>
+<dt class="sig sig-object mat" id="mp.dme_buslink.bus">
+<span class="sig-name descname"><span class="pre">bus</span></span><a class="headerlink" href="#mp.dme_buslink.bus" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mp.dme_buslink.bus" title="mp.dme_buslink.bus"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">bus</span></code></a> index vector (all buslinks)</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.bus3p">
-<span class="sig-name descname"><span class="pre">bus3p</span></span><a class="headerlink" href="#matpower.mp.dme_buslink.bus3p" title="Link to this definition"></a></dt>
-<dd><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">bus3p</span></code> index vector (all buslinks)</p>
+<dt class="sig sig-object mat" id="mp.dme_buslink.bus3p">
+<span class="sig-name descname"><span class="pre">bus3p</span></span><a class="headerlink" href="#mp.dme_buslink.bus3p" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mp.dme_buslink.bus3p" title="mp.dme_buslink.bus3p"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">bus3p</span></code></a> index vector (all buslinks)</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.pg1_start">
-<span class="sig-name descname"><span class="pre">pg1_start</span></span><a class="headerlink" href="#matpower.mp.dme_buslink.pg1_start" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.pg1_start">
+<span class="sig-name descname"><span class="pre">pg1_start</span></span><a class="headerlink" href="#mp.dme_buslink.pg1_start" title="Link to this definition"></a></dt>
 <dd><p>initial phase 1 active power (p.u.) for buslinks that are on</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.pg2_start">
-<span class="sig-name descname"><span class="pre">pg2_start</span></span><a class="headerlink" href="#matpower.mp.dme_buslink.pg2_start" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.pg2_start">
+<span class="sig-name descname"><span class="pre">pg2_start</span></span><a class="headerlink" href="#mp.dme_buslink.pg2_start" title="Link to this definition"></a></dt>
 <dd><p>initial phase 2 active power (p.u.) for buslinks that are on</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.pg3_start">
-<span class="sig-name descname"><span class="pre">pg3_start</span></span><a class="headerlink" href="#matpower.mp.dme_buslink.pg3_start" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.pg3_start">
+<span class="sig-name descname"><span class="pre">pg3_start</span></span><a class="headerlink" href="#mp.dme_buslink.pg3_start" title="Link to this definition"></a></dt>
 <dd><p>initial phase 3 active power (p.u.) for buslinks that are on</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.qg1_start">
-<span class="sig-name descname"><span class="pre">qg1_start</span></span><a class="headerlink" href="#matpower.mp.dme_buslink.qg1_start" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.qg1_start">
+<span class="sig-name descname"><span class="pre">qg1_start</span></span><a class="headerlink" href="#mp.dme_buslink.qg1_start" title="Link to this definition"></a></dt>
 <dd><p>initial phase 1 reactive power (p.u.) for buslinks that are on</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.qg2_start">
-<span class="sig-name descname"><span class="pre">qg2_start</span></span><a class="headerlink" href="#matpower.mp.dme_buslink.qg2_start" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.qg2_start">
+<span class="sig-name descname"><span class="pre">qg2_start</span></span><a class="headerlink" href="#mp.dme_buslink.qg2_start" title="Link to this definition"></a></dt>
 <dd><p>initial phase 2 reactive power (p.u.) for buslinks that are on</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.qg3_start">
-<span class="sig-name descname"><span class="pre">qg3_start</span></span><a class="headerlink" href="#matpower.mp.dme_buslink.qg3_start" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.qg3_start">
+<span class="sig-name descname"><span class="pre">qg3_start</span></span><a class="headerlink" href="#mp.dme_buslink.qg3_start" title="Link to this definition"></a></dt>
 <dd><p>initial phase 3 reactive power (p.u.) for buslinks that are on</p>
 </dd></dl>
 
 </dd>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.name">
-<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_buslink.name" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_buslink.name" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.label">
-<span class="sig-name descname"><span class="pre">label</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_buslink.label" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.label">
+<span class="sig-name descname"><span class="pre">label</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_buslink.label" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.labels">
-<span class="sig-name descname"><span class="pre">labels</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_buslink.labels" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.labels">
+<span class="sig-name descname"><span class="pre">labels</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_buslink.labels" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.cxn_type">
-<span class="sig-name descname"><span class="pre">cxn_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_buslink.cxn_type" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.cxn_type">
+<span class="sig-name descname"><span class="pre">cxn_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_buslink.cxn_type" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.cxn_idx_prop">
-<span class="sig-name descname"><span class="pre">cxn_idx_prop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_buslink.cxn_idx_prop" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.cxn_idx_prop">
+<span class="sig-name descname"><span class="pre">cxn_idx_prop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_buslink.cxn_idx_prop" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.main_table_var_names">
-<span class="sig-name descname"><span class="pre">main_table_var_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_buslink.main_table_var_names" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.main_table_var_names">
+<span class="sig-name descname"><span class="pre">main_table_var_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_buslink.main_table_var_names" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.initialize">
-<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_buslink.initialize" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_buslink.initialize" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.update_status">
-<span class="sig-name descname"><span class="pre">update_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_buslink.update_status" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.update_status">
+<span class="sig-name descname"><span class="pre">update_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_buslink.update_status" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.build_params">
-<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_buslink.build_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.build_params">
+<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_buslink.build_params" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.pp_have_section_det">
-<span class="sig-name descname"><span class="pre">pp_have_section_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_buslink.pp_have_section_det" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.pp_have_section_det">
+<span class="sig-name descname"><span class="pre">pp_have_section_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_buslink.pp_have_section_det" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.pp_get_headers_det">
-<span class="sig-name descname"><span class="pre">pp_get_headers_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_buslink.pp_get_headers_det" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.pp_get_headers_det">
+<span class="sig-name descname"><span class="pre">pp_get_headers_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_buslink.pp_get_headers_det" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_buslink.pp_data_row_det">
-<span class="sig-name descname"><span class="pre">pp_data_row_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">k</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_buslink.pp_data_row_det" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_buslink.pp_data_row_det">
+<span class="sig-name descname"><span class="pre">pp_data_row_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">k</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_buslink.pp_data_row_det" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd>

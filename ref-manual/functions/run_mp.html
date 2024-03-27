@@ -123,9 +123,9 @@
 <section id="run-mp">
 <h1>run_mp<a class="headerlink" href="#run-mp" title="Link to this heading"></a></h1>
 <dl class="mat function">
-<dt class="sig sig-object mat" id="matpower.run_mp">
-<span class="sig-name descname"><span class="pre">run_mp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">task_class</span></em>, <em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.run_mp" title="Link to this definition"></a></dt>
-<dd><p><a class="reference internal" href="#matpower.run_mp" title="matpower.run_mp"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_mp()</span></code></a> - Run any <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> simulation.</p>
+<dt class="sig sig-object mat" id="run_mp">
+<span class="sig-name descname"><span class="pre">run_mp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">task_class</span></em>, <em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#run_mp" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#run_mp" title="run_mp"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_mp()</span></code></a> - Run any <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> simulation.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">run_mp</span><span class="p">(</span><span class="n">task_class</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 <span class="n">run_mp</span><span class="p">(</span><span class="n">task_class</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="p">...)</span>
 <span class="n">task</span> <span class="p">=</span> <span class="n">run_mp</span><span class="p">(...)</span>
@@ -134,14 +134,14 @@
 <p>This is <strong>the</strong> main function in the <strong>flexible framework</strong> for running
 <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span>. It creates the task object, applying any specified extensions,
 runs the task, and prints or saves the solution, if desired.</p>
-<p>It is typically called from one of the wrapper functions such as <a class="reference internal" href="run_pf.html#matpower.run_pf" title="matpower.run_pf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_pf()</span></code></a>,
-<a class="reference internal" href="run_cpf.html#matpower.run_cpf" title="matpower.run_cpf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_cpf()</span></code></a>, or <a class="reference internal" href="run_opf.html#matpower.run_opf" title="matpower.run_opf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_opf()</span></code></a>.</p>
+<p>It is typically called from one of the wrapper functions such as <a class="reference internal" href="run_pf.html#run_pf" title="run_pf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_pf()</span></code></a>,
+<a class="reference internal" href="run_cpf.html#run_cpf" title="run_cpf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_cpf()</span></code></a>, or <a class="reference internal" href="run_opf.html#run_opf" title="run_opf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_opf()</span></code></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul>
 <li><p><strong>task_class</strong> (<em>function handle</em>) – handle to constructor of default task
-class for type of task to be run, e.g. <a class="reference internal" href="../classes/mp/task_pf.html#matpower.mp.task_pf" title="matpower.mp.task_pf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_pf</span></code></a> for power
-flow, <a class="reference internal" href="../classes/mp/task_cpf.html#matpower.mp.task_cpf" title="matpower.mp.task_cpf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_cpf</span></code></a> for CPF, and <a class="reference internal" href="../classes/mp/task_opf.html#matpower.mp.task_opf" title="matpower.mp.task_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_opf</span></code></a> for OPF</p></li>
+class for type of task to be run, e.g. <a class="reference internal" href="../classes/mp/task_pf.html#mp.task_pf" title="mp.task_pf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_pf</span></code></a> for power
+flow, <a class="reference internal" href="../classes/mp/task_cpf.html#mp.task_cpf" title="mp.task_cpf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_cpf</span></code></a> for CPF, and <a class="reference internal" href="../classes/mp/task_opf.html#mp.task_opf" title="mp.task_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_opf</span></code></a> for OPF</p></li>
 <li><p><strong>d</strong> – data source specification, currently assumed to be a <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span>
 case name or case struct (<code class="docutils literal notranslate"><span class="pre">mpc</span></code>)</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p>
@@ -157,7 +157,7 @@ extensions to apply</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>task</strong> (<a class="reference internal" href="../classes/mp/task.html#matpower.mp.task" title="matpower.mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a>) – task object containing the solved run including the
+<dd class="field-even"><p><strong>task</strong> (<a class="reference internal" href="../classes/mp/task.html#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a>) – task object containing the solved run including the
 data, network, and mathematical model objects.</p>
 </dd>
 </dl>
@@ -168,7 +168,7 @@ contained in the returned task object. For example:</p>
 <span class="n">pg</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">dm</span><span class="p">.</span><span class="n">elements</span><span class="p">.</span><span class="n">gen</span><span class="p">.</span><span class="n">tab</span><span class="p">.</span><span class="n">pg</span>        <span class="c">% generator active dispatch</span>
 </pre></div>
 </div>
-<p>See also <a class="reference internal" href="run_pf.html#matpower.run_pf" title="matpower.run_pf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_pf()</span></code></a>, <a class="reference internal" href="run_cpf.html#matpower.run_cpf" title="matpower.run_cpf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_cpf()</span></code></a>, <a class="reference internal" href="run_opf.html#matpower.run_opf" title="matpower.run_opf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_opf()</span></code></a>, <a class="reference internal" href="../classes/mp/task.html#matpower.mp.task" title="matpower.mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a>.</p>
+<p>See also <a class="reference internal" href="run_pf.html#run_pf" title="run_pf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_pf()</span></code></a>, <a class="reference internal" href="run_cpf.html#run_cpf" title="run_cpf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_cpf()</span></code></a>, <a class="reference internal" href="run_opf.html#run_opf" title="run_opf"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">run_opf()</span></code></a>, <a class="reference internal" href="../classes/mp/task.html#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a>.</p>
 </dd></dl>
 
 </section>

@@ -128,10 +128,10 @@
 <section id="mp-extension">
 <h1>mp.extension<a class="headerlink" href="#mp-extension" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="matpower.mp.extension">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">extension</span></span><a class="headerlink" href="#matpower.mp.extension" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.extension">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">extension</span></span><a class="headerlink" href="#mp.extension" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code> - Abstract base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extensions.</p>
+<p><a class="reference internal" href="#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a> - Abstract base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extensions.</p>
 <p>This class serves as the framework for the <span class="raw-html"><strong>M<span style="font-size:smaller">ATPOWER</span></strong></span> <strong>extension</strong> API,
 providing a way to bundle a set of class additions and modifications together
 into a single named package.</p>
@@ -145,15 +145,15 @@ the elements for each of the container types.</p>
 named <code class="docutils literal notranslate"><span class="pre">mpx</span></code> and <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extension class names begin with <code class="docutils literal notranslate"><span class="pre">mp.xt</span></code>.</p>
 <dl class="simple">
 <dt>mp.extension Methods:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">task_class()</span></code> - return handle to constructor for task object</p></li>
+<li><p><a class="reference internal" href="#mp.extension.task_class" title="mp.extension.task_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">task_class()</span></code></a> - return handle to constructor for task object</p></li>
 <li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dmc_class()</span></code> - return handle to constructor for data model converter object</p></li>
 <li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_class()</span></code> - return handle to constructor for data model object</p></li>
 <li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nm_class()</span></code> - return handle to constructor for network model object</p></li>
 <li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mm_class()</span></code> - return handle to constructor for mathematical object</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dmc_element_classes()</span></code> - return element class modifiers for data model converter elements</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_element_classes()</span></code> - return element class modifiers for data model elements</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nm_element_classes()</span></code> - return element class modifiers for network model elements</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mm_element_classes()</span></code> - return element class modifiers for mathematical model elements</p></li>
+<li><p><a class="reference internal" href="#mp.extension.dmc_element_classes" title="mp.extension.dmc_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dmc_element_classes()</span></code></a> - return element class modifiers for data model converter elements</p></li>
+<li><p><a class="reference internal" href="#mp.extension.dm_element_classes" title="mp.extension.dm_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_element_classes()</span></code></a> - return element class modifiers for data model elements</p></li>
+<li><p><a class="reference internal" href="#mp.extension.nm_element_classes" title="mp.extension.nm_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nm_element_classes()</span></code></a> - return element class modifiers for network model elements</p></li>
+<li><p><a class="reference internal" href="#mp.extension.mm_element_classes" title="mp.extension.mm_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mm_element_classes()</span></code></a> - return element class modifiers for mathematical model elements</p></li>
 </ul>
 </dd>
 </dl>
@@ -164,18 +164,18 @@ table for details on <em>element class modifiers</em>.</p>
 <p>Example <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extensions:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_reserves</span></code> - adds fixed zonal reserves to OPF</p></li>
-<li><p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_3p</span></code> - adds example prototype unbalanced three-phase elements for
+<li><p><a class="reference internal" href="xt_reserves.html#mp.xt_reserves" title="mp.xt_reserves"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_reserves</span></code></a> - adds fixed zonal reserves to OPF</p></li>
+<li><p><a class="reference internal" href="xt_3p.html#mp.xt_3p" title="mp.xt_3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_3p</span></code></a> - adds example prototype unbalanced three-phase elements for
 AC PF, CPF, and OPF</p></li>
 </ul>
 </div></blockquote>
-<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>,
-<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmc_element</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_element</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mm_element</span></code>.</p>
+<p>See also <a class="reference internal" href="task.html#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a>, <a class="reference internal" href="dm_converter.html#mp.dm_converter" title="mp.dm_converter"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code></a>, <a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>, <a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>, <a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>,
+<a class="reference internal" href="dmc_element.html#mp.dmc_element" title="mp.dmc_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmc_element</span></code></a>, <a class="reference internal" href="dm_element.html#mp.dm_element" title="mp.dm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_element</span></code></a>, <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a>, <a class="reference internal" href="mm_element.html#mp.mm_element" title="mp.mm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mm_element</span></code></a>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.extension.task_class">
-<span class="sig-name descname"><span class="pre">task_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">task_class</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.extension.task_class" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.extension.task_class">
+<span class="sig-name descname"><span class="pre">task_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">task_class</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.extension.task_class" title="Link to this definition"></a></dt>
 <dd><p>Return handle to constructor for task object.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">task_class</span> <span class="p">=</span> <span class="n">mpx</span><span class="p">.</span><span class="n">task_class</span><span class="p">(</span><span class="n">task_class</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -194,8 +194,8 @@ AC PF, CPF, and OPF</p></li>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.extension.dm_converter_class">
-<span class="sig-name descname"><span class="pre">dm_converter_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dmc_class</span></em>, <em class="sig-param"><span class="pre">fmt</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.extension.dm_converter_class" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.extension.dm_converter_class">
+<span class="sig-name descname"><span class="pre">dm_converter_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dmc_class</span></em>, <em class="sig-param"><span class="pre">fmt</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.extension.dm_converter_class" title="Link to this definition"></a></dt>
 <dd><p>Return handle to constructor for data model converter object.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dmc_class</span> <span class="p">=</span> <span class="n">mpx</span><span class="p">.</span><span class="n">dm_converter_class</span><span class="p">(</span><span class="n">dmc_class</span><span class="p">,</span> <span class="n">fmt</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -215,8 +215,8 @@ AC PF, CPF, and OPF</p></li>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.extension.data_model_class">
-<span class="sig-name descname"><span class="pre">data_model_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.extension.data_model_class" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.extension.data_model_class">
+<span class="sig-name descname"><span class="pre">data_model_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.extension.data_model_class" title="Link to this definition"></a></dt>
 <dd><p>Return handle to constructor for data model object.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm_class</span> <span class="p">=</span> <span class="n">mpx</span><span class="p">.</span><span class="n">data_model_class</span><span class="p">(</span><span class="n">dm_class</span><span class="p">,</span> <span class="n">task_tag</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -236,8 +236,8 @@ AC PF, CPF, and OPF</p></li>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.extension.network_model_class">
-<span class="sig-name descname"><span class="pre">network_model_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.extension.network_model_class" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.extension.network_model_class">
+<span class="sig-name descname"><span class="pre">network_model_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.extension.network_model_class" title="Link to this definition"></a></dt>
 <dd><p>Return handle to constructor for network model object.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm_class</span> <span class="p">=</span> <span class="n">mpx</span><span class="p">.</span><span class="n">network_model_class</span><span class="p">(</span><span class="n">nm_class</span><span class="p">,</span> <span class="n">task_tag</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -257,8 +257,8 @@ AC PF, CPF, and OPF</p></li>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.extension.math_model_class">
-<span class="sig-name descname"><span class="pre">math_model_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.extension.math_model_class" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.extension.math_model_class">
+<span class="sig-name descname"><span class="pre">math_model_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.extension.math_model_class" title="Link to this definition"></a></dt>
 <dd><p>Return handle to constructor for mathematical model object.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mm_class</span> <span class="p">=</span> <span class="n">mpx</span><span class="p">.</span><span class="n">math_model_class</span><span class="p">(</span><span class="n">mm_class</span><span class="p">,</span> <span class="n">task_tag</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -278,8 +278,8 @@ AC PF, CPF, and OPF</p></li>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.extension.dmc_element_classes">
-<span class="sig-name descname"><span class="pre">dmc_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dmc_class</span></em>, <em class="sig-param"><span class="pre">fmt</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.extension.dmc_element_classes" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.extension.dmc_element_classes">
+<span class="sig-name descname"><span class="pre">dmc_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dmc_class</span></em>, <em class="sig-param"><span class="pre">fmt</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.extension.dmc_element_classes" title="Link to this definition"></a></dt>
 <dd><p>Return element class modifiers for data model converter elements.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dmc_elements</span> <span class="p">=</span> <span class="n">mpx</span><span class="p">.</span><span class="n">dmc_element_classes</span><span class="p">(</span><span class="n">dmc_class</span><span class="p">,</span> <span class="n">fmt</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -301,8 +301,8 @@ AC PF, CPF, and OPF</p></li>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.extension.dm_element_classes">
-<span class="sig-name descname"><span class="pre">dm_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.extension.dm_element_classes" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.extension.dm_element_classes">
+<span class="sig-name descname"><span class="pre">dm_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.extension.dm_element_classes" title="Link to this definition"></a></dt>
 <dd><p>Return element class modifiers for data model elements.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm_elements</span> <span class="p">=</span> <span class="n">mpx</span><span class="p">.</span><span class="n">dm_element_classes</span><span class="p">(</span><span class="n">dm_class</span><span class="p">,</span> <span class="n">task_tag</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -324,8 +324,8 @@ AC PF, CPF, and OPF</p></li>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.extension.nm_element_classes">
-<span class="sig-name descname"><span class="pre">nm_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.extension.nm_element_classes" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.extension.nm_element_classes">
+<span class="sig-name descname"><span class="pre">nm_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.extension.nm_element_classes" title="Link to this definition"></a></dt>
 <dd><p>Return element class modifiers for network model elements.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm_elements</span> <span class="p">=</span> <span class="n">mpx</span><span class="p">.</span><span class="n">nm_element_classes</span><span class="p">(</span><span class="n">nm_class</span><span class="p">,</span> <span class="n">task_tag</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -347,8 +347,8 @@ AC PF, CPF, and OPF</p></li>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.extension.mm_element_classes">
-<span class="sig-name descname"><span class="pre">mm_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.extension.mm_element_classes" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.extension.mm_element_classes">
+<span class="sig-name descname"><span class="pre">mm_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.extension.mm_element_classes" title="Link to this definition"></a></dt>
 <dd><p>Return element class modifiers for mathematical model elements.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mm_elements</span> <span class="p">=</span> <span class="n">mpx</span><span class="p">.</span><span class="n">mm_element_classes</span><span class="p">(</span><span class="n">mm_class</span><span class="p">,</span> <span class="n">task_tag</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>

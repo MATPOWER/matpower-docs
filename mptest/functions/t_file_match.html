@@ -125,16 +125,16 @@
 <section id="t-file-match">
 <h1>t_file_match<a class="headerlink" href="#t-file-match" title="Link to this heading"></a></h1>
 <dl class="mat function">
-<dt class="sig sig-object mat" id="mptest.t_file_match">
-<span class="sig-name descname"><span class="pre">t_file_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">got_fname</span></em>, <em class="sig-param"><span class="pre">exp_fname</span></em>, <em class="sig-param"><span class="pre">msg</span></em>, <em class="sig-param"><span class="pre">reps</span></em>, <em class="sig-param"><span class="pre">del_got_fname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mptest.t_file_match" title="Link to this definition"></a></dt>
-<dd><p><a class="reference internal" href="#mptest.t_file_match" title="mptest.t_file_match"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_file_match()</span></code></a> - Tests whether two text files match.</p>
+<dt class="sig sig-object mat" id="t_file_match">
+<span class="sig-name descname"><span class="pre">t_file_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">got_fname</span></em>, <em class="sig-param"><span class="pre">exp_fname</span></em>, <em class="sig-param"><span class="pre">msg</span></em>, <em class="sig-param"><span class="pre">reps</span></em>, <em class="sig-param"><span class="pre">del_got_fname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#t_file_match" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#t_file_match" title="t_file_match"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_file_match()</span></code></a> - Tests whether two text files match.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">t_file_match</span><span class="p">(</span><span class="n">got_fname</span><span class="p">,</span> <span class="n">exp_fname</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
 <span class="n">t_file_match</span><span class="p">(</span><span class="n">got_fname</span><span class="p">,</span> <span class="n">exp_fname</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">reps</span><span class="p">)</span>
 <span class="n">t_file_match</span><span class="p">(</span><span class="n">got_fname</span><span class="p">,</span> <span class="n">exp_fname</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">reps</span><span class="p">,</span> <span class="n">del_got_fname</span><span class="p">)</span>
 <span class="n">ok</span> <span class="p">=</span> <span class="n">t_file_match</span><span class="p">(...)</span>
 </pre></div>
 </div>
-<p>Uses <a class="reference internal" href="t_str_match.html#mptest.t_str_match" title="mptest.t_str_match"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_str_match()</span></code></a> on the contents of two text files whos names/paths
+<p>Uses <a class="reference internal" href="t_str_match.html#t_str_match" title="t_str_match"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_str_match()</span></code></a> on the contents of two text files whos names/paths
 are given in <code class="docutils literal notranslate"><span class="pre">got_fname</span></code> and <code class="docutils literal notranslate"><span class="pre">exp_fname</span></code>. If both files exist and the
 contents match, the test passes.</p>
 <dl class="field-list simple">
@@ -153,7 +153,7 @@ file named in <code class="docutils literal notranslate"><span class="pre">got_f
 </dd>
 </dl>
 <p>It ignores any differences in line ending characters and, like
-<a class="reference internal" href="t_str_match.html#mptest.t_str_match" title="mptest.t_str_match"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_str_match()</span></code></a>, can apply replacements to the contents of <code class="docutils literal notranslate"><span class="pre">got_fname</span></code>,
+<a class="reference internal" href="t_str_match.html#t_str_match" title="t_str_match"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_str_match()</span></code></a>, can apply replacements to the contents of <code class="docutils literal notranslate"><span class="pre">got_fname</span></code>,
 and optionally <code class="docutils literal notranslate"><span class="pre">exp_fname</span></code>, as specified by <code class="docutils literal notranslate"><span class="pre">reps</span></code> before comparing.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">reps</span></code> argument is a cell array of replacement specs, applied
 sequentially, where each replacement spec is a cell array of the
@@ -170,7 +170,7 @@ unless <code class="docutils literal notranslate"><span class="pre">both</span><
 <code class="docutils literal notranslate"><span class="pre">exp_fname</span></code>.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">del_got_fname</span></code> is present and true it will delete the file named
 in <code class="docutils literal notranslate"><span class="pre">got_fname</span></code> if the test passes.</p>
-<p>Intended to be called between calls to <a class="reference internal" href="t_begin.html#mptest.t_begin" title="mptest.t_begin"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_begin()</span></code></a> and <a class="reference internal" href="t_end.html#mptest.t_end" title="mptest.t_end"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_end()</span></code></a>.</p>
+<p>Intended to be called between calls to <a class="reference internal" href="t_begin.html#t_begin" title="t_begin"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_begin()</span></code></a> and <a class="reference internal" href="t_end.html#t_end" title="t_end"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_end()</span></code></a>.</p>
 <p>Example:</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">quiet</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="n">t_begin</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">quiet</span><span class="p">);</span>
@@ -184,7 +184,7 @@ in <code class="docutils literal notranslate"><span class="pre">got_fname</span>
 <span class="n">t_end</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>See also <a class="reference internal" href="t_ok.html#mptest.t_ok" title="mptest.t_ok"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_ok()</span></code></a>, <a class="reference internal" href="t_is.html#mptest.t_is" title="mptest.t_is"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_is()</span></code></a>, <a class="reference internal" href="t_str_match.html#mptest.t_str_match" title="mptest.t_str_match"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_str_match()</span></code></a>, <a class="reference internal" href="t_skip.html#mptest.t_skip" title="mptest.t_skip"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_skip()</span></code></a>, <a class="reference internal" href="t_begin.html#mptest.t_begin" title="mptest.t_begin"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_begin()</span></code></a>, <a class="reference internal" href="t_end.html#mptest.t_end" title="mptest.t_end"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_end()</span></code></a>, <a class="reference internal" href="t_run_tests.html#mptest.t_run_tests" title="mptest.t_run_tests"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_run_tests()</span></code></a>.</p>
+<p>See also <a class="reference internal" href="t_ok.html#t_ok" title="t_ok"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_ok()</span></code></a>, <a class="reference internal" href="t_is.html#t_is" title="t_is"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_is()</span></code></a>, <a class="reference internal" href="t_str_match.html#t_str_match" title="t_str_match"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_str_match()</span></code></a>, <a class="reference internal" href="t_skip.html#t_skip" title="t_skip"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_skip()</span></code></a>, <a class="reference internal" href="t_begin.html#t_begin" title="t_begin"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_begin()</span></code></a>, <a class="reference internal" href="t_end.html#t_end" title="t_end"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_end()</span></code></a>, <a class="reference internal" href="t_run_tests.html#t_run_tests" title="t_run_tests"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_run_tests()</span></code></a>.</p>
 </dd></dl>
 
 </section>

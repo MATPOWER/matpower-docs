@@ -127,11 +127,11 @@
 <section id="mp-dme-gen-opf">
 <h1>mp.dme_gen_opf<a class="headerlink" href="#mp-dme-gen-opf" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="matpower.mp.dme_gen_opf">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">dme_gen_opf</span></span><a class="headerlink" href="#matpower.mp.dme_gen_opf" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_gen</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_shared_opf</span></code></p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_gen_opf</span></code> - Data model element for generator for OPF.</p>
-<p>To parent class <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_gen</span></code>, adds costs, shadow prices on active
+<dt class="sig sig-object mat" id="mp.dme_gen_opf">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">dme_gen_opf</span></span><a class="headerlink" href="#mp.dme_gen_opf" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="dme_gen.html#mp.dme_gen" title="mp.dme_gen"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_gen</span></code></a>, <a class="reference internal" href="dme_shared_opf.html#mp.dme_shared_opf" title="mp.dme_shared_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_shared_opf</span></code></a></p>
+<p><a class="reference internal" href="#mp.dme_gen_opf" title="mp.dme_gen_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_gen_opf</span></code></a> - Data model element for generator for OPF.</p>
+<p>To parent class <a class="reference internal" href="dme_gen.html#mp.dme_gen" title="mp.dme_gen"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_gen</span></code></a>, adds costs, shadow prices on active
 and reactive generation limits, and pretty-printing for <strong>lim</strong> sections.</p>
 <p>Adds the following columns in the main data table, found in the
 <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">tab</span></code> property:</p>
@@ -179,62 +179,62 @@ and reactive generation limits, and pretty-printing for <strong>lim</strong> sec
 </aside>
 <p>The cost tables <code class="docutils literal notranslate"><span class="pre">cost_pg</span></code> and <code class="docutils literal notranslate"><span class="pre">cost_qg</span></code> are defined as tables with the
 following columns:</p>
-<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code>.</p>
+<p>See also <a class="reference internal" href="cost_table.html#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_gen_opf.main_table_var_names">
-<span class="sig-name descname"><span class="pre">main_table_var_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_gen_opf.main_table_var_names" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_gen_opf.main_table_var_names">
+<span class="sig-name descname"><span class="pre">main_table_var_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_gen_opf.main_table_var_names" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_gen_opf.export_vars">
-<span class="sig-name descname"><span class="pre">export_vars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_gen_opf.export_vars" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_gen_opf.export_vars">
+<span class="sig-name descname"><span class="pre">export_vars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_gen_opf.export_vars" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_gen_opf.export_vars_offline_val">
-<span class="sig-name descname"><span class="pre">export_vars_offline_val</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_gen_opf.export_vars_offline_val" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_gen_opf.export_vars_offline_val">
+<span class="sig-name descname"><span class="pre">export_vars_offline_val</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_gen_opf.export_vars_offline_val" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_gen_opf.have_cost">
-<span class="sig-name descname"><span class="pre">have_cost</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_gen_opf.have_cost" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_gen_opf.have_cost">
+<span class="sig-name descname"><span class="pre">have_cost</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_gen_opf.have_cost" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_gen_opf.build_cost_params">
-<span class="sig-name descname"><span class="pre">build_cost_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">dc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_gen_opf.build_cost_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_gen_opf.build_cost_params">
+<span class="sig-name descname"><span class="pre">build_cost_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">dc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_gen_opf.build_cost_params" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_gen_opf.max_pwl_gencost">
-<span class="sig-name descname"><span class="pre">max_pwl_gencost</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_gen_opf.max_pwl_gencost" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_gen_opf.max_pwl_gencost">
+<span class="sig-name descname"><span class="pre">max_pwl_gencost</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_gen_opf.max_pwl_gencost" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_gen_opf.pretty_print">
-<span class="sig-name descname"><span class="pre">pretty_print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_gen_opf.pretty_print" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_gen_opf.pretty_print">
+<span class="sig-name descname"><span class="pre">pretty_print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">section</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_gen_opf.pretty_print" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_gen_opf.pp_have_section_lim">
-<span class="sig-name descname"><span class="pre">pp_have_section_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_gen_opf.pp_have_section_lim" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_gen_opf.pp_have_section_lim">
+<span class="sig-name descname"><span class="pre">pp_have_section_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_gen_opf.pp_have_section_lim" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_gen_opf.pp_binding_rows_lim">
-<span class="sig-name descname"><span class="pre">pp_binding_rows_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_gen_opf.pp_binding_rows_lim" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_gen_opf.pp_binding_rows_lim">
+<span class="sig-name descname"><span class="pre">pp_binding_rows_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_gen_opf.pp_binding_rows_lim" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_gen_opf.pp_get_headers_lim">
-<span class="sig-name descname"><span class="pre">pp_get_headers_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_gen_opf.pp_get_headers_lim" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_gen_opf.pp_get_headers_lim">
+<span class="sig-name descname"><span class="pre">pp_get_headers_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_gen_opf.pp_get_headers_lim" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.dme_gen_opf.pp_data_row_lim">
-<span class="sig-name descname"><span class="pre">pp_data_row_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">k</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.dme_gen_opf.pp_data_row_lim" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.dme_gen_opf.pp_data_row_lim">
+<span class="sig-name descname"><span class="pre">pp_data_row_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">k</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_gen_opf.pp_data_row_lim" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd>

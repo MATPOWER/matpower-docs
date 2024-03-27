@@ -127,37 +127,37 @@
 <section id="mp-math-model-opf-ac">
 <h1>mp.math_model_opf_ac<a class="headerlink" href="#mp-math-model-opf-ac" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_ac">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">math_model_opf_ac</span></span><a class="headerlink" href="#matpower.mp.math_model_opf_ac" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model_opf</span></code></p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model_opf_ac</span></code> - Abstract base class for AC OPF <strong>math model</strong> objects.</p>
+<dt class="sig sig-object mat" id="mp.math_model_opf_ac">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">math_model_opf_ac</span></span><a class="headerlink" href="#mp.math_model_opf_ac" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="math_model_opf.html#mp.math_model_opf" title="mp.math_model_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model_opf</span></code></a></p>
+<p><a class="reference internal" href="#mp.math_model_opf_ac" title="mp.math_model_opf_ac"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model_opf_ac</span></code></a> - Abstract base class for AC OPF <strong>math model</strong> objects.</p>
 <p>Provide implementation of nodal current and power balance functions
 and their derivatives, and setup of solver options.</p>
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_ac.nodal_current_balance_fcn">
-<span class="sig-name descname"><span class="pre">nodal_current_balance_fcn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.math_model_opf_ac.nodal_current_balance_fcn" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.math_model_opf_ac.nodal_current_balance_fcn">
+<span class="sig-name descname"><span class="pre">nodal_current_balance_fcn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.math_model_opf_ac.nodal_current_balance_fcn" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_ac.nodal_power_balance_fcn">
-<span class="sig-name descname"><span class="pre">nodal_power_balance_fcn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.math_model_opf_ac.nodal_power_balance_fcn" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.math_model_opf_ac.nodal_power_balance_fcn">
+<span class="sig-name descname"><span class="pre">nodal_power_balance_fcn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.math_model_opf_ac.nodal_power_balance_fcn" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_ac.nodal_current_balance_hess">
-<span class="sig-name descname"><span class="pre">nodal_current_balance_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.math_model_opf_ac.nodal_current_balance_hess" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.math_model_opf_ac.nodal_current_balance_hess">
+<span class="sig-name descname"><span class="pre">nodal_current_balance_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.math_model_opf_ac.nodal_current_balance_hess" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_ac.nodal_power_balance_hess">
-<span class="sig-name descname"><span class="pre">nodal_power_balance_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.math_model_opf_ac.nodal_power_balance_hess" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.math_model_opf_ac.nodal_power_balance_hess">
+<span class="sig-name descname"><span class="pre">nodal_power_balance_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.math_model_opf_ac.nodal_power_balance_hess" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.math_model_opf_ac.solve_opts">
-<span class="sig-name descname"><span class="pre">solve_opts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.math_model_opf_ac.solve_opts" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.math_model_opf_ac.solve_opts">
+<span class="sig-name descname"><span class="pre">solve_opts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.math_model_opf_ac.solve_opts" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd>

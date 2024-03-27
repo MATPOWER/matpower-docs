@@ -126,111 +126,111 @@
 <section id="mp-net-model">
 <h1>mp.net_model<a class="headerlink" href="#mp-net-model" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="matpower.mp.net_model">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">net_model</span></span><a class="headerlink" href="#matpower.mp.net_model" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.element_container</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code> - Abstract base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> <strong>network model</strong> objects.</p>
+<dt class="sig sig-object mat" id="mp.net_model">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">net_model</span></span><a class="headerlink" href="#mp.net_model" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a>, <a class="reference internal" href="element_container.html#mp.element_container" title="mp.element_container"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.element_container</span></code></a>, <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a></p>
+<p><a class="reference internal" href="#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a> - Abstract base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> <strong>network model</strong> objects.</p>
 <p>The network model defines the states of and connections between network
 elements, as well as the parameters and functions defining the relationships
 between states and port injections. A given network model implements a
 specific network model <strong>formulation</strong>, and defines sets of <strong>nodes</strong>,
 <strong>ports</strong>, and <strong>states</strong>.</p>
 <p>A network model object is primarily a container for network model element
-(<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code>) objects and <em>is itself</em> a network model element. All network
-model classes inherit from <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code> and therefore also from
-<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.element_container</span></code>, mp_idx_manager, and <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code>. Concrete network
+(<a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a>) objects and <em>is itself</em> a network model element. All network
+model classes inherit from <a class="reference internal" href="#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a> and therefore also from
+<a class="reference internal" href="element_container.html#mp.element_container" title="mp.element_container"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.element_container</span></code></a>, <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a>, and <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a>. Concrete network
 model classes are also formulation-specific, inheriting from a corresponding
-subclass of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code>.</p>
+subclass of <a class="reference internal" href="form.html#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a>.</p>
 <p>By convention, network model variables are named <code class="docutils literal notranslate"><span class="pre">nm</span></code> and network model
 class class names begin with <code class="docutils literal notranslate"><span class="pre">mp.net_model</span></code>.</p>
 <dl class="simple">
 <dt>mp.net_model Properties:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">the_np</span></code> - total number of ports</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">the_nz</span></code> - total number of non-voltage states</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">nv</span></code> - total number of (real) voltage variables</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">node</span></code> - mp_idx_manager data for nodes</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">port</span></code> - mp_idx_manager data for ports</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">state</span></code> - mp_idx_manager data for non-voltage states</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.the_np" title="mp.net_model.the_np"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">the_np</span></code></a> - total number of ports</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.the_nz" title="mp.net_model.the_nz"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">the_nz</span></code></a> - total number of non-voltage states</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.nv" title="mp.net_model.nv"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">nv</span></code></a> - total number of (real) voltage variables</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.node" title="mp.net_model.node"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">node</span></code></a> - <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a> data for nodes</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.port" title="mp.net_model.port"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">port</span></code></a> - <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a> data for ports</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.state" title="mp.net_model.state"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">state</span></code></a> - <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a> data for non-voltage states</p></li>
 </ul>
 </dd>
 <dt>mp.net_model Methods:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">name()</span></code> - return name of this network element type (<code class="docutils literal notranslate"><span class="pre">'network'</span></code>)</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">np()</span></code> - return number of ports for this network element</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nz()</span></code> - return number of <em>(possibly complex)</em> non-voltage states for this network element</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code> - create, add, and build network model element objects</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_nodes()</span></code> - elements add nodes, then add corresponding voltage variables</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_states()</span></code> - elements add states, then add corresponding state variables</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code> - build incidence matrices, parameters, add ports for each element</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">stack_matrix_params()</span></code> - form network matrix parameter by stacking corresponding element parameters</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">stack_vector_params()</span></code> - form network vector parameter by stacking corresponding element parameters</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_vvars()</span></code> - add voltage variable(s) for each network node</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_zvars()</span></code> - add non-voltage state variable(s) for each network state</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">def_set_types()</span></code> - define node, state, and port set types for mp_idx_manager</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">init_set_types()</span></code> - initialize structures for tracking/indexing nodes, states, ports</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">display()</span></code> - display the network model object</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_node()</span></code> - add named set of nodes</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_port()</span></code> - add named set of ports</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_state()</span></code> - add named set of states</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_type_idx_map()</span></code> - map node/port/state index back to named set &amp; index within set</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_type_label()</span></code> - create a user-readable label to identify a node, port, or state</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_var()</span></code> - add a set of variables to the model</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">params_var()</span></code> - return initial value, bounds, and variable type for variables</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_node_idx()</span></code> - get index information for named node set</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_port_idx()</span></code> - get index information for named port set</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_state_idx()</span></code> - get index information for named state set</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">node_types()</span></code> - get node type information</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">ensure_ref_node()</span></code> -</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_node_type_ref()</span></code> - make the specified node a reference node</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_node_type_pv()</span></code> - make the specified node a PV node</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_node_type_pq()</span></code> - make the specified node a PQ node</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.name" title="mp.net_model.name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">name()</span></code></a> - return name of this network element type (<code class="docutils literal notranslate"><span class="pre">'network'</span></code>)</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.np" title="mp.net_model.np"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">np()</span></code></a> - return number of ports for this network element</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.nz" title="mp.net_model.nz"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nz()</span></code></a> - return number of <em>(possibly complex)</em> non-voltage states for this network element</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.build" title="mp.net_model.build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code></a> - create, add, and build network model element objects</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.add_nodes" title="mp.net_model.add_nodes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_nodes()</span></code></a> - elements add nodes, then add corresponding voltage variables</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.add_states" title="mp.net_model.add_states"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_states()</span></code></a> - elements add states, then add corresponding state variables</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.build_params" title="mp.net_model.build_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code></a> - build incidence matrices, parameters, add ports for each element</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.stack_matrix_params" title="mp.net_model.stack_matrix_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">stack_matrix_params()</span></code></a> - form network matrix parameter by stacking corresponding element parameters</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.stack_vector_params" title="mp.net_model.stack_vector_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">stack_vector_params()</span></code></a> - form network vector parameter by stacking corresponding element parameters</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.add_vvars" title="mp.net_model.add_vvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_vvars()</span></code></a> - add voltage variable(s) for each network node</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.add_zvars" title="mp.net_model.add_zvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_zvars()</span></code></a> - add non-voltage state variable(s) for each network state</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.def_set_types" title="mp.net_model.def_set_types"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">def_set_types()</span></code></a> - define node, state, and port set types for <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a></p></li>
+<li><p><a class="reference internal" href="#mp.net_model.init_set_types" title="mp.net_model.init_set_types"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">init_set_types()</span></code></a> - initialize structures for tracking/indexing nodes, states, ports</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.display" title="mp.net_model.display"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">display()</span></code></a> - display the network model object</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.add_node" title="mp.net_model.add_node"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_node()</span></code></a> - add named set of nodes</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.add_port" title="mp.net_model.add_port"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_port()</span></code></a> - add named set of ports</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.add_state" title="mp.net_model.add_state"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_state()</span></code></a> - add named set of states</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.set_type_idx_map" title="mp.net_model.set_type_idx_map"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_type_idx_map()</span></code></a> - map node/port/state index back to named set &amp; index within set</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.set_type_label" title="mp.net_model.set_type_label"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_type_label()</span></code></a> - create a user-readable label to identify a node, port, or state</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.add_var" title="mp.net_model.add_var"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_var()</span></code></a> - add a set of variables to the model</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.params_var" title="mp.net_model.params_var"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">params_var()</span></code></a> - return initial value, bounds, and variable type for variables</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.get_node_idx" title="mp.net_model.get_node_idx"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_node_idx()</span></code></a> - get index information for named node set</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.get_port_idx" title="mp.net_model.get_port_idx"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_port_idx()</span></code></a> - get index information for named port set</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.get_state_idx" title="mp.net_model.get_state_idx"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_state_idx()</span></code></a> - get index information for named state set</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.node_types" title="mp.net_model.node_types"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">node_types()</span></code></a> - get node type information</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.ensure_ref_node" title="mp.net_model.ensure_ref_node"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">ensure_ref_node()</span></code></a> -</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.set_node_type_ref" title="mp.net_model.set_node_type_ref"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_node_type_ref()</span></code></a> - make the specified node a reference node</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.set_node_type_pv" title="mp.net_model.set_node_type_pv"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_node_type_pv()</span></code></a> - make the specified node a PV node</p></li>
+<li><p><a class="reference internal" href="#mp.net_model.set_node_type_pq" title="mp.net_model.set_node_type_pq"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_node_type_pq()</span></code></a> - make the specified node a PQ node</p></li>
 </ul>
 </dd>
 </dl>
 <p>See the <a class="reference internal" href="../../../dev-manual/net-model.html#sec-net-model"><span class="std std-ref">Network Model Object</span></a> section in the <span class="raw-html"><a class="reference external" href="https://matpower.org/documentation/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more
 information.</p>
-<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>.</p>
+<p>See also <a class="reference internal" href="form.html#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a>, <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a>, <a class="reference internal" href="task.html#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a>, <a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>, <a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Property Summary</dt><dd><dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.the_np">
-<span class="sig-name descname"><span class="pre">the_np</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#matpower.mp.net_model.the_np" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.the_np">
+<span class="sig-name descname"><span class="pre">the_np</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#mp.net_model.the_np" title="Link to this definition"></a></dt>
 <dd><p><em>(integer)</em> total number of ports</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.the_nz">
-<span class="sig-name descname"><span class="pre">the_nz</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#matpower.mp.net_model.the_nz" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.the_nz">
+<span class="sig-name descname"><span class="pre">the_nz</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#mp.net_model.the_nz" title="Link to this definition"></a></dt>
 <dd><p><em>(integer)</em> total number of non-voltage states</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.nv">
-<span class="sig-name descname"><span class="pre">nv</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#matpower.mp.net_model.nv" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.nv">
+<span class="sig-name descname"><span class="pre">nv</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#mp.net_model.nv" title="Link to this definition"></a></dt>
 <dd><p><em>(integer)</em> total number of (real) voltage variables</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.node">
-<span class="sig-name descname"><span class="pre">node</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#matpower.mp.net_model.node" title="Link to this definition"></a></dt>
-<dd><p><em>(struct)</em> mp_idx_manager data for nodes</p>
+<dt class="sig sig-object mat" id="mp.net_model.node">
+<span class="sig-name descname"><span class="pre">node</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.net_model.node" title="Link to this definition"></a></dt>
+<dd><p><em>(struct)</em> <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a> data for nodes</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.port">
-<span class="sig-name descname"><span class="pre">port</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#matpower.mp.net_model.port" title="Link to this definition"></a></dt>
-<dd><p><em>(struct)</em> mp_idx_manager data for ports</p>
+<dt class="sig sig-object mat" id="mp.net_model.port">
+<span class="sig-name descname"><span class="pre">port</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.net_model.port" title="Link to this definition"></a></dt>
+<dd><p><em>(struct)</em> <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a> data for ports</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.state">
-<span class="sig-name descname"><span class="pre">state</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#matpower.mp.net_model.state" title="Link to this definition"></a></dt>
-<dd><p><em>(struct)</em> mp_idx_manager data for non-voltage states</p>
+<dt class="sig sig-object mat" id="mp.net_model.state">
+<span class="sig-name descname"><span class="pre">state</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.net_model.state" title="Link to this definition"></a></dt>
+<dd><p><em>(struct)</em> <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a> data for non-voltage states</p>
 </dd></dl>
 
 </dd>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.name">
-<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.name" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.name" title="Link to this definition"></a></dt>
 <dd><p>Return the name of this network element type (<code class="docutils literal notranslate"><span class="pre">'network'</span></code>).</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">name</span><span class="p">()</span>
 </pre></div>
@@ -238,8 +238,8 @@ information.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.np">
-<span class="sig-name descname"><span class="pre">np</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.np" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.np">
+<span class="sig-name descname"><span class="pre">np</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.np" title="Link to this definition"></a></dt>
 <dd><p>Return the number of ports for this network element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">np</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">np</span><span class="p">()</span>
 </pre></div>
@@ -247,8 +247,8 @@ information.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.nz">
-<span class="sig-name descname"><span class="pre">nz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.nz" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.nz">
+<span class="sig-name descname"><span class="pre">nz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.nz" title="Link to this definition"></a></dt>
 <dd><p>Return the number of <em>(possibly complex)</em> non-voltage states for
 this network element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nz</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">nz</span><span class="p">()</span>
@@ -257,25 +257,25 @@ this network element.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.build">
-<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.build" title="Link to this definition"></a></dt>
-<dd><p>Create, add, and <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code> network model element objects.</p>
+<dt class="sig sig-object mat" id="mp.net_model.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.build" title="Link to this definition"></a></dt>
+<dd><p>Create, add, and <a class="reference internal" href="#mp.net_model.build" title="mp.net_model.build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build()</span></code></a> network model element objects.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">build</span><span class="p">(</span><span class="n">dm</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Input<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p>
+<dd class="field-odd"><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p>
 </dd>
 </dl>
 <p>Create and add network model element objects, add
 nodes and states, and build the parameters for all elements.</p>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_nodes()</span></code>, <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_states()</span></code>, <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.net_model.add_nodes" title="mp.net_model.add_nodes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_nodes()</span></code></a>, <a class="reference internal" href="#mp.net_model.add_states" title="mp.net_model.add_states"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_states()</span></code></a>, <a class="reference internal" href="#mp.net_model.build_params" title="mp.net_model.build_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.add_nodes">
-<span class="sig-name descname"><span class="pre">add_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.add_nodes" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.add_nodes">
+<span class="sig-name descname"><span class="pre">add_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.add_nodes" title="Link to this definition"></a></dt>
 <dd><p>Elements add nodes, then add corresponding voltage variables.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">add_nodes</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
 </pre></div>
@@ -283,20 +283,20 @@ nodes and states, and build the parameters for all elements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 </ul>
 </dd>
 </dl>
 <p>Each element can add its nodes, then the network model itself
 can add additional nodes, and finally corresponding voltage
 variables are added for each node.</p>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_vvars()</span></code>, <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_states()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.net_model.add_vvars" title="mp.net_model.add_vvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_vvars()</span></code></a>, <a class="reference internal" href="#mp.net_model.add_states" title="mp.net_model.add_states"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_states()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.add_states">
-<span class="sig-name descname"><span class="pre">add_states</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.add_states" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.add_states">
+<span class="sig-name descname"><span class="pre">add_states</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.add_states" title="Link to this definition"></a></dt>
 <dd><p>Elements add states, then add corresponding state variables.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">add_states</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
 </pre></div>
@@ -304,19 +304,19 @@ variables are added for each node.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 </ul>
 </dd>
 </dl>
 <p>Each element can add its states, then corresponding non-voltage
 state variables are added for each state.</p>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_zvars()</span></code>, <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_nodes()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.net_model.add_zvars" title="mp.net_model.add_zvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_zvars()</span></code></a>, <a class="reference internal" href="#mp.net_model.add_nodes" title="mp.net_model.add_nodes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_nodes()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.build_params">
-<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.build_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.build_params">
+<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.build_params" title="Link to this definition"></a></dt>
 <dd><p>Build incidence matrices and parameters, and add ports for each element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">build_params</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
 </pre></div>
@@ -324,8 +324,8 @@ state variables are added for each state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 </ul>
 </dd>
 </dl>
@@ -335,8 +335,8 @@ the full network connection and state variable incidence matrices.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.stack_matrix_params">
-<span class="sig-name descname"><span class="pre">stack_matrix_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">vnotz</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.stack_matrix_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.stack_matrix_params">
+<span class="sig-name descname"><span class="pre">stack_matrix_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">vnotz</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.stack_matrix_params" title="Link to this definition"></a></dt>
 <dd><p>Form network matrix parameter by stacking corresponding element parameters.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">stack_matrix_params</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">vnotz</span><span class="p">)</span>
 </pre></div>
@@ -359,8 +359,8 @@ element along the matrix block diagonal.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.stack_vector_params">
-<span class="sig-name descname"><span class="pre">stack_vector_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.stack_vector_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.stack_vector_params">
+<span class="sig-name descname"><span class="pre">stack_vector_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.stack_vector_params" title="Link to this definition"></a></dt>
 <dd><p>Form network vector parameter by stacking corresponding element parameters.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">stack_vector_params</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
@@ -379,8 +379,8 @@ for each element.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.add_vvars">
-<span class="sig-name descname"><span class="pre">add_vvars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.add_vvars" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.add_vvars">
+<span class="sig-name descname"><span class="pre">add_vvars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.add_vvars" title="Link to this definition"></a></dt>
 <dd><p>Add voltage variable(s) for each network node.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">add_vvars</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
 <span class="n">nm</span><span class="p">.</span><span class="n">add_vvars</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
@@ -389,20 +389,20 @@ for each element.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>idx</strong> (<em>integer</em>) – index for name and indexed variables
 <em>(currently unused here)</em></p></li>
 </ul>
 </dd>
 </dl>
 <p>Also updates the <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">nv</span></code> property.</p>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_zvars()</span></code>, <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_nodes()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.net_model.add_zvars" title="mp.net_model.add_zvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_zvars()</span></code></a>, <a class="reference internal" href="#mp.net_model.add_nodes" title="mp.net_model.add_nodes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_nodes()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.add_zvars">
-<span class="sig-name descname"><span class="pre">add_zvars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.add_zvars" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.add_zvars">
+<span class="sig-name descname"><span class="pre">add_zvars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.add_zvars" title="Link to this definition"></a></dt>
 <dd><p>Add non-voltage state variable(s) for each network state.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">add_zvars</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
 <span class="n">nm</span><span class="p">.</span><span class="n">add_zvars</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
@@ -411,20 +411,20 @@ for each element.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>idx</strong> (<em>cell array</em>) – indices for named and indexed variables
 <em>(currently unused here)</em></p></li>
 </ul>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_vvars()</span></code>, <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_states()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.net_model.add_vvars" title="mp.net_model.add_vvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_vvars()</span></code></a>, <a class="reference internal" href="#mp.net_model.add_states" title="mp.net_model.add_states"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_states()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.def_set_types">
-<span class="sig-name descname"><span class="pre">def_set_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.def_set_types" title="Link to this definition"></a></dt>
-<dd><p>Define node, state, and port set types for mp_idx_manager.</p>
+<dt class="sig sig-object mat" id="mp.net_model.def_set_types">
+<span class="sig-name descname"><span class="pre">def_set_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.def_set_types" title="Link to this definition"></a></dt>
+<dd><p>Define node, state, and port set types for <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a>.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">def_set_types</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -436,34 +436,34 @@ for each element.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">'port'</span></code> - PORTS</p></li>
 </ul>
 </div></blockquote>
-<p>See also <code class="docutils literal notranslate"><span class="pre">mp_idx_manager</span></code>.</p>
+<p>See also <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.init_set_types">
-<span class="sig-name descname"><span class="pre">init_set_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.init_set_types" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.init_set_types">
+<span class="sig-name descname"><span class="pre">init_set_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.init_set_types" title="Link to this definition"></a></dt>
 <dd><p>Initialize structures for tracking/indexing nodes, states, ports.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">init_set_types</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>See also <code class="docutils literal notranslate"><span class="pre">mp_idx_manager</span></code>.</p>
+<p>See also <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.display">
-<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.display" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.display">
+<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.display" title="Link to this definition"></a></dt>
 <dd><p>Display the network model object.</p>
 <p>This method is called automatically when omitting a semicolon
 on a line that retuns an object of this class.</p>
 <p>Displays the details of the nodes, ports, states, voltage
 variables, non-voltage state variables, and network model
 elements.</p>
-<p>See also <code class="docutils literal notranslate"><span class="pre">mp_idx_manager</span></code>.</p>
+<p>See also <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.add_node">
-<span class="sig-name descname"><span class="pre">add_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">N</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.add_node" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.add_node">
+<span class="sig-name descname"><span class="pre">add_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">N</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.add_node" title="Link to this definition"></a></dt>
 <dd><p>Add named set of nodes.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
 <span class="n">nm</span><span class="p">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
@@ -478,12 +478,12 @@ elements.</p>
 </ul>
 </dd>
 </dl>
-<p>See also <code class="docutils literal notranslate"><span class="pre">mp_idx_manager.add_named_set</span></code>.</p>
+<p>See also <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager.add_named_set" title="mp_idx_manager.add_named_set"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp_idx_manager.add_named_set()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.add_port">
-<span class="sig-name descname"><span class="pre">add_port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">N</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.add_port" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.add_port">
+<span class="sig-name descname"><span class="pre">add_port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">N</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.add_port" title="Link to this definition"></a></dt>
 <dd><p>Add named set of ports.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">add_port</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
 <span class="n">nm</span><span class="p">.</span><span class="n">add_port</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
@@ -498,12 +498,12 @@ elements.</p>
 </ul>
 </dd>
 </dl>
-<p>See also <code class="docutils literal notranslate"><span class="pre">mp_idx_manager.add_named_set</span></code>.</p>
+<p>See also <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager.add_named_set" title="mp_idx_manager.add_named_set"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp_idx_manager.add_named_set()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.add_state">
-<span class="sig-name descname"><span class="pre">add_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">N</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.add_state" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.add_state">
+<span class="sig-name descname"><span class="pre">add_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">N</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.add_state" title="Link to this definition"></a></dt>
 <dd><p>Add named set of states.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">add_state</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
 <span class="n">nm</span><span class="p">.</span><span class="n">add_state</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
@@ -518,12 +518,12 @@ elements.</p>
 </ul>
 </dd>
 </dl>
-<p>See also <code class="docutils literal notranslate"><span class="pre">mp_idx_manager.add_named_set</span></code>.</p>
+<p>See also <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager.add_named_set" title="mp_idx_manager.add_named_set"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp_idx_manager.add_named_set()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.set_type_idx_map">
-<span class="sig-name descname"><span class="pre">set_type_idx_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">idxs</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">group_by_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.set_type_idx_map" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.set_type_idx_map">
+<span class="sig-name descname"><span class="pre">set_type_idx_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">idxs</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">group_by_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.set_type_idx_map" title="Link to this definition"></a></dt>
 <dd><p>Map node/port/state index back to named set &amp; index within set.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">set_type_idx_map</span><span class="p">(</span><span class="n">set_type</span><span class="p">)</span>
 <span class="n">s</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">set_type_idx_map</span><span class="p">(</span><span class="n">set_type</span><span class="p">,</span> <span class="n">idxs</span><span class="p">)</span>
@@ -539,7 +539,7 @@ elements.</p>
 where <code class="docutils literal notranslate"><span class="pre">ns</span></code> is the full dimension of the set corresponding
 to the all elements for the specified set type (i.e. node,
 port, or state)</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>group_by_name</strong> (<em>boolean</em>) – if true, results are consolidated,
 with a single entry in <code class="docutils literal notranslate"><span class="pre">s</span></code> for each unique name/idx pair,
 where the <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> fields are vectors</p></li>
@@ -575,8 +575,8 @@ set type, equal to a particular element of <code class="docutils literal notrans
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.set_type_label">
-<span class="sig-name descname"><span class="pre">set_type_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">idxs</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.set_type_label" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.set_type_label">
+<span class="sig-name descname"><span class="pre">set_type_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">idxs</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.set_type_label" title="Link to this definition"></a></dt>
 <dd><p>Create a user-readable label to identify a node, port, or state.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">set_type_label</span><span class="p">(</span><span class="n">set_type</span><span class="p">,</span> <span class="n">idxs</span><span class="p">)</span>
 <span class="n">label</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">set_type_label</span><span class="p">(</span><span class="n">set_type</span><span class="p">,</span> <span class="n">idxs</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
@@ -587,7 +587,7 @@ set type, equal to a particular element of <code class="docutils literal notrans
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>set_type</strong> (<em>char array</em>) – <code class="docutils literal notranslate"><span class="pre">'node'</span></code>, <code class="docutils literal notranslate"><span class="pre">'port'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'state'</span></code></p></li>
 <li><p><strong>idxs</strong> (<em>integer</em>) – vector of indices</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
@@ -611,8 +611,8 @@ entry is a char array</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.add_var">
-<span class="sig-name descname"><span class="pre">add_var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">vtype</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.add_var" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.add_var">
+<span class="sig-name descname"><span class="pre">add_var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">vtype</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.add_var" title="Link to this definition"></a></dt>
 <dd><p>Add a set of variables to the model.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">add_var</span><span class="p">(</span><span class="n">vtype</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">vl</span><span class="p">,</span> <span class="n">vu</span><span class="p">,</span> <span class="n">vt</span><span class="p">)</span>
 <span class="n">nm</span><span class="p">.</span><span class="n">add_var</span><span class="p">(</span><span class="n">vtype</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">vl</span><span class="p">,</span> <span class="n">vu</span><span class="p">)</span>
@@ -649,15 +649,15 @@ is <code class="docutils literal notranslate"><span class="pre">'C'</span></code
 </ul>
 </dd>
 </dl>
-<p>Essentially identical to the <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_var()</span></code>
-method from opt_model of MP-Opt-Model, with the addition of
+<p>Essentially identical to the <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model.add_var" title="opt_model.add_var"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_var()</span></code></a>
+method from <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a> of MP-Opt-Model, with the addition of
 a variable type (<code class="docutils literal notranslate"><span class="pre">vtype</span></code>).</p>
-<p>See also <code class="docutils literal notranslate"><span class="pre">opt_model.add_var</span></code>.</p>
+<p>See also <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model.add_var" title="opt_model.add_var"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">opt_model.add_var()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.params_var">
-<span class="sig-name descname"><span class="pre">params_var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">vtype</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.params_var" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.params_var">
+<span class="sig-name descname"><span class="pre">params_var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">vtype</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.params_var" title="Link to this definition"></a></dt>
 <dd><p>Return initial value, bounds, and variable type for variables.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">v0</span><span class="p">,</span> <span class="n">vl</span><span class="p">,</span> <span class="n">vu</span><span class="p">]</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">params_var</span><span class="p">(</span><span class="n">vtype</span><span class="p">)</span>
 <span class="p">[</span><span class="n">v0</span><span class="p">,</span> <span class="n">vl</span><span class="p">,</span> <span class="n">vu</span><span class="p">]</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">params_var</span><span class="p">(</span><span class="n">vtype</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
@@ -690,8 +690,8 @@ element values are:</p>
 </ul>
 </dd>
 </dl>
-<p>Essentially identical to the <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">params_var()</span></code>
-method from opt_model of MP-Opt-Model, with the addition of
+<p>Essentially identical to the <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model.params_var" title="opt_model.params_var"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">params_var()</span></code></a>
+method from <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a> of MP-Opt-Model, with the addition of
 a variable type (<code class="docutils literal notranslate"><span class="pre">vtype</span></code>).</p>
 <p>Returns the initial value <code class="docutils literal notranslate"><span class="pre">v0</span></code>, lower bound <code class="docutils literal notranslate"><span class="pre">vl</span></code> and upper
 bound <code class="docutils literal notranslate"><span class="pre">vu</span></code> for the full variable vector, or for a specific
@@ -705,12 +705,12 @@ binary variables, respectively.</p>
 <span class="p">[</span><span class="n">zij0</span><span class="p">,</span> <span class="n">zij_lb</span><span class="p">,</span> <span class="n">zij_ub</span><span class="p">,</span> <span class="n">ztype</span><span class="p">]</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">params_var</span><span class="p">(</span><span class="s">&#39;zi&#39;</span><span class="p">,</span> <span class="s">&#39;z&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">});</span>
 </pre></div>
 </div>
-<p>See also <code class="docutils literal notranslate"><span class="pre">opt_model.params_var</span></code>.</p>
+<p>See also <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model.params_var" title="opt_model.params_var"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">opt_model.params_var()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.get_node_idx">
-<span class="sig-name descname"><span class="pre">get_node_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.get_node_idx" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.get_node_idx">
+<span class="sig-name descname"><span class="pre">get_node_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.get_node_idx" title="Link to this definition"></a></dt>
 <dd><p>Get index information for named node set.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i1</span> <span class="n">iN</span><span class="p">]</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">get_node_idx</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 <span class="n">nidx</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">get_node_idx</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -733,8 +733,8 @@ equal to either <code class="docutils literal notranslate"><span class="pre">[i1
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.get_port_idx">
-<span class="sig-name descname"><span class="pre">get_port_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.get_port_idx" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.get_port_idx">
+<span class="sig-name descname"><span class="pre">get_port_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.get_port_idx" title="Link to this definition"></a></dt>
 <dd><p>Get index information for named port set.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i1</span> <span class="n">iN</span><span class="p">]</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">get_port_idx</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 <span class="n">pidx</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">get_port_idx</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -757,8 +757,8 @@ equal to either <code class="docutils literal notranslate"><span class="pre">[i1
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.get_state_idx">
-<span class="sig-name descname"><span class="pre">get_state_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.get_state_idx" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.get_state_idx">
+<span class="sig-name descname"><span class="pre">get_state_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.get_state_idx" title="Link to this definition"></a></dt>
 <dd><p>Get index information for named state set.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i1</span> <span class="n">iN</span><span class="p">]</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">get_state_idx</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 <span class="n">sidx</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">get_state_idx</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -781,8 +781,8 @@ equal to either <code class="docutils literal notranslate"><span class="pre">[i1
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.node_types">
-<span class="sig-name descname"><span class="pre">node_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">skip_ensure_ref</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.node_types" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.node_types">
+<span class="sig-name descname"><span class="pre">node_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">skip_ensure_ref</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.node_types" title="Link to this definition"></a></dt>
 <dd><p>Get node type information.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">ntv</span>           <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">node_types</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
 <span class="p">[</span><span class="n">ntv</span><span class="p">,</span> <span class="n">by_elm</span><span class="p">]</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">node_types</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
@@ -795,8 +795,8 @@ equal to either <code class="docutils literal notranslate"><span class="pre">[i1
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>idx</strong> (<em>integer</em>) – index <em>(not used in base method)</em></p></li>
 <li><p><strong>skip_ensure_ref</strong> (<em>boolean</em>) – unless true, if there is no
 reference node, the first PV node will be converted to a
@@ -807,9 +807,9 @@ new reference</p></li>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ntv</strong> (<em>integer</em>) – node type vector, valid element values are:</p>
 <ul>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.REF</span></code></p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PV</span></code></p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PQ</span></code></p></li>
+<li><p><a class="reference internal" href="NODE_TYPE.html#mp.NODE_TYPE.REF" title="mp.NODE_TYPE.REF"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.REF</span></code></a></p></li>
+<li><p><a class="reference internal" href="NODE_TYPE.html#mp.NODE_TYPE.PV" title="mp.NODE_TYPE.PV"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PV</span></code></a></p></li>
+<li><p><a class="reference internal" href="NODE_TYPE.html#mp.NODE_TYPE.PQ" title="mp.NODE_TYPE.PQ"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PQ</span></code></a></p></li>
 </ul>
 </li>
 <li><p><strong>ref</strong> (<em>integer</em>) – vector of indices of reference nodes</p></li>
@@ -828,12 +828,12 @@ is 4th output arg)</p></li>
 </ul>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.NODE_TYPE</span></code>, <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">ensure_ref_node()</span></code>.</p>
+<p>See also <a class="reference internal" href="NODE_TYPE.html#mp.NODE_TYPE" title="mp.NODE_TYPE"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.NODE_TYPE</span></code></a>, <a class="reference internal" href="#mp.net_model.ensure_ref_node" title="mp.net_model.ensure_ref_node"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">ensure_ref_node()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.ensure_ref_node">
-<span class="sig-name descname"><span class="pre">ensure_ref_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">ref</span></em>, <em class="sig-param"><span class="pre">pv</span></em>, <em class="sig-param"><span class="pre">pq</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.ensure_ref_node" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.ensure_ref_node">
+<span class="sig-name descname"><span class="pre">ensure_ref_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">ref</span></em>, <em class="sig-param"><span class="pre">pv</span></em>, <em class="sig-param"><span class="pre">pq</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.ensure_ref_node" title="Link to this definition"></a></dt>
 <dd><p>Ensure there is at least one reference node.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">ref</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">pq</span><span class="p">]</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">ensure_ref_node</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">pq</span><span class="p">)</span>
 <span class="n">ntv</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">ensure_ref_node</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">ntv</span><span class="p">)</span>
@@ -842,15 +842,15 @@ is 4th output arg)</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>ref</strong> (<em>integer</em>) – vector of indices of reference nodes</p></li>
 <li><p><strong>pv</strong> (<em>integer</em>) – vector of indices of PV nodes</p></li>
 <li><p><strong>pq</strong> (<em>integer</em>) – vector of indices of PQ nodes</p></li>
 <li><p><strong>ntv</strong> (<em>integer</em>) – node type vector, valid element values are:</p>
 <ul>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.REF</span></code></p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PV</span></code></p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PQ</span></code></p></li>
+<li><p><a class="reference internal" href="NODE_TYPE.html#mp.NODE_TYPE.REF" title="mp.NODE_TYPE.REF"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.REF</span></code></a></p></li>
+<li><p><a class="reference internal" href="NODE_TYPE.html#mp.NODE_TYPE.PV" title="mp.NODE_TYPE.PV"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PV</span></code></a></p></li>
+<li><p><a class="reference internal" href="NODE_TYPE.html#mp.NODE_TYPE.PQ" title="mp.NODE_TYPE.PQ"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PQ</span></code></a></p></li>
 </ul>
 </li>
 </ul>
@@ -867,8 +867,8 @@ is 4th output arg)</p></li>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.set_node_type_ref">
-<span class="sig-name descname"><span class="pre">set_node_type_ref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.set_node_type_ref" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.set_node_type_ref">
+<span class="sig-name descname"><span class="pre">set_node_type_ref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.set_node_type_ref" title="Link to this definition"></a></dt>
 <dd><p>Make the specified node a reference node.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">set_node_type_ref</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
 </pre></div>
@@ -876,18 +876,18 @@ is 4th output arg)</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>idx</strong> (<em>integer</em>) – index of node to modify, this is the internal
 network model element index</p></li>
 </ul>
 </dd>
 </dl>
-<p>Set the specified node to type <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.REF</span></code>.</p>
+<p>Set the specified node to type <a class="reference internal" href="NODE_TYPE.html#mp.NODE_TYPE.REF" title="mp.NODE_TYPE.REF"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.REF</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.set_node_type_pv">
-<span class="sig-name descname"><span class="pre">set_node_type_pv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.set_node_type_pv" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.set_node_type_pv">
+<span class="sig-name descname"><span class="pre">set_node_type_pv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.set_node_type_pv" title="Link to this definition"></a></dt>
 <dd><p>Make the specified node a PV node.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">set_node_type_pv</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
 </pre></div>
@@ -895,18 +895,18 @@ network model element index</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>idx</strong> (<em>integer</em>) – index of node to modify, this is the internal
 network model element index</p></li>
 </ul>
 </dd>
 </dl>
-<p>Set the specified node to type <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PV</span></code>.</p>
+<p>Set the specified node to type <a class="reference internal" href="NODE_TYPE.html#mp.NODE_TYPE.PV" title="mp.NODE_TYPE.PV"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PV</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model.set_node_type_pq">
-<span class="sig-name descname"><span class="pre">set_node_type_pq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model.set_node_type_pq" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model.set_node_type_pq">
+<span class="sig-name descname"><span class="pre">set_node_type_pq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model.set_node_type_pq" title="Link to this definition"></a></dt>
 <dd><p>Make the specified node a PQ node.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">set_node_type_pq</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
 </pre></div>
@@ -914,13 +914,13 @@ network model element index</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>idx</strong> (<em>integer</em>) – index of node to modify, this is the internal
 network model element index</p></li>
 </ul>
 </dd>
 </dl>
-<p>Set the specified node to type <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PQ</span></code>.</p>
+<p>Set the specified node to type <a class="reference internal" href="NODE_TYPE.html#mp.NODE_TYPE.PQ" title="mp.NODE_TYPE.PQ"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mp.NODE_TYPE.PQ</span></code></a>.</p>
 </dd></dl>
 
 </dd>

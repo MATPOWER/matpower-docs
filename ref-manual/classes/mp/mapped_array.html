@@ -131,10 +131,10 @@
 <section id="mp-mapped-array">
 <h1>mp.mapped_array<a class="headerlink" href="#mp-mapped-array" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="matpower.mp.mapped_array">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">mapped_array</span></span><a class="headerlink" href="#matpower.mp.mapped_array" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.mapped_array">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">mapped_array</span></span><a class="headerlink" href="#mp.mapped_array" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mapped_array</span></code> - Cell array indexed by name as well as numeric index.</p>
+<p><a class="reference internal" href="#mp.mapped_array" title="mp.mapped_array"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mapped_array</span></code></a> - Cell array indexed by name as well as numeric index.</p>
 <p>Currently, arrays are only 1-D.</p>
 <p>Example usage:</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% create a mapped array object</span>
@@ -164,26 +164,26 @@
 </div>
 <dl class="simple">
 <dt>mp.mapped_array Methods:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mapped_array()</span></code> - constructor</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">copy()</span></code> - create a duplicate of the mapped array object</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">length()</span></code> - return number of elements in mapped array</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">size()</span></code> - return dimensions of mapped array</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_names()</span></code> - add or modify names of elements</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_elements()</span></code> - append elements to the end of the mapped array</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">delete_elements()</span></code> - delete elements from the mapped array</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">has_name()</span></code> - return <code class="docutils literal notranslate"><span class="pre">true</span></code> if the name exists in the mapped array</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">name2idx()</span></code> - return the index corresponding to a name</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">subsref()</span></code> - called when indexing a mapped array to retrieve data</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">subsasgn()</span></code> - called when indexing a mapped array to assign data</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">display()</span></code> - display the mapped array structure</p></li>
+<li><p><a class="reference internal" href="#mp.mapped_array.mapped_array" title="mp.mapped_array.mapped_array"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mapped_array()</span></code></a> - constructor</p></li>
+<li><p><a class="reference internal" href="#mp.mapped_array.copy" title="mp.mapped_array.copy"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">copy()</span></code></a> - create a duplicate of the mapped array object</p></li>
+<li><p><a class="reference internal" href="#mp.mapped_array.length" title="mp.mapped_array.length"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">length()</span></code></a> - return number of elements in mapped array</p></li>
+<li><p><a class="reference internal" href="#mp.mapped_array.size" title="mp.mapped_array.size"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">size()</span></code></a> - return dimensions of mapped array</p></li>
+<li><p><a class="reference internal" href="#mp.mapped_array.add_names" title="mp.mapped_array.add_names"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_names()</span></code></a> - add or modify names of elements</p></li>
+<li><p><a class="reference internal" href="#mp.mapped_array.add_elements" title="mp.mapped_array.add_elements"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_elements()</span></code></a> - append elements to the end of the mapped array</p></li>
+<li><p><a class="reference internal" href="#mp.mapped_array.delete_elements" title="mp.mapped_array.delete_elements"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">delete_elements()</span></code></a> - delete elements from the mapped array</p></li>
+<li><p><a class="reference internal" href="#mp.mapped_array.has_name" title="mp.mapped_array.has_name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">has_name()</span></code></a> - return <code class="docutils literal notranslate"><span class="pre">true</span></code> if the name exists in the mapped array</p></li>
+<li><p><a class="reference internal" href="#mp.mapped_array.name2idx" title="mp.mapped_array.name2idx"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">name2idx()</span></code></a> - return the index corresponding to a name</p></li>
+<li><p><a class="reference internal" href="#mp.mapped_array.subsref" title="mp.mapped_array.subsref"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">subsref()</span></code></a> - called when indexing a mapped array to retrieve data</p></li>
+<li><p><a class="reference internal" href="#mp.mapped_array.subsasgn" title="mp.mapped_array.subsasgn"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">subsasgn()</span></code></a> - called when indexing a mapped array to assign data</p></li>
+<li><p><a class="reference internal" href="#mp.mapped_array.display" title="mp.mapped_array.display"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">display()</span></code></a> - display the mapped array structure</p></li>
 </ul>
 </dd>
 </dl>
 <div class="members docutils container">
 <dl>
 <dt>Constructor Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.mapped_array.mapped_array">
-<span class="sig-name descname"><span class="pre">mapped_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mapped_array.mapped_array" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.mapped_array.mapped_array">
+<span class="sig-name descname"><span class="pre">mapped_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mapped_array.mapped_array" title="Link to this definition"></a></dt>
 <dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">mapped_array</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
 <span class="n">obj</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">mapped_array</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">names</span><span class="p">)</span>
 </pre></div>
@@ -204,8 +204,8 @@ names can be added later.</p></li>
 
 </dd>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.mapped_array.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mapped_array.copy" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.mapped_array.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.mapped_array.copy" title="Link to this definition"></a></dt>
 <dd><p>Create a duplicate of the mapped array object.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">new_obj</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">copy</span><span class="p">();</span>
 </pre></div>
@@ -213,8 +213,8 @@ names can be added later.</p></li>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.mapped_array.length">
-<span class="sig-name descname"><span class="pre">length</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mapped_array.length" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.mapped_array.length">
+<span class="sig-name descname"><span class="pre">length</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.mapped_array.length" title="Link to this definition"></a></dt>
 <dd><p>Return number of elements in mapped array.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">num_elements</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="nb">length</span><span class="p">();</span>
 </pre></div>
@@ -222,8 +222,8 @@ names can be added later.</p></li>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.mapped_array.size">
-<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dim</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mapped_array.size" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.mapped_array.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dim</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mapped_array.size" title="Link to this definition"></a></dt>
 <dd><p>Return dimensions of mapped array. First dimension is 1,
 second matches the length.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">]</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="nb">size</span><span class="p">();</span>
@@ -234,8 +234,8 @@ second matches the length.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.mapped_array.add_names">
-<span class="sig-name descname"><span class="pre">add_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">i0</span></em>, <em class="sig-param"><span class="pre">names</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mapped_array.add_names" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.mapped_array.add_names">
+<span class="sig-name descname"><span class="pre">add_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">i0</span></em>, <em class="sig-param"><span class="pre">names</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mapped_array.add_names" title="Link to this definition"></a></dt>
 <dd><p>Add or modify names of elements.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span><span class="p">.</span><span class="n">add_names</span><span class="p">(</span><span class="n">i0</span><span class="p">,</span> <span class="n">names</span><span class="p">)</span>
 </pre></div>
@@ -255,8 +255,8 @@ specified index.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.mapped_array.add_elements">
-<span class="sig-name descname"><span class="pre">add_elements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">vals</span></em>, <em class="sig-param"><span class="pre">names</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mapped_array.add_elements" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.mapped_array.add_elements">
+<span class="sig-name descname"><span class="pre">add_elements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">vals</span></em>, <em class="sig-param"><span class="pre">names</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mapped_array.add_elements" title="Link to this definition"></a></dt>
 <dd><p>Append elements to the end of the mapped array.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span><span class="p">.</span><span class="n">add_elements</span><span class="p">(</span><span class="n">vals</span><span class="p">);</span>
 <span class="n">obj</span><span class="p">.</span><span class="n">add_elements</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">names</span><span class="p">);</span>
@@ -273,12 +273,12 @@ corresponding names</p></li>
 </dl>
 <p>The two arguments must be both cell arrays of the same dimension
 or a single value and single name.</p>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">delete_elements()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.mapped_array.delete_elements" title="mp.mapped_array.delete_elements"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">delete_elements()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.mapped_array.delete_elements">
-<span class="sig-name descname"><span class="pre">delete_elements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">refs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mapped_array.delete_elements" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.mapped_array.delete_elements">
+<span class="sig-name descname"><span class="pre">delete_elements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">refs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mapped_array.delete_elements" title="Link to this definition"></a></dt>
 <dd><p>Delete elements from the mapped array.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span><span class="p">.</span><span class="n">delete_elements</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
 <span class="n">obj</span><span class="p">.</span><span class="n">delete_elements</span><span class="p">(</span><span class="n">names</span><span class="p">);</span>
@@ -293,12 +293,12 @@ element(s) to delete</p></li>
 </ul>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_elements()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.mapped_array.add_elements" title="mp.mapped_array.add_elements"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_elements()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.mapped_array.has_name">
-<span class="sig-name descname"><span class="pre">has_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mapped_array.has_name" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.mapped_array.has_name">
+<span class="sig-name descname"><span class="pre">has_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mapped_array.has_name" title="Link to this definition"></a></dt>
 <dd><p>Return <code class="docutils literal notranslate"><span class="pre">true</span></code> if the name exists in the mapped array.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">TorF</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">has_name</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
 </pre></div>
@@ -311,8 +311,8 @@ element(s) to delete</p></li>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.mapped_array.name2idx">
-<span class="sig-name descname"><span class="pre">name2idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mapped_array.name2idx" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.mapped_array.name2idx">
+<span class="sig-name descname"><span class="pre">name2idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mapped_array.name2idx" title="Link to this definition"></a></dt>
 <dd><p>Return the numerical index in the array corrsponding to a name.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">name2idx</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
 </pre></div>
@@ -325,8 +325,8 @@ element(s) to delete</p></li>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.mapped_array.subsref">
-<span class="sig-name descname"><span class="pre">subsref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mapped_array.subsref" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.mapped_array.subsref">
+<span class="sig-name descname"><span class="pre">subsref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mapped_array.subsref" title="Link to this definition"></a></dt>
 <dd><p>Called when indexing a table to retrieve data.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">val</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="n">val</span> <span class="p">=</span> <span class="n">obj</span><span class="p">{</span><span class="n">idx</span><span class="p">};</span>
@@ -335,8 +335,8 @@ element(s) to delete</p></li>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.mapped_array.subsasgn">
-<span class="sig-name descname"><span class="pre">subsasgn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">s</span></em>, <em class="sig-param"><span class="pre">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mapped_array.subsasgn" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.mapped_array.subsasgn">
+<span class="sig-name descname"><span class="pre">subsasgn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">s</span></em>, <em class="sig-param"><span class="pre">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.mapped_array.subsasgn" title="Link to this definition"></a></dt>
 <dd><p>Called when indexing a table to assign data.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span><span class="p">.</span><span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span> <span class="p">=</span> <span class="n">val</span><span class="p">;</span>
 <span class="n">obj</span><span class="p">{</span><span class="n">idx</span><span class="p">}</span> <span class="p">=</span> <span class="n">val</span><span class="p">;</span>
@@ -345,8 +345,8 @@ element(s) to delete</p></li>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.mapped_array.display">
-<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.mapped_array.display" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.mapped_array.display">
+<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.mapped_array.display" title="Link to this definition"></a></dt>
 <dd><p>Display the mapped array structure.</p>
 <p>This method is called automatically when omitting a semicolon
 on a line that retuns an object of this class.</p>

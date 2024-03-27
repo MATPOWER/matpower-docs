@@ -128,12 +128,12 @@
 <section id="mp-net-model-ac">
 <h1>mp.net_model_ac<a class="headerlink" href="#mp-net-model-ac" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="matpower.mp.net_model_ac">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">net_model_ac</span></span><a class="headerlink" href="#matpower.mp.net_model_ac" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model_ac</span></code> - Abstract base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> AC <strong>network model</strong> objects.</p>
-<p>Explicitly a subclass of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code> and implicitly assumed to be a subclass
-of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_ac</span></code> as well.</p>
+<dt class="sig sig-object mat" id="mp.net_model_ac">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">net_model_ac</span></span><a class="headerlink" href="#mp.net_model_ac" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a></p>
+<p><a class="reference internal" href="#mp.net_model_ac" title="mp.net_model_ac"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model_ac</span></code></a> - Abstract base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> AC <strong>network model</strong> objects.</p>
+<p>Explicitly a subclass of <a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a> and implicitly assumed to be a subclass
+of <a class="reference internal" href="form_ac.html#mp.form_ac" title="mp.form_ac"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_ac</span></code></a> as well.</p>
 <dl class="simple">
 <dt>mp.net_model_ac Properties:</dt><dd><ul class="simple">
 <li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">zr</span></code> - vector of real part of complex non-voltage states, <span class="math notranslate nohighlight">\(\zr\)</span></p></li>
@@ -141,26 +141,26 @@ of <code class="xref mat mat-class docutils literal notranslate"><span class="pr
 </ul>
 </dd>
 <dt>mp.net_model_ac Methods:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">def_set_types()</span></code> - add non-voltage state variable set types for mp_idx_manager</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code> - build incidence matrices, parameters, add ports for each element</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_nln()</span></code> - compute general nonlinear port injection functions and Jacobians</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_nln_hess()</span></code> - compute general nonlinear port injection Hessian</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nodal_complex_current_balance()</span></code> - compute nodal complex current balance constraints</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nodal_complex_power_balance()</span></code> - compute nodal complex power balance constraints</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nodal_complex_current_balance_hess()</span></code> - compute nodal complex current balance Hessian</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nodal_complex_power_balance_hess()</span></code> - compute nodal complex power balance Hessian</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_soln()</span></code> - compute the network port power injections at the solution</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_va()</span></code> - get node voltage angle vector</p></li>
+<li><p><a class="reference internal" href="#mp.net_model_ac.def_set_types" title="mp.net_model_ac.def_set_types"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">def_set_types()</span></code></a> - add non-voltage state variable set types for <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a></p></li>
+<li><p><a class="reference internal" href="#mp.net_model_ac.build_params" title="mp.net_model_ac.build_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code></a> - build incidence matrices, parameters, add ports for each element</p></li>
+<li><p><a class="reference internal" href="#mp.net_model_ac.port_inj_nln" title="mp.net_model_ac.port_inj_nln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_nln()</span></code></a> - compute general nonlinear port injection functions and Jacobians</p></li>
+<li><p><a class="reference internal" href="#mp.net_model_ac.port_inj_nln_hess" title="mp.net_model_ac.port_inj_nln_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_nln_hess()</span></code></a> - compute general nonlinear port injection Hessian</p></li>
+<li><p><a class="reference internal" href="#mp.net_model_ac.nodal_complex_current_balance" title="mp.net_model_ac.nodal_complex_current_balance"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nodal_complex_current_balance()</span></code></a> - compute nodal complex current balance constraints</p></li>
+<li><p><a class="reference internal" href="#mp.net_model_ac.nodal_complex_power_balance" title="mp.net_model_ac.nodal_complex_power_balance"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nodal_complex_power_balance()</span></code></a> - compute nodal complex power balance constraints</p></li>
+<li><p><a class="reference internal" href="#mp.net_model_ac.nodal_complex_current_balance_hess" title="mp.net_model_ac.nodal_complex_current_balance_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nodal_complex_current_balance_hess()</span></code></a> - compute nodal complex current balance Hessian</p></li>
+<li><p><a class="reference internal" href="#mp.net_model_ac.nodal_complex_power_balance_hess" title="mp.net_model_ac.nodal_complex_power_balance_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nodal_complex_power_balance_hess()</span></code></a> - compute nodal complex power balance Hessian</p></li>
+<li><p><a class="reference internal" href="#mp.net_model_ac.port_inj_soln" title="mp.net_model_ac.port_inj_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_soln()</span></code></a> - compute the network port power injections at the solution</p></li>
+<li><p><a class="reference internal" href="#mp.net_model_ac.get_va" title="mp.net_model_ac.get_va"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_va()</span></code></a> - get node voltage angle vector</p></li>
 </ul>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_ac</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code>.</p>
+<p>See also <a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>, <a class="reference internal" href="form.html#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a>, <a class="reference internal" href="form_ac.html#mp.form_ac" title="mp.form_ac"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_ac</span></code></a>, <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model_ac.def_set_types">
-<span class="sig-name descname"><span class="pre">def_set_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model_ac.def_set_types" title="Link to this definition"></a></dt>
-<dd><p>Add non-voltage state variable set types for mp_idx_manager.</p>
+<dt class="sig sig-object mat" id="mp.net_model_ac.def_set_types">
+<span class="sig-name descname"><span class="pre">def_set_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_ac.def_set_types" title="Link to this definition"></a></dt>
+<dd><p>Add non-voltage state variable set types for <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a>.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">def_set_types</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -171,12 +171,12 @@ of <code class="xref mat mat-class docutils literal notranslate"><span class="pr
 <li><p><code class="docutils literal notranslate"><span class="pre">'zi'</span></code> - NON-VOLTAGE VARS IMAG (zi)</p></li>
 </ul>
 </div></blockquote>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.net_model.def_set_types()</span></code>, <code class="docutils literal notranslate"><span class="pre">mp_idx_manager</span></code>.</p>
+<p>See also <a class="reference internal" href="net_model.html#mp.net_model.def_set_types" title="mp.net_model.def_set_types"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.net_model.def_set_types()</span></code></a>, <a class="reference internal" href="../../../mpom/classes/mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model_ac.build_params">
-<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model_ac.build_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model_ac.build_params">
+<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_ac.build_params" title="Link to this definition"></a></dt>
 <dd><p>Build incidence matrices and parameters, and add ports for each element.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">build_params</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">)</span>
 </pre></div>
@@ -184,8 +184,8 @@ of <code class="xref mat mat-class docutils literal notranslate"><span class="pr
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 </ul>
 </dd>
 </dl>
@@ -196,8 +196,8 @@ for any elements that define them.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model_ac.port_inj_nln">
-<span class="sig-name descname"><span class="pre">port_inj_nln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">si</span></em>, <em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">sysx</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model_ac.port_inj_nln" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model_ac.port_inj_nln">
+<span class="sig-name descname"><span class="pre">port_inj_nln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">si</span></em>, <em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">sysx</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_ac.port_inj_nln" title="Link to this definition"></a></dt>
 <dd><p>Compute general nonlinear port injection functions and Jacobians</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">port_inj_nln</span><span class="p">(</span><span class="n">si</span><span class="p">,</span> <span class="n">x_</span><span class="p">,</span> <span class="n">sysx</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
 <span class="p">[</span><span class="n">g</span><span class="p">,</span> <span class="n">gv1</span><span class="p">,</span> <span class="n">gv2</span><span class="p">]</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">port_inj_nln</span><span class="p">(</span><span class="n">si</span><span class="p">,</span> <span class="n">x_</span><span class="p">,</span> <span class="n">sysx</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
@@ -247,12 +247,12 @@ corresponding to all ports</p></li>
 </ul>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_nln_hess()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.net_model_ac.port_inj_nln_hess" title="mp.net_model_ac.port_inj_nln_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_nln_hess()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model_ac.port_inj_nln_hess">
-<span class="sig-name descname"><span class="pre">port_inj_nln_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">si</span></em>, <em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">sysx</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model_ac.port_inj_nln_hess" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model_ac.port_inj_nln_hess">
+<span class="sig-name descname"><span class="pre">port_inj_nln_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">si</span></em>, <em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">sysx</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_ac.port_inj_nln_hess" title="Link to this definition"></a></dt>
 <dd><p>Compute general nonlinear port injection Hessian.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">port_inj_nln_hess</span><span class="p">(</span><span class="n">si</span><span class="p">,</span> <span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span>
 <span class="n">H</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">port_inj_nln_hess</span><span class="p">(</span><span class="n">si</span><span class="p">,</span> <span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">sysx</span><span class="p">)</span>
@@ -293,12 +293,12 @@ corresponding to all ports</p></li>
 <span class="math notranslate nohighlight">\(\Snln_{\x\x}(\lam)\)</span> or <span class="math notranslate nohighlight">\(\Inln_{\x\x}(\lam)\)</span></p>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_nln()</span></code>.</p>
+<p>See also <a class="reference internal" href="#mp.net_model_ac.port_inj_nln" title="mp.net_model_ac.port_inj_nln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_nln()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model_ac.nodal_complex_current_balance">
-<span class="sig-name descname"><span class="pre">nodal_complex_current_balance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model_ac.nodal_complex_current_balance" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model_ac.nodal_complex_current_balance">
+<span class="sig-name descname"><span class="pre">nodal_complex_current_balance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_ac.nodal_complex_current_balance" title="Link to this definition"></a></dt>
 <dd><p>Compute nodal complex current balance constraints.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">nodal_complex_current_balance</span><span class="p">(</span><span class="n">x_</span><span class="p">)</span>
 <span class="p">[</span><span class="n">G</span><span class="p">,</span> <span class="n">Gv1</span><span class="p">,</span> <span class="n">Gv2</span><span class="p">,</span> <span class="n">Gzr</span><span class="p">,</span> <span class="n">Gzi</span><span class="p">]</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">nodal_complex_current_balance</span><span class="p">(</span><span class="n">x_</span><span class="p">)</span>
@@ -306,7 +306,7 @@ corresponding to all ports</p></li>
 </div>
 <p>Compute constraint function and optionally the Jacobian for
 the complex current balance equality constraints based on
-outputs of <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_current()</span></code> and the node incidence
+outputs of <a class="reference internal" href="form_ac.html#mp.form_ac.port_inj_current" title="mp.form_ac.port_inj_current"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_current()</span></code></a> and the node incidence
 matrix.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Input<span class="colon">:</span></dt>
@@ -327,13 +327,13 @@ function, <span class="math notranslate nohighlight">\(\G^\mathrm{kcl}(\x)\)</sp
 </ul>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_current()</span></code>,
-<code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nodal_complex_current_balance_hess()</span></code>.</p>
+<p>See also <a class="reference internal" href="form_ac.html#mp.form_ac.port_inj_current" title="mp.form_ac.port_inj_current"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_current()</span></code></a>,
+<a class="reference internal" href="#mp.net_model_ac.nodal_complex_current_balance_hess" title="mp.net_model_ac.nodal_complex_current_balance_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nodal_complex_current_balance_hess()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model_ac.nodal_complex_power_balance">
-<span class="sig-name descname"><span class="pre">nodal_complex_power_balance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model_ac.nodal_complex_power_balance" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model_ac.nodal_complex_power_balance">
+<span class="sig-name descname"><span class="pre">nodal_complex_power_balance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_ac.nodal_complex_power_balance" title="Link to this definition"></a></dt>
 <dd><p>Compute nodal complex power balance constraints.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">nodal_complex_power_balance</span><span class="p">(</span><span class="n">x_</span><span class="p">)</span>
 <span class="p">[</span><span class="n">G</span><span class="p">,</span> <span class="n">Gv1</span><span class="p">,</span> <span class="n">Gv2</span><span class="p">,</span> <span class="n">Gzr</span><span class="p">,</span> <span class="n">Gzi</span><span class="p">]</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">nodal_complex_power_balance</span><span class="p">(</span><span class="n">x_</span><span class="p">)</span>
@@ -341,7 +341,7 @@ function, <span class="math notranslate nohighlight">\(\G^\mathrm{kcl}(\x)\)</sp
 </div>
 <p>Compute constraint function and optionally the Jacobian for
 the complex power balance equality constraints based on
-outputs of <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_power()</span></code> and the node incidence
+outputs of <a class="reference internal" href="form_ac.html#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_power()</span></code></a> and the node incidence
 matrix.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Input<span class="colon">:</span></dt>
@@ -362,13 +362,13 @@ function, <span class="math notranslate nohighlight">\(\G^\mathrm{kcl}(\x)\)</sp
 </ul>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_power()</span></code>,
-<code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nodal_complex_power_balance_hess()</span></code>.</p>
+<p>See also <a class="reference internal" href="form_ac.html#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_power()</span></code></a>,
+<a class="reference internal" href="#mp.net_model_ac.nodal_complex_power_balance_hess" title="mp.net_model_ac.nodal_complex_power_balance_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nodal_complex_power_balance_hess()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model_ac.nodal_complex_current_balance_hess">
-<span class="sig-name descname"><span class="pre">nodal_complex_current_balance_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model_ac.nodal_complex_current_balance_hess" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model_ac.nodal_complex_current_balance_hess">
+<span class="sig-name descname"><span class="pre">nodal_complex_current_balance_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_ac.nodal_complex_current_balance_hess" title="Link to this definition"></a></dt>
 <dd><p>Compute nodal complex current balance Hessian.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">d2G</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">nodal_complex_current_balance_hess</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span>
 </pre></div>
@@ -377,7 +377,7 @@ function, <span class="math notranslate nohighlight">\(\G^\mathrm{kcl}(\x)\)</sp
 constraint. Rather than a full, 3-dimensional Hessian, it
 computes the Jacobian of the vector obtained by muliplying the
 transpose of the constraint Jacobian by a vector <span class="math notranslate nohighlight">\(\lam\)</span>.
-Based on <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_current_hess()</span></code>.</p>
+Based on <a class="reference internal" href="form_ac.html#mp.form_ac.port_inj_current_hess" title="mp.form_ac.port_inj_current_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_current_hess()</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -390,13 +390,13 @@ Based on <code class="xref mat mat-meth docutils literal notranslate"><span clas
 <span class="math notranslate nohighlight">\(\G^\mathrm{kcl}_{\x\x}(\lam)\)</span></p>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_current_hess()</span></code>,
-<code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nodal_complex_current_balance()</span></code>.</p>
+<p>See also <a class="reference internal" href="form_ac.html#mp.form_ac.port_inj_current_hess" title="mp.form_ac.port_inj_current_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_current_hess()</span></code></a>,
+<a class="reference internal" href="#mp.net_model_ac.nodal_complex_current_balance" title="mp.net_model_ac.nodal_complex_current_balance"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nodal_complex_current_balance()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model_ac.nodal_complex_power_balance_hess">
-<span class="sig-name descname"><span class="pre">nodal_complex_power_balance_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model_ac.nodal_complex_power_balance_hess" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model_ac.nodal_complex_power_balance_hess">
+<span class="sig-name descname"><span class="pre">nodal_complex_power_balance_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_ac.nodal_complex_power_balance_hess" title="Link to this definition"></a></dt>
 <dd><p>Compute nodal complex power balance Hessian.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">d2G</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">nodal_complex_power_balance_hess</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span>
 </pre></div>
@@ -405,7 +405,7 @@ Based on <code class="xref mat mat-meth docutils literal notranslate"><span clas
 constraint. Rather than a full, 3-dimensional Hessian, it
 computes the Jacobian of the vector obtained by muliplying the
 transpose of the constraint Jacobian by a vector <span class="math notranslate nohighlight">\(\lam\)</span>.
-Based on <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_power_hess()</span></code>.</p>
+Based on <a class="reference internal" href="form_ac.html#mp.form_ac.port_inj_power_hess" title="mp.form_ac.port_inj_power_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_power_hess()</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -418,13 +418,13 @@ Based on <code class="xref mat mat-meth docutils literal notranslate"><span clas
 <span class="math notranslate nohighlight">\(\G^\mathrm{kcl}_{\x\x}(\lam)\)</span></p>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_power_hess()</span></code>,
-<code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nodal_complex_power_balance()</span></code>.</p>
+<p>See also <a class="reference internal" href="form_ac.html#mp.form_ac.port_inj_power_hess" title="mp.form_ac.port_inj_power_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_power_hess()</span></code></a>,
+<a class="reference internal" href="#mp.net_model_ac.nodal_complex_power_balance" title="mp.net_model_ac.nodal_complex_power_balance"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nodal_complex_power_balance()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model_ac.port_inj_soln">
-<span class="sig-name descname"><span class="pre">port_inj_soln</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model_ac.port_inj_soln" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model_ac.port_inj_soln">
+<span class="sig-name descname"><span class="pre">port_inj_soln</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_ac.port_inj_soln" title="Link to this definition"></a></dt>
 <dd><p>Compute the network port power injections at the solution.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span><span class="p">.</span><span class="n">port_inj_soln</span><span class="p">()</span>
 </pre></div>
@@ -434,8 +434,8 @@ injections, and saves them in <code class="docutils literal notranslate"><span c
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.net_model_ac.get_va">
-<span class="sig-name descname"><span class="pre">get_va</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.net_model_ac.get_va" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.net_model_ac.get_va">
+<span class="sig-name descname"><span class="pre">get_va</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.net_model_ac.get_va" title="Link to this definition"></a></dt>
 <dd><p>Get node voltage angle vector.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">va</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">get_va</span><span class="p">()</span>
 <span class="n">va</span> <span class="p">=</span> <span class="n">nm</span><span class="p">.</span><span class="n">get_va</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>

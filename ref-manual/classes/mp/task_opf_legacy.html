@@ -126,31 +126,31 @@
 <section id="mp-task-opf-legacy">
 <h1>mp.task_opf_legacy<a class="headerlink" href="#mp-task-opf-legacy" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="matpower.mp.task_opf_legacy">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">task_opf_legacy</span></span><a class="headerlink" href="#matpower.mp.task_opf_legacy" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_opf</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_shared_legacy</span></code></p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_opf</span></code> - <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> task for legacy optimal power flow (OPF).</p>
+<dt class="sig sig-object mat" id="mp.task_opf_legacy">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">task_opf_legacy</span></span><a class="headerlink" href="#mp.task_opf_legacy" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="task_opf.html#mp.task_opf" title="mp.task_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_opf</span></code></a>, <a class="reference internal" href="task_shared_legacy.html#mp.task_shared_legacy" title="mp.task_shared_legacy"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_shared_legacy</span></code></a></p>
+<p><a class="reference internal" href="task_opf.html#mp.task_opf" title="mp.task_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_opf</span></code></a> - <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> task for legacy optimal power flow (OPF).</p>
 <p>Adds functionality needed by the <em>legacy</em> <span class="raw-html"><em>M<span style="font-size:smaller">ATPOWER</span></em></span> <em>framework</em> to the
 task implementation for the optimal power flow problem. This consists
 of pre-processing some input data and exporting and packaging result data,
 as well as using some legacy specific model sub-classes.</p>
 <dl class="simple">
 <dt>mp.task_pf Methods:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code> - pre-process inputs that are for legacy framework only</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_post()</span></code> - export results back to data model source</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class_mpc2_default()</span></code> - set to <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter_mpc2_legacy</span></code></p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build_post()</span></code> - get data model converter to do more input pre-processing</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class_default()</span></code> - use legacy math model subclasses</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">legacy_post_run()</span></code> - post-process <em>legacy framework</em> outputs</p></li>
+<li><p><a class="reference internal" href="#mp.task_opf_legacy.run_pre" title="mp.task_opf_legacy.run_pre"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code></a> - pre-process inputs that are for legacy framework only</p></li>
+<li><p><a class="reference internal" href="#mp.task_opf_legacy.run_post" title="mp.task_opf_legacy.run_post"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_post()</span></code></a> - export results back to data model source</p></li>
+<li><p><a class="reference internal" href="#mp.task_opf_legacy.dm_converter_class_mpc2_default" title="mp.task_opf_legacy.dm_converter_class_mpc2_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class_mpc2_default()</span></code></a> - set to <a class="reference internal" href="dm_converter_mpc2_legacy.html#mp.dm_converter_mpc2_legacy" title="mp.dm_converter_mpc2_legacy"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter_mpc2_legacy</span></code></a></p></li>
+<li><p><a class="reference internal" href="#mp.task_opf_legacy.data_model_build_post" title="mp.task_opf_legacy.data_model_build_post"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build_post()</span></code></a> - get data model converter to do more input pre-processing</p></li>
+<li><p><a class="reference internal" href="#mp.task_opf_legacy.math_model_class_default" title="mp.task_opf_legacy.math_model_class_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class_default()</span></code></a> - use legacy math model subclasses</p></li>
+<li><p><a class="reference internal" href="#mp.task_opf_legacy.legacy_post_run" title="mp.task_opf_legacy.legacy_post_run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">legacy_post_run()</span></code></a> - post-process <em>legacy framework</em> outputs</p></li>
 </ul>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_opf</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_shared_legacy</span></code>.</p>
+<p>See also <a class="reference internal" href="task_opf.html#mp.task_opf" title="mp.task_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_opf</span></code></a>, <a class="reference internal" href="task.html#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a>, <a class="reference internal" href="task_shared_legacy.html#mp.task_shared_legacy" title="mp.task_shared_legacy"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task_shared_legacy</span></code></a>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_opf_legacy.run_pre">
-<span class="sig-name descname"><span class="pre">run_pre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_opf_legacy.run_pre" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_opf_legacy.run_pre">
+<span class="sig-name descname"><span class="pre">run_pre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_opf_legacy.run_pre" title="Link to this definition"></a></dt>
 <dd><p>Pre-process inputs that are for <em>legacy framework</em> only.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">d</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">]</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">run_pre</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -170,13 +170,13 @@ as well as using some legacy specific model sub-classes.</p>
 </ul>
 </dd>
 </dl>
-<p>Call <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre_legacy()</span></code>
+<p>Call <a class="reference internal" href="task_shared_legacy.html#mp.task_shared_legacy.run_pre_legacy" title="mp.task_shared_legacy.run_pre_legacy"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre_legacy()</span></code></a>
 method before calling parent.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_opf_legacy.run_post">
-<span class="sig-name descname"><span class="pre">run_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_opf_legacy.run_post" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_opf_legacy.run_post">
+<span class="sig-name descname"><span class="pre">run_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_opf_legacy.run_post" title="Link to this definition"></a></dt>
 <dd><p>Export results back to data model source.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">task</span><span class="p">.</span><span class="n">run_post</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -184,51 +184,51 @@ method before calling parent.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – mathmatical model object</p></li>
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – mathmatical model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>task</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code>) – task object</p>
+<dd class="field-even"><p><strong>task</strong> (<a class="reference internal" href="task.html#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a>) – task object</p>
 </dd>
 </dl>
-<p>Calls <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.dm_converter.export()</span></code> and saves the result
+<p>Calls <a class="reference internal" href="dm_converter.html#mp.dm_converter.export" title="mp.dm_converter.export"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.dm_converter.export()</span></code></a> and saves the result
 in the data model <code class="docutils literal notranslate"><span class="pre">source</span></code> property.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_opf_legacy.dm_converter_class_mpc2_default">
-<span class="sig-name descname"><span class="pre">dm_converter_class_mpc2_default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_opf_legacy.dm_converter_class_mpc2_default" title="Link to this definition"></a></dt>
-<dd><p>Set to <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter_mpc2_legacy</span></code>.</p>
+<dt class="sig sig-object mat" id="mp.task_opf_legacy.dm_converter_class_mpc2_default">
+<span class="sig-name descname"><span class="pre">dm_converter_class_mpc2_default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_opf_legacy.dm_converter_class_mpc2_default" title="Link to this definition"></a></dt>
+<dd><p>Set to <a class="reference internal" href="dm_converter_mpc2_legacy.html#mp.dm_converter_mpc2_legacy" title="mp.dm_converter_mpc2_legacy"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter_mpc2_legacy</span></code></a>.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dmc_class</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">dm_converter_class_mpc2_default</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_opf_legacy.data_model_build_post">
-<span class="sig-name descname"><span class="pre">data_model_build_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">dmc</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_opf_legacy.data_model_build_post" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_opf_legacy.data_model_build_post">
+<span class="sig-name descname"><span class="pre">data_model_build_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">dmc</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_opf_legacy.data_model_build_post" title="Link to this definition"></a></dt>
 <dd><p>Get data model converter to do more input pre-processing
 after calling superclass
-<code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build_post()</span></code>.</p>
+<a class="reference internal" href="task_opf.html#mp.task_opf.data_model_build_post" title="mp.task_opf.data_model_build_post"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build_post()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_opf_legacy.math_model_class_default">
-<span class="sig-name descname"><span class="pre">math_model_class_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_opf_legacy.math_model_class_default" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_opf_legacy.math_model_class_default">
+<span class="sig-name descname"><span class="pre">math_model_class_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_opf_legacy.math_model_class_default" title="Link to this definition"></a></dt>
 <dd><p>Use legacy math model subclasses to support legacy costs and callbacks.</p>
 <p>Uses math model variations that inherit from
-<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mm_shared_opf_legacy</span></code> (compatible with the legacy
+<a class="reference internal" href="mm_shared_opf_legacy.html#mp.mm_shared_opf_legacy" title="mp.mm_shared_opf_legacy"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mm_shared_opf_legacy</span></code></a> (compatible with the legacy
 <code class="xref mat mat-class docutils literal notranslate"><span class="pre">opf_model</span></code>), in order to support legacy cost functions
 and callback functions that expect to find the <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case
 struct in <code class="docutils literal notranslate"><span class="pre">mm.mpc</span></code>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task_opf_legacy.legacy_post_run">
-<span class="sig-name descname"><span class="pre">legacy_post_run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task_opf_legacy.legacy_post_run" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task_opf_legacy.legacy_post_run">
+<span class="sig-name descname"><span class="pre">legacy_post_run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task_opf_legacy.legacy_post_run" title="Link to this definition"></a></dt>
 <dd><p>Post-process <em>legacy framework</em> outputs.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">results</span><span class="p">,</span> <span class="n">success</span><span class="p">,</span> <span class="n">raw</span><span class="p">]</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">legacy_post_run</span><span class="p">(</span><span class="n">mpopt</span><span class="p">)</span>
 </pre></div>

@@ -130,10 +130,10 @@
 <section id="mp-nme-gen3p">
 <h1>mp.nme_gen3p<a class="headerlink" href="#mp-nme-gen3p" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="matpower.mp.nme_gen3p">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">nme_gen3p</span></span><a class="headerlink" href="#matpower.mp.nme_gen3p" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_gen3p</span></code> - Network model element abstract base class for 3-phase generator.</p>
+<dt class="sig sig-object mat" id="mp.nme_gen3p">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">nme_gen3p</span></span><a class="headerlink" href="#mp.nme_gen3p" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a></p>
+<p><a class="reference internal" href="#mp.nme_gen3p" title="mp.nme_gen3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_gen3p</span></code></a> - Network model element abstract base class for 3-phase generator.</p>
 <p>Implements the network model element for 3-phase generator elements, with
 3 ports and 3 non-voltage states per 3-phase generator.</p>
 <p>Adds non-voltage state variables <code class="docutils literal notranslate"><span class="pre">Pg3</span></code> and <code class="docutils literal notranslate"><span class="pre">Qg3</span></code> to the network model
@@ -141,28 +141,28 @@ and builds the parameter <span class="math notranslate nohighlight">\(\NN\)</spa
 <div class="members docutils container">
 <dl>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.nme_gen3p.name">
-<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nme_gen3p.name" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.nme_gen3p.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.nme_gen3p.name" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.nme_gen3p.np">
-<span class="sig-name descname"><span class="pre">np</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nme_gen3p.np" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.nme_gen3p.np">
+<span class="sig-name descname"><span class="pre">np</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.nme_gen3p.np" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.nme_gen3p.nz">
-<span class="sig-name descname"><span class="pre">nz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nme_gen3p.nz" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.nme_gen3p.nz">
+<span class="sig-name descname"><span class="pre">nz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.nme_gen3p.nz" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.nme_gen3p.add_zvars">
-<span class="sig-name descname"><span class="pre">add_zvars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nme_gen3p.add_zvars" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.nme_gen3p.add_zvars">
+<span class="sig-name descname"><span class="pre">add_zvars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nme_gen3p.add_zvars" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.nme_gen3p.build_params">
-<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.nme_gen3p.build_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.nme_gen3p.build_params">
+<span class="sig-name descname"><span class="pre">build_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.nme_gen3p.build_params" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd>

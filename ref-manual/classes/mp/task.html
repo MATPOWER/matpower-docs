@@ -126,12 +126,12 @@
 <section id="mp-task">
 <h1>mp.task<a class="headerlink" href="#mp-task" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="matpower.mp.task">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">task</span></span><a class="headerlink" href="#matpower.mp.task" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">task</span></span><a class="headerlink" href="#mp.task" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code> - <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> task abstract base class.</p>
+<p><a class="reference internal" href="#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a> - <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> task abstract base class.</p>
 <p>Each task type (e.g. power flow, CPF, OPF) will inherit from
-<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code>.</p>
+<a class="reference internal" href="#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a>.</p>
 <p>Provides properties and methods related to the specific problem
 specification being solved (e.g. power flow, continuation power flow,
 optimal power flow, etc.). In particular, it coordinates all
@@ -141,143 +141,143 @@ success flag and messages from the mathematical model solver, are available
 in the properties of the task object.</p>
 <dl class="simple">
 <dt>mp.task Properties:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">tag</span></code> - task tag - e.g. ‘PF’, ‘CPF’, ‘OPF’</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">name</span></code> - task name - e.g. ‘Power Flow’, etc.</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">dmc</span></code> - data model converter object</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">dm</span></code> - data model object</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">nm</span></code> - network model object</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mm</span></code> - mathematical model object</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mm_opt</span></code> - solve options for mathematical model</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">i_dm</span></code> - iteration counter for data model loop</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">i_nm</span></code> - iteration counter for network model loop</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">i_mm</span></code> - iteration counter for math model loop</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">success</span></code> - success flag, 1 - math model solved, 0 - didn’t solve</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">message</span></code> - output message</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">et</span></code> - elapsed time (seconds) for <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code> method</p></li>
+<li><p><a class="reference internal" href="#mp.task.tag" title="mp.task.tag"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">tag</span></code></a> - task tag - e.g. ‘PF’, ‘CPF’, ‘OPF’</p></li>
+<li><p><a class="reference internal" href="#mp.task.name" title="mp.task.name"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">name</span></code></a> - task name - e.g. ‘Power Flow’, etc.</p></li>
+<li><p><a class="reference internal" href="#mp.task.dmc" title="mp.task.dmc"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">dmc</span></code></a> - data model converter object</p></li>
+<li><p><a class="reference internal" href="#mp.task.dm" title="mp.task.dm"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">dm</span></code></a> - data model object</p></li>
+<li><p><a class="reference internal" href="#mp.task.nm" title="mp.task.nm"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">nm</span></code></a> - network model object</p></li>
+<li><p><a class="reference internal" href="#mp.task.mm" title="mp.task.mm"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mm</span></code></a> - mathematical model object</p></li>
+<li><p><a class="reference internal" href="#mp.task.mm_opt" title="mp.task.mm_opt"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">mm_opt</span></code></a> - solve options for mathematical model</p></li>
+<li><p><a class="reference internal" href="#mp.task.i_dm" title="mp.task.i_dm"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">i_dm</span></code></a> - iteration counter for data model loop</p></li>
+<li><p><a class="reference internal" href="#mp.task.i_nm" title="mp.task.i_nm"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">i_nm</span></code></a> - iteration counter for network model loop</p></li>
+<li><p><a class="reference internal" href="#mp.task.i_mm" title="mp.task.i_mm"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">i_mm</span></code></a> - iteration counter for math model loop</p></li>
+<li><p><a class="reference internal" href="#mp.task.success" title="mp.task.success"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">success</span></code></a> - success flag, 1 - math model solved, 0 - didn’t solve</p></li>
+<li><p><a class="reference internal" href="#mp.task.message" title="mp.task.message"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">message</span></code></a> - output message</p></li>
+<li><p><a class="reference internal" href="#mp.task.et" title="mp.task.et"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">et</span></code></a> - elapsed time (seconds) for <a class="reference internal" href="#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method</p></li>
 </ul>
 </dd>
 <dt>mp.task Methods:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code> - execute the task</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">next_mm()</span></code> - controls iterations over mathematical models</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">next_nm()</span></code> - controls iterations over network models</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">next_dm()</span></code> - controls iterations over data models</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code> - called at beginning of <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code> method</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_post()</span></code> - called at end of <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code> method</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">print_soln()</span></code> - display pretty-printed results</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">print_soln_header()</span></code> - display success/failure, elapsed time</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">save_soln()</span></code> - save solved case to file</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class()</span></code> - get data model converter constructor</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class_mpc2_default()</span></code> - get default data model converter constructor</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_create()</span></code> - create data model converter object</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_class()</span></code> - get data model constructor</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_class_default()</span></code> - get default data model constructor</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_create()</span></code> - create data model object</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build()</span></code> - create and build data model object</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build_pre()</span></code> - called at beginning of <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build()</span></code></p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build_post()</span></code> - called at end of <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build()</span></code></p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_class()</span></code> - get network model constructor</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_class_default()</span></code> - get default network model constructor</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_create()</span></code> - create network model object</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build()</span></code> - create and build network model object</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build_pre()</span></code> - called at beginning of <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build()</span></code></p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build_post()</span></code> - called at end of <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build()</span></code></p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_x_soln()</span></code> - update network model state from math model solution</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_update()</span></code> - update net model state/soln from math model soln</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class()</span></code> - get mathematical model constructor</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class_default()</span></code> - get default mathematical model constructor</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_create()</span></code> - create mathematical model object</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_build()</span></code> - create and build mathematical model object</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_opt()</span></code> - get options struct to pass to <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mm.solve()</span></code></p></li>
+<li><p><a class="reference internal" href="#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> - execute the task</p></li>
+<li><p><a class="reference internal" href="#mp.task.next_mm" title="mp.task.next_mm"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">next_mm()</span></code></a> - controls iterations over mathematical models</p></li>
+<li><p><a class="reference internal" href="#mp.task.next_nm" title="mp.task.next_nm"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">next_nm()</span></code></a> - controls iterations over network models</p></li>
+<li><p><a class="reference internal" href="#mp.task.next_dm" title="mp.task.next_dm"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">next_dm()</span></code></a> - controls iterations over data models</p></li>
+<li><p><a class="reference internal" href="#mp.task.run_pre" title="mp.task.run_pre"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_pre()</span></code></a> - called at beginning of <a class="reference internal" href="#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method</p></li>
+<li><p><a class="reference internal" href="#mp.task.run_post" title="mp.task.run_post"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run_post()</span></code></a> - called at end of <a class="reference internal" href="#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method</p></li>
+<li><p><a class="reference internal" href="#mp.task.print_soln" title="mp.task.print_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">print_soln()</span></code></a> - display pretty-printed results</p></li>
+<li><p><a class="reference internal" href="#mp.task.print_soln_header" title="mp.task.print_soln_header"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">print_soln_header()</span></code></a> - display success/failure, elapsed time</p></li>
+<li><p><a class="reference internal" href="#mp.task.save_soln" title="mp.task.save_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">save_soln()</span></code></a> - save solved case to file</p></li>
+<li><p><a class="reference internal" href="#mp.task.dm_converter_class" title="mp.task.dm_converter_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class()</span></code></a> - get data model converter constructor</p></li>
+<li><p><a class="reference internal" href="#mp.task.dm_converter_class_mpc2_default" title="mp.task.dm_converter_class_mpc2_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class_mpc2_default()</span></code></a> - get default data model converter constructor</p></li>
+<li><p><a class="reference internal" href="#mp.task.dm_converter_create" title="mp.task.dm_converter_create"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_create()</span></code></a> - create data model converter object</p></li>
+<li><p><a class="reference internal" href="#mp.task.data_model_class" title="mp.task.data_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_class()</span></code></a> - get data model constructor</p></li>
+<li><p><a class="reference internal" href="#mp.task.data_model_class_default" title="mp.task.data_model_class_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_class_default()</span></code></a> - get default data model constructor</p></li>
+<li><p><a class="reference internal" href="#mp.task.data_model_create" title="mp.task.data_model_create"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_create()</span></code></a> - create data model object</p></li>
+<li><p><a class="reference internal" href="#mp.task.data_model_build" title="mp.task.data_model_build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build()</span></code></a> - create and build data model object</p></li>
+<li><p><a class="reference internal" href="#mp.task.data_model_build_pre" title="mp.task.data_model_build_pre"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build_pre()</span></code></a> - called at beginning of <a class="reference internal" href="#mp.task.data_model_build" title="mp.task.data_model_build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#mp.task.data_model_build_post" title="mp.task.data_model_build_post"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build_post()</span></code></a> - called at end of <a class="reference internal" href="#mp.task.data_model_build" title="mp.task.data_model_build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#mp.task.network_model_class" title="mp.task.network_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_class()</span></code></a> - get network model constructor</p></li>
+<li><p><a class="reference internal" href="#mp.task.network_model_class_default" title="mp.task.network_model_class_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_class_default()</span></code></a> - get default network model constructor</p></li>
+<li><p><a class="reference internal" href="#mp.task.network_model_create" title="mp.task.network_model_create"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_create()</span></code></a> - create network model object</p></li>
+<li><p><a class="reference internal" href="#mp.task.network_model_build" title="mp.task.network_model_build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build()</span></code></a> - create and build network model object</p></li>
+<li><p><a class="reference internal" href="#mp.task.network_model_build_pre" title="mp.task.network_model_build_pre"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build_pre()</span></code></a> - called at beginning of <a class="reference internal" href="#mp.task.network_model_build" title="mp.task.network_model_build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#mp.task.network_model_build_post" title="mp.task.network_model_build_post"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build_post()</span></code></a> - called at end of <a class="reference internal" href="#mp.task.network_model_build" title="mp.task.network_model_build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#mp.task.network_model_x_soln" title="mp.task.network_model_x_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_x_soln()</span></code></a> - update network model state from math model solution</p></li>
+<li><p><a class="reference internal" href="#mp.task.network_model_update" title="mp.task.network_model_update"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_update()</span></code></a> - update net model state/soln from math model soln</p></li>
+<li><p><a class="reference internal" href="#mp.task.math_model_class" title="mp.task.math_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class()</span></code></a> - get mathematical model constructor</p></li>
+<li><p><a class="reference internal" href="#mp.task.math_model_class_default" title="mp.task.math_model_class_default"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class_default()</span></code></a> - get default mathematical model constructor</p></li>
+<li><p><a class="reference internal" href="#mp.task.math_model_create" title="mp.task.math_model_create"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_create()</span></code></a> - create mathematical model object</p></li>
+<li><p><a class="reference internal" href="#mp.task.math_model_build" title="mp.task.math_model_build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_build()</span></code></a> - create and build mathematical model object</p></li>
+<li><p><a class="reference internal" href="#mp.task.math_model_opt" title="mp.task.math_model_opt"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_opt()</span></code></a> - get options struct to pass to <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model.solve" title="opt_model.solve"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mm.solve()</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
 <p>See the <a class="reference internal" href="../../../dev-manual/task.html#sec-task"><span class="std std-ref">Task Object</span></a> section in the <span class="raw-html"><a class="reference external" href="https://matpower.org/documentation/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more
 information.</p>
-<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code>.</p>
+<p>See also <a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>, <a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>, <a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>, <a class="reference internal" href="dm_converter.html#mp.dm_converter" title="mp.dm_converter"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code></a>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Property Summary</dt><dd><dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task.tag">
-<span class="sig-name descname"><span class="pre">tag</span></span><a class="headerlink" href="#matpower.mp.task.tag" title="Link to this definition"></a></dt>
-<dd><p><em>(char array)</em> task <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">tag</span></code> - e.g. ‘PF’, ‘CPF’, ‘OPF’</p>
+<dt class="sig sig-object mat" id="mp.task.tag">
+<span class="sig-name descname"><span class="pre">tag</span></span><a class="headerlink" href="#mp.task.tag" title="Link to this definition"></a></dt>
+<dd><p><em>(char array)</em> task <a class="reference internal" href="#mp.task.tag" title="mp.task.tag"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">tag</span></code></a> - e.g. ‘PF’, ‘CPF’, ‘OPF’</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task.name">
-<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#matpower.mp.task.name" title="Link to this definition"></a></dt>
-<dd><p><em>(char array)</em> task <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">name</span></code> - e.g. ‘Power Flow’, etc.</p>
+<dt class="sig sig-object mat" id="mp.task.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mp.task.name" title="Link to this definition"></a></dt>
+<dd><p><em>(char array)</em> task <a class="reference internal" href="#mp.task.name" title="mp.task.name"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">name</span></code></a> - e.g. ‘Power Flow’, etc.</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task.dmc">
-<span class="sig-name descname"><span class="pre">dmc</span></span><a class="headerlink" href="#matpower.mp.task.dmc" title="Link to this definition"></a></dt>
-<dd><p>(<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code>) data model converter object</p>
+<dt class="sig sig-object mat" id="mp.task.dmc">
+<span class="sig-name descname"><span class="pre">dmc</span></span><a class="headerlink" href="#mp.task.dmc" title="Link to this definition"></a></dt>
+<dd><p>(<a class="reference internal" href="dm_converter.html#mp.dm_converter" title="mp.dm_converter"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code></a>) data model converter object</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task.dm">
-<span class="sig-name descname"><span class="pre">dm</span></span><a class="headerlink" href="#matpower.mp.task.dm" title="Link to this definition"></a></dt>
-<dd><p>(<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) data model object</p>
+<dt class="sig sig-object mat" id="mp.task.dm">
+<span class="sig-name descname"><span class="pre">dm</span></span><a class="headerlink" href="#mp.task.dm" title="Link to this definition"></a></dt>
+<dd><p>(<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) data model object</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task.nm">
-<span class="sig-name descname"><span class="pre">nm</span></span><a class="headerlink" href="#matpower.mp.task.nm" title="Link to this definition"></a></dt>
-<dd><p>(<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) network model object</p>
+<dt class="sig sig-object mat" id="mp.task.nm">
+<span class="sig-name descname"><span class="pre">nm</span></span><a class="headerlink" href="#mp.task.nm" title="Link to this definition"></a></dt>
+<dd><p>(<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) network model object</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task.mm">
-<span class="sig-name descname"><span class="pre">mm</span></span><a class="headerlink" href="#matpower.mp.task.mm" title="Link to this definition"></a></dt>
-<dd><p>(<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) mathematical model object</p>
+<dt class="sig sig-object mat" id="mp.task.mm">
+<span class="sig-name descname"><span class="pre">mm</span></span><a class="headerlink" href="#mp.task.mm" title="Link to this definition"></a></dt>
+<dd><p>(<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) mathematical model object</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task.mm_opt">
-<span class="sig-name descname"><span class="pre">mm_opt</span></span><a class="headerlink" href="#matpower.mp.task.mm_opt" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.mm_opt">
+<span class="sig-name descname"><span class="pre">mm_opt</span></span><a class="headerlink" href="#mp.task.mm_opt" title="Link to this definition"></a></dt>
 <dd><p><em>(struct)</em> solve options for mathematical model</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task.i_dm">
-<span class="sig-name descname"><span class="pre">i_dm</span></span><a class="headerlink" href="#matpower.mp.task.i_dm" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.i_dm">
+<span class="sig-name descname"><span class="pre">i_dm</span></span><a class="headerlink" href="#mp.task.i_dm" title="Link to this definition"></a></dt>
 <dd><p><em>(integer)</em> iteration counter for data model loop</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task.i_nm">
-<span class="sig-name descname"><span class="pre">i_nm</span></span><a class="headerlink" href="#matpower.mp.task.i_nm" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.i_nm">
+<span class="sig-name descname"><span class="pre">i_nm</span></span><a class="headerlink" href="#mp.task.i_nm" title="Link to this definition"></a></dt>
 <dd><p><em>(integer)</em> iteration counter for network model loop</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task.i_mm">
-<span class="sig-name descname"><span class="pre">i_mm</span></span><a class="headerlink" href="#matpower.mp.task.i_mm" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.i_mm">
+<span class="sig-name descname"><span class="pre">i_mm</span></span><a class="headerlink" href="#mp.task.i_mm" title="Link to this definition"></a></dt>
 <dd><p><em>(integer)</em> iteration counter for math model loop</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task.success">
-<span class="sig-name descname"><span class="pre">success</span></span><a class="headerlink" href="#matpower.mp.task.success" title="Link to this definition"></a></dt>
-<dd><p><em>(integer)</em> <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">success</span></code> flag, 1 - math model solved, 0 - didn’t solve</p>
+<dt class="sig sig-object mat" id="mp.task.success">
+<span class="sig-name descname"><span class="pre">success</span></span><a class="headerlink" href="#mp.task.success" title="Link to this definition"></a></dt>
+<dd><p><em>(integer)</em> <a class="reference internal" href="#mp.task.success" title="mp.task.success"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">success</span></code></a> flag, 1 - math model solved, 0 - didn’t solve</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task.message">
-<span class="sig-name descname"><span class="pre">message</span></span><a class="headerlink" href="#matpower.mp.task.message" title="Link to this definition"></a></dt>
-<dd><p><em>(char array)</em> output <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">message</span></code></p>
+<dt class="sig sig-object mat" id="mp.task.message">
+<span class="sig-name descname"><span class="pre">message</span></span><a class="headerlink" href="#mp.task.message" title="Link to this definition"></a></dt>
+<dd><p><em>(char array)</em> output <a class="reference internal" href="#mp.task.message" title="mp.task.message"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">message</span></code></a></p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.task.et">
-<span class="sig-name descname"><span class="pre">et</span></span><a class="headerlink" href="#matpower.mp.task.et" title="Link to this definition"></a></dt>
-<dd><p><em>(double)</em> elapsed time (seconds) for <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code> method</p>
+<dt class="sig sig-object mat" id="mp.task.et">
+<span class="sig-name descname"><span class="pre">et</span></span><a class="headerlink" href="#mp.task.et" title="Link to this definition"></a></dt>
+<dd><p><em>(double)</em> elapsed time (seconds) for <a class="reference internal" href="#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method</p>
 </dd></dl>
 
 </dd>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.run" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.run" title="Link to this definition"></a></dt>
 <dd><p>Execute the task.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">task</span><span class="p">.</span><span class="nb">run</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 <span class="n">task</span><span class="p">.</span><span class="nb">run</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="n">mpx</span><span class="p">)</span>
@@ -289,11 +289,11 @@ information.</p>
 <li><p><strong>d</strong> – data source specification, currently assumed to be a
 <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case name or case struct (<code class="docutils literal notranslate"><span class="pre">mpc</span></code>)</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
-<li><p><strong>mpx</strong> (cell array of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
+<li><p><strong>mpx</strong> (cell array of <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>task</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code>) – task object containing the solved <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code>
+<dd class="field-even"><p><strong>task</strong> (<a class="reference internal" href="#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a>) – task object containing the solved <a class="reference internal" href="#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a>
 including the data, network, and mathematical model
 objects.</p>
 </dd>
@@ -307,8 +307,8 @@ for more information.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.next_mm">
-<span class="sig-name descname"><span class="pre">next_mm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.next_mm" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.next_mm">
+<span class="sig-name descname"><span class="pre">next_mm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.next_mm" title="Link to this definition"></a></dt>
 <dd><p>Controls iterations over mathematical models.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">mm</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">]</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">next_mm</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpoopt</span><span class="p">,</span> <span class="n">mpx</span><span class="p">)</span>
 </pre></div>
@@ -316,31 +316,31 @@ for more information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – mathmatical model object</p></li>
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – mathmatical model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
-<li><p><strong>mpx</strong> (cell array of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
+<li><p><strong>mpx</strong> (cell array of <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – new or updated mathmatical model object,
+<li><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – new or updated mathmatical model object,
 or empty matrix</p></li>
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – potentially updated network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – potentially updated data model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – potentially updated network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – potentially updated data model object</p></li>
 </ul>
 </dd>
 </dl>
-<p>Called automatically by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code> method.
+<p>Called automatically by <a class="reference internal" href="#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method.
 Subclasses can override this method to return a new or
 updated math model object for use in the next iteration
 or an empty matrix (the default) if finished.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.next_nm">
-<span class="sig-name descname"><span class="pre">next_nm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.next_nm" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.next_nm">
+<span class="sig-name descname"><span class="pre">next_nm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.next_nm" title="Link to this definition"></a></dt>
 <dd><p>Controls iterations over network models.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">]</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">next_nm</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpoopt</span><span class="p">,</span> <span class="n">mpx</span><span class="p">)</span>
 </pre></div>
@@ -348,30 +348,30 @@ or an empty matrix (the default) if finished.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – mathmatical model object</p></li>
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – mathmatical model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
-<li><p><strong>mpx</strong> (cell array of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
+<li><p><strong>mpx</strong> (cell array of <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – new or updated network model object,
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – new or updated network model object,
 or empty matrix</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – potentially updated data model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – potentially updated data model object</p></li>
 </ul>
 </dd>
 </dl>
-<p>Called automatically by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code> method.
+<p>Called automatically by <a class="reference internal" href="#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method.
 Subclasses can override this method to return a new or
 updated network model object for use in the next iteration
 or an empty matrix (the default) if finished.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.next_dm">
-<span class="sig-name descname"><span class="pre">next_dm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.next_dm" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.next_dm">
+<span class="sig-name descname"><span class="pre">next_dm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.next_dm" title="Link to this definition"></a></dt>
 <dd><p>Controls iterations over data models.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">next_dm</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpoopt</span><span class="p">,</span> <span class="n">mpx</span><span class="p">)</span>
 </pre></div>
@@ -379,28 +379,28 @@ or an empty matrix (the default) if finished.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – mathmatical model object</p></li>
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – mathmatical model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
-<li><p><strong>mpx</strong> (cell array of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
+<li><p><strong>mpx</strong> (cell array of <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – new or updated data model object,
+<dd class="field-even"><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – new or updated data model object,
 or empty matrix</p>
 </dd>
 </dl>
-<p>Called automatically by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code> method.
+<p>Called automatically by <a class="reference internal" href="#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method.
 Subclasses can override this method to return a new or
 updated data model object for use in the next iteration
 or an empty matrix (the default) if finished.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.run_pre">
-<span class="sig-name descname"><span class="pre">run_pre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.run_pre" title="Link to this definition"></a></dt>
-<dd><p>Called at beginning of <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code> method.</p>
+<dt class="sig sig-object mat" id="mp.task.run_pre">
+<span class="sig-name descname"><span class="pre">run_pre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.run_pre" title="Link to this definition"></a></dt>
+<dd><p>Called at beginning of <a class="reference internal" href="#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">d</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">]</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">run_pre</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -424,23 +424,23 @@ data or options before beginning the run.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.run_post">
-<span class="sig-name descname"><span class="pre">run_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.run_post" title="Link to this definition"></a></dt>
-<dd><p>Called at end of <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code> method.</p>
+<dt class="sig sig-object mat" id="mp.task.run_post">
+<span class="sig-name descname"><span class="pre">run_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.run_post" title="Link to this definition"></a></dt>
+<dd><p>Called at end of <a class="reference internal" href="#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">task</span><span class="p">.</span><span class="n">run_post</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – mathmatical model object</p></li>
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – mathmatical model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>task</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code>) – task object</p>
+<dd class="field-even"><p><strong>task</strong> (<a class="reference internal" href="#mp.task" title="mp.task"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.task</span></code></a>) – task object</p>
 </dd>
 </dl>
 <p>Subclasses can override this method to do any final
@@ -448,8 +448,8 @@ processing after the run is complete.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.print_soln">
-<span class="sig-name descname"><span class="pre">print_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.print_soln" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.print_soln">
+<span class="sig-name descname"><span class="pre">print_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.print_soln" title="Link to this definition"></a></dt>
 <dd><p>Display the pretty-printed results.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">task</span><span class="p">.</span><span class="n">print_soln</span><span class="p">(</span><span class="n">mpopt</span><span class="p">)</span>
 <span class="n">task</span><span class="p">.</span><span class="n">print_soln</span><span class="p">(</span><span class="n">mpopt</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
@@ -468,8 +468,8 @@ pretty-printed solved case.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.print_soln_header">
-<span class="sig-name descname"><span class="pre">print_soln_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.print_soln_header" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.print_soln_header">
+<span class="sig-name descname"><span class="pre">print_soln_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">fd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.print_soln_header" title="Link to this definition"></a></dt>
 <dd><p>Display solution header information.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">task</span><span class="p">.</span><span class="n">print_soln_header</span><span class="p">(</span><span class="n">mpopt</span><span class="p">,</span> <span class="n">fd</span><span class="p">)</span>
 </pre></div>
@@ -482,13 +482,13 @@ pretty-printed solved case.</p>
 </ul>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">print_soln()</span></code> to print success/failure,
+<p>Called by <a class="reference internal" href="#mp.task.print_soln" title="mp.task.print_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">print_soln()</span></code></a> to print success/failure,
 elapsed time, etc. to a file identifier.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.save_soln">
-<span class="sig-name descname"><span class="pre">save_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">fname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.save_soln" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.save_soln">
+<span class="sig-name descname"><span class="pre">save_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">fname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.save_soln" title="Link to this definition"></a></dt>
 <dd><p>Save the solved case to a file.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">task</span><span class="p">.</span><span class="n">save_soln</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
 </pre></div>
@@ -501,8 +501,8 @@ elapsed time, etc. to a file identifier.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.dm_converter_class">
-<span class="sig-name descname"><span class="pre">dm_converter_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.dm_converter_class" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.dm_converter_class">
+<span class="sig-name descname"><span class="pre">dm_converter_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.dm_converter_class" title="Link to this definition"></a></dt>
 <dd><p>Get data model converter constructor.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dmc_class</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">dm_converter_class</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="n">mpx</span><span class="p">)</span>
 </pre></div>
@@ -513,7 +513,7 @@ elapsed time, etc. to a file identifier.</p>
 <li><p><strong>d</strong> – data source specification, currently assumed to be a
 <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case name or case struct (<code class="docutils literal notranslate"><span class="pre">mpc</span></code>)</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
-<li><p><strong>mpx</strong> (cell array of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
+<li><p><strong>mpx</strong> (cell array of <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
@@ -521,14 +521,14 @@ elapsed time, etc. to a file identifier.</p>
 be used to instantiate the data model converter object</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_create()</span></code> to determine the class
+<p>Called by <a class="reference internal" href="#mp.task.dm_converter_create" title="mp.task.dm_converter_create"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_create()</span></code></a> to determine the class
 to use for the data model converter object. Handles any
 modifications specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options or extensions.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.dm_converter_class_mpc2_default">
-<span class="sig-name descname"><span class="pre">dm_converter_class_mpc2_default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.dm_converter_class_mpc2_default" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.dm_converter_class_mpc2_default">
+<span class="sig-name descname"><span class="pre">dm_converter_class_mpc2_default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.dm_converter_class_mpc2_default" title="Link to this definition"></a></dt>
 <dd><p>Get default data model converter constructor.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dmc_class</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">dm_converter_class_mpc2_default</span><span class="p">()</span>
 </pre></div>
@@ -539,14 +539,14 @@ modifications specified by <span class="raw-html">M<span style="font-size:smalle
 be used to instantiate the data model converter object</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class()</span></code> to determine the
+<p>Called by <a class="reference internal" href="#mp.task.dm_converter_class" title="mp.task.dm_converter_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_class()</span></code></a> to determine the
 default class to use for the data model converter object
 when the input is a version 2 <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case struct.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.dm_converter_create">
-<span class="sig-name descname"><span class="pre">dm_converter_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.dm_converter_create" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.dm_converter_create">
+<span class="sig-name descname"><span class="pre">dm_converter_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.dm_converter_create" title="Link to this definition"></a></dt>
 <dd><p>Create data model converter object.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dmc</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">dm_converter_create</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="n">mpx</span><span class="p">)</span>
 </pre></div>
@@ -557,23 +557,23 @@ when the input is a version 2 <span class="raw-html">M<span style="font-size:sma
 <li><p><strong>d</strong> – data source specification, currently assumed to be a
 <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case name or case struct (<code class="docutils literal notranslate"><span class="pre">mpc</span></code>)</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
-<li><p><strong>mpx</strong> (cell array of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
+<li><p><strong>mpx</strong> (cell array of <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>dmc</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code>) – data model converter object,
+<dd class="field-even"><p><strong>dmc</strong> (<a class="reference internal" href="dm_converter.html#mp.dm_converter" title="mp.dm_converter"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code></a>) – data model converter object,
 ready to build</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_build()</span></code> method to instantiate
+<p>Called by <a class="reference internal" href="#mp.task.dm_converter_build" title="mp.task.dm_converter_build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_converter_build()</span></code></a> method to instantiate
 the data model converter object. Handles any modifications
 to data model converter elements specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span>
 options or extensions.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.dm_converter_build">
-<span class="sig-name descname"><span class="pre">dm_converter_build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.dm_converter_build" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.dm_converter_build">
+<span class="sig-name descname"><span class="pre">dm_converter_build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.dm_converter_build" title="Link to this definition"></a></dt>
 <dd><p>Create and build data model converter object.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dmc</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">dm_converter_build</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="n">mpx</span><span class="p">)</span>
 </pre></div>
@@ -584,22 +584,22 @@ options or extensions.</p>
 <li><p><strong>d</strong> – data source specification, currently assumed to be a
 <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case name or case struct (<code class="docutils literal notranslate"><span class="pre">mpc</span></code>)</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
-<li><p><strong>mpx</strong> (cell array of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
+<li><p><strong>mpx</strong> (cell array of <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>dmc</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code>) – data model converter object,
+<dd class="field-even"><p><strong>dmc</strong> (<a class="reference internal" href="dm_converter.html#mp.dm_converter" title="mp.dm_converter"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code></a>) – data model converter object,
 ready for use</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code> method to instantiate and build
+<p>Called by <a class="reference internal" href="#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method to instantiate and build
 the data model converter object, including any modifications
 specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options or extensions.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.data_model_class">
-<span class="sig-name descname"><span class="pre">data_model_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.data_model_class" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.data_model_class">
+<span class="sig-name descname"><span class="pre">data_model_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.data_model_class" title="Link to this definition"></a></dt>
 <dd><p>Get data model constructor.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm_class</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">data_model_class</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="n">mpx</span><span class="p">)</span>
 </pre></div>
@@ -610,7 +610,7 @@ specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</sp
 <li><p><strong>d</strong> – data source specification, currently assumed to be a
 <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case name or case struct (<code class="docutils literal notranslate"><span class="pre">mpc</span></code>)</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
-<li><p><strong>mpx</strong> (cell array of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
+<li><p><strong>mpx</strong> (cell array of <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
@@ -618,14 +618,14 @@ specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</sp
 be used to instantiate the data model object</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_create()</span></code> to determine the class
+<p>Called by <a class="reference internal" href="#mp.task.data_model_create" title="mp.task.data_model_create"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_create()</span></code></a> to determine the class
 to use for the data model object. Handles any modifications
 specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options or extensions.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.data_model_class_default">
-<span class="sig-name descname"><span class="pre">data_model_class_default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.data_model_class_default" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.data_model_class_default">
+<span class="sig-name descname"><span class="pre">data_model_class_default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.data_model_class_default" title="Link to this definition"></a></dt>
 <dd><p>Get default data model constructor.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm_class</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">data_model_class_default</span><span class="p">()</span>
 </pre></div>
@@ -636,13 +636,13 @@ specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</sp
 be used to instantiate the data model object</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_class()</span></code> to determine the
+<p>Called by <a class="reference internal" href="#mp.task.data_model_class" title="mp.task.data_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_class()</span></code></a> to determine the
 default class to use for the data model object.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.data_model_create">
-<span class="sig-name descname"><span class="pre">data_model_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.data_model_create" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.data_model_create">
+<span class="sig-name descname"><span class="pre">data_model_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.data_model_create" title="Link to this definition"></a></dt>
 <dd><p>Create data model object.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">data_model_create</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="n">mpx</span><span class="p">)</span>
 </pre></div>
@@ -653,21 +653,21 @@ default class to use for the data model object.</p>
 <li><p><strong>d</strong> – data source specification, currently assumed to be a
 <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case name or case struct (<code class="docutils literal notranslate"><span class="pre">mpc</span></code>)</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
-<li><p><strong>mpx</strong> (cell array of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
+<li><p><strong>mpx</strong> (cell array of <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object, ready to build</p>
+<dd class="field-even"><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object, ready to build</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build()</span></code> to instantiate
+<p>Called by <a class="reference internal" href="#mp.task.data_model_build" title="mp.task.data_model_build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build()</span></code></a> to instantiate
 the data model object. Handles any modifications to data
 model elements specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options or extensions.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.data_model_build">
-<span class="sig-name descname"><span class="pre">data_model_build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">dmc</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.data_model_build" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.data_model_build">
+<span class="sig-name descname"><span class="pre">data_model_build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">dmc</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.data_model_build" title="Link to this definition"></a></dt>
 <dd><p>Create and build data model object.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">data_model_create</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">dmc</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="n">mpx</span><span class="p">)</span>
 </pre></div>
@@ -677,40 +677,40 @@ model elements specified by <span class="raw-html">M<span style="font-size:small
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>d</strong> – data source specification, currently assumed to be a
 <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case name or case struct (<code class="docutils literal notranslate"><span class="pre">mpc</span></code>)</p></li>
-<li><p><strong>dmc</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code>) – data model converter object</p></li>
+<li><p><strong>dmc</strong> (<a class="reference internal" href="dm_converter.html#mp.dm_converter" title="mp.dm_converter"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code></a>) – data model converter object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
-<li><p><strong>mpx</strong> (cell array of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
+<li><p><strong>mpx</strong> (cell array of <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object, ready for use</p>
+<dd class="field-even"><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object, ready for use</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code> method to instantiate and build
+<p>Called by <a class="reference internal" href="#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method to instantiate and build
 the data model object, including any modifications
 specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options or extensions.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.data_model_build_pre">
-<span class="sig-name descname"><span class="pre">data_model_build_pre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">dmc</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.data_model_build_pre" title="Link to this definition"></a></dt>
-<dd><p>Called at beginning of <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build()</span></code>.</p>
+<dt class="sig sig-object mat" id="mp.task.data_model_build_pre">
+<span class="sig-name descname"><span class="pre">data_model_build_pre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">dmc</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.data_model_build_pre" title="Link to this definition"></a></dt>
+<dd><p>Called at beginning of <a class="reference internal" href="#mp.task.data_model_build" title="mp.task.data_model_build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build()</span></code></a>.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">dm</span><span class="p">,</span> <span class="n">d</span><span class="p">]</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">data_model_build_pre</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">dmc</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>d</strong> – data source specification, currently assumed to be a
 <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case name or case struct (<code class="docutils literal notranslate"><span class="pre">mpc</span></code>)</p></li>
-<li><p><strong>dmc</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code>) – data model converter object</p></li>
+<li><p><strong>dmc</strong> (<a class="reference internal" href="dm_converter.html#mp.dm_converter" title="mp.dm_converter"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code></a>) – data model converter object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
 </ul>
 </dd>
 <dt class="field-even">Outputs<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – updated data model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – updated data model object</p></li>
 <li><p><strong>d</strong> – updated value of corresponding input</p></li>
 </ul>
 </dd>
@@ -721,22 +721,22 @@ nothing.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.data_model_build_post">
-<span class="sig-name descname"><span class="pre">data_model_build_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">dmc</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.data_model_build_post" title="Link to this definition"></a></dt>
-<dd><p>Called at end of <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build()</span></code>.</p>
+<dt class="sig sig-object mat" id="mp.task.data_model_build_post">
+<span class="sig-name descname"><span class="pre">data_model_build_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">dmc</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.data_model_build_post" title="Link to this definition"></a></dt>
+<dd><p>Called at end of <a class="reference internal" href="#mp.task.data_model_build" title="mp.task.data_model_build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">data_model_build()</span></code></a>.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">data_model_build_post</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">dmc</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
-<li><p><strong>dmc</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code>) – data model converter object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
+<li><p><strong>dmc</strong> (<a class="reference internal" href="dm_converter.html#mp.dm_converter" title="mp.dm_converter"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code></a>) – data model converter object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – updated data model object</p>
+<dd class="field-even"><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – updated data model object</p>
 </dd>
 </dl>
 <p>Called just <em>after</em> calling the data model’s
@@ -745,8 +745,8 @@ nothing.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.network_model_class">
-<span class="sig-name descname"><span class="pre">network_model_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.network_model_class" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.network_model_class">
+<span class="sig-name descname"><span class="pre">network_model_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.network_model_class" title="Link to this definition"></a></dt>
 <dd><p>Get network model constructor.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm_class</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">network_model_class</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="n">mpx</span><span class="p">)</span>
 </pre></div>
@@ -754,9 +754,9 @@ nothing.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
-<li><p><strong>mpx</strong> (cell array of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
+<li><p><strong>mpx</strong> (cell array of <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
@@ -764,14 +764,14 @@ nothing.</p>
 be used to instantiate the network model object</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_create()</span></code> to determine the class
+<p>Called by <a class="reference internal" href="#mp.task.network_model_create" title="mp.task.network_model_create"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_create()</span></code></a> to determine the class
 to use for the network model object. Handles any modifications
 specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options or extensions.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.network_model_class_default">
-<span class="sig-name descname"><span class="pre">network_model_class_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.network_model_class_default" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.network_model_class_default">
+<span class="sig-name descname"><span class="pre">network_model_class_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.network_model_class_default" title="Link to this definition"></a></dt>
 <dd><p>Get default network model constructor.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm_class</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">network_model_class_default</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -779,7 +779,7 @@ specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</sp
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
 </ul>
 </dd>
@@ -788,15 +788,15 @@ specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</sp
 be used to instantiate the network model object</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_class()</span></code> to determine the
+<p>Called by <a class="reference internal" href="#mp.task.network_model_class" title="mp.task.network_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_class()</span></code></a> to determine the
 default class to use for the network model object.</p>
 <p><em>Note: This is an abstract method that must be implemented
 by a subclass.</em></p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.network_model_create">
-<span class="sig-name descname"><span class="pre">network_model_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.network_model_create" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.network_model_create">
+<span class="sig-name descname"><span class="pre">network_model_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.network_model_create" title="Link to this definition"></a></dt>
 <dd><p>Create network model object.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">network_model_create</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="n">mpx</span><span class="p">)</span>
 </pre></div>
@@ -804,23 +804,23 @@ by a subclass.</em></p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
-<li><p><strong>mpx</strong> (cell array of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
+<li><p><strong>mpx</strong> (cell array of <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object, ready to build</p>
+<dd class="field-even"><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object, ready to build</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build()</span></code> to instantiate
+<p>Called by <a class="reference internal" href="#mp.task.network_model_build" title="mp.task.network_model_build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build()</span></code></a> to instantiate
 the network model object. Handles any modifications to network
 model elements specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options or extensions.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.network_model_build">
-<span class="sig-name descname"><span class="pre">network_model_build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.network_model_build" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.network_model_build">
+<span class="sig-name descname"><span class="pre">network_model_build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.network_model_build" title="Link to this definition"></a></dt>
 <dd><p>Create and build network model object.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">network_model_build</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="n">mpx</span><span class="p">)</span>
 </pre></div>
@@ -828,37 +828,37 @@ model elements specified by <span class="raw-html">M<span style="font-size:small
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
-<li><p><strong>mpx</strong> (cell array of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
+<li><p><strong>mpx</strong> (cell array of <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object, ready for use</p>
+<dd class="field-even"><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object, ready for use</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code> method to instantiate and build
+<p>Called by <a class="reference internal" href="#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method to instantiate and build
 the network model object, including any modifications
 specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options or extensions.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.network_model_build_pre">
-<span class="sig-name descname"><span class="pre">network_model_build_pre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.network_model_build_pre" title="Link to this definition"></a></dt>
-<dd><p>Called at beginning of <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build()</span></code>.</p>
+<dt class="sig sig-object mat" id="mp.task.network_model_build_pre">
+<span class="sig-name descname"><span class="pre">network_model_build_pre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.network_model_build_pre" title="Link to this definition"></a></dt>
+<dd><p>Called at beginning of <a class="reference internal" href="#mp.task.network_model_build" title="mp.task.network_model_build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build()</span></code></a>.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">network_model_build_pre</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – updated network model object</p>
+<dd class="field-even"><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – updated network model object</p>
 </dd>
 </dl>
 <p>Called just <em>before</em> calling the network model’s
@@ -867,22 +867,22 @@ nothing.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.network_model_build_post">
-<span class="sig-name descname"><span class="pre">network_model_build_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.network_model_build_post" title="Link to this definition"></a></dt>
-<dd><p>Called at end of <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build()</span></code>.</p>
+<dt class="sig sig-object mat" id="mp.task.network_model_build_post">
+<span class="sig-name descname"><span class="pre">network_model_build_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.network_model_build_post" title="Link to this definition"></a></dt>
+<dd><p>Called at end of <a class="reference internal" href="#mp.task.network_model_build" title="mp.task.network_model_build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_build()</span></code></a>.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">network_model_build_post</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – updated network model object</p>
+<dd class="field-even"><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – updated network model object</p>
 </dd>
 </dl>
 <p>Called just <em>after</em> calling the network model’s
@@ -891,8 +891,8 @@ nothing.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.network_model_x_soln">
-<span class="sig-name descname"><span class="pre">network_model_x_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.network_model_x_soln" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.network_model_x_soln">
+<span class="sig-name descname"><span class="pre">network_model_x_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.network_model_x_soln" title="Link to this definition"></a></dt>
 <dd><p>Update network model state from math model solution.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">network_model_x_soln</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="n">nm</span><span class="p">)</span>
 </pre></div>
@@ -900,20 +900,20 @@ nothing.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – mathmatical model object</p></li>
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
+<li><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – mathmatical model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – updated network model object</p>
+<dd class="field-even"><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – updated network model object</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_update()</span></code>.</p>
+<p>Called by <a class="reference internal" href="#mp.task.network_model_update" title="mp.task.network_model_update"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">network_model_update()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.network_model_update">
-<span class="sig-name descname"><span class="pre">network_model_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.network_model_update" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.network_model_update">
+<span class="sig-name descname"><span class="pre">network_model_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.network_model_update" title="Link to this definition"></a></dt>
 <dd><p>Update network model state, solution values from math model solution.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">network_model_update</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="n">nm</span><span class="p">)</span>
 </pre></div>
@@ -921,20 +921,20 @@ nothing.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – mathmatical model object</p></li>
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
+<li><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – mathmatical model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – updated network model object</p>
+<dd class="field-even"><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – updated network model object</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code> method.</p>
+<p>Called by <a class="reference internal" href="#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.math_model_class">
-<span class="sig-name descname"><span class="pre">math_model_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.math_model_class" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.math_model_class">
+<span class="sig-name descname"><span class="pre">math_model_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.math_model_class" title="Link to this definition"></a></dt>
 <dd><p>Get mathematical model constructor.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mm_class</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">math_model_class</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="n">mpx</span><span class="p">)</span>
 </pre></div>
@@ -942,10 +942,10 @@ nothing.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
-<li><p><strong>mpx</strong> (cell array of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
+<li><p><strong>mpx</strong> (cell array of <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
@@ -953,14 +953,14 @@ nothing.</p>
 be used to instantiate the mathematical model object</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_create()</span></code> to determine the class
+<p>Called by <a class="reference internal" href="#mp.task.math_model_create" title="mp.task.math_model_create"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_create()</span></code></a> to determine the class
 to use for the mathematical model object. Handles any
 modifications specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options or extensions.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.math_model_class_default">
-<span class="sig-name descname"><span class="pre">math_model_class_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.math_model_class_default" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.math_model_class_default">
+<span class="sig-name descname"><span class="pre">math_model_class_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.math_model_class_default" title="Link to this definition"></a></dt>
 <dd><p>Get default mathematical model constructor.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mm_class</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">math_model_class_default</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -968,8 +968,8 @@ modifications specified by <span class="raw-html">M<span style="font-size:smalle
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
 </ul>
 </dd>
@@ -978,15 +978,15 @@ modifications specified by <span class="raw-html">M<span style="font-size:smalle
 be used to instantiate the mathematical model object</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class()</span></code> to determine the
+<p>Called by <a class="reference internal" href="#mp.task.math_model_class" title="mp.task.math_model_class"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_class()</span></code></a> to determine the
 default class to use for the mathematical model object.</p>
 <p><em>Note: This is an abstract method that must be implemented
 by a subclass.</em></p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.math_model_create">
-<span class="sig-name descname"><span class="pre">math_model_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.math_model_create" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.math_model_create">
+<span class="sig-name descname"><span class="pre">math_model_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.math_model_create" title="Link to this definition"></a></dt>
 <dd><p>Create mathematical model object.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">math_model_create</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="n">mpx</span><span class="p">)</span>
 </pre></div>
@@ -994,25 +994,25 @@ by a subclass.</em></p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
-<li><p><strong>mpx</strong> (cell array of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
+<li><p><strong>mpx</strong> (cell array of <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – mathmatical model object, ready to build</p>
+<dd class="field-even"><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – mathmatical model object, ready to build</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_build()</span></code> to instantiate the
+<p>Called by <a class="reference internal" href="#mp.task.math_model_build" title="mp.task.math_model_build"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">math_model_build()</span></code></a> to instantiate the
 mathematical model object. Handles any modifications to
 mathematical model elements specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options
 or extensions.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.math_model_build">
-<span class="sig-name descname"><span class="pre">math_model_build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.math_model_build" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.math_model_build">
+<span class="sig-name descname"><span class="pre">math_model_build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">mpx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.math_model_build" title="Link to this definition"></a></dt>
 <dd><p>Create and build mathematical model object.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">math_model_build</span><span class="p">(</span><span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">,</span> <span class="n">mpx</span><span class="p">)</span>
 </pre></div>
@@ -1020,24 +1020,24 @@ or extensions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
-<li><p><strong>mpx</strong> (cell array of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
+<li><p><strong>mpx</strong> (cell array of <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extensions</p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – mathmatical model object, ready for use</p>
+<dd class="field-even"><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – mathmatical model object, ready for use</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code> method to instantiate and build
+<p>Called by <a class="reference internal" href="#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method to instantiate and build
 the mathematical model object, including any modifications
 specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options or extensions.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.task.math_model_opt">
-<span class="sig-name descname"><span class="pre">math_model_opt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.task.math_model_opt" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.task.math_model_opt">
+<span class="sig-name descname"><span class="pre">math_model_opt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.task.math_model_opt" title="Link to this definition"></a></dt>
 <dd><p>Get the options struct to pass to <code class="docutils literal notranslate"><span class="pre">mm.solve()</span></code>.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">opt</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">math_model_opt</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mpopt</span><span class="p">)</span>
 </pre></div>
@@ -1045,9 +1045,9 @@ specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</sp
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code>) – mathmatical model object</p></li>
-<li><p><strong>nm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code>) – network model object</p></li>
-<li><p><strong>dm</strong> (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code>) – data model object</p></li>
+<li><p><strong>mm</strong> (<a class="reference internal" href="math_model.html#mp.math_model" title="mp.math_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.math_model</span></code></a>) – mathmatical model object</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>dm</strong> (<a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>) – data model object</p></li>
 <li><p><strong>mpopt</strong> (<em>struct</em>) – <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options struct</p></li>
 </ul>
 </dd>
@@ -1056,7 +1056,7 @@ specified by <span class="raw-html">M<span style="font-size:smaller">ATPOWER</sp
 solve() method</p>
 </dd>
 </dl>
-<p>Called by <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code> method.</p>
+<p>Called by <a class="reference internal" href="#mp.task.run" title="mp.task.run"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method.</p>
 </dd></dl>
 
 </dd>

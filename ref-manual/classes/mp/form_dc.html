@@ -128,15 +128,15 @@
 <section id="mp-form-dc">
 <h1>mp.form_dc<a class="headerlink" href="#mp-form-dc" title="Link to this heading"></a></h1>
 <dl class="mat class">
-<dt class="sig sig-object mat" id="matpower.mp.form_dc">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">form_dc</span></span><a class="headerlink" href="#matpower.mp.form_dc" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code> - Base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> DC <strong>formulations</strong>.</p>
+<dt class="sig sig-object mat" id="mp.form_dc">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">form_dc</span></span><a class="headerlink" href="#mp.form_dc" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="form.html#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a></p>
+<p><a class="reference internal" href="#mp.form_dc" title="mp.form_dc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code></a> - Base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> DC <strong>formulations</strong>.</p>
 <p>Used as a mix-in class for all <strong>network model element</strong> classes
 with a DC network model formulation. That is, each concrete network model
 element class with a DC formulation must inherit, at least indirectly, from
-both <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code> and <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code>.</p>
-<p><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code> defines the port active power injection as a linear function
+both <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a> and <a class="reference internal" href="#mp.form_dc" title="mp.form_dc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code></a>.</p>
+<p><a class="reference internal" href="#mp.form_dc" title="mp.form_dc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code></a> defines the port active power injection as a linear function
 of the state variables <span class="math notranslate nohighlight">\(\x\)</span>, that is, the voltage angles <span class="math notranslate nohighlight">\(\Va\)</span>
 and non-voltage states <span class="math notranslate nohighlight">\(\z\)</span>, as</p>
 <div class="math notranslate nohighlight" id="equation-ref-manual-classes-mp-form-dc-0">
@@ -147,48 +147,48 @@ and non-voltage states <span class="math notranslate nohighlight">\(\z\)</span>,
 <span class="raw-html"><a class="reference external" href="https://matpower.org/documentation/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> and the derivations in <span class="raw-html"><a href="https://matpower.org/docs/TN5-MP-Element.pdf"><em>M<span style="font-size:smaller">ATPOWER</span> Technical Note 5</em></a></span>.</p>
 <dl class="simple">
 <dt>mp.form_dc Properties:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">B</span></code> - <span class="math notranslate nohighlight">\(n_p n_k \times n_n\)</span> matrix <span class="math notranslate nohighlight">\(\BB\)</span> of model parameters</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">K</span></code> - <span class="math notranslate nohighlight">\(n_p n_k \times n_z\)</span> matrix <span class="math notranslate nohighlight">\(\KK\)</span> of model parameters</p></li>
-<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">p</span></code> - <span class="math notranslate nohighlight">\(n_p n_k \times 1\)</span> vector <span class="math notranslate nohighlight">\(\pv\)</span> of model parameters</p></li>
+<li><p><a class="reference internal" href="#mp.form_dc.B" title="mp.form_dc.B"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">B</span></code></a> - <span class="math notranslate nohighlight">\(n_p n_k \times n_n\)</span> matrix <span class="math notranslate nohighlight">\(\BB\)</span> of model parameters</p></li>
+<li><p><a class="reference internal" href="#mp.form_dc.K" title="mp.form_dc.K"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">K</span></code></a> - <span class="math notranslate nohighlight">\(n_p n_k \times n_z\)</span> matrix <span class="math notranslate nohighlight">\(\KK\)</span> of model parameters</p></li>
+<li><p><a class="reference internal" href="#mp.form_dc.p" title="mp.form_dc.p"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">p</span></code></a> - <span class="math notranslate nohighlight">\(n_p n_k \times 1\)</span> vector <span class="math notranslate nohighlight">\(\pv\)</span> of model parameters</p></li>
 <li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">params_ncols</span></code> - specify number of columns for each parameter</p></li>
 </ul>
 </dd>
 <dt>mp.form_dc Methods:</dt><dd><ul class="simple">
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">form_name()</span></code> - get char array w/name of formulation (<code class="docutils literal notranslate"><span class="pre">'DC'</span></code>)</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">form_tag()</span></code> - get char array w/short label of formulation (<code class="docutils literal notranslate"><span class="pre">'dc'</span></code>)</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">model_params()</span></code> - get network model element parameters (<code class="docutils literal notranslate"><span class="pre">{'B',</span> <span class="pre">'K',</span> <span class="pre">'p'}</span></code>)</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">model_vvars()</span></code> - get cell array of names of voltage state variables (<code class="docutils literal notranslate"><span class="pre">{'va'}</span></code>)</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">model_zvars()</span></code> - get cell array of names of non-voltage state variables (<code class="docutils literal notranslate"><span class="pre">{'z'}</span></code>)</p></li>
-<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code> - compute port power injections from network state</p></li>
+<li><p><a class="reference internal" href="#mp.form_dc.form_name" title="mp.form_dc.form_name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">form_name()</span></code></a> - get char array w/name of formulation (<code class="docutils literal notranslate"><span class="pre">'DC'</span></code>)</p></li>
+<li><p><a class="reference internal" href="#mp.form_dc.form_tag" title="mp.form_dc.form_tag"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">form_tag()</span></code></a> - get char array w/short label of formulation (<code class="docutils literal notranslate"><span class="pre">'dc'</span></code>)</p></li>
+<li><p><a class="reference internal" href="#mp.form_dc.model_params" title="mp.form_dc.model_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">model_params()</span></code></a> - get network model element parameters (<code class="docutils literal notranslate"><span class="pre">{'B',</span> <span class="pre">'K',</span> <span class="pre">'p'}</span></code>)</p></li>
+<li><p><a class="reference internal" href="#mp.form_dc.model_vvars" title="mp.form_dc.model_vvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">model_vvars()</span></code></a> - get cell array of names of voltage state variables (<code class="docutils literal notranslate"><span class="pre">{'va'}</span></code>)</p></li>
+<li><p><a class="reference internal" href="#mp.form_dc.model_zvars" title="mp.form_dc.model_zvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">model_zvars()</span></code></a> - get cell array of names of non-voltage state variables (<code class="docutils literal notranslate"><span class="pre">{'z'}</span></code>)</p></li>
+<li><p><a class="reference internal" href="#mp.form_dc.port_inj_power" title="mp.form_dc.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code></a> - compute port power injections from network state</p></li>
 </ul>
 </dd>
 </dl>
-<p>See also <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_ac</span></code>, <code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code>.</p>
+<p>See also <a class="reference internal" href="form.html#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a>, <a class="reference internal" href="form_ac.html#mp.form_ac" title="mp.form_ac"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_ac</span></code></a>, <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a>.</p>
 <div class="members docutils container">
 <dl>
 <dt>Property Summary</dt><dd><dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.form_dc.B">
-<span class="sig-name descname"><span class="pre">B</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#matpower.mp.form_dc.B" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form_dc.B">
+<span class="sig-name descname"><span class="pre">B</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.form_dc.B" title="Link to this definition"></a></dt>
 <dd><p><em>(double)</em> <span class="math notranslate nohighlight">\(n_p n_k \times n_n\)</span> matrix <span class="math notranslate nohighlight">\(\BB\)</span>
 of model parameter coefficients for <span class="math notranslate nohighlight">\(\Va\)</span></p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.form_dc.K">
-<span class="sig-name descname"><span class="pre">K</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#matpower.mp.form_dc.K" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form_dc.K">
+<span class="sig-name descname"><span class="pre">K</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.form_dc.K" title="Link to this definition"></a></dt>
 <dd><p><em>(double)</em> <span class="math notranslate nohighlight">\(n_p n_k \times n_z\)</span> matrix <span class="math notranslate nohighlight">\(\KK\)</span>
 of model parameter coefficients for <span class="math notranslate nohighlight">\(\z\)</span></p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.form_dc.p">
-<span class="sig-name descname"><span class="pre">p</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#matpower.mp.form_dc.p" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form_dc.p">
+<span class="sig-name descname"><span class="pre">p</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.form_dc.p" title="Link to this definition"></a></dt>
 <dd><p><em>(double)</em> <span class="math notranslate nohighlight">\(n_p n_k \times 1\)</span> vector <span class="math notranslate nohighlight">\(\pv\)</span> of model parameters</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="matpower.mp.form_dc.param_ncols">
-<span class="sig-name descname"><span class="pre">param_ncols</span></span><em class="property"> <span class="pre">=</span> <span class="pre">struct('B',2,'K',3,'p',1)</span></em><a class="headerlink" href="#matpower.mp.form_dc.param_ncols" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form_dc.param_ncols">
+<span class="sig-name descname"><span class="pre">param_ncols</span></span><em class="property"> <span class="pre">=</span> <span class="pre">struct('B',2,'K',3,'p',1)</span></em><a class="headerlink" href="#mp.form_dc.param_ncols" title="Link to this definition"></a></dt>
 <dd><p><em>(struct)</em> specify number of columns for each parameter,
 where</p>
 <blockquote>
@@ -202,43 +202,43 @@ where</p>
 
 </dd>
 <dt>Method Summary</dt><dd><dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.form_dc.form_name">
-<span class="sig-name descname"><span class="pre">form_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.form_dc.form_name" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form_dc.form_name">
+<span class="sig-name descname"><span class="pre">form_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_dc.form_name" title="Link to this definition"></a></dt>
 <dd><p>Get user-readable name of formulation, i.e. <code class="docutils literal notranslate"><span class="pre">'DC'</span></code>.</p>
-<p>See <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form.form_name()</span></code>.</p>
+<p>See <a class="reference internal" href="form.html#mp.form.form_name" title="mp.form.form_name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form.form_name()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.form_dc.form_tag">
-<span class="sig-name descname"><span class="pre">form_tag</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.form_dc.form_tag" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form_dc.form_tag">
+<span class="sig-name descname"><span class="pre">form_tag</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_dc.form_tag" title="Link to this definition"></a></dt>
 <dd><p>Get short label of formulation, i.e. <code class="docutils literal notranslate"><span class="pre">'dc'</span></code>.</p>
-<p>See <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form.form_tag()</span></code>.</p>
+<p>See <a class="reference internal" href="form.html#mp.form.form_tag" title="mp.form.form_tag"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form.form_tag()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.form_dc.model_params">
-<span class="sig-name descname"><span class="pre">model_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.form_dc.model_params" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form_dc.model_params">
+<span class="sig-name descname"><span class="pre">model_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_dc.model_params" title="Link to this definition"></a></dt>
 <dd><p>Get cell array of names of model parameters, i.e. <code class="docutils literal notranslate"><span class="pre">{'B',</span> <span class="pre">'K',</span> <span class="pre">'p'}</span></code>.</p>
-<p>See <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form.model_params()</span></code>.</p>
+<p>See <a class="reference internal" href="form.html#mp.form.model_params" title="mp.form.model_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form.model_params()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.form_dc.model_vvars">
-<span class="sig-name descname"><span class="pre">model_vvars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.form_dc.model_vvars" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form_dc.model_vvars">
+<span class="sig-name descname"><span class="pre">model_vvars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_dc.model_vvars" title="Link to this definition"></a></dt>
 <dd><p>Get cell array of names of voltage state variables, i.e. <code class="docutils literal notranslate"><span class="pre">{'va'}</span></code>.</p>
-<p>See <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form.model_vvars()</span></code>.</p>
+<p>See <a class="reference internal" href="form.html#mp.form.model_vvars" title="mp.form.model_vvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form.model_vvars()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.form_dc.model_zvars">
-<span class="sig-name descname"><span class="pre">model_zvars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.form_dc.model_zvars" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form_dc.model_zvars">
+<span class="sig-name descname"><span class="pre">model_zvars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_dc.model_zvars" title="Link to this definition"></a></dt>
 <dd><p>Get cell array of names of non-voltage state variables, i.e. <code class="docutils literal notranslate"><span class="pre">{'z'}</span></code>.</p>
-<p>See <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form.model_zvars()</span></code>.</p>
+<p>See <a class="reference internal" href="form.html#mp.form.model_zvars" title="mp.form.model_zvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form.model_zvars()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="mat method">
-<dt class="sig sig-object mat" id="matpower.mp.form_dc.port_inj_power">
-<span class="sig-name descname"><span class="pre">port_inj_power</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">sysx</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#matpower.mp.form_dc.port_inj_power" title="Link to this definition"></a></dt>
+<dt class="sig sig-object mat" id="mp.form_dc.port_inj_power">
+<span class="sig-name descname"><span class="pre">port_inj_power</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">sysx</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_dc.port_inj_power" title="Link to this definition"></a></dt>
 <dd><p>Compute port power injections from network state.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_power</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">sysx</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
 </pre></div>

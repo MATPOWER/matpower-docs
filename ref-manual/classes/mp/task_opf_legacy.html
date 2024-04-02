@@ -70,6 +70,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../index.html#matpower-extension-classes">3.7. <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extension Classes</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../tests/index.html">4. Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../legacy/index.html">5. Legacy</a></li>
 </ul>
 </li>
 </ul>
@@ -221,7 +223,7 @@ after calling superclass
 <dd><p>Use legacy math model subclasses to support legacy costs and callbacks.</p>
 <p>Uses math model variations that inherit from
 <a class="reference internal" href="mm_shared_opf_legacy.html#mp.mm_shared_opf_legacy" title="mp.mm_shared_opf_legacy"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mm_shared_opf_legacy</span></code></a> (compatible with the legacy
-<code class="xref mat mat-class docutils literal notranslate"><span class="pre">opf_model</span></code>), in order to support legacy cost functions
+<a class="reference internal" href="../../legacy/classes/opf_model.html#opf_model" title="opf_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opf_model</span></code></a>), in order to support legacy cost functions
 and callback functions that expect to find the <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case
 struct in <code class="docutils literal notranslate"><span class="pre">mm.mpc</span></code>.</p>
 </dd></dl>
@@ -253,8 +255,8 @@ method also creates and populates numerous other fields
 expected in the legacy OPF <code class="docutils literal notranslate"><span class="pre">results</span></code> struct, such as
 <code class="docutils literal notranslate"><span class="pre">f</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">om</span></code>, <code class="docutils literal notranslate"><span class="pre">mu</span></code>, <code class="docutils literal notranslate"><span class="pre">g</span></code>, <code class="docutils literal notranslate"><span class="pre">dg</span></code>, <code class="docutils literal notranslate"><span class="pre">raw</span></code>,
 <code class="docutils literal notranslate"><span class="pre">var</span></code>, <code class="docutils literal notranslate"><span class="pre">nle</span></code>, <code class="docutils literal notranslate"><span class="pre">nli</span></code>, <code class="docutils literal notranslate"><span class="pre">lin</span></code>, and <code class="docutils literal notranslate"><span class="pre">cost</span></code>.
-Based on code from the legacy functions <code class="xref mat mat-func docutils literal notranslate"><span class="pre">opf_execute()</span></code>,
-<code class="xref mat mat-func docutils literal notranslate"><span class="pre">dcopf_solver()</span></code>, and <code class="xref mat mat-func docutils literal notranslate"><span class="pre">nlpopf_solver()</span></code>.</p>
+Based on code from the legacy functions <a class="reference internal" href="../../legacy/functions/opf_execute.html#opf_execute" title="opf_execute"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">opf_execute()</span></code></a>,
+<a class="reference internal" href="../../legacy/functions/dcopf_solver.html#dcopf_solver" title="dcopf_solver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">dcopf_solver()</span></code></a>, and <a class="reference internal" href="../../legacy/functions/nlpopf_solver.html#nlpopf_solver" title="nlpopf_solver"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">nlpopf_solver()</span></code></a>.</p>
 </dd></dl>
 
 </dd>

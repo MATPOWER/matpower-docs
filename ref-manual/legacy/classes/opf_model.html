@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>opf_model &mdash; MATPOWER Documentation 8.0b1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=d50bc636"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="runpf" href="../functions/runpf.html" />
+    <link rel="prev" title="5. Legacy" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">Home (matpower.org)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions/index.html">2. Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/index.html">3. Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tests/index.html">4. Tests</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">5. Legacy</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#legacy-class">5.1. Legacy Class</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">opf_model</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#legacy-functions">5.2. Legacy Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#legacy-tests">5.3. Legacy Tests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+          <li class="breadcrumb-item"><a href="../index.html"><span class="section-number">5. </span>Legacy</a></li>
+      <li class="breadcrumb-item active">opf_model</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/ref-manual/legacy/classes/opf_model.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../index.html" class="btn btn-neutral float-left" title="5. Legacy" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../functions/runpf.html" class="btn btn-neutral float-right" title="runpf" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p><span class="raw-html"><div style="float: right"><a href="https://github.com/MATPOWER/matpower/blob/master/lib/@opf_model/opf_model.m" target=_blank><svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg></a></div></span></p>
+<section id="opf-model">
+<h1>opf_model<a class="headerlink" href="#opf-model" title="Link to this heading"></a></h1>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="opf_model">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">opf_model</span></span><a class="headerlink" href="#opf_model" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a></p>
+<p><a class="reference internal" href="#opf_model" title="opf_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opf_model</span></code></a> - Legacy <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> OPF model class.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">OM</span> <span class="p">=</span> <span class="n">OPF_MODEL</span><span class="p">(</span><span class="n">MPC</span><span class="p">)</span>
+
+<span class="n">This</span> <span class="nb">class</span> <span class="n">implements</span> <span class="n">the</span> <span class="n">OPF</span> <span class="n">model</span> <span class="n">object</span> <span class="n">used</span> <span class="n">to</span> <span class="n">encapsulate</span>
+<span class="n">a</span> <span class="n">given</span> <span class="n">OPF</span> <span class="n">problem</span> <span class="n">formulation</span><span class="p">.</span> <span class="n">It</span> <span class="n">allows</span> <span class="k">for</span> <span class="n">access</span> <span class="n">to</span> <span class="n">optimization</span>
+<span class="n">variables</span><span class="p">,</span> <span class="n">constraints</span> <span class="nb">and</span> <span class="n">costs</span> <span class="n">in</span> <span class="n">named</span> <span class="n">blocks</span><span class="p">,</span> <span class="n">keeping</span> <span class="n">track</span> <span class="n">of</span> <span class="n">the</span>
+<span class="n">ordering</span> <span class="nb">and</span> <span class="n">indexing</span> <span class="n">of</span> <span class="n">the</span> <span class="n">blocks</span> <span class="n">as</span> <span class="n">variables</span><span class="p">,</span> <span class="n">constraints</span> <span class="nb">and</span> <span class="n">costs</span>
+<span class="n">are</span> <span class="n">added</span> <span class="n">to</span> <span class="n">the</span> <span class="n">problem</span><span class="p">.</span>
+
+<span class="n">This</span> <span class="nb">class</span> <span class="n">is</span> <span class="n">a</span> <span class="n">subclass</span> <span class="n">of</span> <span class="n">OPT_MODEL</span> <span class="n">that</span> <span class="n">adds</span> <span class="n">the</span> <span class="s">&#39;mpc&#39;</span>
+<span class="n">field</span> <span class="k">for</span> <span class="n">storing</span> <span class="n">the</span> <span class="n">MATPOWER</span> <span class="k">case</span> <span class="nb">struct</span> <span class="n">used</span> <span class="n">to</span> <span class="n">build</span> <span class="n">the</span> <span class="n">object</span>
+<span class="n">along</span> <span class="n">with</span> <span class="n">the</span> <span class="n">get_mpc</span><span class="p">()</span> <span class="n">method</span><span class="p">.</span>
+
+<span class="n">It</span> <span class="n">also</span> <span class="n">adds</span> <span class="n">the</span> <span class="s">&#39;cost&#39;</span> <span class="n">field</span> <span class="nb">and</span> <span class="n">the</span> <span class="n">following</span> <span class="n">three</span> <span class="k">methods</span> <span class="k">for</span>
+<span class="n">implementing</span> <span class="n">the</span> <span class="n">legacy</span> <span class="n">user</span><span class="o">-</span><span class="n">defined</span> <span class="n">OPF</span> <span class="n">costs</span><span class="p">:</span>
+    <span class="n">add_legacy_cost</span>
+    <span class="n">params_legacy_cost</span>
+    <span class="n">eval_legacy_cost</span>
+
+<span class="n">The</span> <span class="n">following</span> <span class="n">is</span> <span class="n">the</span> <span class="n">structure</span> <span class="n">of</span> <span class="n">the</span> <span class="n">data</span> <span class="n">in</span> <span class="n">the</span> <span class="n">OPF</span> <span class="n">model</span> <span class="n">object</span><span class="p">.</span>
+
+<span class="n">om</span>
+    <span class="o">&lt;</span><span class="n">opt_model</span> <span class="n">fields</span><span class="o">&gt;</span> <span class="o">-</span> <span class="n">see</span> <span class="n">OPT_MODEL</span> <span class="k">for</span> <span class="n">details</span>
+    <span class="p">.</span><span class="n">cost</span>       <span class="o">-</span> <span class="n">data</span> <span class="k">for</span> <span class="n">legacy</span> <span class="n">user</span><span class="o">-</span><span class="n">defined</span> <span class="n">costs</span>
+        <span class="p">.</span><span class="n">idx</span>
+            <span class="p">.</span><span class="n">i1</span> <span class="o">-</span> <span class="n">starting</span> <span class="n">row</span> <span class="nb">index</span> <span class="n">within</span> <span class="nb">full</span> <span class="n">N</span> <span class="n">matrix</span>
+            <span class="p">.</span><span class="n">iN</span> <span class="o">-</span> <span class="n">ending</span> <span class="n">row</span> <span class="nb">index</span> <span class="n">within</span> <span class="nb">full</span> <span class="n">N</span> <span class="n">matrix</span>
+            <span class="p">.</span><span class="n">N</span>  <span class="o">-</span> <span class="n">number</span> <span class="n">of</span> <span class="nb">rows</span> <span class="n">in</span> <span class="n">this</span> <span class="n">cost</span> <span class="n">block</span> <span class="n">in</span> <span class="nb">full</span> <span class="n">N</span> <span class="n">matrix</span>
+        <span class="p">.</span><span class="n">N</span>      <span class="o">-</span> <span class="n">total</span> <span class="n">number</span> <span class="n">of</span> <span class="nb">rows</span> <span class="n">in</span> <span class="nb">full</span> <span class="n">N</span> <span class="n">matrix</span>
+        <span class="p">.</span><span class="n">NS</span>     <span class="o">-</span> <span class="n">number</span> <span class="n">of</span> <span class="n">cost</span> <span class="n">blocks</span>
+        <span class="p">.</span><span class="n">data</span>   <span class="o">-</span> <span class="n">data</span> <span class="k">for</span> <span class="n">each</span> <span class="n">user</span><span class="o">-</span><span class="n">defined</span> <span class="n">cost</span> <span class="n">block</span>
+            <span class="p">.</span><span class="n">N</span>  <span class="o">-</span> <span class="n">see</span> <span class="n">help</span> <span class="k">for</span> <span class="n">ADD_LEGACY_COST</span> <span class="k">for</span> <span class="n">details</span>
+            <span class="p">.</span><span class="n">H</span>  <span class="o">-</span>               <span class="s">&quot;</span>
+<span class="s">            .Cw -               &quot;</span>
+            <span class="p">.</span><span class="n">dd</span> <span class="o">-</span>               <span class="s">&quot;</span>
+<span class="s">            .rr -               &quot;</span>
+            <span class="p">.</span><span class="n">kk</span> <span class="o">-</span>               <span class="s">&quot;</span>
+<span class="s">            .mm -               &quot;</span>
+            <span class="p">.</span><span class="n">vs</span> <span class="o">-</span> <span class="nb">cell</span> <span class="n">array</span> <span class="n">of</span> <span class="n">variable</span> <span class="n">sets</span> <span class="n">that</span> <span class="n">define</span> <span class="n">xx</span> <span class="k">for</span> <span class="n">this</span>
+                  <span class="n">cost</span> <span class="n">block</span><span class="p">,</span> <span class="n">where</span> <span class="n">the</span> <span class="n">N</span> <span class="k">for</span> <span class="n">this</span> <span class="n">block</span> <span class="n">multiplies</span> <span class="n">xx</span>
+        <span class="p">.</span><span class="n">order</span>  <span class="o">-</span> <span class="nb">struct</span> <span class="n">array</span> <span class="n">of</span> <span class="n">names</span><span class="o">/</span><span class="n">indices</span> <span class="k">for</span> <span class="n">cost</span> <span class="n">blocks</span> <span class="n">in</span> <span class="n">the</span>
+                  <span class="n">order</span> <span class="n">they</span> <span class="n">appear</span> <span class="n">in</span> <span class="n">the</span> <span class="nb">rows</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">full</span> <span class="n">N</span> <span class="n">matrix</span>
+            <span class="p">.</span><span class="n">name</span>   <span class="o">-</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">block</span><span class="p">,</span> <span class="nb">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span> <span class="n">R</span>
+            <span class="p">.</span><span class="n">idx</span>    <span class="o">-</span> <span class="n">indices</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span> <span class="p">=</span><span class="o">&gt;</span> <span class="n">R</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">mpc</span>        <span class="o">-</span> <span class="n">MATPOWER</span> <span class="k">case</span> <span class="nb">struct</span> <span class="n">used</span> <span class="n">to</span> <span class="n">create</span> <span class="n">this</span> <span class="n">model</span> <span class="n">object</span>
+        <span class="p">.</span><span class="n">baseMVA</span>
+        <span class="p">.</span><span class="n">bus</span>
+        <span class="p">.</span><span class="n">branch</span>
+        <span class="p">.</span><span class="n">gen</span>
+        <span class="p">.</span><span class="n">gencost</span>
+        <span class="p">.</span><span class="n">A</span>  <span class="p">(</span><span class="k">if</span> <span class="n">present</span><span class="p">,</span> <span class="n">must</span> <span class="n">have</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">l</span>
+        <span class="p">.</span><span class="n">u</span>
+        <span class="p">.</span><span class="n">N</span>  <span class="p">(</span><span class="k">if</span> <span class="n">present</span><span class="p">,</span> <span class="n">must</span> <span class="n">have</span> <span class="n">fparm</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">Cw</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">fparm</span>
+        <span class="p">.</span><span class="n">H</span>
+        <span class="p">.</span><span class="n">Cw</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>.</p>
+<div class="members docutils container">
+<dl>
+<dt>Constructor Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="opf_model.opf_model">
+<span class="sig-name descname"><span class="pre">opf_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mpc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opf_model.opf_model" title="Link to this definition"></a></dt>
+<dd><p>Constructor.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">om</span> <span class="p">=</span> <span class="n">opf_model</span><span class="p">()</span>
+<span class="n">om</span> <span class="p">=</span> <span class="n">opf_model</span><span class="p">(</span><span class="n">mpc</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd>
+<dt>Property Summary</dt><dd><dl class="mat attribute">
+<dt class="sig sig-object mat" id="opf_model.cost">
+<span class="sig-name descname"><span class="pre">cost</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#opf_model.cost" title="Link to this definition"></a></dt>
+<dd><p>data for legacy user-defined costs</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="opf_model.mpc">
+<span class="sig-name descname"><span class="pre">mpc</span></span><em class="property"> <span class="pre">=</span> <span class="pre">struct()</span></em><a class="headerlink" href="#opf_model.mpc" title="Link to this definition"></a></dt>
+<dd><p><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case struct from which <code class="docutils literal notranslate"><span class="pre">om</span></code> was built</p>
+</dd></dl>
+
+</dd>
+<dt>Method Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="opf_model.def_set_types">
+<span class="sig-name descname"><span class="pre">def_set_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">om</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opf_model.def_set_types" title="Link to this definition"></a></dt>
+<dd><p>Define set types <code class="docutils literal notranslate"><span class="pre">var</span></code>, <code class="docutils literal notranslate"><span class="pre">lin</span></code>, <code class="docutils literal notranslate"><span class="pre">nle</span></code>, <code class="docutils literal notranslate"><span class="pre">nli</span></code>, <code class="docutils literal notranslate"><span class="pre">qdc</span></code>, <code class="docutils literal notranslate"><span class="pre">nlc</span></code>, <code class="docutils literal notranslate"><span class="pre">cost</span></code>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="opf_model.init_set_types">
+<span class="sig-name descname"><span class="pre">init_set_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">om</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opf_model.init_set_types" title="Link to this definition"></a></dt>
+<dd><p>Initialize data structures for each set type.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="opf_model.set_mpc">
+<span class="sig-name descname"><span class="pre">set_mpc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">om</span></em>, <em class="sig-param"><span class="pre">mpc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opf_model.set_mpc" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#opf_model.set_mpc" title="opf_model.set_mpc"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_mpc()</span></code></a> - Sets the <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> case struct.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">OM</span><span class="p">.</span><span class="n">SET_MPC</span><span class="p">(</span><span class="n">MPC</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="opf_model.display">
+<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">om</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opf_model.display" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#opf_model.display" title="opf_model.display"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">display()</span></code></a> - Displays the object.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">Called</span> <span class="n">when</span> <span class="n">semicolon</span> <span class="n">is</span> <span class="n">omitted</span> <span class="n">at</span> <span class="n">the</span> <span class="n">command</span><span class="o">-</span><span class="nb">line</span><span class="p">.</span> <span class="n">Displays</span> <span class="n">the</span> <span class="n">details</span>
+<span class="n">of</span> <span class="n">the</span> <span class="n">variables</span><span class="p">,</span> <span class="n">constraints</span><span class="p">,</span> <span class="n">costs</span> <span class="n">included</span> <span class="n">in</span> <span class="n">the</span> <span class="n">model</span><span class="p">.</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="opf_model.get_mpc">
+<span class="sig-name descname"><span class="pre">get_mpc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">om</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opf_model.get_mpc" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#opf_model.get_mpc" title="opf_model.get_mpc"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_mpc()</span></code></a> - Returns the MATPOWER case struct.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">MPC</span> <span class="p">=</span> <span class="n">OM</span><span class="p">.</span><span class="n">GET_MPC</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="opf_model.eval_legacy_cost">
+<span class="sig-name descname"><span class="pre">eval_legacy_cost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">om</span></em>, <em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opf_model.eval_legacy_cost" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#opf_model.eval_legacy_cost" title="opf_model.eval_legacy_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">eval_legacy_cost()</span></code></a> - Evaluates individual or full set of legacy user costs.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">F</span> <span class="p">=</span> <span class="n">OM</span><span class="p">.</span><span class="n">EVAL_LEGACY_COST</span><span class="p">(</span><span class="n">X</span> <span class="p">...)</span>
+<span class="p">[</span><span class="n">F</span><span class="p">,</span> <span class="n">DF</span><span class="p">]</span> <span class="p">=</span> <span class="n">OM</span><span class="p">.</span><span class="n">EVAL_LEGACY_COST</span><span class="p">(</span><span class="n">X</span> <span class="p">...)</span>
+<span class="p">[</span><span class="n">F</span><span class="p">,</span> <span class="n">DF</span><span class="p">,</span> <span class="n">D2F</span><span class="p">]</span> <span class="p">=</span> <span class="n">OM</span><span class="p">.</span><span class="n">EVAL_LEGACY_COST</span><span class="p">(</span><span class="n">X</span> <span class="p">...)</span>
+<span class="p">[</span><span class="n">F</span><span class="p">,</span> <span class="n">DF</span><span class="p">,</span> <span class="n">D2F</span><span class="p">]</span> <span class="p">=</span> <span class="n">OM</span><span class="p">.</span><span class="n">EVAL_LEGACY_COST</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">NAME</span><span class="p">)</span>
+<span class="p">[</span><span class="n">F</span><span class="p">,</span> <span class="n">DF</span><span class="p">,</span> <span class="n">D2F</span><span class="p">]</span> <span class="p">=</span> <span class="n">OM</span><span class="p">.</span><span class="n">EVAL_LEGACY_COST</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">)</span>
+<span class="n">Evaluates</span> <span class="n">an</span> <span class="n">individual</span> <span class="n">named</span> <span class="k">set</span> <span class="nb">or</span> <span class="n">the</span> <span class="nb">full</span> <span class="k">set</span> <span class="n">of</span> <span class="n">legacy</span> <span class="n">user</span>
+<span class="n">costs</span> <span class="nb">and</span> <span class="n">their</span> <span class="n">derivatives</span> <span class="k">for</span> <span class="n">a</span> <span class="n">given</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">optimization</span> <span class="n">vector</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">based</span> <span class="n">on</span> <span class="n">costs</span> <span class="n">added</span> <span class="n">by</span> <span class="n">ADD_LEGACY_COST</span><span class="p">.</span>
+
+<span class="n">Example</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">d2f</span><span class="p">]</span> <span class="p">=</span> <span class="n">om</span><span class="p">.</span><span class="n">eval_legacy_cost</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">d2f</span><span class="p">]</span> <span class="p">=</span> <span class="n">om</span><span class="p">.</span><span class="n">eval_legacy_cost</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+    <span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">d2f</span><span class="p">]</span> <span class="p">=</span> <span class="n">om</span><span class="p">.</span><span class="n">eval_legacy_cost</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>, <a class="reference internal" href="#opf_model.add_legacy_cost" title="opf_model.add_legacy_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_legacy_cost()</span></code></a>, <a class="reference internal" href="#opf_model.params_legacy_cost" title="opf_model.params_legacy_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">params_legacy_cost()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="opf_model.params_legacy_cost">
+<span class="sig-name descname"><span class="pre">params_legacy_cost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">om</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opf_model.params_legacy_cost" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#opf_model.params_legacy_cost" title="opf_model.params_legacy_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">params_legacy_cost()</span></code></a> - Returns cost parameters for legacy user-defined costs.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">CP</span> <span class="p">=</span> <span class="n">OM</span><span class="p">.</span><span class="n">PARAMS_LEGACY_COST</span><span class="p">()</span>
+<span class="n">CP</span> <span class="p">=</span> <span class="n">OM</span><span class="p">.</span><span class="n">PARAMS_LEGACY_COST</span><span class="p">(</span><span class="n">NAME</span><span class="p">)</span>
+<span class="n">CP</span> <span class="p">=</span> <span class="n">OM</span><span class="p">.</span><span class="n">PARAMS_LEGACY_COST</span><span class="p">(</span><span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">)</span>
+<span class="p">[</span><span class="n">CP</span><span class="p">,</span> <span class="n">VS</span><span class="p">]</span> <span class="p">=</span> <span class="n">OM</span><span class="p">.</span><span class="n">PARAMS_LEGACY_COST</span><span class="p">(...)</span>
+<span class="p">[</span><span class="n">CP</span><span class="p">,</span> <span class="n">VS</span><span class="p">,</span> <span class="n">I1</span><span class="p">,</span> <span class="n">IN</span><span class="p">]</span> <span class="p">=</span> <span class="n">OM</span><span class="p">.</span><span class="n">PARAMS_LEGACY_COST</span><span class="p">(...)</span>
+
+<span class="n">With</span> <span class="n">no</span> <span class="nb">input</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">it</span> <span class="n">assembles</span> <span class="nb">and</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">parameters</span>
+<span class="k">for</span> <span class="n">the</span> <span class="n">aggregate</span> <span class="n">legacy</span> <span class="n">user</span><span class="o">-</span><span class="n">defined</span> <span class="n">cost</span> <span class="n">from</span> <span class="nb">all</span> <span class="n">legacy</span> <span class="n">cost</span> <span class="n">sets</span>
+<span class="n">added</span> <span class="n">using</span> <span class="n">ADD_LEGACY_COST</span><span class="p">.</span> <span class="n">The</span> <span class="n">values</span> <span class="n">of</span> <span class="n">these</span> <span class="n">parameters</span> <span class="n">are</span> <span class="n">cached</span>
+<span class="k">for</span> <span class="n">subsequent</span> <span class="n">calls</span><span class="p">.</span> <span class="n">The</span> <span class="n">parameters</span> <span class="n">are</span> <span class="n">contained</span> <span class="n">in</span> <span class="n">the</span> <span class="nb">struct</span> <span class="n">CP</span><span class="p">,</span>
+<span class="n">described</span> <span class="n">below</span><span class="p">.</span>
+
+<span class="n">If</span> <span class="n">a</span> <span class="n">NAME</span> <span class="n">is</span> <span class="n">provided</span> <span class="n">then</span> <span class="n">it</span> <span class="n">simply</span> <span class="n">returns</span> <span class="n">parameter</span> <span class="nb">struct</span> <span class="n">CP</span> <span class="k">for</span> <span class="n">the</span>
+<span class="n">corresponding</span> <span class="n">named</span> <span class="k">set</span><span class="p">.</span> <span class="n">Likewise</span> <span class="k">for</span> <span class="n">indexed</span> <span class="n">named</span> <span class="n">sets</span> <span class="n">specified</span>
+<span class="n">by</span> <span class="n">NAME</span> <span class="nb">and</span> <span class="n">IDX_LIST</span><span class="p">.</span>
+
+<span class="n">An</span> <span class="n">optional</span> <span class="mi">2</span><span class="n">nd</span> <span class="n">output</span> <span class="n">argument</span> <span class="n">VS</span> <span class="n">indicates</span> <span class="n">the</span> <span class="n">variable</span> <span class="n">sets</span> <span class="n">used</span> <span class="n">by</span>
+<span class="n">this</span> <span class="n">cost</span> <span class="k">set</span><span class="p">.</span> <span class="n">The</span> <span class="nb">size</span> <span class="n">of</span> <span class="n">CP</span><span class="p">.</span><span class="n">N</span> <span class="n">will</span> <span class="n">be</span> <span class="n">consistent</span> <span class="n">with</span> <span class="n">VS</span><span class="p">.</span>
+
+<span class="n">If</span> <span class="n">NAME</span> <span class="n">is</span> <span class="n">provided</span><span class="p">,</span> <span class="n">optional</span> <span class="mi">3</span><span class="n">rd</span> <span class="nb">and</span> <span class="mi">4</span><span class="n">th</span> <span class="n">output</span> <span class="n">arguments</span> <span class="n">I1</span> <span class="nb">and</span> <span class="n">IN</span>
+<span class="n">indicate</span> <span class="n">the</span> <span class="n">starting</span> <span class="nb">and</span> <span class="n">ending</span> <span class="n">row</span> <span class="n">indices</span> <span class="n">of</span> <span class="n">the</span> <span class="n">corresponding</span>
+<span class="n">cost</span> <span class="k">set</span> <span class="n">in</span> <span class="n">the</span> <span class="nb">full</span> <span class="n">aggregate</span> <span class="n">cost</span> <span class="n">matrix</span> <span class="n">CP</span><span class="p">.</span><span class="n">N</span><span class="p">.</span>
+
+<span class="n">Let</span> <span class="n">X</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">the</span> <span class="n">vector</span> <span class="n">formed</span> <span class="n">by</span> <span class="n">combining</span> <span class="n">the</span> <span class="n">corresponding</span> <span class="n">varsets</span> <span class="n">VS</span><span class="p">,</span>
+<span class="nb">and</span> <span class="n">F_U</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">CP</span><span class="p">)</span> <span class="n">be</span> <span class="n">the</span> <span class="n">cost</span> <span class="n">at</span> <span class="n">X</span> <span class="n">corresponding</span> <span class="n">to</span> <span class="n">the</span> <span class="n">cost</span> <span class="n">parameters</span>
+<span class="n">contained</span> <span class="n">in</span> <span class="n">CP</span><span class="p">,</span> <span class="n">where</span> <span class="n">CP</span> <span class="n">is</span> <span class="n">a</span> <span class="nb">struct</span> <span class="n">with</span> <span class="n">the</span> <span class="n">following</span> <span class="n">fields</span><span class="p">:</span>
+    <span class="n">N</span>      <span class="o">-</span> <span class="n">nw</span> <span class="n">x</span> <span class="n">nx</span> <span class="nb">sparse</span> <span class="n">matrix</span> <span class="p">(</span><span class="n">optional</span><span class="p">,</span> <span class="n">identity</span> <span class="n">matrix</span> <span class="n">by</span> <span class="n">default</span><span class="p">)</span>
+    <span class="n">Cw</span>     <span class="o">-</span> <span class="n">nw</span> <span class="n">x</span> <span class="mi">1</span> <span class="n">vector</span>
+    <span class="n">H</span>      <span class="o">-</span> <span class="n">nw</span> <span class="n">x</span> <span class="n">nw</span> <span class="nb">sparse</span> <span class="n">matrix</span> <span class="p">(</span><span class="n">optional</span><span class="p">,</span> <span class="nb">all</span> <span class="nb">zeros</span> <span class="n">by</span> <span class="n">default</span><span class="p">)</span>
+    <span class="n">dd</span><span class="p">,</span> <span class="n">mm</span> <span class="o">-</span> <span class="n">nw</span> <span class="n">x</span> <span class="mi">1</span> <span class="n">vectors</span> <span class="p">(</span><span class="n">optional</span><span class="p">,</span> <span class="nb">all</span> <span class="nb">ones</span> <span class="n">by</span> <span class="n">default</span><span class="p">)</span>
+    <span class="n">rh</span><span class="p">,</span> <span class="n">kk</span> <span class="o">-</span> <span class="n">nw</span> <span class="n">x</span> <span class="mi">1</span> <span class="n">vectors</span> <span class="p">(</span><span class="n">optional</span><span class="p">,</span> <span class="nb">all</span> <span class="nb">zeros</span> <span class="n">by</span> <span class="n">default</span><span class="p">)</span>
+
+<span class="n">These</span> <span class="n">parameters</span> <span class="n">are</span> <span class="n">used</span> <span class="n">as</span> <span class="n">follows</span> <span class="n">to</span> <span class="n">compute</span> <span class="n">F_U</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">CP</span><span class="p">)</span>
+
+    <span class="n">R</span>  <span class="p">=</span> <span class="n">N</span><span class="o">*</span><span class="n">X</span> <span class="o">-</span> <span class="n">rh</span>
+
+            <span class="o">/</span>  <span class="n">kk</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>  <span class="n">R</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">kk</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">K</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">=</span> <span class="o">&lt;</span>   <span class="mi">0</span><span class="p">,</span>     <span class="o">-</span><span class="n">kk</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">R</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">kk</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="o">\</span> <span class="o">-</span><span class="n">kk</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>  <span class="n">R</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">kk</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="n">RR</span> <span class="p">=</span> <span class="n">R</span> <span class="o">+</span> <span class="n">K</span>
+
+    <span class="n">U</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">=</span>  <span class="o">/</span>  <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">kk</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">R</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">kk</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="o">\</span>  <span class="mi">1</span><span class="p">,</span> <span class="k">otherwise</span>
+
+    <span class="n">DDL</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">=</span> <span class="o">/</span>  <span class="mi">1</span><span class="p">,</span> <span class="n">dd</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">=</span> <span class="mi">1</span>
+             <span class="o">\</span>  <span class="mi">0</span><span class="p">,</span> <span class="k">otherwise</span>
+
+    <span class="n">DDQ</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">=</span> <span class="o">/</span>  <span class="mi">1</span><span class="p">,</span> <span class="n">dd</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">=</span> <span class="mi">2</span>
+             <span class="o">\</span>  <span class="mi">0</span><span class="p">,</span> <span class="k">otherwise</span>
+
+    <span class="n">Dl</span> <span class="p">=</span> <span class="nb">diag</span><span class="p">(</span><span class="n">mm</span><span class="p">)</span> <span class="o">*</span> <span class="nb">diag</span><span class="p">(</span><span class="n">U</span><span class="p">)</span> <span class="o">*</span> <span class="nb">diag</span><span class="p">(</span><span class="n">DDL</span><span class="p">)</span>
+    <span class="n">Dq</span> <span class="p">=</span> <span class="nb">diag</span><span class="p">(</span><span class="n">mm</span><span class="p">)</span> <span class="o">*</span> <span class="nb">diag</span><span class="p">(</span><span class="n">U</span><span class="p">)</span> <span class="o">*</span> <span class="nb">diag</span><span class="p">(</span><span class="n">DDQ</span><span class="p">)</span>
+
+    <span class="n">w</span> <span class="p">=</span> <span class="p">(</span><span class="n">Dl</span> <span class="o">+</span> <span class="n">Dq</span> <span class="o">*</span> <span class="nb">diag</span><span class="p">(</span><span class="n">RR</span><span class="p">))</span> <span class="o">*</span> <span class="n">RR</span>
+
+    <span class="n">F_U</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">CP</span><span class="p">)</span> <span class="p">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">w</span><span class="o">&#39;*</span><span class="n">H</span><span class="o">*</span><span class="n">w</span> <span class="o">+</span> <span class="n">Cw</span><span class="o">&#39;*</span><span class="n">w</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>, <a class="reference internal" href="#opf_model.add_legacy_cost" title="opf_model.add_legacy_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_legacy_cost()</span></code></a>, <a class="reference internal" href="#opf_model.eval_legacy_cost" title="opf_model.eval_legacy_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">eval_legacy_cost()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="opf_model.add_named_set">
+<span class="sig-name descname"><span class="pre">add_named_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">om</span></em>, <em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opf_model.add_named_set" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#opf_model.add_named_set" title="opf_model.add_named_set"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_named_set()</span></code></a> - Adds a named set of variables/constraints/costs to the model.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="o">-----</span>  <span class="n">PRIVATE</span> <span class="n">METHOD</span>  <span class="o">-----</span>
+
+<span class="n">This</span> <span class="n">method</span> <span class="n">is</span> <span class="n">intended</span> <span class="n">to</span> <span class="n">be</span> <span class="n">a</span> <span class="n">private</span> <span class="n">method</span><span class="p">,</span> <span class="n">used</span> <span class="n">internally</span> <span class="n">by</span>
+<span class="n">the</span> <span class="n">public</span> <span class="k">methods</span> <span class="n">ADD_VAR</span><span class="p">,</span> <span class="n">ADD_LIN_CONSTRAINT</span><span class="p">,</span> <span class="n">ADD_NLN_CONSTRAINT</span>
+<span class="n">ADD_QUAD_COST</span><span class="p">,</span> <span class="n">ADD_NLN_COST</span> <span class="nb">and</span> <span class="n">ADD_LEGACY_COST</span><span class="p">.</span>
+
+<span class="n">Variable</span> <span class="n">Set</span>
+    <span class="n">OM</span><span class="p">.</span><span class="n">ADD_NAMED_SET</span><span class="p">(</span><span class="s">&#39;var&#39;</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">V0</span><span class="p">,</span> <span class="n">VL</span><span class="p">,</span> <span class="n">VU</span><span class="p">,</span> <span class="n">VT</span><span class="p">);</span>
+
+<span class="n">Linear</span> <span class="n">Constraint</span> <span class="n">Set</span>
+    <span class="n">OM</span><span class="p">.</span><span class="n">ADD_NAMED_SET</span><span class="p">(</span><span class="s">&#39;lin&#39;</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="n">VARSETS</span><span class="p">);</span>
+
+<span class="n">Nonlinear</span> <span class="n">Inequality</span> <span class="n">Constraint</span> <span class="n">Set</span>
+    <span class="n">OM</span><span class="p">.</span><span class="n">ADD_NAMED_SET</span><span class="p">(</span><span class="s">&#39;nle&#39;</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">FCN</span><span class="p">,</span> <span class="n">HESS</span><span class="p">,</span> <span class="n">COMPUTED_BY</span><span class="p">,</span> <span class="n">VARSETS</span><span class="p">);</span>
+
+<span class="n">Nonlinear</span> <span class="n">Inequality</span> <span class="n">Constraint</span> <span class="n">Set</span>
+    <span class="n">OM</span><span class="p">.</span><span class="n">ADD_NAMED_SET</span><span class="p">(</span><span class="s">&#39;nli&#39;</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">FCN</span><span class="p">,</span> <span class="n">HESS</span><span class="p">,</span> <span class="n">COMPUTED_BY</span><span class="p">,</span> <span class="n">VARSETS</span><span class="p">);</span>
+
+<span class="n">Quadratic</span> <span class="n">Cost</span> <span class="n">Set</span>
+    <span class="n">OM</span><span class="p">.</span><span class="n">ADD_NAMED_SET</span><span class="p">(</span><span class="s">&#39;qdc&#39;</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">CP</span><span class="p">,</span> <span class="n">VARSETS</span><span class="p">);</span>
+
+<span class="n">General</span> <span class="n">Nonlinear</span> <span class="n">Cost</span> <span class="n">Set</span>
+    <span class="n">OM</span><span class="p">.</span><span class="n">ADD_NAMED_SET</span><span class="p">(</span><span class="s">&#39;nlc&#39;</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">FCN</span><span class="p">,</span> <span class="n">VARSETS</span><span class="p">);</span>
+
+<span class="n">Legacy</span> <span class="n">Cost</span> <span class="n">Set</span>
+    <span class="n">OM</span><span class="p">.</span><span class="n">ADD_NAMED_SET</span><span class="p">(</span><span class="s">&#39;cost&#39;</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">CP</span><span class="p">,</span> <span class="n">VARSETS</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>, <code class="docutils literal notranslate"><span class="pre">add_var</span></code>, <code class="docutils literal notranslate"><span class="pre">add_lin_constraint</span></code>, <code class="docutils literal notranslate"><span class="pre">add_nln_constraint</span></code>
+<code class="docutils literal notranslate"><span class="pre">add_quad_cost</span></code>, <code class="docutils literal notranslate"><span class="pre">add_nln_cost</span></code>, <a class="reference internal" href="#opf_model.add_legacy_cost" title="opf_model.add_legacy_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_legacy_cost()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="opf_model.add_legacy_cost">
+<span class="sig-name descname"><span class="pre">add_legacy_cost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">om</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opf_model.add_legacy_cost" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#opf_model.add_legacy_cost" title="opf_model.add_legacy_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_legacy_cost()</span></code></a> - Adds a set of user costs to the model.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">OM</span><span class="p">.</span><span class="n">ADD_LEGACY_COST</span><span class="p">(</span><span class="n">NAME</span><span class="p">,</span> <span class="n">CP</span><span class="p">);</span>
+<span class="n">OM</span><span class="p">.</span><span class="n">ADD_LEGACY_COST</span><span class="p">(</span><span class="n">NAME</span><span class="p">,</span> <span class="n">CP</span><span class="p">,</span> <span class="n">VARSETS</span><span class="p">);</span>
+<span class="n">OM</span><span class="p">.</span><span class="n">ADD_LEGACY_COST</span><span class="p">(</span><span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">CP</span><span class="p">);</span>
+<span class="n">OM</span><span class="p">.</span><span class="n">ADD_LEGACY_COST</span><span class="p">(</span><span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">CP</span><span class="p">,</span> <span class="n">VARSETS</span><span class="p">);</span>
+
+<span class="n">Adds</span> <span class="n">a</span> <span class="n">named</span> <span class="n">block</span> <span class="n">of</span> <span class="n">user</span><span class="o">-</span><span class="n">defined</span> <span class="n">costs</span> <span class="n">to</span> <span class="n">the</span> <span class="n">model</span><span class="p">.</span> <span class="n">Each</span> <span class="k">set</span> <span class="n">is</span>
+<span class="n">defined</span> <span class="n">by</span> <span class="n">the</span> <span class="n">CP</span> <span class="nb">struct</span> <span class="n">described</span> <span class="n">below</span><span class="p">.</span> <span class="n">All</span> <span class="n">user</span><span class="o">-</span><span class="n">defined</span> <span class="n">sets</span> <span class="n">of</span>
+<span class="n">costs</span> <span class="n">are</span> <span class="n">combined</span> <span class="n">together</span> <span class="n">into</span> <span class="n">a</span> <span class="nb">single</span> <span class="k">set</span> <span class="n">of</span> <span class="n">cost</span> <span class="n">parameters</span> <span class="n">in</span>
+<span class="n">a</span> <span class="nb">single</span> <span class="n">CP</span> <span class="nb">struct</span> <span class="n">by</span> <span class="n">BULD_COST_PARAMS</span><span class="p">.</span> <span class="n">This</span> <span class="nb">full</span> <span class="n">aggregate</span> <span class="k">set</span> <span class="n">of</span>
+<span class="n">cost</span> <span class="n">parameters</span> <span class="n">can</span> <span class="n">be</span> <span class="n">retreived</span> <span class="n">from</span> <span class="n">the</span> <span class="n">model</span> <span class="n">by</span> <span class="n">GET_COST_PARAMS</span><span class="p">.</span>
+
+<span class="n">Examples</span><span class="p">:</span>
+    <span class="n">cp1</span> <span class="p">=</span> <span class="nb">struct</span><span class="p">(</span><span class="s">&#39;N&#39;</span><span class="p">,</span> <span class="n">N1</span><span class="p">,</span> <span class="s">&#39;Cw&#39;</span><span class="p">,</span> <span class="n">Cw1</span><span class="p">);</span>
+    <span class="n">cp2</span> <span class="p">=</span> <span class="nb">struct</span><span class="p">(</span><span class="s">&#39;N&#39;</span><span class="p">,</span> <span class="n">N2</span><span class="p">,</span> <span class="s">&#39;Cw&#39;</span><span class="p">,</span> <span class="n">Cw2</span><span class="p">,</span> <span class="s">&#39;H&#39;</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="s">&#39;dd&#39;</span><span class="p">,</span> <span class="n">dd</span><span class="p">,</span> <span class="p">...</span>
+                  <span class="s">&#39;rh&#39;</span><span class="p">,</span> <span class="n">rh</span><span class="p">,</span> <span class="s">&#39;kk&#39;</span><span class="p">,</span> <span class="n">kk</span><span class="p">,</span> <span class="s">&#39;mm&#39;</span><span class="p">,</span> <span class="n">mm</span><span class="p">);</span>
+    <span class="n">om</span><span class="p">.</span><span class="n">add_legacy_cost</span><span class="p">(</span><span class="s">&#39;usr1&#39;</span><span class="p">,</span> <span class="n">cp1</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;Pg&#39;</span><span class="p">,</span> <span class="s">&#39;Qg&#39;</span><span class="p">,</span> <span class="s">&#39;z&#39;</span><span class="p">});</span>
+    <span class="n">om</span><span class="p">.</span><span class="n">add_legacy_cost</span><span class="p">(</span><span class="s">&#39;usr2&#39;</span><span class="p">,</span> <span class="n">cp2</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;Vm&#39;</span><span class="p">,</span> <span class="s">&#39;Pg&#39;</span><span class="p">,</span> <span class="s">&#39;Qg&#39;</span><span class="p">,</span> <span class="s">&#39;z&#39;</span><span class="p">});</span>
+
+    <span class="n">om</span><span class="p">.</span><span class="n">init_indexed_name</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">});</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span>
+      <span class="k">for</span> <span class="n">j</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span>
+        <span class="n">om</span><span class="p">.</span><span class="n">add_legacy_cost</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">},</span> <span class="n">cp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">),</span> <span class="p">...);</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+<span class="n">Let</span> <span class="n">x</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">the</span> <span class="n">vector</span> <span class="n">formed</span> <span class="n">by</span> <span class="n">combining</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">VARSETS</span><span class="p">,</span>
+<span class="nb">and</span> <span class="n">f_u</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">CP</span><span class="p">)</span> <span class="n">be</span> <span class="n">the</span> <span class="n">cost</span> <span class="n">at</span> <span class="n">x</span> <span class="n">corresponding</span> <span class="n">to</span> <span class="n">the</span> <span class="n">cost</span> <span class="n">parameters</span>
+<span class="n">contained</span> <span class="n">in</span> <span class="n">CP</span><span class="p">,</span> <span class="n">where</span> <span class="n">CP</span> <span class="n">is</span> <span class="n">a</span> <span class="nb">struct</span> <span class="n">with</span> <span class="n">the</span> <span class="n">following</span> <span class="n">fields</span><span class="p">:</span>
+    <span class="n">N</span>      <span class="o">-</span> <span class="n">nw</span> <span class="n">x</span> <span class="n">nx</span> <span class="nb">sparse</span> <span class="n">matrix</span> <span class="p">(</span><span class="n">optional</span><span class="p">,</span> <span class="n">identity</span> <span class="n">matrix</span> <span class="n">by</span> <span class="n">default</span><span class="p">)</span>
+    <span class="n">Cw</span>     <span class="o">-</span> <span class="n">nw</span> <span class="n">x</span> <span class="mi">1</span> <span class="n">vector</span>
+    <span class="n">H</span>      <span class="o">-</span> <span class="n">nw</span> <span class="n">x</span> <span class="n">nw</span> <span class="nb">sparse</span> <span class="n">matrix</span> <span class="p">(</span><span class="n">optional</span><span class="p">,</span> <span class="nb">all</span> <span class="nb">zeros</span> <span class="n">by</span> <span class="n">default</span><span class="p">)</span>
+    <span class="n">dd</span><span class="p">,</span> <span class="n">mm</span> <span class="o">-</span> <span class="n">nw</span> <span class="n">x</span> <span class="mi">1</span> <span class="n">vectors</span> <span class="p">(</span><span class="n">optional</span><span class="p">,</span> <span class="nb">all</span> <span class="nb">ones</span> <span class="n">by</span> <span class="n">default</span><span class="p">)</span>
+    <span class="n">rh</span><span class="p">,</span> <span class="n">kk</span> <span class="o">-</span> <span class="n">nw</span> <span class="n">x</span> <span class="mi">1</span> <span class="n">vectors</span> <span class="p">(</span><span class="n">optional</span><span class="p">,</span> <span class="nb">all</span> <span class="nb">zeros</span> <span class="n">by</span> <span class="n">default</span><span class="p">)</span>
+
+<span class="n">These</span> <span class="n">parameters</span> <span class="n">are</span> <span class="n">used</span> <span class="n">as</span> <span class="n">follows</span> <span class="n">to</span> <span class="n">compute</span> <span class="n">f_u</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">CP</span><span class="p">)</span>
+
+    <span class="n">R</span>  <span class="p">=</span> <span class="n">N</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">rh</span>
+
+            <span class="o">/</span>  <span class="n">kk</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>  <span class="n">R</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">kk</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">K</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">=</span> <span class="o">&lt;</span>   <span class="mi">0</span><span class="p">,</span>     <span class="o">-</span><span class="n">kk</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">R</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">kk</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="o">\</span> <span class="o">-</span><span class="n">kk</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>  <span class="n">R</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">kk</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="n">RR</span> <span class="p">=</span> <span class="n">R</span> <span class="o">+</span> <span class="n">K</span>
+
+    <span class="n">U</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">=</span>  <span class="o">/</span>  <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">kk</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">R</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">kk</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="o">\</span>  <span class="mi">1</span><span class="p">,</span> <span class="k">otherwise</span>
+
+    <span class="n">DDL</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">=</span> <span class="o">/</span>  <span class="mi">1</span><span class="p">,</span> <span class="n">dd</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">=</span> <span class="mi">1</span>
+             <span class="o">\</span>  <span class="mi">0</span><span class="p">,</span> <span class="k">otherwise</span>
+
+    <span class="n">DDQ</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">=</span> <span class="o">/</span>  <span class="mi">1</span><span class="p">,</span> <span class="n">dd</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">=</span> <span class="mi">2</span>
+             <span class="o">\</span>  <span class="mi">0</span><span class="p">,</span> <span class="k">otherwise</span>
+
+    <span class="n">Dl</span> <span class="p">=</span> <span class="nb">diag</span><span class="p">(</span><span class="n">mm</span><span class="p">)</span> <span class="o">*</span> <span class="nb">diag</span><span class="p">(</span><span class="n">U</span><span class="p">)</span> <span class="o">*</span> <span class="nb">diag</span><span class="p">(</span><span class="n">DDL</span><span class="p">)</span>
+    <span class="n">Dq</span> <span class="p">=</span> <span class="nb">diag</span><span class="p">(</span><span class="n">mm</span><span class="p">)</span> <span class="o">*</span> <span class="nb">diag</span><span class="p">(</span><span class="n">U</span><span class="p">)</span> <span class="o">*</span> <span class="nb">diag</span><span class="p">(</span><span class="n">DDQ</span><span class="p">)</span>
+
+    <span class="n">w</span> <span class="p">=</span> <span class="p">(</span><span class="n">Dl</span> <span class="o">+</span> <span class="n">Dq</span> <span class="o">*</span> <span class="nb">diag</span><span class="p">(</span><span class="n">RR</span><span class="p">))</span> <span class="o">*</span> <span class="n">RR</span>
+
+    <span class="n">f_u</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">CP</span><span class="p">)</span> <span class="p">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">w</span><span class="o">&#39;*</span><span class="n">H</span><span class="o">*</span><span class="n">w</span> <span class="o">+</span> <span class="n">Cw</span><span class="o">&#39;*</span><span class="n">w</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>, <a class="reference internal" href="#opf_model.params_legacy_cost" title="opf_model.params_legacy_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">params_legacy_cost()</span></code></a>, <a class="reference internal" href="#opf_model.eval_legacy_cost" title="opf_model.eval_legacy_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">eval_legacy_cost()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="opf_model.init_indexed_name">
+<span class="sig-name descname"><span class="pre">init_indexed_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">om</span></em>, <em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">dim_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opf_model.init_indexed_name" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#opf_model.init_indexed_name" title="opf_model.init_indexed_name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">init_indexed_name()</span></code></a> - Initializes the dimensions for an indexed named set.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">OM</span><span class="p">.</span><span class="n">INIT_INDEXED_NAME</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">DIM_LIST</span><span class="p">)</span>
+
+<span class="n">Initializes</span> <span class="n">the</span> <span class="n">dimensions</span> <span class="k">for</span> <span class="n">an</span> <span class="n">indexed</span> <span class="n">named</span> <span class="n">variable</span><span class="p">,</span> <span class="n">constraint</span>
+<span class="nb">or</span> <span class="n">cost</span> <span class="k">set</span><span class="p">.</span>
+
+<span class="n">Variables</span><span class="p">,</span> <span class="n">constraints</span> <span class="nb">and</span> <span class="n">costs</span> <span class="n">are</span> <span class="n">referenced</span> <span class="n">in</span> <span class="n">OPT_MODEL</span> <span class="n">in</span> <span class="n">terms</span>
+<span class="n">of</span> <span class="n">named</span> <span class="n">sets</span><span class="p">.</span> <span class="n">The</span> <span class="n">specific</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">named</span> <span class="k">set</span> <span class="n">being</span> <span class="n">referenced</span> <span class="n">is</span>
+<span class="n">given</span> <span class="n">by</span> <span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">with</span> <span class="n">the</span> <span class="n">following</span> <span class="n">valid</span> <span class="n">options</span><span class="p">:</span>
+    <span class="n">SET_TYPE</span> <span class="p">=</span> <span class="s">&#39;var&#39;</span>   <span class="p">=</span><span class="o">&gt;</span> <span class="n">variable</span> <span class="k">set</span>
+    <span class="n">SET_TYPE</span> <span class="p">=</span> <span class="s">&#39;lin&#39;</span>   <span class="p">=</span><span class="o">&gt;</span> <span class="n">linear</span> <span class="n">constraint</span> <span class="k">set</span>
+    <span class="n">SET_TYPE</span> <span class="p">=</span> <span class="s">&#39;nle&#39;</span>   <span class="p">=</span><span class="o">&gt;</span> <span class="n">nonlinear</span> <span class="n">equality</span> <span class="n">constraint</span> <span class="k">set</span>
+    <span class="n">SET_TYPE</span> <span class="p">=</span> <span class="s">&#39;nli&#39;</span>   <span class="p">=</span><span class="o">&gt;</span> <span class="n">nonlinear</span> <span class="n">inequality</span> <span class="n">constraint</span> <span class="k">set</span>
+    <span class="n">SET_TYPE</span> <span class="p">=</span> <span class="s">&#39;qdc&#39;</span>   <span class="p">=</span><span class="o">&gt;</span> <span class="n">quadratic</span> <span class="n">cost</span> <span class="k">set</span>
+    <span class="n">SET_TYPE</span> <span class="p">=</span> <span class="s">&#39;nlc&#39;</span>   <span class="p">=</span><span class="o">&gt;</span> <span class="n">nonlinear</span> <span class="n">cost</span> <span class="k">set</span>
+    <span class="n">SET_TYPE</span> <span class="p">=</span> <span class="s">&#39;cost&#39;</span>  <span class="p">=</span><span class="o">&gt;</span> <span class="n">legacy</span> <span class="n">cost</span> <span class="k">set</span>
+
+<span class="n">Indexed</span> <span class="n">Named</span> <span class="n">Sets</span>
+
+<span class="n">A</span> <span class="n">variable</span><span class="p">,</span> <span class="n">constraint</span> <span class="nb">or</span> <span class="n">cost</span> <span class="k">set</span> <span class="n">can</span> <span class="n">be</span> <span class="n">identified</span> <span class="n">by</span> <span class="n">a</span> <span class="nb">single</span> <span class="n">NAME</span><span class="p">,</span>
+<span class="n">such</span> <span class="n">as</span> <span class="s">&#39;Pmismatch&#39;</span><span class="p">,</span> <span class="nb">or</span> <span class="n">by</span> <span class="n">a</span> <span class="n">name</span> <span class="n">that</span> <span class="n">is</span> <span class="n">indexed</span> <span class="n">by</span> <span class="n">one</span> <span class="nb">or</span> <span class="n">more</span> <span class="n">indices</span><span class="p">,</span>
+<span class="n">such</span> <span class="n">as</span> <span class="s">&#39;Pmismatch(3,4)&#39;</span><span class="p">.</span> <span class="n">For</span> <span class="n">an</span> <span class="n">indexed</span> <span class="n">named</span> <span class="k">set</span><span class="p">,</span> <span class="n">before</span> <span class="n">adding</span> <span class="n">the</span>
+<span class="n">indexed</span> <span class="n">variable</span><span class="p">,</span> <span class="n">constraint</span> <span class="nb">or</span> <span class="n">cost</span> <span class="n">sets</span> <span class="n">themselves</span><span class="p">,</span> <span class="n">the</span> <span class="n">dimensions</span> <span class="n">of</span>
+<span class="n">the</span> <span class="n">indexed</span> <span class="k">set</span> <span class="n">must</span> <span class="n">be</span> <span class="k">set</span> <span class="n">by</span> <span class="n">calling</span> <span class="n">INIT_INDEXED_NAME</span><span class="p">,</span> <span class="n">where</span>
+<span class="n">DIM_LIST</span> <span class="n">is</span> <span class="n">a</span> <span class="nb">cell</span> <span class="n">array</span> <span class="n">of</span> <span class="n">the</span> <span class="n">dimensions</span><span class="p">.</span>
+
+<span class="n">Examples</span><span class="p">:</span>
+    <span class="c">%% linear constraints with indexed named set &#39;R(i,j)&#39;</span>
+    <span class="n">om</span><span class="p">.</span><span class="n">init_indexed_name</span><span class="p">(</span><span class="s">&#39;lin&#39;</span><span class="p">,</span> <span class="s">&#39;R&#39;</span><span class="p">,</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">});</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span>
+      <span class="k">for</span> <span class="n">j</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span>
+        <span class="n">om</span><span class="p">.</span><span class="n">add_lin_constraint</span><span class="p">(</span><span class="s">&#39;R&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">},</span> <span class="n">A</span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">},</span> <span class="p">...);</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>, <code class="docutils literal notranslate"><span class="pre">add_var</span></code>, <code class="docutils literal notranslate"><span class="pre">add_lin_constraint</span></code>, <code class="docutils literal notranslate"><span class="pre">add_nln_constraint</span></code>,
+<code class="docutils literal notranslate"><span class="pre">add_quad_cost</span></code>, <code class="docutils literal notranslate"><span class="pre">add_nln_cost</span></code>, <a class="reference internal" href="#opf_model.add_legacy_cost" title="opf_model.add_legacy_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_legacy_cost()</span></code></a>.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="5. Legacy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../functions/runpf.html" class="btn btn-neutral float-right" title="runpf" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

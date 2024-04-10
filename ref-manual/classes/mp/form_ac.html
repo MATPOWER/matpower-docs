@@ -86,6 +86,7 @@
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/add-constraint.html">How to Add an OPF Constraint</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../howto/extension.html">How to Create an Extension</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../howto/builddocs.html">How to Build the Documentation</a></li>
@@ -140,8 +141,8 @@ element class with an AC formulation must inherit, at least indirectly, from
 both <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a> and <a class="reference internal" href="#mp.form_ac" title="mp.form_ac"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_ac</span></code></a>.</p>
 <p><a class="reference internal" href="#mp.form_ac" title="mp.form_ac"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_ac</span></code></a> defines the complex port injections as functions of the state
 variables <span class="math notranslate nohighlight">\(\X\)</span>, that is, the complex voltages <span class="math notranslate nohighlight">\(\V\)</span> and
-non-voltage states <span class="math notranslate nohighlight">\(\Z\)</span>. The are defined in terms of 3 compoents, the
-linear current injection and linear power injection components,</p>
+non-voltage states <span class="math notranslate nohighlight">\(\Z\)</span>. They are defined in terms of 3 components,
+the linear current injection and linear power injection components,</p>
 <div class="math notranslate nohighlight" id="equation-ref-manual-classes-mp-form-ac-0">
 <span class="eqno">(3.2)<a class="headerlink" href="#equation-ref-manual-classes-mp-form-ac-0" title="Link to this equation"></a></span>\[\begin{split}\Ilin(\X) &amp;= \left[\begin{array}{cc}\YY &amp; \LL\end{array}\right] \X + \iv \\
 &amp;= \YY \V + \LL \Z + \iv\end{split}\]</div>
@@ -710,7 +711,7 @@ interest, if empty or missing, returns results
 corresponding to all ports</p></li>
 </ul>
 </dd>
-<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dt class="field-even">Output<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>d2H</strong> (<em>double</em>) – sparse constraint Hessian matrix, <span class="math notranslate nohighlight">\(\h_{\x\x}^\mathrm{flow}(\muv)\)</span></p>
 </dd>
 </dl>
@@ -742,7 +743,7 @@ interest, if empty or missing, returns results
 corresponding to all ports</p></li>
 </ul>
 </dd>
-<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dt class="field-even">Output<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>d2H</strong> (<em>double</em>) – sparse constraint Hessian matrix, <span class="math notranslate nohighlight">\(\h_{\x\x}^\mathrm{flow}(\muv)\)</span></p>
 </dd>
 </dl>
@@ -774,7 +775,7 @@ interest, if empty or missing, returns results
 corresponding to all ports</p></li>
 </ul>
 </dd>
-<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dt class="field-even">Output<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>d2H</strong> (<em>double</em>) – sparse constraint Hessian matrix, <span class="math notranslate nohighlight">\(\h_{\x\x}^\mathrm{flow}(\muv)\)</span></p>
 </dd>
 </dl>
@@ -806,7 +807,7 @@ interest, if empty or missing, returns results
 corresponding to all ports</p></li>
 </ul>
 </dd>
-<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dt class="field-even">Output<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>d2H</strong> (<em>double</em>) – sparse constraint Hessian matrix, <span class="math notranslate nohighlight">\(\h_{\x\x}^\mathrm{flow}(\muv)\)</span></p>
 </dd>
 </dl>

@@ -85,6 +85,7 @@
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/add-constraint.html">How to Add an OPF Constraint</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../howto/extension.html">How to Create an Extension</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../howto/builddocs.html">How to Build the Documentation</a></li>
@@ -501,14 +502,16 @@ for any offline elements.</p>
 <dt class="sig sig-object mat" id="mp.dm_element.dm_converter_element">
 <span class="sig-name descname"><span class="pre">dm_converter_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dmc</span></em>, <em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dm_element.dm_converter_element" title="Link to this definition"></a></dt>
 <dd><p>Get corresponding data model converter element.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dmce</span> <span class="p">=</span> <span class="n">dme</span><span class="p">.</span><span class="n">dm_converter_element</span><span class="p">(</span><span class="n">dmc</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">dmce</span> <span class="p">=</span> <span class="n">dme</span><span class="p">.</span><span class="n">dm_converter_element</span><span class="p">(</span><span class="n">dmc</span><span class="p">)</span>
+<span class="n">dmce</span> <span class="p">=</span> <span class="n">dme</span><span class="p">.</span><span class="n">dm_converter_element</span><span class="p">(</span><span class="n">dmc</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Inputs<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dmc</strong> (<a class="reference internal" href="dm_converter.html#mp.dm_converter" title="mp.dm_converter"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dm_converter</span></code></a>) – data model converter object</p></li>
-<li><p><strong>name</strong> (<em>char array</em>) – name of element type</p></li>
+<li><p><strong>name</strong> (<em>char array</em>) – <em>(optional)</em> name of element type
+<em>(default is name of this object)</em></p></li>
 </ul>
 </dd>
 <dt class="field-even">Output<span class="colon">:</span></dt>

@@ -62,6 +62,7 @@
 <p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/add-constraint.html">How to Add an OPF Constraint</a></li>
 <li class="toctree-l1"><a class="reference internal" href="howto/extension.html">How to Create an Extension</a></li>
 <li class="toctree-l1"><a class="reference internal" href="howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="howto/builddocs.html">How to Build the Documentation</a></li>
@@ -158,6 +159,8 @@
         <li><a href="ref-manual/classes/mp/mme_buslink_pf_acp.html#mp.mme_buslink_pf_acp.add_constraints">(mp.mme_buslink_pf_acp method)</a>
 </li>
         <li><a href="ref-manual/classes/mp/mme_gen_opf_ac.html#mp.mme_gen_opf_ac.add_constraints">(mp.mme_gen_opf_ac method)</a>
+</li>
+        <li><a href="ref-manual/classes/mp/mme_gen_opf_ac_oval.html#mp.mme_gen_opf_ac_oval.add_constraints">(mp.mme_gen_opf_ac_oval method)</a>
 </li>
         <li><a href="ref-manual/classes/mp/mme_gen_opf_dc.html#mp.mme_gen_opf_dc.add_constraints">(mp.mme_gen_opf_dc method)</a>
 </li>
@@ -2343,6 +2346,8 @@
 </li>
         <li><a href="ref-manual/classes/mp/xt_legacy_dcline.html#mp.xt_legacy_dcline.mm_element_classes">(mp.xt_legacy_dcline method)</a>
 </li>
+        <li><a href="ref-manual/classes/mp/xt_oval_cap_curve.html#mp.xt_oval_cap_curve.mm_element_classes">(mp.xt_oval_cap_curve method)</a>
+</li>
         <li><a href="ref-manual/classes/mp/xt_reserves.html#mp.xt_reserves.mm_element_classes">(mp.xt_reserves method)</a>
 </li>
       </ul></li>
@@ -2431,6 +2436,8 @@
       <li><a href="ref-manual/classes/mp/mme_gen_opf.html#mp.mme_gen_opf">mme_gen_opf (class in mp)</a>
 </li>
       <li><a href="ref-manual/classes/mp/mme_gen_opf_ac.html#mp.mme_gen_opf_ac">mme_gen_opf_ac (class in mp)</a>
+</li>
+      <li><a href="ref-manual/classes/mp/mme_gen_opf_ac_oval.html#mp.mme_gen_opf_ac_oval">mme_gen_opf_ac_oval (class in mp)</a>
 </li>
       <li><a href="ref-manual/classes/mp/mme_gen_opf_dc.html#mp.mme_gen_opf_dc">mme_gen_opf_dc (class in mp)</a>
 </li>
@@ -3108,10 +3115,10 @@
 </li>
       <li><a href="ref-manual/legacy/classes/opf_model.html#opf_model.opf_model">opf_model() (opf_model method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="ref-manual/legacy/functions/opf_nle_fcn1.html#opf_nle_fcn1">opf_nle_fcn1() (built-in function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="ref-manual/legacy/functions/opf_nle_hess1.html#opf_nle_hess1">opf_nle_hess1() (built-in function)</a>
 </li>
       <li><a href="ref-manual/legacy/functions/opf_power_balance_fcn.html#opf_power_balance_fcn">opf_power_balance_fcn() (built-in function)</a>
@@ -3141,6 +3148,10 @@
       <li><a href="mpom/functions/osqp_options.html#osqp_options">osqp_options() (built-in function)</a>
 </li>
       <li><a href="mpom/functions/osqpver.html#osqpver">osqpver() (built-in function)</a>
+</li>
+      <li><a href="ref-manual/classes/mp/mme_gen_opf_ac_oval.html#mp.mme_gen_opf_ac_oval.oval_pq_capability_fcn">oval_pq_capability_fcn() (mp.mme_gen_opf_ac_oval method)</a>
+</li>
+      <li><a href="ref-manual/classes/mp/mme_gen_opf_ac_oval.html#mp.mme_gen_opf_ac_oval.oval_pq_capability_hess">oval_pq_capability_hess() (mp.mme_gen_opf_ac_oval method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -4677,6 +4688,8 @@
       <li><a href="ref-manual/classes/mp/xt_3p.html#mp.xt_3p">xt_3p (class in mp)</a>
 </li>
       <li><a href="ref-manual/classes/mp/xt_legacy_dcline.html#mp.xt_legacy_dcline">xt_legacy_dcline (class in mp)</a>
+</li>
+      <li><a href="ref-manual/classes/mp/xt_oval_cap_curve.html#mp.xt_oval_cap_curve">xt_oval_cap_curve (class in mp)</a>
 </li>
       <li><a href="ref-manual/classes/mp/xt_reserves.html#mp.xt_reserves">xt_reserves (class in mp)</a>
 </li>

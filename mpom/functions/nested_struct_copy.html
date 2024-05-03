@@ -126,58 +126,85 @@
 <dt class="sig sig-object mat" id="nested_struct_copy">
 <span class="sig-name descname"><span class="pre">nested_struct_copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">s</span></em>, <em class="sig-param"><span class="pre">opt</span></em>, <em class="sig-param"><span class="pre">parent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nested_struct_copy" title="Link to this definition"></a></dt>
 <dd><p><a class="reference internal" href="#nested_struct_copy" title="nested_struct_copy"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">nested_struct_copy()</span></code></a> - Copies values from one nested struct to another.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">DS</span> <span class="p">=</span> <span class="n">NESTED_STRUCT_COPY</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>
-<span class="n">DS</span> <span class="p">=</span> <span class="n">NESTED_STRUCT_COPY</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">OPT</span><span class="p">)</span>
-<span class="n">DS</span> <span class="p">=</span> <span class="n">NESTED_STRUCT_COPY</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">OPT</span><span class="p">,</span> <span class="n">PARENT</span><span class="p">)</span>
-
-<span class="n">DS</span> <span class="p">=</span> <span class="n">NESTED_STRUCT_COPY</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span> <span class="n">copies</span> <span class="n">values</span> <span class="n">from</span> <span class="n">a</span> <span class="nb">source</span> <span class="nb">struct</span> <span class="n">S</span> <span class="n">to</span>
-<span class="n">a</span> <span class="n">destination</span> <span class="nb">struct</span> <span class="n">D</span> <span class="n">in</span> <span class="n">a</span> <span class="n">nested</span><span class="p">,</span> <span class="n">recursive</span> <span class="n">manner</span><span class="p">.</span> <span class="n">That</span> <span class="n">is</span><span class="p">,</span> <span class="n">the</span> <span class="n">value</span>
-<span class="n">of</span> <span class="n">each</span> <span class="n">field</span> <span class="n">in</span> <span class="n">S</span> <span class="n">is</span> <span class="n">copied</span> <span class="n">directly</span> <span class="n">to</span> <span class="n">the</span> <span class="n">corresponding</span> <span class="n">field</span> <span class="n">in</span> <span class="n">D</span><span class="p">,</span>
-<span class="n">unless</span> <span class="n">that</span> <span class="n">value</span> <span class="n">is</span> <span class="n">itself</span> <span class="n">a</span> <span class="nb">struct</span><span class="p">,</span> <span class="n">in</span> <span class="n">which</span> <span class="k">case</span> <span class="n">the</span> <span class="n">copy</span> <span class="n">is</span> <span class="n">done</span>
-<span class="n">via</span> <span class="n">a</span> <span class="n">recursive</span> <span class="n">call</span> <span class="n">to</span> <span class="n">NESTED_STRUCT_COPY</span><span class="p">.</span>
-
-<span class="n">Inputs</span><span class="p">:</span>
-    <span class="n">D</span> <span class="o">-</span> <span class="n">the</span> <span class="n">destination</span> <span class="nb">struct</span> <span class="n">that</span> <span class="n">values</span> <span class="n">are</span> <span class="n">copied</span> <span class="n">to</span>
-    <span class="n">S</span> <span class="o">-</span> <span class="n">the</span> <span class="nb">source</span> <span class="nb">struct</span> <span class="n">containing</span> <span class="n">the</span> <span class="n">values</span> <span class="n">to</span> <span class="n">be</span> <span class="n">copied</span> <span class="n">from</span>
-    <span class="n">OPT</span> <span class="o">-</span> <span class="p">(</span><span class="n">optional</span><span class="p">)</span> <span class="n">options</span> <span class="nb">struct</span> <span class="n">controlling</span> <span class="n">copy</span> <span class="n">behavior</span><span class="p">,</span> <span class="n">with</span> <span class="n">fields</span><span class="p">:</span>
-        <span class="n">check</span> <span class="o">-</span> <span class="n">check</span> <span class="n">that</span> <span class="n">field</span> <span class="n">name</span> <span class="n">is</span> <span class="n">valid</span><span class="p">,</span> <span class="n">by</span> <span class="n">looking</span> <span class="k">for</span> <span class="n">it</span> <span class="n">in</span>
-                <span class="n">OPT</span><span class="p">.</span><span class="n">valid_fields</span> <span class="p">(</span><span class="n">defaults</span> <span class="n">to</span> <span class="n">D</span><span class="p">),</span> <span class="n">before</span> <span class="n">copying</span>
-             <span class="mi">0</span> <span class="o">-</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span> <span class="k">do</span> <span class="nb">not</span> <span class="k">do</span> <span class="nb">any</span> <span class="n">field</span> <span class="n">name</span> <span class="n">checking</span>
-             <span class="mi">1</span> <span class="o">-</span> <span class="n">fatal</span> <span class="nb">error</span> <span class="k">if</span> <span class="n">S</span> <span class="n">contains</span> <span class="n">an</span> <span class="n">invalid</span> <span class="n">field</span> <span class="n">name</span>
-            <span class="o">-</span><span class="mi">1</span> <span class="o">-</span> <span class="n">skip</span> <span class="nb">any</span> <span class="n">invalid</span> <span class="n">fields</span> <span class="n">in</span> <span class="n">S</span>
-        <span class="n">copy_mode</span> <span class="o">-</span> <span class="n">how</span> <span class="n">to</span> <span class="n">handle</span> <span class="n">assignment</span> <span class="n">of</span> <span class="n">fields</span> <span class="n">that</span> <span class="n">are</span> <span class="n">structs</span>
-            <span class="s">&#39;&#39;</span>          <span class="o">-</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span> <span class="n">recursive</span> <span class="n">call</span> <span class="n">to</span> <span class="n">nested_struct_copy</span><span class="p">()</span>
-            <span class="s">&#39;=&#39;</span>         <span class="o">-</span> <span class="n">direct</span> <span class="n">assignment</span><span class="p">,</span> <span class="n">D</span><span class="p">.</span><span class="o">&lt;</span><span class="n">field</span><span class="o">&gt;</span> <span class="p">=</span> <span class="n">S</span><span class="p">.</span><span class="o">&lt;</span><span class="n">field</span><span class="o">&gt;</span>
-            <span class="p">@</span><span class="o">&lt;</span><span class="k">function</span><span class="o">&gt;</span> <span class="o">-</span> <span class="n">pointer</span> <span class="n">to</span> <span class="n">a</span> <span class="k">function</span> <span class="n">to</span> <span class="n">be</span> <span class="n">called</span> <span class="n">with</span> <span class="n">field</span>
-                          <span class="n">from</span> <span class="n">S</span><span class="p">,</span> <span class="n">returning</span> <span class="n">field</span> <span class="n">to</span> <span class="n">assign</span> <span class="n">to</span> <span class="n">D</span>
-                          <span class="n">D</span><span class="p">.</span><span class="o">&lt;</span><span class="n">field</span><span class="o">&gt;</span> <span class="p">=</span> <span class="o">&lt;</span><span class="k">function</span><span class="o">&gt;</span><span class="p">(</span><span class="n">S</span><span class="p">.</span><span class="o">&lt;</span><span class="n">field</span><span class="o">&gt;</span><span class="p">)</span>
-        <span class="n">valid_fields</span> <span class="o">-</span> <span class="p">(</span><span class="n">default</span> <span class="p">=</span> <span class="n">D</span><span class="p">)</span> <span class="nb">struct</span> <span class="n">containing</span> <span class="n">the</span> <span class="n">heirarchy</span>
-                          <span class="n">of</span> <span class="nb">all</span> <span class="n">of</span> <span class="p">(</span><span class="nb">and</span> <span class="n">only</span><span class="p">)</span> <span class="n">the</span> <span class="n">valid</span> <span class="n">field</span> <span class="n">names</span>
-                          <span class="p">(</span><span class="n">field</span> <span class="n">values</span> <span class="n">are</span> <span class="n">ignored</span><span class="p">)</span>
-        <span class="n">exceptions</span> <span class="o">-</span> <span class="n">a</span> <span class="nb">struct</span> <span class="n">array</span><span class="p">,</span> <span class="n">with</span> <span class="n">the</span> <span class="n">following</span> <span class="n">fields</span><span class="p">,</span> <span class="n">defining</span>
-                    <span class="n">exceptions</span> <span class="n">to</span> <span class="n">the</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">options</span>
-            <span class="n">name</span>        <span class="o">-</span> <span class="n">name</span> <span class="p">(</span><span class="n">can</span> <span class="n">be</span> <span class="n">multi</span><span class="o">-</span><span class="n">level</span><span class="p">)</span> <span class="n">of</span> <span class="n">field</span> <span class="n">to</span> <span class="n">which</span>
-                          <span class="n">exception</span> <span class="n">applies</span>
-            <span class="n">check</span>       <span class="o">-</span> <span class="n">same</span> <span class="n">as</span> <span class="n">OPT</span><span class="p">.</span><span class="n">check</span><span class="p">,</span>     <span class="n">only</span> <span class="k">for</span> <span class="n">specified</span> <span class="n">field</span>
-            <span class="n">copy_mode</span>   <span class="o">-</span> <span class="n">same</span> <span class="n">as</span> <span class="n">OPT</span><span class="p">.</span><span class="n">copy_mode</span><span class="p">,</span> <span class="n">only</span> <span class="k">for</span> <span class="n">specified</span> <span class="n">field</span>
-            <span class="n">valid_fields</span><span class="o">-</span> <span class="n">same</span> <span class="n">as</span> <span class="n">OPT</span><span class="p">.</span><span class="n">valid_fields</span><span class="p">,</span>   <span class="k">for</span> <span class="n">specified</span> <span class="n">field</span>
-    <span class="n">PARENT</span> <span class="o">-</span> <span class="nb">cell</span> <span class="n">array</span> <span class="n">of</span> <span class="n">parent</span> <span class="n">field</span> <span class="n">names</span> <span class="n">used</span> <span class="n">by</span> <span class="n">NESTED_STRUCT_COPY</span>
-            <span class="n">with</span> <span class="n">recursive</span> <span class="n">calls</span> <span class="n">to</span> <span class="n">allow</span> <span class="n">checking</span> <span class="n">of</span> <span class="n">multi</span><span class="o">-</span><span class="n">level</span> <span class="n">field</span>
-            <span class="n">field</span> <span class="n">names</span> <span class="n">in</span> <span class="n">exceptions</span><span class="p">,</span> <span class="nb">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span> <span class="n">when</span> <span class="n">called</span> <span class="n">recursively</span> <span class="n">to</span>
-            <span class="n">assign</span> <span class="n">the</span> <span class="n">field</span> <span class="n">S</span><span class="p">.</span><span class="nb">info</span><span class="p">.</span><span class="n">address</span><span class="p">.</span><span class="nb">home</span> <span class="n">the</span> <span class="n">value</span> <span class="n">of</span> <span class="n">PARENT</span> <span class="n">would</span>
-            <span class="n">be</span> <span class="p">{</span><span class="s">&#39;info&#39;</span><span class="p">,</span> <span class="s">&#39;address&#39;</span><span class="p">}.</span>
-
-<span class="n">Output</span><span class="p">:</span>
-    <span class="n">DS</span> <span class="o">-</span> <span class="n">the</span> <span class="n">combined</span> <span class="n">destination</span> <span class="nb">struct</span>
-
-<span class="n">Examples</span><span class="p">:</span>
-    <span class="n">See</span> <span class="n">T_NESTED_STRUCT_COPY</span> <span class="p">(</span><span class="n">t_nested_struct_copy</span><span class="p">.</span><span class="n">m</span><span class="p">).</span>
-
-<span class="n">TO</span> <span class="n">DO</span><span class="p">:</span>  <span class="n">Finish</span> <span class="nb">example</span><span class="p">.</span>
-        <span class="n">Implement</span> <span class="n">an</span> <span class="nb">error</span> <span class="n">that</span> <span class="n">passes</span> <span class="n">back</span> <span class="n">the</span> <span class="nb">full</span> <span class="n">field</span> <span class="n">string</span> <span class="n">of</span>
-        <span class="n">an</span> <span class="n">invalid</span> <span class="n">field</span> <span class="n">so</span> <span class="n">that</span> <span class="n">mpoption</span> <span class="n">can</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">it</span> <span class="n">as</span> <span class="n">option</span> <span class="n">foo</span><span class="p">.</span>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="p">=</span> <span class="n">nested_struct_copy</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="n">ds</span> <span class="p">=</span> <span class="n">nested_struct_copy</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">opt</span><span class="p">)</span>
+<span class="n">ds</span> <span class="p">=</span> <span class="n">nested_struct_copy</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">opt</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Copy values from a source struct <code class="docutils literal notranslate"><span class="pre">s</span></code> to a destination struct <code class="docutils literal notranslate"><span class="pre">d</span></code> in
+a nested, recursive manner. That is, the value of each field in <code class="docutils literal notranslate"><span class="pre">s</span></code> is
+copied directly to the corresponding field in <code class="docutils literal notranslate"><span class="pre">d</span></code>, unless that value is
+itself a struct, in which case the copy is done via a recursive call to
+<a class="reference internal" href="#nested_struct_copy" title="nested_struct_copy"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">nested_struct_copy()</span></code></a>.</p>
+<dl class="field-list">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul>
+<li><p><strong>d</strong> (<em>struct</em>) – the destination struct that values are copied to</p></li>
+<li><p><strong>s</strong> (<em>struct</em>) – the source struct containing the values to be copied from</p></li>
+<li><p><strong>opt</strong> (<em>struct</em>) – <em>(optional)</em> options struct controlling copy behavior,
+with fields:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">check</span></code> — check that field name is valid, by looking for it in
+<code class="docutils literal notranslate"><span class="pre">opt.valid_fields</span></code>, before copying</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>0 — <em>(default)</em> do not do any field name checking</p></li>
+<li><p>1 — fatal error if <code class="docutils literal notranslate"><span class="pre">s</span></code> contains an invalid field name</p></li>
+<li><p>-1 — skip any invalid fields in <code class="docutils literal notranslate"><span class="pre">s</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">copy_mode</span></code> — how to handle assignment of fields that are structs</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">''</span></code> — <em>(default)</em> recursive call to <a class="reference internal" href="#nested_struct_copy" title="nested_struct_copy"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">nested_struct_copy()</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'='</span></code> — direct assignment, <code class="samp docutils literal notranslate"><span class="pre">d.</span><em><span class="pre">&lt;field&gt;</span></em> <span class="pre">=</span> <span class="pre">s.</span><em><span class="pre">&lt;field&gt;</span></em></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;&lt;function&gt;</span></code> — pointer to a function to be called with field
+from <code class="docutils literal notranslate"><span class="pre">s</span></code>, returning field to assign to <code class="docutils literal notranslate"><span class="pre">d</span></code>,
+<code class="samp docutils literal notranslate"><span class="pre">d.</span><em><span class="pre">&lt;field&gt;</span></em> <span class="pre">=</span> <em><span class="pre">&lt;function&gt;</span></em><span class="pre">(s.</span><em><span class="pre">&lt;field&gt;</span></em><span class="pre">)</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">valid_fields</span></code> — <em>(default =</em> <code class="docutils literal notranslate"><span class="pre">d</span></code> <em>)</em> struct containing the
+heirarchy of all of <em>(and only)</em> the valid field names <em>(field
+values are ignored)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exceptions</span></code> — a struct array, with the following fields, defining
+exceptions to the top-level options</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>        — name (can be multi-level) of field to which
+exception applies</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">check</span></code> — same as <code class="docutils literal notranslate"><span class="pre">opt.check</span></code>, only for specified field</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">copy_mode</span></code> — same as <code class="docutils literal notranslate"><span class="pre">opt.copy_mode</span></code>, only for specified
+field</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">valid_fields</span></code> — same as <code class="docutils literal notranslate"><span class="pre">opt.valid_fields</span></code>, only for
+specified field</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>parent</strong> (<em>cell array</em>) – <em>(optional)</em> parent field names used internally
+by <a class="reference internal" href="#nested_struct_copy" title="nested_struct_copy"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">nested_struct_copy()</span></code></a> with recursive calls to allow checking of
+multi-level field names in exceptions, e.g. when called recursively
+to assign the field <code class="docutils literal notranslate"><span class="pre">s.info.address.home</span></code>, the value of <code class="docutils literal notranslate"><span class="pre">parent</span></code>
+would be <code class="docutils literal notranslate"><span class="pre">{'info',</span> <span class="pre">'address'}</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Output<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ds</strong> (<em>struct</em>) – the combined destination struct</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>See <a class="reference internal" href="t_nested_struct_copy.html#t_nested_struct_copy" title="t_nested_struct_copy"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">t_nested_struct_copy()</span></code></a> source code for numerous examples.</p>
+<p><em>To Do:</em></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>Finish example.</em></p></li>
+<li><p><em>Implement an error that passes back the full field string of
+an invalid field so that :func:`mpoption` can refer to it as option foo.</em></p></li>
+</ul>
+</div></blockquote>
 </dd></dl>
 
 </section>

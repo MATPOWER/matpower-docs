@@ -251,6 +251,22 @@ equivalent at 1 p.u. voltage)</p></td>
 <td><p><em>double</em></p></td>
 <td><p>reactive power injection at “to” end</p></td>
 </tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">psh_fr</span></code></p></td>
+<td><p><em>double</em></p></td>
+<td><p>active power shunt losses at “from” end</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">qsh_fr</span></code></p></td>
+<td><p><em>double</em></p></td>
+<td><p>reactive power shunt losses at “from” end</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">psh_to</span></code></p></td>
+<td><p><em>double</em></p></td>
+<td><p>active power shunt losses at “to” end</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">qsh_to</span></code></p></td>
+<td><p><em>double</em></p></td>
+<td><p>reactive power shunt losses at “to” end</p></td>
+</tr>
 </tbody>
 </table>
 </div></blockquote>
@@ -320,6 +336,12 @@ equivalent at 1 p.u. voltage)</p></td>
 <dt class="sig sig-object mat" id="mp.dme_branch.rate_a">
 <span class="sig-name descname"><span class="pre">rate_a</span></span><a class="headerlink" href="#mp.dme_branch.rate_a" title="Link to this definition"></a></dt>
 <dd><p>long term flow limit (p.u.) for branches that are on</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.dme_branch.loss_tol">
+<span class="sig-name descname"><span class="pre">loss_tol</span></span><em class="property"> <span class="pre">=</span> <span class="pre">1e-4</span></em><a class="headerlink" href="#mp.dme_branch.loss_tol" title="Link to this definition"></a></dt>
+<dd><p>loss values &lt; this are displayed as <code class="docutils literal notranslate"><span class="pre">-</span></code></p>
 </dd></dl>
 
 </dd>
@@ -396,6 +418,11 @@ equivalent at 1 p.u. voltage)</p></td>
 <dl class="mat method">
 <dt class="sig sig-object mat" id="mp.dme_branch.pp_get_headers_det">
 <span class="sig-name descname"><span class="pre">pp_get_headers_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_branch.pp_get_headers_det" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.dme_branch.pp_get_footers_det">
+<span class="sig-name descname"><span class="pre">pp_get_footers_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm</span></em>, <em class="sig-param"><span class="pre">out_e</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em>, <em class="sig-param"><span class="pre">pp_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.dme_branch.pp_get_footers_det" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="mat method">

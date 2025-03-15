@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mp.set_manager &mdash; MATPOWER Documentation 8.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=bb3927b2"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>window.MathJax = {"loader": {"load": ["[tex]/upgreek"]}, "tex": {"packages": {"[+]": ["upgreek"]}, "macros": {"dg": "\\sp\\dagger", "trans": ["{#1}^{\\mathsf{T}}", 1], "conj": ["{#1}^{\\ast}", 1], "hc": ["{#1}^{\\dg}", 1], "hconj": ["{#1}^{+}", 1], "diag": ["\\left[^\\smallsetminus{#1}_\\smallsetminus\\right]", 1], "diagg": ["\\left[\\smash{#1}\\right]", 1], "cdiag": ["\\conj{\\diag{#1}}", 1], "der": ["\\frac{\\partial{#1}}{\\partial{#2}}", 2], "dersx": ["\\frac{\\partial^2{#1}}{\\partial{#2}^2}", 2], "dersxy": ["\\frac{\\partial^2{#1}}{\\partial{#2}\\partial{#3}}", 3], "cscal": ["\\mathrm{#1}", 1], "rvec": ["{\\boldsymbol{#1}}", 1], "cvec": ["\\mathbf{#1}", 1], "rmat": ["{\\boldsymbol{#1}}", 1], "cmat": ["\\mathbf{#1}", 1], "rvecG": ["{\\boldsymbol{#1}}", 1], "cvecG": ["\\boldsymbol{#1}", 1], "rmatG": ["\\boldsymbol{\\mathit{#1}}", 1], "cmatG": ["\\mathbf{#1}", 1], "param": ["\\underline{#1}", 1], "ov": ["{\\overline{#1}}", 1], "zeros": ["\\rvec{0}", 0], "ones": ["\\rvec{1}_{#1}", 1], "onest": ["\\trans{\\rvec{1}}_{#1}", 1], "Id": ["\\diag{\\ones{#1}}", 1], "R": "\\mathbb{R}}         % requires \\usepackage{amsfonts|bbold", "C": "\\mathbb{C}}         % requires \\usepackage{amsfonts", "av": "\\cvec{a}", "bv": "\\cvec{b}", "cv": "\\cvec{c}", "f": "\\cscal{f}", "F": "\\cvec{f}", "g": "\\rvec{g}", "G": "\\cvec{g}", "h": "\\rvec{h}", "HH": "\\cvec{h}", "x": "\\rvec{x}", "y": "\\rvec{y}", "z": "\\rvec{z}", "X": "\\cvec{x}", "Z": "\\cvec{z}", "A": "\\cmat{A}", "B": "\\cmat{B}", "alphav": "\\rvecG{\\alpha}", "lam": "\\rvecG{\\lambda}", "lamh": "\\hat{\\lam}", "muv": "\\rvecG{\\mu}", "muhv": "\\hat{\\muv}", "vv": "\\rvec{v}", "vvi": ["\\cscal{v}_{#1}", 1], "V": "\\cvec{v}", "Vh": "\\hat{\\V}", "Vc": "\\conj{\\V}", "Vhc": "\\conj{\\Vh}", "dV": "\\diag{\\V}", "dVh": "\\diag{\\Vh}", "dVc": "\\diag{\\Vc}", "dVhc": "\\diag{\\Vhc}", "inV": "\\cvec{\\Lambda}", "inVh": "\\hat{\\inV}", "inVc": "\\conj{\\inV}", "inVhc": "\\conj{\\inVh}", "dinV": "\\diagg{\\inV}", "dinVh": "\\diagg{\\inVh}", "dinVc": "\\diagg{\\inVc}", "dinVhc": "\\diagg{\\inVhc}", "va": ["\\theta", 0], "vai": ["\\va_{#1}", 1], "Va": ["\\rvec{\\va}", 0], "Vah": ["\\hat{\\Va}", 0], "vm": ["\\nu", 0], "vmi": ["\\nu_{#1}", 1], "Vm": ["\\rvecG{\\nu}", 0], "dVm": "\\diag{\\Vm}", "dVmi": "\\dVm^{-1}", "Vmh": "\\hat{\\Vm}", "dVmh": "\\diag{\\Vmh}", "dVmhi": "\\dVmh^{-1}", "vr": "u", "vri": ["u_{#1}", 1], "vi": "w", "vii": ["w_{#1}", 1], "Vr": "\\rvec{u}", "Vi": "\\rvec{w}", "dVr": "\\diag{\\Vr}", "dVi": "\\diag{\\Vi}", "Vrh": "\\hat{\\Vr}", "Vih": "\\hat{\\Vi}", "dVrh": "\\diag{\\Vrh}", "dVih": "\\diag{\\Vih}", "E": "\\cvec{e}", "Eh": "\\hat{\\E}", "Ec": "\\conj{\\E}", "Ehc": "\\conj{\\Eh}", "dE": "\\diag{\\E}", "dEh": "\\diag{\\Eh}", "dEc": "\\diag{\\Ec}", "dEhc": "\\diag{\\Ehc}", "zr": "{z_r}", "zi": "{z_i}", "Zr": "{\\rvec{z}_r}", "Zi": "{\\rvec{z}_i}", "dlam": "\\diagg{\\lam}", "dlamh": "\\diagg{\\lamh}", "dlamva": "\\diagg{\\lam_\\va}", "dlamvm": "\\diagg{\\lam_\\vm}", "dlamvr": "\\diagg{\\lam_\\vr}", "dlamvi": "\\diagg{\\lam_\\vi}", "dlamzr": "\\diagg{\\lam_\\zr}", "dlamzi": "\\diagg{\\lam_\\zi}", "dlamhva": "\\diagg{\\lamh_\\va}", "dlamhvm": "\\diagg{\\lamh_\\vm}", "dlamhvr": "\\diagg{\\lamh_\\vr}", "dlamhvi": "\\diagg{\\lamh_\\vi}", "dlamhzr": "\\diagg{\\lamh_\\zr}", "dlamhzi": "\\diagg{\\lamh_\\zi}", "dmu": "\\diag{\\muv}", "dmuh": "\\diag{\\muhv}", "kk": "\\rvec{k}", "J": "\\param{\\rmat{J}}", "Jt": "\\trans{\\J}", "Jk": ["\\J_{\\kk_#1}", 1], "Ah": "\\hat{\\A}", "Fh": "\\hat{\\F}", "Gh": "\\hat{\\G}", "gh": "\\hat{\\g}", "fmax": "\\param{\\rvec{f}}_\\mathrm{max}", "gP": "\\g^P", "gPk": ["\\g^{P,#1}", 1], "fhmax": "\\hat{\\param{\\rvec{f}}}_\\mathrm{max}", "ghP": "\\gh^P", "ghPk": ["\\gh^{P,#1}", 1], "GS": "\\G^S", "GI": "\\G^I", "GSk": ["\\G^{S,#1}", 1], "GIk": ["\\G^{I,#1}", 1], "GSsys": "\\GSk{\\mathrm{sys}}", "GIsys": "\\GIk{\\mathrm{sys}}", "gPsys": "\\gPk{\\mathrm{sys}}", "GhS": "\\Gh^S", "GhI": "\\Gh^I", "GhSk": ["\\Gh^{S,#1}", 1], "GhIk": ["\\Gh^{I,#1}", 1], "GhSsys": "\\GhSk{\\mathrm{sys}}", "GhIsys": "\\GhIk{\\mathrm{sys}}", "ghPsys": "\\ghPk{\\mathrm{sys}}", "Ilin": "\\cvec{i}^{lin}", "Ilink": "\\cvec{i}^{lin, k}", "Ilinc": "\\conj{\\Ilin}", "dIlin": "\\diag{\\Ilin}", "dIlinc": "\\diag{\\Ilinc}", "Ilinh": "\\hat{{\\cvec{i}}}^{lin}", "Ilinhk": "\\hat{\\cvec{i}}^{lin, k}", "Ilinhc": "\\conj{\\Ilinh}", "dIlinh": "\\diag{\\Ilinh}", "dIlinhc": "\\diag{\\Ilinhc}", "Slin": "\\cvec{s}^{lin}", "Slink": "\\cvec{s}^{lin, k}", "Slinc": "\\conj{\\Slin}", "dSlin": "\\diag{\\Slin}", "dSlinc": "\\diag{\\Slinc}", "Slinh": "\\hat{\\cvec{s}}^{lin}", "Slinhk": "\\hat{\\cvec{s}}^{lin, k}", "Slinhc": "\\conj{\\Slinh}", "dSlinh": "\\diag{\\Slinh}", "dSlinhc": "\\diag{\\Slinhc}", "Inln": "\\cvec{i}^{nln}", "Inlnk": "\\cvec{i}^{nln, k}", "Snln": "\\cvec{s}^{nln}", "Snlnk": "\\cvec{s}^{nln, k}", "Inlnh": "\\hat{\\cvec{i}}^{nln}", "Inlnhk": "\\hat{\\cvec{i}}^{nln, k}", "Snlnh": "\\hat{\\cvec{s}}^{nln}", "Snlnhk": "\\hat{\\cvec{s}}^{nln, k}", "Aa": "\\param{\\rmat{A}}", "BB": "\\param{\\rmat{B}}", "CC": "\\param{\\rmat{C}}", "DD": "\\param{\\rmat{D}}", "YY": "\\param{\\cmat{Y}}", "iv": "\\param{\\cvec{i}}", "pv": "\\param{\\rvec{p}}", "sv": "\\param{\\cvec{s}}", "KK": "\\param{\\rmat{K}}", "LL": "\\param{\\cmat{L}}", "MM": "\\param{\\cmat{M}}", "NN": "\\param{\\cmat{N}}", "BBh": "\\hat{\\BB}", "YYh": "\\hat{\\YY}", "ivh": "\\hat{\\iv}", "pvh": "\\hat{\\pv}", "svh": "\\hat{\\sv}", "CCh": "\\hat{\\CC}", "KKh": "\\hat{\\KK}", "LLh": "\\hat{\\LL}", "MMh": "\\hat{\\MM}", "NNh": "\\hat{\\NN}", "AT": "\\trans{\\Aa}", "CT": "\\trans{\\CC}", "DT": "\\trans{\\DD}", "Ap": "\\Aa'", "Cp": "\\CC\\:\\!'", "Dp": "\\DD'", "ApT": "\\trans{\\Ap}", "CpT": "\\trans{\\Cp}", "DpT": "\\trans{\\Dp}", "ChT": "\\trans{\\CCh}", "Lc": "\\conj{\\LL}", "LcT": "\\trans{\\Lc}", "Lhc": "\\conj{\\LLh}", "LhcT": "\\trans{\\Lhc}", "MT": "\\trans{\\MM}", "Mc": "\\conj{\\MM}", "McT": "\\trans{\\Mc}", "dMTlam": "\\diag{\\MT \\lam}", "MhT": "\\trans{\\MMh}", "Mhc": "\\conj{\\MMh}", "MhcT": "\\trans{\\Mhc}", "dMhTlam": "\\diag{\\MhT \\lamh}", "Nc": "\\conj{\\NN}", "NcT": "\\trans{\\Nc}", "Nhc": "\\conj{\\NNh}", "NhcT": "\\trans{\\Nhc}", "YT": "\\trans{\\YY}", "Yc": "\\conj{\\YY}", "YcT": "\\trans{\\Yc}", "dYTlam": "\\diag{\\YT \\lam}", "YhT": "\\trans{\\YYh}", "Yhc": "\\conj{\\YYh}", "YhcT": "\\trans{\\Yhc}", "dYhTlam": "\\diag{\\YhT \\lamh}", "I": "\\cvec{i}^S", "s": "\\cvec{s}^I", "Ih": "\\hat{\\cvec{i}}^S", "Sh": "\\hat{\\cvec{s}}^I", "AtX": "\\AT \\X", "CtV": "\\CT \\V", "dCtV": "\\diag{\\CtV}", "DtZ": "\\DT \\Z", "ApTx": "\\ApT \\x", "CpTv": "\\CpT \\vv", "DpTz": "\\DpT \\z"}}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="mp.set_manager_opt_model" href="set_manager_opt_model.html" />
+    <link rel="prev" title="mp_idx_manager" href="../mp_idx_manager.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">matpower.org</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/about/get-started/">Get Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ref-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html#reference">Reference</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../reference.html">Reference</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../../reference.html#mpom-classes"><span class="raw-html">MP-Opt-Model</span> Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#mpom-functions"><span class="raw-html">MP-Opt-Model</span> Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#solver-interfaces-implementations">Solver Interfaces &amp; Implementations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#mpom-examples"><span class="raw-html">MP-Opt-Model</span> Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#mpom-tests"><span class="raw-html">MP-Opt-Model</span> Tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#private-functions">Private Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/doc/manuals/">All Legacy PDF Manuals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/add-constraint.html">How to Add an OPF Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tech Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tech-notes.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Technical Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+          <li class="breadcrumb-item"><a href="../../reference.html">Reference</a></li>
+      <li class="breadcrumb-item active">mp.set_manager</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/mpom/classes/mp/set_manager.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../mp_idx_manager.html" class="btn btn-neutral float-left" title="mp_idx_manager" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="set_manager_opt_model.html" class="btn btn-neutral float-right" title="mp.set_manager_opt_model" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p><span class="raw-html"><div style="float: right"><a href="https://github.com/MATPOWER/mp-opt-model/blob/master/lib/+mp/set_manager.m" target=_blank><svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg></a></div></span></p>
+<section id="mp-set-manager">
+<h1>mp.set_manager<a class="headerlink" href="#mp-set-manager" title="Link to this heading"></a></h1>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="mp.set_manager">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">set_manager</span></span><a class="headerlink" href="#mp.set_manager" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<p><a class="reference internal" href="#mp.set_manager" title="mp.set_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.set_manager</span></code></a> -  MP Set Manager base class.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">set_manager</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Implements functionality to manage the indexing of various named and
+indexed blocks of elements, such as variables, constraints, etc. This class
+helps keep track of the ordering and indexing of the various blocks as they
+are added to the object. Subclasses may implement additional functionality
+to handle data associated with each block.</p>
+<dl class="simple">
+<dt>mp.set_manager Properties:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#mp.set_manager.label" title="mp.set_manager.label"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">label</span></code></a> - the label of the set, e.g. <code class="docutils literal notranslate"><span class="pre">'VARIABLES'</span></code>, <code class="docutils literal notranslate"><span class="pre">'LINEAR</span> <span class="pre">CONSTRAINTS'</span></code></p></li>
+<li><p><a class="reference internal" href="#mp.set_manager.idx" title="mp.set_manager.idx"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">idx</span></code></a> - indexing information</p></li>
+<li><p><a class="reference internal" href="#mp.set_manager.N" title="mp.set_manager.N"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">N</span></code></a> - total number of entities in the full set</p></li>
+<li><p><a class="reference internal" href="#mp.set_manager.NS" title="mp.set_manager.NS"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">NS</span></code></a> - number of named or named/indexed subsets or blocks</p></li>
+<li><p><a class="reference internal" href="#mp.set_manager.order" title="mp.set_manager.order"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">order</span></code></a> - struct array of names/indices of blocks in order</p></li>
+<li><p><a class="reference internal" href="#mp.set_manager.data" title="mp.set_manager.data"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">data</span></code></a> - struct of additional set-type-specific data for each block</p></li>
+</ul>
+</dd>
+<dt>mp.set_manager Methods:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#mp.set_manager.set_manager" title="mp.set_manager.set_manager"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_manager()</span></code></a> - constructor</p></li>
+<li><p><a class="reference internal" href="#mp.set_manager.copy" title="mp.set_manager.copy"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">copy()</span></code></a> - make a duplicate (shallow copy) of the object</p></li>
+<li><p><a class="reference internal" href="#mp.set_manager.add" title="mp.set_manager.add"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add()</span></code></a> - a named (and optionally indexed) subset of entities</p></li>
+<li><p><a class="reference internal" href="#mp.set_manager.describe_idx" title="mp.set_manager.describe_idx"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">describe_idx()</span></code></a> - provide/display name and index label for given indices</p></li>
+<li><p><a class="reference internal" href="#mp.set_manager.display" title="mp.set_manager.display"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">display()</span></code></a> - display summary of indexing of subsets in object</p></li>
+<li><p><a class="reference internal" href="#mp.set_manager.get_N" title="mp.set_manager.get_N"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_N()</span></code></a> - return the number of elements in the set</p></li>
+<li><p><a class="reference internal" href="#mp.set_manager.init_indexed_name" title="mp.set_manager.init_indexed_name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">init_indexed_name()</span></code></a> - initialize dimensions for an indexed named set</p></li>
+<li><p><a class="reference internal" href="#mp.set_manager.set_type_idx_map" title="mp.set_manager.set_type_idx_map"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_type_idx_map()</span></code></a> - map index back to named subset &amp; index within set</p></li>
+</ul>
+</dd>
+</dl>
+<p>By convention, <code class="docutils literal notranslate"><span class="pre">sm</span></code> is the variable name used for generic <a class="reference internal" href="#mp.set_manager" title="mp.set_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.set_manager</span></code></a>
+objects.</p>
+<p><strong>Simple vs. Indexed Named Subsets</strong></p>
+<p>A subset or block of entities can be added as a simple named subset
+identified by a single name (e.g. <code class="docutils literal notranslate"><span class="pre">foo</span></code>), or as an indexed named subset
+identified by a name that is indexed by one or more indices (e.g.
+<code class="docutils literal notranslate"><span class="pre">bar{4,3}</span></code>). For an indexed named subset, the dimensions of the indexed
+subset must be supplied by calling <a class="reference internal" href="#mp.set_manager.init_indexed_name" title="mp.set_manager.init_indexed_name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">init_indexed_name()</span></code></a> before calling <a class="reference internal" href="#mp.set_manager.add" title="mp.set_manager.add"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add()</span></code></a>.</p>
+<p><strong>Example</strong></p>
+<p>Suppose the goal is to create and manage a set of variables related to the
+charging of a fleet of <span class="math notranslate nohighlight">\(n\)</span> electric vehicles over a week, where we have
+variables representing daily charging amounts for each vehicle, daily
+discharge amounts from driving, and the final battery state at the end of
+the week. These could be organized as 7 blocks of <code class="docutils literal notranslate"><span class="pre">charge</span></code> variables,
+1 for each day of the week, 7 blocks of <code class="docutils literal notranslate"><span class="pre">discharge</span></code> variables, and
+1 <code class="docutils literal notranslate"><span class="pre">battery_state</span></code> block, where each block consists of an <span class="math notranslate nohighlight">\(n \times 1\)</span>
+vector of variables.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="p">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="n">sm</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">set_manager</span><span class="p">(</span><span class="s">&#39;VARIABLES&#39;</span><span class="p">);</span>
+<span class="n">sm</span><span class="p">.</span><span class="n">init_indexed_name</span><span class="p">(</span><span class="s">&#39;charge&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+<span class="n">sm</span><span class="p">.</span><span class="n">init_indexed_name</span><span class="p">(</span><span class="s">&#39;discharge&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+<span class="k">for</span> <span class="n">d</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">7</span>
+    <span class="n">sm</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;charge&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">d</span><span class="p">},</span> <span class="n">n</span><span class="p">,</span> <span class="p">...);</span>
+    <span class="n">sm</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;discharge&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">d</span><span class="p">},</span> <span class="n">n</span><span class="p">,</span> <span class="p">...);</span>
+<span class="k">end</span>
+<span class="n">sm</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;battery_state&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="p">...);</span>
+</pre></div>
+</div>
+<p>The full set of variables will be a <span class="math notranslate nohighlight">\((2 \times 7 + 1) \times n\)</span> vector
+assembled in the order the variables are added, that is:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="p">[</span>
+    <span class="n">charge</span><span class="p">{</span><span class="mi">1</span><span class="p">};</span>
+    <span class="n">discharge</span><span class="p">{</span><span class="mi">1</span><span class="p">};</span>
+    <span class="n">charge</span><span class="p">{</span><span class="mi">2</span><span class="p">};</span>
+    <span class="n">discharge</span><span class="p">{</span><span class="mi">2</span><span class="p">};</span>
+        <span class="p">.</span>
+        <span class="p">.</span>
+        <span class="p">.</span>
+    <span class="n">charge</span><span class="p">{</span><span class="mi">7</span><span class="p">};</span>
+    <span class="n">discharge</span><span class="p">{</span><span class="mi">7</span><span class="p">};</span>
+    <span class="n">battery_state</span> <span class="p">]</span>
+</pre></div>
+</div>
+<div class="members docutils container">
+<dl>
+<dt>Constructor Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mp.set_manager.set_manager">
+<span class="sig-name descname"><span class="pre">set_manager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.set_manager.set_manager" title="Link to this definition"></a></dt>
+<dd><p>Constructor.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">set_manager</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd>
+<dt>Property Summary</dt><dd><dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.set_manager.label">
+<span class="sig-name descname"><span class="pre">label</span></span><a class="headerlink" href="#mp.set_manager.label" title="Link to this definition"></a></dt>
+<dd><p><em>(char array)</em> <a class="reference internal" href="#mp.set_manager.label" title="mp.set_manager.label"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">label</span></code></a> used as header for display</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.set_manager.idx">
+<span class="sig-name descname"><span class="pre">idx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">struct('i1',struct(),'iN',struct(),'N',struct())</span></em><a class="headerlink" href="#mp.set_manager.idx" title="Link to this definition"></a></dt>
+<dd><p><em>(struct)</em> indexing information, with the following 3 fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">i1</span></code> -  starting index of subset within full set</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iN</span></code> -  ending index of subset within full set</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N</span></code> -  number of elements in this subset</p></li>
+</ul>
+</div></blockquote>
+<p>Each of the 3 fields above is a struct whose field names are the
+names of the corresponding blocks of elements. They are found in
+order in the corresponding field of the <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">order</span></code> property. The
+value is a scalar (for simple named blocks) or an array (for
+indexed named blocks).</p>
+<p>For example, for a simple block named <code class="docutils literal notranslate"><span class="pre">foo</span></code>, <code class="docutils literal notranslate"><span class="pre">idx.i1.foo</span></code>
+is the starting index of the <code class="docutils literal notranslate"><span class="pre">foo</span></code> block in the full set. For
+a <code class="docutils literal notranslate"><span class="pre">bar</span></code> blocked indexed by <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code>, <code class="docutils literal notranslate"><span class="pre">idx.iN.bar(i,j)</span></code>
+is the ending index of the <code class="docutils literal notranslate"><span class="pre">bar{i,j}</span></code> block in the full set.
+Similarly, <code class="docutils literal notranslate"><span class="pre">idx.N.bar(i,j)</span></code> is the number of elements in that
+block, i.e. <code class="docutils literal notranslate"><span class="pre">idx.iN.bar(i,j) - idx.i1.bar(i,j) + 1</span></code>.</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.set_manager.N">
+<span class="sig-name descname"><span class="pre">N</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#mp.set_manager.N" title="Link to this definition"></a></dt>
+<dd><p><em>(integer)</em> total number of individual elements in set</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.set_manager.NS">
+<span class="sig-name descname"><span class="pre">NS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#mp.set_manager.NS" title="Link to this definition"></a></dt>
+<dd><p><em>(integer)</em> total number of subsets in set</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.set_manager.order">
+<span class="sig-name descname"><span class="pre">order</span></span><em class="property"> <span class="pre">=</span> <span class="pre">struct('name',[],'idx',[])</span></em><a class="headerlink" href="#mp.set_manager.order" title="Link to this definition"></a></dt>
+<dd><p><em>(struct)</em> struct array of names/indices for blocks in the <a class="reference internal" href="#mp.set_manager.order" title="mp.set_manager.order"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">order</span></code></a>
+they appear in the full set, with fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> - name of the block, e.g. <code class="docutils literal notranslate"><span class="pre">bar</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">idx</span></code> - cell array of indices for the name, e.g. <code class="docutils literal notranslate"><span class="pre">{2,3}</span> <span class="pre">==&gt;</span> <span class="pre">bar{2,3}</span></code></p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.set_manager.data">
+<span class="sig-name descname"><span class="pre">data</span></span><em class="property"> <span class="pre">=</span> <span class="pre">struct()</span></em><a class="headerlink" href="#mp.set_manager.data" title="Link to this definition"></a></dt>
+<dd><p><em>(struct)</em> additional set-type-specific <a class="reference internal" href="#mp.set_manager.data" title="mp.set_manager.data"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">data</span></code></a> for each block</p>
+</dd></dl>
+
+</dd>
+<dt>Method Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mp.set_manager.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.set_manager.copy" title="Link to this definition"></a></dt>
+<dd><p>Duplicate the object.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">new_sm</span> <span class="p">=</span> <span class="n">sm</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Make a shallow <a class="reference internal" href="#mp.set_manager.copy" title="mp.set_manager.copy"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">copy()</span></code></a> of the object by copying each of the
+top-level properties.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.set_manager.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.set_manager.add" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mp.set_manager.add" title="mp.set_manager.add"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add()</span></code></a> - Add a named (and optionally indexed) subset of entities.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="p">...)</span>
+<span class="n">sm</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="p">...)</span>
+</pre></div>
+</div>
+<p>This base class method handles the indexing part. Subclasses are
+expected to override it to handle any data that goes with each
+subset added for the given set type.</p>
+<p>For example:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Variable Set</span>
+<span class="n">sm_var</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">idx_list</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">vl</span><span class="p">,</span> <span class="n">vu</span><span class="p">,</span> <span class="n">vt</span><span class="p">);</span>
+
+<span class="c">% Linear Constraint Set</span>
+<span class="n">sm_lin</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">idx_list</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">varsets</span><span class="p">);</span>
+
+<span class="c">% Nonlinear Equality Constraint Set</span>
+<span class="n">sm_nle</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">idx_list</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">fcn</span><span class="p">,</span> <span class="nb">hess</span><span class="p">,</span> <span class="n">computed_by</span><span class="p">,</span> <span class="n">varsets</span><span class="p">);</span>
+
+<span class="c">% Nonlinear Inequality Constraint Set</span>
+<span class="n">sm_nli</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">idx_list</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">fcn</span><span class="p">,</span> <span class="nb">hess</span><span class="p">,</span> <span class="n">computed_by</span><span class="p">,</span> <span class="n">varsets</span><span class="p">);</span>
+
+<span class="c">% Quadratic Cost Set</span>
+<span class="n">sm_qdc</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">idx_list</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">cp</span><span class="p">,</span> <span class="n">varsets</span><span class="p">);</span>
+
+<span class="c">% General Nonlinear Cost Set</span>
+<span class="n">sm_nlc</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">idx_list</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">fcn</span><span class="p">,</span> <span class="n">varsets</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.set_manager.describe_idx">
+<span class="sig-name descname"><span class="pre">describe_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">idxs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.set_manager.describe_idx" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mp.set_manager.describe_idx" title="mp.set_manager.describe_idx"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">describe_idx()</span></code></a> - Provide/display name and index label for given indices.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="p">=</span> <span class="n">sm</span><span class="p">.</span><span class="n">describe_idx</span><span class="p">(</span><span class="n">idxs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns char arrays describing (name and optionally index) the
+element of the full set that corresponds to the indices in
+<code class="docutils literal notranslate"><span class="pre">idxs</span></code>. The return value is a char array if <code class="docutils literal notranslate"><span class="pre">idxs</span></code> is a
+scalar, otherwise it is a cell array of char arrays of the same
+dimension as <code class="docutils literal notranslate"><span class="pre">idxs</span></code>.</p>
+<p>For example, this method can tell you that element 361
+corresponds to element 5 of the <code class="docutils literal notranslate"><span class="pre">foo</span></code> block (<code class="docutils literal notranslate"><span class="pre">'foo(5)'</span></code>) or
+to element 17 of the <code class="docutils literal notranslate"><span class="pre">bar{8,5}</span></code> block (<code class="docutils literal notranslate"><span class="pre">'bar{8,5}(17)'</span></code>)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Input<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>idxs</strong> (<em>integer</em>) – scalar or array of indices into full set</p>
+</dd>
+<dt class="field-even">Output<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>label</strong> (<em>char array or cell array</em>) – label or cell array of
+same dimensions as <code class="docutils literal notranslate"><span class="pre">idxs</span></code> of labels containing the
+corresponding name (possibly indexed) and index within
+that name.</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="p">=</span> <span class="n">sm</span><span class="p">.</span><span class="n">describe_idx</span><span class="p">(</span><span class="mi">87</span><span class="p">));</span>
+<span class="n">labels</span> <span class="p">=</span> <span class="n">sm</span><span class="p">.</span><span class="n">describe_idx</span><span class="p">([</span><span class="mi">38</span><span class="p">;</span> <span class="mi">49</span><span class="p">;</span> <span class="mi">93</span><span class="p">]));</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#mp.set_manager.set_type_idx_map" title="mp.set_manager.set_type_idx_map"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_type_idx_map()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.set_manager.display">
+<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.set_manager.display" title="Link to this definition"></a></dt>
+<dd><p>Display summary of indexing of subsets in object.</p>
+<p>This method is called automatically when omitting a semicolon
+on a line that retuns an object of this class.</p>
+<p>Displays the details of the indexing for each subset or
+block, as well as the total number of elements and subsets.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.set_manager.get_N">
+<span class="sig-name descname"><span class="pre">get_N</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.set_manager.get_N" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mp.set_manager.get_N" title="mp.set_manager.get_N"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_N()</span></code></a> - Return the number of elements in the set.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_N</span><span class="p">()</span>
+<span class="n">N</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_N</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="n">N</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_N</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">idx_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns either the total number of elements in the set or the
+number corresponding to a specified named block, or indexed named
+subset.</p>
+<p>Examples:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_N</span><span class="p">()</span>             <span class="c">% total number of elements in set</span>
+<span class="n">N</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_N</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>         <span class="c">% # of elements in named set</span>
+<span class="n">N</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_N</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>    <span class="c">% # of elements in indexed named set</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.set_manager.init_indexed_name">
+<span class="sig-name descname"><span class="pre">init_indexed_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">dim_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.set_manager.init_indexed_name" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mp.set_manager.init_indexed_name" title="mp.set_manager.init_indexed_name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">init_indexed_name()</span></code></a> - Initialize dimensions for an indexed named set.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span><span class="p">.</span><span class="n">init_indexed_name</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">dim_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A subset or block can be identified by a single <code class="docutils literal notranslate"><span class="pre">name</span></code>, such
+as <code class="docutils literal notranslate"><span class="pre">foo</span></code>, or by a <code class="docutils literal notranslate"><span class="pre">name</span></code> that is indexed by one or more
+indices, such as <code class="docutils literal notranslate"><span class="pre">'bar{3,4}'</span></code>. For an indexed named set, before
+adding the indexed subsets themselves, the dimensions of the
+indexed set of names must be initialized by calling this method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>char array</em>) – name of the block or subset</p></li>
+<li><p><strong>dim_list</strong> (<em>cell array</em>) – dimensions of the indexing of the name</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% elements with indexed named set &#39;R{i,j}&#39;</span>
+<span class="n">sm</span><span class="p">.</span><span class="n">init_indexed_name</span><span class="p">(</span><span class="s">&#39;R&#39;</span><span class="p">,</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">});</span>
+<span class="k">for</span> <span class="n">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span>
+        <span class="n">sm</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;R&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">},</span> <span class="p">...);</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.set_manager.set_type_idx_map">
+<span class="sig-name descname"><span class="pre">set_type_idx_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">idxs</span></em>, <em class="sig-param"><span class="pre">group_by_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.set_manager.set_type_idx_map" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mp.set_manager.set_type_idx_map" title="mp.set_manager.set_type_idx_map"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_type_idx_map()</span></code></a> - Map index back to named subset &amp; index within set.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">set_type_idx_map</span><span class="p">()</span>
+<span class="n">s</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">set_type_idx_map</span><span class="p">(</span><span class="n">idxs</span><span class="p">)</span>
+<span class="n">s</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">set_type_idx_map</span><span class="p">(</span><span class="n">idxs</span><span class="p">,</span> <span class="n">group_by_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns a struct of same dimensions as <code class="docutils literal notranslate"><span class="pre">idxs</span></code> specifying, for
+each index, the corresponding named set and element within the
+named set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>idxs</strong> (<em>integer</em>) – <em>(optional)</em> scalar or array of indices into
+full set <em>(default, if empty or not provided, is</em>
+<code class="docutils literal notranslate"><span class="pre">[1:ns]'</span></code> <em>where</em> <code class="docutils literal notranslate"><span class="pre">ns</span></code> <em>is the full dimension of the
+set corresponding to the all elements)</em></p></li>
+<li><p><strong>group_by_name</strong> (<em>boolean</em>) – <em>(default = false)</em> if true, then the
+results are consolidated, with a single entry in <code class="docutils literal notranslate"><span class="pre">s</span></code> for
+each unique name/idx pair, where the <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> fields
+are vectors. In this case <code class="docutils literal notranslate"><span class="pre">s</span></code> is 1 dimensional.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Output<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>s</strong> (<em>struct</em>) – return struct with the following fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> : name of corresponding set</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">idx</span></code> : cell array of indices for the name, if named
+set is indexed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code> : index of element within the set</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">j</span></code> : <em>(only if</em> <code class="docutils literal notranslate"><span class="pre">group_by_name</span> <span class="pre">==</span> <span class="pre">1</span></code> <em>)</em>,
+corresponding index of full set, equal to a particular
+element of <code class="docutils literal notranslate"><span class="pre">idxs</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="p">=</span> <span class="nb">var</span><span class="p">.</span><span class="n">set_type_idx_map</span><span class="p">(</span><span class="mi">87</span><span class="p">));</span>
+<span class="n">s</span> <span class="p">=</span> <span class="n">lin</span><span class="p">.</span><span class="n">set_type_idx_map</span><span class="p">([</span><span class="mi">38</span><span class="p">;</span> <span class="mi">49</span><span class="p">;</span> <span class="mi">93</span><span class="p">]));</span>
+<span class="n">s</span> <span class="p">=</span> <span class="nb">var</span><span class="p">.</span><span class="n">set_type_idx_map</span><span class="p">());</span>
+<span class="n">s</span> <span class="p">=</span> <span class="n">lin</span><span class="p">.</span><span class="n">set_type_idx_map</span><span class="p">([],</span> <span class="mi">1</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#mp.set_manager.describe_idx" title="mp.set_manager.describe_idx"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">describe_idx()</span></code></a>, <a class="reference internal" href="../mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a>.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../mp_idx_manager.html" class="btn btn-neutral float-left" title="mp_idx_manager" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="set_manager_opt_model.html" class="btn btn-neutral float-right" title="mp.set_manager_opt_model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

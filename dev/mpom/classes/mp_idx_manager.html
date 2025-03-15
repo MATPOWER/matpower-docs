@@ -23,7 +23,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="miqps_master" href="../functions/miqps_master.html" />
+    <link rel="next" title="mp.set_manager" href="mp/set_manager.html" />
     <link rel="prev" title="opt_model" href="opt_model.html" /> 
 </head>
 
@@ -124,7 +124,7 @@
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
         <a href="opt_model.html" class="btn btn-neutral float-left" title="opt_model" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../functions/miqps_master.html" class="btn btn-neutral float-right" title="miqps_master" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mp/set_manager.html" class="btn btn-neutral float-right" title="mp.set_manager" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
   <hr/>
 </div>
@@ -159,7 +159,7 @@
         <span class="nb">struct</span> <span class="n">defining</span> <span class="n">the</span> <span class="n">various</span> <span class="k">set</span> <span class="n">types</span><span class="p">,</span> <span class="n">where</span> <span class="n">the</span> <span class="n">key</span> <span class="n">is</span> <span class="n">the</span>
         <span class="k">set</span> <span class="nb">type</span> <span class="n">name</span><span class="p">,</span> <span class="n">which</span> <span class="n">must</span> <span class="n">also</span> <span class="n">be</span> <span class="n">declared</span> <span class="n">as</span> <span class="n">a</span> <span class="n">property</span> <span class="n">in</span>
         <span class="n">the</span> <span class="n">object</span><span class="o">&#39;</span><span class="n">s</span> <span class="nb">class</span><span class="p">,</span> <span class="nb">and</span> <span class="n">the</span> <span class="n">value</span> <span class="n">is</span> <span class="n">a</span> <span class="n">string</span> <span class="n">name</span> <span class="n">used</span> <span class="k">for</span>
-        <span class="nb">display</span> <span class="n">purposes</span><span class="p">.</span>
+        <span class="nb">display</span> <span class="n">purposes</span> <span class="nb">or</span> <span class="n">a</span> <span class="n">mp</span><span class="p">.</span><span class="n">set_manager</span> <span class="n">object</span><span class="p">.</span>
 
         <span class="n">E</span><span class="p">.</span><span class="n">g</span><span class="p">.</span>
             <span class="k">function</span> <span class="n">obj</span> <span class="p">=</span> <span class="n">def_set_types</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
@@ -282,6 +282,12 @@
 <dt class="sig sig-object mat" id="mp_idx_manager.set_type_idx_map">
 <span class="sig-name descname"><span class="pre">set_type_idx_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">idxs</span></em>, <em class="sig-param"><span class="pre">group_by_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.set_type_idx_map" title="Link to this definition"></a></dt>
 <dd><p><a class="reference internal" href="#mp_idx_manager.set_type_idx_map" title="mp_idx_manager.set_type_idx_map"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_type_idx_map()</span></code></a> - Maps index for set type back to named set &amp; index within set</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.3: </span>Please use <a class="reference internal" href="mp/set_manager.html#mp.set_manager.set_type_idx_map" title="mp.set_manager.set_type_idx_map"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.set_manager.set_type_idx_map()</span></code></a> instead.</p>
+</div>
+</div>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">SET_TYPE_IDX_MAP</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">IDXS</span><span class="p">)</span>
 <span class="n">S</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">SET_TYPE_IDX_MAP</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">)</span>
 <span class="n">S</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">SET_TYPE_IDX_MAP</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">IDXS</span><span class="p">,</span> <span class="n">GROUP_BY_NAME</span><span class="p">)</span>
@@ -382,6 +388,12 @@
 <dt class="sig sig-object mat" id="mp_idx_manager.add_named_set">
 <span class="sig-name descname"><span class="pre">add_named_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.add_named_set" title="Link to this definition"></a></dt>
 <dd><p><a class="reference internal" href="#mp_idx_manager.add_named_set" title="mp_idx_manager.add_named_set"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_named_set()</span></code></a> - Adds a named set of a particular type to the object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.3: </span>Please use <a class="reference internal" href="mp/set_manager.html#mp.set_manager.add" title="mp.set_manager.add"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.set_manager.add()</span></code></a> instead.</p>
+</div>
+</div>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="o">-----</span>  <span class="n">PRIVATE</span> <span class="n">METHOD</span>  <span class="o">-----</span>
 
 <span class="n">This</span> <span class="n">method</span> <span class="n">is</span> <span class="n">intended</span> <span class="n">to</span> <span class="n">be</span> <span class="n">a</span> <span class="n">private</span> <span class="n">method</span><span class="p">,</span> <span class="n">used</span> <span class="n">internally</span> <span class="n">by</span>
@@ -397,7 +409,7 @@
 <span class="n">Linear</span> <span class="n">Constraint</span> <span class="n">Set</span>
     <span class="n">OBJ</span><span class="p">.</span><span class="n">ADD_NAMED_SET</span><span class="p">(</span><span class="s">&#39;lin&#39;</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="n">VARSETS</span><span class="p">);</span>
 
-<span class="n">Nonlinear</span> <span class="n">Inequality</span> <span class="n">Constraint</span> <span class="n">Set</span>
+<span class="n">Nonlinear</span> <span class="n">Equality</span> <span class="n">Constraint</span> <span class="n">Set</span>
     <span class="n">OBJ</span><span class="p">.</span><span class="n">ADD_NAMED_SET</span><span class="p">(</span><span class="s">&#39;nle&#39;</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">FCN</span><span class="p">,</span> <span class="n">HESS</span><span class="p">,</span> <span class="n">COMPUTED_BY</span><span class="p">,</span> <span class="n">VARSETS</span><span class="p">);</span>
 
 <span class="n">Nonlinear</span> <span class="n">Inequality</span> <span class="n">Constraint</span> <span class="n">Set</span>
@@ -420,6 +432,12 @@
 <dt class="sig sig-object mat" id="mp_idx_manager.describe_idx">
 <span class="sig-name descname"><span class="pre">describe_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">idxs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.describe_idx" title="Link to this definition"></a></dt>
 <dd><p><a class="reference internal" href="#mp_idx_manager.describe_idx" title="mp_idx_manager.describe_idx"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">describe_idx()</span></code></a> - Identifies element indices for a give set type.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.3: </span>Please use <a class="reference internal" href="mp/set_manager.html#mp.set_manager.describe_idx" title="mp.set_manager.describe_idx"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.set_manager.describe_idx()</span></code></a> instead.</p>
+</div>
+</div>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">LABEL</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">DESCRIBE_IDX</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">IDXS</span><span class="p">)</span>
 
 <span class="n">Returns</span> <span class="n">strings</span> <span class="n">describing</span> <span class="p">(</span><span class="n">name</span> <span class="nb">and</span> <span class="nb">index</span><span class="p">)</span> <span class="n">the</span> <span class="n">element</span> <span class="n">of</span> <span class="n">the</span>
@@ -437,8 +455,14 @@
 
 <dl class="mat method">
 <dt class="sig sig-object mat" id="mp_idx_manager.getN">
-<span class="sig-name descname"><span class="pre">getN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.getN" title="Link to this definition"></a></dt>
-<dd><p><a class="reference internal" href="#mp_idx_manager.getN" title="mp_idx_manager.getN"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">getN()</span></code></a> - Returns the number of elements of a given set type.</p>
+<span class="sig-name descname"><span class="pre">getN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.getN" title="Link to this definition"></a></dt>
+<dd><div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.3: </span>Please use <a class="reference internal" href="mp/set_manager.html#mp.set_manager.get_N" title="mp.set_manager.get_N"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.set_manager.get_N()</span></code></a> instead.</p>
+</div>
+</div>
+<p><a class="reference internal" href="#mp_idx_manager.getN" title="mp_idx_manager.getN"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">getN()</span></code></a> - Returns the number of elements of a given set type.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">GETN</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">)</span>
 <span class="n">N</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">GETN</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">NAME</span><span class="p">)</span>
 <span class="n">N</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">GETN</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">)</span>
@@ -462,6 +486,12 @@
 <dt class="sig sig-object mat" id="mp_idx_manager.init_indexed_name">
 <span class="sig-name descname"><span class="pre">init_indexed_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">dim_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.init_indexed_name" title="Link to this definition"></a></dt>
 <dd><p><a class="reference internal" href="#mp_idx_manager.init_indexed_name" title="mp_idx_manager.init_indexed_name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">init_indexed_name()</span></code></a> - Initializes the dimensions for an indexed named set.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.3: </span>Please use <a class="reference internal" href="mp/set_manager.html#mp.set_manager.init_indexed_name" title="mp.set_manager.init_indexed_name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.set_manager.init_indexed_name()</span></code></a> instead.</p>
+</div>
+</div>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">OBJ</span><span class="p">.</span><span class="n">INIT_INDEXED_NAME</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">DIM_LIST</span><span class="p">)</span>
 
 <span class="n">Initializes</span> <span class="n">the</span> <span class="n">dimensions</span> <span class="k">for</span> <span class="n">an</span> <span class="n">indexed</span> <span class="n">named</span> <span class="k">set</span><span class="p">.</span>
@@ -567,7 +597,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="opt_model.html" class="btn btn-neutral float-left" title="opt_model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../functions/miqps_master.html" class="btn btn-neutral float-right" title="miqps_master" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mp/set_manager.html" class="btn btn-neutral float-right" title="mp.set_manager" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

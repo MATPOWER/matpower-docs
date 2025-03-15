@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mp.set_manager_opt_model &mdash; MATPOWER Documentation 8.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=bb3927b2"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="mp.sm_variable" href="sm_variable.html" />
+    <link rel="prev" title="mp.set_manager" href="set_manager.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">matpower.org</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/about/get-started/">Get Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ref-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html#reference">Reference</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../reference.html">Reference</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../../reference.html#mpom-classes"><span class="raw-html">MP-Opt-Model</span> Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#mpom-functions"><span class="raw-html">MP-Opt-Model</span> Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#solver-interfaces-implementations">Solver Interfaces &amp; Implementations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#mpom-examples"><span class="raw-html">MP-Opt-Model</span> Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#mpom-tests"><span class="raw-html">MP-Opt-Model</span> Tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#private-functions">Private Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/doc/manuals/">All Legacy PDF Manuals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/add-constraint.html">How to Add an OPF Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tech Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tech-notes.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Technical Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+          <li class="breadcrumb-item"><a href="../../reference.html">Reference</a></li>
+      <li class="breadcrumb-item active">mp.set_manager_opt_model</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/mpom/classes/mp/set_manager_opt_model.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="set_manager.html" class="btn btn-neutral float-left" title="mp.set_manager" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sm_variable.html" class="btn btn-neutral float-right" title="mp.sm_variable" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p><span class="raw-html"><div style="float: right"><a href="https://github.com/MATPOWER/mp-opt-model/blob/master/lib/+mp/set_manager_opt_model.m" target=_blank><svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg></a></div></span></p>
+<section id="mp-set-manager-opt-model">
+<h1>mp.set_manager_opt_model<a class="headerlink" href="#mp-set-manager-opt-model" title="Link to this heading"></a></h1>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="mp.set_manager_opt_model">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">set_manager_opt_model</span></span><a class="headerlink" href="#mp.set_manager_opt_model" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="set_manager.html#mp.set_manager" title="mp.set_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.set_manager</span></code></a></p>
+<p><a class="reference internal" href="#mp.set_manager_opt_model" title="mp.set_manager_opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.set_manager_opt_model</span></code></a> -  MP Set Manager base class for <a class="reference internal" href="../opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a> fields.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">set_manager_opt_model</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Implements functionality to handle parameters and solution data for
+set types used to implement properties of the <a class="reference internal" href="../opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a> class.</p>
+<dl class="simple">
+<dt>mp.set_manager_opt_model Properties:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#mp.set_manager_opt_model.soln" title="mp.set_manager_opt_model.soln"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">soln</span></code></a> - struct for storing parsed solution values</p></li>
+</ul>
+</dd>
+<dt>mp.set_manager_opt_model Methods:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#mp.set_manager_opt_model.params" title="mp.set_manager_opt_model.params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">params()</span></code></a> - <em>(abstract)</em> return set-type-specific parameter data</p></li>
+<li><p><a class="reference internal" href="#mp.set_manager_opt_model.set_params" title="mp.set_manager_opt_model.set_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_params()</span></code></a> - <em>(abstract)</em> modify set-type-specific parameter data</p></li>
+<li><p><a class="reference internal" href="#mp.set_manager_opt_model.display_soln" title="mp.set_manager_opt_model.display_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">display_soln()</span></code></a> - display solution values</p></li>
+<li><p><a class="reference internal" href="#mp.set_manager_opt_model.has_parsed_soln" title="mp.set_manager_opt_model.has_parsed_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">has_parsed_soln()</span></code></a> - return true if parsed solution is available</p></li>
+</ul>
+</dd>
+</dl>
+<p>By convention, <code class="docutils literal notranslate"><span class="pre">sm</span></code> is the variable name used for <a class="reference internal" href="#mp.set_manager_opt_model" title="mp.set_manager_opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.set_manager_opt_model</span></code></a>
+objects.</p>
+<div class="members docutils container">
+<dl>
+<dt>Constructor Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mp.set_manager_opt_model.set_manager_opt_model">
+<span class="sig-name descname"><span class="pre">set_manager_opt_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.set_manager_opt_model.set_manager_opt_model" title="Link to this definition"></a></dt>
+<dd><p>Constructor.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">set_manager_opt_model</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd>
+<dt>Property Summary</dt><dd><dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.set_manager_opt_model.soln">
+<span class="sig-name descname"><span class="pre">soln</span></span><a class="headerlink" href="#mp.set_manager_opt_model.soln" title="Link to this definition"></a></dt>
+<dd><p><em>(struct)</em> for storing parsed solution values</p>
+</dd></dl>
+
+</dd>
+<dt>Method Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mp.set_manager_opt_model.params">
+<span class="sig-name descname"><span class="pre">params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.set_manager_opt_model.params" title="Link to this definition"></a></dt>
+<dd><p>Return set-type-specific parameters.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[...]</span> <span class="p">=</span> <span class="n">sm</span><span class="p">.</span><span class="n">params</span><span class="p">()</span>
+<span class="p">[...]</span> <span class="p">=</span> <span class="n">sm</span><span class="p">.</span><span class="n">params</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="p">[...]</span> <span class="p">=</span> <span class="n">sm</span><span class="p">.</span><span class="n">params</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">idx_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This abstract method must be implemented by a
+subclass.</p>
+</div>
+<p>Returns set-type-specific parameters for the full set, if called
+without input arguments, or for a specific named or named and
+indexed subset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>char array</em>) – <em>(optional)</em> name of subset</p></li>
+<li><p><strong>idx_list</strong> (<em>cell array</em>) – <em>(optional)</em> index list for subset</p></li>
+</ul>
+</dd>
+</dl>
+<p>Outputs are determined by the implementing subclass.</p>
+<p>See also <a class="reference internal" href="set_manager.html#mp.set_manager.add" title="mp.set_manager.add"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.set_manager.add()</span></code></a>, <a class="reference internal" href="#mp.set_manager_opt_model.set_params" title="mp.set_manager_opt_model.set_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_params()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.set_manager_opt_model.set_params">
+<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">params</span></em>, <em class="sig-param"><span class="pre">vals</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.set_manager_opt_model.set_params" title="Link to this definition"></a></dt>
+<dd><p>Modify parameter data.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span><span class="p">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">vals</span><span class="p">)</span>
+<span class="n">sm</span><span class="p">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">vals</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This abstract method must be implemented by a
+subclass.</p>
+</div>
+<p>This method can be used to modify set-type-specific parameters
+for an existing subset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>char array</em>) – name of subset/block of entities to modify</p></li>
+<li><p><strong>idx_list</strong> (<em>cell array</em>) – <em>(optional)</em> index list for subset/block
+of entities modify (for an indexed subset)</p></li>
+<li><p><strong>params</strong> – can be one of three options:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">'all'</span></code> - indicates that <code class="docutils literal notranslate"><span class="pre">vals</span></code> is a cell array
+whose elements correspond to the input parameters of
+the <a class="reference internal" href="set_manager.html#mp.set_manager.add" title="mp.set_manager.add"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add()</span></code></a> method</p></li>
+<li><p>name of a parameter - <code class="docutils literal notranslate"><span class="pre">val</span></code> is the value of that
+parameter</p></li>
+<li><p>cell array of parameter names - <code class="docutils literal notranslate"><span class="pre">vals</span></code> is a cell array
+of corresponding values</p></li>
+</ul>
+</li>
+<li><p><strong>vals</strong> – new value or cell array of new values corresponding to
+<code class="docutils literal notranslate"><span class="pre">params</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<p>Valid parameter names are defined by the implementing subclass.</p>
+<p>See also <a class="reference internal" href="set_manager.html#mp.set_manager.add" title="mp.set_manager.add"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.set_manager.add()</span></code></a>, <a class="reference internal" href="#mp.set_manager_opt_model.params" title="mp.set_manager_opt_model.params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">params()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.set_manager_opt_model.display_soln">
+<span class="sig-name descname"><span class="pre">display_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">var</span></em>, <em class="sig-param"><span class="pre">soln</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.set_manager_opt_model.display_soln" title="Link to this definition"></a></dt>
+<dd><p>Display solution values for generic set type.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">)</span>
+<span class="n">sm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="n">sm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+<span class="n">sm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">fid</span><span class="p">)</span>
+<span class="n">sm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">fid</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="n">sm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">fid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Displays the solution values for all elements (default)
+or an individual named or named/indexed subset.</p>
+<dl class="field-list">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul>
+<li><p><strong>var</strong> (<a class="reference internal" href="sm_variable.html#mp.sm_variable" title="mp.sm_variable"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_variable</span></code></a>) – corresponding <a class="reference internal" href="sm_variable.html#mp.sm_variable" title="mp.sm_variable"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_variable</span></code></a> object</p></li>
+<li><p><strong>soln</strong> (<em>struct</em>) – full solution struct with these fields
+(among others):</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">eflag</span></code> - exit flag, 1 = success, 0 or negative =
+solver-specific failure code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> - variable values</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lambda</span></code> - constraint shadow prices, struct with
+fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eqnonlin</span></code> - nonlinear equality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ineqnonlin</span></code> - nonlinear inequality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_l</span></code> - linear constraint lower bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_u</span></code> - linear constraint upper bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lower</span></code> - variable lower bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">upper</span></code> - variable upper bounds</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>fid</strong> (<em>fileID</em>) – fileID of open file to write to (default is
+1 for standard output)</p></li>
+<li><p><strong>name</strong> (<em>char array</em>) – <em>(optional)</em> name of individual subset</p></li>
+<li><p><strong>idx</strong> (<em>cell array</em>) – <em>(optional)</em> indices of individual subset</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.set_manager_opt_model.has_parsed_soln">
+<span class="sig-name descname"><span class="pre">has_parsed_soln</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.set_manager_opt_model.has_parsed_soln" title="Link to this definition"></a></dt>
+<dd><p>Return true if parsed solution is available.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">TorF</span> <span class="p">=</span> <span class="n">sm</span><span class="p">.</span><span class="n">has_parsed_soln</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Output<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>TorF</strong> (<em>boolean</em>) – true if parsed solution is available in
+<code class="xref mat mat-attr docutils literal notranslate"><span class="pre">soln</span></code> property; format of <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">soln</span></code> depends
+on implementing subclass</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.set_manager_opt_model.parse_soln">
+<span class="sig-name descname"><span class="pre">parse_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">soln</span></em>, <em class="sig-param"><span class="pre">stash</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.set_manager_opt_model.parse_soln" title="Link to this definition"></a></dt>
+<dd><p>Parse solution.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span> <span class="p">=</span> <span class="n">sm</span><span class="p">.</span><span class="n">parse_soln</span><span class="p">(</span><span class="n">soln</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Parse a full solution struct into parts corresponding to
+individual subsets.</p>
+<dl class="field-list">
+<dt class="field-odd">Input<span class="colon">:</span></dt>
+<dd class="field-odd"><ul>
+<li><p><strong>soln</strong> (<em>struct</em>) – full solution struct with these fields
+(among others):</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> - variable values</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lambda</span></code> - constraint shadow prices, struct with
+fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eqnonlin</span></code> - nonlinear equality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ineqnonlin</span></code> - nonlinear inequality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_l</span></code> - linear constraint lower bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_u</span></code> - linear constraint upper bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lower</span></code> - variable lower bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">upper</span></code> - variable upper bounds</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>stash</strong> (<em>boolean</em>) – if true, store return value in <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">soln</span></code>
+property</p></li>
+</ul>
+</dd>
+<dt class="field-even">Output<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ps</strong> (<em>struct</em>) – parsed solution, struct where each field is a
+struct whos names are the names of the relevant subsets
+and values are scalars for named sets, arrays for
+named/indexed sets; fields depend on implementing class</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="set_manager.html" class="btn btn-neutral float-left" title="mp.set_manager" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sm_variable.html" class="btn btn-neutral float-right" title="mp.sm_variable" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

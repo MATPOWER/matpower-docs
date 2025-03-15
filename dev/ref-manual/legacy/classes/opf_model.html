@@ -461,49 +461,6 @@
 <p>See also <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>, <a class="reference internal" href="#opf_model.params_legacy_cost" title="opf_model.params_legacy_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">params_legacy_cost()</span></code></a>, <a class="reference internal" href="#opf_model.eval_legacy_cost" title="opf_model.eval_legacy_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">eval_legacy_cost()</span></code></a>.</p>
 </dd></dl>
 
-<dl class="mat method">
-<dt class="sig sig-object mat" id="opf_model.init_indexed_name">
-<span class="sig-name descname"><span class="pre">init_indexed_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">om</span></em>, <em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">dim_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opf_model.init_indexed_name" title="Link to this definition"></a></dt>
-<dd><p><a class="reference internal" href="#opf_model.init_indexed_name" title="opf_model.init_indexed_name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">init_indexed_name()</span></code></a> - Initializes the dimensions for an indexed named set.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">OM</span><span class="p">.</span><span class="n">INIT_INDEXED_NAME</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">DIM_LIST</span><span class="p">)</span>
-
-<span class="n">Initializes</span> <span class="n">the</span> <span class="n">dimensions</span> <span class="k">for</span> <span class="n">an</span> <span class="n">indexed</span> <span class="n">named</span> <span class="n">variable</span><span class="p">,</span> <span class="n">constraint</span>
-<span class="nb">or</span> <span class="n">cost</span> <span class="k">set</span><span class="p">.</span>
-
-<span class="n">Variables</span><span class="p">,</span> <span class="n">constraints</span> <span class="nb">and</span> <span class="n">costs</span> <span class="n">are</span> <span class="n">referenced</span> <span class="n">in</span> <span class="n">OPT_MODEL</span> <span class="n">in</span> <span class="n">terms</span>
-<span class="n">of</span> <span class="n">named</span> <span class="n">sets</span><span class="p">.</span> <span class="n">The</span> <span class="n">specific</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">named</span> <span class="k">set</span> <span class="n">being</span> <span class="n">referenced</span> <span class="n">is</span>
-<span class="n">given</span> <span class="n">by</span> <span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">with</span> <span class="n">the</span> <span class="n">following</span> <span class="n">valid</span> <span class="n">options</span><span class="p">:</span>
-    <span class="n">SET_TYPE</span> <span class="p">=</span> <span class="s">&#39;var&#39;</span>   <span class="p">=</span><span class="o">&gt;</span> <span class="n">variable</span> <span class="k">set</span>
-    <span class="n">SET_TYPE</span> <span class="p">=</span> <span class="s">&#39;lin&#39;</span>   <span class="p">=</span><span class="o">&gt;</span> <span class="n">linear</span> <span class="n">constraint</span> <span class="k">set</span>
-    <span class="n">SET_TYPE</span> <span class="p">=</span> <span class="s">&#39;nle&#39;</span>   <span class="p">=</span><span class="o">&gt;</span> <span class="n">nonlinear</span> <span class="n">equality</span> <span class="n">constraint</span> <span class="k">set</span>
-    <span class="n">SET_TYPE</span> <span class="p">=</span> <span class="s">&#39;nli&#39;</span>   <span class="p">=</span><span class="o">&gt;</span> <span class="n">nonlinear</span> <span class="n">inequality</span> <span class="n">constraint</span> <span class="k">set</span>
-    <span class="n">SET_TYPE</span> <span class="p">=</span> <span class="s">&#39;qdc&#39;</span>   <span class="p">=</span><span class="o">&gt;</span> <span class="n">quadratic</span> <span class="n">cost</span> <span class="k">set</span>
-    <span class="n">SET_TYPE</span> <span class="p">=</span> <span class="s">&#39;nlc&#39;</span>   <span class="p">=</span><span class="o">&gt;</span> <span class="n">nonlinear</span> <span class="n">cost</span> <span class="k">set</span>
-    <span class="n">SET_TYPE</span> <span class="p">=</span> <span class="s">&#39;cost&#39;</span>  <span class="p">=</span><span class="o">&gt;</span> <span class="n">legacy</span> <span class="n">cost</span> <span class="k">set</span>
-
-<span class="n">Indexed</span> <span class="n">Named</span> <span class="n">Sets</span>
-
-<span class="n">A</span> <span class="n">variable</span><span class="p">,</span> <span class="n">constraint</span> <span class="nb">or</span> <span class="n">cost</span> <span class="k">set</span> <span class="n">can</span> <span class="n">be</span> <span class="n">identified</span> <span class="n">by</span> <span class="n">a</span> <span class="nb">single</span> <span class="n">NAME</span><span class="p">,</span>
-<span class="n">such</span> <span class="n">as</span> <span class="s">&#39;Pmismatch&#39;</span><span class="p">,</span> <span class="nb">or</span> <span class="n">by</span> <span class="n">a</span> <span class="n">name</span> <span class="n">that</span> <span class="n">is</span> <span class="n">indexed</span> <span class="n">by</span> <span class="n">one</span> <span class="nb">or</span> <span class="n">more</span> <span class="n">indices</span><span class="p">,</span>
-<span class="n">such</span> <span class="n">as</span> <span class="s">&#39;Pmismatch(3,4)&#39;</span><span class="p">.</span> <span class="n">For</span> <span class="n">an</span> <span class="n">indexed</span> <span class="n">named</span> <span class="k">set</span><span class="p">,</span> <span class="n">before</span> <span class="n">adding</span> <span class="n">the</span>
-<span class="n">indexed</span> <span class="n">variable</span><span class="p">,</span> <span class="n">constraint</span> <span class="nb">or</span> <span class="n">cost</span> <span class="n">sets</span> <span class="n">themselves</span><span class="p">,</span> <span class="n">the</span> <span class="n">dimensions</span> <span class="n">of</span>
-<span class="n">the</span> <span class="n">indexed</span> <span class="k">set</span> <span class="n">must</span> <span class="n">be</span> <span class="k">set</span> <span class="n">by</span> <span class="n">calling</span> <span class="n">INIT_INDEXED_NAME</span><span class="p">,</span> <span class="n">where</span>
-<span class="n">DIM_LIST</span> <span class="n">is</span> <span class="n">a</span> <span class="nb">cell</span> <span class="n">array</span> <span class="n">of</span> <span class="n">the</span> <span class="n">dimensions</span><span class="p">.</span>
-
-<span class="n">Examples</span><span class="p">:</span>
-    <span class="c">%% linear constraints with indexed named set &#39;R(i,j)&#39;</span>
-    <span class="n">om</span><span class="p">.</span><span class="n">init_indexed_name</span><span class="p">(</span><span class="s">&#39;lin&#39;</span><span class="p">,</span> <span class="s">&#39;R&#39;</span><span class="p">,</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">});</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span>
-      <span class="k">for</span> <span class="n">j</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span>
-        <span class="n">om</span><span class="p">.</span><span class="n">add_lin_constraint</span><span class="p">(</span><span class="s">&#39;R&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">},</span> <span class="n">A</span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">},</span> <span class="p">...);</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-</pre></div>
-</div>
-<p>See also <a class="reference internal" href="../../../mpom/classes/opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>, <code class="docutils literal notranslate"><span class="pre">add_var</span></code>, <code class="docutils literal notranslate"><span class="pre">add_lin_constraint</span></code>, <code class="docutils literal notranslate"><span class="pre">add_nln_constraint</span></code>,
-<code class="docutils literal notranslate"><span class="pre">add_quad_cost</span></code>, <code class="docutils literal notranslate"><span class="pre">add_nln_cost</span></code>, <a class="reference internal" href="#opf_model.add_legacy_cost" title="opf_model.add_legacy_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_legacy_cost()</span></code></a>.</p>
-</dd></dl>
-
 </dd>
 </dl>
 </div>

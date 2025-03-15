@@ -416,12 +416,12 @@
 <p>The second method, <a class="reference internal" href="../../ref-manual/classes/mp/nm_element.html#mp.nm_element.build_params" title="mp.nm_element.build_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code></a>, first calls its parent to build the incidence matrices <a class="reference internal" href="../../ref-manual/classes/mp/nm_element.html#mp.nm_element.C" title="mp.nm_element.C"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">C</span></code></a> and <a class="reference internal" href="../../ref-manual/classes/mp/nm_element.html#mp.nm_element.D" title="mp.nm_element.D"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">D</span></code></a>, then constructs the standard AC model parameters from the data model. The AC model and its parameters are described in <a class="reference internal" href="../../dev-manual/net-model.html#sec-nm-formulations-ac"><span class="std std-ref">AC Formulations</span></a> in the <span class="raw-html"><a class="reference external" href="https://matpower.org/doc/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span>.</p>
 <p>Recall that, if we omit the arbitrary nonlinear injection components, <span class="math notranslate nohighlight">\(\Snln(\X)\)</span> or <span class="math notranslate nohighlight">\(\Inln(\X)\)</span>, the standard AC network model for any element type can be defined in terms of the six parameters in the equations below, namely  <span class="math notranslate nohighlight">\(\YY\)</span>, <span class="math notranslate nohighlight">\(\LL\)</span>, <span class="math notranslate nohighlight">\(\MM\)</span>, <span class="math notranslate nohighlight">\(\NN\)</span>, <span class="math notranslate nohighlight">\(\iv\)</span>, and <span class="math notranslate nohighlight">\(\sv\)</span>.</p>
 <div class="math notranslate nohighlight" id="equation-eq-ilin-howto-gizmo">
-<span class="eqno">(33)<a class="headerlink" href="#equation-eq-ilin-howto-gizmo" title="Link to this equation"></a></span>\[\Ilin(\X) = \YY \V + \LL \Z + \iv\]</div>
+<span class="eqno">(38)<a class="headerlink" href="#equation-eq-ilin-howto-gizmo" title="Link to this equation"></a></span>\[\Ilin(\X) = \YY \V + \LL \Z + \iv\]</div>
 <div class="math notranslate nohighlight" id="equation-eq-slin-howto-gizmo">
-<span class="eqno">(34)<a class="headerlink" href="#equation-eq-slin-howto-gizmo" title="Link to this equation"></a></span>\[\Slin(\X) = \MM \V + \NN \Z + \sv\]</div>
+<span class="eqno">(39)<a class="headerlink" href="#equation-eq-slin-howto-gizmo" title="Link to this equation"></a></span>\[\Slin(\X) = \MM \V + \NN \Z + \sv\]</div>
 <p>For a single gizmo, based on <a class="reference internal" href="#fig-gizmo-model"><span class="std std-numref">Figure 2</span></a> and <a class="reference internal" href="#tab-gizmo-components"><span class="std std-numref">Table 2</span></a>, these parameters would be defined as follows.</p>
 <div class="math notranslate nohighlight" id="equation-eq-i-lin-howto-gizmo">
-<span class="eqno">(35)<a class="headerlink" href="#equation-eq-i-lin-howto-gizmo" title="Link to this equation"></a></span>\[\begin{split}\YY = \left[\begin{array}{ccc}
+<span class="eqno">(40)<a class="headerlink" href="#equation-eq-i-lin-howto-gizmo" title="Link to this equation"></a></span>\[\begin{split}\YY = \left[\begin{array}{ccc}
     \param{\cscal{y}}_1 &amp; 0 &amp; -\param{\cscal{y}}_1 \\
     0 &amp; \param{\cscal{y}}_2 &amp; 0 \\
     \param{-\cscal{y}}_1 &amp; 0 &amp; \param{\cscal{y}}_1
@@ -437,7 +437,7 @@
      0
   \end{array}\right]\end{split}\]</div>
 <div class="math notranslate nohighlight" id="equation-eq-s-lin-howto-gizmo">
-<span class="eqno">(36)<a class="headerlink" href="#equation-eq-s-lin-howto-gizmo" title="Link to this equation"></a></span>\[\begin{split}\MM = \left[\begin{array}{ccc}
+<span class="eqno">(41)<a class="headerlink" href="#equation-eq-s-lin-howto-gizmo" title="Link to this equation"></a></span>\[\begin{split}\MM = \left[\begin{array}{ccc}
      \param{\cscal{m}}_1 &amp; -\param{\cscal{m}}_1 &amp; 0 \\
      \param{-\cscal{m}}_1 &amp; \param{\cscal{m}}_1 &amp; 0 \\
      0 &amp; 0 &amp; \param{\cscal{m}}_2
@@ -452,7 +452,7 @@
      -\param{\cscal{s}}_g \\
      \param{\cscal{s}}_g
   \end{array}\right]\end{split}\]</div>
-<p>However, <a class="reference internal" href="../../ref-manual/classes/mp/nm_element.html#mp.nm_element.build_params" title="mp.nm_element.build_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code></a> must build stacked versions of these matrix and vector parameters that include all <span class="math notranslate nohighlight">\(n_k\)</span> gizmos in the system. For the matrix parameters in <a class="reference internal" href="#equation-eq-i-lin-howto-gizmo">(35)</a> and <a class="reference internal" href="#equation-eq-s-lin-howto-gizmo">(36)</a>, the stacking is done such that each scalar element is replaced by a corresponding <span class="math notranslate nohighlight">\(n_k \times n_k\)</span> diagonal matrix. For the vector parameters, each scalar element becomes an <span class="math notranslate nohighlight">\(n_k \times 1\)</span> vector.</p>
+<p>However, <a class="reference internal" href="../../ref-manual/classes/mp/nm_element.html#mp.nm_element.build_params" title="mp.nm_element.build_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">build_params()</span></code></a> must build stacked versions of these matrix and vector parameters that include all <span class="math notranslate nohighlight">\(n_k\)</span> gizmos in the system. For the matrix parameters in <a class="reference internal" href="#equation-eq-i-lin-howto-gizmo">(40)</a> and <a class="reference internal" href="#equation-eq-s-lin-howto-gizmo">(41)</a>, the stacking is done such that each scalar element is replaced by a corresponding <span class="math notranslate nohighlight">\(n_k \times n_k\)</span> diagonal matrix. For the vector parameters, each scalar element becomes an <span class="math notranslate nohighlight">\(n_k \times 1\)</span> vector.</p>
 </section>
 <section id="ac-cartesian-vs-polar-formulations">
 <h3>AC Cartesian vs Polar Formulations<a class="headerlink" href="#ac-cartesian-vs-polar-formulations" title="Link to this heading"></a></h3>

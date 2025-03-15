@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mpoption_old &mdash; MATPOWER Documentation 8.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=bb3927b2"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="psse_convert" href="psse_convert.html" />
+    <link rel="prev" title="mpoption_info_quadprog" href="mpoption_info_quadprog.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">matpower.org</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/about/get-started/">Get Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions/index.html">2. Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/index.html">3. Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tests/index.html">4. Tests</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">5. Legacy</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../index.html#legacy-class">5.1. Legacy Class</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#legacy-functions">5.2. Legacy Functions</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../index.html#top-level-simulation-functions">Top-Level Simulation Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#input-output-functions">Input/Output Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#data-conversion-functions">Data Conversion Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#power-flow-functions">Power Flow Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#continuation-power-flow-functions">Continuation Power Flow Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#opf-and-wrapper-functions">OPF and Wrapper Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#other-opf-functions">Other OPF Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#opf-user-callback-functions">OPF User Callback Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#power-flow-derivative-functions">Power Flow Derivative Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#lp-qp-milp-miqp-solver-functions">LP, QP, MILP &amp; MIQP Solver Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#matrix-building-functions">Matrix Building Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#utility-functions">Utility Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#private-feature-detection-functions">Private Feature Detection Functions</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html#other-functions">Other Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#legacy-tests">5.3. Legacy Tests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../previous.html">6. Previous Versions</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/doc/manuals/">All Legacy PDF Manuals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/add-constraint.html">How to Add an OPF Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tech Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tech-notes.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Technical Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+          <li class="breadcrumb-item"><a href="../index.html"><span class="section-number">5. </span>Legacy</a></li>
+      <li class="breadcrumb-item active">mpoption_old</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/ref-manual/legacy/functions/mpoption_old.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="mpoption_info_quadprog.html" class="btn btn-neutral float-left" title="mpoption_info_quadprog" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="psse_convert.html" class="btn btn-neutral float-right" title="psse_convert" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p><span class="raw-html"><div style="float: right"><a href="https://github.com/MATPOWER/matpower/blob/master/lib/mpoption_old.m" target=_blank><svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg></a></div></span></p>
+<section id="mpoption-old">
+<h1>mpoption_old<a class="headerlink" href="#mpoption-old" title="Link to this heading"></a></h1>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="mpoption_old">
+<span class="sig-name descname"><span class="pre">mpoption_old</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mpoption_old" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mpoption_old" title="mpoption_old"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">mpoption_old()</span></code></a> - Used to set and retrieve old-style <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> options vector.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">OPT</span> <span class="p">=</span> <span class="n">MPOPTION_OLD</span>
+    <span class="n">returns</span> <span class="n">the</span> <span class="n">default</span> <span class="n">options</span> <span class="n">vector</span>
+
+<span class="n">OPT</span> <span class="p">=</span> <span class="n">MPOPTION_OLD</span><span class="p">(</span><span class="n">NAME1</span><span class="p">,</span> <span class="n">VALUE1</span><span class="p">,</span> <span class="n">NAME2</span><span class="p">,</span> <span class="n">VALUE2</span><span class="p">,</span> <span class="p">...)</span>
+    <span class="n">returns</span> <span class="n">the</span> <span class="n">default</span> <span class="n">options</span> <span class="n">vector</span> <span class="n">with</span> <span class="n">new</span> <span class="n">values</span> <span class="k">for</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">7</span>
+    <span class="n">options</span><span class="p">,</span> <span class="n">NAME</span><span class="c"># is the name of an option, and VALUE# is the new</span>
+    <span class="n">value</span><span class="p">.</span>
+
+<span class="n">OPT</span> <span class="p">=</span> <span class="n">MPOPTION_OLD</span><span class="p">(</span><span class="n">OPT</span><span class="p">,</span> <span class="n">NAME1</span><span class="p">,</span> <span class="n">VALUE1</span><span class="p">,</span> <span class="n">NAME2</span><span class="p">,</span> <span class="n">VALUE2</span><span class="p">,</span> <span class="p">...)</span>
+    <span class="n">same</span> <span class="n">as</span> <span class="n">above</span> <span class="n">except</span> <span class="n">it</span> <span class="n">uses</span> <span class="n">the</span> <span class="n">options</span> <span class="n">vector</span> <span class="n">OPT</span> <span class="n">as</span> <span class="n">a</span> <span class="n">base</span>
+    <span class="n">instead</span> <span class="n">of</span> <span class="n">the</span> <span class="n">default</span> <span class="n">options</span> <span class="n">vector</span><span class="p">.</span>
+
+<span class="n">Examples</span><span class="p">:</span>
+    <span class="n">opt</span> <span class="p">=</span> <span class="n">mpoption_old</span><span class="p">(</span><span class="s">&#39;PF_ALG&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;PF_TOL&#39;</span><span class="p">,</span> <span class="mf">1e-4</span><span class="p">);</span>
+    <span class="n">opt</span> <span class="p">=</span> <span class="n">mpoption_old</span><span class="p">(</span><span class="n">opt</span><span class="p">,</span> <span class="s">&#39;OPF_ALG&#39;</span><span class="p">,</span> <span class="mi">565</span><span class="p">,</span> <span class="s">&#39;VERBOSE&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+<span class="n">The</span> <span class="n">currently</span> <span class="n">defined</span> <span class="n">options</span> <span class="n">are</span> <span class="n">as</span> <span class="n">follows</span><span class="p">:</span>
+
+   <span class="n">idx</span> <span class="o">-</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">default</span>          <span class="n">description</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span>
+   <span class="o">---</span>   <span class="o">-------------</span>          <span class="o">-----------------------------------------</span>
+<span class="nb">power</span> <span class="n">flow</span> <span class="n">options</span>
+    <span class="mi">1</span>  <span class="o">-</span> <span class="n">PF_ALG</span><span class="p">,</span> <span class="mi">1</span>              <span class="n">AC</span> <span class="nb">power</span> <span class="n">flow</span> <span class="n">algorithm</span>
+        <span class="p">[</span>   <span class="mi">1</span> <span class="o">-</span> <span class="n">Newton</span><span class="o">&#39;</span><span class="n">s</span> <span class="n">method</span>                                         <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">2</span> <span class="o">-</span> <span class="n">Fast</span><span class="o">-</span><span class="n">Decoupled</span> <span class="p">(</span><span class="n">XB</span> <span class="nb">version</span><span class="p">)</span>                             <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">3</span> <span class="o">-</span> <span class="n">Fast</span><span class="o">-</span><span class="n">Decoupled</span> <span class="p">(</span><span class="n">BX</span> <span class="nb">version</span><span class="p">)</span>                             <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">4</span> <span class="o">-</span> <span class="n">Gauss</span><span class="o">-</span><span class="n">Seidel</span>                                            <span class="p">]</span>
+    <span class="mi">2</span>  <span class="o">-</span> <span class="n">PF_TOL</span><span class="p">,</span> <span class="mf">1e-8</span>           <span class="n">termination</span> <span class="n">tolerance</span> <span class="n">on</span> <span class="n">per</span> <span class="n">unit</span>
+                                <span class="n">P</span> <span class="o">&amp;</span> <span class="n">Q</span> <span class="n">mismatch</span>
+    <span class="mi">3</span>  <span class="o">-</span> <span class="n">PF_MAX_IT</span><span class="p">,</span> <span class="mi">10</span>          <span class="n">maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">iterations</span> <span class="k">for</span>
+                                <span class="n">Newton</span><span class="o">&#39;</span><span class="n">s</span> <span class="n">method</span>
+    <span class="mi">4</span>  <span class="o">-</span> <span class="n">PF_MAX_IT_FD</span><span class="p">,</span> <span class="mi">30</span>       <span class="n">maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">iterations</span> <span class="k">for</span>
+                                <span class="n">fast</span> <span class="n">decoupled</span> <span class="n">method</span>
+    <span class="mi">5</span>  <span class="o">-</span> <span class="n">PF_MAX_IT_GS</span><span class="p">,</span> <span class="mi">1000</span>     <span class="n">maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">iterations</span> <span class="k">for</span>
+                                <span class="n">Gauss</span><span class="o">-</span><span class="n">Seidel</span> <span class="n">method</span>
+    <span class="mi">6</span>  <span class="o">-</span> <span class="n">ENFORCE_Q_LIMS</span><span class="p">,</span> <span class="mi">0</span>      <span class="n">enforce</span> <span class="n">gen</span> <span class="n">reactive</span> <span class="nb">power</span> <span class="n">limits</span>
+                                <span class="n">at</span> <span class="n">expense</span> <span class="n">of</span> <span class="o">|</span><span class="n">V</span><span class="o">|</span>
+        <span class="p">[</span>    <span class="mi">0</span> <span class="o">-</span> <span class="k">do</span> <span class="n">NOT</span> <span class="n">enforce</span> <span class="n">limits</span>                                  <span class="p">]</span>
+        <span class="p">[</span>    <span class="mi">1</span> <span class="o">-</span> <span class="n">enforce</span> <span class="n">limits</span><span class="p">,</span> <span class="n">simultaneous</span> <span class="n">bus</span> <span class="nb">type</span> <span class="n">conversion</span>       <span class="p">]</span>
+        <span class="p">[</span>    <span class="mi">2</span> <span class="o">-</span> <span class="n">enforce</span> <span class="n">limits</span><span class="p">,</span> <span class="n">one</span><span class="o">-</span><span class="n">at</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="nb">time</span> <span class="n">bus</span> <span class="nb">type</span> <span class="n">conversion</span>      <span class="p">]</span>
+    <span class="mi">10</span> <span class="o">-</span> <span class="n">PF_DC</span><span class="p">,</span> <span class="mi">0</span>               <span class="n">DC</span> <span class="n">modeling</span> <span class="k">for</span> <span class="nb">power</span> <span class="n">flow</span> <span class="o">&amp;</span> <span class="n">OPF</span>
+        <span class="p">[</span>    <span class="mi">0</span> <span class="o">-</span> <span class="n">use</span> <span class="n">AC</span> <span class="n">formulation</span> <span class="o">&amp;</span> <span class="n">corresponding</span> <span class="n">algorithm</span> <span class="n">options</span>   <span class="p">]</span>
+        <span class="p">[</span>    <span class="mi">1</span> <span class="o">-</span> <span class="n">use</span> <span class="n">DC</span> <span class="n">formulation</span><span class="p">,</span> <span class="n">ignore</span> <span class="n">AC</span> <span class="n">algorithm</span> <span class="n">options</span>        <span class="p">]</span>
+<span class="n">OPF</span> <span class="n">options</span>
+    <span class="mi">11</span> <span class="o">-</span> <span class="n">OPF_ALG</span><span class="p">,</span> <span class="mi">0</span>             <span class="n">solver</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">AC</span> <span class="n">OPF</span>
+        <span class="p">[</span>    <span class="mi">0</span> <span class="o">-</span> <span class="n">choose</span> <span class="n">default</span> <span class="n">solver</span> <span class="n">based</span> <span class="n">on</span> <span class="n">availability</span> <span class="n">in</span> <span class="n">the</span>     <span class="p">]</span>
+        <span class="p">[</span>        <span class="n">following</span> <span class="n">order</span><span class="p">,</span> <span class="mi">540</span><span class="p">,</span> <span class="mi">560</span>                              <span class="p">]</span>
+        <span class="p">[</span>  <span class="mi">500</span> <span class="o">-</span> <span class="n">MINOPF</span><span class="p">,</span> <span class="n">MINOS</span><span class="o">-</span><span class="n">based</span> <span class="n">solver</span><span class="p">,</span> <span class="n">requires</span> <span class="n">optional</span>          <span class="p">]</span>
+        <span class="p">[</span>        <span class="n">MEX</span><span class="o">-</span><span class="n">based</span> <span class="n">MINOPF</span> <span class="n">package</span><span class="p">,</span> <span class="n">available</span> <span class="n">from</span><span class="p">:</span>              <span class="p">]</span>
+        <span class="p">[</span>        <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">pserc</span><span class="p">.</span><span class="n">cornell</span><span class="p">.</span><span class="n">edu</span><span class="o">/</span><span class="n">minopf</span><span class="o">/</span>                   <span class="p">]</span>
+        <span class="p">[</span>  <span class="mi">520</span> <span class="o">-</span> <span class="n">fmincon</span><span class="p">,</span> <span class="n">MATLAB</span> <span class="n">Optimization</span> <span class="n">Toolbox</span> <span class="o">&gt;</span><span class="p">=</span> <span class="mf">2.</span><span class="n">x</span>            <span class="p">]</span>
+        <span class="p">[</span>  <span class="mi">540</span> <span class="o">-</span> <span class="n">PDIPM</span><span class="p">,</span> <span class="n">primal</span><span class="o">/</span><span class="n">dual</span> <span class="n">interior</span> <span class="n">point</span> <span class="n">method</span><span class="p">,</span> <span class="n">requires</span>     <span class="p">]</span>
+        <span class="p">[</span>        <span class="n">optional</span> <span class="n">MEX</span><span class="o">-</span><span class="n">based</span> <span class="n">TSPOPF</span> <span class="n">package</span><span class="p">,</span> <span class="n">available</span> <span class="n">from</span><span class="p">:</span>     <span class="p">]</span>
+        <span class="p">[</span>        <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">pserc</span><span class="p">.</span><span class="n">cornell</span><span class="p">.</span><span class="n">edu</span><span class="o">/</span><span class="n">tspopf</span><span class="o">/</span>                   <span class="p">]</span>
+        <span class="p">[</span>  <span class="mi">545</span> <span class="o">-</span> <span class="n">SC</span><span class="o">-</span><span class="n">PDIPM</span><span class="p">,</span> <span class="n">step</span><span class="o">-</span><span class="n">controlled</span> <span class="n">variant</span> <span class="n">of</span> <span class="n">PDIPM</span><span class="p">,</span> <span class="n">requires</span>   <span class="p">]</span>
+        <span class="p">[</span>        <span class="n">TSPOPF</span> <span class="p">(</span><span class="n">see</span> <span class="mi">540</span><span class="p">)</span>                                       <span class="p">]</span>
+        <span class="p">[</span>  <span class="mi">550</span> <span class="o">-</span> <span class="n">TRALM</span><span class="p">,</span> <span class="n">trust</span> <span class="n">region</span> <span class="n">based</span> <span class="n">augmented</span> <span class="n">Langrangian</span>        <span class="p">]</span>
+        <span class="p">[</span>        <span class="n">method</span><span class="p">,</span> <span class="n">requires</span> <span class="n">TSPOPF</span> <span class="p">(</span><span class="n">see</span> <span class="mi">540</span><span class="p">)</span>                      <span class="p">]</span>
+        <span class="p">[</span>  <span class="mi">560</span> <span class="o">-</span> <span class="n">MIPS</span><span class="p">,</span> <span class="n">MATPOWER</span> <span class="n">Interior</span> <span class="n">Point</span> <span class="n">Solver</span>                   <span class="p">]</span>
+        <span class="p">[</span>        <span class="n">primal</span><span class="o">/</span><span class="n">dual</span> <span class="n">interior</span> <span class="n">point</span> <span class="n">method</span> <span class="p">(</span><span class="n">pure</span> <span class="n">MATLAB</span><span class="p">)</span>        <span class="p">]</span>
+        <span class="p">[</span>  <span class="mi">565</span> <span class="o">-</span> <span class="n">MIPS</span><span class="o">-</span><span class="n">sc</span><span class="p">,</span> <span class="n">step</span><span class="o">-</span><span class="n">controlled</span> <span class="n">variant</span> <span class="n">of</span> <span class="n">MIPS</span>               <span class="p">]</span>
+        <span class="p">[</span>        <span class="n">primal</span><span class="o">/</span><span class="n">dual</span> <span class="n">interior</span> <span class="n">point</span> <span class="n">method</span> <span class="p">(</span><span class="n">pure</span> <span class="n">MATLAB</span><span class="p">)</span>        <span class="p">]</span>
+        <span class="p">[</span>  <span class="mi">580</span> <span class="o">-</span> <span class="n">IPOPT</span><span class="p">,</span> <span class="n">requires</span> <span class="n">MEX</span> <span class="n">interface</span> <span class="n">to</span> <span class="n">IPOPT</span> <span class="n">solver</span>          <span class="p">]</span>
+        <span class="p">[</span>        <span class="n">available</span> <span class="n">from</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">projects</span><span class="p">.</span><span class="n">coin</span><span class="o">-</span><span class="nb">or</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">Ipopt</span><span class="o">/</span>    <span class="p">]</span>
+        <span class="p">[</span>  <span class="mi">600</span> <span class="o">-</span> <span class="n">Artelys</span> <span class="n">Knitro</span><span class="p">,</span> <span class="n">requires</span> <span class="n">Knitro</span> <span class="n">solver</span><span class="p">,</span> <span class="n">available</span> <span class="n">from</span><span class="p">:]</span>
+        <span class="p">[</span>        <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">artelys</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">solvers</span><span class="o">/</span><span class="n">knitro</span><span class="o">/</span>                <span class="p">]</span>
+    <span class="mi">16</span> <span class="o">-</span> <span class="n">OPF_VIOLATION</span><span class="p">,</span> <span class="mf">5e-6</span>    <span class="n">constraint</span> <span class="n">violation</span> <span class="n">tolerance</span>
+    <span class="mi">17</span> <span class="o">-</span> <span class="n">CONSTR_TOL_X</span><span class="p">,</span> <span class="mf">1e-4</span>     <span class="n">termination</span> <span class="n">tol</span> <span class="n">on</span> <span class="n">x</span> <span class="k">for</span> <span class="n">fmincon</span><span class="o">/</span><span class="n">Knitro</span>
+    <span class="mi">18</span> <span class="o">-</span> <span class="n">CONSTR_TOL_F</span><span class="p">,</span> <span class="mf">1e-4</span>     <span class="n">termination</span> <span class="n">tol</span> <span class="n">on</span> <span class="n">f</span> <span class="k">for</span> <span class="n">fmincon</span><span class="o">/</span><span class="n">Knitro</span>
+    <span class="mi">19</span> <span class="o">-</span> <span class="n">CONSTR_MAX_IT</span><span class="p">,</span> <span class="mi">0</span>       <span class="nb">max</span> <span class="n">number</span> <span class="n">of</span> <span class="n">iterations</span> <span class="k">for</span> <span class="n">fmincon</span>
+                                <span class="p">[</span>       <span class="mi">0</span> <span class="p">=</span><span class="o">&gt;</span> <span class="n">default</span>                    <span class="p">]</span>
+    <span class="mi">24</span> <span class="o">-</span> <span class="n">OPF_FLOW_LIM</span><span class="p">,</span> <span class="mi">0</span>        <span class="n">qty</span> <span class="n">to</span> <span class="n">limit</span> <span class="k">for</span> <span class="n">branch</span> <span class="n">flow</span> <span class="n">constraints</span>
+        <span class="p">[</span>   <span class="mi">0</span> <span class="o">-</span> <span class="n">apparent</span> <span class="nb">power</span> <span class="n">flow</span> <span class="p">(</span><span class="n">limit</span> <span class="n">in</span> <span class="n">MVA</span><span class="p">)</span>                      <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">1</span> <span class="o">-</span> <span class="n">active</span> <span class="nb">power</span> <span class="n">flow</span> <span class="p">(</span><span class="n">limit</span> <span class="n">in</span> <span class="n">MW</span><span class="p">)</span>                         <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">2</span> <span class="o">-</span> <span class="n">current</span> <span class="n">magnitude</span> <span class="p">(</span><span class="n">limit</span> <span class="n">in</span> <span class="n">MVA</span> <span class="n">at</span> <span class="mi">1</span> <span class="n">p</span><span class="p">.</span><span class="n">u</span><span class="p">.</span> <span class="n">voltage</span><span class="p">)</span>      <span class="p">]</span>
+    <span class="mi">25</span> <span class="o">-</span> <span class="n">OPF_IGNORE_ANG_LIM</span><span class="p">,</span> <span class="mi">0</span>  <span class="n">ignore</span> <span class="nb">angle</span> <span class="n">difference</span> <span class="n">limits</span> <span class="k">for</span> <span class="n">branches</span>
+                                <span class="n">even</span> <span class="k">if</span> <span class="n">specified</span>           <span class="p">[</span>   <span class="mi">0</span> <span class="nb">or</span> <span class="mi">1</span>  <span class="p">]</span>
+    <span class="mi">26</span> <span class="o">-</span> <span class="n">OPF_ALG_DC</span><span class="p">,</span> <span class="mi">0</span>          <span class="n">solver</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">DC</span> <span class="n">OPF</span>
+        <span class="p">[</span>    <span class="mi">0</span> <span class="o">-</span> <span class="n">choose</span> <span class="n">default</span> <span class="n">solver</span> <span class="n">based</span> <span class="n">on</span> <span class="n">availability</span> <span class="n">in</span> <span class="n">the</span>     <span class="p">]</span>
+        <span class="p">[</span>        <span class="n">following</span> <span class="n">order</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">200</span>          <span class="p">]</span>
+        <span class="p">[</span>  <span class="mi">100</span> <span class="o">-</span> <span class="n">BPMPD</span><span class="p">,</span> <span class="n">requires</span> <span class="n">optional</span> <span class="n">MEX</span><span class="o">-</span><span class="n">based</span> <span class="n">BPMPD_MEX</span> <span class="n">package</span>   <span class="p">]</span>
+        <span class="p">[</span>        <span class="n">available</span> <span class="n">from</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">pserc</span><span class="p">.</span><span class="n">cornell</span><span class="p">.</span><span class="n">edu</span><span class="o">/</span><span class="n">bpmpd</span><span class="o">/</span>    <span class="p">]</span>
+        <span class="p">[</span>  <span class="mi">200</span> <span class="o">-</span> <span class="n">MIPS</span><span class="p">,</span> <span class="n">MATLAB</span> <span class="n">Interior</span> <span class="n">Point</span> <span class="n">Solver</span>                     <span class="p">]</span>
+        <span class="p">[</span>        <span class="n">primal</span><span class="o">/</span><span class="n">dual</span> <span class="n">interior</span> <span class="n">point</span> <span class="n">method</span> <span class="p">(</span><span class="n">pure</span> <span class="n">MATLAB</span><span class="p">)</span>        <span class="p">]</span>
+        <span class="p">[</span>  <span class="mi">250</span> <span class="o">-</span> <span class="n">MIPS</span><span class="o">-</span><span class="n">sc</span><span class="p">,</span> <span class="n">step</span><span class="o">-</span><span class="n">controlled</span> <span class="n">variant</span> <span class="n">of</span> <span class="n">MIPS</span>               <span class="p">]</span>
+        <span class="p">[</span>  <span class="mi">300</span> <span class="o">-</span> <span class="n">MATLAB</span> <span class="n">Optimization</span> <span class="n">Toolbox</span><span class="p">,</span> <span class="n">QUADPROG</span><span class="p">,</span> <span class="n">LINPROG</span>         <span class="p">]</span>
+        <span class="p">[</span>  <span class="mi">400</span> <span class="o">-</span> <span class="n">IPOPT</span><span class="p">,</span> <span class="n">requires</span> <span class="n">MEX</span> <span class="n">interface</span> <span class="n">to</span> <span class="n">IPOPT</span> <span class="n">solver</span>          <span class="p">]</span>
+        <span class="p">[</span>        <span class="n">available</span> <span class="n">from</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">projects</span><span class="p">.</span><span class="n">coin</span><span class="o">-</span><span class="nb">or</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">Ipopt</span><span class="o">/</span>    <span class="p">]</span>
+        <span class="p">[</span>  <span class="mi">500</span> <span class="o">-</span> <span class="n">CPLEX</span><span class="p">,</span> <span class="n">requires</span> <span class="n">MATLAB</span> <span class="n">interface</span> <span class="n">to</span> <span class="n">CPLEX</span> <span class="n">solver</span>       <span class="p">]</span>
+        <span class="p">[</span>  <span class="mi">600</span> <span class="o">-</span> <span class="n">MOSEK</span><span class="p">,</span> <span class="n">requires</span> <span class="n">MATLAB</span> <span class="n">interface</span> <span class="n">to</span> <span class="n">MOSEK</span> <span class="n">solver</span>       <span class="p">]</span>
+        <span class="p">[</span>        <span class="n">available</span> <span class="n">from</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">mosek</span><span class="p">.</span><span class="n">com</span><span class="o">/</span>                  <span class="p">]</span>
+        <span class="p">[</span>  <span class="mi">700</span> <span class="o">-</span> <span class="n">GUROBI</span><span class="p">,</span> <span class="n">requires</span> <span class="n">Gurobi</span> <span class="n">optimizer</span> <span class="p">(</span><span class="n">v</span><span class="p">.</span> <span class="mi">5</span><span class="o">+</span><span class="p">)</span>              <span class="p">]</span>
+        <span class="p">[</span>        <span class="n">available</span> <span class="n">from</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">gurobi</span><span class="p">.</span><span class="n">com</span>                 <span class="p">]</span>
+<span class="n">output</span> <span class="n">options</span>
+    <span class="mi">31</span> <span class="o">-</span> <span class="n">VERBOSE</span><span class="p">,</span> <span class="mi">1</span>             <span class="n">amount</span> <span class="n">of</span> <span class="n">progress</span> <span class="nb">info</span> <span class="n">printed</span>
+        <span class="p">[</span>   <span class="mi">0</span> <span class="o">-</span> <span class="nb">print</span> <span class="n">no</span> <span class="n">progress</span> <span class="nb">info</span>                                  <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">1</span> <span class="o">-</span> <span class="nb">print</span> <span class="n">a</span> <span class="n">little</span> <span class="n">progress</span> <span class="nb">info</span>                            <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">2</span> <span class="o">-</span> <span class="nb">print</span> <span class="n">a</span> <span class="n">lot</span> <span class="n">of</span> <span class="n">progress</span> <span class="nb">info</span>                            <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">3</span> <span class="o">-</span> <span class="nb">print</span> <span class="nb">all</span> <span class="n">progress</span> <span class="nb">info</span>                                 <span class="p">]</span>
+    <span class="mi">32</span> <span class="o">-</span> <span class="n">OUT_ALL</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>            <span class="n">controls</span> <span class="n">pretty</span><span class="o">-</span><span class="n">printing</span> <span class="n">of</span> <span class="n">results</span>
+        <span class="p">[</span>  <span class="o">-</span><span class="mi">1</span> <span class="o">-</span> <span class="n">individual</span> <span class="n">flags</span> <span class="n">control</span> <span class="nb">what</span> <span class="n">prints</span>                    <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">0</span> <span class="o">-</span> <span class="k">do</span> <span class="nb">not</span> <span class="nb">print</span> <span class="n">anything</span>                                   <span class="p">]</span>
+        <span class="p">[</span>       <span class="p">(</span><span class="n">overrides</span> <span class="n">individual</span> <span class="n">flags</span><span class="p">)</span>                            <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">1</span> <span class="o">-</span> <span class="nb">print</span> <span class="n">everything</span>                                        <span class="p">]</span>
+        <span class="p">[</span>       <span class="p">(</span><span class="n">overrides</span> <span class="n">individual</span> <span class="n">flags</span><span class="p">)</span>                            <span class="p">]</span>
+    <span class="mi">33</span> <span class="o">-</span> <span class="n">OUT_SYS_SUM</span><span class="p">,</span> <span class="mi">1</span>         <span class="nb">print</span> <span class="nb">system</span> <span class="n">summary</span>        <span class="p">[</span>   <span class="mi">0</span> <span class="nb">or</span> <span class="mi">1</span>  <span class="p">]</span>
+    <span class="mi">34</span> <span class="o">-</span> <span class="n">OUT_AREA_SUM</span><span class="p">,</span> <span class="mi">0</span>        <span class="nb">print</span> <span class="nb">area</span> <span class="n">summaries</span>        <span class="p">[</span>   <span class="mi">0</span> <span class="nb">or</span> <span class="mi">1</span>  <span class="p">]</span>
+    <span class="mi">35</span> <span class="o">-</span> <span class="n">OUT_BUS</span><span class="p">,</span> <span class="mi">1</span>             <span class="nb">print</span> <span class="n">bus</span> <span class="n">detail</span>            <span class="p">[</span>   <span class="mi">0</span> <span class="nb">or</span> <span class="mi">1</span>  <span class="p">]</span>
+    <span class="mi">36</span> <span class="o">-</span> <span class="n">OUT_BRANCH</span><span class="p">,</span> <span class="mi">1</span>          <span class="nb">print</span> <span class="n">branch</span> <span class="n">detail</span>         <span class="p">[</span>   <span class="mi">0</span> <span class="nb">or</span> <span class="mi">1</span>  <span class="p">]</span>
+    <span class="mi">37</span> <span class="o">-</span> <span class="n">OUT_GEN</span><span class="p">,</span> <span class="mi">0</span>             <span class="nb">print</span> <span class="n">generator</span> <span class="n">detail</span>      <span class="p">[</span>   <span class="mi">0</span> <span class="nb">or</span> <span class="mi">1</span>  <span class="p">]</span>
+                                <span class="p">(</span><span class="n">OUT_BUS</span> <span class="n">also</span> <span class="n">includes</span> <span class="n">gen</span> <span class="nb">info</span><span class="p">)</span>
+    <span class="mi">38</span> <span class="o">-</span> <span class="n">OUT_ALL_LIM</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>        <span class="n">controls</span> <span class="nb">what</span> <span class="n">constraint</span> <span class="nb">info</span> <span class="n">is</span> <span class="n">printed</span>
+        <span class="p">[</span>  <span class="o">-</span><span class="mi">1</span> <span class="o">-</span> <span class="n">individual</span> <span class="n">flags</span> <span class="n">control</span> <span class="nb">what</span> <span class="n">constraint</span> <span class="nb">info</span> <span class="n">prints</span>    <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">0</span> <span class="o">-</span> <span class="n">no</span> <span class="n">constraint</span> <span class="nb">info</span> <span class="p">(</span><span class="n">overrides</span> <span class="n">individual</span> <span class="n">flags</span><span class="p">)</span>         <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">1</span> <span class="o">-</span> <span class="n">binding</span> <span class="n">constraint</span> <span class="nb">info</span> <span class="p">(</span><span class="n">overrides</span> <span class="n">individual</span> <span class="n">flags</span><span class="p">)</span>    <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">2</span> <span class="o">-</span> <span class="nb">all</span> <span class="n">constraint</span> <span class="nb">info</span> <span class="p">(</span><span class="n">overrides</span> <span class="n">individual</span> <span class="n">flags</span><span class="p">)</span>        <span class="p">]</span>
+    <span class="mi">39</span> <span class="o">-</span> <span class="n">OUT_V_LIM</span><span class="p">,</span> <span class="mi">1</span>           <span class="n">control</span> <span class="n">output</span> <span class="n">of</span> <span class="n">voltage</span> <span class="n">limit</span> <span class="nb">info</span>
+        <span class="p">[</span>   <span class="mi">0</span> <span class="o">-</span> <span class="k">do</span> <span class="nb">not</span> <span class="nb">print</span>                                            <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">1</span> <span class="o">-</span> <span class="nb">print</span> <span class="n">binding</span> <span class="n">constraints</span> <span class="n">only</span>                          <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">2</span> <span class="o">-</span> <span class="nb">print</span> <span class="nb">all</span> <span class="n">constraints</span>                                   <span class="p">]</span>
+        <span class="p">[</span>   <span class="p">(</span><span class="n">same</span> <span class="n">options</span> <span class="k">for</span> <span class="n">OUT_LINE_LIM</span><span class="p">,</span> <span class="n">OUT_PG_LIM</span><span class="p">,</span> <span class="n">OUT_QG_LIM</span><span class="p">)</span>     <span class="p">]</span>
+    <span class="mi">40</span> <span class="o">-</span> <span class="n">OUT_LINE_LIM</span><span class="p">,</span> <span class="mi">1</span>        <span class="n">control</span> <span class="n">output</span> <span class="n">of</span> <span class="nb">line</span> <span class="n">flow</span> <span class="n">limit</span> <span class="nb">info</span>
+    <span class="mi">41</span> <span class="o">-</span> <span class="n">OUT_PG_LIM</span><span class="p">,</span> <span class="mi">1</span>          <span class="n">control</span> <span class="n">output</span> <span class="n">of</span> <span class="n">gen</span> <span class="n">P</span> <span class="n">limit</span> <span class="nb">info</span>
+    <span class="mi">42</span> <span class="o">-</span> <span class="n">OUT_QG_LIM</span><span class="p">,</span> <span class="mi">1</span>          <span class="n">control</span> <span class="n">output</span> <span class="n">of</span> <span class="n">gen</span> <span class="n">Q</span> <span class="n">limit</span> <span class="nb">info</span>
+    <span class="mi">44</span> <span class="o">-</span> <span class="n">OUT_FORCE</span><span class="p">,</span> <span class="mi">0</span>           <span class="nb">print</span> <span class="n">results</span> <span class="n">even</span> <span class="k">if</span> <span class="n">success</span> <span class="p">=</span> <span class="mi">0</span>
+                                                            <span class="p">[</span>   <span class="mi">0</span> <span class="nb">or</span> <span class="mi">1</span>  <span class="p">]</span>
+    <span class="mi">52</span> <span class="o">-</span> <span class="n">RETURN_RAW_DER</span><span class="p">,</span> <span class="mi">0</span>      <span class="k">return</span> <span class="n">constraint</span> <span class="nb">and</span> <span class="n">derivative</span> <span class="nb">info</span>
+                                <span class="n">in</span> <span class="n">results</span><span class="p">.</span><span class="n">raw</span> <span class="p">(</span><span class="n">in</span> <span class="n">fields</span> <span class="n">g</span><span class="p">,</span> <span class="n">dg</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">d2f</span><span class="p">)</span>
+<span class="n">FMINCON</span> <span class="n">options</span>
+    <span class="mi">55</span> <span class="o">-</span> <span class="n">FMC_ALG</span><span class="p">,</span> <span class="mi">4</span>             <span class="n">algorithm</span> <span class="n">used</span> <span class="n">by</span> <span class="n">fmincon</span> <span class="k">for</span> <span class="n">OPF</span>
+                                <span class="k">for</span> <span class="n">Optimization</span> <span class="n">Toolbox</span> <span class="mi">4</span> <span class="nb">and</span> <span class="n">later</span>
+         <span class="p">[</span>  <span class="mi">1</span> <span class="o">-</span> <span class="n">active</span><span class="o">-</span><span class="k">set</span>                                              <span class="p">]</span>
+         <span class="p">[</span>  <span class="mi">2</span> <span class="o">-</span> <span class="n">interior</span><span class="o">-</span><span class="n">point</span><span class="p">,</span> <span class="n">w</span><span class="o">/</span><span class="n">default</span> <span class="s">&#39;bfgs&#39;</span> <span class="n">Hessian</span> <span class="n">approx</span>         <span class="p">]</span>
+         <span class="p">[</span>  <span class="mi">3</span> <span class="o">-</span> <span class="n">interior</span><span class="o">-</span><span class="n">point</span><span class="p">,</span> <span class="n">w</span><span class="o">/</span> <span class="s">&#39;lbfgs&#39;</span> <span class="n">Hessian</span> <span class="n">approx</span>               <span class="p">]</span>
+         <span class="p">[</span>  <span class="mi">4</span> <span class="o">-</span> <span class="n">interior</span><span class="o">-</span><span class="n">point</span><span class="p">,</span> <span class="n">w</span><span class="o">/</span><span class="n">exact</span> <span class="n">user</span><span class="o">-</span><span class="n">supplied</span> <span class="n">Hessian</span>           <span class="p">]</span>
+         <span class="p">[</span>  <span class="mi">5</span> <span class="o">-</span> <span class="n">interior</span><span class="o">-</span><span class="n">point</span><span class="p">,</span> <span class="n">w</span><span class="o">/</span><span class="n">Hessian</span> <span class="n">via</span> <span class="nb">finite</span> <span class="n">differences</span>        <span class="p">]</span>
+
+<span class="n">Artelys</span> <span class="n">Knitro</span> <span class="n">options</span>
+    <span class="mi">58</span> <span class="o">-</span> <span class="n">KNITRO_OPT</span><span class="p">,</span> <span class="mi">0</span>          <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">zero</span> <span class="n">integer</span> <span class="n">N</span> <span class="n">indicates</span> <span class="n">that</span> <span class="nb">all</span>
+                                <span class="n">Knitro</span> <span class="n">options</span> <span class="n">should</span> <span class="n">be</span> <span class="n">handled</span> <span class="n">by</span> <span class="n">a</span>
+                                <span class="n">Knitro</span> <span class="n">options</span> <span class="n">file</span> <span class="n">named</span>
+                                <span class="s">&#39;knitro_user_options_N.txt&#39;</span>
+
+<span class="n">IPOPT</span> <span class="n">options</span>
+    <span class="mi">60</span> <span class="o">-</span> <span class="n">IPOPT_OPT</span><span class="p">,</span> <span class="mi">0</span>           <span class="n">See</span> <span class="n">IPOPT_OPTIONS</span> <span class="k">for</span> <span class="n">details</span><span class="p">.</span>
+
+<span class="n">MINOPF</span> <span class="n">options</span>
+    <span class="mi">61</span> <span class="o">-</span> <span class="n">MNS_FEASTOL</span><span class="p">,</span> <span class="mi">0</span> <span class="p">(</span><span class="mf">1e-3</span><span class="p">)</span>  <span class="n">primal</span> <span class="n">feasibility</span> <span class="n">tolerance</span><span class="p">,</span>
+                                <span class="k">set</span> <span class="n">to</span> <span class="n">value</span> <span class="n">of</span> <span class="n">OPF_VIOLATION</span> <span class="n">by</span> <span class="n">default</span>
+    <span class="mi">62</span> <span class="o">-</span> <span class="n">MNS_ROWTOL</span><span class="p">,</span> <span class="mi">0</span>  <span class="p">(</span><span class="mf">1e-3</span><span class="p">)</span>  <span class="n">row</span> <span class="n">tolerance</span>
+                                <span class="k">set</span> <span class="n">to</span> <span class="n">value</span> <span class="n">of</span> <span class="n">OPF_VIOLATION</span> <span class="n">by</span> <span class="n">default</span>
+    <span class="mi">63</span> <span class="o">-</span> <span class="n">MNS_XTOL</span><span class="p">,</span> <span class="mi">0</span>    <span class="p">(</span><span class="mf">1e-3</span><span class="p">)</span>  <span class="n">x</span> <span class="n">tolerance</span>
+                                <span class="k">set</span> <span class="n">to</span> <span class="n">value</span> <span class="n">of</span> <span class="n">CONSTR_TOL_X</span> <span class="n">by</span> <span class="n">default</span>
+    <span class="mi">64</span> <span class="o">-</span> <span class="n">MNS_MAJDAMP</span><span class="p">,</span> <span class="mi">0</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>   <span class="n">major</span> <span class="n">damping</span> <span class="n">parameter</span>
+    <span class="mi">65</span> <span class="o">-</span> <span class="n">MNS_MINDAMP</span><span class="p">,</span> <span class="mi">0</span> <span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>   <span class="n">minor</span> <span class="n">damping</span> <span class="n">parameter</span>
+    <span class="mi">66</span> <span class="o">-</span> <span class="n">MNS_PENALTY_PARM</span><span class="p">,</span> <span class="mi">0</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>  <span class="n">penalty</span> <span class="n">parameter</span>
+    <span class="mi">67</span> <span class="o">-</span> <span class="n">MNS_MAJOR_IT</span><span class="p">,</span> <span class="mi">0</span> <span class="p">(</span><span class="mi">200</span><span class="p">)</span>  <span class="n">major</span> <span class="n">iterations</span>
+    <span class="mi">68</span> <span class="o">-</span> <span class="n">MNS_MINOR_IT</span><span class="p">,</span> <span class="mi">0</span> <span class="p">(</span><span class="mi">2500</span><span class="p">)</span> <span class="n">minor</span> <span class="n">iterations</span>
+    <span class="mi">69</span> <span class="o">-</span> <span class="n">MNS_MAX_IT</span><span class="p">,</span> <span class="mi">0</span> <span class="p">(</span><span class="mi">2500</span><span class="p">)</span>   <span class="n">iterations</span> <span class="n">limit</span>
+    <span class="mi">70</span> <span class="o">-</span> <span class="n">MNS_VERBOSITY</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="p">[</span>  <span class="o">-</span><span class="mi">1</span> <span class="o">-</span> <span class="n">controlled</span> <span class="n">by</span> <span class="n">VERBOSE</span> <span class="n">option</span>                            <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">0</span> <span class="o">-</span> <span class="nb">print</span> <span class="n">nothing</span>                                           <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">1</span> <span class="o">-</span> <span class="nb">print</span> <span class="n">only</span> <span class="n">termination</span> <span class="n">status</span> <span class="n">message</span>                   <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">2</span> <span class="o">-</span> <span class="nb">print</span> <span class="n">termination</span> <span class="n">status</span> <span class="nb">and</span> <span class="n">screen</span> <span class="n">progress</span>            <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">3</span> <span class="o">-</span> <span class="nb">print</span> <span class="n">screen</span> <span class="n">progress</span><span class="p">,</span> <span class="n">report</span> <span class="n">file</span> <span class="p">(</span><span class="n">usually</span> <span class="n">fort</span><span class="p">.</span><span class="mi">9</span><span class="p">)</span>     <span class="p">]</span>
+    <span class="mi">71</span> <span class="o">-</span> <span class="n">MNS_CORE</span><span class="p">,</span> <span class="mi">0</span> <span class="p">(</span><span class="mi">1200</span> <span class="o">*</span> <span class="n">nb</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">nb</span> <span class="o">+</span> <span class="n">ng</span><span class="p">)</span>^<span class="mi">2</span><span class="p">)</span> <span class="n">memory</span> <span class="n">allocation</span>
+    <span class="mi">72</span> <span class="o">-</span> <span class="n">MNS_SUPBASIC_LIM</span><span class="p">,</span> <span class="mi">0</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">nb</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">ng</span><span class="p">)</span> <span class="n">superbasics</span> <span class="n">limit</span>
+    <span class="mi">73</span> <span class="o">-</span> <span class="n">MNS_MULT_PRICE</span><span class="p">,</span> <span class="mi">0</span> <span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="n">multiple</span> <span class="n">price</span>
+
+<span class="n">MIPS</span> <span class="p">(</span><span class="n">including</span> <span class="n">MIPS</span><span class="o">-</span><span class="n">sc</span><span class="p">),</span> <span class="n">PDIPM</span><span class="p">,</span> <span class="n">SC</span><span class="o">-</span><span class="n">PDIPM</span><span class="p">,</span> <span class="nb">and</span> <span class="n">TRALM</span> <span class="n">options</span>
+    <span class="mi">81</span> <span class="o">-</span> <span class="n">PDIPM_FEASTOL</span><span class="p">,</span> <span class="mi">0</span>       <span class="n">feasibility</span> <span class="p">(</span><span class="n">equality</span><span class="p">)</span> <span class="n">tolerance</span>
+                                <span class="k">for</span> <span class="n">MIPS</span><span class="p">,</span> <span class="n">PDIPM</span> <span class="nb">and</span> <span class="n">SC</span><span class="o">-</span><span class="n">PDIPM</span><span class="p">,</span> <span class="k">set</span>
+                                <span class="n">to</span> <span class="n">value</span> <span class="n">of</span> <span class="n">OPF_VIOLATION</span> <span class="n">by</span> <span class="n">default</span>
+    <span class="mi">82</span> <span class="o">-</span> <span class="n">PDIPM_GRADTOL</span><span class="p">,</span> <span class="mf">1e-6</span>    <span class="nb">gradient</span> <span class="n">tolerance</span> <span class="k">for</span> <span class="n">MIPS</span><span class="p">,</span> <span class="n">PDIPM</span>
+                                <span class="nb">and</span> <span class="n">SC</span><span class="o">-</span><span class="n">PDIPM</span>
+    <span class="mi">83</span> <span class="o">-</span> <span class="n">PDIPM_COMPTOL</span><span class="p">,</span> <span class="mf">1e-6</span>    <span class="n">complementary</span> <span class="n">condition</span> <span class="p">(</span><span class="n">inequality</span><span class="p">)</span>
+                                <span class="n">tolerance</span> <span class="k">for</span> <span class="n">MIPS</span><span class="p">,</span> <span class="n">PDIPM</span> <span class="nb">and</span> <span class="n">SC</span><span class="o">-</span><span class="n">PDIPM</span>
+    <span class="mi">84</span> <span class="o">-</span> <span class="n">PDIPM_COSTTOL</span><span class="p">,</span> <span class="mf">1e-6</span>    <span class="n">optimality</span> <span class="n">tolerance</span> <span class="k">for</span> <span class="n">MIPS</span><span class="p">,</span> <span class="n">PDIPM</span>
+                                <span class="nb">and</span> <span class="n">SC</span><span class="o">-</span><span class="n">PDIPM</span>
+    <span class="mi">85</span> <span class="o">-</span> <span class="n">PDIPM_MAX_IT</span><span class="p">,</span>  <span class="mi">150</span>     <span class="n">maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">iterations</span> <span class="k">for</span> <span class="n">MIPS</span><span class="p">,</span>
+                                <span class="n">PDIPM</span> <span class="nb">and</span> <span class="n">SC</span><span class="o">-</span><span class="n">PDIPM</span>
+    <span class="mi">86</span> <span class="o">-</span> <span class="n">SCPDIPM_RED_IT</span><span class="p">,</span> <span class="mi">20</span>     <span class="n">maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">MIPS</span><span class="o">-</span><span class="n">sc</span> <span class="nb">or</span> <span class="n">SC</span><span class="o">-</span><span class="n">PDIPM</span>
+                                <span class="n">reductions</span> <span class="n">per</span> <span class="n">iteration</span>
+    <span class="mi">87</span> <span class="o">-</span> <span class="n">TRALM_FEASTOL</span><span class="p">,</span> <span class="mi">0</span>       <span class="n">feasibility</span> <span class="n">tolerance</span> <span class="k">for</span> <span class="n">TRALM</span>
+                                <span class="k">set</span> <span class="n">to</span> <span class="n">value</span> <span class="n">of</span> <span class="n">OPF_VIOLATION</span> <span class="n">by</span> <span class="n">default</span>
+    <span class="mi">88</span> <span class="o">-</span> <span class="n">TRALM_PRIMETOL</span><span class="p">,</span> <span class="mf">5e-4</span>   <span class="n">primal</span> <span class="n">variable</span> <span class="n">tolerance</span> <span class="k">for</span> <span class="n">TRALM</span>
+    <span class="mi">89</span> <span class="o">-</span> <span class="n">TRALM_DUALTOL</span><span class="p">,</span> <span class="mf">5e-4</span>    <span class="n">dual</span> <span class="n">variable</span> <span class="n">tolerance</span> <span class="k">for</span> <span class="n">TRALM</span>
+    <span class="mi">90</span> <span class="o">-</span> <span class="n">TRALM_COSTTOL</span><span class="p">,</span> <span class="mf">1e-5</span>    <span class="n">optimality</span> <span class="n">tolerance</span> <span class="k">for</span> <span class="n">TRALM</span>
+    <span class="mi">91</span> <span class="o">-</span> <span class="n">TRALM_MAJOR_IT</span><span class="p">,</span> <span class="mi">40</span>     <span class="n">maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">major</span> <span class="n">iterations</span>
+    <span class="mi">92</span> <span class="o">-</span> <span class="n">TRALM_MINOR_IT</span><span class="p">,</span> <span class="mi">100</span>    <span class="n">maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">minor</span> <span class="n">iterations</span>
+    <span class="mi">93</span> <span class="o">-</span> <span class="n">SMOOTHING_RATIO</span><span class="p">,</span> <span class="mf">0.04</span>  <span class="n">piecewise</span> <span class="n">linear</span> <span class="n">curve</span> <span class="n">smoothing</span> <span class="n">ratio</span>
+                                <span class="n">used</span> <span class="n">in</span> <span class="n">SC</span><span class="o">-</span><span class="n">PDIPM</span> <span class="nb">and</span> <span class="n">TRALM</span>
+
+<span class="n">CPLEX</span> <span class="n">options</span>
+    <span class="mi">95</span> <span class="o">-</span> <span class="n">CPLEX_LPMETHOD</span><span class="p">,</span> <span class="mi">0</span>      <span class="n">solution</span> <span class="n">algorithm</span> <span class="k">for</span> <span class="n">continuous</span> <span class="n">LPs</span>
+        <span class="p">[</span>   <span class="mi">0</span> <span class="o">-</span> <span class="n">automatic</span><span class="p">:</span> <span class="n">let</span> <span class="n">CPLEX</span> <span class="n">choose</span>                             <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">1</span> <span class="o">-</span> <span class="n">primal</span> <span class="n">simplex</span>                                          <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">2</span> <span class="o">-</span> <span class="n">dual</span> <span class="n">simplex</span>                                            <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">3</span> <span class="o">-</span> <span class="n">network</span> <span class="n">simplex</span>                                         <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">4</span> <span class="o">-</span> <span class="n">barrier</span>                                                 <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">5</span> <span class="o">-</span> <span class="n">sifting</span>                                                 <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">6</span> <span class="o">-</span> <span class="n">concurrent</span> <span class="p">(</span><span class="n">dual</span><span class="p">,</span> <span class="n">barrier</span><span class="p">,</span> <span class="nb">and</span> <span class="n">primal</span><span class="p">)</span>                  <span class="p">]</span>
+    <span class="mi">96</span> <span class="o">-</span> <span class="n">CPLEX_QPMETHOD</span><span class="p">,</span> <span class="mi">0</span>      <span class="n">solution</span> <span class="n">algorithm</span> <span class="k">for</span> <span class="n">continuous</span> <span class="n">QPs</span>
+        <span class="p">[</span>   <span class="mi">0</span> <span class="o">-</span> <span class="n">automatic</span><span class="p">:</span> <span class="n">let</span> <span class="n">CPLEX</span> <span class="n">choose</span>                             <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">1</span> <span class="o">-</span> <span class="n">primal</span> <span class="n">simplex</span> <span class="n">optimizer</span>                                <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">2</span> <span class="o">-</span> <span class="n">dual</span> <span class="n">simplex</span> <span class="n">optimizer</span>                                  <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">3</span> <span class="o">-</span> <span class="n">network</span> <span class="n">optimizer</span>                                       <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">4</span> <span class="o">-</span> <span class="n">barrier</span> <span class="n">optimizer</span>                                       <span class="p">]</span>
+    <span class="mi">97</span> <span class="o">-</span> <span class="n">CPLEX_OPT</span><span class="p">,</span> <span class="mi">0</span>           <span class="n">See</span> <span class="n">CPLEX_OPTIONS</span> <span class="k">for</span> <span class="n">details</span>
+
+<span class="n">MOSEK</span> <span class="n">options</span>
+    <span class="mi">111</span> <span class="o">-</span> <span class="n">MOSEK_LP_ALG</span><span class="p">,</span> <span class="mi">0</span>       <span class="n">solution</span> <span class="n">algorithm</span> <span class="k">for</span> <span class="n">continuous</span> <span class="n">LPs</span>
+                                    <span class="p">(</span><span class="n">MSK_IPAR_OPTIMIZER</span><span class="p">)</span>
+        <span class="p">[</span>   <span class="mi">0</span> <span class="o">-</span> <span class="n">automatic</span><span class="p">:</span> <span class="n">let</span> <span class="n">MOSEK</span> <span class="n">choose</span>                             <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">1</span> <span class="o">-</span> <span class="n">interior</span> <span class="n">point</span>                                          <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">4</span> <span class="o">-</span> <span class="n">primal</span> <span class="n">simplex</span>                                          <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">5</span> <span class="o">-</span> <span class="n">dual</span> <span class="n">simplex</span>                                            <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">6</span> <span class="o">-</span> <span class="n">primal</span> <span class="n">dual</span> <span class="n">simplex</span>                                     <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">7</span> <span class="o">-</span> <span class="n">automatic</span> <span class="n">simplex</span> <span class="p">(</span><span class="n">MOSEK</span> <span class="n">chooses</span> <span class="n">which</span> <span class="n">simplex</span> <span class="n">method</span><span class="p">)</span>  <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">10</span> <span class="o">-</span> <span class="n">concurrent</span>                                             <span class="p">]</span>
+    <span class="mi">112</span> <span class="o">-</span> <span class="n">MOSEK_MAX_IT</span><span class="p">,</span> <span class="mi">0</span> <span class="p">(</span><span class="mi">400</span><span class="p">)</span>     <span class="n">interior</span> <span class="n">point</span> <span class="nb">max</span> <span class="n">iterations</span>
+                                        <span class="p">(</span><span class="n">MSK_IPAR_INTPNT_MAX_ITERATIONS</span><span class="p">)</span>
+    <span class="mi">113</span> <span class="o">-</span> <span class="n">MOSEK_GAP_TOL</span><span class="p">,</span> <span class="mi">0</span> <span class="p">(</span><span class="mf">1e-8</span><span class="p">)</span>   <span class="n">interior</span> <span class="n">point</span> <span class="n">relative</span> <span class="n">gap</span> <span class="n">tolerance</span>
+                                        <span class="p">(</span><span class="n">MSK_DPAR_INTPNT_TOL_REL_GAP</span><span class="p">)</span>
+    <span class="mi">114</span> <span class="o">-</span> <span class="n">MOSEK_MAX_TIME</span><span class="p">,</span> <span class="mi">0</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>    <span class="n">maximum</span> <span class="nb">time</span> <span class="n">allowed</span> <span class="k">for</span> <span class="n">solver</span>
+                                        <span class="p">(</span><span class="n">MSK_DPAR_OPTIMIZER_MAX_TIME</span><span class="p">)</span>
+    <span class="mi">115</span> <span class="o">-</span> <span class="n">MOSEK_NUM_THREADS</span><span class="p">,</span> <span class="mi">0</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="n">maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">threads</span> <span class="n">to</span> <span class="n">use</span>
+                                        <span class="p">(</span><span class="n">MSK_IPAR_INTPNT_NUM_THREADS</span><span class="p">)</span>
+    <span class="mi">116</span> <span class="o">-</span> <span class="n">MOSEK_OPT</span><span class="p">,</span> <span class="mi">0</span>              <span class="n">See</span> <span class="n">MOSEK_OPTIONS</span> <span class="k">for</span> <span class="n">details</span>
+
+<span class="n">Gurobi</span> <span class="n">options</span>
+    <span class="mi">121</span> <span class="o">-</span> <span class="n">GRB_METHOD</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>         <span class="n">solution</span> <span class="n">algorithm</span> <span class="p">(</span><span class="n">Method</span><span class="p">)</span>
+        <span class="p">[</span>  <span class="o">-</span><span class="mi">1</span> <span class="o">-</span> <span class="n">automatic</span><span class="p">,</span> <span class="n">let</span> <span class="n">Gurobi</span> <span class="n">decide</span>                            <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">0</span> <span class="o">-</span> <span class="n">primal</span> <span class="n">simplex</span>                                          <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">1</span> <span class="o">-</span> <span class="n">dual</span> <span class="n">simplex</span>                                            <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">2</span> <span class="o">-</span> <span class="n">barrier</span>                                                 <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">3</span> <span class="o">-</span> <span class="n">concurrent</span> <span class="p">(</span><span class="n">LP</span> <span class="n">only</span><span class="p">)</span>                                    <span class="p">]</span>
+        <span class="p">[</span>   <span class="mi">4</span> <span class="o">-</span> <span class="n">deterministic</span> <span class="n">concurrent</span> <span class="p">(</span><span class="n">LP</span> <span class="n">only</span><span class="p">)</span>                      <span class="p">]</span>
+    <span class="mi">122</span> <span class="o">-</span> <span class="n">GRB_TIMELIMIT</span><span class="p">,</span> <span class="nb">Inf</span>    <span class="n">maximum</span> <span class="nb">time</span> <span class="n">allowed</span> <span class="k">for</span> <span class="n">solver</span> <span class="p">(</span><span class="n">TimeLimit</span><span class="p">)</span>
+    <span class="mi">123</span> <span class="o">-</span> <span class="n">GRB_THREADS</span><span class="p">,</span> <span class="mi">0</span> <span class="p">(</span><span class="n">auto</span><span class="p">)</span> <span class="n">maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">threads</span> <span class="n">to</span> <span class="n">use</span> <span class="p">(</span><span class="n">Threads</span><span class="p">)</span>
+    <span class="mi">124</span> <span class="o">-</span> <span class="n">GRB_OPT</span><span class="p">,</span> <span class="mi">0</span>            <span class="n">See</span> <span class="n">GUROBI_OPTIONS</span> <span class="k">for</span> <span class="n">details</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mpoption_info_quadprog.html" class="btn btn-neutral float-left" title="mpoption_info_quadprog" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="psse_convert.html" class="btn btn-neutral float-right" title="psse_convert" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

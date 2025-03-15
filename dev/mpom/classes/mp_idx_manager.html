@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mp_idx_manager &mdash; MATPOWER Documentation 8.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=bb3927b2"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="miqps_master" href="../functions/miqps_master.html" />
+    <link rel="prev" title="opt_model" href="opt_model.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">matpower.org</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/about/get-started/">Get Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ref-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mips/index.html">MIPS User’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#reference">Reference</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../reference.html">Reference</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../reference.html#mpom-classes"><span class="raw-html">MP-Opt-Model</span> Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference.html#mpom-functions"><span class="raw-html">MP-Opt-Model</span> Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference.html#solver-interfaces-implementations">Solver Interfaces &amp; Implementations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference.html#mpom-examples"><span class="raw-html">MP-Opt-Model</span> Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference.html#mpom-tests"><span class="raw-html">MP-Opt-Model</span> Tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference.html#private-functions">Private Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../most/index.html">MOST User’s Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/doc/manuals/">All Legacy PDF Manuals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/add-constraint.html">How to Add an OPF Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tech Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tech-notes.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Technical Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+          <li class="breadcrumb-item"><a href="../reference.html">Reference</a></li>
+      <li class="breadcrumb-item active">mp_idx_manager</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/mpom/classes/mp_idx_manager.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="opt_model.html" class="btn btn-neutral float-left" title="opt_model" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../functions/miqps_master.html" class="btn btn-neutral float-right" title="miqps_master" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p><span class="raw-html"><div style="float: right"><a href="https://github.com/MATPOWER/mp-opt-model/blob/master/lib/@mp_idx_manager/mp_idx_manager.m" target=_blank><svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg></a></div></span></p>
+<section id="mp-idx-manager">
+<h1>mp_idx_manager<a class="headerlink" href="#mp-idx-manager" title="Link to this heading"></a></h1>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="mp_idx_manager">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">mp_idx_manager</span></span><a class="headerlink" href="#mp_idx_manager" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<p><a class="reference internal" href="#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a> - <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Index Manager abstract class</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">MATPOWER</span> <span class="n">Index</span> <span class="n">Manager</span> <span class="n">object</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">manage</span> <span class="n">the</span> <span class="n">indexing</span> <span class="n">of</span>
+<span class="n">various</span> <span class="n">named</span> <span class="nb">and</span> <span class="n">indexed</span> <span class="n">blocks</span> <span class="n">of</span> <span class="n">various</span> <span class="k">set</span> <span class="n">types</span><span class="p">,</span> <span class="n">such</span> <span class="n">as</span> <span class="n">variables</span><span class="p">,</span>
+<span class="n">constraints</span><span class="p">,</span> <span class="n">etc</span><span class="p">.</span> <span class="n">This</span> <span class="nb">class</span> <span class="n">helps</span> <span class="n">keep</span> <span class="n">track</span> <span class="n">of</span> <span class="n">the</span> <span class="n">ordering</span> <span class="nb">and</span>
+<span class="n">indexing</span> <span class="n">of</span> <span class="n">the</span> <span class="n">various</span> <span class="n">blocks</span> <span class="n">as</span> <span class="n">they</span> <span class="n">are</span> <span class="n">added</span> <span class="n">to</span> <span class="n">the</span> <span class="n">object</span><span class="p">.</span>
+
+<span class="n">The</span> <span class="n">types</span> <span class="n">of</span> <span class="n">named</span> <span class="n">sets</span> <span class="n">to</span> <span class="n">be</span> <span class="n">managed</span> <span class="n">by</span> <span class="n">the</span> <span class="nb">class</span> <span class="n">are</span> <span class="n">defined</span> <span class="n">by</span> <span class="n">the</span>
+<span class="n">DEF_SET_TYPES</span> <span class="n">method</span><span class="p">,</span> <span class="n">which</span> <span class="n">assigns</span> <span class="n">a</span> <span class="nb">struct</span> <span class="n">to</span> <span class="n">the</span> <span class="s">&#39;set_types&#39;</span> <span class="n">field</span><span class="p">.</span>
+
+<span class="n">Properties</span>
+    <span class="n">set_types</span>   <span class="o">-</span> <span class="n">a</span> <span class="nb">struct</span> <span class="n">defined</span> <span class="n">by</span> <span class="n">DEF_SET_TYPES</span> <span class="n">method</span>
+    <span class="n">userdata</span>    <span class="o">-</span> <span class="n">a</span> <span class="nb">struct</span> <span class="n">containing</span> <span class="n">arbitrary</span> <span class="n">data</span> <span class="n">added</span> <span class="n">by</span> <span class="n">the</span> <span class="n">user</span>
+
+<span class="n">Private</span> <span class="n">Methods</span>
+    <span class="n">add_named_set</span> <span class="o">-</span> <span class="n">Adds</span> <span class="n">named</span> <span class="n">subset</span> <span class="n">of</span> <span class="n">a</span> <span class="n">particular</span> <span class="nb">type</span> <span class="n">to</span> <span class="n">the</span>
+        <span class="n">object</span><span class="p">.</span>
+
+    <span class="n">def_set_types</span> <span class="o">-</span> <span class="p">(</span><span class="n">must</span> <span class="n">be</span> <span class="n">implemented</span> <span class="n">in</span> <span class="n">the</span> <span class="n">subclass</span><span class="p">)</span> <span class="n">Returns</span> <span class="n">a</span>
+        <span class="nb">struct</span> <span class="n">defining</span> <span class="n">the</span> <span class="n">various</span> <span class="k">set</span> <span class="n">types</span><span class="p">,</span> <span class="n">where</span> <span class="n">the</span> <span class="n">key</span> <span class="n">is</span> <span class="n">the</span>
+        <span class="k">set</span> <span class="nb">type</span> <span class="n">name</span><span class="p">,</span> <span class="n">which</span> <span class="n">must</span> <span class="n">also</span> <span class="n">be</span> <span class="n">declared</span> <span class="n">as</span> <span class="n">a</span> <span class="n">property</span> <span class="n">in</span>
+        <span class="n">the</span> <span class="n">object</span><span class="o">&#39;</span><span class="n">s</span> <span class="nb">class</span><span class="p">,</span> <span class="nb">and</span> <span class="n">the</span> <span class="n">value</span> <span class="n">is</span> <span class="n">a</span> <span class="n">string</span> <span class="n">name</span> <span class="n">used</span> <span class="k">for</span>
+        <span class="nb">display</span> <span class="n">purposes</span><span class="p">.</span>
+
+        <span class="n">E</span><span class="p">.</span><span class="n">g</span><span class="p">.</span>
+            <span class="k">function</span> <span class="n">obj</span> <span class="p">=</span> <span class="n">def_set_types</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+                <span class="n">obj</span><span class="p">.</span><span class="n">set_types</span> <span class="p">=</span> <span class="nb">struct</span><span class="p">(...</span>
+                        <span class="s">&#39;var&#39;</span><span class="p">,</span> <span class="s">&#39;variable&#39;</span><span class="p">,</span> <span class="p">...</span>
+                        <span class="s">&#39;lin&#39;</span><span class="p">,</span> <span class="s">&#39;linear constraint&#39;</span> <span class="p">...</span>
+                    <span class="p">);</span>
+            <span class="k">end</span>
+
+    <span class="n">init_set_types</span> <span class="o">-</span> <span class="n">Initializes</span> <span class="n">the</span> <span class="n">structures</span> <span class="n">needed</span> <span class="n">to</span> <span class="n">track</span> <span class="n">the</span>
+        <span class="n">ordering</span> <span class="nb">and</span> <span class="n">indexing</span> <span class="n">of</span> <span class="n">each</span> <span class="k">set</span> <span class="nb">type</span> <span class="nb">and</span> <span class="n">can</span> <span class="n">be</span> <span class="n">overridden</span>
+        <span class="n">to</span> <span class="n">initialize</span> <span class="nb">any</span> <span class="n">additional</span> <span class="n">data</span> <span class="n">to</span> <span class="n">be</span> <span class="n">stored</span> <span class="n">with</span> <span class="n">each</span> <span class="n">block</span>
+        <span class="n">of</span> <span class="n">each</span> <span class="k">set</span> <span class="nb">type</span><span class="p">.</span> <span class="n">Ideally</span><span class="p">,</span> <span class="n">this</span> <span class="n">would</span> <span class="n">be</span> <span class="n">called</span> <span class="n">at</span> <span class="n">the</span> <span class="k">end</span>
+        <span class="n">of</span> <span class="n">the</span> <span class="n">MP_IDX_MANAGER</span> <span class="n">constructor</span><span class="p">,</span> <span class="n">but</span> <span class="n">this</span> <span class="n">is</span> <span class="nb">not</span> <span class="n">possible</span>
+        <span class="n">in</span> <span class="n">Octave</span> <span class="mf">5.2</span> <span class="nb">and</span> <span class="n">earlier</span> <span class="n">due</span> <span class="n">to</span> <span class="n">a</span> <span class="n">bug</span> <span class="n">related</span> <span class="n">to</span> <span class="n">altering</span>
+        <span class="n">fields</span> <span class="n">of</span> <span class="n">an</span> <span class="n">object</span> <span class="nb">not</span> <span class="n">yet</span> <span class="n">fully</span> <span class="n">constructed</span><span class="p">.</span>
+        <span class="n">Fixed</span> <span class="n">in</span> <span class="n">Octave</span> <span class="n">v6</span><span class="p">.</span><span class="n">x</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">savannah</span><span class="p">.</span><span class="n">gnu</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">bugs</span><span class="o">/</span>?<span class="mi">52614</span>
+        <span class="n">The</span> <span class="n">workaround</span> <span class="n">is</span> <span class="n">to</span> <span class="n">be</span> <span class="n">sure</span> <span class="n">that</span> <span class="n">this</span> <span class="n">method</span> <span class="n">is</span> <span class="n">called</span> <span class="n">by</span>
+        <span class="n">some</span> <span class="n">subclass</span> <span class="n">method</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">after</span> <span class="n">object</span> <span class="n">construction</span><span class="p">,</span> <span class="n">but</span> <span class="n">before</span>
+        <span class="nb">any</span> <span class="n">other</span> <span class="n">use</span> <span class="p">(</span><span class="nb">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span> <span class="n">in</span> <span class="nb">display</span><span class="p">()</span> <span class="nb">and</span> <span class="n">add_</span><span class="o">*</span><span class="p">()</span> <span class="k">methods</span><span class="p">).</span>
+
+    <span class="n">valid_named_set_type</span> <span class="o">-</span> <span class="n">Returns</span> <span class="n">a</span> <span class="n">label</span> <span class="k">for</span> <span class="n">the</span> <span class="n">given</span> <span class="n">named</span> <span class="k">set</span>
+        <span class="nb">type</span> <span class="k">if</span> <span class="n">valid</span><span class="p">,</span> <span class="n">empty</span> <span class="k">otherwise</span><span class="p">.</span>
+
+<span class="n">Public</span> <span class="n">Methods</span>
+    <span class="n">add_</span><span class="o">&lt;</span><span class="n">SET</span><span class="o">-</span><span class="n">TYPE</span><span class="o">&gt;</span> <span class="o">-</span> <span class="p">(</span><span class="n">must</span> <span class="n">be</span> <span class="n">implemented</span> <span class="n">in</span> <span class="n">the</span> <span class="n">subclass</span><span class="p">)</span> <span class="n">Used</span> <span class="n">to</span>
+        <span class="n">add</span> <span class="n">a</span> <span class="n">block</span> <span class="n">of</span> <span class="n">the</span> <span class="n">given</span> <span class="k">set</span> <span class="nb">type</span> <span class="n">to</span> <span class="n">the</span> <span class="n">object</span><span class="p">,</span> <span class="n">using</span> <span class="n">the</span>
+        <span class="n">private</span> <span class="n">ADD_NAMED_SET</span> <span class="n">method</span> <span class="n">internally</span> <span class="n">followed</span> <span class="n">by</span> <span class="n">the</span>
+        <span class="n">handling</span> <span class="n">of</span> <span class="nb">any</span> <span class="n">data</span> <span class="n">specific</span> <span class="n">to</span> <span class="n">that</span> <span class="k">set</span> <span class="nb">type</span><span class="p">.</span>
+
+    <span class="n">copy</span> <span class="o">-</span> <span class="n">Makes</span> <span class="n">a</span> <span class="n">shallow</span> <span class="n">copy</span> <span class="n">of</span> <span class="n">the</span> <span class="n">object</span><span class="p">.</span>
+
+    <span class="n">describe_idx</span> <span class="o">-</span> <span class="n">Identifies</span> <span class="n">indices</span> <span class="n">of</span> <span class="n">a</span> <span class="n">given</span> <span class="k">set</span> <span class="nb">type</span><span class="p">.</span>
+        <span class="n">E</span><span class="p">.</span><span class="n">g</span><span class="p">.</span> <span class="n">variable</span> <span class="mi">361</span> <span class="n">corresponds</span> <span class="n">to</span> <span class="n">Pg</span><span class="p">(</span><span class="mi">68</span><span class="p">)</span>
+
+    <span class="nb">display</span> <span class="o">-</span> <span class="p">(</span><span class="n">must</span> <span class="n">be</span> <span class="n">implemented</span> <span class="n">in</span> <span class="n">the</span> <span class="n">subclass</span><span class="p">)</span> <span class="n">Displays</span> <span class="n">the</span>
+        <span class="n">object</span> <span class="p">(</span><span class="n">called</span> <span class="n">automatically</span> <span class="n">when</span> <span class="n">you</span> <span class="n">omit</span> <span class="n">the</span> <span class="n">semicolon</span> <span class="n">at</span>
+        <span class="n">the</span> <span class="n">command</span><span class="o">-</span><span class="nb">line</span><span class="p">).</span>
+
+    <span class="n">display_set</span> <span class="o">-</span> <span class="n">Prints</span> <span class="n">to</span> <span class="n">screen</span> <span class="n">the</span> <span class="n">indexing</span> <span class="n">details</span> <span class="k">for</span> <span class="n">the</span>
+        <span class="n">specified</span> <span class="k">set</span> <span class="nb">type</span><span class="p">.</span> <span class="n">Intended</span> <span class="n">to</span> <span class="n">be</span> <span class="n">called</span> <span class="n">by</span> <span class="n">DISPLAY</span> <span class="n">method</span><span class="p">.</span>
+
+    <span class="n">get_idx</span> <span class="o">-</span> <span class="n">Returns</span> <span class="nb">index</span> <span class="n">structure</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">specified</span> <span class="k">set</span> <span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">),</span>
+        <span class="n">with</span> <span class="n">starting</span><span class="o">/</span><span class="n">ending</span> <span class="n">indices</span> <span class="nb">and</span> <span class="n">number</span> <span class="n">of</span> <span class="n">elements</span> <span class="k">for</span>
+        <span class="n">each</span> <span class="n">named</span> <span class="p">(</span><span class="nb">and</span> <span class="n">optionally</span> <span class="n">indexed</span><span class="p">)</span> <span class="n">block</span><span class="p">.</span>
+
+    <span class="n">get_userdata</span> <span class="o">-</span> <span class="n">Retreives</span> <span class="n">values</span> <span class="n">of</span> <span class="n">user</span> <span class="n">data</span> <span class="n">stored</span> <span class="n">in</span> <span class="n">the</span> <span class="n">object</span><span class="p">.</span>
+
+    <span class="k">get</span> <span class="o">-</span> <span class="n">Return</span> <span class="n">the</span> <span class="n">value</span> <span class="n">of</span> <span class="nb">any</span> <span class="n">individual</span> <span class="n">field</span><span class="p">.</span>
+
+    <span class="n">getN</span> <span class="o">-</span> <span class="n">Returns</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">elements</span> <span class="n">of</span> <span class="nb">any</span> <span class="n">given</span> <span class="k">set</span> <span class="nb">type</span><span class="p">,</span>
+        <span class="n">optionally</span> <span class="k">for</span> <span class="n">a</span> <span class="nb">single</span> <span class="n">named</span> <span class="n">block</span><span class="p">.</span>
+
+    <span class="n">init_indexed_name</span> <span class="o">-</span> <span class="n">Initializes</span> <span class="n">the</span> <span class="n">dimensions</span> <span class="k">for</span> <span class="n">an</span> <span class="n">indexed</span>
+        <span class="n">named</span> <span class="k">set</span><span class="p">.</span>
+
+    <span class="n">params_</span><span class="o">&lt;</span><span class="n">SET</span><span class="o">-</span><span class="n">TYPE</span><span class="o">&gt;</span> <span class="o">-</span> <span class="p">(</span><span class="n">must</span> <span class="n">be</span> <span class="n">implemented</span> <span class="n">in</span> <span class="n">the</span> <span class="n">subclass</span><span class="p">)</span>
+        <span class="n">Returns</span> <span class="k">set</span><span class="o">-</span><span class="nb">type</span><span class="o">-</span><span class="n">specific</span> <span class="n">data</span> <span class="k">for</span> <span class="n">a</span> <span class="n">given</span> <span class="nb">type</span><span class="p">.</span>
+
+<span class="n">The</span> <span class="n">following</span> <span class="n">is</span> <span class="n">the</span> <span class="n">structure</span> <span class="n">of</span> <span class="n">the</span> <span class="n">data</span> <span class="n">in</span> <span class="n">the</span> <span class="n">object</span><span class="p">,</span> <span class="n">using</span> <span class="n">a</span> <span class="k">set</span>
+<span class="nb">type</span> <span class="n">named</span> <span class="s">&#39;var&#39;</span> <span class="k">for</span> <span class="n">illustration</span><span class="p">.</span> <span class="n">Each</span> <span class="n">field</span> <span class="n">of</span> <span class="p">.</span><span class="n">idx</span> <span class="nb">or</span> <span class="p">.</span><span class="n">data</span> <span class="n">is</span> <span class="n">a</span>
+<span class="nb">struct</span> <span class="n">whose</span> <span class="n">field</span> <span class="n">names</span> <span class="n">are</span> <span class="n">the</span> <span class="n">names</span> <span class="n">of</span> <span class="n">the</span> <span class="n">corresponding</span> <span class="n">blocks</span> <span class="n">of</span>
+<span class="n">elements</span> <span class="n">of</span> <span class="n">that</span> <span class="nb">type</span> <span class="p">(</span><span class="nb">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span> <span class="n">variables</span><span class="p">,</span> <span class="n">constraints</span><span class="p">,</span> <span class="n">etc</span><span class="p">.).</span> <span class="n">They</span> <span class="n">are</span>
+<span class="n">found</span> <span class="n">in</span> <span class="n">order</span> <span class="n">in</span> <span class="n">the</span> <span class="n">corresponding</span> <span class="p">.</span><span class="n">order</span> <span class="n">field</span><span class="p">.</span> <span class="n">The</span> <span class="n">description</span> <span class="n">next</span>
+<span class="n">to</span> <span class="n">these</span> <span class="n">fields</span> <span class="n">gives</span> <span class="n">the</span> <span class="n">meaning</span> <span class="n">of</span> <span class="n">the</span> <span class="n">value</span> <span class="k">for</span> <span class="n">each</span> <span class="n">named</span> <span class="n">sub</span><span class="o">-</span><span class="n">field</span><span class="p">.</span>
+<span class="n">E</span><span class="p">.</span><span class="n">g</span><span class="p">.</span> <span class="n">obj</span><span class="p">.</span><span class="nb">var</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">v0</span><span class="p">.</span><span class="n">Pg</span> <span class="n">contains</span> <span class="n">a</span> <span class="n">vector</span> <span class="n">of</span> <span class="n">initial</span> <span class="n">values</span> <span class="k">for</span> <span class="n">the</span> <span class="s">&#39;Pg&#39;</span>
+<span class="n">block</span> <span class="n">of</span> <span class="n">variables</span><span class="p">.</span>
+
+<span class="n">obj</span>
+    <span class="p">.</span><span class="nb">var</span>        <span class="o">-</span> <span class="n">data</span> <span class="k">for</span> <span class="s">&#39;var&#39;</span> <span class="k">set</span> <span class="nb">type</span><span class="p">,</span> <span class="nb">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span> <span class="n">variable</span> <span class="n">sets</span> <span class="n">that</span>
+                  <span class="n">make</span> <span class="n">up</span> <span class="n">the</span> <span class="nb">full</span> <span class="n">optimization</span> <span class="n">variable</span> <span class="n">x</span>
+        <span class="p">.</span><span class="n">idx</span>
+            <span class="p">.</span><span class="n">i1</span> <span class="o">-</span> <span class="n">starting</span> <span class="nb">index</span> <span class="n">within</span> <span class="n">x</span>
+            <span class="p">.</span><span class="n">iN</span> <span class="o">-</span> <span class="n">ending</span> <span class="nb">index</span> <span class="n">within</span> <span class="n">x</span>
+            <span class="p">.</span><span class="n">N</span>  <span class="o">-</span> <span class="n">number</span> <span class="n">of</span> <span class="n">elements</span> <span class="n">in</span> <span class="n">this</span> <span class="n">variable</span> <span class="k">set</span>
+        <span class="p">.</span><span class="n">N</span>      <span class="o">-</span> <span class="n">total</span> <span class="n">number</span> <span class="n">of</span> <span class="n">elements</span> <span class="n">in</span> <span class="n">x</span>
+        <span class="p">.</span><span class="n">NS</span>     <span class="o">-</span> <span class="n">number</span> <span class="n">of</span> <span class="n">variable</span> <span class="n">sets</span> <span class="nb">or</span> <span class="n">named</span> <span class="n">blocks</span>
+        <span class="p">.</span><span class="n">data</span>   <span class="o">-</span> <span class="n">additional</span> <span class="k">set</span><span class="o">-</span><span class="nb">type</span><span class="o">-</span><span class="n">specific</span> <span class="n">data</span> <span class="k">for</span> <span class="n">each</span> <span class="n">block</span>
+        <span class="p">.</span><span class="n">order</span>  <span class="o">-</span> <span class="nb">struct</span> <span class="n">array</span> <span class="n">of</span> <span class="n">names</span><span class="o">/</span><span class="n">indices</span> <span class="k">for</span> <span class="n">variable</span>
+                  <span class="n">blocks</span> <span class="n">in</span> <span class="n">the</span> <span class="n">order</span> <span class="n">they</span> <span class="n">appear</span> <span class="n">in</span> <span class="n">x</span>
+            <span class="p">.</span><span class="n">name</span>   <span class="o">-</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">block</span><span class="p">,</span> <span class="nb">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span> <span class="n">Pg</span>
+            <span class="p">.</span><span class="n">idx</span>    <span class="o">-</span> <span class="n">indices</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span> <span class="p">=</span><span class="o">&gt;</span> <span class="n">Pg</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">userdata</span>   <span class="o">-</span> <span class="nb">any</span> <span class="n">user</span> <span class="n">defined</span> <span class="n">data</span>
+        <span class="p">.(</span><span class="n">user</span> <span class="n">defined</span> <span class="n">fields</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="members docutils container">
+<dl>
+<dt>Constructor Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mp_idx_manager.mp_idx_manager">
+<span class="sig-name descname"><span class="pre">mp_idx_manager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.mp_idx_manager" title="Link to this definition"></a></dt>
+<dd><p>Constructor.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span> <span class="p">=</span> <span class="n">mp_idx_manager</span><span class="p">()</span>
+<span class="n">obj</span> <span class="p">=</span> <span class="n">mp_idx_manager</span><span class="p">(</span><span class="n">a_struct</span><span class="p">)</span>
+<span class="n">obj</span> <span class="p">=</span> <span class="n">mp_idx_manager</span><span class="p">(</span><span class="n">an_obj</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd>
+<dt>Method Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mp_idx_manager.init_set_types">
+<span class="sig-name descname"><span class="pre">init_set_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.init_set_types" title="Link to this definition"></a></dt>
+<dd><p>Initialize indexing structures for each set type.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp_idx_manager.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.copy" title="Link to this definition"></a></dt>
+<dd><p>Duplicate the object.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp_idx_manager.display_set">
+<span class="sig-name descname"><span class="pre">display_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">stype</span></em>, <em class="sig-param"><span class="pre">sname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.display_set" title="Link to this definition"></a></dt>
+<dd><p>Display indexing information for a given set type.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp_idx_manager.set_type_idx_map">
+<span class="sig-name descname"><span class="pre">set_type_idx_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">idxs</span></em>, <em class="sig-param"><span class="pre">group_by_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.set_type_idx_map" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mp_idx_manager.set_type_idx_map" title="mp_idx_manager.set_type_idx_map"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_type_idx_map()</span></code></a> - Maps index for set type back to named set &amp; index within set</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">SET_TYPE_IDX_MAP</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">IDXS</span><span class="p">)</span>
+<span class="n">S</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">SET_TYPE_IDX_MAP</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">)</span>
+<span class="n">S</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">SET_TYPE_IDX_MAP</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">IDXS</span><span class="p">,</span> <span class="n">GROUP_BY_NAME</span><span class="p">)</span>
+
+<span class="n">Returns</span> <span class="n">a</span> <span class="nb">struct</span> <span class="n">of</span> <span class="n">same</span> <span class="n">dimensions</span> <span class="n">as</span> <span class="n">IDXS</span> <span class="n">specifying</span><span class="p">,</span> <span class="k">for</span> <span class="n">each</span> <span class="nb">index</span><span class="p">,</span>
+<span class="n">the</span> <span class="n">corresponding</span> <span class="n">named</span> <span class="k">set</span> <span class="nb">and</span> <span class="n">element</span> <span class="n">within</span> <span class="n">the</span> <span class="n">named</span> <span class="k">set</span> <span class="k">for</span> <span class="n">the</span>
+<span class="n">specified</span> <span class="n">SET_TYPE</span><span class="p">.</span> <span class="n">The</span> <span class="k">return</span> <span class="nb">struct</span> <span class="n">has</span> <span class="n">the</span> <span class="n">following</span> <span class="n">fields</span><span class="p">:</span>
+    <span class="n">name</span> <span class="p">:</span> <span class="n">name</span> <span class="n">of</span> <span class="n">corresponding</span> <span class="k">set</span>
+    <span class="n">idx</span> <span class="p">:</span> <span class="nb">cell</span> <span class="n">array</span> <span class="n">of</span> <span class="n">indices</span> <span class="k">for</span> <span class="n">the</span> <span class="n">name</span><span class="p">,</span> <span class="k">if</span> <span class="n">named</span> <span class="k">set</span> <span class="n">is</span> <span class="n">indexed</span>
+    <span class="n">i</span> <span class="p">:</span> <span class="nb">index</span> <span class="n">of</span> <span class="n">element</span> <span class="n">within</span> <span class="n">the</span> <span class="k">set</span>
+    <span class="n">j</span> <span class="p">:</span> <span class="p">(</span><span class="n">only</span> <span class="k">if</span> <span class="n">GROUP_BY_NAME</span> <span class="o">==</span> <span class="mi">1</span><span class="p">),</span> <span class="n">corresponding</span> <span class="nb">index</span> <span class="n">of</span> <span class="k">set</span> <span class="nb">type</span><span class="p">,</span>
+        <span class="n">equal</span> <span class="n">to</span> <span class="n">a</span> <span class="n">particular</span> <span class="n">element</span> <span class="n">of</span> <span class="n">IDXS</span>
+<span class="n">If</span> <span class="n">IDXS</span> <span class="n">is</span> <span class="n">empty</span> <span class="nb">or</span> <span class="nb">not</span> <span class="n">provided</span> <span class="n">it</span> <span class="n">defaults</span> <span class="n">to</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">NS</span><span class="p">]</span><span class="o">&#39;</span><span class="p">,</span> <span class="n">where</span> <span class="n">NS</span> <span class="n">is</span> <span class="n">the</span>
+<span class="nb">full</span> <span class="n">dimension</span> <span class="n">of</span> <span class="n">the</span> <span class="k">set</span> <span class="n">corresponding</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">all</span> <span class="n">elements</span> <span class="k">for</span> <span class="n">the</span>
+<span class="n">specified</span> <span class="k">set</span> <span class="nb">type</span><span class="p">.</span>
+
+<span class="n">If</span> <span class="n">GROUP_BY_NAME</span> <span class="n">is</span> <span class="nb">true</span><span class="p">,</span> <span class="n">then</span> <span class="n">the</span> <span class="n">results</span> <span class="n">are</span> <span class="n">consolidated</span><span class="p">,</span> <span class="n">with</span> <span class="n">a</span>
+<span class="nb">single</span> <span class="n">entry</span> <span class="n">in</span> <span class="n">S</span> <span class="k">for</span> <span class="n">each</span> <span class="nb">unique</span> <span class="n">name</span><span class="o">/</span><span class="n">idx</span> <span class="n">pair</span><span class="p">,</span> <span class="n">where</span> <span class="n">the</span> <span class="n">i</span> <span class="nb">and</span> <span class="n">j</span> <span class="n">fields</span>
+<span class="n">are</span> <span class="n">vectors</span><span class="p">.</span> <span class="n">In</span> <span class="n">this</span> <span class="k">case</span> <span class="n">S</span> <span class="n">is</span> <span class="mi">1</span> <span class="n">dimensional</span><span class="p">.</span>
+
+<span class="n">Examples</span><span class="p">:</span>
+    <span class="n">s</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">set_type_idx_map</span><span class="p">(</span><span class="s">&#39;var&#39;</span><span class="p">,</span> <span class="mi">87</span><span class="p">));</span>
+    <span class="n">s</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">set_type_idx_map</span><span class="p">(</span><span class="s">&#39;lin&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">38</span><span class="p">;</span> <span class="mi">49</span><span class="p">;</span> <span class="mi">93</span><span class="p">]));</span>
+    <span class="n">s</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">set_type_idx_map</span><span class="p">(</span><span class="s">&#39;var&#39;</span><span class="p">));</span>
+    <span class="n">s</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">set_type_idx_map</span><span class="p">(</span><span class="s">&#39;var&#39;</span><span class="p">,</span> <span class="p">[],</span> <span class="mi">1</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#mp_idx_manager.describe_idx" title="mp_idx_manager.describe_idx"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">describe_idx()</span></code></a>, <a class="reference internal" href="opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp_idx_manager.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.get" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mp_idx_manager.get" title="mp_idx_manager.get"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get()</span></code></a> - Returns the value of a field.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">VAL</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">GET</span><span class="p">(</span><span class="n">FIELD1</span><span class="p">,</span> <span class="n">FIELD2</span><span class="p">,</span> <span class="p">...)</span>
+
+<span class="n">Example</span><span class="p">:</span>
+    <span class="n">var_order</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="s">&#39;var&#39;</span><span class="p">,</span> <span class="s">&#39;order&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp_idx_manager.get_userdata">
+<span class="sig-name descname"><span class="pre">get_userdata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.get_userdata" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mp_idx_manager.get_userdata" title="mp_idx_manager.get_userdata"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_userdata()</span></code></a> - Used to retrieve values of user data.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">VAL</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">GET_USERDATA</span><span class="p">(</span><span class="n">NAME</span><span class="p">)</span> <span class="n">returns</span> <span class="n">the</span> <span class="n">value</span> <span class="n">specified</span> <span class="n">by</span> <span class="n">the</span> <span class="n">given</span> <span class="n">name</span>
+<span class="nb">or</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">matrix</span> <span class="k">if</span> <span class="n">userdata</span> <span class="n">with</span> <span class="n">NAME</span> <span class="n">does</span> <span class="nb">not</span> <span class="nb">exist</span><span class="p">.</span>
+
+<span class="n">This</span> <span class="k">function</span> <span class="n">allows</span> <span class="n">the</span> <span class="n">user</span> <span class="n">to</span> <span class="n">retrieve</span> <span class="nb">any</span> <span class="n">arbitrary</span> <span class="n">data</span> <span class="n">that</span> <span class="n">was</span>
+<span class="n">saved</span> <span class="n">in</span> <span class="n">the</span> <span class="n">object</span> <span class="k">for</span> <span class="n">later</span> <span class="n">use</span><span class="p">.</span> <span class="n">Data</span> <span class="k">for</span> <span class="n">a</span> <span class="n">given</span> <span class="n">NAME</span> <span class="n">is</span> <span class="n">saved</span> <span class="n">by</span>
+<span class="n">assigning</span> <span class="n">it</span> <span class="n">to</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">userdata</span><span class="p">.(</span><span class="n">NAME</span><span class="p">).</span>
+
+<span class="n">This</span> <span class="n">can</span> <span class="n">be</span> <span class="n">useful</span><span class="p">,</span> <span class="k">for</span> <span class="nb">example</span><span class="p">,</span> <span class="n">when</span> <span class="n">using</span> <span class="n">a</span> <span class="n">user</span> <span class="k">function</span> <span class="n">to</span> <span class="n">add</span>
+<span class="n">variables</span> <span class="nb">or</span> <span class="n">constraints</span><span class="p">,</span> <span class="n">etc</span><span class="p">.</span> <span class="n">Suppose</span> <span class="n">some</span> <span class="n">special</span> <span class="n">indexing</span> <span class="n">is</span>
+<span class="n">constructed</span> <span class="n">when</span> <span class="n">adding</span> <span class="n">some</span> <span class="n">variables</span> <span class="nb">or</span> <span class="n">constraints</span><span class="p">.</span> <span class="n">This</span> <span class="n">indexing</span> <span class="n">data</span>
+<span class="n">can</span> <span class="n">be</span> <span class="n">stored</span> <span class="nb">and</span> <span class="n">used</span> <span class="n">later</span> <span class="n">to</span> <span class="s">&quot;unpack&quot;</span> <span class="n">the</span> <span class="n">results</span> <span class="n">of</span> <span class="n">the</span> <span class="n">solved</span> <span class="k">case</span><span class="p">.</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp_idx_manager.valid_named_set_type">
+<span class="sig-name descname"><span class="pre">valid_named_set_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">set_type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.valid_named_set_type" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mp_idx_manager.valid_named_set_type" title="mp_idx_manager.valid_named_set_type"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">valid_named_set_type()</span></code></a> - Returns a label for the given named set type or empty.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="o">-----</span>  <span class="n">PRIVATE</span> <span class="n">METHOD</span>  <span class="o">-----</span>
+
+<span class="n">STR</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">VALID_NAMED_SET_TYPE</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">)</span>
+
+<span class="n">Returns</span> <span class="n">a</span> <span class="n">string</span> <span class="n">corresponding</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">the</span> <span class="n">named</span> <span class="k">set</span> <span class="k">for</span>
+<span class="n">valid</span> <span class="n">values</span> <span class="n">of</span> <span class="n">SET_TYPE</span><span class="p">,</span> <span class="k">otherwise</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">string</span><span class="p">.</span> <span class="n">Can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span>
+<span class="n">check</span> <span class="n">whether</span> <span class="n">SET_TYPE</span> <span class="n">is</span> <span class="n">a</span> <span class="n">valid</span> <span class="nb">type</span><span class="p">.</span>
+
+<span class="n">Valid</span> <span class="k">set</span> <span class="n">types</span><span class="p">,</span> <span class="nb">and</span> <span class="n">the</span> <span class="n">corresponding</span> <span class="n">values</span> <span class="n">are</span> <span class="n">defined</span> <span class="n">as</span> <span class="n">a</span> <span class="nb">struct</span>
+<span class="n">returned</span> <span class="n">by</span> <span class="n">the</span> <span class="n">DEF_SET_TYPES</span> <span class="n">method</span><span class="p">.</span>
+
+<span class="n">E</span><span class="p">.</span><span class="n">g</span><span class="p">.</span> <span class="n">The</span> <span class="n">following</span> <span class="n">method</span> <span class="p">...</span>
+    <span class="k">function</span> <span class="n">obj</span> <span class="p">=</span> <span class="n">def_set_types</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="n">obj</span><span class="p">.</span><span class="n">set_types</span> <span class="p">=</span> <span class="nb">struct</span><span class="p">(...</span>
+                <span class="s">&#39;var&#39;</span><span class="p">,</span> <span class="s">&#39;variable&#39;</span><span class="p">,</span> <span class="p">...</span>
+                <span class="s">&#39;lin&#39;</span><span class="p">,</span> <span class="s">&#39;linear constraint&#39;</span> <span class="p">...</span>
+            <span class="p">);</span>
+    <span class="k">end</span>
+
+<span class="p">...</span> <span class="n">indicates</span> <span class="n">the</span> <span class="n">following</span> <span class="n">valid</span> <span class="n">SET_TYPES</span> <span class="nb">and</span> <span class="n">corresponding</span>
+<span class="k">return</span> <span class="n">values</span><span class="p">:</span>
+
+    <span class="n">SET_TYPE</span>    <span class="n">STR</span>
+    <span class="s">&#39;var&#39;</span>       <span class="s">&#39;variable&#39;</span>
+    <span class="s">&#39;lin&#39;</span>       <span class="s">&#39;linear constraint&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp_idx_manager.add_named_set">
+<span class="sig-name descname"><span class="pre">add_named_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.add_named_set" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mp_idx_manager.add_named_set" title="mp_idx_manager.add_named_set"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add_named_set()</span></code></a> - Adds a named set of a particular type to the object.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="o">-----</span>  <span class="n">PRIVATE</span> <span class="n">METHOD</span>  <span class="o">-----</span>
+
+<span class="n">This</span> <span class="n">method</span> <span class="n">is</span> <span class="n">intended</span> <span class="n">to</span> <span class="n">be</span> <span class="n">a</span> <span class="n">private</span> <span class="n">method</span><span class="p">,</span> <span class="n">used</span> <span class="n">internally</span> <span class="n">by</span>
+<span class="n">the</span> <span class="n">public</span> <span class="k">methods</span> <span class="k">for</span> <span class="n">each</span> <span class="k">set</span> <span class="nb">type</span><span class="p">,</span> <span class="nb">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span> <span class="n">ADD_VAR</span><span class="p">,</span> <span class="n">ADD_LIN_CONSTRAINT</span><span class="p">,</span>
+<span class="n">etc</span><span class="p">.</span> <span class="n">This</span> <span class="n">method</span> <span class="n">handles</span> <span class="n">the</span> <span class="n">indexing</span> <span class="n">part</span><span class="p">.</span> <span class="n">The</span> <span class="k">set</span><span class="o">-</span><span class="nb">type</span><span class="o">-</span><span class="n">specific</span> <span class="k">methods</span>
+<span class="n">that</span> <span class="n">call</span> <span class="n">it</span> <span class="n">need</span> <span class="n">to</span> <span class="n">handle</span> <span class="nb">any</span> <span class="n">data</span> <span class="n">that</span> <span class="n">goes</span> <span class="n">with</span> <span class="n">each</span> <span class="k">set</span> <span class="n">added</span><span class="p">.</span>
+
+<span class="n">E</span><span class="p">.</span><span class="n">g</span><span class="p">.</span>
+
+<span class="n">Variable</span> <span class="n">Set</span>
+    <span class="n">OBJ</span><span class="p">.</span><span class="n">ADD_NAMED_SET</span><span class="p">(</span><span class="s">&#39;var&#39;</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">V0</span><span class="p">,</span> <span class="n">VL</span><span class="p">,</span> <span class="n">VU</span><span class="p">,</span> <span class="n">VT</span><span class="p">);</span>
+
+<span class="n">Linear</span> <span class="n">Constraint</span> <span class="n">Set</span>
+    <span class="n">OBJ</span><span class="p">.</span><span class="n">ADD_NAMED_SET</span><span class="p">(</span><span class="s">&#39;lin&#39;</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="n">VARSETS</span><span class="p">);</span>
+
+<span class="n">Nonlinear</span> <span class="n">Inequality</span> <span class="n">Constraint</span> <span class="n">Set</span>
+    <span class="n">OBJ</span><span class="p">.</span><span class="n">ADD_NAMED_SET</span><span class="p">(</span><span class="s">&#39;nle&#39;</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">FCN</span><span class="p">,</span> <span class="n">HESS</span><span class="p">,</span> <span class="n">COMPUTED_BY</span><span class="p">,</span> <span class="n">VARSETS</span><span class="p">);</span>
+
+<span class="n">Nonlinear</span> <span class="n">Inequality</span> <span class="n">Constraint</span> <span class="n">Set</span>
+    <span class="n">OBJ</span><span class="p">.</span><span class="n">ADD_NAMED_SET</span><span class="p">(</span><span class="s">&#39;nli&#39;</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">FCN</span><span class="p">,</span> <span class="n">HESS</span><span class="p">,</span> <span class="n">COMPUTED_BY</span><span class="p">,</span> <span class="n">VARSETS</span><span class="p">);</span>
+
+<span class="n">Quadratic</span> <span class="n">Cost</span> <span class="n">Set</span>
+    <span class="n">OBJ</span><span class="p">.</span><span class="n">ADD_NAMED_SET</span><span class="p">(</span><span class="s">&#39;qdc&#39;</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">CP</span><span class="p">,</span> <span class="n">VARSETS</span><span class="p">);</span>
+
+<span class="n">General</span> <span class="n">Nonlinear</span> <span class="n">Cost</span> <span class="n">Set</span>
+    <span class="n">OBJ</span><span class="p">.</span><span class="n">ADD_NAMED_SET</span><span class="p">(</span><span class="s">&#39;nlc&#39;</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">FCN</span><span class="p">,</span> <span class="n">VARSETS</span><span class="p">);</span>
+
+<span class="n">See</span> <span class="n">OPT_MODEL</span> <span class="nb">and</span> <span class="n">its</span> <span class="k">methods</span> <span class="n">ADD_VAR</span><span class="p">,</span> <span class="n">ADD_LIN_CONSTRAINT</span><span class="p">,</span>
+    <span class="n">ADD_NLN_CONSTRAINT</span><span class="p">,</span> <span class="n">ADD_QUAD_COST</span> <span class="nb">and</span> <span class="n">ADD_NLN_COST</span><span class="p">.</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp_idx_manager.describe_idx">
+<span class="sig-name descname"><span class="pre">describe_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">idxs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.describe_idx" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mp_idx_manager.describe_idx" title="mp_idx_manager.describe_idx"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">describe_idx()</span></code></a> - Identifies element indices for a give set type.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">LABEL</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">DESCRIBE_IDX</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">IDXS</span><span class="p">)</span>
+
+<span class="n">Returns</span> <span class="n">strings</span> <span class="n">describing</span> <span class="p">(</span><span class="n">name</span> <span class="nb">and</span> <span class="nb">index</span><span class="p">)</span> <span class="n">the</span> <span class="n">element</span> <span class="n">of</span> <span class="n">the</span>
+<span class="n">specified</span> <span class="k">set</span> <span class="nb">type</span> <span class="p">(</span><span class="nb">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span> <span class="n">variable</span> <span class="nb">or</span> <span class="n">constraint</span><span class="p">)</span> <span class="n">that</span> <span class="n">corresponds</span> <span class="n">to</span>
+<span class="n">the</span> <span class="n">indices</span> <span class="n">in</span> <span class="n">IDXS</span><span class="p">.</span> <span class="n">The</span> <span class="k">return</span> <span class="n">value</span> <span class="n">is</span> <span class="n">a</span> <span class="n">string</span> <span class="k">if</span> <span class="n">IDXS</span> <span class="n">is</span> <span class="n">a</span> <span class="n">scalar</span><span class="p">,</span>
+<span class="k">otherwise</span> <span class="n">it</span> <span class="n">is</span> <span class="n">a</span> <span class="nb">cell</span> <span class="n">array</span> <span class="n">of</span> <span class="n">strings</span> <span class="n">of</span> <span class="n">the</span> <span class="n">same</span> <span class="n">dimension</span> <span class="n">as</span> <span class="n">IDXS</span><span class="p">.</span>
+
+<span class="n">Examples</span><span class="p">:</span>
+    <span class="n">label</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">describe_idx</span><span class="p">(</span><span class="s">&#39;var&#39;</span><span class="p">,</span> <span class="mi">87</span><span class="p">));</span>
+    <span class="n">labels</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">describe_idx</span><span class="p">(</span><span class="s">&#39;lin&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">38</span><span class="p">;</span> <span class="mi">49</span><span class="p">;</span> <span class="mi">93</span><span class="p">]));</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#mp_idx_manager.set_type_idx_map" title="mp_idx_manager.set_type_idx_map"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_type_idx_map()</span></code></a>, <a class="reference internal" href="opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp_idx_manager.getN">
+<span class="sig-name descname"><span class="pre">getN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.getN" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mp_idx_manager.getN" title="mp_idx_manager.getN"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">getN()</span></code></a> - Returns the number of elements of a given set type.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">GETN</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">)</span>
+<span class="n">N</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">GETN</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">NAME</span><span class="p">)</span>
+<span class="n">N</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">GETN</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">)</span>
+
+<span class="n">Returns</span> <span class="n">either</span> <span class="n">the</span> <span class="n">total</span> <span class="n">number</span> <span class="n">of</span> <span class="n">elements</span> <span class="n">of</span> <span class="n">a</span> <span class="n">given</span> <span class="k">set</span> <span class="nb">type</span>
+<span class="p">(</span><span class="nb">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span> <span class="n">variable</span><span class="p">,</span> <span class="n">constraint</span><span class="p">,</span> <span class="n">etc</span><span class="p">.)</span> <span class="nb">or</span> <span class="n">the</span> <span class="n">number</span> <span class="n">corresponding</span> <span class="n">to</span> <span class="n">a</span>
+<span class="n">specified</span> <span class="n">named</span> <span class="n">block</span><span class="p">,</span> <span class="nb">or</span> <span class="n">indexed</span> <span class="n">named</span> <span class="k">set</span><span class="p">.</span>
+
+<span class="n">Examples</span><span class="p">:</span>
+    <span class="n">N</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">getN</span><span class="p">(</span><span class="s">&#39;var&#39;</span><span class="p">)</span>      <span class="p">:</span> <span class="n">total</span> <span class="n">number</span> <span class="n">of</span> <span class="n">variables</span>
+    <span class="n">N</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">getN</span><span class="p">(</span><span class="s">&#39;lin&#39;</span><span class="p">)</span>      <span class="p">:</span> <span class="n">total</span> <span class="n">number</span> <span class="n">of</span> <span class="n">linear</span> <span class="n">constraints</span>
+    <span class="n">N</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">getN</span><span class="p">(</span><span class="s">&#39;var&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>    <span class="p">:</span> <span class="c"># of variables in named set</span>
+    <span class="n">N</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">getN</span><span class="p">(</span><span class="s">&#39;lin&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>    <span class="p">:</span> <span class="c"># of linear constraints in named set</span>
+    <span class="n">N</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">getN</span><span class="p">(</span><span class="s">&#39;var&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span> <span class="p">:</span> <span class="c"># of variables in indexed named set</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp_idx_manager.init_indexed_name">
+<span class="sig-name descname"><span class="pre">init_indexed_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">set_type</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">dim_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.init_indexed_name" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mp_idx_manager.init_indexed_name" title="mp_idx_manager.init_indexed_name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">init_indexed_name()</span></code></a> - Initializes the dimensions for an indexed named set.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">OBJ</span><span class="p">.</span><span class="n">INIT_INDEXED_NAME</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">DIM_LIST</span><span class="p">)</span>
+
+<span class="n">Initializes</span> <span class="n">the</span> <span class="n">dimensions</span> <span class="k">for</span> <span class="n">an</span> <span class="n">indexed</span> <span class="n">named</span> <span class="k">set</span><span class="p">.</span>
+
+<span class="n">For</span> <span class="nb">example</span><span class="p">,</span> <span class="n">variables</span> <span class="nb">and</span> <span class="n">linear</span> <span class="n">constraints</span> <span class="n">could</span> <span class="n">be</span> <span class="n">referenced</span> <span class="n">in</span>
+<span class="n">terms</span> <span class="n">of</span> <span class="n">named</span> <span class="n">sets</span><span class="p">,</span> <span class="n">where</span> <span class="n">the</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">named</span> <span class="k">set</span> <span class="n">being</span> <span class="n">referenced</span> <span class="n">is</span>
+<span class="n">given</span> <span class="n">by</span> <span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">with</span> <span class="n">the</span> <span class="n">following</span> <span class="n">valid</span> <span class="n">options</span><span class="p">:</span>
+    <span class="n">SET_TYPE</span> <span class="p">=</span> <span class="s">&#39;var&#39;</span>   <span class="p">=</span><span class="o">&gt;</span> <span class="n">variable</span> <span class="k">set</span>
+    <span class="n">SET_TYPE</span> <span class="p">=</span> <span class="s">&#39;lin&#39;</span>   <span class="p">=</span><span class="o">&gt;</span> <span class="n">linear</span> <span class="n">constraint</span> <span class="k">set</span>
+
+<span class="n">Indexed</span> <span class="n">Named</span> <span class="n">Sets</span>
+
+<span class="n">In</span> <span class="n">this</span> <span class="k">case</span> <span class="n">a</span> <span class="n">variable</span> <span class="nb">or</span> <span class="n">constraint</span> <span class="k">set</span> <span class="n">can</span> <span class="n">be</span> <span class="n">identified</span> <span class="n">by</span> <span class="n">a</span> <span class="nb">single</span>
+<span class="n">NAME</span><span class="p">,</span> <span class="n">such</span> <span class="n">as</span> <span class="s">&#39;Pmismatch&#39;</span><span class="p">,</span> <span class="nb">or</span> <span class="n">by</span> <span class="n">a</span> <span class="n">name</span> <span class="n">that</span> <span class="n">is</span> <span class="n">indexed</span> <span class="n">by</span> <span class="n">one</span> <span class="nb">or</span> <span class="n">more</span>
+<span class="n">indices</span><span class="p">,</span> <span class="n">such</span> <span class="n">as</span> <span class="s">&#39;Pmismatch(3,4)&#39;</span><span class="p">.</span> <span class="n">For</span> <span class="n">an</span> <span class="n">indexed</span> <span class="n">named</span> <span class="k">set</span><span class="p">,</span> <span class="n">before</span> <span class="n">adding</span>
+<span class="n">the</span> <span class="n">indexed</span> <span class="n">variable</span> <span class="nb">or</span> <span class="n">constraint</span> <span class="n">sets</span> <span class="n">themselves</span><span class="p">,</span> <span class="n">the</span> <span class="n">dimensions</span> <span class="n">of</span>
+<span class="n">the</span> <span class="n">indexed</span> <span class="k">set</span> <span class="n">must</span> <span class="n">be</span> <span class="k">set</span> <span class="n">by</span> <span class="n">calling</span> <span class="n">INIT_INDEXED_NAME</span><span class="p">,</span> <span class="n">where</span> <span class="n">DIM_LIST</span>
+<span class="n">is</span> <span class="n">a</span> <span class="nb">cell</span> <span class="n">array</span> <span class="n">of</span> <span class="n">the</span> <span class="n">dimensions</span><span class="p">.</span>
+
+<span class="n">Examples</span><span class="p">:</span>
+    <span class="c">%% linear constraints with indexed named set &#39;R(i,j)&#39;</span>
+    <span class="n">obj</span><span class="p">.</span><span class="n">init_indexed_name</span><span class="p">(</span><span class="s">&#39;lin&#39;</span><span class="p">,</span> <span class="s">&#39;R&#39;</span><span class="p">,</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">});</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span>
+      <span class="k">for</span> <span class="n">j</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span>
+        <span class="n">obj</span><span class="p">.</span><span class="n">add_lin_constraint</span><span class="p">(</span><span class="s">&#39;R&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">},</span> <span class="n">A</span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">},</span> <span class="p">...);</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+<span class="n">See</span> <span class="n">OPT_MODEL</span><span class="p">,</span> <span class="nb">and</span> <span class="n">its</span> <span class="k">methods</span> <span class="n">INIT_INDEXED_NAME</span><span class="p">,</span> <span class="n">ADD_VAR</span><span class="p">,</span>
+        <span class="n">ADD_LIN_CONSTRAINT</span><span class="p">,</span> <span class="n">ADD_NLN_CONSTRAINT</span><span class="p">,</span> <span class="n">ADD_QUAD_COST</span> <span class="nb">and</span>
+        <span class="n">ADD_NLN_COST</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp_idx_manager.get_idx">
+<span class="sig-name descname"><span class="pre">get_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_idx_manager.get_idx" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#mp_idx_manager.get_idx" title="mp_idx_manager.get_idx"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_idx()</span></code></a> - Returns the idx struct for the various set types.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">IDX</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">GET_IDX</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">)</span>
+<span class="p">[</span><span class="n">IDX1</span><span class="p">,</span> <span class="n">IDX2</span><span class="p">,</span> <span class="p">...]</span> <span class="p">=</span> <span class="n">OBJ</span><span class="p">.</span><span class="n">GET_IDX</span><span class="p">(</span><span class="n">SET_TYPE1</span><span class="p">,</span> <span class="n">SET_TYPE2</span><span class="p">,</span> <span class="p">...)</span>
+
+<span class="n">Returns</span> <span class="n">a</span> <span class="n">structure</span> <span class="k">for</span> <span class="n">each</span> <span class="k">set</span> <span class="nb">type</span> <span class="n">with</span> <span class="n">the</span> <span class="n">beginning</span> <span class="nb">and</span> <span class="n">ending</span>
+<span class="nb">index</span> <span class="n">value</span> <span class="nb">and</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">elements</span> <span class="k">for</span> <span class="n">each</span> <span class="n">named</span> <span class="n">block</span><span class="p">.</span> <span class="n">The</span> <span class="s">&#39;i1&#39;</span>
+<span class="n">field</span> <span class="p">(</span><span class="n">that</span><span class="o">&#39;</span><span class="n">s</span> <span class="n">a</span> <span class="n">one</span><span class="p">)</span> <span class="n">is</span> <span class="n">a</span> <span class="nb">struct</span> <span class="n">with</span> <span class="nb">all</span> <span class="n">of</span> <span class="n">the</span> <span class="n">starting</span> <span class="n">indices</span><span class="p">,</span> <span class="s">&#39;iN&#39;</span>
+<span class="n">contains</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">ending</span> <span class="n">indices</span> <span class="nb">and</span> <span class="s">&#39;N&#39;</span> <span class="n">contains</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">sizes</span><span class="p">.</span> <span class="n">Each</span> <span class="n">is</span>
+<span class="n">a</span> <span class="nb">struct</span> <span class="n">whose</span> <span class="n">fields</span> <span class="n">are</span> <span class="n">the</span> <span class="n">named</span> <span class="n">blocks</span><span class="p">.</span>
+
+<span class="n">For</span> <span class="nb">example</span><span class="p">,</span> <span class="k">if</span> <span class="s">&#39;var&#39;</span> <span class="n">is</span> <span class="n">the</span> <span class="k">set</span> <span class="nb">type</span> <span class="n">used</span> <span class="k">for</span> <span class="n">a</span> <span class="n">vector</span> <span class="n">x</span> <span class="n">of</span> <span class="n">optimization</span>
+<span class="n">variables</span><span class="p">,</span> <span class="nb">and</span> <span class="s">&#39;lin&#39;</span> <span class="n">is</span> <span class="k">for</span> <span class="n">a</span> <span class="k">set</span> <span class="n">of</span> <span class="n">linear</span> <span class="n">constraints</span><span class="p">,</span> <span class="n">then</span> <span class="n">the</span>
+<span class="n">following</span> <span class="n">examples</span> <span class="n">illustrate</span> <span class="n">how</span> <span class="n">GET_IDX</span> <span class="n">might</span> <span class="n">be</span> <span class="n">used</span><span class="p">.</span>
+
+<span class="n">Examples</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">vv</span><span class="p">,</span> <span class="n">ll</span><span class="p">]</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_idx</span><span class="p">(</span><span class="s">&#39;var&#39;</span><span class="p">,</span> <span class="s">&#39;lin&#39;</span><span class="p">);</span>
+
+    <span class="n">For</span> <span class="n">a</span> <span class="n">variable</span> <span class="n">block</span> <span class="n">named</span> <span class="s">&#39;z&#39;</span> <span class="n">we</span> <span class="n">have</span> <span class="p">...</span>
+        <span class="n">vv</span><span class="p">.</span><span class="n">i1</span><span class="p">.</span><span class="n">z</span> <span class="o">-</span> <span class="n">starting</span> <span class="nb">index</span> <span class="k">for</span> <span class="s">&#39;z&#39;</span> <span class="n">in</span> <span class="n">optimization</span> <span class="n">vector</span> <span class="n">x</span>
+        <span class="n">vv</span><span class="p">.</span><span class="n">iN</span><span class="p">.</span><span class="n">z</span> <span class="o">-</span> <span class="n">ending</span> <span class="nb">index</span> <span class="k">for</span> <span class="s">&#39;z&#39;</span> <span class="n">in</span> <span class="n">optimization</span> <span class="n">vector</span> <span class="n">x</span>
+        <span class="n">vv</span><span class="p">.</span><span class="n">N</span><span class="p">.</span><span class="n">z</span>  <span class="o">-</span> <span class="n">number</span> <span class="n">of</span> <span class="n">elements</span> <span class="n">in</span> <span class="s">&#39;z&#39;</span>
+
+    <span class="n">To</span> <span class="n">extract</span> <span class="n">a</span> <span class="s">&#39;z&#39;</span> <span class="n">variable</span> <span class="n">from</span> <span class="n">x</span><span class="p">:</span>
+        <span class="n">z</span> <span class="p">=</span> <span class="n">x</span><span class="p">(</span><span class="n">vv</span><span class="p">.</span><span class="n">i1</span><span class="p">.</span><span class="n">z</span><span class="p">:</span><span class="n">vv</span><span class="p">.</span><span class="n">iN</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
+
+    <span class="n">To</span> <span class="n">extract</span> <span class="n">the</span> <span class="n">multipliers</span> <span class="n">on</span> <span class="n">a</span> <span class="n">linear</span> <span class="n">constraint</span> <span class="k">set</span>
+    <span class="n">named</span> <span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="n">where</span> <span class="n">mu_l</span> <span class="nb">and</span> <span class="n">mu_u</span> <span class="n">are</span> <span class="n">the</span> <span class="nb">full</span> <span class="k">set</span> <span class="n">of</span>
+    <span class="n">linear</span> <span class="n">constraint</span> <span class="n">multipliers</span><span class="p">:</span>
+        <span class="n">mu_l_foo</span> <span class="p">=</span> <span class="n">mu_l</span><span class="p">(</span><span class="n">ll</span><span class="p">.</span><span class="n">i1</span><span class="p">.</span><span class="n">foo</span><span class="p">:</span><span class="n">ll</span><span class="p">.</span><span class="n">iN</span><span class="p">.</span><span class="n">foo</span><span class="p">);</span>
+        <span class="n">mu_u_foo</span> <span class="p">=</span> <span class="n">mu_u</span><span class="p">(</span><span class="n">ll</span><span class="p">.</span><span class="n">i1</span><span class="p">.</span><span class="n">foo</span><span class="p">:</span><span class="n">ll</span><span class="p">.</span><span class="n">iN</span><span class="p">.</span><span class="n">foo</span><span class="p">);</span>
+
+    <span class="n">The</span> <span class="n">number</span> <span class="n">of</span> <span class="n">linear</span> <span class="n">constraints</span> <span class="n">in</span> <span class="n">a</span> <span class="k">set</span> <span class="n">named</span> <span class="s">&#39;bar&#39;</span><span class="p">:</span>
+        <span class="n">nbar</span> <span class="p">=</span> <span class="n">ll</span><span class="p">.</span><span class="n">N</span><span class="p">.</span><span class="nb">bar</span><span class="p">;</span>
+      <span class="p">(</span><span class="n">note</span><span class="p">:</span> <span class="n">the</span> <span class="n">following</span> <span class="n">is</span> <span class="n">preferable</span> <span class="p">...</span>
+        <span class="n">nbar</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">getN</span><span class="p">(</span><span class="s">&#39;lin&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">);</span>
+      <span class="p">...</span> <span class="k">if</span> <span class="n">you</span> <span class="n">haven</span><span class="o">&#39;</span><span class="n">t</span> <span class="n">already</span> <span class="n">called</span> <span class="n">get_idx</span> <span class="n">to</span> <span class="k">get</span> <span class="n">ll</span><span class="p">.)</span>
+
+    <span class="n">If</span> <span class="s">&#39;z&#39;</span><span class="p">,</span> <span class="s">&#39;foo&#39;</span> <span class="nb">and</span> <span class="s">&#39;bar&#39;</span> <span class="n">are</span> <span class="n">indexed</span> <span class="n">sets</span><span class="p">,</span> <span class="n">then</span> <span class="n">you</span> <span class="n">can</span>
+    <span class="n">replace</span> <span class="n">them</span> <span class="n">with</span> <span class="n">something</span> <span class="n">like</span> <span class="s">&#39;z(i,j)&#39;</span><span class="p">,</span> <span class="s">&#39;foo(i,j,k)&#39;</span>
+    <span class="nb">or</span> <span class="s">&#39;bar(i)&#39;</span> <span class="n">in</span> <span class="n">the</span> <span class="n">examples</span> <span class="n">above</span><span class="p">.</span>
+
+<span class="n">The</span> <span class="n">GET_IDX</span> <span class="n">method</span> <span class="n">can</span> <span class="n">be</span> <span class="n">overridden</span> <span class="n">to</span> <span class="n">also</span> <span class="k">return</span> <span class="n">the</span> <span class="n">idx</span> <span class="n">structs</span> <span class="n">of</span>
+<span class="k">set</span> <span class="n">types</span> <span class="n">in</span> <span class="n">a</span> <span class="n">pre</span><span class="o">-</span><span class="n">specified</span> <span class="n">order</span> <span class="n">when</span> <span class="n">called</span> <span class="n">without</span> <span class="nb">input</span> <span class="n">arguments</span><span class="p">.</span>
+
+<span class="n">E</span><span class="p">.</span><span class="n">g</span><span class="p">.</span>
+    <span class="n">vv</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_idx</span><span class="p">()</span>          <span class="c">% for variables</span>
+    <span class="p">[</span><span class="n">vv</span><span class="p">,</span> <span class="n">ll</span><span class="p">]</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">get_idx</span><span class="p">()</span>    <span class="c">% for linear constraints</span>
+
+<span class="n">See</span> <span class="n">OPT_MODEL</span><span class="p">,</span> <span class="nb">and</span> <span class="n">its</span> <span class="k">methods</span> <span class="n">GET_IDX</span><span class="p">,</span> <span class="n">ADD_VAR</span><span class="p">,</span>
+        <span class="n">ADD_LIN_CONSTRAINT</span><span class="p">,</span> <span class="n">ADD_NLN_CONSTRAINT</span><span class="p">,</span> <span class="n">ADD_QUAD_COST</span> <span class="nb">and</span>
+        <span class="n">ADD_NLN_COST</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="opt_model.html" class="btn btn-neutral float-left" title="opt_model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../functions/miqps_master.html" class="btn btn-neutral float-right" title="miqps_master" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

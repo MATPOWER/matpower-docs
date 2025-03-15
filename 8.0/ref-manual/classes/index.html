@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. Classes &mdash; MATPOWER Documentation 8.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=bb3927b2"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="mp.task" href="mp/task.html" />
+    <link rel="prev" title="mp_table_class" href="../functions/mp_table_class.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">matpower.org</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/about/get-started/">Get Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/index.html">2. Functions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#task-classes">3.1. Task Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#core-task-classes">Core Task Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#legacy-task-classes">Legacy Task Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#data-model-classes">3.2. Data Model Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#containers">Containers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#elements">Elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#element-mixins">Element Mixins</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#data-model-converter-classes">3.3. Data Model Converter Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Containers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Elements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#network-model-classes">3.4. Network Model Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Containers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Elements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mathematical-model-classes">3.5. Mathematical Model Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Containers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#container-mixins">Container Mixins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Elements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#miscellaneous-classes">3.6. Miscellaneous Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mp_table.html">mp_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mp_table_subclass.html">mp_table_subclass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mp/cost_table.html">mp.cost_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mp/cost_table_utils.html">mp.cost_table_utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mp/element_container.html">mp.element_container</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mp/mapped_array.html">mp.mapped_array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mp/NODE_TYPE.html">mp.NODE_TYPE</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#matpower-extension-classes">3.7. <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extension Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#base">Base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#opf-fixed-zonal-reserves-extension">OPF Fixed Zonal Reserves Extension</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#three-phase-prototype-extension">Three-Phase Prototype Extension</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#legacy-dc-line-extension">Legacy DC Line Extension</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-user-constraint-extension">Example User Constraint Extension</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tests/index.html">4. Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legacy/index.html">5. Legacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../previous.html">6. Previous Versions</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mips/index.html">MIPS User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../most/index.html">MOST User’s Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/doc/manuals/">All Legacy PDF Manuals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/add-constraint.html">How to Add an OPF Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tech Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tech-notes.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Technical Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>Classes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/ref-manual/classes/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../functions/mp_table_class.html" class="btn btn-neutral float-left" title="mp_table_class" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mp/task.html" class="btn btn-neutral float-right" title="mp.task" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="classes">
+<h1><span class="section-number">3. </span>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h1>
+<section id="task-classes">
+<h2><span class="section-number">3.1. </span>Task Classes<a class="headerlink" href="#task-classes" title="Link to this heading"></a></h2>
+<section id="core-task-classes">
+<h3>Core Task Classes<a class="headerlink" href="#core-task-classes" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound" id="sec-task-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/task.html">mp.task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/task_pf.html">mp.task_pf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/task_cpf.html">mp.task_cpf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/task_opf.html">mp.task_opf</a></li>
+</ul>
+</div>
+</section>
+<section id="legacy-task-classes">
+<h3>Legacy Task Classes<a class="headerlink" href="#legacy-task-classes" title="Link to this heading"></a></h3>
+<p>Used by MP-Core when called by the <em>legacy</em> <span class="raw-html"><em>M<span style="font-size:smaller">ATPOWER</span></em></span> <em>framework</em>.</p>
+<div class="toctree-wrapper compound" id="sec-legacy-task-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/task_pf_legacy.html">mp.task_pf_legacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/task_cpf_legacy.html">mp.task_cpf_legacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/task_opf_legacy.html">mp.task_opf_legacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/task_shared_legacy.html">mp.task_shared_legacy</a></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="data-model-classes">
+<h2><span class="section-number">3.2. </span>Data Model Classes<a class="headerlink" href="#data-model-classes" title="Link to this heading"></a></h2>
+<section id="containers">
+<h3>Containers<a class="headerlink" href="#containers" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound" id="sec-data-model-container-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/data_model.html">mp.data_model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/data_model_cpf.html">mp.data_model_cpf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/data_model_opf.html">mp.data_model_opf</a></li>
+</ul>
+</div>
+</section>
+<section id="elements">
+<h3>Elements<a class="headerlink" href="#elements" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound" id="sec-data-model-element-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/dm_element.html">mp.dm_element</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_branch.html">mp.dme_branch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_branch_opf.html">mp.dme_branch_opf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_bus.html">mp.dme_bus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_bus_opf.html">mp.dme_bus_opf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_gen.html">mp.dme_gen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_gen_opf.html">mp.dme_gen_opf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_load.html">mp.dme_load</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_load_cpf.html">mp.dme_load_cpf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_load_opf.html">mp.dme_load_opf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_shunt_cpf.html">mp.dme_shunt_cpf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_shunt.html">mp.dme_shunt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_shunt_opf.html">mp.dme_shunt_opf</a></li>
+</ul>
+</div>
+</section>
+<section id="element-mixins">
+<h3>Element Mixins<a class="headerlink" href="#element-mixins" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound" id="sec-data-model-element-mixin-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_shared_opf.html">mp.dme_shared_opf</a></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="data-model-converter-classes">
+<h2><span class="section-number">3.3. </span>Data Model Converter Classes<a class="headerlink" href="#data-model-converter-classes" title="Link to this heading"></a></h2>
+<section id="id1">
+<h3>Containers<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound" id="sec-data-model-converter-container-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/dm_converter.html">mp.dm_converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dm_converter_mpc2.html">mp.dm_converter_mpc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dm_converter_mpc2_legacy.html">mp.dm_converter_mpc2_legacy</a></li>
+</ul>
+</div>
+</section>
+<section id="id2">
+<h3>Elements<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound" id="sec-data-model-converter-element-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/dmc_element.html">mp.dmc_element</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dmce_branch_mpc2.html">mp.dmce_branch_mpc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dmce_bus_mpc2.html">mp.dmce_bus_mpc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dmce_gen_mpc2.html">mp.dmce_gen_mpc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dmce_load_mpc2.html">mp.dmce_load_mpc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dmce_shunt_mpc2.html">mp.dmce_shunt_mpc2</a></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="network-model-classes">
+<h2><span class="section-number">3.4. </span>Network Model Classes<a class="headerlink" href="#network-model-classes" title="Link to this heading"></a></h2>
+<section id="id3">
+<h3>Containers<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound" id="sec-net-model-container-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/form.html">mp.form</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/form_ac.html">mp.form_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/form_acc.html">mp.form_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/form_acp.html">mp.form_acp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/form_dc.html">mp.form_dc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/net_model.html">mp.net_model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/net_model_ac.html">mp.net_model_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/net_model_acc.html">mp.net_model_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/net_model_acp.html">mp.net_model_acp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/net_model_dc.html">mp.net_model_dc</a></li>
+</ul>
+</div>
+</section>
+<section id="id4">
+<h3>Elements<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound" id="sec-net-model-element-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/nm_element.html">mp.nm_element</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_branch.html">mp.nme_branch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_branch_ac.html">mp.nme_branch_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_branch_acc.html">mp.nme_branch_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_branch_acp.html">mp.nme_branch_acp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_branch_dc.html">mp.nme_branch_dc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_bus.html">mp.nme_bus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_bus_acc.html">mp.nme_bus_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_bus_acp.html">mp.nme_bus_acp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_bus_dc.html">mp.nme_bus_dc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_gen.html">mp.nme_gen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_gen_ac.html">mp.nme_gen_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_gen_acc.html">mp.nme_gen_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_gen_acp.html">mp.nme_gen_acp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_gen_dc.html">mp.nme_gen_dc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_load.html">mp.nme_load</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_load_ac.html">mp.nme_load_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_load_acc.html">mp.nme_load_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_load_acp.html">mp.nme_load_acp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_load_dc.html">mp.nme_load_dc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_shunt.html">mp.nme_shunt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_shunt_ac.html">mp.nme_shunt_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_shunt_acc.html">mp.nme_shunt_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_shunt_acp.html">mp.nme_shunt_acp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_shunt_dc.html">mp.nme_shunt_dc</a></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="mathematical-model-classes">
+<h2><span class="section-number">3.5. </span>Mathematical Model Classes<a class="headerlink" href="#mathematical-model-classes" title="Link to this heading"></a></h2>
+<section id="id5">
+<h3>Containers<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound" id="sec-math-model-container-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model.html">mp.math_model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_pf.html">mp.math_model_pf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_pf_ac.html">mp.math_model_pf_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_pf_acci.html">mp.math_model_pf_acci</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_pf_accs.html">mp.math_model_pf_accs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_pf_acpi.html">mp.math_model_pf_acpi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_pf_acps.html">mp.math_model_pf_acps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_pf_dc.html">mp.math_model_pf_dc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_cpf_acc.html">mp.math_model_cpf_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_cpf_acci.html">mp.math_model_cpf_acci</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_cpf_accs.html">mp.math_model_cpf_accs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_cpf_acp.html">mp.math_model_cpf_acp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_cpf_acpi.html">mp.math_model_cpf_acpi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_cpf_acps.html">mp.math_model_cpf_acps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_opf.html">mp.math_model_opf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_opf_ac.html">mp.math_model_opf_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_opf_acc.html">mp.math_model_opf_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_opf_acci.html">mp.math_model_opf_acci</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_opf_acci_legacy.html">mp.math_model_opf_acci_legacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_opf_accs.html">mp.math_model_opf_accs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_opf_accs_legacy.html">mp.math_model_opf_accs_legacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_opf_acp.html">mp.math_model_opf_acp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_opf_acpi.html">mp.math_model_opf_acpi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_opf_acpi_legacy.html">mp.math_model_opf_acpi_legacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_opf_acps.html">mp.math_model_opf_acps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_opf_acps_legacy.html">mp.math_model_opf_acps_legacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_opf_dc.html">mp.math_model_opf_dc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/math_model_opf_dc_legacy.html">mp.math_model_opf_dc_legacy</a></li>
+</ul>
+</div>
+</section>
+<section id="container-mixins">
+<h3>Container Mixins<a class="headerlink" href="#container-mixins" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound" id="sec-math-model-mixin-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/mm_shared_pfcpf.html">mp.mm_shared_pfcpf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mm_shared_pfcpf_ac.html">mp.mm_shared_pfcpf_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mm_shared_pfcpf_ac_i.html">mp.mm_shared_pfcpf_ac_i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mm_shared_pfcpf_acc.html">mp.mm_shared_pfcpf_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mm_shared_pfcpf_acci.html">mp.mm_shared_pfcpf_acci</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mm_shared_pfcpf_accs.html">mp.mm_shared_pfcpf_accs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mm_shared_pfcpf_acp.html">mp.mm_shared_pfcpf_acp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mm_shared_pfcpf_acpi.html">mp.mm_shared_pfcpf_acpi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mm_shared_pfcpf_acps.html">mp.mm_shared_pfcpf_acps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mm_shared_pfcpf_dc.html">mp.mm_shared_pfcpf_dc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mm_shared_opf_legacy.html">mp.mm_shared_opf_legacy</a></li>
+</ul>
+</div>
+</section>
+<section id="id6">
+<h3>Elements<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound" id="sec-math-model-element-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/mm_element.html">mp.mm_element</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_branch.html">mp.mme_branch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_branch_pf_ac.html">mp.mme_branch_pf_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_branch_pf_dc.html">mp.mme_branch_pf_dc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_branch_opf.html">mp.mme_branch_opf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_branch_opf_ac.html">mp.mme_branch_opf_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_branch_opf_acc.html">mp.mme_branch_opf_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_branch_opf_acp.html">mp.mme_branch_opf_acp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_branch_opf_dc.html">mp.mme_branch_opf_dc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_bus.html">mp.mme_bus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_bus_pf_ac.html">mp.mme_bus_pf_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_bus_pf_dc.html">mp.mme_bus_pf_dc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_bus_opf_ac.html">mp.mme_bus_opf_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_bus_opf_acc.html">mp.mme_bus_opf_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_bus_opf_acp.html">mp.mme_bus_opf_acp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_bus_opf_dc.html">mp.mme_bus_opf_dc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_gen.html">mp.mme_gen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_gen_pf_ac.html">mp.mme_gen_pf_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_gen_pf_dc.html">mp.mme_gen_pf_dc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_gen_opf.html">mp.mme_gen_opf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_gen_opf_ac.html">mp.mme_gen_opf_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_gen_opf_dc.html">mp.mme_gen_opf_dc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_load.html">mp.mme_load</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_load_pf_ac.html">mp.mme_load_pf_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_load_pf_dc.html">mp.mme_load_pf_dc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_load_cpf.html">mp.mme_load_cpf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_shunt.html">mp.mme_shunt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_shunt_pf_ac.html">mp.mme_shunt_pf_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_shunt_pf_dc.html">mp.mme_shunt_pf_dc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_shunt_cpf.html">mp.mme_shunt_cpf</a></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="miscellaneous-classes">
+<h2><span class="section-number">3.6. </span>Miscellaneous Classes<a class="headerlink" href="#miscellaneous-classes" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound" id="sec-misc-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp_table.html">mp_table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp_table_subclass.html">mp_table_subclass</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/cost_table.html">mp.cost_table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/cost_table_utils.html">mp.cost_table_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/element_container.html">mp.element_container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mapped_array.html">mp.mapped_array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/NODE_TYPE.html">mp.NODE_TYPE</a></li>
+</ul>
+</div>
+</section>
+<section id="matpower-extension-classes">
+<h2><span class="section-number">3.7. </span><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extension Classes<a class="headerlink" href="#matpower-extension-classes" title="Link to this heading"></a></h2>
+<section id="base">
+<h3>Base<a class="headerlink" href="#base" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound" id="sec-xt-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/extension.html">mp.extension</a></li>
+</ul>
+</div>
+</section>
+<section id="opf-fixed-zonal-reserves-extension">
+<span id="ref-xt-reserves-classes"></span><h3>OPF Fixed Zonal Reserves Extension<a class="headerlink" href="#opf-fixed-zonal-reserves-extension" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound" id="sec-xt-reserves-class">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/xt_reserves.html">mp.xt_reserves</a></li>
+</ul>
+</div>
+<dl>
+<dt>Other classes belonging to <a class="reference internal" href="mp/xt_reserves.html#mp.xt_reserves" title="mp.xt_reserves"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_reserves</span></code></a> extension:</dt><dd><div class="toctree-wrapper compound" id="sec-xt-reserves-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/dmce_reserve_gen_mpc2.html">mp.dmce_reserve_gen_mpc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dmce_reserve_zone_mpc2.html">mp.dmce_reserve_zone_mpc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_reserve_gen.html">mp.dme_reserve_gen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_reserve_zone.html">mp.dme_reserve_zone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_reserve_gen.html">mp.mme_reserve_gen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_reserve_zone.html">mp.mme_reserve_zone</a></li>
+</ul>
+</div>
+</dd>
+</dl>
+</section>
+<section id="three-phase-prototype-extension">
+<span id="ref-xt-3p-classes"></span><h3>Three-Phase Prototype Extension<a class="headerlink" href="#three-phase-prototype-extension" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound" id="sec-xt-3p-class">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/xt_3p.html">mp.xt_3p</a></li>
+</ul>
+</div>
+<dl>
+<dt>Data model converter element classes belonging to <a class="reference internal" href="mp/xt_3p.html#mp.xt_3p" title="mp.xt_3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_3p</span></code></a> extension:</dt><dd><div class="toctree-wrapper compound" id="sec-xt-3p-dmce-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/dmce_bus3p_mpc2.html">mp.dmce_bus3p_mpc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dmce_gen3p_mpc2.html">mp.dmce_gen3p_mpc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dmce_load3p_mpc2.html">mp.dmce_load3p_mpc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dmce_line3p_mpc2.html">mp.dmce_line3p_mpc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dmce_xfmr3p_mpc2.html">mp.dmce_xfmr3p_mpc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dmce_buslink_mpc2.html">mp.dmce_buslink_mpc2</a></li>
+</ul>
+</div>
+</dd>
+<dt>Data model element classes belonging to <a class="reference internal" href="mp/xt_3p.html#mp.xt_3p" title="mp.xt_3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_3p</span></code></a> extension:</dt><dd><div class="toctree-wrapper compound" id="sec-xt-3p-dme-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_bus3p.html">mp.dme_bus3p</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_gen3p.html">mp.dme_gen3p</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_load3p.html">mp.dme_load3p</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_line3p.html">mp.dme_line3p</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_xfmr3p.html">mp.dme_xfmr3p</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_buslink.html">mp.dme_buslink</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_bus3p_opf.html">mp.dme_bus3p_opf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_gen3p_opf.html">mp.dme_gen3p_opf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_load3p_opf.html">mp.dme_load3p_opf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_line3p_opf.html">mp.dme_line3p_opf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_xfmr3p_opf.html">mp.dme_xfmr3p_opf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_buslink_opf.html">mp.dme_buslink_opf</a></li>
+</ul>
+</div>
+</dd>
+<dt>Network model element classes belonging to <a class="reference internal" href="mp/xt_3p.html#mp.xt_3p" title="mp.xt_3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_3p</span></code></a> extension:</dt><dd><div class="toctree-wrapper compound" id="sec-xt-3p-nme-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_bus3p.html">mp.nme_bus3p</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_bus3p_acc.html">mp.nme_bus3p_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_bus3p_acp.html">mp.nme_bus3p_acp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_gen3p.html">mp.nme_gen3p</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_gen3p_acc.html">mp.nme_gen3p_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_gen3p_acp.html">mp.nme_gen3p_acp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_load3p.html">mp.nme_load3p</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_line3p.html">mp.nme_line3p</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_xfmr3p.html">mp.nme_xfmr3p</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_buslink.html">mp.nme_buslink</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_buslink_acc.html">mp.nme_buslink_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_buslink_acp.html">mp.nme_buslink_acp</a></li>
+</ul>
+</div>
+</dd>
+<dt>Mathematical model element classes belonging to <a class="reference internal" href="mp/xt_3p.html#mp.xt_3p" title="mp.xt_3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_3p</span></code></a> extension:</dt><dd><div class="toctree-wrapper compound" id="sec-xt-3p-mme-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_bus3p.html">mp.mme_bus3p</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_gen3p.html">mp.mme_gen3p</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_line3p.html">mp.mme_line3p</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_xfmr3p.html">mp.mme_xfmr3p</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_buslink.html">mp.mme_buslink</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_buslink_pf_ac.html">mp.mme_buslink_pf_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_buslink_pf_acc.html">mp.mme_buslink_pf_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_buslink_pf_acp.html">mp.mme_buslink_pf_acp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_bus3p_opf_acc.html">mp.mme_bus3p_opf_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_bus3p_opf_acp.html">mp.mme_bus3p_opf_acp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_gen3p_opf.html">mp.mme_gen3p_opf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_line3p_opf.html">mp.mme_line3p_opf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_xfmr3p_opf.html">mp.mme_xfmr3p_opf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_buslink_opf.html">mp.mme_buslink_opf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_buslink_opf_acc.html">mp.mme_buslink_opf_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_buslink_opf_acp.html">mp.mme_buslink_opf_acp</a></li>
+</ul>
+</div>
+</dd>
+</dl>
+</section>
+<section id="legacy-dc-line-extension">
+<span id="ref-xt-legacy-dcline-classes"></span><h3>Legacy DC Line Extension<a class="headerlink" href="#legacy-dc-line-extension" title="Link to this heading"></a></h3>
+<p>For more details, see <a class="reference internal" href="../../howto/element.html#howto-element"><span class="std std-ref">How to Create a New Element Type</span></a>.</p>
+<div class="toctree-wrapper compound" id="sec-xt-legacy-dcline-class">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/xt_legacy_dcline.html">mp.xt_legacy_dcline</a></li>
+</ul>
+</div>
+<dl>
+<dt>Data model converter element class belonging to <a class="reference internal" href="mp/xt_legacy_dcline.html#mp.xt_legacy_dcline" title="mp.xt_legacy_dcline"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_legacy_dcline</span></code></a> extension:</dt><dd><div class="toctree-wrapper compound" id="sec-xt-legacy-dcline-dmce-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/dmce_legacy_dcline_mpc2.html">mp.dmce_legacy_dcline_mpc2</a></li>
+</ul>
+</div>
+</dd>
+<dt>Data model element classes belonging to <a class="reference internal" href="mp/xt_legacy_dcline.html#mp.xt_legacy_dcline" title="mp.xt_legacy_dcline"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_legacy_dcline</span></code></a> extension:</dt><dd><div class="toctree-wrapper compound" id="sec-xt-legacy-dcline-dme-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_legacy_dcline.html">mp.dme_legacy_dcline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/dme_legacy_dcline_opf.html">mp.dme_legacy_dcline_opf</a></li>
+</ul>
+</div>
+</dd>
+<dt>Network model element classes belonging to <a class="reference internal" href="mp/xt_legacy_dcline.html#mp.xt_legacy_dcline" title="mp.xt_legacy_dcline"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_legacy_dcline</span></code></a> extension:</dt><dd><div class="toctree-wrapper compound" id="sec-xt-legacy-dcline-nme-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_legacy_dcline.html">mp.nme_legacy_dcline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_legacy_dcline_ac.html">mp.nme_legacy_dcline_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_legacy_dcline_acc.html">mp.nme_legacy_dcline_acc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_legacy_dcline_acp.html">mp.nme_legacy_dcline_acp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/nme_legacy_dcline_dc.html">mp.nme_legacy_dcline_dc</a></li>
+</ul>
+</div>
+</dd>
+<dt>Mathematical model element classes belonging to <a class="reference internal" href="mp/xt_legacy_dcline.html#mp.xt_legacy_dcline" title="mp.xt_legacy_dcline"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_legacy_dcline</span></code></a> extension:</dt><dd><div class="toctree-wrapper compound" id="sec-xt-legacy-dcline-mme-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_legacy_dcline.html">mp.mme_legacy_dcline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_legacy_dcline_pf_ac.html">mp.mme_legacy_dcline_pf_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_legacy_dcline_pf_dc.html">mp.mme_legacy_dcline_pf_dc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_legacy_dcline_opf.html">mp.mme_legacy_dcline_opf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_legacy_dcline_opf_ac.html">mp.mme_legacy_dcline_opf_ac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_legacy_dcline_opf_dc.html">mp.mme_legacy_dcline_opf_dc</a></li>
+</ul>
+</div>
+</dd>
+</dl>
+</section>
+<section id="example-user-constraint-extension">
+<span id="ref-xt-oval-cap-curve-classes"></span><h3>Example User Constraint Extension<a class="headerlink" href="#example-user-constraint-extension" title="Link to this heading"></a></h3>
+<p>For more details, see <a class="reference internal" href="../../howto/add-constraint.html#howto-add-constraint"><span class="std std-ref">How to Add an OPF Constraint</span></a>.</p>
+<div class="toctree-wrapper compound" id="sec-xt-oval-cap-curve">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/xt_oval_cap_curve.html">mp.xt_oval_cap_curve</a></li>
+</ul>
+</div>
+<dl>
+<dt>Mathematical model element class belonging to <a class="reference internal" href="mp/xt_oval_cap_curve.html#mp.xt_oval_cap_curve" title="mp.xt_oval_cap_curve"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_oval_cap_curve</span></code></a> extension:</dt><dd><div class="toctree-wrapper compound" id="xt-oval-cap-curve-mme-classes">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mp/mme_gen_opf_ac_oval.html">mp.mme_gen_opf_ac_oval</a></li>
+</ul>
+</div>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../functions/mp_table_class.html" class="btn btn-neutral float-left" title="mp_table_class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mp/task.html" class="btn btn-neutral float-right" title="mp.task" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

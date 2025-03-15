@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mp.cost_table &mdash; MATPOWER Documentation 8.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=bb3927b2"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>window.MathJax = {"loader": {"load": ["[tex]/upgreek"]}, "tex": {"packages": {"[+]": ["upgreek"]}, "macros": {"dg": "\\sp\\dagger", "trans": ["{#1}^{\\mathsf{T}}", 1], "conj": ["{#1}^{\\ast}", 1], "hc": ["{#1}^{\\dg}", 1], "hconj": ["{#1}^{+}", 1], "diag": ["\\left[^\\smallsetminus{#1}_\\smallsetminus\\right]", 1], "diagg": ["\\left[\\smash{#1}\\right]", 1], "cdiag": ["\\conj{\\diag{#1}}", 1], "der": ["\\frac{\\partial{#1}}{\\partial{#2}}", 2], "dersx": ["\\frac{\\partial^2{#1}}{\\partial{#2}^2}", 2], "dersxy": ["\\frac{\\partial^2{#1}}{\\partial{#2}\\partial{#3}}", 3], "cscal": ["\\mathrm{#1}", 1], "rvec": ["{\\boldsymbol{#1}}", 1], "cvec": ["\\mathbf{#1}", 1], "rmat": ["{\\boldsymbol{#1}}", 1], "cmat": ["\\mathbf{#1}", 1], "rvecG": ["{\\boldsymbol{#1}}", 1], "cvecG": ["\\boldsymbol{#1}", 1], "rmatG": ["\\boldsymbol{\\mathit{#1}}", 1], "cmatG": ["\\mathbf{#1}", 1], "param": ["\\underline{#1}", 1], "ov": ["{\\overline{#1}}", 1], "zeros": ["\\rvec{0}", 0], "ones": ["\\rvec{1}_{#1}", 1], "onest": ["\\trans{\\rvec{1}}_{#1}", 1], "Id": ["\\diag{\\ones{#1}}", 1], "R": "\\mathbb{R}}         % requires \\usepackage{amsfonts|bbold", "C": "\\mathbb{C}}         % requires \\usepackage{amsfonts", "av": "\\cvec{a}", "bv": "\\cvec{b}", "cv": "\\cvec{c}", "f": "\\cscal{f}", "F": "\\cvec{f}", "g": "\\rvec{g}", "G": "\\cvec{g}", "h": "\\rvec{h}", "HH": "\\cvec{h}", "x": "\\rvec{x}", "y": "\\rvec{y}", "z": "\\rvec{z}", "X": "\\cvec{x}", "Z": "\\cvec{z}", "A": "\\cmat{A}", "B": "\\cmat{B}", "alphav": "\\rvecG{\\alpha}", "lam": "\\rvecG{\\lambda}", "lamh": "\\hat{\\lam}", "muv": "\\rvecG{\\mu}", "muhv": "\\hat{\\muv}", "vv": "\\rvec{v}", "vvi": ["\\cscal{v}_{#1}", 1], "V": "\\cvec{v}", "Vh": "\\hat{\\V}", "Vc": "\\conj{\\V}", "Vhc": "\\conj{\\Vh}", "dV": "\\diag{\\V}", "dVh": "\\diag{\\Vh}", "dVc": "\\diag{\\Vc}", "dVhc": "\\diag{\\Vhc}", "inV": "\\cvec{\\Lambda}", "inVh": "\\hat{\\inV}", "inVc": "\\conj{\\inV}", "inVhc": "\\conj{\\inVh}", "dinV": "\\diagg{\\inV}", "dinVh": "\\diagg{\\inVh}", "dinVc": "\\diagg{\\inVc}", "dinVhc": "\\diagg{\\inVhc}", "va": ["\\theta", 0], "vai": ["\\va_{#1}", 1], "Va": ["\\rvec{\\va}", 0], "Vah": ["\\hat{\\Va}", 0], "vm": ["\\nu", 0], "vmi": ["\\nu_{#1}", 1], "Vm": ["\\rvecG{\\nu}", 0], "dVm": "\\diag{\\Vm}", "dVmi": "\\dVm^{-1}", "Vmh": "\\hat{\\Vm}", "dVmh": "\\diag{\\Vmh}", "dVmhi": "\\dVmh^{-1}", "vr": "u", "vri": ["u_{#1}", 1], "vi": "w", "vii": ["w_{#1}", 1], "Vr": "\\rvec{u}", "Vi": "\\rvec{w}", "dVr": "\\diag{\\Vr}", "dVi": "\\diag{\\Vi}", "Vrh": "\\hat{\\Vr}", "Vih": "\\hat{\\Vi}", "dVrh": "\\diag{\\Vrh}", "dVih": "\\diag{\\Vih}", "E": "\\cvec{e}", "Eh": "\\hat{\\E}", "Ec": "\\conj{\\E}", "Ehc": "\\conj{\\Eh}", "dE": "\\diag{\\E}", "dEh": "\\diag{\\Eh}", "dEc": "\\diag{\\Ec}", "dEhc": "\\diag{\\Ehc}", "zr": "{z_r}", "zi": "{z_i}", "Zr": "{\\rvec{z}_r}", "Zi": "{\\rvec{z}_i}", "dlam": "\\diagg{\\lam}", "dlamh": "\\diagg{\\lamh}", "dlamva": "\\diagg{\\lam_\\va}", "dlamvm": "\\diagg{\\lam_\\vm}", "dlamvr": "\\diagg{\\lam_\\vr}", "dlamvi": "\\diagg{\\lam_\\vi}", "dlamzr": "\\diagg{\\lam_\\zr}", "dlamzi": "\\diagg{\\lam_\\zi}", "dlamhva": "\\diagg{\\lamh_\\va}", "dlamhvm": "\\diagg{\\lamh_\\vm}", "dlamhvr": "\\diagg{\\lamh_\\vr}", "dlamhvi": "\\diagg{\\lamh_\\vi}", "dlamhzr": "\\diagg{\\lamh_\\zr}", "dlamhzi": "\\diagg{\\lamh_\\zi}", "dmu": "\\diag{\\muv}", "dmuh": "\\diag{\\muhv}", "kk": "\\rvec{k}", "J": "\\param{\\rmat{J}}", "Jt": "\\trans{\\J}", "Jk": ["\\J_{\\kk_#1}", 1], "Ah": "\\hat{\\A}", "Fh": "\\hat{\\F}", "Gh": "\\hat{\\G}", "gh": "\\hat{\\g}", "fmax": "\\param{\\rvec{f}}_\\mathrm{max}", "gP": "\\g^P", "gPk": ["\\g^{P,#1}", 1], "fhmax": "\\hat{\\param{\\rvec{f}}}_\\mathrm{max}", "ghP": "\\gh^P", "ghPk": ["\\gh^{P,#1}", 1], "GS": "\\G^S", "GI": "\\G^I", "GSk": ["\\G^{S,#1}", 1], "GIk": ["\\G^{I,#1}", 1], "GSsys": "\\GSk{\\mathrm{sys}}", "GIsys": "\\GIk{\\mathrm{sys}}", "gPsys": "\\gPk{\\mathrm{sys}}", "GhS": "\\Gh^S", "GhI": "\\Gh^I", "GhSk": ["\\Gh^{S,#1}", 1], "GhIk": ["\\Gh^{I,#1}", 1], "GhSsys": "\\GhSk{\\mathrm{sys}}", "GhIsys": "\\GhIk{\\mathrm{sys}}", "ghPsys": "\\ghPk{\\mathrm{sys}}", "Ilin": "\\cvec{i}^{lin}", "Ilink": "\\cvec{i}^{lin, k}", "Ilinc": "\\conj{\\Ilin}", "dIlin": "\\diag{\\Ilin}", "dIlinc": "\\diag{\\Ilinc}", "Ilinh": "\\hat{{\\cvec{i}}}^{lin}", "Ilinhk": "\\hat{\\cvec{i}}^{lin, k}", "Ilinhc": "\\conj{\\Ilinh}", "dIlinh": "\\diag{\\Ilinh}", "dIlinhc": "\\diag{\\Ilinhc}", "Slin": "\\cvec{s}^{lin}", "Slink": "\\cvec{s}^{lin, k}", "Slinc": "\\conj{\\Slin}", "dSlin": "\\diag{\\Slin}", "dSlinc": "\\diag{\\Slinc}", "Slinh": "\\hat{\\cvec{s}}^{lin}", "Slinhk": "\\hat{\\cvec{s}}^{lin, k}", "Slinhc": "\\conj{\\Slinh}", "dSlinh": "\\diag{\\Slinh}", "dSlinhc": "\\diag{\\Slinhc}", "Inln": "\\cvec{i}^{nln}", "Inlnk": "\\cvec{i}^{nln, k}", "Snln": "\\cvec{s}^{nln}", "Snlnk": "\\cvec{s}^{nln, k}", "Inlnh": "\\hat{\\cvec{i}}^{nln}", "Inlnhk": "\\hat{\\cvec{i}}^{nln, k}", "Snlnh": "\\hat{\\cvec{s}}^{nln}", "Snlnhk": "\\hat{\\cvec{s}}^{nln, k}", "Aa": "\\param{\\rmat{A}}", "BB": "\\param{\\rmat{B}}", "CC": "\\param{\\rmat{C}}", "DD": "\\param{\\rmat{D}}", "YY": "\\param{\\cmat{Y}}", "iv": "\\param{\\cvec{i}}", "pv": "\\param{\\rvec{p}}", "sv": "\\param{\\cvec{s}}", "KK": "\\param{\\rmat{K}}", "LL": "\\param{\\cmat{L}}", "MM": "\\param{\\cmat{M}}", "NN": "\\param{\\cmat{N}}", "BBh": "\\hat{\\BB}", "YYh": "\\hat{\\YY}", "ivh": "\\hat{\\iv}", "pvh": "\\hat{\\pv}", "svh": "\\hat{\\sv}", "CCh": "\\hat{\\CC}", "KKh": "\\hat{\\KK}", "LLh": "\\hat{\\LL}", "MMh": "\\hat{\\MM}", "NNh": "\\hat{\\NN}", "AT": "\\trans{\\Aa}", "CT": "\\trans{\\CC}", "DT": "\\trans{\\DD}", "Ap": "\\Aa'", "Cp": "\\CC\\:\\!'", "Dp": "\\DD'", "ApT": "\\trans{\\Ap}", "CpT": "\\trans{\\Cp}", "DpT": "\\trans{\\Dp}", "ChT": "\\trans{\\CCh}", "Lc": "\\conj{\\LL}", "LcT": "\\trans{\\Lc}", "Lhc": "\\conj{\\LLh}", "LhcT": "\\trans{\\Lhc}", "MT": "\\trans{\\MM}", "Mc": "\\conj{\\MM}", "McT": "\\trans{\\Mc}", "dMTlam": "\\diag{\\MT \\lam}", "MhT": "\\trans{\\MMh}", "Mhc": "\\conj{\\MMh}", "MhcT": "\\trans{\\Mhc}", "dMhTlam": "\\diag{\\MhT \\lamh}", "Nc": "\\conj{\\NN}", "NcT": "\\trans{\\Nc}", "Nhc": "\\conj{\\NNh}", "NhcT": "\\trans{\\Nhc}", "YT": "\\trans{\\YY}", "Yc": "\\conj{\\YY}", "YcT": "\\trans{\\Yc}", "dYTlam": "\\diag{\\YT \\lam}", "YhT": "\\trans{\\YYh}", "Yhc": "\\conj{\\YYh}", "YhcT": "\\trans{\\Yhc}", "dYhTlam": "\\diag{\\YhT \\lamh}", "I": "\\cvec{i}^S", "s": "\\cvec{s}^I", "Ih": "\\hat{\\cvec{i}}^S", "Sh": "\\hat{\\cvec{s}}^I", "AtX": "\\AT \\X", "CtV": "\\CT \\V", "dCtV": "\\diag{\\CtV}", "DtZ": "\\DT \\Z", "ApTx": "\\ApT \\x", "CpTv": "\\CpT \\vv", "DpTz": "\\DpT \\z"}}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="mp.cost_table_utils" href="cost_table_utils.html" />
+    <link rel="prev" title="mp_table_subclass" href="../mp_table_subclass.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">matpower.org</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/about/get-started/">Get Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions/index.html">2. Functions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">3. Classes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../index.html#task-classes">3.1. Task Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#data-model-classes">3.2. Data Model Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#data-model-converter-classes">3.3. Data Model Converter Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#network-model-classes">3.4. Network Model Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#mathematical-model-classes">3.5. Mathematical Model Classes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#miscellaneous-classes">3.6. Miscellaneous Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../mp_table.html">mp_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mp_table_subclass.html">mp_table_subclass</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">mp.cost_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cost_table_utils.html">mp.cost_table_utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="element_container.html">mp.element_container</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mapped_array.html">mp.mapped_array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NODE_TYPE.html">mp.NODE_TYPE</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#matpower-extension-classes">3.7. <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extension Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tests/index.html">4. Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../legacy/index.html">5. Legacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../previous.html">6. Previous Versions</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/doc/manuals/">All Legacy PDF Manuals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/add-constraint.html">How to Add an OPF Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tech Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tech-notes.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Technical Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+          <li class="breadcrumb-item"><a href="../index.html"><span class="section-number">3. </span>Classes</a></li>
+      <li class="breadcrumb-item active">mp.cost_table</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/ref-manual/classes/mp/cost_table.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../mp_table_subclass.html" class="btn btn-neutral float-left" title="mp_table_subclass" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cost_table_utils.html" class="btn btn-neutral float-right" title="mp.cost_table_utils" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p><span class="raw-html"><div style="float: right"><a href="https://github.com/MATPOWER/matpower/blob/master/lib/+mp/cost_table.m" target=_blank><svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg></a></div></span></p>
+<section id="mp-cost-table">
+<h1>mp.cost_table<a class="headerlink" href="#mp-cost-table" title="Link to this heading"></a></h1>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="mp.cost_table">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">cost_table</span></span><a class="headerlink" href="#mp.cost_table" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="../mp_table_subclass.html#mp_table_subclass" title="mp_table_subclass"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code></a></p>
+<p><a class="reference internal" href="#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a> - Table for (polynomial and piecewise linear) cost parameters.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="p">=</span> <span class="n">cost_table</span><span class="p">(</span><span class="n">poly_n</span><span class="p">,</span> <span class="n">poly_coef</span><span class="p">,</span> <span class="n">pwl_n</span><span class="p">,</span> <span class="n">pwl_qty</span><span class="p">,</span> <span class="n">pwl_cost</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Since the dot syntax <code class="docutils literal notranslate"><span class="pre">T.&lt;var_name&gt;</span></code> is used to access table variables,
+you must use a functional syntax <code class="docutils literal notranslate"><span class="pre">&lt;method&gt;(T,...)</span></code>, as opposed to
+the object-oriented <code class="docutils literal notranslate"><span class="pre">T.&lt;method&gt;(...)</span></code>, to call standard
+mp.cost_table methods.</p>
+</div>
+<p>Standard table subscripting syntax is not available within methods of
+this class (references built-in <code class="xref mat mat-func docutils literal notranslate"><span class="pre">subsref()</span></code> and <code class="xref mat mat-func docutils literal notranslate"><span class="pre">subsasgn()</span></code>
+rather than the versions overridden by the table class). For this reason,
+some method implementations are delegated to static methods in
+<a class="reference internal" href="cost_table_utils.html#mp.cost_table_utils" title="mp.cost_table_utils"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table_utils</span></code></a> where that syntax is available, making the code more
+readable.</p>
+<dl class="simple">
+<dt>mp.cost_table Methods:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#mp.cost_table.cost_table" title="mp.cost_table.cost_table"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">cost_table()</span></code></a> - construct object</p></li>
+<li><p><a class="reference internal" href="#mp.cost_table.poly_params" title="mp.cost_table.poly_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">poly_params()</span></code></a> - create struct of polynomial parameters from <a class="reference internal" href="#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a></p></li>
+<li><p><a class="reference internal" href="#mp.cost_table.pwl_params" title="mp.cost_table.pwl_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">pwl_params()</span></code></a> - create struct of piecewise linear parameters from <a class="reference internal" href="#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a></p></li>
+<li><p><a class="reference internal" href="#mp.cost_table.max_pwl_cost" title="mp.cost_table.max_pwl_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">max_pwl_cost()</span></code></a> - get maximum cost component used to specify pwl costs</p></li>
+</ul>
+</dd>
+</dl>
+<p>An <a class="reference internal" href="#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a> has the following columns:</p>
+<blockquote>
+<div><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">poly_n</span></code></p></td>
+<td><p><em>integer</em></p></td>
+<td><p><span class="math notranslate nohighlight">\(n_\mathrm{poly}\)</span>, number of coefficients
+in polynomial cost curve,
+<span class="math notranslate nohighlight">\(f_\mathrm{poly}(x) = c_0 + c_1 x... + c_N x^N\)</span>,
+where <span class="math notranslate nohighlight">\(n_\mathrm{poly} = N + 1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">poly_coef</span></code></p></td>
+<td><p><em>double</em></p></td>
+<td><p>matrix of coefficients <span class="math notranslate nohighlight">\(c_j\)</span>, of polynomial
+cost <span class="math notranslate nohighlight">\(f_\mathrm{poly}(x)\)</span>, where <span class="math notranslate nohighlight">\(c_j\)</span>
+is found in column <span class="math notranslate nohighlight">\(j+1\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pwl_n</span></code></p></td>
+<td><p><em>double</em></p></td>
+<td><p><span class="math notranslate nohighlight">\(n_\mathrm{pwl}\)</span>, number of data points
+<span class="math notranslate nohighlight">\((x_1, f_1), (x_2, f_2), ..., (x_N, f_N)\)</span>
+defining a piecewise linear cost curve,
+<span class="math notranslate nohighlight">\(f_\mathrm{pwl}(x)\)</span> where
+<span class="math notranslate nohighlight">\(N = n_\mathrm{pwl}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pwl_qty</span></code></p></td>
+<td><p><em>double</em></p></td>
+<td><p>matrix of <em>quantiy</em> coordinates <span class="math notranslate nohighlight">\(x_j\)</span> for
+piecwise linear cost <span class="math notranslate nohighlight">\(f_\mathrm{pwl}(x)\)</span>,
+where <span class="math notranslate nohighlight">\(x_j\)</span> is found in column <span class="math notranslate nohighlight">\(j\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pwl_cost</span></code></p></td>
+<td><p><em>double</em></p></td>
+<td><p>matrix of <em>cost</em> coordinates <span class="math notranslate nohighlight">\(f_j\)</span> for
+piecwise linear cost <span class="math notranslate nohighlight">\(f_\mathrm{pwl}(x)\)</span>,
+where <span class="math notranslate nohighlight">\(f_j\)</span> is found in column <span class="math notranslate nohighlight">\(j\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>See also <a class="reference internal" href="cost_table_utils.html#mp.cost_table_utils" title="mp.cost_table_utils"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table_utils</span></code></a>, <a class="reference internal" href="../mp_table_subclass.html#mp_table_subclass" title="mp_table_subclass"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_table_subclass</span></code></a>.</p>
+<div class="members docutils container">
+<dl>
+<dt>Constructor Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mp.cost_table.cost_table">
+<span class="sig-name descname"><span class="pre">cost_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.cost_table.cost_table" title="Link to this definition"></a></dt>
+<dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="p">=</span> <span class="n">cost_table</span><span class="p">()</span>
+<span class="n">T</span> <span class="p">=</span> <span class="n">cost_table</span><span class="p">(</span><span class="n">poly_n</span><span class="p">,</span> <span class="n">poly_coef</span><span class="p">,</span> <span class="n">pwl_n</span><span class="p">,</span> <span class="n">pwl_qty</span><span class="p">,</span> <span class="n">pwl_cost</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>For descriptions of the inputs, see the corresponding column in
+the class documentation above.</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>poly_n</strong> (<em>col vector of integers</em>)</p></li>
+<li><p><strong>poly_coef</strong> (<em>matrix of doubles</em>)</p></li>
+<li><p><strong>pwl_n</strong> (<em>col vector of integers</em>)</p></li>
+<li><p><strong>pwl_qty</strong> (<em>matrix of doubles</em>)</p></li>
+<li><p><strong>pwl_cost</strong> (<em>matrix of doubles</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>T</strong> (<a class="reference internal" href="#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a>) – the cost table object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd>
+<dt>Method Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mp.cost_table.poly_params">
+<span class="sig-name descname"><span class="pre">poly_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">pu_base</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.cost_table.poly_params" title="Link to this definition"></a></dt>
+<dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="p">=</span> <span class="n">poly_params</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pu_base</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<a class="reference internal" href="#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a>) – the cost table</p></li>
+<li><p><strong>idx</strong> – (integer) : index vector of rows of interest, empty
+for all rows</p></li>
+<li><p><strong>pu_base</strong> (<em>double</em>) – base used to scale quantities to per unit</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p</strong> (<em>struct</em>) – polynomial cost parameters, struct with fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">have_quad_cost</span></code> - true if any polynmial costs have
+order quadratic or less</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i0</span></code> - row indices for constant costs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i1</span></code> - row indices for linear costs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i2</span></code> - row indices for quadratic costs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i3</span></code> - row indices for order 3 or higher costs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">k</span></code> - constant term for all quadratic and lower order costs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code> - linear term for all quadratic and lower order costs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Q</span></code> - quadratic term for all quadratic and lower order costs</p></li>
+</ul>
+</dd>
+</dl>
+<p>Implementation in <a class="reference internal" href="cost_table_utils.html#mp.cost_table_utils.poly_params" title="mp.cost_table_utils.poly_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table_utils.poly_params()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.cost_table.pwl_params">
+<span class="sig-name descname"><span class="pre">pwl_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">pu_base</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.cost_table.pwl_params" title="Link to this definition"></a></dt>
+<dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="p">=</span> <span class="n">pwl_params</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pu_base</span><span class="p">)</span>
+<span class="n">p</span> <span class="p">=</span> <span class="n">pwl_params</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pu_base</span><span class="p">,</span> <span class="n">ng</span><span class="p">,</span> <span class="n">dc</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<a class="reference internal" href="#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a>) – the cost table</p></li>
+<li><p><strong>idx</strong> – (integer) : index vector of rows of interest, empty
+for all rows</p></li>
+<li><p><strong>pu_base</strong> (<em>double</em>) – base used to scale quantities to per unit</p></li>
+<li><p><strong>ng</strong> (<em>integer</em>) – number of units, default is # of rows in cost</p></li>
+<li><p><strong>dc</strong> (<em>boolean</em>) – true if DC formulation (ng variables),
+otherwise AC formulation (2*ng variables), default is 1</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p</strong> (<em>struct</em>) – piecewise linear cost parameters, struct with fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code> - number of piecewise linear costs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code> - row indices for piecewise linear costs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code> - constraint coefficient matrix for CCV formulation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">b</span></code> - constraint RHS vector for CCV formulation</p></li>
+</ul>
+</dd>
+</dl>
+<p>Implementation in <a class="reference internal" href="cost_table_utils.html#mp.cost_table_utils.pwl_params" title="mp.cost_table_utils.pwl_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table_utils.pwl_params()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.cost_table.max_pwl_cost">
+<span class="sig-name descname"><span class="pre">max_pwl_cost</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.cost_table.max_pwl_cost" title="Link to this definition"></a></dt>
+<dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">maxc</span> <span class="p">=</span> <span class="n">max_pwl_cost</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Input<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference internal" href="#mp.cost_table" title="mp.cost_table"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.cost_table</span></code></a>) – the cost table</p>
+</dd>
+<dt class="field-even">Output<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>maxc</strong> (<em>double</em>) – maximum cost component of all breakpoints
+used to specify piecewise linear costs</p>
+</dd>
+</dl>
+<p>Implementation in <a class="reference internal" href="cost_table_utils.html#mp.cost_table_utils.max_pwl_cost" title="mp.cost_table_utils.max_pwl_cost"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.cost_table_utils.max_pwl_cost()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="mp.cost_table.poly_cost_fcn">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">poly_cost_fcn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">xx</span></em>, <em class="sig-param"><span class="pre">x_scale</span></em>, <em class="sig-param"><span class="pre">ccm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.cost_table.poly_cost_fcn" title="Link to this definition"></a></dt>
+<dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">cost_table</span><span class="p">.</span><span class="n">poly_cost_fcn</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">x_scale</span><span class="p">,</span> <span class="n">ccm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+<span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">df</span><span class="p">]</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">cost_table</span><span class="p">.</span><span class="n">poly_cost_fcn</span><span class="p">(...)</span>
+<span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">d2f</span><span class="p">]</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">cost_table</span><span class="p">.</span><span class="n">poly_cost_fcn</span><span class="p">(...)</span>
+</pre></div>
+</div>
+<p>Evaluates the sum of a set of polynomial cost functions
+<span class="math notranslate nohighlight">\(f(x) = \sum_{i \in I}{f_i(x_i)}\)</span>, and optionally the
+gradient and Hessian.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xx</strong> (<em>single element cell array of double</em>) – first element is
+a vector of the pre-scaled quantities <span class="math notranslate nohighlight">\(x/\alpha\)</span>
+used to compute the costs</p></li>
+<li><p><strong>x_scale</strong> (<em>double</em>) – scalar <span class="math notranslate nohighlight">\(\alpha\)</span> used to scale the
+quantity value before evaluating the polynomial cost</p></li>
+<li><p><strong>ccm</strong> (<em>double</em>) – cost coefficient matrix, element <em>(i,j)</em> is
+the coefficient of the <em>(j-1)</em> order term for cost <em>i</em></p></li>
+<li><p><strong>idx</strong> (<em>integer</em>) – index vector of subset <span class="math notranslate nohighlight">\(I\)</span> of rows of
+<code class="docutils literal notranslate"><span class="pre">xx{1}</span></code> and <code class="docutils literal notranslate"><span class="pre">ccm</span></code> of interest</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>f</strong> (<em>double</em>) – value of cost function <span class="math notranslate nohighlight">\(f(x)\)</span></p></li>
+<li><p><strong>df</strong> (<em>vector of double</em>) – (optional) gradient of cost function</p></li>
+<li><p><strong>d2f</strong> (<em>matrix of double</em>) – (optional) Hessian of cost function</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="mp.cost_table.eval_poly_fcn">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">eval_poly_fcn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">c</span></em>, <em class="sig-param"><span class="pre">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.cost_table.eval_poly_fcn" title="Link to this definition"></a></dt>
+<dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">cost_table</span><span class="p">.</span><span class="n">eval_poly_fcn</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Evaluate a vector of polynomial functions, where …</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="p">=</span> <span class="n">c</span><span class="p">(:,</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">c</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span> <span class="o">.*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="p">(:,</span><span class="mi">3</span><span class="p">)</span> <span class="o">.*</span> <span class="n">x</span>^<span class="mi">2</span> <span class="o">+</span> <span class="p">...</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>c</strong> (<em>matrix of double</em>) – coefficient matrix, element <em>(i,j)</em>
+is the coefficient of the <em>(j-1)</em> order term for <em>i</em>-th
+element of <em>f</em></p></li>
+<li><p><strong>x</strong> (<em>vector of double</em>) – vector of input values</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>f</strong> (<em>vector of double</em>) – value of functions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="mp.cost_table.diff_poly_fcn">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">diff_poly_fcn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">c</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.cost_table.diff_poly_fcn" title="Link to this definition"></a></dt>
+<dd><div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">cost_table</span><span class="p">.</span><span class="n">diff_poly_fcn</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Compute the coefficient matrix for the derivatives of a set
+of polynomial functions from the coefficients of the functions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>c</strong> (<em>matrix of double</em>) – coefficient matrix for the functions,
+element <em>(i,j)</em> is the coefficient of the <em>(j-1)</em> order
+term of the <em>i</em>-th function</p>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>c</strong> (<em>matrix of double</em>) – coefficient matrix for the derivatives
+of the functions, element <em>(i,j)</em> is the coefficient of
+the <em>(j-1)</em> order term of the derivative of the <em>i</em>-th
+function</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../mp_table_subclass.html" class="btn btn-neutral float-left" title="mp_table_subclass" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cost_table_utils.html" class="btn btn-neutral float-right" title="mp.cost_table_utils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

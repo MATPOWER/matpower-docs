@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MP-Opt-Model User’s Manual &mdash; MATPOWER Documentation 8.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=bb3927b2"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Reference" href="reference.html" />
+    <link rel="prev" title="have_feature_pardiso" href="../mips/functions/have_feature_pardiso.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">matpower.org</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/about/get-started/">Get Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mips/index.html">MIPS User’s Manual</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#reference">Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference.html">Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../most/index.html">MOST User’s Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/doc/manuals/">All Legacy PDF Manuals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/add-constraint.html">How to Add an OPF Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tech Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tech-notes.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Technical Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="raw-html">MP-Opt-Model</span> User’s Manual</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/mpom/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../mips/functions/have_feature_pardiso.html" class="btn btn-neutral float-left" title="have_feature_pardiso" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="reference.html" class="btn btn-neutral float-right" title="Reference" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mpom-user-s-manual">
+<h1><span class="raw-html">MP-Opt-Model</span> User’s Manual<a class="headerlink" href="#mpom-user-s-manual" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The new web-based version of the <span class="raw-html">MP-Opt-Model</span> User’s Manual is not yet available. Please, continue to use the PDF version of the <span class="raw-html"><a href="https://matpower.org/docs/MP-Opt-Model-manual-4.2.pdf">MP-Opt-Model User's Manual</a></span> for now, along with the new reference documentation below.</p>
+</div>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Link to this heading"></a></h2>
+<p>The primary sources of documentation for <span class="raw-html">MP-Opt-Model</span>, aside from the legacy PDF <span class="raw-html"><a href="https://matpower.org/docs/MP-Opt-Model-manual-4.2.pdf">MP-Opt-Model User's Manual</a></span>, are this <a class="reference internal" href="reference.html#sec-mpom-reference"><span class="std std-ref">Reference</span></a> documentation and the built-in <code class="docutils literal notranslate"><span class="pre">help</span></code> command. As with the built-in functions and toolbox routines in <span class="raw-html"><a href="https://www.mathworks.com">M<span style="font-size:smaller">ATLAB</span></a></span> and <span class="raw-html"><a href="https://www.octave.org">GNU Octave</a></span>, you can type <code class="docutils literal notranslate"><span class="pre">help</span></code> followed by the name of a command or M-file to get help on that particular function.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#mpom-classes"><span class="raw-html">MP-Opt-Model</span> Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classes/opt_model.html">opt_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classes/mp_idx_manager.html">mp_idx_manager</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#mpom-functions"><span class="raw-html">MP-Opt-Model</span> Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#master-functions">Master Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="functions/miqps_master.html">miqps_master</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/nleqs_master.html">nleqs_master</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/nlps_master.html">nlps_master</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/pnes_master.html">pnes_master</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/qps_master.html">qps_master</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#utility-functions">Utility Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="functions/convert_lin_constraint_multipliers.html">convert_lin_constraint_multipliers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/convert_lin_constraint.html">convert_lin_constraint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/nested_struct_copy.html">nested_struct_copy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#options-handling-functions">Options Handling Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="functions/cplex_options.html">cplex_options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/glpk_options.html">glpk_options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/gurobi_options.html">gurobi_options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/ipopt_options.html">ipopt_options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/mosek_options.html">mosek_options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/mosek_symbcon.html">mosek_symbcon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/osqp_options.html">osqp_options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/mpopt2nleqopt.html">mpopt2nleqopt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/mpopt2nlpopt.html">mpopt2nlpopt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/mpopt2pneopt.html">mpopt2pneopt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/mpopt2qpopt.html">mpopt2qpopt</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#version-information-functions">Version Information Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="functions/gurobiver.html">gurobiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/mpomver.html">mpomver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/osqpver.html">osqpver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#solver-interfaces-implementations">Solver Interfaces &amp; Implementations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#miqp-solver">MIQP Solver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="functions/miqps_cplex.html">miqps_cplex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/miqps_glpk.html">miqps_glpk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/miqps_gurobi.html">miqps_gurobi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/miqps_mosek.html">miqps_mosek</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/miqps_ot.html">miqps_ot</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#nleq-solver">NLEQ Solver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="functions/nleqs_core.html">nleqs_core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/nleqs_fd_newton.html">nleqs_fd_newton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/nleqs_fsolve.html">nleqs_fsolve</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/nleqs_gauss_seidel.html">nleqs_gauss_seidel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/nleqs_newton.html">nleqs_newton</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#nlp-solver">NLP Solver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="functions/nlp_consfcn.html">nlp_consfcn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/nlp_costfcn.html">nlp_costfcn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/nlp_hessfcn.html">nlp_hessfcn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/nlps_fmincon.html">nlps_fmincon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/nlps_ipopt.html">nlps_ipopt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/nlps_knitro.html">nlps_knitro</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#pne-solver">PNE Solver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="functions/pne_callback_default.html">pne_callback_default</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/pne_callback_nose.html">pne_callback_nose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/pne_callback_target_lam.html">pne_callback_target_lam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/pne_detect_events.html">pne_detect_events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/pne_detected_event.html">pne_detected_event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/pne_event_nose.html">pne_event_nose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/pne_event_target_lam.html">pne_event_target_lam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/pne_pfcn_arc_len.html">pne_pfcn_arc_len</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/pne_pfcn_natural.html">pne_pfcn_natural</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/pne_pfcn_pseudo_arc_len.html">pne_pfcn_pseudo_arc_len</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/pne_register_callbacks.html">pne_register_callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/pne_register_events.html">pne_register_events</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reference.html#lp-qp-solver">LP/QP Solver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="functions/qps_bpmpd.html">qps_bpmpd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/qps_clp.html">qps_clp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/qps_cplex.html">qps_cplex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/qps_glpk.html">qps_glpk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/qps_gurobi.html">qps_gurobi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/qps_ipopt.html">qps_ipopt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/qps_mosek.html">qps_mosek</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/qps_osqp.html">qps_osqp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/qps_ot.html">qps_ot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#mpom-examples"><span class="raw-html">MP-Opt-Model</span> Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="functions/nleqs_master_ex1.html">nleqs_master_ex1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/nleqs_master_ex2.html">nleqs_master_ex2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/nlps_master_ex1.html">nlps_master_ex1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/nlps_master_ex2.html">nlps_master_ex2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/pne_ex1.html">pne_ex1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/qp_ex1.html">qp_ex1</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#mpom-tests"><span class="raw-html">MP-Opt-Model</span> Tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="functions/test_mp_opt_model.html">test_mp_opt_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/t_miqps_master.html">t_miqps_master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/t_nested_struct_copy.html">t_nested_struct_copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/t_nleqs_master.html">t_nleqs_master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/t_nlps_master.html">t_nlps_master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/t_om_solve_leqs.html">t_om_solve_leqs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/t_om_solve_miqps.html">t_om_solve_miqps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/t_om_solve_nleqs.html">t_om_solve_nleqs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/t_om_solve_nlps.html">t_om_solve_nlps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/t_om_solve_pne.html">t_om_solve_pne</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/t_om_solve_qps.html">t_om_solve_qps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/t_opt_model.html">t_opt_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/t_pnes_master.html">t_pnes_master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/t_qps_master.html">t_qps_master</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#private-functions">Private Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_bpmpd.html">have_feature_bpmpd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_catchme.html">have_feature_catchme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_clp.html">have_feature_clp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_cplex.html">have_feature_cplex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_evalc.html">have_feature_evalc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_fmincon_ipm.html">have_feature_fmincon_ipm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_fmincon.html">have_feature_fmincon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_fsolve.html">have_feature_fsolve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_glpk.html">have_feature_glpk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_gurobi.html">have_feature_gurobi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_intlinprog.html">have_feature_intlinprog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_ipopt_auxdata.html">have_feature_ipopt_auxdata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_ipopt.html">have_feature_ipopt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_isequaln.html">have_feature_isequaln</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_knitro.html">have_feature_knitro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_knitromatlab.html">have_feature_knitromatlab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_ktrlink.html">have_feature_ktrlink</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_linprog_ds.html">have_feature_linprog_ds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_linprog.html">have_feature_linprog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_mosek.html">have_feature_mosek</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_opti_clp.html">have_feature_opti_clp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_optim.html">have_feature_optim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_optimoptions.html">have_feature_optimoptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_osqp.html">have_feature_osqp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_quadprog_ls.html">have_feature_quadprog_ls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_quadprog.html">have_feature_quadprog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_sdpt3.html">have_feature_sdpt3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_sedumi.html">have_feature_sedumi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions/have_feature_yalmip.html">have_feature_yalmip</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../mips/functions/have_feature_pardiso.html" class="btn btn-neutral float-left" title="have_feature_pardiso" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="reference.html" class="btn btn-neutral float-right" title="Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

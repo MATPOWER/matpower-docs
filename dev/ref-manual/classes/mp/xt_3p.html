@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mp.xt_3p &mdash; MATPOWER Documentation 8.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=bb3927b2"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="mp.dmce_bus3p_mpc2" href="dmce_bus3p_mpc2.html" />
+    <link rel="prev" title="mp.mme_reserve_zone" href="mme_reserve_zone.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">matpower.org</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/about/get-started/">Get Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions/index.html">2. Functions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">3. Classes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../index.html#task-classes">3.1. Task Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#data-model-classes">3.2. Data Model Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#data-model-converter-classes">3.3. Data Model Converter Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#network-model-classes">3.4. Network Model Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#mathematical-model-classes">3.5. Mathematical Model Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#miscellaneous-classes">3.6. Miscellaneous Classes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#matpower-extension-classes">3.7. <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extension Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../index.html#base">Base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#opf-fixed-zonal-reserves-extension">OPF Fixed Zonal Reserves Extension</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html#three-phase-prototype-extension">Three-Phase Prototype Extension</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#legacy-dc-line-extension">Legacy DC Line Extension</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#example-user-constraint-extension">Example User Constraint Extension</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tests/index.html">4. Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../legacy/index.html">5. Legacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../previous.html">6. Previous Versions</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/doc/manuals/">All Legacy PDF Manuals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/add-constraint.html">How to Add an OPF Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tech Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tech-notes.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Technical Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+          <li class="breadcrumb-item"><a href="../index.html"><span class="section-number">3. </span>Classes</a></li>
+      <li class="breadcrumb-item active">mp.xt_3p</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/ref-manual/classes/mp/xt_3p.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="mme_reserve_zone.html" class="btn btn-neutral float-left" title="mp.mme_reserve_zone" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dmce_bus3p_mpc2.html" class="btn btn-neutral float-right" title="mp.dmce_bus3p_mpc2" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p><span class="raw-html"><div style="float: right"><a href="https://github.com/MATPOWER/matpower/blob/master/lib/+mp/xt_3p.m" target=_blank><svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg></a></div></span></p>
+<section id="mp-xt-3p">
+<h1>mp.xt_3p<a class="headerlink" href="#mp-xt-3p" title="Link to this heading"></a></h1>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="mp.xt_3p">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">xt_3p</span></span><a class="headerlink" href="#mp.xt_3p" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a></p>
+<p><a class="reference internal" href="#mp.xt_3p" title="mp.xt_3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.xt_3p</span></code></a> - <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> extension to add unbalanced three-phase elements.</p>
+<p>For AC power flow, continuation power flow, and optimial power flow problems,
+adds six new element types:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'bus3p'</span></code> - 3-phase bus</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'gen3p'</span></code> - 3-phase generator</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'load3p'</span></code> - 3-phase load</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'line3p'</span></code> - 3-phase distribution line</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'xfmr3p'</span></code> - 3-phase transformer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'buslink'</span></code> - 3-phase to single phase linking element</p></li>
+</ul>
+</div></blockquote>
+<p>No changes are required for the task or container classes, so only the
+<code class="docutils literal notranslate"><span class="pre">..._element_classes</span></code> methods are overridden.</p>
+<p>The set of data model element classes depends on the task, with each OPF
+class inheriting from the corresponding class used for PF and CPF.</p>
+<p>The set of network model element classes depends on the formulation,
+specifically whether cartesian or polar representations are used for
+voltages.</p>
+<p>And the set of mathematical model element classes depends on both the task
+and the formulation.</p>
+<dl class="simple">
+<dt>mp.xt_3p Methods:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#mp.xt_3p.dmc_element_classes" title="mp.xt_3p.dmc_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dmc_element_classes()</span></code></a> - add six classes to data model converter elements</p></li>
+<li><p><a class="reference internal" href="#mp.xt_3p.dm_element_classes" title="mp.xt_3p.dm_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">dm_element_classes()</span></code></a> - add six classes to  data model elements</p></li>
+<li><p><a class="reference internal" href="#mp.xt_3p.nm_element_classes" title="mp.xt_3p.nm_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">nm_element_classes()</span></code></a> - add six classes to network model elements</p></li>
+<li><p><a class="reference internal" href="#mp.xt_3p.mm_element_classes" title="mp.xt_3p.mm_element_classes"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mm_element_classes()</span></code></a> - add six classes to mathematical model elements</p></li>
+</ul>
+</dd>
+</dl>
+<p>See the <a class="reference internal" href="../../../dev-manual/customizing.html#sec-customizing"><span class="std std-ref">Customizing </span></a> and <a class="reference internal" href="../../../dev-manual/customizing.html#sec-extensions"><span class="std std-ref"> Extensions</span></a> sections in the
+<span class="raw-html"><a class="reference external" href="https://matpower.org/doc/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more information, and specifically the
+<a class="reference internal" href="../../../dev-manual/customizing.html#sec-element-classes"><span class="std std-ref">Element Classes</span></a> section and the <a class="reference internal" href="../../../dev-manual/customizing.html#tab-element-class-modifiers"><span class="std std-ref">Element Class Modifiers</span></a>
+table for details on <em>element class modifiers</em>.</p>
+<p>See also <a class="reference internal" href="extension.html#mp.extension" title="mp.extension"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.extension</span></code></a>.</p>
+<div class="members docutils container">
+<dl>
+<dt>Method Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mp.xt_3p.dmc_element_classes">
+<span class="sig-name descname"><span class="pre">dmc_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dmc_class</span></em>, <em class="sig-param"><span class="pre">fmt</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.xt_3p.dmc_element_classes" title="Link to this definition"></a></dt>
+<dd><p>Add six classes to data model converter elements.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">'mpc2</span></code> data formats, adds the classes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="dmce_bus3p_mpc2.html#mp.dmce_bus3p_mpc2" title="mp.dmce_bus3p_mpc2"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_bus3p_mpc2</span></code></a></p></li>
+<li><p><a class="reference internal" href="dmce_gen3p_mpc2.html#mp.dmce_gen3p_mpc2" title="mp.dmce_gen3p_mpc2"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_gen3p_mpc2</span></code></a></p></li>
+<li><p><a class="reference internal" href="dmce_load3p_mpc2.html#mp.dmce_load3p_mpc2" title="mp.dmce_load3p_mpc2"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_load3p_mpc2</span></code></a></p></li>
+<li><p><a class="reference internal" href="dmce_line3p_mpc2.html#mp.dmce_line3p_mpc2" title="mp.dmce_line3p_mpc2"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_line3p_mpc2</span></code></a></p></li>
+<li><p><a class="reference internal" href="dmce_xfmr3p_mpc2.html#mp.dmce_xfmr3p_mpc2" title="mp.dmce_xfmr3p_mpc2"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_xfmr3p_mpc2</span></code></a></p></li>
+<li><p><a class="reference internal" href="dmce_buslink_mpc2.html#mp.dmce_buslink_mpc2" title="mp.dmce_buslink_mpc2"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dmce_buslink_mpc2</span></code></a></p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.xt_3p.dm_element_classes">
+<span class="sig-name descname"><span class="pre">dm_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.xt_3p.dm_element_classes" title="Link to this definition"></a></dt>
+<dd><p>Add six classes to data model elements.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">'PF'</span></code> and <code class="docutils literal notranslate"><span class="pre">'CPF'</span></code> tasks, adds the classes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="dme_bus3p.html#mp.dme_bus3p" title="mp.dme_bus3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_bus3p</span></code></a></p></li>
+<li><p><a class="reference internal" href="dme_gen3p.html#mp.dme_gen3p" title="mp.dme_gen3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_gen3p</span></code></a></p></li>
+<li><p><a class="reference internal" href="dme_load3p.html#mp.dme_load3p" title="mp.dme_load3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_load3p</span></code></a></p></li>
+<li><p><a class="reference internal" href="dme_line3p.html#mp.dme_line3p" title="mp.dme_line3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_line3p</span></code></a></p></li>
+<li><p><a class="reference internal" href="dme_xfmr3p.html#mp.dme_xfmr3p" title="mp.dme_xfmr3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_xfmr3p</span></code></a></p></li>
+<li><p><a class="reference internal" href="dme_buslink.html#mp.dme_buslink" title="mp.dme_buslink"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_buslink</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<p>For <code class="docutils literal notranslate"><span class="pre">'OPF'</span></code> tasks, adds the classes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="dme_bus3p_opf.html#mp.dme_bus3p_opf" title="mp.dme_bus3p_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_bus3p_opf</span></code></a></p></li>
+<li><p><a class="reference internal" href="dme_gen3p_opf.html#mp.dme_gen3p_opf" title="mp.dme_gen3p_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_gen3p_opf</span></code></a></p></li>
+<li><p><a class="reference internal" href="dme_load3p_opf.html#mp.dme_load3p_opf" title="mp.dme_load3p_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_load3p_opf</span></code></a></p></li>
+<li><p><a class="reference internal" href="dme_line3p_opf.html#mp.dme_line3p_opf" title="mp.dme_line3p_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_line3p_opf</span></code></a></p></li>
+<li><p><a class="reference internal" href="dme_xfmr3p_opf.html#mp.dme_xfmr3p_opf" title="mp.dme_xfmr3p_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_xfmr3p_opf</span></code></a></p></li>
+<li><p><a class="reference internal" href="dme_buslink_opf.html#mp.dme_buslink_opf" title="mp.dme_buslink_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.dme_buslink_opf</span></code></a></p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.xt_3p.nm_element_classes">
+<span class="sig-name descname"><span class="pre">nm_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.xt_3p.nm_element_classes" title="Link to this definition"></a></dt>
+<dd><p>Add six classes to network model elements.</p>
+<p>For <em>cartesian</em> voltage formulations, adds the classes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="nme_bus3p_acc.html#mp.nme_bus3p_acc" title="mp.nme_bus3p_acc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_bus3p_acc</span></code></a></p></li>
+<li><p><a class="reference internal" href="nme_gen3p_acc.html#mp.nme_gen3p_acc" title="mp.nme_gen3p_acc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_gen3p_acc</span></code></a></p></li>
+<li><p><a class="reference internal" href="nme_load3p.html#mp.nme_load3p" title="mp.nme_load3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_load3p</span></code></a></p></li>
+<li><p><a class="reference internal" href="nme_line3p.html#mp.nme_line3p" title="mp.nme_line3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_line3p</span></code></a></p></li>
+<li><p><a class="reference internal" href="nme_xfmr3p.html#mp.nme_xfmr3p" title="mp.nme_xfmr3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_xfmr3p</span></code></a></p></li>
+<li><p><a class="reference internal" href="nme_buslink_acc.html#mp.nme_buslink_acc" title="mp.nme_buslink_acc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_buslink_acc</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<p>For <em>polar</em> voltage formulations, adds the classes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="nme_bus3p_acp.html#mp.nme_bus3p_acp" title="mp.nme_bus3p_acp"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_bus3p_acp</span></code></a></p></li>
+<li><p><a class="reference internal" href="nme_gen3p_acp.html#mp.nme_gen3p_acp" title="mp.nme_gen3p_acp"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_gen3p_acp</span></code></a></p></li>
+<li><p><a class="reference internal" href="nme_load3p.html#mp.nme_load3p" title="mp.nme_load3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_load3p</span></code></a></p></li>
+<li><p><a class="reference internal" href="nme_line3p.html#mp.nme_line3p" title="mp.nme_line3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_line3p</span></code></a></p></li>
+<li><p><a class="reference internal" href="nme_xfmr3p.html#mp.nme_xfmr3p" title="mp.nme_xfmr3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_xfmr3p</span></code></a></p></li>
+<li><p><a class="reference internal" href="nme_buslink_acp.html#mp.nme_buslink_acp" title="mp.nme_buslink_acp"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nme_buslink_acp</span></code></a></p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.xt_3p.mm_element_classes">
+<span class="sig-name descname"><span class="pre">mm_element_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm_class</span></em>, <em class="sig-param"><span class="pre">task_tag</span></em>, <em class="sig-param"><span class="pre">mpopt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.xt_3p.mm_element_classes" title="Link to this definition"></a></dt>
+<dd><p>Add five classes to mathematical model elements.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">'PF'</span></code> and <code class="docutils literal notranslate"><span class="pre">'CPF'</span></code> tasks, adds the classes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="mme_bus3p.html#mp.mme_bus3p" title="mp.mme_bus3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_bus3p</span></code></a></p></li>
+<li><p><a class="reference internal" href="mme_gen3p.html#mp.mme_gen3p" title="mp.mme_gen3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_gen3p</span></code></a></p></li>
+<li><p><a class="reference internal" href="mme_line3p.html#mp.mme_line3p" title="mp.mme_line3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_line3p</span></code></a></p></li>
+<li><p><a class="reference internal" href="mme_xfmr3p.html#mp.mme_xfmr3p" title="mp.mme_xfmr3p"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_xfmr3p</span></code></a></p></li>
+<li><p><a class="reference internal" href="mme_buslink_pf_acc.html#mp.mme_buslink_pf_acc" title="mp.mme_buslink_pf_acc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_buslink_pf_acc</span></code></a> <em>(cartesian)</em> or
+<a class="reference internal" href="mme_buslink_pf_acp.html#mp.mme_buslink_pf_acp" title="mp.mme_buslink_pf_acp"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_buslink_pf_acp</span></code></a> <em>(polar)</em></p></li>
+</ul>
+</div></blockquote>
+<p>For <code class="docutils literal notranslate"><span class="pre">'OPF'</span></code> tasks, adds the classes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="mme_bus3p_opf_acc.html#mp.mme_bus3p_opf_acc" title="mp.mme_bus3p_opf_acc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_bus3p_opf_acc</span></code></a> <em>(cartesian)</em> or
+<a class="reference internal" href="mme_bus3p_opf_acp.html#mp.mme_bus3p_opf_acp" title="mp.mme_bus3p_opf_acp"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_bus3p_opf_acp</span></code></a> <em>(polar)</em></p></li>
+<li><p><a class="reference internal" href="mme_gen3p_opf.html#mp.mme_gen3p_opf" title="mp.mme_gen3p_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_gen3p_opf</span></code></a></p></li>
+<li><p><a class="reference internal" href="mme_line3p_opf.html#mp.mme_line3p_opf" title="mp.mme_line3p_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_line3p_opf</span></code></a></p></li>
+<li><p><a class="reference internal" href="mme_xfmr3p_opf.html#mp.mme_xfmr3p_opf" title="mp.mme_xfmr3p_opf"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_xfmr3p_opf</span></code></a></p></li>
+<li><p><a class="reference internal" href="mme_buslink_opf_acc.html#mp.mme_buslink_opf_acc" title="mp.mme_buslink_opf_acc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_buslink_opf_acc</span></code></a> <em>(cartesian)</em> or
+<a class="reference internal" href="mme_buslink_opf_acp.html#mp.mme_buslink_opf_acp" title="mp.mme_buslink_opf_acp"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.mme_buslink_opf_acp</span></code></a> <em>(polar)</em></p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mme_reserve_zone.html" class="btn btn-neutral float-left" title="mp.mme_reserve_zone" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dmce_bus3p_mpc2.html" class="btn btn-neutral float-right" title="mp.dmce_bus3p_mpc2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

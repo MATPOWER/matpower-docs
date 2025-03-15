@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MATPOWER Documentation &mdash; MATPOWER Documentation 8.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=bb3927b2"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MATPOWER User’s Manual" href="users-manual/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">matpower.org</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/about/get-started/">Get Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ref-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mips/index.html">MIPS User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="most/index.html">MOST User’s Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/doc/manuals/">All Legacy PDF Manuals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/add-constraint.html">How to Add an OPF Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tech Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tech-notes.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Technical Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="users-manual/index.html" class="btn btn-neutral float-right" title="MATPOWER User’s Manual" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="matpower-documentation">
+<h1><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Documentation<a class="headerlink" href="#matpower-documentation" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">matpower.org</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/about/get-started/">Get Started</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> is a package of free, open-source Matlab-language functions and classes for simulating and optimizing steady-state power system problems. It includes the following sub-packages.</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 58.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Package</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Requires</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="raw-html"><a href="https://matpower.org">M<span style="font-size:smaller">ATPOWER</span></a></span></p></td>
+<td><p>steady-state power system simulation and optimization</p></td>
+<td><p><span class="raw-html">MP-Opt-Model</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="raw-html"><a href="https://github.com/MATPOWER/mp-opt-model">MP-Opt-Model</a></span></p></td>
+<td><p>tools for constructing and solving mathematical programming and optimization problems</p></td>
+<td><p><span class="raw-html">MIPS</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="raw-html"><a href="https://github.com/MATPOWER/mips">MIPS</a></span></p></td>
+<td><p><span class="raw-html"><b>M</b><span style="font-size:smaller">ATPOWER</span> <b>I</b>nterior <b>P</b>oint <b>S</b>olver</span>, nonlinear programming (NLP) solver</p></td>
+<td><p><span class="raw-html">MP-Test</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="raw-html"><a href="https://github.com/MATPOWER/mptest">MP-Test</a></span></p></td>
+<td><p>software testing framework and utility functions</p></td>
+<td><p><span class="raw-html">M<span style="font-size:smaller">ATLAB</span></span>/Octave</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="raw-html"><a href="https://github.com/MATPOWER/most">MOST</a></span></p></td>
+<td><p><span class="raw-html"><b>M</b><span style="font-size:smaller">ATPOWER</span> <b>O</b>ptimal <b>S</b>cheduling <b>T</b>ool</span>, framework for generalized steady-state electric power scheduling problems</p></td>
+<td><p><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="raw-html"><a href="https://github.com/MATPOWER/matpower-extras">M<span style="font-size:smaller">ATPOWER</span> Extras</a></span></p></td>
+<td><p>additional contributed packages for use with <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span></p></td>
+<td><p><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span></p></td>
+</tr>
+</tbody>
+</table>
+<p>The documentation for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> can be found in the various Manuals, How To Guides, and Tech Notes on this site. Each function or class has its own reference documentation which can be accessed via the built-in <code class="docutils literal notranslate"><span class="pre">help</span></code> command in <span class="raw-html">M<span style="font-size:smaller">ATLAB</span></span> or Octave, or by consulting the corresponding Reference manual.</p>
+<p>Changes to <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> in each released version are summarized in the <a class="reference external" href="https://github.com/MATPOWER/matpower/blob/master/docs/relnotes">release notes</a>, found on GitHub in <code class="docutils literal notranslate"><span class="pre">docs/relnotes</span></code> and in Appendix H of the <span class="raw-html"><a href="https://matpower.org/docs/MATPOWER-manual-8.0.pdf">M<span style="font-size:smaller">ATPOWER</span> User's Manual</a></span>. A complete, detailed change log, even for unreleased versions, is available in the <a class="reference external" href="https://github.com/MATPOWER/matpower/blob/master/CHANGES.md">CHANGES.md</a> file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The goal is to make all <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> documentation available in HTML format, with some of the manuals also available as PDF. To facilitate this, new documentation is written in <a class="reference external" href="https://www.writethedocs.org/guide/writing/reStructuredText/">reStructured Text</a> format for processing by <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a>, so the HTML and PDF versions can be built from a single source.</p>
+<p>Currently, most of the User’s Manuals are still only available as PDF, built from the legacy LaTeX source.</p>
+</div>
+<hr class="docutils" />
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ref-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+</ul>
+</div>
+<section id="more-manuals">
+<h3>More Manuals<a class="headerlink" href="#more-manuals" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mips/index.html">MIPS User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="most/index.html">MOST User’s Manual</a></li>
+</ul>
+</div>
+</section>
+<section id="all-legacy-pdf-manuals">
+<h3>All Legacy PDF Manuals<a class="headerlink" href="#all-legacy-pdf-manuals" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/doc/manuals/">All Legacy PDF Manuals</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/add-constraint.html">How to Add an OPF Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Tech Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tech-notes.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Technical Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tech-notes.html#tn1-auctions-and-opfs">[TN1] Auctions and OPFs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech-notes.html#tn2-flows-derivatives">[TN2] Flows/Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech-notes.html#tn3-flows-derivatives-current">[TN3] Flows/Derivatives, Current</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech-notes.html#tn4-flows-derivatives-cartesian">[TN4] Flows/Derivatives, Cartesian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech-notes.html#tn5-mp-element">[TN5] MP-Element</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="publications">
+<h2>Publications<a class="headerlink" href="#publications" title="Link to this heading"></a></h2>
+<p>For additional <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span>-related publications, see:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://matpower.org/publications">Publications</a></p></li>
+</ul>
+<p>Please <a class="reference external" href="https://matpower.org/citing">cite</a> <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> in your own publications derived from the use of <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span>.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://matpower.org/citing">Citing</a> <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span></p></li>
+</ul>
+<hr class="docutils" />
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="users-manual/index.html" class="btn btn-neutral float-right" title="MATPOWER User’s Manual" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

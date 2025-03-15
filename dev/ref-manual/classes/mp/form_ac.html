@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mp.form_ac &mdash; MATPOWER Documentation 8.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=bb3927b2"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>window.MathJax = {"loader": {"load": ["[tex]/upgreek"]}, "tex": {"packages": {"[+]": ["upgreek"]}, "macros": {"dg": "\\sp\\dagger", "trans": ["{#1}^{\\mathsf{T}}", 1], "conj": ["{#1}^{\\ast}", 1], "hc": ["{#1}^{\\dg}", 1], "hconj": ["{#1}^{+}", 1], "diag": ["\\left[^\\smallsetminus{#1}_\\smallsetminus\\right]", 1], "diagg": ["\\left[\\smash{#1}\\right]", 1], "cdiag": ["\\conj{\\diag{#1}}", 1], "der": ["\\frac{\\partial{#1}}{\\partial{#2}}", 2], "dersx": ["\\frac{\\partial^2{#1}}{\\partial{#2}^2}", 2], "dersxy": ["\\frac{\\partial^2{#1}}{\\partial{#2}\\partial{#3}}", 3], "cscal": ["\\mathrm{#1}", 1], "rvec": ["{\\boldsymbol{#1}}", 1], "cvec": ["\\mathbf{#1}", 1], "rmat": ["{\\boldsymbol{#1}}", 1], "cmat": ["\\mathbf{#1}", 1], "rvecG": ["{\\boldsymbol{#1}}", 1], "cvecG": ["\\boldsymbol{#1}", 1], "rmatG": ["\\boldsymbol{\\mathit{#1}}", 1], "cmatG": ["\\mathbf{#1}", 1], "param": ["\\underline{#1}", 1], "ov": ["{\\overline{#1}}", 1], "zeros": ["\\rvec{0}", 0], "ones": ["\\rvec{1}_{#1}", 1], "onest": ["\\trans{\\rvec{1}}_{#1}", 1], "Id": ["\\diag{\\ones{#1}}", 1], "R": "\\mathbb{R}}         % requires \\usepackage{amsfonts|bbold", "C": "\\mathbb{C}}         % requires \\usepackage{amsfonts", "av": "\\cvec{a}", "bv": "\\cvec{b}", "cv": "\\cvec{c}", "f": "\\cscal{f}", "F": "\\cvec{f}", "g": "\\rvec{g}", "G": "\\cvec{g}", "h": "\\rvec{h}", "HH": "\\cvec{h}", "x": "\\rvec{x}", "y": "\\rvec{y}", "z": "\\rvec{z}", "X": "\\cvec{x}", "Z": "\\cvec{z}", "A": "\\cmat{A}", "B": "\\cmat{B}", "alphav": "\\rvecG{\\alpha}", "lam": "\\rvecG{\\lambda}", "lamh": "\\hat{\\lam}", "muv": "\\rvecG{\\mu}", "muhv": "\\hat{\\muv}", "vv": "\\rvec{v}", "vvi": ["\\cscal{v}_{#1}", 1], "V": "\\cvec{v}", "Vh": "\\hat{\\V}", "Vc": "\\conj{\\V}", "Vhc": "\\conj{\\Vh}", "dV": "\\diag{\\V}", "dVh": "\\diag{\\Vh}", "dVc": "\\diag{\\Vc}", "dVhc": "\\diag{\\Vhc}", "inV": "\\cvec{\\Lambda}", "inVh": "\\hat{\\inV}", "inVc": "\\conj{\\inV}", "inVhc": "\\conj{\\inVh}", "dinV": "\\diagg{\\inV}", "dinVh": "\\diagg{\\inVh}", "dinVc": "\\diagg{\\inVc}", "dinVhc": "\\diagg{\\inVhc}", "va": ["\\theta", 0], "vai": ["\\va_{#1}", 1], "Va": ["\\rvec{\\va}", 0], "Vah": ["\\hat{\\Va}", 0], "vm": ["\\nu", 0], "vmi": ["\\nu_{#1}", 1], "Vm": ["\\rvecG{\\nu}", 0], "dVm": "\\diag{\\Vm}", "dVmi": "\\dVm^{-1}", "Vmh": "\\hat{\\Vm}", "dVmh": "\\diag{\\Vmh}", "dVmhi": "\\dVmh^{-1}", "vr": "u", "vri": ["u_{#1}", 1], "vi": "w", "vii": ["w_{#1}", 1], "Vr": "\\rvec{u}", "Vi": "\\rvec{w}", "dVr": "\\diag{\\Vr}", "dVi": "\\diag{\\Vi}", "Vrh": "\\hat{\\Vr}", "Vih": "\\hat{\\Vi}", "dVrh": "\\diag{\\Vrh}", "dVih": "\\diag{\\Vih}", "E": "\\cvec{e}", "Eh": "\\hat{\\E}", "Ec": "\\conj{\\E}", "Ehc": "\\conj{\\Eh}", "dE": "\\diag{\\E}", "dEh": "\\diag{\\Eh}", "dEc": "\\diag{\\Ec}", "dEhc": "\\diag{\\Ehc}", "zr": "{z_r}", "zi": "{z_i}", "Zr": "{\\rvec{z}_r}", "Zi": "{\\rvec{z}_i}", "dlam": "\\diagg{\\lam}", "dlamh": "\\diagg{\\lamh}", "dlamva": "\\diagg{\\lam_\\va}", "dlamvm": "\\diagg{\\lam_\\vm}", "dlamvr": "\\diagg{\\lam_\\vr}", "dlamvi": "\\diagg{\\lam_\\vi}", "dlamzr": "\\diagg{\\lam_\\zr}", "dlamzi": "\\diagg{\\lam_\\zi}", "dlamhva": "\\diagg{\\lamh_\\va}", "dlamhvm": "\\diagg{\\lamh_\\vm}", "dlamhvr": "\\diagg{\\lamh_\\vr}", "dlamhvi": "\\diagg{\\lamh_\\vi}", "dlamhzr": "\\diagg{\\lamh_\\zr}", "dlamhzi": "\\diagg{\\lamh_\\zi}", "dmu": "\\diag{\\muv}", "dmuh": "\\diag{\\muhv}", "kk": "\\rvec{k}", "J": "\\param{\\rmat{J}}", "Jt": "\\trans{\\J}", "Jk": ["\\J_{\\kk_#1}", 1], "Ah": "\\hat{\\A}", "Fh": "\\hat{\\F}", "Gh": "\\hat{\\G}", "gh": "\\hat{\\g}", "fmax": "\\param{\\rvec{f}}_\\mathrm{max}", "gP": "\\g^P", "gPk": ["\\g^{P,#1}", 1], "fhmax": "\\hat{\\param{\\rvec{f}}}_\\mathrm{max}", "ghP": "\\gh^P", "ghPk": ["\\gh^{P,#1}", 1], "GS": "\\G^S", "GI": "\\G^I", "GSk": ["\\G^{S,#1}", 1], "GIk": ["\\G^{I,#1}", 1], "GSsys": "\\GSk{\\mathrm{sys}}", "GIsys": "\\GIk{\\mathrm{sys}}", "gPsys": "\\gPk{\\mathrm{sys}}", "GhS": "\\Gh^S", "GhI": "\\Gh^I", "GhSk": ["\\Gh^{S,#1}", 1], "GhIk": ["\\Gh^{I,#1}", 1], "GhSsys": "\\GhSk{\\mathrm{sys}}", "GhIsys": "\\GhIk{\\mathrm{sys}}", "ghPsys": "\\ghPk{\\mathrm{sys}}", "Ilin": "\\cvec{i}^{lin}", "Ilink": "\\cvec{i}^{lin, k}", "Ilinc": "\\conj{\\Ilin}", "dIlin": "\\diag{\\Ilin}", "dIlinc": "\\diag{\\Ilinc}", "Ilinh": "\\hat{{\\cvec{i}}}^{lin}", "Ilinhk": "\\hat{\\cvec{i}}^{lin, k}", "Ilinhc": "\\conj{\\Ilinh}", "dIlinh": "\\diag{\\Ilinh}", "dIlinhc": "\\diag{\\Ilinhc}", "Slin": "\\cvec{s}^{lin}", "Slink": "\\cvec{s}^{lin, k}", "Slinc": "\\conj{\\Slin}", "dSlin": "\\diag{\\Slin}", "dSlinc": "\\diag{\\Slinc}", "Slinh": "\\hat{\\cvec{s}}^{lin}", "Slinhk": "\\hat{\\cvec{s}}^{lin, k}", "Slinhc": "\\conj{\\Slinh}", "dSlinh": "\\diag{\\Slinh}", "dSlinhc": "\\diag{\\Slinhc}", "Inln": "\\cvec{i}^{nln}", "Inlnk": "\\cvec{i}^{nln, k}", "Snln": "\\cvec{s}^{nln}", "Snlnk": "\\cvec{s}^{nln, k}", "Inlnh": "\\hat{\\cvec{i}}^{nln}", "Inlnhk": "\\hat{\\cvec{i}}^{nln, k}", "Snlnh": "\\hat{\\cvec{s}}^{nln}", "Snlnhk": "\\hat{\\cvec{s}}^{nln, k}", "Aa": "\\param{\\rmat{A}}", "BB": "\\param{\\rmat{B}}", "CC": "\\param{\\rmat{C}}", "DD": "\\param{\\rmat{D}}", "YY": "\\param{\\cmat{Y}}", "iv": "\\param{\\cvec{i}}", "pv": "\\param{\\rvec{p}}", "sv": "\\param{\\cvec{s}}", "KK": "\\param{\\rmat{K}}", "LL": "\\param{\\cmat{L}}", "MM": "\\param{\\cmat{M}}", "NN": "\\param{\\cmat{N}}", "BBh": "\\hat{\\BB}", "YYh": "\\hat{\\YY}", "ivh": "\\hat{\\iv}", "pvh": "\\hat{\\pv}", "svh": "\\hat{\\sv}", "CCh": "\\hat{\\CC}", "KKh": "\\hat{\\KK}", "LLh": "\\hat{\\LL}", "MMh": "\\hat{\\MM}", "NNh": "\\hat{\\NN}", "AT": "\\trans{\\Aa}", "CT": "\\trans{\\CC}", "DT": "\\trans{\\DD}", "Ap": "\\Aa'", "Cp": "\\CC\\:\\!'", "Dp": "\\DD'", "ApT": "\\trans{\\Ap}", "CpT": "\\trans{\\Cp}", "DpT": "\\trans{\\Dp}", "ChT": "\\trans{\\CCh}", "Lc": "\\conj{\\LL}", "LcT": "\\trans{\\Lc}", "Lhc": "\\conj{\\LLh}", "LhcT": "\\trans{\\Lhc}", "MT": "\\trans{\\MM}", "Mc": "\\conj{\\MM}", "McT": "\\trans{\\Mc}", "dMTlam": "\\diag{\\MT \\lam}", "MhT": "\\trans{\\MMh}", "Mhc": "\\conj{\\MMh}", "MhcT": "\\trans{\\Mhc}", "dMhTlam": "\\diag{\\MhT \\lamh}", "Nc": "\\conj{\\NN}", "NcT": "\\trans{\\Nc}", "Nhc": "\\conj{\\NNh}", "NhcT": "\\trans{\\Nhc}", "YT": "\\trans{\\YY}", "Yc": "\\conj{\\YY}", "YcT": "\\trans{\\Yc}", "dYTlam": "\\diag{\\YT \\lam}", "YhT": "\\trans{\\YYh}", "Yhc": "\\conj{\\YYh}", "YhcT": "\\trans{\\Yhc}", "dYhTlam": "\\diag{\\YhT \\lamh}", "I": "\\cvec{i}^S", "s": "\\cvec{s}^I", "Ih": "\\hat{\\cvec{i}}^S", "Sh": "\\hat{\\cvec{s}}^I", "AtX": "\\AT \\X", "CtV": "\\CT \\V", "dCtV": "\\diag{\\CtV}", "DtZ": "\\DT \\Z", "ApTx": "\\ApT \\x", "CpTv": "\\CpT \\vv", "DpTz": "\\DpT \\z"}}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="mp.form_acc" href="form_acc.html" />
+    <link rel="prev" title="mp.form" href="form.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">matpower.org</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/about/get-started/">Get Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions/index.html">2. Functions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">3. Classes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../index.html#task-classes">3.1. Task Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#data-model-classes">3.2. Data Model Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#data-model-converter-classes">3.3. Data Model Converter Classes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#network-model-classes">3.4. Network Model Classes</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html#id3">Containers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#id4">Elements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#mathematical-model-classes">3.5. Mathematical Model Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#miscellaneous-classes">3.6. Miscellaneous Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#matpower-extension-classes">3.7. <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extension Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tests/index.html">4. Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../legacy/index.html">5. Legacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../previous.html">6. Previous Versions</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/doc/manuals/">All Legacy PDF Manuals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/add-constraint.html">How to Add an OPF Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tech Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tech-notes.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Technical Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+          <li class="breadcrumb-item"><a href="../index.html"><span class="section-number">3. </span>Classes</a></li>
+      <li class="breadcrumb-item active">mp.form_ac</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/ref-manual/classes/mp/form_ac.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="form.html" class="btn btn-neutral float-left" title="mp.form" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="form_acc.html" class="btn btn-neutral float-right" title="mp.form_acc" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p><span class="raw-html"><div style="float: right"><a href="https://github.com/MATPOWER/matpower/blob/master/lib/+mp/form_ac.m" target=_blank><svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg></a></div></span></p>
+<section id="mp-form-ac">
+<h1>mp.form_ac<a class="headerlink" href="#mp-form-ac" title="Link to this heading"></a></h1>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="mp.form_ac">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">form_ac</span></span><a class="headerlink" href="#mp.form_ac" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="form.html#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a></p>
+<p><a class="reference internal" href="#mp.form_ac" title="mp.form_ac"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_ac</span></code></a> - Abstract base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> AC <strong>formulations</strong>.</p>
+<p>Used as a mix-in class for all <strong>network model element</strong> classes
+with an AC network model formulation. That is, each concrete network model
+element class with an AC formulation must inherit, at least indirectly, from
+both <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a> and <a class="reference internal" href="#mp.form_ac" title="mp.form_ac"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_ac</span></code></a>.</p>
+<p><a class="reference internal" href="#mp.form_ac" title="mp.form_ac"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_ac</span></code></a> defines the complex port injections as functions of the state
+variables <span class="math notranslate nohighlight">\(\X\)</span>, that is, the complex voltages <span class="math notranslate nohighlight">\(\V\)</span> and
+non-voltage states <span class="math notranslate nohighlight">\(\Z\)</span>. They are defined in terms of 3 components,
+the linear current injection and linear power injection components,</p>
+<div class="math notranslate nohighlight" id="equation-ref-manual-classes-mp-form-ac-0">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-ref-manual-classes-mp-form-ac-0" title="Link to this equation"></a></span>\[\begin{split}\Ilin(\X) &amp;= \left[\begin{array}{cc}\YY &amp; \LL\end{array}\right] \X + \iv \\
+&amp;= \YY \V + \LL \Z + \iv\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-ref-manual-classes-mp-form-ac-1">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-ref-manual-classes-mp-form-ac-1" title="Link to this equation"></a></span>\[\begin{split}\Slin(\X) &amp;= \left[\begin{array}{cc}\MM &amp; \NN\end{array}\right] \X + \sv \\
+&amp;= \MM \V + \NN \Z + \sv,\end{split}\]</div>
+<p>and an arbitrary nonlinear injection component represented by
+<span class="math notranslate nohighlight">\(\Snln(\X)\)</span> or <span class="math notranslate nohighlight">\(\Inln(\X)\)</span>. The full complex power and current
+port injection functions implemented by <a class="reference internal" href="#mp.form_ac" title="mp.form_ac"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_ac</span></code></a>, are respectively</p>
+<div class="math notranslate nohighlight" id="equation-ref-manual-classes-mp-form-ac-2">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-ref-manual-classes-mp-form-ac-2" title="Link to this equation"></a></span>\[\begin{split}\GS(\X) &amp;= \dV \conj{\left( \Ilin(\X) \right)} + \Slin(\X) + \Snln(\X) \\
+&amp;= \dV \conj{\left( \YY \V + \LL \Z + \iv \right)} + \MM \V + \NN \Z + \sv + \Snln(\X)\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-ref-manual-classes-mp-form-ac-3">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-ref-manual-classes-mp-form-ac-3" title="Link to this equation"></a></span>\[\begin{split}\GI(\X) &amp;= \Ilin(\X) + \cdiag{\Slin(\X)} \inVc + \Inln(\X) \\
+&amp;= \YY \V + \LL \Z + \iv + \cdiag{\MM \V + \NN \Z + \sv} \inVc + \Inln(\X)\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\YY\)</span>, <span class="math notranslate nohighlight">\(\LL\)</span>, <span class="math notranslate nohighlight">\(\MM\)</span>, <span class="math notranslate nohighlight">\(\NN\)</span>, <span class="math notranslate nohighlight">\(\iv\)</span>, and
+<span class="math notranslate nohighlight">\(\sv\)</span>, along with <span class="math notranslate nohighlight">\(\Snln(\X)\)</span> or <span class="math notranslate nohighlight">\(\Inln(\X)\)</span>, are the
+model parameters.</p>
+<p>For more details, see the <a class="reference internal" href="../../../dev-manual/net-model.html#sec-nm-formulations-ac"><span class="std std-ref">AC Formulations</span></a> section in the
+<span class="raw-html"><a class="reference external" href="https://matpower.org/doc/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> and the derivations in <span class="raw-html"><a href="https://matpower.org/docs/TN5-MP-Element.pdf"><em>M<span style="font-size:smaller">ATPOWER</span> Technical Note 5</em></a></span>.</p>
+<dl class="simple">
+<dt>mp.form_dc Properties:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#mp.form_ac.Y" title="mp.form_ac.Y"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">Y</span></code></a> - <span class="math notranslate nohighlight">\(n_p n_k \times n_n\)</span> matrix <span class="math notranslate nohighlight">\(\YY\)</span> of model parameters</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.L" title="mp.form_ac.L"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">L</span></code></a> - <span class="math notranslate nohighlight">\(n_p n_k \times n_\Z\)</span> matrix <span class="math notranslate nohighlight">\(\LL\)</span> of model parameters</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.M" title="mp.form_ac.M"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">M</span></code></a> - <span class="math notranslate nohighlight">\(n_p n_k \times n_n\)</span> matrix <span class="math notranslate nohighlight">\(\MM\)</span> of model parameters</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.N" title="mp.form_ac.N"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">N</span></code></a> - <span class="math notranslate nohighlight">\(n_p n_k \times n_\Z\)</span> matrix <span class="math notranslate nohighlight">\(\NN\)</span> of model parameters</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.i" title="mp.form_ac.i"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">i</span></code></a> - <span class="math notranslate nohighlight">\(n_p n_k \times 1\)</span> vector <span class="math notranslate nohighlight">\(\iv\)</span> of model parameters</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.s" title="mp.form_ac.s"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">s</span></code></a> - <span class="math notranslate nohighlight">\(n_p n_k \times 1\)</span> vector <span class="math notranslate nohighlight">\(\sv\)</span> of model parameters</p></li>
+<li><p><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">params_ncols</span></code> - specify number of columns for each parameter</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.inln" title="mp.form_ac.inln"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">inln</span></code></a> - function to compute <span class="math notranslate nohighlight">\(\Inln(\X)\)</span></p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.snln" title="mp.form_ac.snln"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">snln</span></code></a> - function to compute <span class="math notranslate nohighlight">\(\Snln(\X)\)</span></p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.inln_hess" title="mp.form_ac.inln_hess"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">inln_hess</span></code></a> - function to compute Hessian of <span class="math notranslate nohighlight">\(\Inln(\X)\)</span></p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.snln_hess" title="mp.form_ac.snln_hess"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">snln_hess</span></code></a> - function to compute Hessian of <span class="math notranslate nohighlight">\(\Snln(\X)\)</span></p></li>
+</ul>
+</dd>
+<dt>mp.form_dc Methods:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#mp.form_ac.model_params" title="mp.form_ac.model_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">model_params()</span></code></a> - get network model element parameters (<code class="docutils literal notranslate"><span class="pre">{'Y',</span> <span class="pre">'L',</span> <span class="pre">'M',</span> <span class="pre">'N',</span> <span class="pre">'i',</span> <span class="pre">'s'}</span></code>)</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.model_zvars" title="mp.form_ac.model_zvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">model_zvars()</span></code></a> - get cell array of names of non-voltage state variables (<code class="docutils literal notranslate"><span class="pre">{'zr',</span> <span class="pre">'zi'}</span></code>)</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_inj_current" title="mp.form_ac.port_inj_current"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current()</span></code></a> - compute port current injections from network state</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code></a> - compute port power injections from network state</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_inj_current_hess" title="mp.form_ac.port_inj_current_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current_hess()</span></code></a> - compute Hessian of port current injections</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_inj_power_hess" title="mp.form_ac.port_inj_power_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power_hess()</span></code></a> - compute Hessian of port power injections</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_inj_current_jac" title="mp.form_ac.port_inj_current_jac"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current_jac()</span></code></a> - abstract method to compute voltage-related Jacobian terms</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_inj_current_hess_v" title="mp.form_ac.port_inj_current_hess_v"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current_hess_v()</span></code></a> - abstract method to compute voltage-related Hessian terms</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_inj_current_hess_vz" title="mp.form_ac.port_inj_current_hess_vz"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current_hess_vz()</span></code></a> - abstract method to compute voltage-related Hessian terms</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_inj_power_jac" title="mp.form_ac.port_inj_power_jac"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power_jac()</span></code></a> - abstract method to compute voltage-related Jacobian terms</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_inj_power_hess_v" title="mp.form_ac.port_inj_power_hess_v"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power_hess_v()</span></code></a> - abstract method to compute voltage-related Hessian terms</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_inj_power_hess_vz" title="mp.form_ac.port_inj_power_hess_vz"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power_hess_vz()</span></code></a> - abstract method to compute voltage-related Hessian terms</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_apparent_power_lim_fcn" title="mp.form_ac.port_apparent_power_lim_fcn"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_apparent_power_lim_fcn()</span></code></a> - compute port squared apparent power injection constraints</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_active_power_lim_fcn" title="mp.form_ac.port_active_power_lim_fcn"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_active_power_lim_fcn()</span></code></a> - compute port active power injection constraints</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_active_power2_lim_fcn" title="mp.form_ac.port_active_power2_lim_fcn"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_active_power2_lim_fcn()</span></code></a> - compute port squared active power injection constraints</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_current_lim_fcn" title="mp.form_ac.port_current_lim_fcn"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_current_lim_fcn()</span></code></a> - compute port squared current injection constraints</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_apparent_power_lim_hess" title="mp.form_ac.port_apparent_power_lim_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_apparent_power_lim_hess()</span></code></a> - compute port squared apparent power injection Hessian</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_active_power_lim_hess" title="mp.form_ac.port_active_power_lim_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_active_power_lim_hess()</span></code></a> - compute port active power injection Hessian</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_active_power2_lim_hess" title="mp.form_ac.port_active_power2_lim_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_active_power2_lim_hess()</span></code></a> - compute port squared active power injection Hessian</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.port_current_lim_hess" title="mp.form_ac.port_current_lim_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_current_lim_hess()</span></code></a> - compute port squared current injection Hessian</p></li>
+<li><p><a class="reference internal" href="#mp.form_ac.aux_data_va_vm" title="mp.form_ac.aux_data_va_vm"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">aux_data_va_vm()</span></code></a> - abstract method to return voltage angles/magnitudes from auxiliary data</p></li>
+</ul>
+</dd>
+</dl>
+<p>See also <a class="reference internal" href="form.html#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a>, <a class="reference internal" href="form_acc.html#mp.form_acc" title="mp.form_acc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_acc</span></code></a>, <a class="reference internal" href="form_acp.html#mp.form_acp" title="mp.form_acp"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_acp</span></code></a>, <a class="reference internal" href="form_dc.html#mp.form_dc" title="mp.form_dc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_dc</span></code></a>, <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a>.</p>
+<div class="members docutils container">
+<dl>
+<dt>Property Summary</dt><dd><dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.form_ac.Y">
+<span class="sig-name descname"><span class="pre">Y</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.form_ac.Y" title="Link to this definition"></a></dt>
+<dd><p><em>(double)</em> <span class="math notranslate nohighlight">\(n_p n_k \times n_n\)</span> matrix <span class="math notranslate nohighlight">\(\YY\)</span>
+of model parameter coefficients for <span class="math notranslate nohighlight">\(\V\)</span></p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.form_ac.L">
+<span class="sig-name descname"><span class="pre">L</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.form_ac.L" title="Link to this definition"></a></dt>
+<dd><p><em>(double)</em> <span class="math notranslate nohighlight">\(n_p n_k \times n_\Z\)</span> matrix <span class="math notranslate nohighlight">\(\LL\)</span>
+of model parameter coefficients for <span class="math notranslate nohighlight">\(\Z\)</span></p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.form_ac.M">
+<span class="sig-name descname"><span class="pre">M</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.form_ac.M" title="Link to this definition"></a></dt>
+<dd><p><em>(double)</em> <span class="math notranslate nohighlight">\(n_p n_k \times n_n\)</span> matrix <span class="math notranslate nohighlight">\(\MM\)</span>
+of model parameter coefficients for <span class="math notranslate nohighlight">\(\V\)</span></p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.form_ac.N">
+<span class="sig-name descname"><span class="pre">N</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.form_ac.N" title="Link to this definition"></a></dt>
+<dd><p><em>(double)</em> <span class="math notranslate nohighlight">\(n_p n_k \times n_\Z\)</span> matrix <span class="math notranslate nohighlight">\(\NN\)</span>
+of model parameter coefficients for <span class="math notranslate nohighlight">\(\Z\)</span></p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.form_ac.i">
+<span class="sig-name descname"><span class="pre">i</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.form_ac.i" title="Link to this definition"></a></dt>
+<dd><p><em>(double)</em> <span class="math notranslate nohighlight">\(n_p n_k \times 1\)</span> vector <span class="math notranslate nohighlight">\(\iv\)</span> of model parameters</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.form_ac.s">
+<span class="sig-name descname"><span class="pre">s</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.form_ac.s" title="Link to this definition"></a></dt>
+<dd><p><em>(double)</em> <span class="math notranslate nohighlight">\(n_p n_k \times 1\)</span> vector <span class="math notranslate nohighlight">\(\sv\)</span> of model parameters</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.form_ac.param_ncols">
+<span class="sig-name descname"><span class="pre">param_ncols</span></span><em class="property"> <span class="pre">=</span> <span class="pre">struct('Y',2,'L',3,'M',2,'N',3,'i',1,'s',1)</span></em><a class="headerlink" href="#mp.form_ac.param_ncols" title="Link to this definition"></a></dt>
+<dd><p><em>(struct)</em> specify number of columns for each parameter,
+where</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>1 =&gt; single column (i.e. a vector)</p></li>
+<li><p>2 =&gt; <span class="math notranslate nohighlight">\(n_p\)</span> columns</p></li>
+<li><p>3 =&gt; <span class="math notranslate nohighlight">\(n_\Z\)</span> columns</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.form_ac.inln">
+<span class="sig-name descname"><span class="pre">inln</span></span><em class="property"> <span class="pre">=</span> <span class="pre">''</span></em><a class="headerlink" href="#mp.form_ac.inln" title="Link to this definition"></a></dt>
+<dd><p><em>(function handle)</em> function to compute <span class="math notranslate nohighlight">\(\Inln(\X)\)</span></p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.form_ac.snln">
+<span class="sig-name descname"><span class="pre">snln</span></span><em class="property"> <span class="pre">=</span> <span class="pre">''</span></em><a class="headerlink" href="#mp.form_ac.snln" title="Link to this definition"></a></dt>
+<dd><p><em>(function handle)</em> function to compute <span class="math notranslate nohighlight">\(\Snln(\X)\)</span></p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.form_ac.inln_hess">
+<span class="sig-name descname"><span class="pre">inln_hess</span></span><em class="property"> <span class="pre">=</span> <span class="pre">''</span></em><a class="headerlink" href="#mp.form_ac.inln_hess" title="Link to this definition"></a></dt>
+<dd><p><em>(function handle)</em> function to compute Hessian of <span class="math notranslate nohighlight">\(\Inln(\X)\)</span></p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.form_ac.snln_hess">
+<span class="sig-name descname"><span class="pre">snln_hess</span></span><em class="property"> <span class="pre">=</span> <span class="pre">''</span></em><a class="headerlink" href="#mp.form_ac.snln_hess" title="Link to this definition"></a></dt>
+<dd><p><em>(function handle)</em> function to compute Hessian of <span class="math notranslate nohighlight">\(\Snln(\X)\)</span></p>
+</dd></dl>
+
+</dd>
+<dt>Method Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.model_params">
+<span class="sig-name descname"><span class="pre">model_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.model_params" title="Link to this definition"></a></dt>
+<dd><p>Get cell array of names of model parameters, i.e. <code class="docutils literal notranslate"><span class="pre">{'Y',</span> <span class="pre">'L',</span> <span class="pre">'M',</span> <span class="pre">'N',</span> <span class="pre">'i',</span> <span class="pre">'s'}</span></code>.</p>
+<p>See <a class="reference internal" href="form.html#mp.form.model_params" title="mp.form.model_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form.model_params()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.model_zvars">
+<span class="sig-name descname"><span class="pre">model_zvars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.model_zvars" title="Link to this definition"></a></dt>
+<dd><p>Get cell array of names of non-voltage state variables, i.e. <code class="docutils literal notranslate"><span class="pre">{'zr',</span> <span class="pre">'zi'}</span></code>.</p>
+<p>See <a class="reference internal" href="form.html#mp.form.model_zvars" title="mp.form.model_zvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form.model_zvars()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_inj_current">
+<span class="sig-name descname"><span class="pre">port_inj_current</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">sysx</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_inj_current" title="Link to this definition"></a></dt>
+<dd><p>Compute port complex current injections from network state.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="no">I</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_current</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">sysx</span><span class="p">)</span>
+<span class="no">I</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_current</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">sysx</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+<span class="p">[</span><span class="no">I</span><span class="p">,</span> <span class="n">Iv1</span><span class="p">,</span> <span class="n">Iv2</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_current</span><span class="p">(...)</span>
+<span class="p">[</span><span class="no">I</span><span class="p">,</span> <span class="n">Iv1</span><span class="p">,</span> <span class="n">Iv2</span><span class="p">,</span> <span class="n">Izr</span><span class="p">,</span> <span class="n">Izi</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_current</span><span class="p">(...)</span>
+</pre></div>
+</div>
+<p>Compute the complex current injections for all or a selected
+subset of ports and, optionally, the components of the Jacobian,
+that is, the sparse matrices of partial derivatives with respect
+to each real component of the state. The voltage portion, which
+depends on the formulation (polar vs cartesian), is delegated
+to the  <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current_jac()</span></code> method implemented by the
+appropriate subclass.</p>
+<p>The state can be provided as a stacked aggregate of the state
+variables (port voltages and non-voltage states) for the full
+collection of network model elements of this type, or as the
+combined state for the entire network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_</strong> (<em>complex double</em>) – state vector <span class="math notranslate nohighlight">\(\X\)</span></p></li>
+<li><p><strong>sysx</strong> (<em>0 or 1</em>) – which state is provided in <code class="docutils literal notranslate"><span class="pre">x_</span></code></p>
+<ul>
+<li><p>0 – class aggregate state</p></li>
+<li><p>1 – <em>(default)</em> full system state</p></li>
+</ul>
+</li>
+<li><p><strong>idx</strong> (<em>integer</em>) – <em>(optional)</em> vector of indices of ports of
+interest, if empty or missing, returns results
+corresponding to all ports</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>I</strong> (<em>complex double</em>) – vector of port complex current injections,
+<span class="math notranslate nohighlight">\(\GI(\X)\)</span></p></li>
+<li><p><strong>Iv1</strong> (<em>complex double</em>) – Jacobian of port complex current
+injections w.r.t 1st voltage component,
+<span class="math notranslate nohighlight">\(\GI_\Va\)</span> (polar) or <span class="math notranslate nohighlight">\(\GI_\Vr\)</span>
+(cartesian)</p></li>
+<li><p><strong>Iv2</strong> (<em>complex double</em>) – Jacobian of port complex current
+injections w.r.t 2nd voltage component,
+<span class="math notranslate nohighlight">\(\GI_\Vm\)</span> (polar) or <span class="math notranslate nohighlight">\(\GI_\Vi\)</span>
+(cartesian)</p></li>
+<li><p><strong>Izr</strong> (<em>complex double</em>) – Jacobian of port complex current
+injections w.r.t real part of non-voltage state,
+<span class="math notranslate nohighlight">\(\GI_\Zr\)</span></p></li>
+<li><p><strong>Izi</strong> (<em>complex double</em>) – Jacobian of port complex current
+injections w.r.t imaginary part of non-voltage state,
+<span class="math notranslate nohighlight">\(\GI_\Zi\)</span></p></li>
+</ul>
+</dd>
+</dl>
+<p>For details on the derivations of the formulas used, see <span class="raw-html"><a href="https://matpower.org/docs/TN5-MP-Element.pdf"><em>M<span style="font-size:smaller">ATPOWER</span> Technical Note 5</em></a></span>.</p>
+<p>See also <a class="reference internal" href="#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_inj_power">
+<span class="sig-name descname"><span class="pre">port_inj_power</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">sysx</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_inj_power" title="Link to this definition"></a></dt>
+<dd><p>Compute port complex power injections from network state.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_power</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">sysx</span><span class="p">)</span>
+<span class="n">S</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_power</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">sysx</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+<span class="p">[</span><span class="n">S</span><span class="p">,</span> <span class="n">Sv1</span><span class="p">,</span> <span class="n">Sv2</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_power</span><span class="p">(...)</span>
+<span class="p">[</span><span class="n">S</span><span class="p">,</span> <span class="n">Sv1</span><span class="p">,</span> <span class="n">Sv2</span><span class="p">,</span> <span class="n">Szr</span><span class="p">,</span> <span class="n">Szi</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_power</span><span class="p">(...)</span>
+</pre></div>
+</div>
+<p>Compute the complex power injections for all or a selected
+subset of ports and, optionally, the components of the Jacobian,
+that is, the sparse matrices of partial derivatives with respect
+to each real component of the state. The voltage portion, which
+depends on the formulation (polar vs cartesian), is delegated
+to the  <code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power_jac()</span></code> method implemented by the
+appropriate subclass.</p>
+<p>The state can be provided as a stacked aggregate of the state
+variables (port voltages and non-voltage states) for the full
+collection of network model elements of this type, or as the
+combined state for the entire network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_</strong> (<em>complex double</em>) – state vector <span class="math notranslate nohighlight">\(\X\)</span></p></li>
+<li><p><strong>sysx</strong> (<em>0 or 1</em>) – which state is provided in <code class="docutils literal notranslate"><span class="pre">x_</span></code></p>
+<ul>
+<li><p>0 – class aggregate state</p></li>
+<li><p>1 – <em>(default)</em> full system state</p></li>
+</ul>
+</li>
+<li><p><strong>idx</strong> (<em>integer</em>) – <em>(optional)</em> vector of indices of ports of
+interest, if empty or missing, returns results
+corresponding to all ports</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>S</strong> (<em>complex double</em>) – vector of port complex power injections,
+<span class="math notranslate nohighlight">\(\GS(\X)\)</span></p></li>
+<li><p><strong>Sv1</strong> (<em>complex double</em>) – Jacobian of port complex power
+injections w.r.t 1st voltage component,
+<span class="math notranslate nohighlight">\(\GS_\Va\)</span> (polar) or <span class="math notranslate nohighlight">\(\GS_\Vr\)</span>
+(cartesian)</p></li>
+<li><p><strong>Sv2</strong> (<em>complex double</em>) – Jacobian of port complex power
+injections w.r.t 2nd voltage component,
+<span class="math notranslate nohighlight">\(\GS_\Vm\)</span> (polar) or <span class="math notranslate nohighlight">\(\GS_\Vi\)</span>
+(cartesian)</p></li>
+<li><p><strong>Szr</strong> (<em>complex double</em>) – Jacobian of port complex power
+injections w.r.t real part of non-voltage state,
+<span class="math notranslate nohighlight">\(\GS_\Zr\)</span></p></li>
+<li><p><strong>Szi</strong> (<em>complex double</em>) – Jacobian of port complex power
+injections w.r.t imaginary part of non-voltage state,
+<span class="math notranslate nohighlight">\(\GS_\Zi\)</span>.</p></li>
+</ul>
+</dd>
+</dl>
+<p>For details on the derivations of the formulas used, see <span class="raw-html"><a href="https://matpower.org/docs/TN5-MP-Element.pdf"><em>M<span style="font-size:smaller">ATPOWER</span> Technical Note 5</em></a></span>.</p>
+<p>See also <a class="reference internal" href="#mp.form_ac.port_inj_current" title="mp.form_ac.port_inj_current"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_inj_current_hess">
+<span class="sig-name descname"><span class="pre">port_inj_current_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">sysx</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_inj_current_hess" title="Link to this definition"></a></dt>
+<dd><p>Compute Hessian of port current injections from network state.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_current_hess</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span>
+<span class="n">H</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_current_hess</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">sysx</span><span class="p">)</span>
+<span class="n">H</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_current_hess</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">sysx</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Compute a sparse Hessian matrix for all or a selected subset of
+ports. Rather than a full, 3-dimensional Hessian, it computes the
+Jacobian of the vector obtained by muliplying the transpose of
+the port current injection Jacobian by a vector <span class="math notranslate nohighlight">\(\lam\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_</strong> (<em>complex double</em>) – state vector <span class="math notranslate nohighlight">\(\X\)</span></p></li>
+<li><p><strong>lam</strong> (<em>double</em>) – vector <span class="math notranslate nohighlight">\(\lam\)</span> of multipliers, one for each port</p></li>
+<li><p><strong>sysx</strong> (<em>0 or 1</em>) – which state is provided in <code class="docutils literal notranslate"><span class="pre">x_</span></code></p>
+<ul>
+<li><p>0 – class aggregate state</p></li>
+<li><p>1 – <em>(default)</em> full system state</p></li>
+</ul>
+</li>
+<li><p><strong>idx</strong> (<em>integer</em>) – <em>(optional)</em> vector of indices of ports of
+interest, if empty or missing, returns results
+corresponding to all ports</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>H</strong> (<em>complex double</em>) – sparse Hessian matrix of port complex
+current injections corresponding to specified
+<span class="math notranslate nohighlight">\(\lam\)</span>, namely <span class="math notranslate nohighlight">\(\GI_{\X\X}(\lam)\)</span></p>
+</dd>
+</dl>
+<p>For details on the derivations of the formulas used, see <span class="raw-html"><a href="https://matpower.org/docs/TN5-MP-Element.pdf"><em>M<span style="font-size:smaller">ATPOWER</span> Technical Note 5</em></a></span>.</p>
+<p>See also <a class="reference internal" href="#mp.form_ac.port_inj_current" title="mp.form_ac.port_inj_current"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_inj_power_hess">
+<span class="sig-name descname"><span class="pre">port_inj_power_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">sysx</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_inj_power_hess" title="Link to this definition"></a></dt>
+<dd><p>Compute Hessian of port power injections from network state.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_power_hess</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span>
+<span class="n">H</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_power_hess</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">sysx</span><span class="p">)</span>
+<span class="n">H</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_power_hess</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">sysx</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Compute a sparse Hessian matrix for all or a selected subset of
+ports. Rather than a full, 3-dimensional Hessian, it computes the
+Jacobian of the vector obtained by muliplying the transpose of
+the port power injection Jacobian by a vector <span class="math notranslate nohighlight">\(\lam\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_</strong> (<em>complex double</em>) – state vector <span class="math notranslate nohighlight">\(\X\)</span></p></li>
+<li><p><strong>lam</strong> (<em>double</em>) – vector <span class="math notranslate nohighlight">\(\lam\)</span> of multipliers, one for each port</p></li>
+<li><p><strong>sysx</strong> (<em>0 or 1</em>) – which state is provided in <code class="docutils literal notranslate"><span class="pre">x_</span></code></p>
+<ul>
+<li><p>0 – class aggregate state</p></li>
+<li><p>1 – <em>(default)</em> full system state</p></li>
+</ul>
+</li>
+<li><p><strong>idx</strong> (<em>integer</em>) – <em>(optional)</em> vector of indices of ports of
+interest, if empty or missing, returns results
+corresponding to all ports</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>H</strong> (<em>complex double</em>) – sparse Hessian matrix of port complex
+power injections corresponding to specified
+<span class="math notranslate nohighlight">\(\lam\)</span>, namely <span class="math notranslate nohighlight">\(\GS_{\X\X}(\lam)\)</span></p>
+</dd>
+</dl>
+<p>For details on the derivations of the formulas used, see <span class="raw-html"><a href="https://matpower.org/docs/TN5-MP-Element.pdf"><em>M<span style="font-size:smaller">ATPOWER</span> Technical Note 5</em></a></span>.</p>
+<p>See also <a class="reference internal" href="#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_inj_current_jac">
+<span class="sig-name descname"><span class="pre">port_inj_current_jac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">n</span></em>, <em class="sig-param"><span class="pre">v_</span></em>, <em class="sig-param"><span class="pre">Y</span></em>, <em class="sig-param"><span class="pre">M</span></em>, <em class="sig-param"><span class="pre">invdiagvic</span></em>, <em class="sig-param"><span class="pre">diagSlincJ</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_inj_current_jac" title="Link to this definition"></a></dt>
+<dd><p>Abstract method to compute voltage-related Jacobian terms.</p>
+<p>Called by <a class="reference internal" href="#mp.form_ac.port_inj_current" title="mp.form_ac.port_inj_current"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current()</span></code></a> to compute voltage-related Jacobian
+terms. See <a class="reference internal" href="form_acc.html#mp.form_acc.port_inj_current_jac" title="mp.form_acc.port_inj_current_jac"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_acc.port_inj_current_jac()</span></code></a> and
+<a class="reference internal" href="form_acp.html#mp.form_acp.port_inj_current_jac" title="mp.form_acp.port_inj_current_jac"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_acp.port_inj_current_jac()</span></code></a> for details.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_inj_current_hess_v">
+<span class="sig-name descname"><span class="pre">port_inj_current_hess_v</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">v_</span></em>, <em class="sig-param"><span class="pre">z_</span></em>, <em class="sig-param"><span class="pre">diaginvic</span></em>, <em class="sig-param"><span class="pre">Y</span></em>, <em class="sig-param"><span class="pre">M</span></em>, <em class="sig-param"><span class="pre">diagSlincJ</span></em>, <em class="sig-param"><span class="pre">dlamJ</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_inj_current_hess_v" title="Link to this definition"></a></dt>
+<dd><p>Abstract method to compute voltage-related Hessian terms.</p>
+<p>Called by <a class="reference internal" href="#mp.form_ac.port_inj_current_hess" title="mp.form_ac.port_inj_current_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current_hess()</span></code></a> to compute voltage-related Hessian
+terms. See <a class="reference internal" href="form_acc.html#mp.form_acc.port_inj_current_hess_v" title="mp.form_acc.port_inj_current_hess_v"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_acc.port_inj_current_hess_v()</span></code></a> and
+<a class="reference internal" href="form_acp.html#mp.form_acp.port_inj_current_hess_v" title="mp.form_acp.port_inj_current_hess_v"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_acp.port_inj_current_hess_v()</span></code></a> for details.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_inj_current_hess_vz">
+<span class="sig-name descname"><span class="pre">port_inj_current_hess_vz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">v_</span></em>, <em class="sig-param"><span class="pre">z_</span></em>, <em class="sig-param"><span class="pre">diaginvic</span></em>, <em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">dlamJ</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_inj_current_hess_vz" title="Link to this definition"></a></dt>
+<dd><p>Abstract method to compute voltage-related Hessian terms.</p>
+<p>Called by <a class="reference internal" href="#mp.form_ac.port_inj_current_hess" title="mp.form_ac.port_inj_current_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current_hess()</span></code></a> to compute
+voltage/non-voltage-related Hessian terms. See
+<a class="reference internal" href="form_acc.html#mp.form_acc.port_inj_current_hess_vz" title="mp.form_acc.port_inj_current_hess_vz"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_acc.port_inj_current_hess_vz()</span></code></a> and
+<a class="reference internal" href="form_acp.html#mp.form_acp.port_inj_current_hess_vz" title="mp.form_acp.port_inj_current_hess_vz"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_acp.port_inj_current_hess_vz()</span></code></a> for details.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_inj_power_jac">
+<span class="sig-name descname"><span class="pre">port_inj_power_jac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">n</span></em>, <em class="sig-param"><span class="pre">v_</span></em>, <em class="sig-param"><span class="pre">Y</span></em>, <em class="sig-param"><span class="pre">M</span></em>, <em class="sig-param"><span class="pre">diagv</span></em>, <em class="sig-param"><span class="pre">diagvi</span></em>, <em class="sig-param"><span class="pre">diagIlincJ</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_inj_power_jac" title="Link to this definition"></a></dt>
+<dd><p>Abstract method to compute voltage-related Jacobian terms.</p>
+<p>Called by <a class="reference internal" href="#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code></a> to compute voltage-related Jacobian
+terms. See <a class="reference internal" href="form_acc.html#mp.form_acc.port_inj_power_jac" title="mp.form_acc.port_inj_power_jac"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_acc.port_inj_power_jac()</span></code></a> and
+<a class="reference internal" href="form_acp.html#mp.form_acp.port_inj_power_jac" title="mp.form_acp.port_inj_power_jac"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_acp.port_inj_power_jac()</span></code></a> for details.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_inj_power_hess_v">
+<span class="sig-name descname"><span class="pre">port_inj_power_hess_v</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">v_</span></em>, <em class="sig-param"><span class="pre">z_</span></em>, <em class="sig-param"><span class="pre">diagvi</span></em>, <em class="sig-param"><span class="pre">Y</span></em>, <em class="sig-param"><span class="pre">M</span></em>, <em class="sig-param"><span class="pre">diagIlincJ</span></em>, <em class="sig-param"><span class="pre">dlamJ</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_inj_power_hess_v" title="Link to this definition"></a></dt>
+<dd><p>Abstract method to compute voltage-related Hessian terms.</p>
+<p>Called by <a class="reference internal" href="#mp.form_ac.port_inj_power_hess" title="mp.form_ac.port_inj_power_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power_hess()</span></code></a> to compute voltage-related Hessian
+terms. See <a class="reference internal" href="form_acc.html#mp.form_acc.port_inj_power_hess_v" title="mp.form_acc.port_inj_power_hess_v"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_acc.port_inj_power_hess_v()</span></code></a> and
+<a class="reference internal" href="form_acp.html#mp.form_acp.port_inj_power_hess_v" title="mp.form_acp.port_inj_power_hess_v"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_acp.port_inj_power_hess_v()</span></code></a> for details.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_inj_power_hess_vz">
+<span class="sig-name descname"><span class="pre">port_inj_power_hess_vz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">v_</span></em>, <em class="sig-param"><span class="pre">z_</span></em>, <em class="sig-param"><span class="pre">diagvi</span></em>, <em class="sig-param"><span class="pre">L</span></em>, <em class="sig-param"><span class="pre">dlamJ</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_inj_power_hess_vz" title="Link to this definition"></a></dt>
+<dd><p>Abstract method to compute voltage-related Hessian terms.</p>
+<p>Called by <a class="reference internal" href="#mp.form_ac.port_inj_power_hess" title="mp.form_ac.port_inj_power_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power_hess()</span></code></a> to compute
+voltage/non-voltage-related Hessian terms. See
+<a class="reference internal" href="form_acc.html#mp.form_acc.port_inj_power_hess_vz" title="mp.form_acc.port_inj_power_hess_vz"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_acc.port_inj_power_hess_vz()</span></code></a> and
+<a class="reference internal" href="form_acp.html#mp.form_acp.port_inj_power_hess_vz" title="mp.form_acp.port_inj_power_hess_vz"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_acp.port_inj_power_hess_vz()</span></code></a> for details.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_apparent_power_lim_fcn">
+<span class="sig-name descname"><span class="pre">port_apparent_power_lim_fcn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">hmax</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_apparent_power_lim_fcn" title="Link to this definition"></a></dt>
+<dd><p>Compute port squared apparent power injection constraints.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_apparent_power_lim_fcn</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">hmax</span><span class="p">)</span>
+<span class="p">[</span><span class="n">h</span><span class="p">,</span> <span class="n">dh</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_apparent_power_lim_fcn</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">hmax</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Compute constraint function and optionally the Jacobian for
+the limit on port squared apparent power injections based on
+complex outputs of <a class="reference internal" href="#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_</strong> (<em>complex double</em>) – state vector <span class="math notranslate nohighlight">\(\X\)</span></p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>idx</strong> (<em>integer</em>) – <em>(optional)</em> vector of indices of ports of
+interest, if empty or missing, returns results
+corresponding to all ports</p></li>
+<li><p><strong>hmax</strong> (<em>double</em>) – vector of squared apparent power limits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>h</strong> (<em>double</em>) – constraint function, <span class="math notranslate nohighlight">\(\h^\mathrm{flow}(\x)\)</span></p></li>
+<li><p><strong>dh</strong> (<em>double</em>) – constraint Jacobian, <span class="math notranslate nohighlight">\(\h_\x^\mathrm{flow}\)</span></p></li>
+</ul>
+</dd>
+</dl>
+<p>For details on the derivations of the formulas used, see <span class="raw-html"><a href="https://matpower.org/docs/TN5-MP-Element.pdf"><em>M<span style="font-size:smaller">ATPOWER</span> Technical Note 5</em></a></span>.</p>
+<p>See also <a class="reference internal" href="#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_active_power_lim_fcn">
+<span class="sig-name descname"><span class="pre">port_active_power_lim_fcn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">hmax</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_active_power_lim_fcn" title="Link to this definition"></a></dt>
+<dd><p>Compute port active power injection constraints.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_active_power_lim_fcn</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">hmax</span><span class="p">)</span>
+<span class="p">[</span><span class="n">h</span><span class="p">,</span> <span class="n">dh</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_active_power_lim_fcn</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">hmax</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Compute constraint function and optionally the Jacobian for
+the limit on port active power injections based on
+complex outputs of <a class="reference internal" href="#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_</strong> (<em>complex double</em>) – state vector <span class="math notranslate nohighlight">\(\X\)</span></p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>idx</strong> (<em>integer</em>) – <em>(optional)</em> vector of indices of ports of
+interest, if empty or missing, returns results
+corresponding to all ports</p></li>
+<li><p><strong>hmax</strong> (<em>double</em>) – vector of active power limits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>h</strong> (<em>double</em>) – constraint function, <span class="math notranslate nohighlight">\(\h^\mathrm{flow}(\x)\)</span></p></li>
+<li><p><strong>dh</strong> (<em>double</em>) – constraint Jacobian, <span class="math notranslate nohighlight">\(\h_\x^\mathrm{flow}\)</span></p></li>
+</ul>
+</dd>
+</dl>
+<p>For details on the derivations of the formulas used, see <span class="raw-html"><a href="https://matpower.org/docs/TN5-MP-Element.pdf"><em>M<span style="font-size:smaller">ATPOWER</span> Technical Note 5</em></a></span>.</p>
+<p>See also <a class="reference internal" href="#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_active_power2_lim_fcn">
+<span class="sig-name descname"><span class="pre">port_active_power2_lim_fcn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">hmax</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_active_power2_lim_fcn" title="Link to this definition"></a></dt>
+<dd><p>Compute port squared active power injection constraints.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_active_power2_lim_fcn</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">hmax</span><span class="p">)</span>
+<span class="p">[</span><span class="n">h</span><span class="p">,</span> <span class="n">dh</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_active_power2_lim_fcn</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">hmax</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Compute constraint function and optionally the Jacobian for
+the limit on port squared active power injections based on
+complex outputs of <a class="reference internal" href="#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_</strong> (<em>complex double</em>) – state vector <span class="math notranslate nohighlight">\(\X\)</span></p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>idx</strong> (<em>integer</em>) – <em>(optional)</em> vector of indices of ports of
+interest, if empty or missing, returns results
+corresponding to all ports</p></li>
+<li><p><strong>hmax</strong> (<em>double</em>) – vector of squared active power limits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>h</strong> (<em>double</em>) – constraint function, <span class="math notranslate nohighlight">\(\h^\mathrm{flow}(\x)\)</span></p></li>
+<li><p><strong>dh</strong> (<em>double</em>) – constraint Jacobian, <span class="math notranslate nohighlight">\(\h_\x^\mathrm{flow}\)</span></p></li>
+</ul>
+</dd>
+</dl>
+<p>For details on the derivations of the formulas used, see <span class="raw-html"><a href="https://matpower.org/docs/TN5-MP-Element.pdf"><em>M<span style="font-size:smaller">ATPOWER</span> Technical Note 5</em></a></span>.</p>
+<p>See also <a class="reference internal" href="#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_current_lim_fcn">
+<span class="sig-name descname"><span class="pre">port_current_lim_fcn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">hmax</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_current_lim_fcn" title="Link to this definition"></a></dt>
+<dd><p>Compute port squared current injection constraints.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_current_lim_fcn</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">hmax</span><span class="p">)</span>
+<span class="p">[</span><span class="n">h</span><span class="p">,</span> <span class="n">dh</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_current_lim_fcn</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">hmax</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Compute constraint function and optionally the Jacobian for
+the limit on port squared current injections based on
+complex outputs of <a class="reference internal" href="#mp.form_ac.port_inj_current" title="mp.form_ac.port_inj_current"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_</strong> (<em>complex double</em>) – state vector <span class="math notranslate nohighlight">\(\X\)</span></p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>idx</strong> (<em>integer</em>) – <em>(optional)</em> vector of indices of ports of
+interest, if empty or missing, returns results
+corresponding to all ports</p></li>
+<li><p><strong>hmax</strong> (<em>double</em>) – vector of squared current limits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>h</strong> (<em>double</em>) – constraint function, <span class="math notranslate nohighlight">\(\h^\mathrm{flow}(\x)\)</span></p></li>
+<li><p><strong>dh</strong> (<em>double</em>) – constraint Jacobian, <span class="math notranslate nohighlight">\(\h_\x^\mathrm{flow}\)</span></p></li>
+</ul>
+</dd>
+</dl>
+<p>For details on the derivations of the formulas used, see <span class="raw-html"><a href="https://matpower.org/docs/TN5-MP-Element.pdf"><em>M<span style="font-size:smaller">ATPOWER</span> Technical Note 5</em></a></span>.</p>
+<p>See also <a class="reference internal" href="#mp.form_ac.port_inj_current" title="mp.form_ac.port_inj_current"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_apparent_power_lim_hess">
+<span class="sig-name descname"><span class="pre">port_apparent_power_lim_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_apparent_power_lim_hess" title="Link to this definition"></a></dt>
+<dd><p>Compute port squared apparent power injection Hessian.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">d2H</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_apparent_power_lim_hess</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Compute a sparse Hessian matrix for all or a selected subset of
+ports. Rather than a full, 3-dimensional Hessian, it computes the
+Jacobian of the vector obtained by muliplying the transpose of
+the constraint Jacobian by a vector <span class="math notranslate nohighlight">\(\muv\)</span>. Results are
+based on the complex outputs of <a class="reference internal" href="#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code></a> and
+<a class="reference internal" href="#mp.form_ac.port_inj_power_hess" title="mp.form_ac.port_inj_power_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power_hess()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_</strong> (<em>complex double</em>) – state vector <span class="math notranslate nohighlight">\(\X\)</span></p></li>
+<li><p><strong>lam</strong> (<em>double</em>) – vector <span class="math notranslate nohighlight">\(\muv\)</span> of multipliers, one for each port</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>idx</strong> (<em>integer</em>) – <em>(optional)</em> vector of indices of ports of
+interest, if empty or missing, returns results
+corresponding to all ports</p></li>
+</ul>
+</dd>
+<dt class="field-even">Output<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>d2H</strong> (<em>double</em>) – sparse constraint Hessian matrix, <span class="math notranslate nohighlight">\(\h_{\x\x}^\mathrm{flow}(\muv)\)</span></p>
+</dd>
+</dl>
+<p>For details on the derivations of the formulas used, see <span class="raw-html"><a href="https://matpower.org/docs/TN5-MP-Element.pdf"><em>M<span style="font-size:smaller">ATPOWER</span> Technical Note 5</em></a></span>.</p>
+<p>See also <a class="reference internal" href="#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code></a>, <a class="reference internal" href="#mp.form_ac.port_inj_power_hess" title="mp.form_ac.port_inj_power_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power_hess()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_active_power_lim_hess">
+<span class="sig-name descname"><span class="pre">port_active_power_lim_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_active_power_lim_hess" title="Link to this definition"></a></dt>
+<dd><p>Compute port active power injection Hessian.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">d2H</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_active_power_lim_hess</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Compute a sparse Hessian matrix for all or a selected subset of
+ports. Rather than a full, 3-dimensional Hessian, it computes the
+Jacobian of the vector obtained by muliplying the transpose of
+the constraint Jacobian by a vector <span class="math notranslate nohighlight">\(\muv\)</span>. Results are
+based on the complex outputs of <a class="reference internal" href="#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code></a> and
+<a class="reference internal" href="#mp.form_ac.port_inj_power_hess" title="mp.form_ac.port_inj_power_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power_hess()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_</strong> (<em>complex double</em>) – state vector <span class="math notranslate nohighlight">\(\X\)</span></p></li>
+<li><p><strong>lam</strong> (<em>double</em>) – vector <span class="math notranslate nohighlight">\(\muv\)</span> of multipliers, one for each port</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>idx</strong> (<em>integer</em>) – <em>(optional)</em> vector of indices of ports of
+interest, if empty or missing, returns results
+corresponding to all ports</p></li>
+</ul>
+</dd>
+<dt class="field-even">Output<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>d2H</strong> (<em>double</em>) – sparse constraint Hessian matrix, <span class="math notranslate nohighlight">\(\h_{\x\x}^\mathrm{flow}(\muv)\)</span></p>
+</dd>
+</dl>
+<p>For details on the derivations of the formulas used, see <span class="raw-html"><a href="https://matpower.org/docs/TN5-MP-Element.pdf"><em>M<span style="font-size:smaller">ATPOWER</span> Technical Note 5</em></a></span>.</p>
+<p>See also <a class="reference internal" href="#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code></a>, <a class="reference internal" href="#mp.form_ac.port_inj_power_hess" title="mp.form_ac.port_inj_power_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power_hess()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_active_power2_lim_hess">
+<span class="sig-name descname"><span class="pre">port_active_power2_lim_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_active_power2_lim_hess" title="Link to this definition"></a></dt>
+<dd><p>Compute port squared active power injection Hessian.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">d2H</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_active_power2_lim_hess</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Compute a sparse Hessian matrix for all or a selected subset of
+ports. Rather than a full, 3-dimensional Hessian, it computes the
+Jacobian of the vector obtained by muliplying the transpose of
+the constraint Jacobian by a vector <span class="math notranslate nohighlight">\(\muv\)</span>. Results are
+based on the complex outputs of <a class="reference internal" href="#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code></a> and
+<a class="reference internal" href="#mp.form_ac.port_inj_power_hess" title="mp.form_ac.port_inj_power_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power_hess()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_</strong> (<em>complex double</em>) – state vector <span class="math notranslate nohighlight">\(\X\)</span></p></li>
+<li><p><strong>lam</strong> (<em>double</em>) – vector <span class="math notranslate nohighlight">\(\muv\)</span> of multipliers, one for each port</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>idx</strong> (<em>integer</em>) – <em>(optional)</em> vector of indices of ports of
+interest, if empty or missing, returns results
+corresponding to all ports</p></li>
+</ul>
+</dd>
+<dt class="field-even">Output<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>d2H</strong> (<em>double</em>) – sparse constraint Hessian matrix, <span class="math notranslate nohighlight">\(\h_{\x\x}^\mathrm{flow}(\muv)\)</span></p>
+</dd>
+</dl>
+<p>For details on the derivations of the formulas used, see <span class="raw-html"><a href="https://matpower.org/docs/TN5-MP-Element.pdf"><em>M<span style="font-size:smaller">ATPOWER</span> Technical Note 5</em></a></span>.</p>
+<p>See also <a class="reference internal" href="#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power()</span></code></a>, <a class="reference internal" href="#mp.form_ac.port_inj_power_hess" title="mp.form_ac.port_inj_power_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power_hess()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.port_current_lim_hess">
+<span class="sig-name descname"><span class="pre">port_current_lim_hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">nm</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.port_current_lim_hess" title="Link to this definition"></a></dt>
+<dd><p>Compute port squared current injection Hessian.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">d2H</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_current_lim_hess</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Compute a sparse Hessian matrix for all or a selected subset of
+ports. Rather than a full, 3-dimensional Hessian, it computes the
+Jacobian of the vector obtained by muliplying the transpose of
+the constraint Jacobian by a vector <span class="math notranslate nohighlight">\(\muv\)</span>. Results are
+based on the complex outputs of <a class="reference internal" href="#mp.form_ac.port_inj_current" title="mp.form_ac.port_inj_current"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current()</span></code></a> and
+<a class="reference internal" href="#mp.form_ac.port_inj_current_hess" title="mp.form_ac.port_inj_current_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current_hess()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_</strong> (<em>complex double</em>) – state vector <span class="math notranslate nohighlight">\(\X\)</span></p></li>
+<li><p><strong>lam</strong> (<em>double</em>) – vector <span class="math notranslate nohighlight">\(\muv\)</span> of multipliers, one for each port</p></li>
+<li><p><strong>nm</strong> (<a class="reference internal" href="net_model.html#mp.net_model" title="mp.net_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.net_model</span></code></a>) – network model object</p></li>
+<li><p><strong>idx</strong> (<em>integer</em>) – <em>(optional)</em> vector of indices of ports of
+interest, if empty or missing, returns results
+corresponding to all ports</p></li>
+</ul>
+</dd>
+<dt class="field-even">Output<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>d2H</strong> (<em>double</em>) – sparse constraint Hessian matrix, <span class="math notranslate nohighlight">\(\h_{\x\x}^\mathrm{flow}(\muv)\)</span></p>
+</dd>
+</dl>
+<p>For details on the derivations of the formulas used, see <span class="raw-html"><a href="https://matpower.org/docs/TN5-MP-Element.pdf"><em>M<span style="font-size:smaller">ATPOWER</span> Technical Note 5</em></a></span>.</p>
+<p>See also <a class="reference internal" href="#mp.form_ac.port_inj_current" title="mp.form_ac.port_inj_current"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current()</span></code></a>, <a class="reference internal" href="#mp.form_ac.port_inj_current_hess" title="mp.form_ac.port_inj_current_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current_hess()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_ac.aux_data_va_vm">
+<span class="sig-name descname"><span class="pre">aux_data_va_vm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ad</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_ac.aux_data_va_vm" title="Link to this definition"></a></dt>
+<dd><p>Abstract method to return voltage angles/magnitudes from auxiliary data.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">va</span><span class="p">,</span> <span class="n">vm</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">aux_data_va_vm</span><span class="p">(</span><span class="n">ad</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Input<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ad</strong> (<em>struct</em>) – struct of auxiliary data</p>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>va</strong> (<em>double</em>) – vector of voltage angles corresponding to
+voltage information stored in auxiliary data</p></li>
+<li><p><strong>vm</strong> (<em>double</em>) – vector of voltage magnitudes corresponding to
+voltage information stored in auxiliary data</p></li>
+</ul>
+</dd>
+</dl>
+<p>Implemented by <a class="reference internal" href="form_acc.html#mp.form_acc.aux_data_va_vm" title="mp.form_acc.aux_data_va_vm"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_acc.aux_data_va_vm()</span></code></a> and
+<a class="reference internal" href="form_acp.html#mp.form_acp.aux_data_va_vm" title="mp.form_acp.aux_data_va_vm"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_acp.aux_data_va_vm()</span></code></a>.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="form.html" class="btn btn-neutral float-left" title="mp.form" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="form_acc.html" class="btn btn-neutral float-right" title="mp.form_acc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

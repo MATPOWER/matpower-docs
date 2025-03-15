@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2. Notation &mdash; MATPOWER Documentation 8.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=bb3927b2"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>window.MathJax = {"loader": {"load": ["[tex]/upgreek"]}, "tex": {"packages": {"[+]": ["upgreek"]}, "macros": {"dg": "\\sp\\dagger", "trans": ["{#1}^{\\mathsf{T}}", 1], "conj": ["{#1}^{\\ast}", 1], "hc": ["{#1}^{\\dg}", 1], "hconj": ["{#1}^{+}", 1], "diag": ["\\left[^\\smallsetminus{#1}_\\smallsetminus\\right]", 1], "diagg": ["\\left[\\smash{#1}\\right]", 1], "cdiag": ["\\conj{\\diag{#1}}", 1], "der": ["\\frac{\\partial{#1}}{\\partial{#2}}", 2], "dersx": ["\\frac{\\partial^2{#1}}{\\partial{#2}^2}", 2], "dersxy": ["\\frac{\\partial^2{#1}}{\\partial{#2}\\partial{#3}}", 3], "cscal": ["\\mathrm{#1}", 1], "rvec": ["{\\boldsymbol{#1}}", 1], "cvec": ["\\mathbf{#1}", 1], "rmat": ["{\\boldsymbol{#1}}", 1], "cmat": ["\\mathbf{#1}", 1], "rvecG": ["{\\boldsymbol{#1}}", 1], "cvecG": ["\\boldsymbol{#1}", 1], "rmatG": ["\\boldsymbol{\\mathit{#1}}", 1], "cmatG": ["\\mathbf{#1}", 1], "param": ["\\underline{#1}", 1], "ov": ["{\\overline{#1}}", 1], "zeros": ["\\rvec{0}", 0], "ones": ["\\rvec{1}_{#1}", 1], "onest": ["\\trans{\\rvec{1}}_{#1}", 1], "Id": ["\\diag{\\ones{#1}}", 1], "R": "\\mathbb{R}}         % requires \\usepackage{amsfonts|bbold", "C": "\\mathbb{C}}         % requires \\usepackage{amsfonts", "av": "\\cvec{a}", "bv": "\\cvec{b}", "cv": "\\cvec{c}", "f": "\\cscal{f}", "F": "\\cvec{f}", "g": "\\rvec{g}", "G": "\\cvec{g}", "h": "\\rvec{h}", "HH": "\\cvec{h}", "x": "\\rvec{x}", "y": "\\rvec{y}", "z": "\\rvec{z}", "X": "\\cvec{x}", "Z": "\\cvec{z}", "A": "\\cmat{A}", "B": "\\cmat{B}", "alphav": "\\rvecG{\\alpha}", "lam": "\\rvecG{\\lambda}", "lamh": "\\hat{\\lam}", "muv": "\\rvecG{\\mu}", "muhv": "\\hat{\\muv}", "vv": "\\rvec{v}", "vvi": ["\\cscal{v}_{#1}", 1], "V": "\\cvec{v}", "Vh": "\\hat{\\V}", "Vc": "\\conj{\\V}", "Vhc": "\\conj{\\Vh}", "dV": "\\diag{\\V}", "dVh": "\\diag{\\Vh}", "dVc": "\\diag{\\Vc}", "dVhc": "\\diag{\\Vhc}", "inV": "\\cvec{\\Lambda}", "inVh": "\\hat{\\inV}", "inVc": "\\conj{\\inV}", "inVhc": "\\conj{\\inVh}", "dinV": "\\diagg{\\inV}", "dinVh": "\\diagg{\\inVh}", "dinVc": "\\diagg{\\inVc}", "dinVhc": "\\diagg{\\inVhc}", "va": ["\\theta", 0], "vai": ["\\va_{#1}", 1], "Va": ["\\rvec{\\va}", 0], "Vah": ["\\hat{\\Va}", 0], "vm": ["\\nu", 0], "vmi": ["\\nu_{#1}", 1], "Vm": ["\\rvecG{\\nu}", 0], "dVm": "\\diag{\\Vm}", "dVmi": "\\dVm^{-1}", "Vmh": "\\hat{\\Vm}", "dVmh": "\\diag{\\Vmh}", "dVmhi": "\\dVmh^{-1}", "vr": "u", "vri": ["u_{#1}", 1], "vi": "w", "vii": ["w_{#1}", 1], "Vr": "\\rvec{u}", "Vi": "\\rvec{w}", "dVr": "\\diag{\\Vr}", "dVi": "\\diag{\\Vi}", "Vrh": "\\hat{\\Vr}", "Vih": "\\hat{\\Vi}", "dVrh": "\\diag{\\Vrh}", "dVih": "\\diag{\\Vih}", "E": "\\cvec{e}", "Eh": "\\hat{\\E}", "Ec": "\\conj{\\E}", "Ehc": "\\conj{\\Eh}", "dE": "\\diag{\\E}", "dEh": "\\diag{\\Eh}", "dEc": "\\diag{\\Ec}", "dEhc": "\\diag{\\Ehc}", "zr": "{z_r}", "zi": "{z_i}", "Zr": "{\\rvec{z}_r}", "Zi": "{\\rvec{z}_i}", "dlam": "\\diagg{\\lam}", "dlamh": "\\diagg{\\lamh}", "dlamva": "\\diagg{\\lam_\\va}", "dlamvm": "\\diagg{\\lam_\\vm}", "dlamvr": "\\diagg{\\lam_\\vr}", "dlamvi": "\\diagg{\\lam_\\vi}", "dlamzr": "\\diagg{\\lam_\\zr}", "dlamzi": "\\diagg{\\lam_\\zi}", "dlamhva": "\\diagg{\\lamh_\\va}", "dlamhvm": "\\diagg{\\lamh_\\vm}", "dlamhvr": "\\diagg{\\lamh_\\vr}", "dlamhvi": "\\diagg{\\lamh_\\vi}", "dlamhzr": "\\diagg{\\lamh_\\zr}", "dlamhzi": "\\diagg{\\lamh_\\zi}", "dmu": "\\diag{\\muv}", "dmuh": "\\diag{\\muhv}", "kk": "\\rvec{k}", "J": "\\param{\\rmat{J}}", "Jt": "\\trans{\\J}", "Jk": ["\\J_{\\kk_#1}", 1], "Ah": "\\hat{\\A}", "Fh": "\\hat{\\F}", "Gh": "\\hat{\\G}", "gh": "\\hat{\\g}", "fmax": "\\param{\\rvec{f}}_\\mathrm{max}", "gP": "\\g^P", "gPk": ["\\g^{P,#1}", 1], "fhmax": "\\hat{\\param{\\rvec{f}}}_\\mathrm{max}", "ghP": "\\gh^P", "ghPk": ["\\gh^{P,#1}", 1], "GS": "\\G^S", "GI": "\\G^I", "GSk": ["\\G^{S,#1}", 1], "GIk": ["\\G^{I,#1}", 1], "GSsys": "\\GSk{\\mathrm{sys}}", "GIsys": "\\GIk{\\mathrm{sys}}", "gPsys": "\\gPk{\\mathrm{sys}}", "GhS": "\\Gh^S", "GhI": "\\Gh^I", "GhSk": ["\\Gh^{S,#1}", 1], "GhIk": ["\\Gh^{I,#1}", 1], "GhSsys": "\\GhSk{\\mathrm{sys}}", "GhIsys": "\\GhIk{\\mathrm{sys}}", "ghPsys": "\\ghPk{\\mathrm{sys}}", "Ilin": "\\cvec{i}^{lin}", "Ilink": "\\cvec{i}^{lin, k}", "Ilinc": "\\conj{\\Ilin}", "dIlin": "\\diag{\\Ilin}", "dIlinc": "\\diag{\\Ilinc}", "Ilinh": "\\hat{{\\cvec{i}}}^{lin}", "Ilinhk": "\\hat{\\cvec{i}}^{lin, k}", "Ilinhc": "\\conj{\\Ilinh}", "dIlinh": "\\diag{\\Ilinh}", "dIlinhc": "\\diag{\\Ilinhc}", "Slin": "\\cvec{s}^{lin}", "Slink": "\\cvec{s}^{lin, k}", "Slinc": "\\conj{\\Slin}", "dSlin": "\\diag{\\Slin}", "dSlinc": "\\diag{\\Slinc}", "Slinh": "\\hat{\\cvec{s}}^{lin}", "Slinhk": "\\hat{\\cvec{s}}^{lin, k}", "Slinhc": "\\conj{\\Slinh}", "dSlinh": "\\diag{\\Slinh}", "dSlinhc": "\\diag{\\Slinhc}", "Inln": "\\cvec{i}^{nln}", "Inlnk": "\\cvec{i}^{nln, k}", "Snln": "\\cvec{s}^{nln}", "Snlnk": "\\cvec{s}^{nln, k}", "Inlnh": "\\hat{\\cvec{i}}^{nln}", "Inlnhk": "\\hat{\\cvec{i}}^{nln, k}", "Snlnh": "\\hat{\\cvec{s}}^{nln}", "Snlnhk": "\\hat{\\cvec{s}}^{nln, k}", "Aa": "\\param{\\rmat{A}}", "BB": "\\param{\\rmat{B}}", "CC": "\\param{\\rmat{C}}", "DD": "\\param{\\rmat{D}}", "YY": "\\param{\\cmat{Y}}", "iv": "\\param{\\cvec{i}}", "pv": "\\param{\\rvec{p}}", "sv": "\\param{\\cvec{s}}", "KK": "\\param{\\rmat{K}}", "LL": "\\param{\\cmat{L}}", "MM": "\\param{\\cmat{M}}", "NN": "\\param{\\cmat{N}}", "BBh": "\\hat{\\BB}", "YYh": "\\hat{\\YY}", "ivh": "\\hat{\\iv}", "pvh": "\\hat{\\pv}", "svh": "\\hat{\\sv}", "CCh": "\\hat{\\CC}", "KKh": "\\hat{\\KK}", "LLh": "\\hat{\\LL}", "MMh": "\\hat{\\MM}", "NNh": "\\hat{\\NN}", "AT": "\\trans{\\Aa}", "CT": "\\trans{\\CC}", "DT": "\\trans{\\DD}", "Ap": "\\Aa'", "Cp": "\\CC\\:\\!'", "Dp": "\\DD'", "ApT": "\\trans{\\Ap}", "CpT": "\\trans{\\Cp}", "DpT": "\\trans{\\Dp}", "ChT": "\\trans{\\CCh}", "Lc": "\\conj{\\LL}", "LcT": "\\trans{\\Lc}", "Lhc": "\\conj{\\LLh}", "LhcT": "\\trans{\\Lhc}", "MT": "\\trans{\\MM}", "Mc": "\\conj{\\MM}", "McT": "\\trans{\\Mc}", "dMTlam": "\\diag{\\MT \\lam}", "MhT": "\\trans{\\MMh}", "Mhc": "\\conj{\\MMh}", "MhcT": "\\trans{\\Mhc}", "dMhTlam": "\\diag{\\MhT \\lamh}", "Nc": "\\conj{\\NN}", "NcT": "\\trans{\\Nc}", "Nhc": "\\conj{\\NNh}", "NhcT": "\\trans{\\Nhc}", "YT": "\\trans{\\YY}", "Yc": "\\conj{\\YY}", "YcT": "\\trans{\\Yc}", "dYTlam": "\\diag{\\YT \\lam}", "YhT": "\\trans{\\YYh}", "Yhc": "\\conj{\\YYh}", "YhcT": "\\trans{\\Yhc}", "dYhTlam": "\\diag{\\YhT \\lamh}", "I": "\\cvec{i}^S", "s": "\\cvec{s}^I", "Ih": "\\hat{\\cvec{i}}^S", "Sh": "\\hat{\\cvec{s}}^I", "AtX": "\\AT \\X", "CtV": "\\CT \\V", "dCtV": "\\diag{\\CtV}", "DtZ": "\\DT \\Z", "ApTx": "\\ApT \\x", "CpTv": "\\CpT \\vv", "DpTz": "\\DpT \\z"}}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Architecture Overview" href="architecture.html" />
+    <link rel="prev" title="1. Introduction" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">matpower.org</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/about/get-started/">Get Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">3. Architecture Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="task.html">4. Task Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-model.html">5. Data Model Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-model-converter.html">6. Data Model Converter Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="net-model.html">7. Network Model Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math-model.html">8. Mathematical Model Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customizing.html">9. Customizing <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="acknowledgments.html">10. Acknowledgments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references.html">11. References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ref-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mips/index.html">MIPS User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../most/index.html">MOST User’s Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/doc/manuals/">All Legacy PDF Manuals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/add-constraint.html">How to Add an OPF Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tech Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tech-notes.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Technical Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2. </span>Notation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/dev-manual/notation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="1. Introduction" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="architecture.html" class="btn btn-neutral float-right" title="3. Architecture Overview" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="notation">
+<span id="sec-notation"></span><h1><span class="section-number">2. </span>Notation<a class="headerlink" href="#notation" title="Link to this heading"></a></h1>
+<p>This section introduces and summarizes the mathematical notation used throughout this manual.</p>
+<p>This notation is consistent with what was used in the MP-Element technical note, <span class="raw-html"><a href="https://matpower.org/docs/TN5-MP-Element.pdf"><em>M<span style="font-size:smaller">ATPOWER</span> Technical Note 5</em></a></span> <a class="reference internal" href="references.html#tn5" id="id1"><span>[TN5]</span></a> where you can find more detail.</p>
+<p><strong>Styles</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 17.0%" />
+<col style="width: 83.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(x, \theta\)</span></p></td>
+<td><p>real scalars</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\cscal{x}, \cscal{\uptheta}\)</span></p></td>
+<td><p>complex scalars</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\rvec{x}, \rvec{\theta}\)</span></p></td>
+<td><p>real vectors</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\cvec{x}, \cvecG{\uptheta}\)</span></p></td>
+<td><p>complex vectors</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\rmat{X}, \rmatG{\Theta}\)</span></p></td>
+<td><p>real matrices</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\cmat{X}, \cmatG{\Theta}\)</span></p></td>
+<td><p>complex matrices</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(x, \cscal{x}, \rvec{x}, \cvec{x}, \rmat{X}, \cmat{X}\)</span></p></td>
+<td><p>variables, functions</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\param{x}, \param{\cscal{x}}, \param{\rvec{x}}, \param{\cvec{x}}, \param{\rmat{X}}, \param{\cmat{X}}\)</span></p></td>
+<td><p>constants, parameters <a class="footnote-reference brackets" href="#id8" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\hat{\rvec{x}}, \hat{\cvec{x}}, \hat{\rmat{X}}, \hat{\cmat{X}}\)</span></p></td>
+<td><p>selected rows of interest of <span class="math notranslate nohighlight">\(\rvec{x}, \cvec{x}, \rmat{X}, \cmat{X}\)</span>, respectively <a class="footnote-reference brackets" href="#id9" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Operators</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 17.0%" />
+<col style="width: 83.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\diag{\cvec{a}}\)</span></p></td>
+<td><p>diagonal matrix with vector <span class="math notranslate nohighlight">\(\cvec{a}\)</span> on the diagonal</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\trans{\cmat{A}}\)</span></p></td>
+<td><p>(non-conjugate) transpose of matrix <span class="math notranslate nohighlight">\(\cmat{A}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\conj{\cscal{a}}\)</span>, <span class="math notranslate nohighlight">\(\conj{\cvec{a}}\)</span>, <span class="math notranslate nohighlight">\(\conj{\cmat{A}}\)</span></p></td>
+<td><p>complex conjugate of <span class="math notranslate nohighlight">\(\cscal{a}\)</span>, <span class="math notranslate nohighlight">\(\cvec{a}\)</span>, and <span class="math notranslate nohighlight">\(\cmat{A}\)</span>, respectively</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\Re\{{\cvec{a}\}}\)</span>, <span class="math notranslate nohighlight">\(\Im\{{\cvec{a}\}}\)</span></p></td>
+<td><p>real and imaginary parts of <span class="math notranslate nohighlight">\(\cvec{a}\)</span>, respectively</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\cvec{a}^{n}\)</span></p></td>
+<td><p>element-wise exponent <a class="footnote-reference brackets" href="#id10" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> for vector <span class="math notranslate nohighlight">\(\cvec{a}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\cmat{A}^{n}\)</span></p></td>
+<td><p>matrix exponent <a class="footnote-reference brackets" href="#id10" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> for matrix <span class="math notranslate nohighlight">\(\cmat{A}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(a^{\rvec{b}}\)</span>, <span class="math notranslate nohighlight">\(a^\rmat{B}\)</span></p></td>
+<td><p>element-wise exponent <a class="footnote-reference brackets" href="#id10" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> for vector <span class="math notranslate nohighlight">\(\rvec{b}\)</span> and matrix <span class="math notranslate nohighlight">\(\rmat{B}\)</span>, respectively</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\f(\x), \F(\x)\)</span></p></td>
+<td><p>scalar, vector functions of <span class="math notranslate nohighlight">\(\x\)</span>, respectively</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\f_\x, \F_\x\)</span></p></td>
+<td><p>transpose of gradient of <span class="math notranslate nohighlight">\(\f\)</span>, Jacobian of <span class="math notranslate nohighlight">\(\F\)</span>, respectively, w.r.t. <span class="math notranslate nohighlight">\(\x\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\f_{\x\x}, \F_{\x\x}(\lam)\)</span></p></td>
+<td><p>Hessian of <span class="math notranslate nohighlight">\(\f\)</span>, Jacobian of <span class="math notranslate nohighlight">\(\trans{\F_\x} \lam\)</span>, respectively, w.r.t. <span class="math notranslate nohighlight">\(\x\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Constants and Dimensions</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 17.0%" />
+<col style="width: 83.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(e, j\)</span></p></td>
+<td><p>constants, <span class="math notranslate nohighlight">\(e\)</span> is base of natural log (<span class="math notranslate nohighlight">\(\approx 2.71828\)</span>), <span class="math notranslate nohighlight">\(j\)</span> is <span class="math notranslate nohighlight">\(\sqrt{-1}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(n_k, n_n, n_p, n_p^k\)</span></p></td>
+<td><p>number of elements, nodes, ports, ports for element <span class="math notranslate nohighlight">\(k\)</span>, respectively</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(n_\X, n_\V, n_\Z\)</span></p></td>
+<td><p>dimension of vector <span class="math notranslate nohighlight">\(\X\)</span>, <span class="math notranslate nohighlight">\(\V\)</span>, <span class="math notranslate nohighlight">\(\Z\)</span>, respectively.</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\ones{n}, \Id{n}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(n \times 1\)</span> vector of all ones, <span class="math notranslate nohighlight">\(n \times n\)</span> identity matrix</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\zeros\)</span></p></td>
+<td><p>appropriately-sized vector or matrix of all zeros</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variables</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 17.0%" />
+<col style="width: 83.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\vvi{i}\)</span></p></td>
+<td><p>complex voltage at node/port <span class="math notranslate nohighlight">\(i\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\vri{i}, \vii{i}\)</span></p></td>
+<td><p>real and imaginary parts of voltage at node/port <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(\vvi{i} = \vri{i} + j \vii{i}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\vmi{i}, \vai{i}\)</span></p></td>
+<td><p>voltage magnitude and angle at node/port <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(\vvi{i} = \vmi{i} e^{j \vai{i}}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\V\)</span></p></td>
+<td><p>column vector of complex voltages <span class="math notranslate nohighlight">\(\vvi{i}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\E\)</span></p></td>
+<td><p>column vector <span class="math notranslate nohighlight">\(\V\)</span> with elements scaled to unit magnitude, <span class="math notranslate nohighlight">\(\E = e^{j \Va}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\Vr, \Vi\)</span></p></td>
+<td><p>column vectors of real (<span class="math notranslate nohighlight">\(\vri{i}\)</span>) and imaginary (<span class="math notranslate nohighlight">\(\vii{i}\)</span>) parts of voltage, respectively, <span class="math notranslate nohighlight">\(\V = \Vr + j \Vi\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Vm, \Va\)</span></p></td>
+<td><p>column vectors of voltage magnitudes <span class="math notranslate nohighlight">\(\vmi{i}\)</span> and angles <span class="math notranslate nohighlight">\(\vai{i}\)</span>, respectively, <span class="math notranslate nohighlight">\(\V = \dVm \E = \dVm e^{j \Va}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\inV\)</span></p></td>
+<td><p>column vector of inverse of complex voltages <span class="math notranslate nohighlight">\(\frac{1}{\vvi{i}}\)</span>, <span class="math notranslate nohighlight">\(\inV = \V^{-1}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\z\)</span></p></td>
+<td><p>column vector of real non-voltage state variables <span class="math notranslate nohighlight">\(z_i\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\Z\)</span></p></td>
+<td><p>column vector of complex non-voltage state variables <span class="math notranslate nohighlight">\(\cscal{z}_i\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Zr, \Zi\)</span></p></td>
+<td><p>column vectors of real and imaginary parts of <span class="math notranslate nohighlight">\(\Z = \Zr + j \Zi\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Parameters</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 17.0%" />
+<col style="width: 83.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\J_\kk\)</span></p></td>
+<td><p>matrix formed by taking selected rows, indexed by vector <span class="math notranslate nohighlight">\(\kk\)</span>, from an identity matrix <a class="footnote-reference brackets" href="#id11" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\YY\)</span></p></td>
+<td><p>AC model admittance matrix</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\LL\)</span></p></td>
+<td><p>linear coefficient (of <span class="math notranslate nohighlight">\(\Z\)</span>) for affine complex current injections</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\iv\)</span></p></td>
+<td><p>vector of constant complex current injections</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\MM\)</span></p></td>
+<td><p>linear coefficient (of <span class="math notranslate nohighlight">\(\V\)</span>) for affine complex power injections</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\NN\)</span></p></td>
+<td><p>linear coefficient (of <span class="math notranslate nohighlight">\(\Z\)</span>) for affine complex power injections</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sv\)</span></p></td>
+<td><p>vector of constant complex power injections</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\BB\)</span></p></td>
+<td><p>DC model susceptance matrix</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\KK\)</span></p></td>
+<td><p>linear coefficient (of <span class="math notranslate nohighlight">\(\z\)</span>) for affine active power injections</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\pv\)</span></p></td>
+<td><p>vector of constant active power injections</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\CC\)</span></p></td>
+<td><p>element-node incidence matrix for a given port</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\DD\)</span></p></td>
+<td><p>element-variable incidence matrix for a given state variable</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Aa\)</span></p></td>
+<td><p>combined incidence matrix <span class="math notranslate nohighlight">\(\Aa = \left[\begin{array}{ccc}\CC &amp; \zeros \\ \zeros &amp; \DD \end{array}\right]\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id8" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>Constants and parameters are underlined, with the following exceptions: constants <span class="math notranslate nohighlight">\(e\)</span> and <span class="math notranslate nohighlight">\(j\)</span>, <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(q\)</span>, <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> when used as dimensions, and <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(j\)</span>, and <span class="math notranslate nohighlight">\(k\)</span> as indices.</p>
+</aside>
+<aside class="footnote brackets" id="id9" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<p>Obtained by multiplying by matrix <span class="math notranslate nohighlight">\(\J\)</span> or <span class="math notranslate nohighlight">\(\J_\kk\)</span>.</p>
+</aside>
+<aside class="footnote brackets" id="id10" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
+<p>Superscripts may also be used as indices, indicated by context.</p>
+</aside>
+<aside class="footnote brackets" id="id11" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">4</a><span class="fn-bracket">]</span></span>
+<p>Often used simply as <span class="math notranslate nohighlight">\(\J\)</span> without the subscript.</p>
+</aside>
+</aside>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="1. Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="architecture.html" class="btn btn-neutral float-right" title="3. Architecture Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

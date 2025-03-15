@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mp.form_acp &mdash; MATPOWER Documentation 8.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=bb3927b2"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="mp.form_dc" href="form_dc.html" />
+    <link rel="prev" title="mp.form_acc" href="form_acc.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">matpower.org</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/about/get-started/">Get Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions/index.html">2. Functions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">3. Classes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../index.html#task-classes">3.1. Task Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#data-model-classes">3.2. Data Model Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#data-model-converter-classes">3.3. Data Model Converter Classes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#network-model-classes">3.4. Network Model Classes</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html#id3">Containers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#id4">Elements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#mathematical-model-classes">3.5. Mathematical Model Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#miscellaneous-classes">3.6. Miscellaneous Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#matpower-extension-classes">3.7. <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Extension Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tests/index.html">4. Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../legacy/index.html">5. Legacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../previous.html">6. Previous Versions</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mpom/index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/doc/manuals/">All Legacy PDF Manuals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/add-constraint.html">How to Add an OPF Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tech Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tech-notes.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Technical Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+          <li class="breadcrumb-item"><a href="../index.html"><span class="section-number">3. </span>Classes</a></li>
+      <li class="breadcrumb-item active">mp.form_acp</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/ref-manual/classes/mp/form_acp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="form_acc.html" class="btn btn-neutral float-left" title="mp.form_acc" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="form_dc.html" class="btn btn-neutral float-right" title="mp.form_dc" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p><span class="raw-html"><div style="float: right"><a href="https://github.com/MATPOWER/matpower/blob/master/lib/+mp/form_acp.m" target=_blank><svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg></a></div></span></p>
+<section id="mp-form-acp">
+<h1>mp.form_acp<a class="headerlink" href="#mp-form-acp" title="Link to this heading"></a></h1>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="mp.form_acp">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">form_acp</span></span><a class="headerlink" href="#mp.form_acp" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="form_ac.html#mp.form_ac" title="mp.form_ac"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_ac</span></code></a></p>
+<p><a class="reference internal" href="#mp.form_acp" title="mp.form_acp"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_acp</span></code></a> - Base class for <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> AC polar <strong>formulations</strong>.</p>
+<p>Used as a mix-in class for all <strong>network model element</strong> classes
+with an AC network model formulation with a <strong>polar</strong> repesentation for
+voltages. That is, each concrete network model element class with an AC
+polar formulation must inherit, at least indirectly, from
+both <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a> and <a class="reference internal" href="#mp.form_acp" title="mp.form_acp"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_acp</span></code></a>.</p>
+<p>Provides implementation of evaluation of voltage-related Jacobian and
+Hessian terms needed by some <a class="reference internal" href="form_ac.html#mp.form_ac" title="mp.form_ac"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_ac</span></code></a> methods.</p>
+<dl class="simple">
+<dt>mp.form_dc Methods:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#mp.form_acp.form_name" title="mp.form_acp.form_name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">form_name()</span></code></a> - get char array w/name of formulation (<code class="docutils literal notranslate"><span class="pre">'AC-polar'</span></code>)</p></li>
+<li><p><a class="reference internal" href="#mp.form_acp.form_tag" title="mp.form_acp.form_tag"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">form_tag()</span></code></a> - get char array w/short label of formulation (<code class="docutils literal notranslate"><span class="pre">'acp'</span></code>)</p></li>
+<li><p><a class="reference internal" href="#mp.form_acp.model_vvars" title="mp.form_acp.model_vvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">model_vvars()</span></code></a> - get cell array of names of voltage state variables (<code class="docutils literal notranslate"><span class="pre">{'va',</span> <span class="pre">'vm'}</span></code>)</p></li>
+<li><p><a class="reference internal" href="#mp.form_acp.port_inj_current_jac" title="mp.form_acp.port_inj_current_jac"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current_jac()</span></code></a> - compute voltage-related terms of current injection Jacobian</p></li>
+<li><p><a class="reference internal" href="#mp.form_acp.port_inj_current_hess_v" title="mp.form_acp.port_inj_current_hess_v"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current_hess_v()</span></code></a> - compute voltage-related terms of current injection Hessian</p></li>
+<li><p><a class="reference internal" href="#mp.form_acp.port_inj_current_hess_vz" title="mp.form_acp.port_inj_current_hess_vz"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_current_hess_vz()</span></code></a> - compute voltage/non-voltage-related terms of current injection Hessian</p></li>
+<li><p><a class="reference internal" href="#mp.form_acp.port_inj_power_jac" title="mp.form_acp.port_inj_power_jac"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power_jac()</span></code></a> - compute voltage-related terms of power injection Jacobian</p></li>
+<li><p><a class="reference internal" href="#mp.form_acp.port_inj_power_hess_v" title="mp.form_acp.port_inj_power_hess_v"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power_hess_v()</span></code></a> - compute voltage-related terms of power injection Hessian</p></li>
+<li><p><a class="reference internal" href="#mp.form_acp.port_inj_power_hess_vz" title="mp.form_acp.port_inj_power_hess_vz"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">port_inj_power_hess_vz()</span></code></a> - compute voltage/non-voltage-related terms of power injection Hessian</p></li>
+<li><p><a class="reference internal" href="#mp.form_acp.aux_data_va_vm" title="mp.form_acp.aux_data_va_vm"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">aux_data_va_vm()</span></code></a> - return voltage angles/magnitudes from auxiliary data</p></li>
+</ul>
+</dd>
+</dl>
+<p>For more details, see the <a class="reference internal" href="../../../dev-manual/net-model.html#sec-nm-formulations-ac"><span class="std std-ref">AC Formulations</span></a> section in the
+<span class="raw-html"><a class="reference external" href="https://matpower.org/doc/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> and the derivations in <span class="raw-html"><a href="https://matpower.org/docs/TN5-MP-Element.pdf"><em>M<span style="font-size:smaller">ATPOWER</span> Technical Note 5</em></a></span>.</p>
+<p>See also <a class="reference internal" href="form.html#mp.form" title="mp.form"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form</span></code></a>, <a class="reference internal" href="form_ac.html#mp.form_ac" title="mp.form_ac"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_ac</span></code></a>, <a class="reference internal" href="form_acc.html#mp.form_acc" title="mp.form_acc"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.form_acc</span></code></a>, <a class="reference internal" href="nm_element.html#mp.nm_element" title="mp.nm_element"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.nm_element</span></code></a>.</p>
+<div class="members docutils container">
+<dl>
+<dt>Method Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_acp.form_name">
+<span class="sig-name descname"><span class="pre">form_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_acp.form_name" title="Link to this definition"></a></dt>
+<dd><p>Get user-readable name of formulation, i.e. <code class="docutils literal notranslate"><span class="pre">'AC-polar'</span></code>.</p>
+<p>See <a class="reference internal" href="form.html#mp.form.form_name" title="mp.form.form_name"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form.form_name()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_acp.form_tag">
+<span class="sig-name descname"><span class="pre">form_tag</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_acp.form_tag" title="Link to this definition"></a></dt>
+<dd><p>Get short label of formulation, i.e. <code class="docutils literal notranslate"><span class="pre">'acp'</span></code>.</p>
+<p>See <a class="reference internal" href="form.html#mp.form.form_tag" title="mp.form.form_tag"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form.form_tag()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_acp.model_vvars">
+<span class="sig-name descname"><span class="pre">model_vvars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_acp.model_vvars" title="Link to this definition"></a></dt>
+<dd><p>Get cell array of names of voltage state variables, i.e. <code class="docutils literal notranslate"><span class="pre">{'va',</span> <span class="pre">'vm'}</span></code>.</p>
+<p>See <a class="reference internal" href="form.html#mp.form.model_vvars" title="mp.form.model_vvars"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form.model_vvars()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_acp.port_inj_current_jac">
+<span class="sig-name descname"><span class="pre">port_inj_current_jac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">n</span></em>, <em class="sig-param"><span class="pre">v_</span></em>, <em class="sig-param"><span class="pre">Y</span></em>, <em class="sig-param"><span class="pre">M</span></em>, <em class="sig-param"><span class="pre">invdiagvic</span></em>, <em class="sig-param"><span class="pre">diagSlincJ</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_acp.port_inj_current_jac" title="Link to this definition"></a></dt>
+<dd><p>Compute voltage-related terms of current injection Jacobian.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Iva</span><span class="p">,</span> <span class="n">Ivm</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_current_jac</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">v_</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">invdiagvic</span><span class="p">,</span> <span class="n">diagSlincJ</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Called by <a class="reference internal" href="form_ac.html#mp.form_ac.port_inj_current" title="mp.form_ac.port_inj_current"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_current()</span></code></a> to compute
+voltage-related Jacobian terms.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_acp.port_inj_current_hess_v">
+<span class="sig-name descname"><span class="pre">port_inj_current_hess_v</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">v_</span></em>, <em class="sig-param"><span class="pre">z_</span></em>, <em class="sig-param"><span class="pre">diaginvic</span></em>, <em class="sig-param"><span class="pre">Y</span></em>, <em class="sig-param"><span class="pre">M</span></em>, <em class="sig-param"><span class="pre">diagSlincJ</span></em>, <em class="sig-param"><span class="pre">dlamJ</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_acp.port_inj_current_hess_v" title="Link to this definition"></a></dt>
+<dd><p>Compute voltage-related terms of current injection Hessian.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Ivava</span><span class="p">,</span> <span class="n">Ivavm</span><span class="p">,</span> <span class="n">Ivmvm</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_current_hess_v</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span>
+<span class="p">[</span><span class="n">Ivava</span><span class="p">,</span> <span class="n">Ivavm</span><span class="p">,</span> <span class="n">Ivmvm</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_current_hess_v</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">sysx</span><span class="p">)</span>
+<span class="p">[</span><span class="n">Ivava</span><span class="p">,</span> <span class="n">Ivavm</span><span class="p">,</span> <span class="n">Ivmvm</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_current_hess_v</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">sysx</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+<span class="p">[...]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_current_hess_vz</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">v_</span><span class="p">,</span> <span class="n">z_</span><span class="p">,</span> <span class="n">diaginvic</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">diagSlincJ</span><span class="p">,</span> <span class="n">dlamJ</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Called by <a class="reference internal" href="form_ac.html#mp.form_ac.port_inj_current_hess" title="mp.form_ac.port_inj_current_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_current_hess()</span></code></a> to compute
+voltage-related Hessian terms.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_acp.port_inj_current_hess_vz">
+<span class="sig-name descname"><span class="pre">port_inj_current_hess_vz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">v_</span></em>, <em class="sig-param"><span class="pre">z_</span></em>, <em class="sig-param"><span class="pre">diaginvic</span></em>, <em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">dlamJ</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_acp.port_inj_current_hess_vz" title="Link to this definition"></a></dt>
+<dd><p>Compute voltage/non-voltage-related terms of current injection Hessian.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Ivazr</span><span class="p">,</span> <span class="n">Ivazi</span><span class="p">,</span> <span class="n">Ivmzr</span><span class="p">,</span> <span class="n">Ivmzi</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_current_hess_vz</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span>
+<span class="p">[...]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_current_hess_vz</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">sysx</span><span class="p">)</span>
+<span class="p">[...]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_current_hess_vz</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">sysx</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+<span class="p">[...]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_current_hess_vz</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">v_</span><span class="p">,</span> <span class="n">z_</span><span class="p">,</span> <span class="n">diaginvic</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">dlamJ</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Called by <a class="reference internal" href="form_ac.html#mp.form_ac.port_inj_current_hess" title="mp.form_ac.port_inj_current_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_current_hess()</span></code></a> to compute
+voltage/non-voltage-related Hessian terms.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_acp.port_inj_power_jac">
+<span class="sig-name descname"><span class="pre">port_inj_power_jac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">n</span></em>, <em class="sig-param"><span class="pre">v_</span></em>, <em class="sig-param"><span class="pre">Y</span></em>, <em class="sig-param"><span class="pre">M</span></em>, <em class="sig-param"><span class="pre">diagv</span></em>, <em class="sig-param"><span class="pre">diagvi</span></em>, <em class="sig-param"><span class="pre">diagIlincJ</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_acp.port_inj_power_jac" title="Link to this definition"></a></dt>
+<dd><p>Compute voltage-related terms of power injection Jacobian.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Sva</span><span class="p">,</span> <span class="n">Svm</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_power_jac</span><span class="p">(...)</span>
+</pre></div>
+</div>
+<p>Called by <a class="reference internal" href="form_ac.html#mp.form_ac.port_inj_power" title="mp.form_ac.port_inj_power"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_power()</span></code></a> to compute
+voltage-related Jacobian terms.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_acp.port_inj_power_hess_v">
+<span class="sig-name descname"><span class="pre">port_inj_power_hess_v</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">v_</span></em>, <em class="sig-param"><span class="pre">z_</span></em>, <em class="sig-param"><span class="pre">diagvi</span></em>, <em class="sig-param"><span class="pre">Y</span></em>, <em class="sig-param"><span class="pre">M</span></em>, <em class="sig-param"><span class="pre">diagIlincJ</span></em>, <em class="sig-param"><span class="pre">dlamJ</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_acp.port_inj_power_hess_v" title="Link to this definition"></a></dt>
+<dd><p>Compute voltage-related terms of power injection Hessian.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Svava</span><span class="p">,</span> <span class="n">Svavm</span><span class="p">,</span> <span class="n">Svmvm</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_power_hess_v</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span>
+<span class="p">[</span><span class="n">Svava</span><span class="p">,</span> <span class="n">Svavm</span><span class="p">,</span> <span class="n">Svmvm</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_power_hess_v</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">sysx</span><span class="p">)</span>
+<span class="p">[</span><span class="n">Svava</span><span class="p">,</span> <span class="n">Svavm</span><span class="p">,</span> <span class="n">Svmvm</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_power_hess_v</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">sysx</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+<span class="p">[...]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_power_hess_v</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">v_</span><span class="p">,</span> <span class="n">z_</span><span class="p">,</span> <span class="n">diagvi</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">diagIlincJ</span><span class="p">,</span> <span class="n">dlamJ</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Called by <a class="reference internal" href="form_ac.html#mp.form_ac.port_inj_power_hess" title="mp.form_ac.port_inj_power_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_power_hess()</span></code></a> to compute
+voltage-related Hessian terms.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_acp.port_inj_power_hess_vz">
+<span class="sig-name descname"><span class="pre">port_inj_power_hess_vz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x_</span></em>, <em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">v_</span></em>, <em class="sig-param"><span class="pre">z_</span></em>, <em class="sig-param"><span class="pre">diagvi</span></em>, <em class="sig-param"><span class="pre">L</span></em>, <em class="sig-param"><span class="pre">dlamJ</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_acp.port_inj_power_hess_vz" title="Link to this definition"></a></dt>
+<dd><p>Compute voltage/non-voltage-related terms of power injection Hessian.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Svazr</span><span class="p">,</span> <span class="n">Svazi</span><span class="p">,</span> <span class="n">Svmzr</span><span class="p">,</span> <span class="n">Svmzi</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_power_hess_vz</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span>
+<span class="p">[...]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_power_hess_vz</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">sysx</span><span class="p">)</span>
+<span class="p">[...]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_power_hess_vz</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">sysx</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+<span class="p">[...]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">port_inj_power_hess_vz</span><span class="p">(</span><span class="n">x_</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">v_</span><span class="p">,</span> <span class="n">z_</span><span class="p">,</span> <span class="n">diagvi</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">dlamJ</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Called by <a class="reference internal" href="form_ac.html#mp.form_ac.port_inj_power_hess" title="mp.form_ac.port_inj_power_hess"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">mp.form_ac.port_inj_power_hess()</span></code></a> to compute
+voltage/non-voltage-related Hessian terms.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.form_acp.aux_data_va_vm">
+<span class="sig-name descname"><span class="pre">aux_data_va_vm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ad</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.form_acp.aux_data_va_vm" title="Link to this definition"></a></dt>
+<dd><p>Return voltage angles/magnitudes from auxiliary data.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">va</span><span class="p">,</span> <span class="n">vm</span><span class="p">]</span> <span class="p">=</span> <span class="n">nme</span><span class="p">.</span><span class="n">aux_data_va_vm</span><span class="p">(</span><span class="n">ad</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Simply returns voltage data stored in <code class="docutils literal notranslate"><span class="pre">ad.va</span></code> and
+<code class="docutils literal notranslate"><span class="pre">ad.vm</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Input<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ad</strong> (<em>struct</em>) – struct of auxiliary data</p>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>va</strong> (<em>double</em>) – vector of voltage angles corresponding to
+voltage information stored in auxiliary data</p></li>
+<li><p><strong>vm</strong> (<em>double</em>) – vector of voltage magnitudes corresponding to
+voltage information stored in auxiliary data</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="form_acc.html" class="btn btn-neutral float-left" title="mp.form_acc" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="form_dc.html" class="btn btn-neutral float-right" title="mp.form_dc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

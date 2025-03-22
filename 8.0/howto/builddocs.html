@@ -129,7 +129,7 @@
 <h1>How to Build the Documentation<a class="headerlink" href="#how-to-build-the-documentation" title="Link to this heading"></a></h1>
 <ol class="arabic">
 <li><p>Install <a class="reference external" href="https://www.python.org/">Python</a>.</p></li>
-<li><p>Create and activate a <a class="reference external" href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment">virtual environment</a> <em>(optional, but recommended)</em></p>
+<li><p>Create and activate a <a class="reference external" href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment">virtual environment</a> <em>(optional, but recommended)</em>.</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-VW5peC9tYWNPUw==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-VW5peC9tYWNPUw==" name="VW5peC9tYWNPUw==" role="tab" tabindex="0">Unix/macOS</button><button aria-controls="panel-0-V2luZG93cw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-V2luZG93cw==" name="V2luZG93cw==" role="tab" tabindex="-1">Windows</button></div><div aria-labelledby="tab-0-VW5peC9tYWNPUw==" class="sphinx-tabs-panel group-tab" id="panel-0-VW5peC9tYWNPUw==" name="VW5peC9tYWNPUw==" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3 -m venv sphinx-env</span>
 <span class="go">source sphinx-env/bin/activate</span>
@@ -149,14 +149,14 @@
 </pre></div>
 </div>
 </div></div>
-<p>To leave the virtual environment:</p>
+<p>To leave the virtual environment <em>(when finished building the documentation)</em>:</p>
 <blockquote>
 <div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">deactivate</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p>Install <a class="reference external" href="https://www.sphinx-doc.org">Sphinx</a>, <a class="reference external" href="https://pypi.org/project/sphinxcontrib-matlabdomain/">sphinxcontrib-matlabdomain</a>, <a class="reference external" href="https://pypi.org/project/sphinx-tabs/">sphinx-tabs</a> and <a class="reference external" href="https://pypi.org/project/sphinx-rtd-theme/">sphinx-rtd-theme</a></p>
+<li><p>Install <a class="reference external" href="https://www.sphinx-doc.org">Sphinx</a>, <a class="reference external" href="https://pypi.org/project/sphinxcontrib-matlabdomain/">sphinxcontrib-matlabdomain</a> <a class="reference internal" href="#md" id="id1"><span>[MD]</span></a>, <a class="reference external" href="https://pypi.org/project/sphinx-tabs/">sphinx-tabs</a> and <a class="reference external" href="https://pypi.org/project/sphinx-rtd-theme/">sphinx-rtd-theme</a>.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install -U sphinx</span>
 <span class="go">pip install -U sphinxcontrib-matlabdomain</span>
 <span class="go">pip install -U sphinx-tabs</span>
@@ -172,13 +172,13 @@
 </pre></div>
 </div>
 </div></blockquote>
-<p>… twice. That’s right, you re-run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> after the LaTeX build so it can pick up the links to the PDF and then re-run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">latexpdf</span></code> to ensure that tables of contents, cross-references, etc. are all up to date.</p>
+<p>… twice. That’s right, you re-run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> after the LaTeX build so it can pick up the links to the PDFs and then re-run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">latexpdf</span></code> to ensure that tables of contents, cross-references, etc. are all up to date.</p>
 <p>If everything builds properly, you should find the PDF manuals in <code class="file docutils literal notranslate"><span class="pre">docs/sphinx/build/latex</span></code> and the HTML documentation in <code class="file docutils literal notranslate"><span class="pre">docs/sphinx/build/html</span></code> (start with <code class="file docutils literal notranslate"><span class="pre">index.html</span></code>).</p>
 </li>
 </ol>
 <section id="updating-the-reference-manual">
 <h2>Updating the Reference Manual<a class="headerlink" href="#updating-the-reference-manual" title="Link to this heading"></a></h2>
-<p>The source files for the <span class="raw-html"><a class="reference external" href="https://matpower.org/doc/ref-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Reference Manual</em></a></span> require the creation of <code class="docutils literal notranslate"><span class="pre">.rst</span></code> stub files for many classes and functions. To avoid having Sphinx parse and analyze functions and classes that are not included in the manual, we symlink only those explicitly included into a source subdirectory.</p>
+<p>The source files for the <a class="reference internal" href="../ref-manual/index.html#matpower-ref-manual"><span class="std std-ref">MATPOWER Reference Manual</span></a> require the creation of <code class="docutils literal notranslate"><span class="pre">.rst</span></code> stub files for many classes and functions. To avoid having Sphinx parse and analyze functions and classes that are not included in the manual, we symlink only those explicitly included into a source subdirectory.</p>
 <p>The <a class="reference internal" href="builddocs/generate_matpower_autodoc.html#generate_matpower_autodoc" title="generate_matpower_autodoc"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">generate_matpower_autodoc()</span></code></a> function is used to automatically generate these stub files and symlinks from explicit, hard-coded lists of classes and functions.</p>
 <p>The following steps should be followed when a new class or function are added to <span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span>.</p>
 <ol class="arabic simple">
@@ -201,6 +201,13 @@
 <li class="toctree-l1"><a class="reference internal" href="builddocs/generate_autodoc_stubs.html">generate_autodoc_stubs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="builddocs/generate_source_symlinks.html">generate_source_symlinks</a></li>
 </ul>
+</div>
+<hr class="docutils" />
+<div role="list" class="citation-list">
+<div class="citation" id="md" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">MD</a><span class="fn-bracket">]</span></span>
+<p>Jørgen Cederberg, et. al. (2024). sphinx-contrib/matlabdomain: 0.21.5 (0.21.5). Zenodo. <a class="reference external" href="https://zenodo.org/doi/10.5281/zenodo.7746009">https://zenodo.org/doi/10.5281/zenodo.7746009</a></p>
+</div>
 </div>
 </section>
 </section>

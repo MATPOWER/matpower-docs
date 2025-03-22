@@ -253,7 +253,7 @@ a junction element by specifying two pieces of information for each port:</p>
 </ul>
 </dd>
 </dl>
-<p>See the <a class="reference internal" href="../../../dev-manual/data-model.html#sec-dm-element"><span class="std std-ref">Data Model Elements</span></a> section in the <span class="raw-html"><a class="reference external" href="https://matpower.org/doc/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more
+<p>See the <a class="reference internal" href="../../../dev-manual/data-model.html#sec-dm-element"><span class="std std-ref">Data Model Elements</span></a> section in the <a class="reference internal" href="../../../dev-manual/index.html#matpower-dev-manual"><span class="std std-ref">MATPOWER Developer’s Manual</span></a> for more
 information.</p>
 <p>See also <a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>.</p>
 <div class="members docutils container">
@@ -368,15 +368,15 @@ options for the return value:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>Single char array with one type that applies to all
-connections, <a class="reference internal" href="#mp.dm_element.cxn_idx_prop" title="mp.dm_element.cxn_idx_prop"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">cxn_idx_prop()</span></code></a> returns <em>empty</em>.</p></li>
+connections, <a class="reference internal" href="#mp.dm_element.cxn_type_prop" title="mp.dm_element.cxn_type_prop"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">cxn_type_prop()</span></code></a> returns <em>empty</em>.</p></li>
 <li><p>Cell array with <em>nc</em> elements, one for each connection,
-<a class="reference internal" href="#mp.dm_element.cxn_idx_prop" title="mp.dm_element.cxn_idx_prop"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">cxn_idx_prop()</span></code></a> returns <em>empty</em>.</p></li>
-<li><p>Cell array of valid junction element types, <a class="reference internal" href="#mp.dm_element.cxn_idx_prop" title="mp.dm_element.cxn_idx_prop"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">cxn_idx_prop()</span></code></a>
+<a class="reference internal" href="#mp.dm_element.cxn_type_prop" title="mp.dm_element.cxn_type_prop"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">cxn_type_prop()</span></code></a> returns <em>empty</em>.</p></li>
+<li><p>Cell array of valid junction element types, <a class="reference internal" href="#mp.dm_element.cxn_type_prop" title="mp.dm_element.cxn_type_prop"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">cxn_type_prop()</span></code></a>
 return value <em>not empty</em>.</p></li>
 </ol>
 </div></blockquote>
 <p>See the <a class="reference internal" href="../../../dev-manual/data-model.html#sec-dm-element-cxn"><span class="std std-ref">Connections</span></a> section in the
-<span class="raw-html"><a class="reference external" href="https://matpower.org/doc/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more information.</p>
+<a class="reference internal" href="../../../dev-manual/index.html#matpower-dev-manual"><span class="std std-ref">MATPOWER Developer’s Manual</span></a> for more information.</p>
 <p>Implementation provided by an element type specific subclass.</p>
 <p>See also <a class="reference internal" href="#mp.dm_element.cxn_idx_prop" title="mp.dm_element.cxn_idx_prop"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">cxn_idx_prop()</span></code></a>, <a class="reference internal" href="#mp.dm_element.cxn_type_prop" title="mp.dm_element.cxn_type_prop"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">cxn_type_prop()</span></code></a>.</p>
 </dd></dl>
@@ -396,7 +396,7 @@ define connections (e.g. <code class="docutils literal notranslate"><span class=
 </dd>
 </dl>
 <p>See the <a class="reference internal" href="../../../dev-manual/data-model.html#sec-dm-element-cxn"><span class="std std-ref">Connections</span></a> section in the
-<span class="raw-html"><a class="reference external" href="https://matpower.org/doc/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more information.</p>
+<a class="reference internal" href="../../../dev-manual/index.html#matpower-dev-manual"><span class="std std-ref">MATPOWER Developer’s Manual</span></a> for more information.</p>
 <p>Implementation provided by an element type specific subclass.</p>
 <p>See also <a class="reference internal" href="#mp.dm_element.cxn_type" title="mp.dm_element.cxn_type"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">cxn_type()</span></code></a>, <a class="reference internal" href="#mp.dm_element.cxn_type_prop" title="mp.dm_element.cxn_type_prop"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">cxn_type_prop()</span></code></a>.</p>
 </dd></dl>
@@ -422,7 +422,7 @@ one kind of bus, some to another kind. Otherwise, it returns
 an empty string and the junction element types for the
 connections are determined solely by <a class="reference internal" href="#mp.dm_element.cxn_type" title="mp.dm_element.cxn_type"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">cxn_type()</span></code></a>.</p>
 <p>See the <a class="reference internal" href="../../../dev-manual/data-model.html#sec-dm-element-cxn"><span class="std std-ref">Connections</span></a> section in the
-<span class="raw-html"><a class="reference external" href="https://matpower.org/doc/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more information.</p>
+<a class="reference internal" href="../../../dev-manual/index.html#matpower-dev-manual"><span class="std std-ref">MATPOWER Developer’s Manual</span></a> for more information.</p>
 <p>Implementation provided by an element type specific subclass.</p>
 <p>See also <a class="reference internal" href="#mp.dm_element.cxn_type" title="mp.dm_element.cxn_type"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">cxn_type()</span></code></a>, <a class="reference internal" href="#mp.dm_element.cxn_idx_prop" title="mp.dm_element.cxn_idx_prop"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">cxn_idx_prop()</span></code></a>.</p>
 </dd></dl>
@@ -567,7 +567,7 @@ for any offline elements.</p>
 <a class="reference internal" href="data_model.html#mp.data_model.count" title="mp.data_model.count"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">count()</span></code></a> method of <a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a>
 during the <strong>count</strong> stage of a data model build.</p>
 <p>See the <a class="reference internal" href="../../../dev-manual/data-model.html#sec-building-data-model"><span class="std std-ref">Building a Data Model</span></a> section in the
-<span class="raw-html"><a class="reference external" href="https://matpower.org/doc/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more information.</p>
+<a class="reference internal" href="../../../dev-manual/index.html#matpower-dev-manual"><span class="std std-ref">MATPOWER Developer’s Manual</span></a> for more information.</p>
 </dd></dl>
 
 <dl class="mat method">
@@ -590,7 +590,7 @@ property, then call <a class="reference internal" href="#mp.dm_element.init_stat
 <a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a> during the <strong>initialize</strong> stage of a data model
 build.</p>
 <p>See the <a class="reference internal" href="../../../dev-manual/data-model.html#sec-building-data-model"><span class="std std-ref">Building a Data Model</span></a> section in the
-<span class="raw-html"><a class="reference external" href="https://matpower.org/doc/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more information.</p>
+<a class="reference internal" href="../../../dev-manual/index.html#matpower-dev-manual"><span class="std std-ref">MATPOWER Developer’s Manual</span></a> for more information.</p>
 </dd></dl>
 
 <dl class="mat method">
@@ -649,7 +649,7 @@ indices of offline elements (<code class="xref mat mat-attr docutils literal not
 <a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a> during the <strong>update status</strong> stage of a data model
 build.</p>
 <p>See the <a class="reference internal" href="../../../dev-manual/data-model.html#sec-building-data-model"><span class="std std-ref">Building a Data Model</span></a> section in the
-<span class="raw-html"><a class="reference external" href="https://matpower.org/doc/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more information.</p>
+<a class="reference internal" href="../../../dev-manual/index.html#matpower-dev-manual"><span class="std std-ref">MATPOWER Developer’s Manual</span></a> for more information.</p>
 </dd></dl>
 
 <dl class="mat method">
@@ -673,7 +673,7 @@ properties.</p>
 <a class="reference internal" href="data_model.html#mp.data_model" title="mp.data_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.data_model</span></code></a> during the <strong>build parameters</strong> stage of a data
 model build.</p>
 <p>See the <a class="reference internal" href="../../../dev-manual/data-model.html#sec-building-data-model"><span class="std std-ref">Building a Data Model</span></a> section in the
-<span class="raw-html"><a class="reference external" href="https://matpower.org/doc/dev-manual/"><em>M<span style="font-size:smaller">ATPOWER</span> Developer’s Manual</em></a></span> for more information.</p>
+<a class="reference internal" href="../../../dev-manual/index.html#matpower-dev-manual"><span class="std std-ref">MATPOWER Developer’s Manual</span></a> for more information.</p>
 <p>Does nothing in the base class.</p>
 </dd></dl>
 

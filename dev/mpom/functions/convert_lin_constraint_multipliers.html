@@ -24,7 +24,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="convert_lin_constraint" href="convert_lin_constraint.html" />
-    <link rel="prev" title="qps_master" href="qps_master.html" /> 
+    <link rel="prev" title="convert_constraint_multipliers" href="convert_constraint_multipliers.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -123,7 +123,7 @@
             <a href="../../_sources/mpom/functions/convert_lin_constraint_multipliers.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
-        <a href="qps_master.html" class="btn btn-neutral float-left" title="qps_master" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="convert_constraint_multipliers.html" class="btn btn-neutral float-left" title="convert_constraint_multipliers" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="convert_lin_constraint.html" class="btn btn-neutral float-right" title="convert_lin_constraint" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
   <hr/>
@@ -138,6 +138,12 @@
 <dt class="sig sig-object mat" id="convert_lin_constraint_multipliers">
 <span class="sig-name descname"><span class="pre">convert_lin_constraint_multipliers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">lam</span></em>, <em class="sig-param"><span class="pre">mu</span></em>, <em class="sig-param"><span class="pre">ieq</span></em>, <em class="sig-param"><span class="pre">igt</span></em>, <em class="sig-param"><span class="pre">ilt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#convert_lin_constraint_multipliers" title="Link to this definition"></a></dt>
 <dd><p><a class="reference internal" href="#convert_lin_constraint_multipliers" title="convert_lin_constraint_multipliers"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">convert_lin_constraint_multipliers()</span></code></a> - Convert multipliers for eq/ineq pair to bounded.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 5.0: </span>Please use <a class="reference internal" href="convert_constraint_multipliers.html#convert_constraint_multipliers" title="convert_constraint_multipliers"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">convert_constraint_multipliers()</span></code></a> instead.</p>
+</div>
+</div>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">mu_l</span><span class="p">,</span> <span class="n">mu_u</span><span class="p">]</span> <span class="p">=</span> <span class="n">convert_lin_constraint_multipliers</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">ieq</span><span class="p">,</span> <span class="n">igt</span><span class="p">,</span> <span class="n">ilt</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -187,14 +193,14 @@ function converts them back to the equivalent multipliers for form (1).</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="qps_master.html" class="btn btn-neutral float-left" title="qps_master" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="convert_constraint_multipliers.html" class="btn btn-neutral float-left" title="convert_constraint_multipliers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="convert_lin_constraint.html" class="btn btn-neutral float-right" title="convert_lin_constraint" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+    <p>&#169; Copyright 1996-2025, Power Systems Engineering Research Center (PSERC).</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

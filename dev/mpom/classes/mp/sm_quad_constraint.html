@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mp.sm_quad_constraint &mdash; MATPOWER Documentation 8.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=bb3927b2"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>window.MathJax = {"loader": {"load": ["[tex]/upgreek"]}, "tex": {"packages": {"[+]": ["upgreek"]}, "macros": {"dg": "\\sp\\dagger", "trans": ["{#1}^{\\mathsf{T}}", 1], "conj": ["{#1}^{\\ast}", 1], "hc": ["{#1}^{\\dg}", 1], "hconj": ["{#1}^{+}", 1], "diag": ["\\left[^\\smallsetminus{#1}_\\smallsetminus\\right]", 1], "diagg": ["\\left[\\smash{#1}\\right]", 1], "cdiag": ["\\conj{\\diag{#1}}", 1], "der": ["\\frac{\\partial{#1}}{\\partial{#2}}", 2], "dersx": ["\\frac{\\partial^2{#1}}{\\partial{#2}^2}", 2], "dersxy": ["\\frac{\\partial^2{#1}}{\\partial{#2}\\partial{#3}}", 3], "cscal": ["\\mathrm{#1}", 1], "rvec": ["{\\boldsymbol{#1}}", 1], "cvec": ["\\mathbf{#1}", 1], "rmat": ["{\\boldsymbol{#1}}", 1], "cmat": ["\\mathbf{#1}", 1], "rvecG": ["{\\boldsymbol{#1}}", 1], "cvecG": ["\\boldsymbol{#1}", 1], "rmatG": ["\\boldsymbol{\\mathit{#1}}", 1], "cmatG": ["\\mathbf{#1}", 1], "param": ["\\underline{#1}", 1], "ov": ["{\\overline{#1}}", 1], "zeros": ["\\rvec{0}", 0], "ones": ["\\rvec{1}_{#1}", 1], "onest": ["\\trans{\\rvec{1}}_{#1}", 1], "Id": ["\\diag{\\ones{#1}}", 1], "R": "\\mathbb{R}", "C": "\\mathbb{C}", "av": "\\cvec{a}", "bv": "\\cvec{b}", "cv": "\\cvec{c}", "f": "\\cscal{f}", "F": "\\cvec{f}", "g": "\\rvec{g}", "G": "\\cvec{g}", "h": "\\rvec{h}", "HH": "\\cvec{h}", "x": "\\rvec{x}", "y": "\\rvec{y}", "z": "\\rvec{z}", "l": "\\rvec{l}", "u": "\\rvec{u}", "c": "\\rvec{c}", "Cc": "\\rmat{C}", "AA": "\\rmat{A}", "QQ": "\\rmat{Q}", "q": "\\rvec{q}", "Qblk": "\\QQ_\\textrm{blk}", "Xblk": "\\rmat{X}_\\textrm{blk}", "X": "\\cvec{x}", "Z": "\\cvec{z}", "A": "\\cmat{A}", "B": "\\cmat{B}", "alphav": "\\rvecG{\\alpha}", "lam": "\\rvecG{\\lambda}", "lamh": "\\hat{\\lam}", "muv": "\\rvecG{\\mu}", "muhv": "\\hat{\\muv}", "vv": "\\rvec{v}", "vvi": ["\\cscal{v}_{#1}", 1], "V": "\\cvec{v}", "Vh": "\\hat{\\V}", "Vc": "\\conj{\\V}", "Vhc": "\\conj{\\Vh}", "dV": "\\diag{\\V}", "dVh": "\\diag{\\Vh}", "dVc": "\\diag{\\Vc}", "dVhc": "\\diag{\\Vhc}", "inV": "\\cvec{\\Lambda}", "inVh": "\\hat{\\inV}", "inVc": "\\conj{\\inV}", "inVhc": "\\conj{\\inVh}", "dinV": "\\diagg{\\inV}", "dinVh": "\\diagg{\\inVh}", "dinVc": "\\diagg{\\inVc}", "dinVhc": "\\diagg{\\inVhc}", "va": ["\\theta", 0], "vai": ["\\va_{#1}", 1], "Va": ["\\rvec{\\va}", 0], "Vah": ["\\hat{\\Va}", 0], "vm": ["\\nu", 0], "vmi": ["\\nu_{#1}", 1], "Vm": ["\\rvecG{\\nu}", 0], "dVm": "\\diag{\\Vm}", "dVmi": "\\dVm^{-1}", "Vmh": "\\hat{\\Vm}", "dVmh": "\\diag{\\Vmh}", "dVmhi": "\\dVmh^{-1}", "vr": "u", "vri": ["u_{#1}", 1], "vi": "w", "vii": ["w_{#1}", 1], "Vr": "\\rvec{u}", "Vi": "\\rvec{w}", "dVr": "\\diag{\\Vr}", "dVi": "\\diag{\\Vi}", "Vrh": "\\hat{\\Vr}", "Vih": "\\hat{\\Vi}", "dVrh": "\\diag{\\Vrh}", "dVih": "\\diag{\\Vih}", "E": "\\cvec{e}", "Eh": "\\hat{\\E}", "Ec": "\\conj{\\E}", "Ehc": "\\conj{\\Eh}", "dE": "\\diag{\\E}", "dEh": "\\diag{\\Eh}", "dEc": "\\diag{\\Ec}", "dEhc": "\\diag{\\Ehc}", "zr": "{z_r}", "zi": "{z_i}", "Zr": "{\\rvec{z}_r}", "Zi": "{\\rvec{z}_i}", "dlam": "\\diagg{\\lam}", "dlamh": "\\diagg{\\lamh}", "dlamva": "\\diagg{\\lam_\\va}", "dlamvm": "\\diagg{\\lam_\\vm}", "dlamvr": "\\diagg{\\lam_\\vr}", "dlamvi": "\\diagg{\\lam_\\vi}", "dlamzr": "\\diagg{\\lam_\\zr}", "dlamzi": "\\diagg{\\lam_\\zi}", "dlamhva": "\\diagg{\\lamh_\\va}", "dlamhvm": "\\diagg{\\lamh_\\vm}", "dlamhvr": "\\diagg{\\lamh_\\vr}", "dlamhvi": "\\diagg{\\lamh_\\vi}", "dlamhzr": "\\diagg{\\lamh_\\zr}", "dlamhzi": "\\diagg{\\lamh_\\zi}", "dmu": "\\diag{\\muv}", "dmuh": "\\diag{\\muhv}", "kk": "\\rvec{k}", "J": "\\param{\\rmat{J}}", "Jt": "\\trans{\\J}", "Jk": ["\\J_{\\kk_#1}", 1], "Ah": "\\hat{\\A}", "Fh": "\\hat{\\F}", "Gh": "\\hat{\\G}", "gh": "\\hat{\\g}", "fmax": "\\param{\\rvec{f}}_\\mathrm{max}", "gP": "\\g^P", "gPk": ["\\g^{P,#1}", 1], "fhmax": "\\hat{\\param{\\rvec{f}}}_\\mathrm{max}", "ghP": "\\gh^P", "ghPk": ["\\gh^{P,#1}", 1], "GS": "\\G^S", "GI": "\\G^I", "GSk": ["\\G^{S,#1}", 1], "GIk": ["\\G^{I,#1}", 1], "GSsys": "\\GSk{\\mathrm{sys}}", "GIsys": "\\GIk{\\mathrm{sys}}", "gPsys": "\\gPk{\\mathrm{sys}}", "GhS": "\\Gh^S", "GhI": "\\Gh^I", "GhSk": ["\\Gh^{S,#1}", 1], "GhIk": ["\\Gh^{I,#1}", 1], "GhSsys": "\\GhSk{\\mathrm{sys}}", "GhIsys": "\\GhIk{\\mathrm{sys}}", "ghPsys": "\\ghPk{\\mathrm{sys}}", "Ilin": "\\cvec{i}^{lin}", "Ilink": "\\cvec{i}^{lin, k}", "Ilinc": "\\conj{\\Ilin}", "dIlin": "\\diag{\\Ilin}", "dIlinc": "\\diag{\\Ilinc}", "Ilinh": "\\hat{{\\cvec{i}}}^{lin}", "Ilinhk": "\\hat{\\cvec{i}}^{lin, k}", "Ilinhc": "\\conj{\\Ilinh}", "dIlinh": "\\diag{\\Ilinh}", "dIlinhc": "\\diag{\\Ilinhc}", "Slin": "\\cvec{s}^{lin}", "Slink": "\\cvec{s}^{lin, k}", "Slinc": "\\conj{\\Slin}", "dSlin": "\\diag{\\Slin}", "dSlinc": "\\diag{\\Slinc}", "Slinh": "\\hat{\\cvec{s}}^{lin}", "Slinhk": "\\hat{\\cvec{s}}^{lin, k}", "Slinhc": "\\conj{\\Slinh}", "dSlinh": "\\diag{\\Slinh}", "dSlinhc": "\\diag{\\Slinhc}", "Inln": "\\cvec{i}^{nln}", "Inlnk": "\\cvec{i}^{nln, k}", "Snln": "\\cvec{s}^{nln}", "Snlnk": "\\cvec{s}^{nln, k}", "Inlnh": "\\hat{\\cvec{i}}^{nln}", "Inlnhk": "\\hat{\\cvec{i}}^{nln, k}", "Snlnh": "\\hat{\\cvec{s}}^{nln}", "Snlnhk": "\\hat{\\cvec{s}}^{nln, k}", "Aa": "\\param{\\rmat{A}}", "BB": "\\param{\\rmat{B}}", "CC": "\\param{\\rmat{C}}", "DD": "\\param{\\rmat{D}}", "YY": "\\param{\\cmat{Y}}", "iv": "\\param{\\cvec{i}}", "pv": "\\param{\\rvec{p}}", "sv": "\\param{\\cvec{s}}", "KK": "\\param{\\rmat{K}}", "LL": "\\param{\\cmat{L}}", "MM": "\\param{\\cmat{M}}", "NN": "\\param{\\cmat{N}}", "BBh": "\\hat{\\BB}", "YYh": "\\hat{\\YY}", "ivh": "\\hat{\\iv}", "pvh": "\\hat{\\pv}", "svh": "\\hat{\\sv}", "CCh": "\\hat{\\CC}", "KKh": "\\hat{\\KK}", "LLh": "\\hat{\\LL}", "MMh": "\\hat{\\MM}", "NNh": "\\hat{\\NN}", "AT": "\\trans{\\Aa}", "CT": "\\trans{\\CC}", "DT": "\\trans{\\DD}", "Ap": "\\Aa'", "Cp": "\\CC\\:\\!'", "Dp": "\\DD'", "ApT": "\\trans{\\Ap}", "CpT": "\\trans{\\Cp}", "DpT": "\\trans{\\Dp}", "ChT": "\\trans{\\CCh}", "Lc": "\\conj{\\LL}", "LcT": "\\trans{\\Lc}", "Lhc": "\\conj{\\LLh}", "LhcT": "\\trans{\\Lhc}", "MT": "\\trans{\\MM}", "Mc": "\\conj{\\MM}", "McT": "\\trans{\\Mc}", "dMTlam": "\\diag{\\MT \\lam}", "MhT": "\\trans{\\MMh}", "Mhc": "\\conj{\\MMh}", "MhcT": "\\trans{\\Mhc}", "dMhTlam": "\\diag{\\MhT \\lamh}", "Nc": "\\conj{\\NN}", "NcT": "\\trans{\\Nc}", "Nhc": "\\conj{\\NNh}", "NhcT": "\\trans{\\Nhc}", "YT": "\\trans{\\YY}", "Yc": "\\conj{\\YY}", "YcT": "\\trans{\\Yc}", "dYTlam": "\\diag{\\YT \\lam}", "YhT": "\\trans{\\YYh}", "Yhc": "\\conj{\\YYh}", "YhcT": "\\trans{\\Yhc}", "dYhTlam": "\\diag{\\YhT \\lamh}", "I": "\\cvec{i}^S", "s": "\\cvec{s}^I", "Ih": "\\hat{\\cvec{i}}^S", "Sh": "\\hat{\\cvec{s}}^I", "AtX": "\\AT \\X", "CtV": "\\CT \\V", "dCtV": "\\diag{\\CtV}", "DtZ": "\\DT \\Z", "ApTx": "\\ApT \\x", "CpTv": "\\CpT \\vv", "DpTz": "\\DpT \\z"}}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="miqps_master" href="../../functions/miqps_master.html" />
+    <link rel="prev" title="mp.sm_quad_cost" href="sm_quad_cost.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">matpower.org</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/about/get-started/">Get Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ref-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html#reference">Reference</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../reference.html">Reference</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../../reference.html#mpom-classes"><span class="raw-html">MP-Opt-Model</span> Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#mpom-functions"><span class="raw-html">MP-Opt-Model</span> Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#solver-interfaces-implementations">Solver Interfaces &amp; Implementations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#mpom-examples"><span class="raw-html">MP-Opt-Model</span> Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#mpom-tests"><span class="raw-html">MP-Opt-Model</span> Tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#private-functions">Private Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/doc/manuals/">All Legacy PDF Manuals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/add-constraint.html">How to Add an OPF Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tech Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tech-notes.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Technical Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+          <li class="breadcrumb-item"><a href="../../reference.html">Reference</a></li>
+      <li class="breadcrumb-item active">mp.sm_quad_constraint</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/mpom/classes/mp/sm_quad_constraint.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="sm_quad_cost.html" class="btn btn-neutral float-left" title="mp.sm_quad_cost" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../functions/miqps_master.html" class="btn btn-neutral float-right" title="miqps_master" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p><span class="raw-html"><div style="float: right"><a href="https://github.com/MATPOWER/mp-opt-model/blob/master/lib/+mp/sm_quad_constraint.m" target=_blank><svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg></a></div></span></p>
+<section id="mp-sm-quad-constraint">
+<h1>mp.sm_quad_constraint<a class="headerlink" href="#mp-sm-quad-constraint" title="Link to this heading"></a></h1>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="mp.sm_quad_constraint">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">sm_quad_constraint</span></span><a class="headerlink" href="#mp.sm_quad_constraint" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="set_manager_opt_model.html#mp.set_manager_opt_model" title="mp.set_manager_opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.set_manager_opt_model</span></code></a></p>
+<p><a class="reference internal" href="#mp.sm_quad_constraint" title="mp.sm_quad_constraint"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_quad_constraint</span></code></a> -  MP Set Manager class for quadratic constraints.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">qcn</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">sm_quad_constraint</span><span class="p">()</span>
+<span class="n">qcn</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">sm_quad_constraint</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>MP Set Manager class for quadratic constraints of the form</p>
+<div class="math notranslate nohighlight" id="equation-eq-qcn-form">
+<span class="eqno">(17)<a class="headerlink" href="#equation-eq-qcn-form" title="Link to this equation"></a></span>\[l_i \le \frac{1}{2}\trans{\x} \QQ_i \x + \c_i \x \le u_i, \ \ \
+i = 1,2,..., n_q\]</div>
+<p>Manages quadratic constraint sets and their indexing.</p>
+<p>The parameters defining the set of constraints are
+<span class="math notranslate nohighlight">\(\QQ_1, \dots, \QQ_{n_q}, \Cc, \l, \u\)</span>, where <span class="math notranslate nohighlight">\(\c_i\)</span> in
+<a class="reference internal" href="#equation-eq-qcn-form">(17)</a> is row <span class="math notranslate nohighlight">\(i\)</span> of matrix <span class="math notranslate nohighlight">\(\Cc\)</span>, <span class="math notranslate nohighlight">\(l_i\)</span>
+and <span class="math notranslate nohighlight">\(u_i\)</span> are the <span class="math notranslate nohighlight">\(i\)</span>-th elements of vectors <span class="math notranslate nohighlight">\(\l\)</span> and
+<span class="math notranslate nohighlight">\(\u\)</span>, respectively, and <span class="math notranslate nohighlight">\(n_q\)</span> is the number of quadratic
+constraints.</p>
+<p>Let <span class="math notranslate nohighlight">\(\{\AA\}_{\times n}\)</span> denote the set <span class="math notranslate nohighlight">\(\{\AA, \AA, \dots, \AA\}\)</span>
+where <span class="math notranslate nohighlight">\(\AA\)</span> is repeated <span class="math notranslate nohighlight">\(n\)</span> times, let <span class="math notranslate nohighlight">\(\mathcal{A} =
+\{\AA_i\}_{i=1}^n\)</span> be a set of <span class="math notranslate nohighlight">\(n\)</span> matrices indexed by <span class="math notranslate nohighlight">\(i\)</span>, and
+let <span class="math notranslate nohighlight">\(\textrm{diag}(\AA) = \trans{\left[a_{11} a_{22} \dots
+a_{nn}\right]}\)</span> denote the matrix-to-vector diagonal operator. If we also let
+<span class="math notranslate nohighlight">\(\diag{\mathcal{A}}\)</span> denote a block diagonal matrix with the set of
+matrices <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> on the block diagonal, then <a class="reference internal" href="#equation-eq-qcn-form">(17)</a> can
+be expressed in matrix form as:</p>
+<div class="math notranslate nohighlight" id="equation-eq-qcn-matform">
+<span class="eqno">(18)<a class="headerlink" href="#equation-eq-qcn-matform" title="Link to this equation"></a></span>\[\begin{split}\l &amp;\le \frac{1}{2}\textrm{diag}\left(\trans{\Xblk}
+   \Qblk \Xblk\right) + \Cc \x \le \u \\
+\l &amp;\le \frac{1}{2}\textrm{diag}\left(\trans{\diag{\{\x\}_{\times n_q}}}
+   \diag{\{\QQ_i\}_{i=1}^{n_q}} \diag{\{\x\}_{\times n_q}}\right) + \Cc \x
+   \le \u,\end{split}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight" id="equation-eq-qcn-matdef">
+<span class="eqno">(19)<a class="headerlink" href="#equation-eq-qcn-matdef" title="Link to this equation"></a></span>\[\begin{split}\Xblk = \diag{\{\x\}_{\times n_q}} \\
+\Qblk = \diag{\{\QQ_i\}_{i=1}^{n_q}}.\end{split}\]</div>
+<p>By convention, <code class="docutils literal notranslate"><span class="pre">qcn</span></code> is the variable name used for <a class="reference internal" href="#mp.sm_quad_constraint" title="mp.sm_quad_constraint"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_quad_constraint</span></code></a>
+objects.</p>
+<dl class="simple">
+<dt>mp.sm_quad_constraint Properties:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#mp.sm_quad_constraint.cache" title="mp.sm_quad_constraint.cache"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">cache</span></code></a> - struct for caching aggregated parameters for the set</p></li>
+</ul>
+</dd>
+<dt>mp.sm_quad_constraint Methods:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#mp.sm_quad_constraint.sm_quad_constraint" title="mp.sm_quad_constraint.sm_quad_constraint"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">sm_quad_constraint()</span></code></a> - constructor</p></li>
+<li><p><a class="reference internal" href="#mp.sm_quad_constraint.add" title="mp.sm_quad_constraint.add"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add()</span></code></a> - add a subset of quadratic constraints, with parameters
+<span class="math notranslate nohighlight">\(\QQ_1, \dots, \QQ_{n_q}, \Cc, \l, \u\)</span></p></li>
+<li><p><a class="reference internal" href="#mp.sm_quad_constraint.params" title="mp.sm_quad_constraint.params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">params()</span></code></a> - build and return quadratic constraint parameters
+<span class="math notranslate nohighlight">\(\QQ_1, \dots, \QQ_{n_q}, \Cc, \l, \u\)</span></p></li>
+<li><p><a class="reference internal" href="#mp.sm_quad_constraint.set_params" title="mp.sm_quad_constraint.set_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_params()</span></code></a> - modify quadratic constraint parameter data</p></li>
+<li><p><a class="reference internal" href="#mp.sm_quad_constraint.eval" title="mp.sm_quad_constraint.eval"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">eval()</span></code></a> - evaluate individual or full set of quadratic constraints</p></li>
+<li><p><a class="reference internal" href="#mp.sm_quad_constraint.display_soln" title="mp.sm_quad_constraint.display_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">display_soln()</span></code></a> - display solution values for quadratic constraints</p></li>
+<li><p><a class="reference internal" href="#mp.sm_quad_constraint.get_soln" title="mp.sm_quad_constraint.get_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_soln()</span></code></a> - fetch solution values for specific named/indexed subsets</p></li>
+<li><p><a class="reference internal" href="#mp.sm_quad_constraint.parse_soln" title="mp.sm_quad_constraint.parse_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">parse_soln()</span></code></a> - parse solution for quadratic constraints</p></li>
+<li><p><a class="reference internal" href="#mp.sm_quad_constraint.blkprod2vertcat" title="mp.sm_quad_constraint.blkprod2vertcat"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">blkprod2vertcat()</span></code></a> - compute all products of two block diagonal matrices</p></li>
+</ul>
+</dd>
+</dl>
+<p>See also <a class="reference internal" href="set_manager.html#mp.set_manager" title="mp.set_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.set_manager</span></code></a>, <a class="reference internal" href="set_manager_opt_model.html#mp.set_manager_opt_model" title="mp.set_manager_opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.set_manager_opt_model</span></code></a>.</p>
+<div class="members docutils container">
+<dl>
+<dt>Constructor Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mp.sm_quad_constraint.sm_quad_constraint">
+<span class="sig-name descname"><span class="pre">sm_quad_constraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.sm_quad_constraint.sm_quad_constraint" title="Link to this definition"></a></dt>
+<dd><p>Constructor.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">qcn</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">sm_quad_constraint</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd>
+<dt>Property Summary</dt><dd><dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.sm_quad_constraint.cache">
+<span class="sig-name descname"><span class="pre">cache</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#mp.sm_quad_constraint.cache" title="Link to this definition"></a></dt>
+<dd><p>struct for caching aggregated parameters for quadratic constraints</p>
+</dd></dl>
+
+</dd>
+<dt>Method Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mp.sm_quad_constraint.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">var</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.sm_quad_constraint.add" title="Link to this definition"></a></dt>
+<dd><p>Add a subset of quadratic constraints, with parameters <span class="math notranslate nohighlight">\(\QQ_1, \dots, \QQ_{n_q}, \Cc, \l, \u\)</span>.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">qcn</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">);</span>
+<span class="n">qcn</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">vs</span><span class="p">);</span>
+
+<span class="n">qcn</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx_list</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">);</span>
+<span class="n">qcn</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx_list</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">vs</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Add a named, and possibly indexed, subset of <span class="math notranslate nohighlight">\(n_q\)</span> quadratic
+constraints to the set, of the form in <a class="reference internal" href="#equation-eq-qcn-form">(17)</a> and
+<a class="reference internal" href="#equation-eq-qcn-matform">(18)</a>, where <span class="math notranslate nohighlight">\(\x\)</span> is a vector made up of the
+variables specified in the optional <code class="docutils literal notranslate"><span class="pre">vs</span></code> <em>(in the order given)</em>.
+This allows the set of <span class="math notranslate nohighlight">\(\QQ_i\)</span> matrices and <span class="math notranslate nohighlight">\(\Cc\)</span>
+matrix to be defined in terms of only the relevant variables
+without the need to manually create a lot of properly located zero
+rows and/or columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>var</strong> (<a class="reference internal" href="sm_variable.html#mp.sm_variable" title="mp.sm_variable"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_variable</span></code></a>) – corresponding <a class="reference internal" href="sm_variable.html#mp.sm_variable" title="mp.sm_variable"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_variable</span></code></a> object</p></li>
+<li><p><strong>name</strong> (<em>char array</em>) – name of subset/block of constraints to <a class="reference internal" href="#mp.sm_quad_constraint.add" title="mp.sm_quad_constraint.add"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add()</span></code></a></p></li>
+<li><p><strong>idx_list</strong> (<em>cell array</em>) – <em>(optional)</em> index list for subset/block
+of constraints to <a class="reference internal" href="#mp.sm_quad_constraint.add" title="mp.sm_quad_constraint.add"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add()</span></code></a> (for an indexed subset)</p></li>
+<li><p><strong>Q</strong> (<em>cell vector</em>) – <span class="math notranslate nohighlight">\(n_q \times 1\)</span> cell array of sparse
+quadratic coefficient matrices <span class="math notranslate nohighlight">\(\QQ_i\)</span>, where the
+size of each element must be consistent with <span class="math notranslate nohighlight">\(\x\)</span>.</p></li>
+<li><p><strong>C</strong> (<em>double</em>) – possibly sparse matrix <span class="math notranslate nohighlight">\(\Cc\)</span> of linear
+coefficients, with row vector <span class="math notranslate nohighlight">\(\c_i\)</span> corresponding
+to quadratic constraint <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
+<li><p><strong>l</strong> (<em>double</em>) – <em>(optional, default =</em> <code class="docutils literal notranslate"><span class="pre">-Inf</span></code> <em>)</em> constraint
+left-hand side vector <span class="math notranslate nohighlight">\(\l\)</span>, or scalar which is
+expanded to a vector</p></li>
+<li><p><strong>u</strong> (<em>double</em>) – <em>(optional, default =</em> <code class="docutils literal notranslate"><span class="pre">Inf</span></code> <em>)</em> constraint
+right-hand side vector <span class="math notranslate nohighlight">\(\u\)</span>, or scalar which is
+expanded to a vector</p></li>
+<li><p><strong>vs</strong> (<em>cell or struct array</em>) – <em>(optional, default</em> <code class="docutils literal notranslate"><span class="pre">{}</span></code> <em>)</em>
+variable set defining vector <span class="math notranslate nohighlight">\(\x\)</span> for this
+constraint subset; can be either a cell array of names of
+variable subsets, or a struct array of <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">idx</span></code>
+pairs of indexed named subsets of variables; order of
+<code class="docutils literal notranslate"><span class="pre">vs</span></code> determines order of blocks in <span class="math notranslate nohighlight">\(\x\)</span>; if
+empty, <span class="math notranslate nohighlight">\(\x\)</span> is assumed to be the full variable vector</p></li>
+</ul>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">qcn</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="s">&#39;my_quad&#39;</span><span class="p">,</span> <span class="n">Q1</span><span class="p">,</span> <span class="n">C1</span><span class="p">,</span> <span class="n">l1</span><span class="p">,</span> <span class="n">u1</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;my_var1&#39;</span><span class="p">,</span> <span class="s">&#39;my_var2&#39;</span><span class="p">});</span>
+
+<span class="n">qcn</span><span class="p">.</span><span class="n">init_indexed_name</span><span class="p">(</span><span class="s">&#39;my_set&#39;</span><span class="p">,</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">})</span>
+<span class="k">for</span> <span class="n">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span>
+        <span class="n">qcn</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="s">&#39;my_set&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">},</span> <span class="n">Q</span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">},</span> <span class="n">C</span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">},</span> <span class="n">l</span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">},</span> <span class="p">...);</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#mp.sm_quad_constraint.params" title="mp.sm_quad_constraint.params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">params()</span></code></a>, <a class="reference internal" href="#mp.sm_quad_constraint.set_params" title="mp.sm_quad_constraint.set_params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">set_params()</span></code></a>, <a class="reference internal" href="#mp.sm_quad_constraint.eval" title="mp.sm_quad_constraint.eval"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">eval()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.sm_quad_constraint.params">
+<span class="sig-name descname"><span class="pre">params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">var</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">isblk</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.sm_quad_constraint.params" title="Link to this definition"></a></dt>
+<dd><p>Build and return quadratic constraint parameters <span class="math notranslate nohighlight">\(\Qblk, \Cc, \l, \u\)</span>.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Qblk</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">]</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="n">params</span><span class="p">(</span><span class="nb">var</span><span class="p">)</span>
+<span class="p">[</span><span class="n">Qblk</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">]</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="n">params</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="p">[</span><span class="n">Qblk</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">]</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="n">params</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx_list</span><span class="p">)</span>
+<span class="p">[</span><span class="n">Qblk</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">vs</span><span class="p">]</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="n">params</span><span class="p">(...)</span>
+<span class="p">[</span><span class="n">Qblk</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">vs</span><span class="p">,</span> <span class="n">i1</span><span class="p">,</span> <span class="n">iN</span><span class="p">]</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="n">params</span><span class="p">(</span><span class="n">name</span> <span class="p">...)</span>
+</pre></div>
+</div>
+<p>With no input parameters, it assembles and returns the parameters
+for the aggregate quadratic constraints from all quadratic
+constraint sets added using <a class="reference internal" href="#mp.sm_quad_constraint.add" title="mp.sm_quad_constraint.add"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add()</span></code></a>. The values of these parameters
+are cached for subsequent calls. The parameters are
+<span class="math notranslate nohighlight">\(\Qblk\)</span>, <span class="math notranslate nohighlight">\(\Cc\)</span>, <span class="math notranslate nohighlight">\(\l\)</span>, and <span class="math notranslate nohighlight">\(\u\)</span>, where the
+quadratic constraint is of the form in <a class="reference internal" href="#equation-eq-qcn-matform">(18)</a>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">isblk</span></code> is 1, <code class="docutils literal notranslate"><span class="pre">Qblk</span></code> is the block diagonal matrix
+<span class="math notranslate nohighlight">\(\Qblk\)</span> of <a class="reference internal" href="#equation-eq-qcn-matdef">(19)</a>. If <code class="docutils literal notranslate"><span class="pre">isblk</span></code> is 0, <code class="docutils literal notranslate"><span class="pre">Qblk</span></code>
+is a vertical cell array containing the individual quadratic
+coefficient matrices <span class="math notranslate nohighlight">\(\QQ_i\)</span> for all quadratic constraint
+sets. If a name or name and index list are provided, then it
+simply returns the parameters for the corresponding named set, as
+a block diagonal matrix or cell array, depending on the value of
+<code class="docutils literal notranslate"><span class="pre">isblk</span></code>. It can also optionally return the variable sets used by
+this constraint set (the size of <span class="math notranslate nohighlight">\(\QQ_i\)</span> and <span class="math notranslate nohighlight">\(\Cc\)</span>
+will be consistent with this variable set), and the starting and
+ending row indices of the subset within the full aggregate
+constraint set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>var</strong> (<a class="reference internal" href="sm_variable.html#mp.sm_variable" title="mp.sm_variable"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_variable</span></code></a>) – corresponding <a class="reference internal" href="sm_variable.html#mp.sm_variable" title="mp.sm_variable"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_variable</span></code></a> object</p></li>
+<li><p><strong>name</strong> (<em>char array</em>) – <em>(optional)</em> name of subset</p></li>
+<li><p><strong>idx_list</strong> (<em>cell array</em>) – <em>(optional)</em> index list for subset</p></li>
+<li><p><strong>isblk</strong> – <em>(optional default = 0)</em> determines form of <code class="docutils literal notranslate"><span class="pre">Qblk</span></code>
+output, 1 for block diagonal matrix <span class="math notranslate nohighlight">\(\Qblk\)</span>, 0 for
+individual <span class="math notranslate nohighlight">\(\QQ_i\)</span> matrices stacked vertically in
+separate elements of a cell array</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>Qblk</strong> (<em>double or cell array</em>) – constraint coefficient matrix
+<span class="math notranslate nohighlight">\(\Qblk\)</span> or cell array of individual <span class="math notranslate nohighlight">\(\QQ_i\)</span>
+depending on the value of input <code class="docutils literal notranslate"><span class="pre">isblk</span></code></p></li>
+<li><p><strong>C</strong> (<em>double</em>) – linear term contraint coefficient matrix
+<span class="math notranslate nohighlight">\(\Cc\)</span></p></li>
+<li><p><strong>l</strong> (<em>double</em>) – constraint left-hand side vector <span class="math notranslate nohighlight">\(\l\)</span></p></li>
+<li><p><strong>u</strong> (<em>double</em>) – constraint right-hand side vector <span class="math notranslate nohighlight">\(\u\)</span></p></li>
+<li><p><strong>vs</strong> (<em>struct array</em>) – variable set, <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">idx</span></code> pairs
+specifying the set of variables defining vector <span class="math notranslate nohighlight">\(\x\)</span>
+for this constraint subset; order of <code class="docutils literal notranslate"><span class="pre">vs</span></code> determines
+order of blocks in <span class="math notranslate nohighlight">\(\x\)</span></p></li>
+<li><p><strong>i1</strong> (<em>integer</em>) – index of 1st row of specified subset in full set</p></li>
+<li><p><strong>iN</strong> (<em>integer</em>) – index of last row of specified subset in full set</p></li>
+</ul>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Qblk</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">]</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="n">params</span><span class="p">(</span><span class="nb">var</span><span class="p">)</span>
+<span class="p">[</span><span class="n">Qblk</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">]</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="n">params</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="s">&#39;my_set&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#mp.sm_quad_constraint.add" title="mp.sm_quad_constraint.add"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.sm_quad_constraint.set_params">
+<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">var</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em>, <em class="sig-param"><span class="pre">params</span></em>, <em class="sig-param"><span class="pre">vals</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.sm_quad_constraint.set_params" title="Link to this definition"></a></dt>
+<dd><p>Modify quadratic constraint parameter data.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">qcn</span><span class="p">.</span><span class="n">set_params</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">vals</span><span class="p">)</span>
+<span class="n">qcn</span><span class="p">.</span><span class="n">set_params</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx_list</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">vals</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This method can be used to modify parameters for an existing
+subset of quadratic constraints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>var</strong> (<a class="reference internal" href="sm_variable.html#mp.sm_variable" title="mp.sm_variable"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_variable</span></code></a>) – corresponding <a class="reference internal" href="sm_variable.html#mp.sm_variable" title="mp.sm_variable"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_variable</span></code></a> object</p></li>
+<li><p><strong>name</strong> (<em>char array</em>) – name of subset/block of quadratic
+constraints to modify</p></li>
+<li><p><strong>idx_list</strong> (<em>cell array</em>) – <em>(optional)</em> index list for subset/block
+of quadratic constraints to modify (for an indexed subset)</p></li>
+<li><p><strong>params</strong> – can be one of three options:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">'all'</span></code> - indicates that <code class="docutils literal notranslate"><span class="pre">vals</span></code> is a cell array
+whose elements correspond to the input parameters of
+the <a class="reference internal" href="#mp.sm_quad_constraint.add" title="mp.sm_quad_constraint.add"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add()</span></code></a> method</p></li>
+<li><p>name of a parameter - <code class="docutils literal notranslate"><span class="pre">val</span></code> is the value of that
+parameter</p></li>
+<li><p>cell array of parameter names - <code class="docutils literal notranslate"><span class="pre">vals</span></code> is a cell array
+of corresponding values</p></li>
+</ul>
+</li>
+<li><p><strong>vals</strong> – new value or cell array of new values corresponding to
+<code class="docutils literal notranslate"><span class="pre">params</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<p>Valid parameter names are <code class="docutils literal notranslate"><span class="pre">Q</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">l</span></code>, <code class="docutils literal notranslate"><span class="pre">u</span></code>, <code class="docutils literal notranslate"><span class="pre">vs</span></code>.</p>
+<p>Examples:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">qcn</span><span class="p">.</span><span class="n">set_params</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},</span> <span class="p">{</span><span class="s">&#39;l&#39;</span><span class="p">,</span> <span class="s">&#39;u&#39;</span><span class="p">},</span> <span class="p">{</span><span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">});</span>
+<span class="n">qcn</span><span class="p">.</span><span class="n">set_params</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="s">&#39;Pmis&#39;</span><span class="p">,</span> <span class="s">&#39;all&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">Q</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">vs</span><span class="p">});</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#mp.sm_quad_constraint.add" title="mp.sm_quad_constraint.add"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add()</span></code></a>, <a class="reference internal" href="#mp.sm_quad_constraint.params" title="mp.sm_quad_constraint.params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">params()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.sm_quad_constraint.eval">
+<span class="sig-name descname"><span class="pre">eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">var</span></em>, <em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.sm_quad_constraint.eval" title="Link to this definition"></a></dt>
+<dd><p>Evaluate individual or full set of quadratic constraints.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">QFx_u</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">QFx_u</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="n">QFx_u</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx_list</span><span class="p">)</span>
+<span class="p">[</span><span class="n">QFx_u</span><span class="p">,</span> <span class="n">JQF</span><span class="p">]</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="nb">eval</span><span class="p">(...)</span>
+<span class="p">[</span><span class="n">QFx_u</span><span class="p">,</span> <span class="n">JQF</span><span class="p">,</span> <span class="n">QFx</span><span class="p">]</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="nb">eval</span><span class="p">(...)</span>
+<span class="p">[</span><span class="n">QFx_u</span><span class="p">,</span> <span class="n">JQF</span><span class="p">,</span> <span class="n">QFx</span><span class="p">,</span> <span class="n">l_QFx</span><span class="p">]</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="nb">eval</span><span class="p">(...)</span>
+</pre></div>
+</div>
+<p>For a given value of the variable vector <span class="math notranslate nohighlight">\(\x\)</span>, this method
+evaluates the quadratic constraints for an individual subset, if
+name or name and index list are provided, otherwise, for the full
+set of constraints.</p>
+<p>The constraints are of the form</p>
+<div class="math notranslate nohighlight" id="equation-eq-qcn-eval-1">
+<span class="eqno">(20)<a class="headerlink" href="#equation-eq-qcn-eval-1" title="Link to this equation"></a></span>\[l_i \le g_i(\x) \le u_i, \ \ \ i = 1,2,..., n_q\]</div>
+<p>or in matrix form for a subset or full set of constraints</p>
+<div class="math notranslate nohighlight" id="equation-eq-qcn-eval-all">
+<span class="eqno">(21)<a class="headerlink" href="#equation-eq-qcn-eval-all" title="Link to this equation"></a></span>\[\l \le \g(\x) \le \u\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight" id="equation-eq-qcn-eval-g1">
+<span class="eqno">(22)<a class="headerlink" href="#equation-eq-qcn-eval-g1" title="Link to this equation"></a></span>\[g_i(\x) = \frac{1}{2}\trans{\x} \QQ_i \x + \c_i \x\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eq-qcn-eval-g">
+<span class="eqno">(23)<a class="headerlink" href="#equation-eq-qcn-eval-g" title="Link to this equation"></a></span>\[\begin{split}\g(\x) &amp;= \frac{1}{2}\textrm{diag}\left(\trans{\Xblk}
+   \Qblk \Xblk\right) + \Cc \x \\
+   &amp;=\frac{1}{2}\textrm{diag}\left(\trans{
+       \diag{\{\x\}_{\times n_q}}}\diag{\{\QQ_i\}_{i=1}^{n_q}}
+       \diag{\{\x\}_{\times n_q}}\right) + \Cc \x\end{split}\]</div>
+<p>Returns <span class="math notranslate nohighlight">\(\g(\x) - \u\)</span>, and optionally the jacobian
+<span class="math notranslate nohighlight">\(\rmat{J}_{QF}\)</span>, the contraint function <span class="math notranslate nohighlight">\(\g(\x)\)</span>, and
+<span class="math notranslate nohighlight">\(\l - \g(\x)\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>var</strong> (<a class="reference internal" href="sm_variable.html#mp.sm_variable" title="mp.sm_variable"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_variable</span></code></a>) – corresponding <a class="reference internal" href="sm_variable.html#mp.sm_variable" title="mp.sm_variable"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_variable</span></code></a> object</p></li>
+<li><p><strong>x</strong> (<em>double</em>) – full <span class="math notranslate nohighlight">\(n_x \times 1\)</span> variable vector <span class="math notranslate nohighlight">\(\x\)</span></p></li>
+<li><p><strong>name</strong> (<em>char array</em>) – name of subset/block of quadratic constraints
+to evaluate</p></li>
+<li><p><strong>idx_list</strong> (<em>cell array</em>) – <em>(optional)</em> index list for subset/block
+of quadratic constraints to evaluate (for an indexed subset)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>QFx_u</strong> (<em>double</em>) – value of <span class="math notranslate nohighlight">\(\g(\x) - \u\)</span></p></li>
+<li><p><strong>JQF</strong> (<em>double</em>) – <em>(optional)</em> constraint Jacobian
+<span class="math notranslate nohighlight">\(\rmat{J}_{QF} = \der{\g}{\x}\)</span></p></li>
+<li><p><strong>QFx</strong> (<em>double</em>) – <em>(optional)</em> value of <span class="math notranslate nohighlight">\(\g(\x)\)</span></p></li>
+<li><p><strong>l_QFx</strong> (<em>double</em>) – <em>(optional)</em> value of <span class="math notranslate nohighlight">\(\l - \g(\x)\)</span></p></li>
+</ul>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">QFx_u</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">[</span><span class="n">QFx_u</span><span class="p">,</span> <span class="n">JQF</span><span class="p">]</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">[</span><span class="n">QFx_u</span><span class="p">,</span> <span class="n">JQF</span><span class="p">,</span> <span class="n">QFx</span><span class="p">]</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">[</span><span class="n">QFx_u</span><span class="p">,</span> <span class="n">JQF</span><span class="p">,</span> <span class="n">QFx</span><span class="p">,</span> <span class="n">l_QFx</span><span class="p">]</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">[</span><span class="n">QFx_u</span><span class="p">,</span> <span class="n">JQF</span><span class="p">,</span> <span class="n">QFx</span><span class="p">,</span> <span class="n">l_QFx</span><span class="p">]</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s">&#39;my_set&#39;</span><span class="p">)</span>
+<span class="p">[</span><span class="n">QFx_u</span><span class="p">,</span> <span class="n">JQF</span><span class="p">,</span> <span class="n">QFx</span><span class="p">,</span> <span class="n">l_QFx</span><span class="p">]</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s">&#39;my_set&#39;</span><span class="p">,</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#mp.sm_quad_constraint.add" title="mp.sm_quad_constraint.add"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">add()</span></code></a>, <a class="reference internal" href="#mp.sm_quad_constraint.params" title="mp.sm_quad_constraint.params"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">params()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.sm_quad_constraint.display_soln">
+<span class="sig-name descname"><span class="pre">display_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">var</span></em>, <em class="sig-param"><span class="pre">soln</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.sm_quad_constraint.display_soln" title="Link to this definition"></a></dt>
+<dd><p>Display solution values for quadratic constraints.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">qcn</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">)</span>
+<span class="n">qcn</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="n">qcn</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx_list</span><span class="p">)</span>
+<span class="n">qcn</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">fid</span><span class="p">)</span>
+<span class="n">qcn</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">fid</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="n">qcn</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">fid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Displays the solution values for all quadratic constraints
+(default) or an individual named or named/indexed subset.</p>
+<dl class="field-list">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul>
+<li><p><strong>var</strong> (<a class="reference internal" href="sm_variable.html#mp.sm_variable" title="mp.sm_variable"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_variable</span></code></a>) – corresponding <a class="reference internal" href="sm_variable.html#mp.sm_variable" title="mp.sm_variable"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_variable</span></code></a> object</p></li>
+<li><p><strong>soln</strong> (<em>struct</em>) – full solution struct with these fields
+(among others):</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">eflag</span></code> - exit flag, 1 = success, 0 or negative =
+solver-specific failure code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> - variable values</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lambda</span></code> - constraint shadow prices, struct with
+fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eqnonlin</span></code> - nonlinear equality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ineqnonlin</span></code> - nonlinear inequality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_l</span></code> - linear constraint lower bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_u</span></code> - linear constraint upper bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_l_quad</span></code> - quadratic constraint lower bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_u_quad</span></code> - quadratic constraint upper bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lower</span></code> - variable lower bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">upper</span></code> - variable upper bounds</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>fid</strong> (<em>fileID</em>) – fileID of open file to write to (default is
+1 for standard output)</p></li>
+<li><p><strong>name</strong> (<em>char array</em>) – <em>(optional)</em> name of individual subset</p></li>
+<li><p><strong>idx_list</strong> (<em>cell array</em>) – <em>(optional)</em> indices of individual
+subset</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.sm_quad_constraint.get_soln">
+<span class="sig-name descname"><span class="pre">get_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">var</span></em>, <em class="sig-param"><span class="pre">soln</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.sm_quad_constraint.get_soln" title="Link to this definition"></a></dt>
+<dd><p>Fetch solution values for specific named/indexed subsets.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">vals</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="n">get_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="n">vals</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="n">get_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx_list</span><span class="p">)</span>
+<span class="n">vals</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="n">get_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">tags</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="n">vals</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="n">get_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="n">tags</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns named/indexed quadratic constraint results for a solved
+model, evaluated at the solution found.</p>
+<dl class="field-list">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul>
+<li><p><strong>var</strong> (<a class="reference internal" href="sm_variable.html#mp.sm_variable" title="mp.sm_variable"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_variable</span></code></a>) – corresponding <a class="reference internal" href="sm_variable.html#mp.sm_variable" title="mp.sm_variable"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_variable</span></code></a> object</p></li>
+<li><p><strong>soln</strong> (<em>struct</em>) – full solution struct with these fields
+(among others):</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">eflag</span></code> - exit flag, 1 = success, 0 or negative =
+solver-specific failure code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> - variable values</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lambda</span></code> - constraint shadow prices, struct with
+fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eqnonlin</span></code> - nonlinear equality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ineqnonlin</span></code> - nonlinear inequality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_l</span></code> - linear constraint lower bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_u</span></code> - linear constraint upper bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_l_quad</span></code> - quadratic constraint lower bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_u_quad</span></code> - quadratic constraint upper bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lower</span></code> - variable lower bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">upper</span></code> - variable upper bounds</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>tags</strong> (<em>char array or cell array of char arrays</em>) – names of
+desired outputs, default is <code class="docutils literal notranslate"><span class="pre">{'g',</span> <span class="pre">'mu_l',</span> <span class="pre">'mu_u'}</span></code> with
+valid values:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'g'</span></code> - 2 element cell array with constraint values
+<span class="math notranslate nohighlight">\(\g(\x) - \u\)</span> and <span class="math notranslate nohighlight">\(\l - \g(\x)\)</span>,
+respectively, where <span class="math notranslate nohighlight">\(\g(\x)\)</span> is the quadratic
+form shown in <a class="reference internal" href="#equation-eq-qcn-eval-g">(23)</a> for the quadratic
+constraints specified</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'QFx_u'</span></code> or <code class="docutils literal notranslate"><span class="pre">'f'</span></code> - constraint values
+<span class="math notranslate nohighlight">\(\g(\x) - \u\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'l_QFx'</span></code> - constraint values <span class="math notranslate nohighlight">\(\l - \g(\x)\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'mu_l'</span></code> - shadow price on <span class="math notranslate nohighlight">\(\l - \g(\x)\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'mu_u'</span></code> - shadow price on <span class="math notranslate nohighlight">\(\g(\x) - \u\)</span></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>name</strong> (<em>char array</em>) – name of the subset</p></li>
+<li><p><strong>idx_list</strong> (<em>cell array</em>) – <em>(optional)</em> indices of the subset</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><p>Variable number of outputs corresponding to <code class="docutils literal notranslate"><span class="pre">tags</span></code> input.
+If <code class="docutils literal notranslate"><span class="pre">tags</span></code> is empty or not specified, the calling context
+will define the number of outputs, returned in order of
+default tags.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">g</span><span class="p">,</span> <span class="n">mu_l</span><span class="p">,</span> <span class="n">mu_u</span><span class="p">]</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="n">get_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="s">&#39;flow&#39;</span><span class="p">);</span>
+<span class="n">mu_l_quad_Pmis_5_3</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="n">get_soln</span><span class="p">(</span><span class="nb">var</span><span class="p">,</span> <span class="n">soln</span><span class="p">,</span> <span class="s">&#39;mu_l&#39;</span><span class="p">,</span> <span class="s">&#39;Pmis&#39;</span><span class="p">,</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">});</span>
+</pre></div>
+</div>
+<p>For a complete set of solution values, using the <a class="reference internal" href="#mp.sm_quad_constraint.parse_soln" title="mp.sm_quad_constraint.parse_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">parse_soln()</span></code></a>
+method may be more efficient.</p>
+<p>See also <a class="reference internal" href="#mp.sm_quad_constraint.parse_soln" title="mp.sm_quad_constraint.parse_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">parse_soln()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.sm_quad_constraint.parse_soln">
+<span class="sig-name descname"><span class="pre">parse_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">soln</span></em>, <em class="sig-param"><span class="pre">stash</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.sm_quad_constraint.parse_soln" title="Link to this definition"></a></dt>
+<dd><p>Parse solution for quadratic constraints.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="n">parse_soln</span><span class="p">(</span><span class="n">soln</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Parse a full solution struct into parts corresponding to
+individual quadratic constraint subsets.</p>
+<dl class="field-list">
+<dt class="field-odd">Input<span class="colon">:</span></dt>
+<dd class="field-odd"><ul>
+<li><p><strong>soln</strong> (<em>struct</em>) – full solution struct with these fields
+(among others):</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> - variable values</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lambda</span></code> - constraint shadow prices, struct with
+fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eqnonlin</span></code> - nonlinear equality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ineqnonlin</span></code> - nonlinear inequality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_l</span></code> - linear constraint lower bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_u</span></code> - linear constraint upper bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_l_quad</span></code> - quadratic constraint lower bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_u_quad</span></code> - quadratic constraint upper bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lower</span></code> - variable lower bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">upper</span></code> - variable upper bounds</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>stash</strong> (<em>boolean</em>) – if true, store return value in <code class="xref mat mat-attr docutils literal notranslate"><span class="pre">soln</span></code>
+property</p></li>
+</ul>
+</dd>
+<dt class="field-even">Output<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ps</strong> (<em>struct</em>) – parsed solution, struct where each field listed
+below is a struct whos names are the names of the relevant
+linear constraint subsets and values are scalars for named
+sets, arrays for named/indexed sets:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_l</span></code> - constraint lower bound shadow prices</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_u</span></code> - constraint upper bound shadow prices</p></li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat staticmethod">
+<dt class="sig sig-object mat" id="mp.sm_quad_constraint.blkprod2vertcat">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">blkprod2vertcat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">blk1</span></em>, <em class="sig-param"><span class="pre">blk2</span></em>, <em class="sig-param"><span class="pre">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.sm_quad_constraint.blkprod2vertcat" title="Link to this definition"></a></dt>
+<dd><p>Compute all products of two block diagonal matrices.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="n">blkprod2vertcat</span><span class="p">(</span><span class="n">blk1</span><span class="p">,</span> <span class="n">blk2</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Take two block diagonal matrices and return a matrix formed
+by stacking vertically the result of all products of the two.
+Here the matrices are assumed to have compatible sizes. That
+is, the number of columns of the set of matrices used to form
+the first block diagonal matrix must be the same as the number
+of rows of the matrices used to form the second block diagonal
+matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>blk1</strong> (<em>double</em>) – block diagonal matrix formed from a set of
+matrices,  each of size <span class="math notranslate nohighlight">\(m_1 \times n\)</span></p></li>
+<li><p><strong>blk2</strong> (<em>double</em>) – block diagonal matrix formed from a set of
+matrices, each of size <span class="math notranslate nohighlight">\(n \times m_2\)</span></p></li>
+<li><p><strong>n</strong> (<em>integer</em>) – compatible dimension of the two block diagonal
+matrices used to find the number of blocks to be multiplied</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>M</strong> – <span class="math notranslate nohighlight">\(m_1 n \times m_2\)</span> matrix holding a vertical
+stack of the resulting products between the two block
+diagonal matrices</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">xx</span> <span class="p">=</span> <span class="nb">blkdiag</span><span class="p">(</span><span class="nb">repmat</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>      <span class="c">% x in R^n, xx in R^(mxn)</span>
+<span class="n">QQ</span> <span class="p">=</span> <span class="nb">blkdiag</span><span class="p">(</span><span class="n">Q</span><span class="p">{:});</span>                 <span class="c">% Q is a cell array of m matrices in R^(nxn)</span>
+<span class="n">M</span> <span class="p">=</span> <span class="n">qcn</span><span class="p">.</span><span class="n">blkprod2vertcat</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">QQ</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>  <span class="c">% M is a n x n matrix</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#mp.sm_quad_constraint.eval" title="mp.sm_quad_constraint.eval"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">eval()</span></code></a>.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sm_quad_cost.html" class="btn btn-neutral float-left" title="mp.sm_quad_cost" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../functions/miqps_master.html" class="btn btn-neutral float-right" title="miqps_master" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2025, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

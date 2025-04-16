@@ -152,6 +152,8 @@
 </li>
         <li><a href="mpom/classes/mp/sm_nln_cost.html#mp.sm_nln_cost.add">(mp.sm_nln_cost method)</a>
 </li>
+        <li><a href="mpom/classes/mp/sm_quad_constraint.html#mp.sm_quad_constraint.add">(mp.sm_quad_constraint method)</a>
+</li>
         <li><a href="mpom/classes/mp/sm_quad_cost.html#mp.sm_quad_cost.add">(mp.sm_quad_cost method)</a>
 </li>
         <li><a href="mpom/classes/mp/sm_variable.html#mp.sm_variable.add">(mp.sm_variable method)</a>
@@ -481,6 +483,8 @@
 </li>
       <li><a href="ref-manual/classes/mp/data_model.html#mp.data_model.base_mva">base_mva (mp.data_model attribute)</a>
 </li>
+      <li><a href="mpom/classes/mp/sm_quad_constraint.html#mp.sm_quad_constraint.blkprod2vertcat">blkprod2vertcat() (mp.sm_quad_constraint static method)</a>
+</li>
       <li><a href="ref-manual/classes/mp/dme_shunt.html#mp.dme_shunt.bs">bs (mp.dme_shunt attribute)</a>
 </li>
       <li><a href="ref-manual/classes/mp/data_model.html#mp.data_model.build">build() (mp.data_model method)</a>
@@ -664,6 +668,8 @@
       <ul>
         <li><a href="mpom/classes/mp/sm_lin_constraint.html#mp.sm_lin_constraint.cache">(mp.sm_lin_constraint attribute)</a>
 </li>
+        <li><a href="mpom/classes/mp/sm_quad_constraint.html#mp.sm_quad_constraint.cache">(mp.sm_quad_constraint attribute)</a>
+</li>
         <li><a href="mpom/classes/mp/sm_quad_cost.html#mp.sm_quad_cost.cache">(mp.sm_quad_cost attribute)</a>
 </li>
         <li><a href="mpom/classes/mp/sm_variable.html#mp.sm_variable.cache">(mp.sm_variable attribute)</a>
@@ -689,9 +695,13 @@
 </li>
       <li><a href="ref-manual/legacy/functions/connected_components.html#connected_components">connected_components() (built-in function)</a>
 </li>
+      <li><a href="mpom/functions/convert_constraint_multipliers.html#convert_constraint_multipliers">convert_constraint_multipliers() (built-in function)</a>
+</li>
       <li><a href="mpom/functions/convert_lin_constraint.html#convert_lin_constraint">convert_lin_constraint() (built-in function)</a>
 </li>
       <li><a href="mpom/functions/convert_lin_constraint_multipliers.html#convert_lin_constraint_multipliers">convert_lin_constraint_multipliers() (built-in function)</a>
+</li>
+      <li><a href="mpom/functions/convert_quad_constraint.html#convert_quad_constraint">convert_quad_constraint() (built-in function)</a>
 </li>
       <li><a href="ref-manual/classes/mp/math_model_opf_acc.html#mp.math_model_opf_acc.convert_x_m2n">convert_x_m2n() (mp.math_model_opf_acc method)</a>
 
@@ -751,12 +761,12 @@
 </li>
       <li><a href="ref-manual/legacy/functions/cpf_current_mpc.html#cpf_current_mpc">cpf_current_mpc() (built-in function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="ref-manual/legacy/functions/cpf_default_callback.html#cpf_default_callback">cpf_default_callback() (built-in function)</a>
 </li>
       <li><a href="ref-manual/legacy/functions/cpf_detect_events.html#cpf_detect_events">cpf_detect_events() (built-in function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="ref-manual/legacy/functions/cpf_flim_event.html#cpf_flim_event">cpf_flim_event() (built-in function)</a>
 </li>
       <li><a href="ref-manual/legacy/functions/cpf_flim_event_cb.html#cpf_flim_event_cb">cpf_flim_event_cb() (built-in function)</a>
@@ -1083,10 +1093,10 @@
         <li><a href="mpom/classes/opt_model.html#opt_model.def_set_types">(opt_model method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="ref-manual/classes/mp/dmc_element.html#mp.dmc_element.default_export_data_nrows">default_export_data_nrows() (mp.dmc_element method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="ref-manual/classes/mp/dmc_element.html#mp.dmc_element.default_export_data_table">default_export_data_table() (mp.dmc_element method)</a>
 
       <ul>
@@ -1151,6 +1161,8 @@
         <li><a href="mpom/classes/mp/sm_nln_constraint.html#mp.sm_nln_constraint.display_soln">(mp.sm_nln_constraint method)</a>
 </li>
         <li><a href="mpom/classes/mp/sm_nln_cost.html#mp.sm_nln_cost.display_soln">(mp.sm_nln_cost method)</a>
+</li>
+        <li><a href="mpom/classes/mp/sm_quad_constraint.html#mp.sm_quad_constraint.display_soln">(mp.sm_quad_constraint method)</a>
 </li>
         <li><a href="mpom/classes/mp/sm_quad_cost.html#mp.sm_quad_cost.display_soln">(mp.sm_quad_cost method)</a>
 </li>
@@ -1336,6 +1348,8 @@
 </li>
         <li><a href="mpom/classes/mp/sm_nln_cost.html#mp.sm_nln_cost.eval">(mp.sm_nln_cost method)</a>
 </li>
+        <li><a href="mpom/classes/mp/sm_quad_constraint.html#mp.sm_quad_constraint.eval">(mp.sm_quad_constraint method)</a>
+</li>
         <li><a href="mpom/classes/mp/sm_quad_cost.html#mp.sm_quad_cost.eval">(mp.sm_quad_cost method)</a>
 </li>
       </ul></li>
@@ -1383,10 +1397,10 @@
 </li>
       <li><a href="most/functions/ex_xgd.html#ex_xgd">ex_xgd() (built-in function)</a>
 </li>
-      <li><a href="most/functions/ex_xgd_ramp.html#ex_xgd_ramp">ex_xgd_ramp() (built-in function)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="most/functions/ex_xgd_ramp.html#ex_xgd_ramp">ex_xgd_ramp() (built-in function)</a>
+</li>
       <li><a href="most/functions/ex_xgd_res.html#ex_xgd_res">ex_xgd_res() (built-in function)</a>
 </li>
       <li><a href="most/functions/ex_xgd_uc.html#ex_xgd_uc">ex_xgd_uc() (built-in function)</a>
@@ -1695,6 +1709,8 @@
         <li><a href="mpom/classes/mp/sm_nln_constraint.html#mp.sm_nln_constraint.get_soln">(mp.sm_nln_constraint method)</a>
 </li>
         <li><a href="mpom/classes/mp/sm_nln_cost.html#mp.sm_nln_cost.get_soln">(mp.sm_nln_cost method)</a>
+</li>
+        <li><a href="mpom/classes/mp/sm_quad_constraint.html#mp.sm_quad_constraint.get_soln">(mp.sm_quad_constraint method)</a>
 </li>
         <li><a href="mpom/classes/mp/sm_quad_cost.html#mp.sm_quad_cost.get_soln">(mp.sm_quad_cost method)</a>
 </li>
@@ -2469,10 +2485,10 @@
 </li>
       <li><a href="ref-manual/classes/mp/mm_shared_pfcpf_ac_i.html#mp.mm_shared_pfcpf_ac_i">mm_shared_pfcpf_ac_i (class in mp)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="ref-manual/classes/mp/mm_shared_pfcpf_acc.html#mp.mm_shared_pfcpf_acc">mm_shared_pfcpf_acc (class in mp)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="ref-manual/classes/mp/mm_shared_pfcpf_acci.html#mp.mm_shared_pfcpf_acci">mm_shared_pfcpf_acci (class in mp)</a>
 </li>
       <li><a href="ref-manual/classes/mp/mm_shared_pfcpf_accs.html#mp.mm_shared_pfcpf_accs">mm_shared_pfcpf_accs (class in mp)</a>
@@ -2674,6 +2690,8 @@
       <li><a href="mpom/functions/mpopt2nlpopt.html#mpopt2nlpopt">mpopt2nlpopt() (built-in function)</a>
 </li>
       <li><a href="mpom/functions/mpopt2pneopt.html#mpopt2pneopt">mpopt2pneopt() (built-in function)</a>
+</li>
+      <li><a href="mpom/functions/mpopt2qcqpopt.html#mpopt2qcqpopt">mpopt2qcqpopt() (built-in function)</a>
 </li>
       <li><a href="mpom/functions/mpopt2qpopt.html#mpopt2qpopt">mpopt2qpopt() (built-in function)</a>
 </li>
@@ -3308,6 +3326,8 @@
 </li>
         <li><a href="mpom/classes/mp/sm_nln_cost.html#mp.sm_nln_cost.params">(mp.sm_nln_cost method)</a>
 </li>
+        <li><a href="mpom/classes/mp/sm_quad_constraint.html#mp.sm_quad_constraint.params">(mp.sm_quad_constraint method)</a>
+</li>
         <li><a href="mpom/classes/mp/sm_quad_cost.html#mp.sm_quad_cost.params">(mp.sm_quad_cost method)</a>
 </li>
         <li><a href="mpom/classes/mp/sm_variable.html#mp.sm_variable.params">(mp.sm_variable method)</a>
@@ -3339,6 +3359,8 @@
         <li><a href="mpom/classes/mp/sm_lin_constraint.html#mp.sm_lin_constraint.parse_soln">(mp.sm_lin_constraint method)</a>
 </li>
         <li><a href="mpom/classes/mp/sm_nln_constraint.html#mp.sm_nln_constraint.parse_soln">(mp.sm_nln_constraint method)</a>
+</li>
+        <li><a href="mpom/classes/mp/sm_quad_constraint.html#mp.sm_quad_constraint.parse_soln">(mp.sm_quad_constraint method)</a>
 </li>
         <li><a href="mpom/classes/mp/sm_variable.html#mp.sm_variable.parse_soln">(mp.sm_variable method)</a>
 </li>
@@ -3935,6 +3957,20 @@
 </li>
       <li><a href="ref-manual/classes/mp/dme_legacy_dcline.html#mp.dme_legacy_dcline.q_to_ub">q_to_ub (mp.dme_legacy_dcline attribute)</a>
 </li>
+      <li><a href="mpom/classes/opt_model.html#opt_model.qcn">qcn (opt_model attribute)</a>
+</li>
+      <li><a href="mpom/functions/qcqp_nlp_consfcn.html#qcqp_nlp_consfcn">qcqp_nlp_consfcn() (built-in function)</a>
+</li>
+      <li><a href="mpom/functions/qcqp_nlp_costfcn.html#qcqp_nlp_costfcn">qcqp_nlp_costfcn() (built-in function)</a>
+</li>
+      <li><a href="mpom/functions/qcqp_nlp_hessfcn.html#qcqp_nlp_hessfcn">qcqp_nlp_hessfcn() (built-in function)</a>
+</li>
+      <li><a href="mpom/functions/qcqps_gurobi.html#qcqps_gurobi">qcqps_gurobi() (built-in function)</a>
+</li>
+      <li><a href="mpom/functions/qcqps_knitro.html#qcqps_knitro">qcqps_knitro() (built-in function)</a>
+</li>
+      <li><a href="mpom/functions/qcqps_master.html#qcqps_master">qcqps_master() (built-in function)</a>
+</li>
       <li><a href="ref-manual/classes/mp/dme_load.html#mp.dme_load.qd">qd (mp.dme_load attribute)</a>
 </li>
       <li><a href="ref-manual/classes/mp/dme_load.html#mp.dme_load.qd_i">qd_i (mp.dme_load attribute)</a>
@@ -3955,14 +3991,14 @@
         <li><a href="ref-manual/classes/mp/dme_gen3p.html#mp.dme_gen3p.qg2_start">(mp.dme_gen3p attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="ref-manual/classes/mp/dme_buslink.html#mp.dme_buslink.qg3_start">qg3_start (mp.dme_buslink attribute)</a>
 
       <ul>
         <li><a href="ref-manual/classes/mp/dme_gen3p.html#mp.dme_gen3p.qg3_start">(mp.dme_gen3p attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="ref-manual/classes/mp/dme_gen.html#mp.dme_gen.qg_lb">qg_lb (mp.dme_gen attribute)</a>
 </li>
       <li><a href="ref-manual/classes/mp/dme_gen.html#mp.dme_gen.qg_start">qg_start (mp.dme_gen attribute)</a>
@@ -4166,6 +4202,8 @@
 </li>
         <li><a href="mpom/classes/mp/sm_nln_cost.html#mp.sm_nln_cost.set_params">(mp.sm_nln_cost method)</a>
 </li>
+        <li><a href="mpom/classes/mp/sm_quad_constraint.html#mp.sm_quad_constraint.set_params">(mp.sm_quad_constraint method)</a>
+</li>
         <li><a href="mpom/classes/mp/sm_quad_cost.html#mp.sm_quad_cost.set_params">(mp.sm_quad_cost method)</a>
 </li>
         <li><a href="mpom/classes/mp/sm_variable.html#mp.sm_variable.set_params">(mp.sm_variable method)</a>
@@ -4185,10 +4223,10 @@
         <li><a href="mpom/classes/mp_idx_manager.html#mp_idx_manager.set_type_idx_map">(mp_idx_manager method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="ref-manual/classes/mp/net_model.html#mp.net_model.set_type_label">set_type_label() (mp.net_model method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="ref-manual/classes/mp/mapped_array.html#mp.mapped_array.size">size() (mp.mapped_array method)</a>
 
       <ul>
@@ -4210,6 +4248,10 @@
       <li><a href="mpom/classes/mp/sm_nln_cost.html#mp.sm_nln_cost">sm_nln_cost (class in mp)</a>
 </li>
       <li><a href="mpom/classes/mp/sm_nln_cost.html#mp.sm_nln_cost.sm_nln_cost">sm_nln_cost() (mp.sm_nln_cost method)</a>
+</li>
+      <li><a href="mpom/classes/mp/sm_quad_constraint.html#mp.sm_quad_constraint">sm_quad_constraint (class in mp)</a>
+</li>
+      <li><a href="mpom/classes/mp/sm_quad_constraint.html#mp.sm_quad_constraint.sm_quad_constraint">sm_quad_constraint() (mp.sm_quad_constraint method)</a>
 </li>
       <li><a href="mpom/classes/mp/sm_quad_cost.html#mp.sm_quad_cost">sm_quad_cost (class in mp)</a>
 </li>
@@ -4469,6 +4511,8 @@
 </li>
       <li><a href="mpom/functions/t_om_solve_pne.html#t_om_solve_pne">t_om_solve_pne() (built-in function)</a>
 </li>
+      <li><a href="mpom/functions/t_om_solve_qcqps.html#t_om_solve_qcqps">t_om_solve_qcqps() (built-in function)</a>
+</li>
       <li><a href="mpom/functions/t_om_solve_qps.html#t_om_solve_qps">t_om_solve_qps() (built-in function)</a>
 </li>
       <li><a href="ref-manual/legacy/functions/t_opf_dc_bpmpd.html#t_opf_dc_bpmpd">t_opf_dc_bpmpd() (built-in function)</a>
@@ -4544,6 +4588,8 @@
       <li><a href="ref-manual/legacy/functions/t_printpf.html#t_printpf">t_printpf() (built-in function)</a>
 </li>
       <li><a href="ref-manual/legacy/functions/t_psse.html#t_psse">t_psse() (built-in function)</a>
+</li>
+      <li><a href="mpom/functions/t_qcqps_master.html#t_qcqps_master">t_qcqps_master() (built-in function)</a>
 </li>
       <li><a href="mpom/functions/t_qps_master.html#t_qps_master">t_qps_master() (built-in function)</a>
 </li>
@@ -4951,7 +4997,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+    <p>&#169; Copyright 1996-2025, Power Systems Engineering Research Center (PSERC).</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -390,6 +390,12 @@
 </dd></dl>
 
 <dl class="mat attribute">
+<dt class="sig sig-object mat" id="opt_model.qcn">
+<span class="sig-name descname"><span class="pre">qcn</span></span><a class="headerlink" href="#opt_model.qcn" title="Link to this definition"></a></dt>
+<dd><p>quadratic constraints</p>
+</dd></dl>
+
+<dl class="mat attribute">
 <dt class="sig sig-object mat" id="opt_model.nle">
 <span class="sig-name descname"><span class="pre">nle</span></span><a class="headerlink" href="#opt_model.nle" title="Link to this definition"></a></dt>
 <dd><p>nonlinear equality constraints</p>
@@ -429,7 +435,7 @@
 <dt>Method Summary</dt><dd><dl class="mat method">
 <dt class="sig sig-object mat" id="opt_model.def_set_types">
 <span class="sig-name descname"><span class="pre">def_set_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">om</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opt_model.def_set_types" title="Link to this definition"></a></dt>
-<dd><p>Define set types <code class="docutils literal notranslate"><span class="pre">var</span></code>, <code class="docutils literal notranslate"><span class="pre">lin</span></code>, <code class="docutils literal notranslate"><span class="pre">nle</span></code>, <code class="docutils literal notranslate"><span class="pre">nli</span></code>, <code class="docutils literal notranslate"><span class="pre">qdc</span></code>, <code class="docutils literal notranslate"><span class="pre">nlc</span></code>.</p>
+<dd><p>Define set types <code class="docutils literal notranslate"><span class="pre">var</span></code>, <code class="docutils literal notranslate"><span class="pre">lin</span></code>, <code class="docutils literal notranslate"><span class="pre">qcn</span></code>, <code class="docutils literal notranslate"><span class="pre">nle</span></code>, <code class="docutils literal notranslate"><span class="pre">nli</span></code>, <code class="docutils literal notranslate"><span class="pre">qdc</span></code>, <code class="docutils literal notranslate"><span class="pre">nlc</span></code>.</p>
 </dd></dl>
 
 <dl class="mat method">
@@ -556,6 +562,9 @@ of the variables, constraints, costs included in the model.</p>
             <span class="p">.</span><span class="n">mu_l</span>
             <span class="p">.</span><span class="n">mu_u</span>
         <span class="p">.</span><span class="n">lin</span>
+            <span class="p">.</span><span class="n">mu_l</span>
+            <span class="p">.</span><span class="n">mu_u</span>
+        <span class="p">.</span><span class="n">qcn</span>
             <span class="p">.</span><span class="n">mu_l</span>
             <span class="p">.</span><span class="n">mu_u</span>
         <span class="p">.</span><span class="n">nle</span>
@@ -1638,7 +1647,7 @@ as in <code class="docutils literal notranslate"><span class="pre">om.lin.set_pa
 <span class="n">constraint</span> <span class="nb">or</span> <span class="n">cost</span> <span class="n">in</span> <span class="n">the</span> <span class="n">model</span><span class="p">.</span>
 
 <span class="n">OM</span><span class="p">.</span><span class="n">SET_PARAMS</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">PARAMS</span><span class="p">,</span> <span class="n">VALS</span><span class="p">)</span>
-<span class="n">OM</span><span class="p">.</span><span class="n">SET_PARAMS</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX</span><span class="p">,</span> <span class="n">PARAMS</span><span class="p">,</span> <span class="n">VALS</span><span class="p">)</span>
+<span class="n">OM</span><span class="p">.</span><span class="n">SET_PARAMS</span><span class="p">(</span><span class="n">SET_TYPE</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">IDX_LIST</span><span class="p">,</span> <span class="n">PARAMS</span><span class="p">,</span> <span class="n">VALS</span><span class="p">)</span>
 
 <span class="n">Inputs</span><span class="p">:</span>
     <span class="n">SET_TYPE</span> <span class="p">:</span> <span class="n">one</span> <span class="n">of</span> <span class="s">&#39;var&#39;</span><span class="p">,</span> <span class="s">&#39;lin&#39;</span><span class="p">,</span> <span class="s">&#39;nle&#39;</span><span class="p">,</span> <span class="s">&#39;nli&#39;</span><span class="p">,</span> <span class="s">&#39;nlc&#39;</span><span class="p">,</span> <span class="s">&#39;qdc&#39;</span> <span class="k">for</span>
@@ -1694,7 +1703,7 @@ as in <code class="docutils literal notranslate"><span class="pre">om.lin.set_pa
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 1996-2024, Power Systems Engineering Research Center (PSERC).</p>
+    <p>&#169; Copyright 1996-2025, Power Systems Engineering Research Center (PSERC).</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

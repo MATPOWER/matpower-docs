@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mp.opt_model &mdash; MATPOWER Documentation 8.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/matpower.css?v=f6466fd7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=1f41a3ab"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="mp.set_manager" href="set_manager.html" />
+    <link rel="prev" title="Reference" href="../../reference.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #568085" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            MATPOWER Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org">matpower.org</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/about/get-started/">Get Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manuals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../users-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Developer’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ref-manual/index.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Reference Manual</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../mptest/index.html">MP-Test User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mips/index.html">MIPS User’s Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html#reference">Reference</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../reference.html">Reference</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../../reference.html#mpom-classes"><span class="raw-html">MP-Opt-Model</span> Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#mpom-functions"><span class="raw-html">MP-Opt-Model</span> Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#solver-interfaces-implementations">Solver Interfaces &amp; Implementations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#mpom-examples"><span class="raw-html">MP-Opt-Model</span> Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#mpom-tests"><span class="raw-html">MP-Opt-Model</span> Tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../reference.html#private-functions">Private Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../most/index.html">MOST User’s Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/doc/manuals/">All Legacy PDF Manuals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/element.html">How to Create a New Element Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/add-constraint.html">How to Add an OPF Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/extension.html">How to Create an Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/three-phase.html">How to Run a Three-Phase Power Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/builddocs.html">How to Build the Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tech Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tech-notes.html"><span class="raw-html">M<span style="font-size:smaller">ATPOWER</span></span> Technical Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/sponsor">Donate</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://matpower.org/download">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/MATPOWER/matpower">GitHub Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #568085" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MATPOWER Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html"><span class="raw-html">MP-Opt-Model</span> User’s Manual</a></li>
+          <li class="breadcrumb-item"><a href="../../reference.html">Reference</a></li>
+      <li class="breadcrumb-item active">mp.opt_model</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/mpom/classes/mp/opt_model.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../../reference.html" class="btn btn-neutral float-left" title="Reference" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="set_manager.html" class="btn btn-neutral float-right" title="mp.set_manager" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p><span class="raw-html"><div style="float: right"><a href="https://github.com/MATPOWER/mp-opt-model/blob/master/lib/+mp/opt_model.m" target=_blank><svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg></a></div></span></p>
+<section id="mp-opt-model">
+<h1>mp.opt_model<a class="headerlink" href="#mp-opt-model" title="Link to this heading"></a></h1>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="mp.opt_model">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mp.</span></span><span class="sig-name descname"><span class="pre">opt_model</span></span><a class="headerlink" href="#mp.opt_model" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<p><a class="reference internal" href="#mp.opt_model" title="mp.opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.opt_model</span></code></a> - Mathematical programming and optimization model class.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">opt_model</span>
+<span class="n">mm</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">opt_model</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">mm</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">opt_model</span><span class="p">(</span><span class="n">mm0</span><span class="p">)</span>
+<span class="n">mm</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">opt_model</span><span class="p">(</span><span class="n">om</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This class implements the model object used to encapsulate a given
+mathematical programming or optimization problem formulation. It allows
+for access to variables, constraints and costs in named blocks,
+keeping track of the ordering and indexing of the blocks as variables,
+constraints and costs are added to the model.</p>
+<dl class="simple">
+<dt>mp.opt_model Properties:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#mp.opt_model.var" title="mp.opt_model.var"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">var</span></code></a> - MP Set Manager for variables</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.lin" title="mp.opt_model.lin"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">lin</span></code></a> - MP Set Manager for linear constraints</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.qcn" title="mp.opt_model.qcn"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">qcn</span></code></a> - MP Set Manager for quadratic constraints</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.nle" title="mp.opt_model.nle"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">nle</span></code></a> - MP Set Manager for nonlinear equality constraints</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.nli" title="mp.opt_model.nli"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">nli</span></code></a> - MP Set Manager for nonlinear inequality constraints</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.qdc" title="mp.opt_model.qdc"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">qdc</span></code></a> - MP Set Manager for quadratic costs</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.nlc" title="mp.opt_model.nlc"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">nlc</span></code></a> - MP Set Manager for general nonlinear costs</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.prob_type" title="mp.opt_model.prob_type"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">prob_type</span></code></a> - problem type, cached result of <a class="reference internal" href="#mp.opt_model.problem_type" title="mp.opt_model.problem_type"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">problem_type()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.soln" title="mp.opt_model.soln"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">soln</span></code></a> - results of <a class="reference internal" href="#mp.opt_model.solve" title="mp.opt_model.solve"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">solve()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.userdata" title="mp.opt_model.userdata"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">userdata</span></code></a> - arbitrary user data</p></li>
+</ul>
+</dd>
+<dt>mp.opt_model Methods:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#mp.opt_model.opt_model" title="mp.opt_model.opt_model"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">opt_model()</span></code></a> - constructor, optionally copying from struct or existing object</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.get_set_types" title="mp.opt_model.get_set_types"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_set_types()</span></code></a> - list of names of properties of set types managed by this class</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.copy" title="mp.opt_model.copy"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">copy()</span></code></a> - make a duplicate of the object</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.to_struct" title="mp.opt_model.to_struct"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">to_struct()</span></code></a> - convert object data <em>to</em> a struct</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.from_struct" title="mp.opt_model.from_struct"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">from_struct()</span></code></a> - copy object data <em>from</em> a struct</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.get_idx" title="mp.opt_model.get_idx"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_idx()</span></code></a> - return <code class="docutils literal notranslate"><span class="pre">idx</span></code> struct for vars, constraints, costs</p></li>
+<li><p><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_user_data()</span></code> - used to retrieve values of user data</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.problem_type" title="mp.opt_model.problem_type"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">problem_type()</span></code></a> - return string identifying type of mathematical program</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.is_mixed_integer" title="mp.opt_model.is_mixed_integer"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">is_mixed_integer()</span></code></a> - return true if model is mixed integer, false otherwise</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.is_solved" title="mp.opt_model.is_solved"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">is_solved()</span></code></a> - return true if model has been solved</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.solve" title="mp.opt_model.solve"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">solve()</span></code></a> - solve the model</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.has_parsed_soln" title="mp.opt_model.has_parsed_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">has_parsed_soln()</span></code></a> - return true if model has a parsed solution</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.parse_soln" title="mp.opt_model.parse_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">parse_soln()</span></code></a> - parse solution vector and shadow prices by all named sets</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.display" title="mp.opt_model.display"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">display()</span></code></a> - display the object</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.display_header" title="mp.opt_model.display_header"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">display_header()</span></code></a> - display header, before each set type</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.display_footer" title="mp.opt_model.display_footer"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">display_footer()</span></code></a> - display footer, after each set type</p></li>
+<li><p><a class="reference internal" href="#mp.opt_model.display_soln" title="mp.opt_model.display_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">display_soln()</span></code></a> - display solution values</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">opt_model</span><span class="p">;</span>
+<span class="n">mm</span><span class="p">.</span><span class="nb">var</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">ymin</span><span class="p">);</span>
+<span class="n">mm</span><span class="p">.</span><span class="nb">var</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;z&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">z0</span><span class="p">,</span> <span class="p">[],</span> <span class="n">zmax</span><span class="p">);</span>
+<span class="n">mm</span><span class="p">.</span><span class="n">lin</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">mm</span><span class="p">.</span><span class="nb">var</span><span class="p">,</span> <span class="s">&#39;lincon1&#39;</span><span class="p">,</span> <span class="n">A1</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">b1</span><span class="p">);</span>
+<span class="n">mm</span><span class="p">.</span><span class="n">lin</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">mm</span><span class="p">.</span><span class="nb">var</span><span class="p">,</span> <span class="s">&#39;lincon2&#39;</span><span class="p">,</span> <span class="n">A2</span><span class="p">,</span> <span class="p">[],</span> <span class="n">u2</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;y&#39;</span><span class="p">});</span>
+<span class="n">mm</span><span class="p">.</span><span class="n">qdc</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">mm</span><span class="p">.</span><span class="nb">var</span><span class="p">,</span> <span class="s">&#39;cost&#39;</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="p">[]);</span>
+
+<span class="n">prob_type</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">problem_type</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="o">~</span><span class="n">mm</span><span class="p">.</span><span class="n">is_solved</span><span class="p">()</span>
+    <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">exitflag</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">lambda</span><span class="p">]</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">solve</span><span class="p">();</span>
+<span class="k">end</span>
+<span class="n">mm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Replaces the now deprecated legacy <a class="reference internal" href="../opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a> class and its base class,
+<a class="reference internal" href="../mp_idx_manager.html#mp_idx_manager" title="mp_idx_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp_idx_manager</span></code></a>.</p>
+<p>See also <a class="reference internal" href="set_manager.html#mp.set_manager" title="mp.set_manager"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.set_manager</span></code></a>.</p>
+<div class="members docutils container">
+<dl>
+<dt>Constructor Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mp.opt_model.opt_model">
+<span class="sig-name descname"><span class="pre">opt_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.opt_model.opt_model" title="Link to this definition"></a></dt>
+<dd><p>Constructor.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">opt_model</span><span class="p">()</span>
+<span class="n">mm</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">opt_model</span><span class="p">(</span><span class="n">a_struct</span><span class="p">)</span>
+<span class="n">mm</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">opt_model</span><span class="p">(</span><span class="n">an_mm</span><span class="p">)</span>
+<span class="n">mm</span> <span class="p">=</span> <span class="n">mp</span><span class="p">.</span><span class="n">opt_model</span><span class="p">(</span><span class="n">an_om</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Optionally copies data from (duplicates) a struct or existing
+mathematical model object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Input<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a_struct</strong> (<em>struct</em>) – a struct with the stucture obtained by
+converting an <a class="reference internal" href="#mp.opt_model" title="mp.opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.opt_model</span></code></a> object and its sub-objects to a
+struct</p></li>
+<li><p><strong>an_mm</strong> (<a class="reference internal" href="#mp.opt_model" title="mp.opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.opt_model</span></code></a>) – existing mathematical model
+(<a class="reference internal" href="#mp.opt_model" title="mp.opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.opt_model</span></code></a>) object</p></li>
+<li><p><strong>an_om</strong> (<a class="reference internal" href="../opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>) – existing <em>legacy</em> mathematical
+model (<a class="reference internal" href="../opt_model.html#opt_model" title="opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">opt_model</span></code></a>) object</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd>
+<dt>Property Summary</dt><dd><dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.opt_model.var">
+<span class="sig-name descname"><span class="pre">var</span></span><a class="headerlink" href="#mp.opt_model.var" title="Link to this definition"></a></dt>
+<dd><p>(<a class="reference internal" href="sm_variable.html#mp.sm_variable" title="mp.sm_variable"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_variable</span></code></a>) MP Set Manager for variables</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.opt_model.lin">
+<span class="sig-name descname"><span class="pre">lin</span></span><a class="headerlink" href="#mp.opt_model.lin" title="Link to this definition"></a></dt>
+<dd><p>(<a class="reference internal" href="sm_lin_constraint.html#mp.sm_lin_constraint" title="mp.sm_lin_constraint"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_lin_constraint</span></code></a>) MP Set Manager for linear constraints</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.opt_model.qcn">
+<span class="sig-name descname"><span class="pre">qcn</span></span><a class="headerlink" href="#mp.opt_model.qcn" title="Link to this definition"></a></dt>
+<dd><p>(<a class="reference internal" href="sm_quad_constraint.html#mp.sm_quad_constraint" title="mp.sm_quad_constraint"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_quad_constraint</span></code></a>) MP Set Manager for quadratic constraints</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.opt_model.nle">
+<span class="sig-name descname"><span class="pre">nle</span></span><a class="headerlink" href="#mp.opt_model.nle" title="Link to this definition"></a></dt>
+<dd><p>(<a class="reference internal" href="sm_nln_constraint.html#mp.sm_nln_constraint" title="mp.sm_nln_constraint"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_nln_constraint</span></code></a>) MP Set Manager for nonlinear equality constraints</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.opt_model.nli">
+<span class="sig-name descname"><span class="pre">nli</span></span><a class="headerlink" href="#mp.opt_model.nli" title="Link to this definition"></a></dt>
+<dd><p>(<a class="reference internal" href="sm_nln_constraint.html#mp.sm_nln_constraint" title="mp.sm_nln_constraint"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_nln_constraint</span></code></a>) MP Set Manager for nonlinear inequality constraints</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.opt_model.qdc">
+<span class="sig-name descname"><span class="pre">qdc</span></span><a class="headerlink" href="#mp.opt_model.qdc" title="Link to this definition"></a></dt>
+<dd><p>(<a class="reference internal" href="sm_quad_cost.html#mp.sm_quad_cost" title="mp.sm_quad_cost"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_quad_cost</span></code></a>) MP Set Manager for quadratic costs</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.opt_model.nlc">
+<span class="sig-name descname"><span class="pre">nlc</span></span><a class="headerlink" href="#mp.opt_model.nlc" title="Link to this definition"></a></dt>
+<dd><p>(<a class="reference internal" href="sm_nln_cost.html#mp.sm_nln_cost" title="mp.sm_nln_cost"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.sm_nln_cost</span></code></a>) MP Set Manager for general nonlinear costs</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.opt_model.prob_type">
+<span class="sig-name descname"><span class="pre">prob_type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">''</span></em><a class="headerlink" href="#mp.opt_model.prob_type" title="Link to this definition"></a></dt>
+<dd><p><em>(char array)</em> problem type, cached result of <a class="reference internal" href="#mp.opt_model.problem_type" title="mp.opt_model.problem_type"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">problem_type()</span></code></a></p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.opt_model.soln">
+<span class="sig-name descname"><span class="pre">soln</span></span><em class="property"> <span class="pre">=</span> <span class="pre">struct('eflag',[],</span> <span class="pre">...</span> <span class="pre">'lambda',[])</span></em><a class="headerlink" href="#mp.opt_model.soln" title="Link to this definition"></a></dt>
+<dd><p><em>(struct)</em> results of <a class="reference internal" href="#mp.opt_model.solve" title="mp.opt_model.solve"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">solve()</span></code></a>, with fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'eflag'</span></code> - exit flag</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'output'</span></code> - algorithm code (<code class="docutils literal notranslate"><span class="pre">'alg'</span></code>) &amp; solver-specific fields</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'x'</span></code> - solution vector</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'f'</span></code> - final (objective) function value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'jac'</span></code> - Jacobian (if available) for LEQ/NLEQ</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'lambda'</span></code> - struct of constraint shadow prices</p></li>
+</ul>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="mp.opt_model.userdata">
+<span class="sig-name descname"><span class="pre">userdata</span></span><em class="property"> <span class="pre">=</span> <span class="pre">struct()</span></em><a class="headerlink" href="#mp.opt_model.userdata" title="Link to this definition"></a></dt>
+<dd><p><em>(struct)</em> arbitrary user data</p>
+</dd></dl>
+
+</dd>
+<dt>Method Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mp.opt_model.get_set_types">
+<span class="sig-name descname"><span class="pre">get_set_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.opt_model.get_set_types" title="Link to this definition"></a></dt>
+<dd><p>List of names of properties of set types managed by this class.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">st</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">get_set_types</span><span class="p">();</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Output<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>st</strong> (<em>cell array</em>) – list of set types, namely:
+<code class="docutils literal notranslate"><span class="pre">{'var',</span> <span class="pre">'lin',</span> <span class="pre">'qcn',</span> <span class="pre">'nle',</span> <span class="pre">'nli',</span> <span class="pre">'qdc',</span> <span class="pre">'nlc'}</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.opt_model.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.opt_model.copy" title="Link to this definition"></a></dt>
+<dd><p>Duplicate the object.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">new_mm</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Output<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>new_mm</strong> (<a class="reference internal" href="#mp.opt_model" title="mp.opt_model"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">mp.opt_model</span></code></a>) – duplicate of original object</p>
+</dd>
+</dl>
+<p>Make a duplicate of the object, including duplicates of all
+contained objects.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.opt_model.to_struct">
+<span class="sig-name descname"><span class="pre">to_struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.opt_model.to_struct" title="Link to this definition"></a></dt>
+<dd><p>Convert object data <em>to</em> a struct.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">to_struct</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Converts the object data <em>to</em> a struct that can later be
+converted back to an identical object using <a class="reference internal" href="../../functions/mp/struct2object.html#mp.struct2object" title="mp.struct2object"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">mp.struct2object()</span></code></a>.
+Useful for saving the object data to a MAT-file in Octave.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.opt_model.from_struct">
+<span class="sig-name descname"><span class="pre">from_struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.opt_model.from_struct" title="Link to this definition"></a></dt>
+<dd><p>Copy object data <em>from</em> a struct.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span><span class="p">.</span><span class="n">from_struct</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Called by function <a class="reference internal" href="../../functions/mp/struct2object.html#mp.struct2object" title="mp.struct2object"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">mp.struct2object()</span></code></a>, after creating the object
+to copy the object data <em>from</em> a struct. Useful for recreating
+the object after loading struct data from a MAT-file in Octave.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.opt_model.get_idx">
+<span class="sig-name descname"><span class="pre">get_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.opt_model.get_idx" title="Link to this definition"></a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">idx</span></code> struct for vars, constraints, costs.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">vv</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">get_idx</span><span class="p">()</span>
+<span class="p">[</span><span class="n">vv</span><span class="p">,</span> <span class="n">ll</span><span class="p">]</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">get_idx</span><span class="p">()</span>
+<span class="p">[</span><span class="n">vv</span><span class="p">,</span> <span class="n">ll</span><span class="p">,</span> <span class="n">nne</span><span class="p">]</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">get_idx</span><span class="p">()</span>
+<span class="p">[</span><span class="n">vv</span><span class="p">,</span> <span class="n">ll</span><span class="p">,</span> <span class="n">nne</span><span class="p">,</span> <span class="n">nni</span><span class="p">]</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">get_idx</span><span class="p">()</span>
+<span class="p">[</span><span class="n">vv</span><span class="p">,</span> <span class="n">ll</span><span class="p">,</span> <span class="n">nne</span><span class="p">,</span> <span class="n">nni</span><span class="p">,</span> <span class="n">qq</span><span class="p">]</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">get_idx</span><span class="p">()</span>
+<span class="p">[</span><span class="n">vv</span><span class="p">,</span> <span class="n">ll</span><span class="p">,</span> <span class="n">nne</span><span class="p">,</span> <span class="n">nni</span><span class="p">,</span> <span class="n">qq</span><span class="p">,</span> <span class="n">nnc</span><span class="p">]</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">get_idx</span><span class="p">()</span>
+<span class="p">[</span><span class="n">vv</span><span class="p">,</span> <span class="n">ll</span><span class="p">,</span> <span class="n">nne</span><span class="p">,</span> <span class="n">nni</span><span class="p">,</span> <span class="n">qq</span><span class="p">,</span> <span class="n">nnc</span><span class="p">,</span> <span class="n">qqcn</span><span class="p">]</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">get_idx</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Returns the <a class="reference internal" href="set_manager.html#mp.set_manager.idx" title="mp.set_manager.idx"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">idx</span></code></a> property of each
+of the set manager objects, with the beginning and ending
+index value and the number of elements for each named block.
+The <code class="docutils literal notranslate"><span class="pre">i1</span></code> field is a struct with all of the  starting indices,
+<code class="docutils literal notranslate"><span class="pre">iN</span></code> contains all the ending indices, and <code class="docutils literal notranslate"><span class="pre">N</span></code> contains all
+the sizes. Each is a struct whose fields are the named blocks.</p>
+<p>Alternatively, you can specify the property name of the set type
+directly as inputs.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">idx1</span><span class="p">,</span> <span class="n">idx2</span><span class="p">,</span> <span class="p">...]</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">get_idx</span><span class="p">(</span><span class="n">set_type1</span><span class="p">,</span> <span class="n">set_type2</span><span class="p">,</span> <span class="p">...)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>set_type&lt;n&gt;</strong> (<em>char array</em>) – name of set type, valid options are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'var'</span></code> - variables</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'lin'</span></code> - linear constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'qcn'</span></code> - quadratic constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'nle'</span></code> - nonlinear equality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'nli'</span></code> - nonlinear inequality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'qdc'</span></code> - quadratic costs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'nlc'</span></code> - general nonlinear costs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>vv</strong> (<em>struct</em>) – <code class="docutils literal notranslate"><span class="pre">mm.var.idx</span></code></p></li>
+<li><p><strong>ll</strong> (<em>struct</em>) – <code class="docutils literal notranslate"><span class="pre">mm.lin.idx</span></code></p></li>
+<li><p><strong>nne</strong> (<em>struct</em>) – <code class="docutils literal notranslate"><span class="pre">mm.nle.idx</span></code></p></li>
+<li><p><strong>nni</strong> (<em>struct</em>) – <code class="docutils literal notranslate"><span class="pre">mm.nli.idx</span></code></p></li>
+<li><p><strong>qq</strong> (<em>struct</em>) – <code class="docutils literal notranslate"><span class="pre">mm.qdc.idx</span></code></p></li>
+<li><p><strong>nnc</strong> (<em>struct</em>) – <code class="docutils literal notranslate"><span class="pre">mm.nlc.idx</span></code></p></li>
+<li><p><strong>qqcn</strong> (<em>struct</em>) – <code class="docutils literal notranslate"><span class="pre">mm.qcn.idx</span></code></p></li>
+<li><p><strong>idx&lt;n&gt;</strong> (<em>struct</em>) – <a class="reference internal" href="set_manager.html#mp.set_manager.idx" title="mp.set_manager.idx"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">idx</span></code></a> property
+of property indicated by respective input</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Examples</strong>:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">vv</span><span class="p">,</span> <span class="n">ll</span><span class="p">,</span> <span class="n">nne</span><span class="p">]</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">get_idx</span><span class="p">();</span>
+<span class="p">[</span><span class="n">vv</span><span class="p">,</span> <span class="n">ll</span><span class="p">,</span> <span class="n">qq</span><span class="p">]</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">get_idx</span><span class="p">(</span><span class="s">&#39;var&#39;</span><span class="p">,</span> <span class="s">&#39;lin&#39;</span><span class="p">,</span> <span class="s">&#39;qdc&#39;</span><span class="p">);</span>
+<span class="p">[</span><span class="n">ll</span><span class="p">,</span> <span class="n">nne</span><span class="p">,</span> <span class="n">nni</span><span class="p">]</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">get_idx</span><span class="p">(</span><span class="s">&#39;lin&#39;</span><span class="p">,</span> <span class="s">&#39;nle&#39;</span><span class="p">,</span> <span class="s">&#39;nli&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>For a variable block named <code class="docutils literal notranslate"><span class="pre">z</span></code> we have …</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vv.i1.z</span></code> - starting index for <code class="docutils literal notranslate"><span class="pre">z</span></code> in vector <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vv.iN.z</span></code> - ending index for <code class="docutils literal notranslate"><span class="pre">z</span></code> in vector <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vv.N.z</span></code> - number of elements in <code class="docutils literal notranslate"><span class="pre">z</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>To extract a <code class="docutils literal notranslate"><span class="pre">z</span></code> variable from <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="p">=</span> <span class="n">x</span><span class="p">(</span><span class="n">vv</span><span class="p">.</span><span class="n">i1</span><span class="p">.</span><span class="n">z</span><span class="p">:</span><span class="n">vv</span><span class="p">.</span><span class="n">iN</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>To extract the multipliers on a linear constraint set
+named <code class="docutils literal notranslate"><span class="pre">foo</span></code>, where <code class="docutils literal notranslate"><span class="pre">mu_l</span></code> and <code class="docutils literal notranslate"><span class="pre">mu_u</span></code> are the full set of
+linear constraint multipliers:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mu_l_foo</span> <span class="p">=</span> <span class="n">mu_l</span><span class="p">(</span><span class="n">ll</span><span class="p">.</span><span class="n">i1</span><span class="p">.</span><span class="n">foo</span><span class="p">:</span><span class="n">ll</span><span class="p">.</span><span class="n">iN</span><span class="p">.</span><span class="n">foo</span><span class="p">);</span>
+<span class="n">mu_u_foo</span> <span class="p">=</span> <span class="n">mu_u</span><span class="p">(</span><span class="n">ll</span><span class="p">.</span><span class="n">i1</span><span class="p">.</span><span class="n">foo</span><span class="p">:</span><span class="n">ll</span><span class="p">.</span><span class="n">iN</span><span class="p">.</span><span class="n">foo</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The number of nonlinear equality constraints in a set named
+<code class="docutils literal notranslate"><span class="pre">bar</span></code>:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nbar</span> <span class="p">=</span> <span class="n">nne</span><span class="p">.</span><span class="n">N</span><span class="p">.</span><span class="nb">bar</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><em>Note:</em> The following is preferable if you haven’t already called
+<a class="reference internal" href="#mp.opt_model.get_idx" title="mp.opt_model.get_idx"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_idx()</span></code></a> to get <code class="docutils literal notranslate"><span class="pre">nne</span></code>.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">nbar</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">nle</span><span class="p">.</span><span class="n">get_N</span><span class="p">(</span><span class="s">&#39;bar&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">z</span></code>, <code class="docutils literal notranslate"><span class="pre">foo</span></code>, and <code class="docutils literal notranslate"><span class="pre">bar</span></code> are indexed sets, then you can
+replace them with something like <code class="docutils literal notranslate"><span class="pre">z(i,j)</span></code>, <code class="docutils literal notranslate"><span class="pre">foo(i,j,k)</span></code>
+or <code class="docutils literal notranslate"><span class="pre">bar(i)</span></code> in the examples above.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.opt_model.get_userdata">
+<span class="sig-name descname"><span class="pre">get_userdata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.opt_model.get_userdata" title="Link to this definition"></a></dt>
+<dd><p>Used to retrieve values of user data.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">val</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">get_userdata</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns the value specified by the given name or an empty matrix
+if userdata with <code class="docutils literal notranslate"><span class="pre">name</span></code> does not exist.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>char array</em>) – name of user data to return</p>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>val</strong> (<em>arbitrary</em>) – the arbitrary user data stored under the
+specified name</p>
+</dd>
+</dl>
+<p>This function allows the user to retrieve any arbitrary data that
+was saved in the object for later use. Data for a given <code class="docutils literal notranslate"><span class="pre">name</span></code>
+is saved by assigning it to <code class="docutils literal notranslate"><span class="pre">mm.userdata.(name)</span></code>.</p>
+<p>This can be useful, for example, when using a user function to add
+variables or constraints, etc. Suppose some special indexing is
+constructed when adding some variables or constraints. This
+indexing data can be stored and used later to “unpack” the results
+of the solved case.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.opt_model.problem_type">
+<span class="sig-name descname"><span class="pre">problem_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">recheck</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.opt_model.problem_type" title="Link to this definition"></a></dt>
+<dd><p>Return string identifying type of mathematical program.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">prob_type</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">problem_type</span><span class="p">()</span>
+<span class="n">prob_type</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">problem_type</span><span class="p">(</span><span class="n">recheck</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns a string identifying the type of mathematical program
+represented by the current model, based on the variables, costs,
+and constraints that have been added to the model. Used to
+automatically select an appropriate solver.</p>
+<p>Linear and nonlinear equations are models with no costs, no
+inequality constraints, and an equal number of continuous
+variables and equality constraints. If the number of variables in
+a nonlinear equation model is one more than the number of
+constraints, it is a parameterized nonlinear equation.</p>
+<p>The output value is cached for future calls, but calling with a
+true value for the optional <code class="docutils literal notranslate"><span class="pre">recheck</span></code> argument will force it to
+recheck in case the problem type has changed due to modifying the
+variables, constraints or costs in the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Input<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>recheck</strong> (<em>logical</em>) – true to force a reevaluation instead of
+possibly returning a cached value</p>
+</dd>
+<dt class="field-even">Output<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>prob_type</strong> (<em>char array</em>) – problem type, one of the following
+strings:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'LEQ'</span></code>   - linear equations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'NLEQ'</span></code>  - nonlinear equations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'PNE'</span></code>   - parameterized nonlinear equations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'LP'</span></code>    - linear program</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'QP'</span></code>    - quadratic program</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'NLP'</span></code>   - nonlinear program</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'MILP'</span></code>  - mixed-integer linear program</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'MIQP'</span></code>  - mixed-integer quadratic program</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'MINLP'</span></code> - mixed-integer nonlinear program</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.opt_model.is_mixed_integer">
+<span class="sig-name descname"><span class="pre">is_mixed_integer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.opt_model.is_mixed_integer" title="Link to this definition"></a></dt>
+<dd><p>Return true if model is mixed integer, false otherwise.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">TorF</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">is_mixed_integer</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Outputs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>TorF</strong> (<em>logical</em>) – true or false, indicating whether any of the
+variables are binary or integer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.opt_model.is_solved">
+<span class="sig-name descname"><span class="pre">is_solved</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.opt_model.is_solved" title="Link to this definition"></a></dt>
+<dd><p>Return true if model has been solved.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">TorF</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">is_solved</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Outputs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>TorF</strong> (<em>logical</em>) – true or false, indicating whether the model
+solution is available</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.opt_model.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">opt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.opt_model.solve" title="Link to this definition"></a></dt>
+<dd><p>Solve the model.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">exitflag</span><span class="p">]</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">exitflag</span><span class="p">,</span> <span class="n">output</span><span class="p">]</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">exitflag</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">jac</span><span class="p">]</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">solve</span><span class="p">()</span>      <span class="p">(</span><span class="n">LEQ</span><span class="o">/</span><span class="n">NLEQ</span> <span class="n">problems</span><span class="p">)</span>
+<span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">exitflag</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">lambda</span><span class="p">]</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">solve</span><span class="p">()</span>   <span class="p">(</span><span class="n">other</span> <span class="n">problem</span> <span class="n">types</span><span class="p">)</span>
+<span class="p">[</span><span class="n">x</span> <span class="p">...]</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Solves the model using one of the following, depending on the
+problem type: mp_linsolve, <a class="reference internal" href="../../functions/nleqs_master.html#nleqs_master" title="nleqs_master"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">nleqs_master()</span></code></a>, <a class="reference internal" href="../../functions/pnes_master.html#pnes_master" title="pnes_master"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">pnes_master()</span></code></a>,
+<a class="reference internal" href="../../functions/qps_master.html#qps_master" title="qps_master"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">qps_master()</span></code></a>, <a class="reference internal" href="../../functions/qcqps_master.html#qcqps_master" title="qcqps_master"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">qcqps_master()</span></code></a>, <a class="reference internal" href="../../functions/miqps_master.html#miqps_master" title="miqps_master"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">miqps_master()</span></code></a>, <a class="reference internal" href="../../functions/nlps_master.html#nlps_master" title="nlps_master"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">nlps_master()</span></code></a>.</p>
+<dl class="field-list">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>opt</strong> (<em>struct</em>) – optional options struct with the following
+fields, all of which are also optional <em>(default values
+shown in parentheses)</em></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">alg</span></code> (<code class="docutils literal notranslate"><span class="pre">'DEFAULT'</span></code>) - determines which solver to
+use, list of relevant problem types are listed in parens
+next to each</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">'DEFAULT'</span></code> - automatic, depending on problem type,
+uses the the first available of:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Solver Precedence</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LP</p></td>
+<td><p>Gurobi, CPLEX, MOSEK, linprog <em>(if MATLAB)</em>,
+HIGHS, GLPK, BPMPD, MIPS</p></td>
+</tr>
+<tr class="row-odd"><td><p>QP</p></td>
+<td><p>Gurobi, CPLEX, MOSEK, quadprog <em>(if MATLAB)</em>,
+HIGHS, BPMPD, MIPS</p></td>
+</tr>
+<tr class="row-even"><td><p>QCQP</p></td>
+<td><p>IPOPT, Artelys Knitro, FMINCON, MIPS</p></td>
+</tr>
+<tr class="row-odd"><td><p>MILP</p></td>
+<td><p>Gurobi, CPLEX, MOSEK, Opt Tbx (intlingprog),
+HIGHS, GLPK</p></td>
+</tr>
+<tr class="row-even"><td><p>MIQP</p></td>
+<td><p>Gurobi, CPLEX, MOSEK</p></td>
+</tr>
+<tr class="row-odd"><td><p>NLP</p></td>
+<td><p>MIPS</p></td>
+</tr>
+<tr class="row-even"><td><p>MINLP</p></td>
+<td><p>Artelys Knitro <em>(not yet implemented)</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>LEQ</p></td>
+<td><p>built-in backslash operator</p></td>
+</tr>
+<tr class="row-even"><td><p>NLEQ</p></td>
+<td><p>Newton’s method</p></td>
+</tr>
+<tr class="row-odd"><td><p>PNE</p></td>
+<td><p>predictor/corrector method</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'BPMPD'</span></code>   - <em>(LP, QP)</em> BPMPD_MEX</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'CLP'</span></code>     - <em>(LP, QP)</em> CLP</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'CPLEX'</span></code>   - <em>(LP, QP, MILP, MIQP)</em> CPLEX</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'FD'</span></code>      - <em>(NLEQ)</em> fast-decoupled Newon’s method</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'FMINCON'</span></code> - <em>(QCQP, NLP)</em> FMINCON, MATLAB
+Optimization Toolbox</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'FSOLVE'</span></code>  - <em>(NLEQ)</em> FSOLVE, MATLAB Optimization
+Toolbox</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'GLPK'</span></code>    - <em>(LP, MILP)</em> GLPK</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'GS'</span></code>      - <em>(NLEQ)</em> Gauss-Seidel</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'GUROBI'</span></code>  - <em>(LP, QP, QCQP, MILP, MIQP)</em> Gurobi</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'HIGHS'</span></code>   - <em>(LP, QP, MILP)</em> HiGHS,
+<a class="reference external" href="https://highs.dev">https://highs.dev</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'IPOPT'</span></code>   - <em>(LP, QP, QCQP, NLP)</em> IPOPT, requires
+MEX interface to IPOPT solver
+<a class="reference external" href="https://github.com/coin-or/Ipopt">https://github.com/coin-or/Ipopt</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'KNITRO'</span></code>  - <em>(QCQP, NLP, MINLP)</em> Artelys Knitro,
+requires Artelys Knitro solver
+<a class="reference external" href="https://www.artelys.com/solvers/knitro/">https://www.artelys.com/solvers/knitro/</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'MIPS'</span></code>    - <em>(LP, QP, QCQP, NLP)</em> MIPS, MATPOWER
+Interior Point Solver, pure MATLAB implementation of
+a primal-dual interior point method, if
+<code class="docutils literal notranslate"><span class="pre">mips_opt.step_control</span> <span class="pre">=</span> <span class="pre">1</span></code> it uses MIPS-sc, a
+step controlled variant of MIPS</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'MOSEK'</span></code>   - <em>(LP, QP, MILP, MIQP)</em> MOSEK</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'NEWTON'</span></code>  - <em>(NLEQ)</em> Newton’s method</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'OSQP'</span></code>    - <em>(LP, QP)</em> OSQP, <a class="reference external" href="https://osqp.org">https://osqp.org</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'OT'</span></code>      - <em>(LP, QP, MILP)</em> MATLAB Optimization
+Toolbox, linprog, quadprog or intlinprog</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">verbose</span></code> (0) - controls level of progress output
+displayed:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>0 = no progress output</p></li>
+<li><p>1 = some progress output</p></li>
+<li><p>2 = verbose progress output</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bp_opt</span></code>      - options vector for <code class="xref mat mat-func docutils literal notranslate"><span class="pre">bp()</span></code> (BPMPD)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clp_opt</span></code>     - options vector for CLP</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cplex_opt</span></code>   - options struct for CPLEX</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fd_opt</span></code>      - options struct for fast-decoupled
+Newton’s method, <a class="reference internal" href="../../functions/nleqs_fd_newton.html#nleqs_fd_newton" title="nleqs_fd_newton"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">nleqs_fd_newton()</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fmincon_opt</span></code> - options struct for <code class="xref mat mat-func docutils literal notranslate"><span class="pre">fmincon()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fsolve_opt</span></code>  - options struct for <code class="xref mat mat-func docutils literal notranslate"><span class="pre">fsolve()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">glpk_opt</span></code>    - options struct for GLPK</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grb_opt</span></code>     - options struct for Gurobi</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gs_opt</span></code>      - options struct for Gauss-Seidel method,
+<a class="reference internal" href="../../functions/nleqs_gauss_seidel.html#nleqs_gauss_seidel" title="nleqs_gauss_seidel"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">nleqs_gauss_seidel()</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">highs_opt</span></code>   - options struct for HiGHS</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">intlinprog_opt</span></code> - options struct for <code class="xref mat mat-func docutils literal notranslate"><span class="pre">intlinprog()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ipopt_opt</span></code>   - options struct for IPOPT</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">knitro_opt</span></code>  - options struct for Artelys Knitro</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">leq_opt</span></code>     - options struct for <code class="xref mat mat-func docutils literal notranslate"><span class="pre">mplinsolve()</span></code>, with
+optional fields <code class="docutils literal notranslate"><span class="pre">solver</span></code> and <code class="docutils literal notranslate"><span class="pre">opt</span></code> corresponding to
+respective <code class="xref mat mat-func docutils literal notranslate"><span class="pre">mplinsolve()</span></code> args, and <code class="docutils literal notranslate"><span class="pre">thresh</span></code> specifying a
+threshold on the absolute value of any element <code class="docutils literal notranslate"><span class="pre">x</span></code>,
+above which <code class="docutils literal notranslate"><span class="pre">exitflag</span></code> will be set to 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linprog_opt</span></code> - options struct for <code class="xref mat mat-func docutils literal notranslate"><span class="pre">linprog()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mips_opt</span></code>    - options struct for <code class="xref mat mat-func docutils literal notranslate"><span class="pre">mips()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mosek_opt</span></code>   - options struct for MOSEK</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">newton_opt</span></code>  - options struct for Newton method,
+<a class="reference internal" href="../../functions/nleqs_newton.html#nleqs_newton" title="nleqs_newton"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">nleqs_newton()</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">osqp_opt</span></code>    - options struct for OSQP</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">quadprog_opt</span></code> - options struct for <code class="xref mat mat-func docutils literal notranslate"><span class="pre">quadprog()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parse_soln</span></code> (0) - flag that specifies whether or not
+to call the <a class="reference internal" href="#mp.opt_model.parse_soln" title="mp.opt_model.parse_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">parse_soln()</span></code></a> method and place the return values
+in <code class="docutils literal notranslate"><span class="pre">mm.soln</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">price_stage_warn_tol</span></code> (1e-7) - tolerance on
+objective fcn value and primal variable relative match
+required to avoid mismatch warning message if mixed
+integer price computation stage is not skipped</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">relax_integer</span></code> (0) - relax integer constraints, if true</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">skip_prices</span></code> (0) - flag that specifies whether or not
+to skip the price computation stage for mixed integer
+problems, in which the problem is re-solved for only the
+continuous variables, with all others being constrained
+to their solved values</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x0</span></code> (empty)  - optional initial value of <code class="docutils literal notranslate"><span class="pre">x</span></code>,
+overrides value stored in model <em>(ignored by some solvers)</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Outputs<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>x</strong> (<em>double</em>) – solution vector</p></li>
+<li><p><strong>f</strong> (<em>double</em>) – final (objective) function value</p></li>
+<li><p><strong>exitflag</strong> (<em>integer</em>) – exit flag</p>
+<ul>
+<li><p>1 = converged</p></li>
+<li><p>0 or negative values = solver specific failure codes</p></li>
+</ul>
+</li>
+<li><p><strong>output</strong> (<em>struct</em>) – output struct with the following fields:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">alg</span></code> - algorithm code of solver used</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">et</span></code>  - elapsed time (sec)</p></li>
+<li><p><em>(others)</em> - solver specific fields</p></li>
+</ul>
+</li>
+<li><p><strong>jac</strong> (<em>double</em>) – final Jacobian matrix <em>(if available, for
+LEQ/NLEQ problems)</em></p></li>
+<li><p><strong>lambda</strong> (<em>struct</em>) – <em>(for all problem types except LEQ, NLEQ,
+and PNE)</em> Langrange and Kuhn-Tucker multipliers on the
+constraints, struct with fields:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">eqnonlin</span></code> - nonlinear equality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ineqnonlin</span></code> - nonlinear inequality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_l</span></code> - lower (left-hand) limit on linear constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_u</span></code> - upper (right-hand) limit on linear constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lower</span></code> - lower bound on optimization variables</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">upper</span></code> - upper bound on optimization variables</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+<p>See also <code class="docutils literal notranslate"><span class="pre">mp_linsolve</span></code>, <a class="reference internal" href="../../functions/nleqs_master.html#nleqs_master" title="nleqs_master"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">nleqs_master()</span></code></a>, <a class="reference internal" href="../../functions/pnes_master.html#pnes_master" title="pnes_master"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">pnes_master()</span></code></a>, <a class="reference internal" href="../../functions/qps_master.html#qps_master" title="qps_master"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">qps_master()</span></code></a>,
+<a class="reference internal" href="../../functions/qcqps_master.html#qcqps_master" title="qcqps_master"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">qcqps_master()</span></code></a>, <a class="reference internal" href="../../functions/miqps_master.html#miqps_master" title="miqps_master"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">miqps_master()</span></code></a>, <a class="reference internal" href="../../functions/nlps_master.html#nlps_master" title="nlps_master"><code class="xref mat mat-func docutils literal notranslate"><span class="pre">nlps_master()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.opt_model.has_parsed_soln">
+<span class="sig-name descname"><span class="pre">has_parsed_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.opt_model.has_parsed_soln" title="Link to this definition"></a></dt>
+<dd><p>Return true if model has a parsed solution.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">TorF</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">has_parsed_soln</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.opt_model.parse_soln">
+<span class="sig-name descname"><span class="pre">parse_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">stash</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.opt_model.parse_soln" title="Link to this definition"></a></dt>
+<dd><p>Parse solution vector and shadow prices by all named sets.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span> <span class="p">=</span> <span class="n">mm</span><span class="p">.</span><span class="n">parse_soln</span><span class="p">()</span>
+<span class="n">mm</span><span class="p">.</span><span class="n">parse_soln</span><span class="p">(</span><span class="n">stash</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For a solved model, <a class="reference internal" href="#mp.opt_model.parse_soln" title="mp.opt_model.parse_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">parse_soln()</span></code></a> returns a struct of parsed solution
+vector and shadow price values for each named set of variables
+and constraints.</p>
+<dl class="field-list">
+<dt class="field-odd">Input<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stash</strong> (<em>logical</em>) – if true, individual parsed solutions are
+stored in the <a class="reference internal" href="../opt_model.html#opt_model.soln" title="opt_model.soln"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">soln</span></code></a> property of the respective
+set type object.</p>
+</dd>
+<dt class="field-even">Output<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ps</strong> (<em>struct</em>) – struct of parsed solution values with the
+following fields, where each of the terminal elements is
+a struct with fields corresponding to the respective named
+sets.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">var</span></code> - variable solution struct with fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code> - values of variables</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_l</span></code> - shadow prices on variable lower bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_u</span></code> - shadow prices on variable upper bounds</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lin</span></code> - linear constraint solution struct with fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_l</span></code> - shadow prices on constraint lower bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_u</span></code> - shadow prices on constraint upper bounds</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qcn</span></code> - quadratic constraint solution struct with fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_l</span></code> - shadow prices on constraint lower bounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mu_u</span></code> - shadow prices on constraint upper bounds</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nle</span></code> - nonlinear equality constraint solution struct
+with fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lam</span></code> - shadow prices on constraints</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nli</span></code> - nonlinear inequality constraint solution struct
+with fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mu</span></code> - shadow prices on constraints</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+<p>The value of each element in the returned struct can be obtained
+via the <a class="reference internal" href="../opt_model.html#opt_model.get_soln" title="opt_model.get_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">get_soln()</span></code></a> method of the appropriate set type
+object as well, but using <a class="reference internal" href="#mp.opt_model.parse_soln" title="mp.opt_model.parse_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">parse_soln()</span></code></a> is generally more efficient
+if a complete set of values is needed.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.opt_model.display">
+<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.opt_model.display" title="Link to this definition"></a></dt>
+<dd><p>Display the object.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span>
+</pre></div>
+</div>
+<p>Called when semicolon is omitted at the command-line. Displays the details
+of the variables, constraints, costs included in the model.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.opt_model.display_header">
+<span class="sig-name descname"><span class="pre">display_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.opt_model.display_header" title="Link to this definition"></a></dt>
+<dd><p>Display header, before each set type.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span><span class="p">.</span><span class="n">display_header</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Called automatically by display, <em>before</em> displaying each
+set type.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.opt_model.display_footer">
+<span class="sig-name descname"><span class="pre">display_footer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.opt_model.display_footer" title="Link to this definition"></a></dt>
+<dd><p>Display footer, after each set type.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span><span class="p">.</span><span class="n">display_footer</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Called automatically by display, <em>after</em> displaying each
+set type. By default, displays information about user data.</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mp.opt_model.display_soln">
+<span class="sig-name descname"><span class="pre">display_soln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mm</span></em>, <em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp.opt_model.display_soln" title="Link to this definition"></a></dt>
+<dd><p>Display solution values.</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">()</span>
+<span class="n">mm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="n">set_type</span><span class="p">)</span>
+<span class="n">mm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="n">set_type</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="n">mm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="n">set_type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+<span class="n">mm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="n">fid</span><span class="p">)</span>
+<span class="n">mm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span> <span class="n">set_type</span><span class="p">)</span>
+<span class="n">mm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span> <span class="n">set_type</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="n">mm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span> <span class="n">set_type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Displays the model solution, including values, bounds and shadow
+prices for variables, linear and quadratic constraints, values
+and shadow prices for nonlinear constraints, and individual cost
+components.</p>
+<p>Results are displayed for all set types or those specified by
+<code class="docutils literal notranslate"><span class="pre">set_type</span></code> and for each named/indexed set or a specified
+<code class="docutils literal notranslate"><span class="pre">name</span></code>/<code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<dl class="field-list">
+<dt class="field-odd">Inputs<span class="colon">:</span></dt>
+<dd class="field-odd"><ul>
+<li><p><strong>set_type</strong> (<em>char array or cell array</em>) – one of the following,
+specifying the type of set:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'var'</span></code> - variables</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'lin'</span></code> - linear constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'qcn'</span></code> - quadratic constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'nle'</span></code> - nonlinear equality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'nli'</span></code> - nonlinear inequality constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'nlc'</span></code> - nonlinear costs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'qdc'</span></code> - quadratic costs</p></li>
+</ul>
+<p><em>or</em></p>
+<ul class="simple">
+<li><p>a cell array of one or more of the above</p></li>
+</ul>
+<p><em>or</em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">''</span></code> or <code class="docutils literal notranslate"><span class="pre">'all'</span></code> - indicating to display all</p></li>
+</ul>
+</li>
+<li><p><strong>name</strong> (<em>char array</em>) – <em>(optional)</em> the name of the set</p></li>
+<li><p><strong>idx</strong> (<em>cell array</em>) – <em>(optional)</em> the indices of the set</p></li>
+</ul>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="s">&#39;var&#39;</span><span class="p">);</span>
+<span class="n">mm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">({</span><span class="s">&#39;nle&#39;</span><span class="p">,</span> <span class="s">&#39;nli&#39;</span><span class="p">});</span>
+<span class="n">mm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="s">&#39;var&#39;</span><span class="p">,</span> <span class="s">&#39;P&#39;</span><span class="p">);</span>
+<span class="n">mm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="s">&#39;lin&#39;</span><span class="p">,</span> <span class="s">&#39;lin_con_1&#39;</span><span class="p">);</span>
+<span class="n">mm</span><span class="p">.</span><span class="n">display_soln</span><span class="p">(</span><span class="s">&#39;nle&#39;</span><span class="p">,</span> <span class="s">&#39;nle_con_b&#39;</span><span class="p">,</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">});</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#mp.opt_model.parse_soln" title="mp.opt_model.parse_soln"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">parse_soln()</span></code></a>.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../reference.html" class="btn btn-neutral float-left" title="Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="set_manager.html" class="btn btn-neutral float-right" title="mp.set_manager" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 1996-2025, Power Systems Engineering Research Center (PSERC).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
